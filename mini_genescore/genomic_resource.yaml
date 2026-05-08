@@ -1,0 +1,20 @@
+type: gene_score
+filename: mini_genescore.csv
+scores:
+  - id: my_genescore
+    desc: "level"
+    histogram:
+      type: number
+      number_of_bins: 3
+      view_range:
+        min: 1
+        max: 4
+      x_log_scale: false
+      y_log_scale: false
+    small_values_desc: "small"
+    large_values_desc: "large"
+meta:
+  summary: |
+    a gene score
+  description: |
+    my description
