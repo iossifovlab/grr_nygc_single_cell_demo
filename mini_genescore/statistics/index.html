@@ -1,5 +1,4 @@
 
-
 <html>
   <head>
     <style>
@@ -9,13 +8,13 @@
         padding: 0 40px;
       }
 
-      h2 {
-        margin-top: 50px;
-        margin-bottom: 10px;
-      }
-
       * {
         font-family: sans-serif
+      }
+
+            h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
       }
 
       h3,h4 {
@@ -62,6 +61,26 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
       
     </style>
   </head>
