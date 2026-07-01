@@ -2,15 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
     <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-
-      * {
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      }
-
       body {
         margin: 0;
       }
@@ -21,7 +15,20 @@
         padding: 40px 40px 100px;
       }
 
-            h2 {
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
         margin-top: 50px;
         margin-bottom: 10px;
       }
@@ -44,6 +51,7 @@
       th {
         border: 1px solid #cfd8df;
         padding: 5px 10px;
+        overflow-wrap: break-word;
       }
 
       tr {
@@ -90,6 +98,54 @@
         color: #4C93C9;
       }
 
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
       #resource-table {
         margin-bottom: 70px;
       }
@@ -115,8 +171,9 @@
       .modal-content {
         margin: auto;
         display: block;
-        width: 80%;
         max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
       }
 
       .close {
@@ -132,7 +189,9 @@
         cursor: pointer;
       }
 
-      
+      table {
+    table-layout: fixed;
+}
     </style>
 
     <script>
@@ -142,7 +201,7 @@
                     var modalId = this.getAttribute("data-modal-trigger");
                     var modal = document.getElementById(modalId);
                     if (modal) {
-                        modal.style.display = "block";
+                        modal.style.display = "flex";
                         document.currentOpenModal = modal;
                     }
                 });
@@ -173,12 +232,12 @@
   </head>
   <body>
     <nav id="page-header">
-      <a href="/index.html">← Back to main page</a>
+      <a href="../index.html">← Back to main page</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
     <div>
-        <table border="1" id="resource-table">
+        <table id="resource-table">
             <tr>
                 <th>Id</th>
                 <td>mini_genescore</td>
@@ -242,8 +301,17 @@
 
 
 
-<h1>Scores (1)</h1>
-    <table border="1">
+<h2>Scores (1)</h2>
+<div class="scrollable-table-container">  
+<table>
+      <colgroup>
+          <col style="width: 15%">
+          <col style="width: 6%">
+          <col>
+          <col style="width: 220px">
+          <col style="width: 15%">
+      </colgroup>
+      <thead>
         <tr>
             <th>ID</th>
             <th>Type</th>
@@ -251,6 +319,7 @@
             <th>Histograms</th>
             <th>Range</th>
         </tr>
+      </thead>
 
         
             <tr>
@@ -261,12 +330,12 @@
                 <td>
                     <div>level</div>
                     
-                        <div style="color: rgb(145,145,145)">
+                        <div class="text-muted">
                             Small values desc: small
                         </div>
                     
                     
-                        <div style="color: rgb(145,145,145)">
+                        <div class="text-muted">
                             Large values desc: large
                         </div>
                     
@@ -277,7 +346,7 @@
                 
                     <div class="histogram">
                         <img src="statistics/histogram_my_genescore.png"
-                            style="width: 200px; cursor: pointer;"
+                            class="histogram-thumbnail"
                             alt=my_genescore
                             title=" my_genescore"
                             data-modal-trigger="modal-my_genescore">
@@ -289,8 +358,7 @@
                     [2, 2]</td>
             </tr>
         <div id="modal-my_genescore" class="modal">
-                <div class="modal-content"
-                    style="padding: 10px 20px; background-color: #fff; height: fit-content; width: fit-content;">
+                <div class="modal-content">
                     <span class="close">&times;</span>
                     <img src="statistics/histogram_my_genescore.png"
                         alt="HISTOGRAM FOR my_genescore"
@@ -299,6 +367,7 @@
                 </div>
             </div>
     </table>
+    </div>
 
 
     <h2 style="margin-top: 70px;">Files</h2>

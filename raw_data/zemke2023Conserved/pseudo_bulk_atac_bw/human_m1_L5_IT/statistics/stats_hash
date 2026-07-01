@@ -1,0 +1,43 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "number",
+        "view_range": {
+          "min": null,
+          "max": null
+        },
+        "number_of_bins": 100,
+        "x_log_scale": true,
+        "y_log_scale": true,
+        "x_min_log": 1e-05
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "L5_IT_ATAC_RPKM.bw",
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "L5_IT_ATAC_RPKM.bw": "092ee2e3465d5b43d3ca4699a8dd0f7d"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_human_m1_L5_IT_atac_rpkm",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

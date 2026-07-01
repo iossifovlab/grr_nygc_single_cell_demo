@@ -1,0 +1,43 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "number",
+        "view_range": {
+          "min": null,
+          "max": null
+        },
+        "number_of_bins": 100,
+        "x_log_scale": true,
+        "y_log_scale": true,
+        "x_min_log": 1e-05
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "SNCG_RNA_RPKM.bw",
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "SNCG_RNA_RPKM.bw": "c983b4cd758f555d9e086b3c12da3f8a"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_macaque_m1_SNCG_rna_rpkm",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

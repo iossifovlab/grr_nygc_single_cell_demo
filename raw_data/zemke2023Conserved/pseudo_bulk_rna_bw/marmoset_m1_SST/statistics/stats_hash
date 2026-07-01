@@ -1,0 +1,43 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "number",
+        "view_range": {
+          "min": null,
+          "max": null
+        },
+        "number_of_bins": 100,
+        "x_log_scale": true,
+        "y_log_scale": true,
+        "x_min_log": 1e-05
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "SST_RNA_RPKM.bw",
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "SST_RNA_RPKM.bw": "475b78a2e55e3f94ec8ae58330a4f0bc"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_marmoset_m1_SST_rna_rpkm",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

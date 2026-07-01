@@ -1,0 +1,43 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "number",
+        "view_range": {
+          "min": null,
+          "max": null
+        },
+        "number_of_bins": 100,
+        "x_log_scale": true,
+        "y_log_scale": true,
+        "x_min_log": 1e-05
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "L5_6_NP_RNA_RPKM.bw",
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "L5_6_NP_RNA_RPKM.bw": "6104ea47adcf379a4423e7e9b12292ef"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_human_m1_L5_6_NP_rna_rpkm",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

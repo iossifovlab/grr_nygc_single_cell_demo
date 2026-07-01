@@ -1,0 +1,43 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "number",
+        "view_range": {
+          "min": null,
+          "max": null
+        },
+        "number_of_bins": 100,
+        "x_log_scale": true,
+        "y_log_scale": true,
+        "x_min_log": 1e-05
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "ASC_RNA_RPKM.bw",
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "ASC_RNA_RPKM.bw": "6c9c127633a057a9d129086730a142fe"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_human_m1_ASC_rna_rpkm",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

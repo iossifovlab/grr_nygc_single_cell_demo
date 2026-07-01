@@ -1,0 +1,37 @@
+type: position_score
+
+table:
+  filename: L5_ET_ATAC_RPKM.bw
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+
+# score values
+scores:
+  - id: zemke2023Conserved_human_m1_L5_ET_atac_rpkm
+    type: float
+    desc: "Pseudo-bulk RPKM atac in human_m1 for L5_ET cell type"
+    index: 3
+    histogram:
+      type: number
+      number_of_bins: 100
+      y_log_scale: True
+      x_log_scale: True
+      x_min_log: 0.00001
+
+
+
+meta:
+  summary: "Pseudo-bulk atac track in human_m1 for L5_ET cell type"
+
+  description: |
+
+    [Zemke, et al, Conserved and divergent gene regulatory programs of the
+    mammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)
+
+    Downloaded from:
+
+    [https://epigenome.wustl.edu/renlab/human\_m1\_atac/L5\_ET\_ATAC\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L5_ET_ATAC_RPKM.bw)

@@ -1,23 +1,29 @@
 <html>
     <head>
      <meta charset="utf-8">
-     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" />
     <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-
-      * {
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      }
 
       body {
         margin: 0;
       }
 
-            h2 {
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
         margin-top: 50px;
         margin-bottom: 10px;
       }
@@ -40,6 +46,7 @@
       th {
         border: 1px solid #cfd8df;
         padding: 5px 10px;
+        overflow-wrap: break-word;
       }
 
       tr {
@@ -86,9 +93,58 @@
         color: #4C93C9;
       }
 
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
       td, th {
         padding: 5px;
-        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       #search-container {
@@ -99,7 +155,7 @@
         gap: 15px;
         position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 2;
         background-color: white;
         height: 70px;
       }
@@ -139,12 +195,6 @@
       #type-filter:focus,
       #search-field:focus {
         outline-color: #85a2b9;
-      }
-
-      .nowrap {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       .search-info {
@@ -192,10 +242,16 @@
         text-align: center;
       }
 
-      #resource-table {
+      #table-wrapper {
         margin: 10px 10%;
-        width: 80%;
+      }
+
+      #resource-table {
         border: 1px solid #cfd8df;
+        width: 100%;
+        box-sizing: border-box;
+        table-layout: fixed;
+        contain: layout style;
       }
 
       .version-cell {
@@ -228,49 +284,71 @@
         color: #85A2B9;
       }
 
-      #section-about {
-        margin: 40px 10%;
-        color: #2d3d4a;
-        line-height: 1.65;
-      }
-
-      #section-about h1 {
-        font-size: 1.6em;
-        font-weight: 700;
-        color: #5b778c;
-        margin: 0 0 16px;
-      }
-
-      #section-about h2 {
-        font-size: 1.1em;
-        font-weight: 700;
-        color: #5b778c;
-        margin: 2em 0 0.5em;
-      }
-
-      #section-about p {
-        font-size: 0.875em;
-        margin: 0 0 0.75em;
-      }
-
-      #section-about ul {
-        font-size: 0.875em;
-        list-style-type: '- ';
-        padding-left: 15px;
-        margin: 0 0 0.75em;
-      }
-
-      #section-about li {
-        margin-bottom: 0.4em;
-        padding-left: 4px;
-      }
-
-      #section-about a {
-        text-decoration: underline;
-      }
-
       #nav-about {
         margin-left: auto;
+      }
+
+      #id-col-header,
+      #type-col-header,
+      #version-col-header,
+      #size-col-header,
+      #summary-col-header {
+        cursor: pointer;
+        user-select: none;
+      }
+
+      #id-sort-indicator,
+      #type-sort-indicator,
+      #version-sort-indicator,
+      #size-sort-indicator,
+      #summary-sort-indicator {
+        margin-left: 2px;
+        font-size: 18px;
+        vertical-align: middle;
+        color: #5b778c;
+      }
+
+      #resource-table th {
+        position: relative;
+        overflow: visible;
+      }
+
+      .col-resizer {
+        position: absolute;
+        right: -3px;
+        top: 0;
+        height: 100vh;
+        width: 6px;
+        cursor: col-resize;
+        user-select: none;
+        z-index: 1;
+      }
+
+      .col-resizer::after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 100%;
+        margin: 0 auto;
+        background: #cfd8df;
+        transition: background 0.15s;
+      }
+
+      .col-resizer:hover::after,
+      .col-resizer.resizing::after {
+        background: #85a2b9;
+      }
+
+      #col-drag-line {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 1.5px;
+        height: 100vh;
+        background: #cfd8df;
+        display: none;
+        pointer-events: none;
+        will-change: transform;
       }
     </style>
  </head>
@@ -280,7 +358,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(`${window.location.origin}/.CONTENTS.sqlite3.gz`)
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=7c29dbe0834231a49f85652b73158712`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -313,21 +391,76 @@
         };
 
 
+        function parseSizeToBytes(sizeStr) {
+            const units = {
+                'B': 1,
+                'KB': 1024,
+                'MB': 1024 * 1024,
+                'GB': 1024 * 1024 * 1024,
+                'TB': 1024 * 1024 * 1024 * 1024,
+            };
+            const match = sizeStr.match(/^([\d.]+)\s*([A-Z]+)$/);
+            if (!match) return 0;
+            const [, value, unit] = match;
+            const multiplier = units[unit] || 1;
+            return parseFloat(value) * multiplier;
+        }
+
         const rowData = {}
         $(".contents > tbody > tr").each((index, row) => {
             const id = $(row).attr("id");
             const children = $(row).find("td");
+            const sizeStr = children[3].textContent.trim();
             rowData[id] = {
                 "type": children[0].textContent.trim(),
                 "id": children[1].getElementsByTagName("a")[0].textContent.trim(),
                 "version": children[2].textContent.trim(),
-                "sizeInBytes": children[3].textContent.trim(),
+                "size": sizeStr,
+                "sizeInBytes": parseSizeToBytes(sizeStr),
                 "summary": children[4].textContent.trim(),
                 "url": $(children[1].getElementsByTagName("a")[0]).attr("href").trim(),
             };
         })
         window.rowData = rowData;
 
+        let sortColumn = 'none'; // 'none' | 'id' | 'type' | 'version' | 'summary'
+        let sortOrder = 'none'; // 'none' | 'asc' | 'desc'
+        let lastIds = [];
+
+        function sortedIds(ids) {
+            if (sortOrder === 'none' || sortColumn === 'none') return ids;
+            const sorted = [...ids].sort((a, b) => {
+                let aVal, bVal;
+                let isNumeric = false;
+                if (sortColumn === 'id') {
+                    aVal = window.rowData[a].id;
+                    bVal = window.rowData[b].id;
+                } else if (sortColumn === 'type') {
+                    aVal = window.rowData[a].type;
+                    bVal = window.rowData[b].type;
+                } else if (sortColumn === 'version') {
+                    aVal = window.rowData[a].version;
+                    bVal = window.rowData[b].version;
+                } else if (sortColumn === 'size') {
+                    aVal = window.rowData[a].sizeInBytes;
+                    bVal = window.rowData[b].sizeInBytes;
+                    isNumeric = true;
+                } else if (sortColumn === 'summary') {
+                    aVal = window.rowData[a].summary;
+                    bVal = window.rowData[b].summary;
+                }
+                if (isNumeric) {
+                    return aVal - bVal;
+                }
+                return aVal.localeCompare(bVal);
+            });
+            return sortOrder === 'desc' ? sorted.reverse() : sorted;
+        }
+
+        function applyRefreshData(ids) {
+            lastIds = ids;
+            refreshData(sortedIds(ids));
+        }
 
         function UpdateStatus() {
             const status = $(`#status`);
@@ -344,9 +477,9 @@
         }
 
         function refreshData(ids) {
-            let newIds = new Set(ids)
-            let currentIds = new Set(window.currentIds)
-            if (newIds.size === currentIds.size && newIds.isSubsetOf(currentIds)) {
+            // Check both length and order so re-sorting the same set still re-renders.
+            if (ids.length === (window.currentIds || []).length
+                    && ids.every((id, i) => id === window.currentIds[i])) {
                 UpdateStatus();
                 return;
             }
@@ -363,8 +496,9 @@
                 $(cells[1]).find("a").attr("href", rowData.url).text(rowData.id);
                 $(cells[1]).children("div").children("span")[0].className = `material-symbols-outlined copy-icon ${rowData.id}`;
                 cells[2].textContent = rowData.version;
-                cells[3].textContent = rowData.sizeInBytes;
+                cells[3].textContent = rowData.size;
                 cells[4].textContent = rowData.summary;
+                cells[4].title = rowData.summary;
                 row.show();
             }
 
@@ -384,7 +518,7 @@
                 option.textContent = type;
                 typeFilter.append(option);
             }
-            refreshData(Array.from(window.all_ids))
+            applyRefreshData(Array.from(window.all_ids))
 
             resolve(window.sqlite3)
         });
@@ -399,7 +533,7 @@
             const typeFilter = $("#type-filter").val();
             if (searchValue === "" && typeFilter === "all") {
                 window.last_error = null;
-                refreshData(Array.from(window.all_ids))
+                applyRefreshData(Array.from(window.all_ids))
                 return;
             }
 
@@ -421,12 +555,12 @@
             window.last_error = null;
             try {
                 const displayIds = window.sqlite3.query(query).map((row) => row[0]);
-                refreshData(displayIds);
+                applyRefreshData(displayIds);
             }
             catch (error) {
                 window.last_error = error;
                 console.error("Error during search:", error);
-                refreshData(Array.from(window.all_ids))
+                applyRefreshData(Array.from(window.all_ids))
             }
             finally {
                 $(".searching").hide()
@@ -478,6 +612,163 @@
           )
         });
 
+        const sortableColumns = {
+            'id-col-header': 'id',
+            'type-col-header': 'type',
+            'version-col-header': 'version',
+            'size-col-header': 'size',
+            'summary-col-header': 'summary'
+        };
+
+        const sortIcons = { none: 'unfold_more', asc: 'arrow_upward', desc: 'arrow_downward' };
+
+        function updateSortIndicators() {
+            Object.entries(sortableColumns).forEach(([headerId, colName]) => {
+                const indicator = document.getElementById(colName + '-sort-indicator');
+                indicator.textContent = sortColumn === colName ? sortIcons[sortOrder] : sortIcons['none'];
+            });
+        }
+
+        Object.entries(sortableColumns).forEach(([headerId, colName]) => {
+            document.getElementById(headerId).addEventListener('click', (e) => {
+                if (e.target.closest('.col-resizer')) return;
+                if (sortColumn === colName) {
+                    sortOrder = sortOrder === 'none' ? 'asc' : sortOrder === 'asc' ? 'desc' : 'none';
+                } else {
+                    sortColumn = colName;
+                    sortOrder = 'asc';
+                }
+                updateSortIndicators();
+                refreshData(sortedIds(lastIds));
+            });
+        });
+
+    </script>
+    <script type="module">
+        const table = document.getElementById('resource-table');
+        const cols = Array.from(table.querySelectorAll('colgroup col'));
+        const ths = Array.from(table.querySelectorAll('thead th'));
+
+        // Proportionally rescale all columns when the wrapper changes size.
+        // Col widths start as CSS percentages; the observer only acts once pixel
+        // widths have been snapshotted on first drag (colTotal is NaN until then).
+        const wrapper = document.getElementById('table-wrapper');
+        const wrapperObserver = new ResizeObserver(() => {
+          const newWidth = table.clientWidth;
+          const colTotal = cols.reduce((s, c) => s + parseInt(c.style.width, 10), 0);
+          // Guard < 2px to avoid an infinite loop: writing col widths can itself
+          // trigger the observer.
+          if (!colTotal || Math.abs(newWidth - colTotal) < 2) return;
+          const scale = newWidth / colTotal;
+          cols.forEach(c => { c.style.width = Math.round(parseInt(c.style.width, 10) * scale) + 'px'; });
+        });
+        wrapperObserver.observe(wrapper);
+
+        // A synchronous inline script sets the initial height before first paint;
+        // this observer keeps it correct when rows are filtered in/out.
+        const resizers = Array.from(table.querySelectorAll('.col-resizer'));
+        function updateResizerHeights() {
+          const h = table.offsetHeight + 'px';
+          resizers.forEach(r => { r.style.height = h; });
+        }
+        updateResizerHeights();
+        const tableObserver = new ResizeObserver(updateResizerHeights);
+        tableObserver.observe(table);
+
+        let pixelWidthsInitialized = false;
+
+        const dragLine = document.createElement('div');
+        dragLine.id = 'col-drag-line';
+        document.body.appendChild(dragLine);
+
+        const MIN_WIDTH = 85;
+
+        ths.forEach((th, i) => {
+          const resizer = th.querySelector('.col-resizer');
+          if (!resizer) return;
+
+          resizer.addEventListener('mousedown', (e) => {
+            // Convert CSS percentage col widths to pixels on first drag so the
+            // wrapperObserver and drag deltas work in consistent pixel units.
+            if (!pixelWidthsInitialized) {
+              ths.forEach((t, idx) => { cols[idx].style.width = t.offsetWidth + 'px'; });
+              pixelWidthsInitialized = true;
+            }
+
+            const startWidths = cols.map(c => parseInt(c.style.width, 10));
+            const startX = e.clientX;
+
+            // Cascade bounds: sum shrinkable space across all cols in each direction.
+            let rightRoom = 0;
+            for (let j = i + 1; j < cols.length; j++) {
+              rightRoom += Math.max(0, startWidths[j] - MIN_WIDTH);
+            }
+            let leftRoom = 0;
+            for (let j = i; j >= 0; j--) {
+              leftRoom += Math.max(0, startWidths[j] - MIN_WIDTH);
+            }
+            const minX = startX - leftRoom;
+            const maxX = startX + rightRoom;
+
+            resizer.classList.add('resizing');
+            document.body.style.cursor = 'col-resize';
+            document.body.style.userSelect = 'none';
+            table.style.pointerEvents = 'none';
+            const wrapperRect = wrapper.getBoundingClientRect();
+            dragLine.style.top = wrapperRect.top + 'px';
+            dragLine.style.height = wrapperRect.height + 'px';
+            dragLine.style.transform = 'translateX(' + e.clientX + 'px)';
+            dragLine.style.display = 'block';
+
+            const onMouseMove = (ev) => {
+              dragLine.style.transform = 'translateX(' + Math.min(maxX, Math.max(minX, ev.clientX)) + 'px)';
+            };
+
+            const onMouseUp = (ev) => {
+              dragLine.style.display = 'none';
+              resizer.classList.remove('resizing');
+              document.body.style.cursor = '';
+              document.body.style.userSelect = '';
+              table.style.pointerEvents = '';
+              document.removeEventListener('mousemove', onMouseMove);
+              document.removeEventListener('mouseup', onMouseUp);
+
+              const delta = Math.min(maxX, Math.max(minX, ev.clientX)) - startX;
+              const newWidths = [...startWidths];
+
+              if (delta > 0) {
+                // Dragging right: col[i] grows, right cols shrink one by one.
+                let toTake = delta;
+                for (let j = i + 1; j < cols.length && toTake > 0; j++) {
+                  const taken = Math.min(toTake, startWidths[j] - MIN_WIDTH);
+                  newWidths[j] = startWidths[j] - taken;
+                  toTake -= taken;
+                }
+                newWidths[i] = startWidths[i] + (delta - toTake);
+              } else if (delta < 0) {
+                // Dragging left: left cols shrink one by one, col[i+1] grows.
+                let toTake = -delta;
+                for (let j = i; j >= 0 && toTake > 0; j--) {
+                  const taken = Math.min(toTake, startWidths[j] - MIN_WIDTH);
+                  newWidths[j] = startWidths[j] - taken;
+                  toTake -= taken;
+                }
+                if (i + 1 < cols.length) {
+                  newWidths[i + 1] = startWidths[i + 1] + (-delta - toTake);
+                }
+              }
+
+              cols.forEach((c, j) => { c.style.width = newWidths[j] + 'px'; });
+            };
+
+            // Listeners on document, not the handle, so dragging outside the
+            // element doesn't break the interaction.
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+            // Prevent text selection while dragging.
+            e.preventDefault();
+          });
+        });
     </script>
  <body>
      
@@ -511,17 +802,22 @@
         </div>
         <p id="status-error"></p>
         <div id="status"></div>
+        <div id="table-wrapper">
         <table id="resource-table" class="contents">
+          <colgroup>
+            <col style="width: 10%"><col style="width: 50%"><col style="width: 5%"><col style="width: 10%"><col style="width: 25%">
+          </colgroup>
           <thead>
             <tr>
-              <th class="nowrap type-cell">Type</th>
-              <th class="nowrap id-cell">ID</th>
-              <th class="nowrap version-cell">Version</th>
+              <th class="nowrap type-cell" id="type-col-header">Type<span id="type-sort-indicator" class="material-symbols-outlined">unfold_more</span><div class="col-resizer"></div></th>
+              <th class="nowrap id-cell" id="id-col-header">ID<span id="id-sort-indicator" class="material-symbols-outlined">unfold_more</span><div class="col-resizer"></div></th>
+              <th class="nowrap version-cell" id="version-col-header">Version<span id="version-sort-indicator" class="material-symbols-outlined">unfold_more</span><div class="col-resizer"></div></th>
               <th
                 class="nowrap size-cell"
-                title="Total size (bytes)"
-              >Total size (bytes)</th>
-              <th class="nowrap">Summary</th>
+                title="Total size"
+                id="size-col-header"
+              >Total size<span id="size-sort-indicator" class="material-symbols-outlined">unfold_more</span><div class="col-resizer"></div></th>
+              <th class="nowrap" id="summary-col-header">Summary<span id="summary-sort-indicator" class="material-symbols-outlined">unfold_more</span></th>
             </tr>
           </thead>
           <tbody>
@@ -545,11 +841,2900 @@
               >a gene score
 </td>
               </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">553.66 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for ASC cell type"
+              >Pseudo-bulk atac track in human_m1 for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">99.43 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for Endo cell type"
+              >Pseudo-bulk atac track in human_m1 for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.34 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L2_3_IT cell type"
+              >Pseudo-bulk atac track in human_m1 for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">983.99 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L4_5_IT cell type"
+              >Pseudo-bulk atac track in human_m1 for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">336.27 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L5_6_NP cell type"
+              >Pseudo-bulk atac track in human_m1 for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">297.18 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L5_ET cell type"
+              >Pseudo-bulk atac track in human_m1 for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">753.59 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L5_IT cell type"
+              >Pseudo-bulk atac track in human_m1 for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">904.4 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L6_CT cell type"
+              >Pseudo-bulk atac track in human_m1 for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">852.97 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L6_IT cell type"
+              >Pseudo-bulk atac track in human_m1 for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">509.38 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L6_IT_CAR3 cell type"
+              >Pseudo-bulk atac track in human_m1 for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">580.69 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for L6b cell type"
+              >Pseudo-bulk atac track in human_m1 for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">717.91 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for LAMP5 cell type"
+              >Pseudo-bulk atac track in human_m1 for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">305.87 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for MGC cell type"
+              >Pseudo-bulk atac track in human_m1 for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.16 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for ODC cell type"
+              >Pseudo-bulk atac track in human_m1 for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">383.38 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for OPC cell type"
+              >Pseudo-bulk atac track in human_m1 for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1012.08 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for PVALB cell type"
+              >Pseudo-bulk atac track in human_m1 for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">508.24 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for SNCG cell type"
+              >Pseudo-bulk atac track in human_m1 for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">925.01 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for SST cell type"
+              >Pseudo-bulk atac track in human_m1 for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">854.52 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for VIP cell type"
+              >Pseudo-bulk atac track in human_m1 for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">99.91 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in human_m1 for VLMC cell type"
+              >Pseudo-bulk atac track in human_m1 for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">329.68 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for ASC cell type"
+              >Pseudo-bulk atac track in macaque_m1 for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">105.08 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for Endo cell type"
+              >Pseudo-bulk atac track in macaque_m1 for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.22 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L2_3_IT cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">766.98 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L4_5_IT cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">312.23 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L5_6_NP cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">406.58 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L5_ET cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">866.33 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L5_IT cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">642.35 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L6_CT cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">746.72 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L6_IT cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">213.34 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L6_IT_CAR3 cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">526.52 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for L6b cell type"
+              >Pseudo-bulk atac track in macaque_m1 for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">505.86 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for LAMP5 cell type"
+              >Pseudo-bulk atac track in macaque_m1 for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">465.09 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for MGC cell type"
+              >Pseudo-bulk atac track in macaque_m1 for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.05 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for ODC cell type"
+              >Pseudo-bulk atac track in macaque_m1 for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">303.14 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for OPC cell type"
+              >Pseudo-bulk atac track in macaque_m1 for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">774.43 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for PVALB cell type"
+              >Pseudo-bulk atac track in macaque_m1 for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">321.63 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for SNCG cell type"
+              >Pseudo-bulk atac track in macaque_m1 for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">733.75 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for SST cell type"
+              >Pseudo-bulk atac track in macaque_m1 for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">468.32 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for VIP cell type"
+              >Pseudo-bulk atac track in macaque_m1 for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/macaque_m1_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">138.34 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in macaque_m1 for VLMC cell type"
+              >Pseudo-bulk atac track in macaque_m1 for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">712.16 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for ASC cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">272.66 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for Endo cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.37 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L2_3_IT cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.14 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L4_5_IT cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">679.59 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L5_6_NP cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">756.25 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L5_ET cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.15 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L5_IT cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1001.66 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L6_CT cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">996.26 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L6_IT cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">311.35 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L6_IT_CAR3 cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">636.27 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for L6b cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">610.94 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for LAMP5 cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">507.51 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for MGC cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1005.7 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for ODC cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">477.75 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for OPC cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.04 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for PVALB cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">573.99 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for SNCG cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">845.56 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for SST cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">644.84 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for VIP cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/marmoset_m1_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">335.45 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in marmoset_m1 for VLMC cell type"
+              >Pseudo-bulk atac track in marmoset_m1 for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">606.74 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for ASC cell type"
+              >Pseudo-bulk atac track in mouse_mop for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">44.55 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for Endo cell type"
+              >Pseudo-bulk atac track in mouse_mop for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.29 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L2_3_IT cell type"
+              >Pseudo-bulk atac track in mouse_mop for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.13 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L4_5_IT cell type"
+              >Pseudo-bulk atac track in mouse_mop for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">556.66 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L5_6_NP cell type"
+              >Pseudo-bulk atac track in mouse_mop for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">944.13 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L5_ET cell type"
+              >Pseudo-bulk atac track in mouse_mop for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.05 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L5_IT cell type"
+              >Pseudo-bulk atac track in mouse_mop for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">1.13 GB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L6_CT cell type"
+              >Pseudo-bulk atac track in mouse_mop for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">935.19 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L6_IT cell type"
+              >Pseudo-bulk atac track in mouse_mop for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">318.63 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L6_IT_CAR3 cell type"
+              >Pseudo-bulk atac track in mouse_mop for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">388.15 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for L6b cell type"
+              >Pseudo-bulk atac track in mouse_mop for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">498.61 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for LAMP5 cell type"
+              >Pseudo-bulk atac track in mouse_mop for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">421.57 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for MGC cell type"
+              >Pseudo-bulk atac track in mouse_mop for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">559.77 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for ODC cell type"
+              >Pseudo-bulk atac track in mouse_mop for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">238.03 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for OPC cell type"
+              >Pseudo-bulk atac track in mouse_mop for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">825.25 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for PVALB cell type"
+              >Pseudo-bulk atac track in mouse_mop for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">354.78 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for SNCG cell type"
+              >Pseudo-bulk atac track in mouse_mop for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">671.91 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for SST cell type"
+              >Pseudo-bulk atac track in mouse_mop for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">441.05 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for VIP cell type"
+              >Pseudo-bulk atac track in mouse_mop for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_atac_bw/mouse_mop_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">341.51 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk atac track in mouse_mop for VLMC cell type"
+              >Pseudo-bulk atac track in mouse_mop for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">70.12 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for ASC cell type"
+              >Pseudo-bulk rna track in human_m1 for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">12.82 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for Endo cell type"
+              >Pseudo-bulk rna track in human_m1 for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">137.88 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L2_3_IT cell type"
+              >Pseudo-bulk rna track in human_m1 for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">94.03 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L4_5_IT cell type"
+              >Pseudo-bulk rna track in human_m1 for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">44.15 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L5_6_NP cell type"
+              >Pseudo-bulk rna track in human_m1 for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">47.89 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L5_ET cell type"
+              >Pseudo-bulk rna track in human_m1 for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">83.91 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L5_IT cell type"
+              >Pseudo-bulk rna track in human_m1 for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">92.77 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L6_CT cell type"
+              >Pseudo-bulk rna track in human_m1 for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">93.01 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L6_IT cell type"
+              >Pseudo-bulk rna track in human_m1 for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">60.66 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L6_IT_CAR3 cell type"
+              >Pseudo-bulk rna track in human_m1 for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">70.44 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for L6b cell type"
+              >Pseudo-bulk rna track in human_m1 for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">79.47 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for LAMP5 cell type"
+              >Pseudo-bulk rna track in human_m1 for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">35.96 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for MGC cell type"
+              >Pseudo-bulk rna track in human_m1 for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">135.5 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for ODC cell type"
+              >Pseudo-bulk rna track in human_m1 for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">58.48 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for OPC cell type"
+              >Pseudo-bulk rna track in human_m1 for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">106.46 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for PVALB cell type"
+              >Pseudo-bulk rna track in human_m1 for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">64.77 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for SNCG cell type"
+              >Pseudo-bulk rna track in human_m1 for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">102.17 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for SST cell type"
+              >Pseudo-bulk rna track in human_m1 for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">101.67 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for VIP cell type"
+              >Pseudo-bulk rna track in human_m1 for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/human_m1_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">15.08 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in human_m1 for VLMC cell type"
+              >Pseudo-bulk rna track in human_m1 for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">52.29 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for ASC cell type"
+              >Pseudo-bulk rna track in macaque_m1 for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">14.5 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for Endo cell type"
+              >Pseudo-bulk rna track in macaque_m1 for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">186.06 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L2_3_IT cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">116.86 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L4_5_IT cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">58.69 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L5_6_NP cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">89.51 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L5_ET cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">132.98 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L5_IT cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">108.97 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L6_CT cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">122.64 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L6_IT cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">53.39 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L6_IT_CAR3 cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">91.28 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for L6b cell type"
+              >Pseudo-bulk rna track in macaque_m1 for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">75.72 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for LAMP5 cell type"
+              >Pseudo-bulk rna track in macaque_m1 for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">45.47 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for MGC cell type"
+              >Pseudo-bulk rna track in macaque_m1 for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">102.72 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for ODC cell type"
+              >Pseudo-bulk rna track in macaque_m1 for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">43.78 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for OPC cell type"
+              >Pseudo-bulk rna track in macaque_m1 for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">113.63 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for PVALB cell type"
+              >Pseudo-bulk rna track in macaque_m1 for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">53.57 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for SNCG cell type"
+              >Pseudo-bulk rna track in macaque_m1 for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">110.2 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for SST cell type"
+              >Pseudo-bulk rna track in macaque_m1 for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">70.97 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for VIP cell type"
+              >Pseudo-bulk rna track in macaque_m1 for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/macaque_m1_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">17.77 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in macaque_m1 for VLMC cell type"
+              >Pseudo-bulk rna track in macaque_m1 for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">68.7 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for ASC cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">23.55 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for Endo cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">153.84 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L2_3_IT cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">112.56 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L4_5_IT cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">69.73 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L5_6_NP cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">88.1 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L5_ET cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">118.06 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L5_IT cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">100.24 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L6_CT cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">101.5 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L6_IT cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">38.75 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L6_IT_CAR3 cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">68.73 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for L6b cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">61.76 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for LAMP5 cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">42.77 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for MGC cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">79.96 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for ODC cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">46.58 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for OPC cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">109.47 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for PVALB cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">60.58 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for SNCG cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">84.5 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for SST cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">61.26 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for VIP cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/marmoset_m1_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">32.29 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in marmoset_m1 for VLMC cell type"
+              >Pseudo-bulk rna track in marmoset_m1 for VLMC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ASC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ASC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ASC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ASC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ASC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">51.52 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for ASC cell type"
+              >Pseudo-bulk rna track in mouse_mop for ASC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_Endo">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_Endo">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_Endo/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_Endo</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_Endo">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">8.1 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for Endo cell type"
+              >Pseudo-bulk rna track in mouse_mop for Endo cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L2_3_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L2_3_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L2_3_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L2_3_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L2_3_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">141.85 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L2_3_IT cell type"
+              >Pseudo-bulk rna track in mouse_mop for L2_3_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L4_5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L4_5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L4_5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L4_5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L4_5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">110.97 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L4_5_IT cell type"
+              >Pseudo-bulk rna track in mouse_mop for L4_5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_6_NP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_6_NP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_6_NP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_6_NP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_6_NP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">52.74 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L5_6_NP cell type"
+              >Pseudo-bulk rna track in mouse_mop for L5_6_NP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_ET">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_ET">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_ET/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_ET</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_ET">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">95.58 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L5_ET cell type"
+              >Pseudo-bulk rna track in mouse_mop for L5_ET cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L5_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">107.68 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L5_IT cell type"
+              >Pseudo-bulk rna track in mouse_mop for L5_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_CT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_CT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_CT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_CT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_CT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">105.38 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L6_CT cell type"
+              >Pseudo-bulk rna track in mouse_mop for L6_CT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">90.35 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L6_IT cell type"
+              >Pseudo-bulk rna track in mouse_mop for L6_IT cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT_CAR3">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT_CAR3">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT_CAR3/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT_CAR3</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6_IT_CAR3">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">35.72 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L6_IT_CAR3 cell type"
+              >Pseudo-bulk rna track in mouse_mop for L6_IT_CAR3 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6b">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6b">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6b/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6b</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_L6b">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">44.89 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for L6b cell type"
+              >Pseudo-bulk rna track in mouse_mop for L6b cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_LAMP5">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_LAMP5">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_LAMP5/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_LAMP5</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_LAMP5">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">49.88 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for LAMP5 cell type"
+              >Pseudo-bulk rna track in mouse_mop for LAMP5 cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_MGC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_MGC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_MGC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_MGC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_MGC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">37.19 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for MGC cell type"
+              >Pseudo-bulk rna track in mouse_mop for MGC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ODC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ODC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ODC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ODC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_ODC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">44.04 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for ODC cell type"
+              >Pseudo-bulk rna track in mouse_mop for ODC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_OPC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_OPC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_OPC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_OPC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_OPC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">26.4 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for OPC cell type"
+              >Pseudo-bulk rna track in mouse_mop for OPC cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_PVALB">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_PVALB">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_PVALB/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_PVALB</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_PVALB">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">73.13 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for PVALB cell type"
+              >Pseudo-bulk rna track in mouse_mop for PVALB cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SNCG">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SNCG">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SNCG/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SNCG</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SNCG">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">37.61 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for SNCG cell type"
+              >Pseudo-bulk rna track in mouse_mop for SNCG cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SST">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SST">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SST/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SST</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_SST">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">63.71 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for SST cell type"
+              >Pseudo-bulk rna track in mouse_mop for SST cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VIP">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VIP">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VIP/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VIP</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VIP">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">40.98 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for VIP cell type"
+              >Pseudo-bulk rna track in mouse_mop for VIP cell type</td>
+              </tr>
+            <tr id="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VLMC">
+              <td
+                class="nowrap type-cell"
+                title="position_score"
+              >position_score</td>
+              <td class="id-cell" title="raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VLMC">
+                <div class="id-wrapper">
+                  <a class="nowrap" href='raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VLMC/index.html'>raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VLMC</a>
+                  <span class="material-symbols-outlined copy-icon raw_data/zemke2023Conserved/pseudo_bulk_rna_bw/mouse_mop_VLMC">content_copy</span>
+                </div>
+              </td>
+              <td class="nowrap version-cell">0</td>
+              <td class="nowrap size-cell">44.84 MB</td>
+              <td
+                class="nowrap"
+                title="Pseudo-bulk rna track in mouse_mop for VLMC cell type"
+              >Pseudo-bulk rna track in mouse_mop for VLMC cell type</td>
+              </tr>
           </tbody>
         </table>
+        </div>
         <p class="searching" style="display: none;">Searching</p>
      </div>
      <div class="pagination"></div>
      </div>
+     <script>
+       (function() {
+         var table = document.getElementById('resource-table');
+         if (!table) return;
+         var h = table.offsetHeight + 'px';
+         table.querySelectorAll('.col-resizer').forEach(function(r) { r.style.height = h; });
+       })();
+     </script>
  </body>
 </html>
