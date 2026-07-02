@@ -139,7 +139,7 @@ for species in SPECIES:
             url_md = url.replace("_", '\\_')
             local_dir = f"../pseudo_bulk_mc_bedgraph/{species}/{cell_type}/{measure}"
             local_file_name = f"{cell_type}.{measure}-both.bedgraph.gz"
-            score = f"zemke2023Conserved_{species}_{cell_type}_mc"
+            score = f"zemke2023Conserved_{species}_{cell_type}_{measure.lower()}_mc"
             local_file = local_dir + "/" + local_file_name
 
             # Download
@@ -160,10 +160,11 @@ for species in SPECIES:
 type: position_score
 
 table:
-  filename: {local_file}
+  filename: {local_file_name}
   format: tabix
 
   header_mode: none
+  zero_based: True
 
   chrom:
     index: 0
@@ -195,8 +196,8 @@ meta:
     assay: single cell methylation
     brain_region: M1
 '''
-            # with open(f"{local_dir}/genomic_resource.yaml", "w", encoding="utf-8") as RCF:
-            #     print(resource_config_str, file=RCF, end="")
+            with open(f"{local_dir}/genomic_resource.yaml", "w", encoding="utf-8") as RCF:
+                print(resource_config_str, file=RCF, end="")
 
 
 
