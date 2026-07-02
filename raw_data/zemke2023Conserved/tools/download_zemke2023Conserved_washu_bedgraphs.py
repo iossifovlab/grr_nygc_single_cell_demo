@@ -101,7 +101,7 @@ cell_types = {bggz[:-17].split(".")[0] for bggz in manual_bedgraph_gz_files}
 
 SPECIES = "Human Macaque Marmoset Mouse".split()
 URL_BASE = "https://epigenome.wustl.edu/renlab/mC"
-MEASURES = ["CGN", "CHD"]
+MEASURES = ["CGN", "CHN"]
 
 # ### Check that all species have the same cell type (or bedgraph files)
 # class GZLinkParser(HTMLParser):
@@ -133,28 +133,73 @@ LF = open("log_file", "a")
 ui = -1
 uit = len(SPECIES) * len(cell_types) * len(MEASURES) * 2
 for species in SPECIES:
-    for cell_type in cell_types:
+    for cell_type in sorted(cell_types):
         for measure in MEASURES:
             url = f"{URL_BASE}/{species}/{cell_type}.{measure}-both.bedgraph.gz"
             url_md = url.replace("_", '\\_')
-            local_dir = f"../pseudo_bulk_mc_badgraph/{species}_{cell_type}"
-            local_file_name = "{cell_type}.{measure}-both.bedgraph.gz"
+            local_dir = f"../pseudo_bulk_mc_bedgraph/{species}/{cell_type}/{measure}"
+            local_file_name = f"{cell_type}.{measure}-both.bedgraph.gz"
             score = f"zemke2023Conserved_{species}_{cell_type}_mc"
             local_file = local_dir + "/" + local_file_name
 
             # Download
             for suffix in ["", ".tbi"]:
                 ui += 1
-                if not os.path.isfile(local_file + "suffix"):
+                if not os.path.isfile(local_file + suffix):
                     os.makedirs(local_dir, exist_ok=True)
 
-                    print(f"Working on URL ({ui}/{uit}): {url+suffix}...")
+                    print(f"Working on URL ({ui}/{uit}): {url+suffix} to {local_file + suffix}...")
                     try:
                         urlretrieve(url+suffix, local_file+suffix)
                         print("DOWNLOAD OK: ", url+suffix)
                     except Exception as e:
                         print("DOWNLOAD FAILED: ", url+suffix)
                         print(f"DOWNLOAD FAILED: {url+suffix}+suffix\n{e}\n\n\n", file=LF)
-                        continue
+                        assert False
+            resource_config_str = f'''
+type: position_score
+
+table:
+  filename: {local_file}
+  format: tabix
+
+  header_mode: none
+
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+
+scores:
+  - id: {score}
+    index: 3
+    type: float
+
+
+meta:
+  summary: "Pseudo-bulk wc track in {species} M1 region for {cell_type} cell type"
+
+  description: |
+
+    [Zemke, et al, Conserved and divergent gene regulatory programs of the
+    mammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)
+
+    Downloaded from:
+
+    [{url_md}]({url})
+  labels:
+    species: {species}
+    cell_type: {cell_type}
+    assay: single cell methylation
+    brain_region: M1
+'''
+            # with open(f"{local_dir}/genomic_resource.yaml", "w", encoding="utf-8") as RCF:
+            #     print(resource_config_str, file=RCF, end="")
+
+
 
 LF.close()
+
+
