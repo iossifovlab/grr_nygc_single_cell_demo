@@ -1,6 +1,10 @@
 [core]
     analytics = false
     autostage = true
+    remote = gs
+
 [cache]
     type = "hardlink,symlink"
 
+['remote "gs"']
+    url = gs://nygc-demo-grr-dvc/grr-nygc-single-cell-demo
