@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "Pvalb-BC.CGN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "Pvalb-BC.CGN-both.bedgraph.gz": "e17f5b475cedc972b2600ecc74f3990b",
+        "Pvalb-BC.CGN-both.bedgraph.gz.tbi": "6bce8a43ff9bd18d990fb0a91896fe6f"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Macaque_Pvalb-BC_cgn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

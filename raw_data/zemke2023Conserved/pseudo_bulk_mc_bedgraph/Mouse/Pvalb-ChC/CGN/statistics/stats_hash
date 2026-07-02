@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "Pvalb-ChC.CGN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "Pvalb-ChC.CGN-both.bedgraph.gz": "f838b54c15affd4b84282f479bdbe648",
+        "Pvalb-ChC.CGN-both.bedgraph.gz.tbi": "086cf9e1e9d5fe12ed84c894bf939803"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Mouse_Pvalb-ChC_cgn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

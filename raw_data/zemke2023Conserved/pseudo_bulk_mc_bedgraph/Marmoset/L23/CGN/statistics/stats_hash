@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "L23.CGN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "L23.CGN-both.bedgraph.gz": "8d11cd339d1a59d9d6f55648318e2247",
+        "L23.CGN-both.bedgraph.gz.tbi": "4c85c7dd83fb596d4c87034b65f7237b"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Marmoset_L23_cgn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

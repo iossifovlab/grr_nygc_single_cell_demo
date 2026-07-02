@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "L5-IT.CHN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "L5-IT.CHN-both.bedgraph.gz": "83f94d9a669c10db78fd410e8bf8130d",
+        "L5-IT.CHN-both.bedgraph.gz.tbi": "ffd4c1271c3854e0e5d04c25bba93a22"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Marmoset_L5-IT_chn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

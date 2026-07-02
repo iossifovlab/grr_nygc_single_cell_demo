@@ -1,0 +1,39 @@
+
+type: position_score
+
+table:
+  filename: L5-ET.CHN-both.bedgraph.gz
+  format: tabix
+
+  header_mode: none
+  zero_based: True
+
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+
+scores:
+  - id: zemke2023Conserved_Human_L5-ET_chn_mc
+    index: 3
+    type: float
+
+
+meta:
+  summary: "Pseudo-bulk wc track in Human M1 region for L5-ET cell type"
+
+  description: |
+
+    [Zemke, et al, Conserved and divergent gene regulatory programs of the
+    mammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)
+
+    Downloaded from:
+
+    [https://epigenome.wustl.edu/renlab/mC/Human/L5-ET.CHN-both.bedgraph.gz](https://epigenome.wustl.edu/renlab/mC/Human/L5-ET.CHN-both.bedgraph.gz)
+  labels:
+    species: Human
+    cell_type: L5-ET
+    assay: single cell methylation
+    brain_region: M1

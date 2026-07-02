@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "OPC.CHN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "OPC.CHN-both.bedgraph.gz": "a4f5db59a86b994889b7460ce38e6744",
+        "OPC.CHN-both.bedgraph.gz.tbi": "eb981228df35de56bdabd927743dbb43"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Macaque_OPC_chn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

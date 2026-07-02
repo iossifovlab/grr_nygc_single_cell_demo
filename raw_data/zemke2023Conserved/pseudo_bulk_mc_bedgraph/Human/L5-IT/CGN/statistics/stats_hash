@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "L5-IT.CGN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "L5-IT.CGN-both.bedgraph.gz": "f1a5dab51a7f90a2cf9c2f5d43c852f8",
+        "L5-IT.CGN-both.bedgraph.gz.tbi": "9a92ce62931151d95413a1668e986f99"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Human_L5-IT_cgn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

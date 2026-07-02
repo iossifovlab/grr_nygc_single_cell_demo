@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "Lamp5.CHN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "Lamp5.CHN-both.bedgraph.gz": "8fc7426d723fd1eb8c781b0ece02c29d",
+        "Lamp5.CHN-both.bedgraph.gz.tbi": "79a85272b990077a2c091da195c88128"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Mouse_Lamp5_chn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

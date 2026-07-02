@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "Sst.CGN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "Sst.CGN-both.bedgraph.gz": "3c585cc9351345748d3a2e4986fc6d16",
+        "Sst.CGN-both.bedgraph.gz.tbi": "cd1f115000fc900e055cfada44863803"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Macaque_Sst_cgn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

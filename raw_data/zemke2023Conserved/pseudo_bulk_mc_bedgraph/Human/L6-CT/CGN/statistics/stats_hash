@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "L6-CT.CGN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "L6-CT.CGN-both.bedgraph.gz": "fb014a854a9f5b3a0c9d1601b7302df5",
+        "L6-CT.CGN-both.bedgraph.gz.tbi": "7cbeb775e2bfb8f7900b282b4e9363d5"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Human_L6-CT_cgn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}

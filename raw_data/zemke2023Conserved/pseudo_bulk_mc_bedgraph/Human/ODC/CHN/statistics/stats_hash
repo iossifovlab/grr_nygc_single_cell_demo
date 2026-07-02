@@ -1,0 +1,35 @@
+{
+  "config": {
+    "histograms": [],
+    "table": {
+      "config": {
+        "filename": "ODC.CHN-both.bedgraph.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "ODC.CHN-both.bedgraph.gz": "4054debe767c7e1b2bc033dd9a22f26f",
+        "ODC.CHN-both.bedgraph.gz.tbi": "e39093f6af67a6aa8b7add138611d08b"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "zemke2023Conserved_Human_ODC_chn_mc",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}
