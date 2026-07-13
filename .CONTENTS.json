@@ -1,64 +1,6 @@
 [
   {
     "config": {
-      "filename": "mini_genescore.csv",
-      "meta": {
-        "description": "my description",
-        "summary": "a gene score\n"
-      },
-      "scores": [
-        {
-          "desc": "level",
-          "histogram": {
-            "number_of_bins": 3,
-            "type": "number",
-            "view_range": {
-              "max": 4,
-              "min": 1
-            },
-            "x_log_scale": false,
-            "y_log_scale": false
-          },
-          "id": "my_genescore",
-          "large_values_desc": "large",
-          "small_values_desc": "small"
-        }
-      ],
-      "type": "gene_score"
-    },
-    "full_id": "mini_genescore",
-    "id": "mini_genescore",
-    "manifest": [
-      {
-        "md5": "b5f5a0e41bcba1701e8f37c10a0ce84b",
-        "name": "genomic_resource.yaml",
-        "size": 382
-      },
-      {
-        "md5": "65492a9015b3a3c529fffebe562567fd",
-        "name": "mini_genescore.csv",
-        "size": 108
-      },
-      {
-        "md5": "f3daca2060f371c5882fdc6ba8030712",
-        "name": "statistics/histogram_my_genescore.png",
-        "size": 13570
-      },
-      {
-        "md5": "47206281470254ea23b3ec469026376a",
-        "name": "statistics/histogram_my_genescore.yaml",
-        "size": 244
-      },
-      {
-        "md5": "47f53e2bf051e77342fcf2fa20d9dbcb",
-        "name": "statistics/stats_hash",
-        "size": 363
-      }
-    ],
-    "version": "0"
-  },
-  {
-    "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {

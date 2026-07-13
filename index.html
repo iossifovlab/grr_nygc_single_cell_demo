@@ -358,7 +358,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=01e954e4560cbe44d538c3dc9ecbbb64`, document.baseURI))
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=d4daaefafa3cac1b85d508a816043d4e`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -821,26 +821,6 @@
             </tr>
           </thead>
           <tbody>
-            <tr id="mini_genescore">
-              <td
-                class="nowrap type-cell"
-                title="gene_score"
-              >gene_score</td>
-              <td class="id-cell" title="mini_genescore">
-                <div class="id-wrapper">
-                  <a class="nowrap" href='mini_genescore/index.html'>mini_genescore</a>
-                  <span class="material-symbols-outlined copy-icon mini_genescore">content_copy</span>
-                </div>
-              </td>
-              <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">14.32 KB</td>
-              <td
-                class="nowrap"
-                title="a gene score
-"
-              >a gene score
-</td>
-              </tr>
             <tr id="summary/zemke2023Conserved/cell_expression/by_sample/M1_Dheni">
               <td
                 class="nowrap type-cell"
