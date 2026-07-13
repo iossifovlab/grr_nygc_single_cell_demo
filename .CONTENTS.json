@@ -1582,6 +1582,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/ASC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/ASC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "ASC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for ASC cell type"
       },
       "scores": [
@@ -1627,9 +1633,9 @@
         "size": 89
       },
       {
-        "md5": "df13213d84e710e8a127f1fa64f1af5a",
+        "md5": "8f1489eb4a91c070a74d387e97c2f995",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "2e96ee1b448caf8c4ba8e084e1352d3d",
@@ -1653,6 +1659,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/Endo\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/Endo_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "Endo",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for Endo cell type"
       },
       "scores": [
@@ -1698,9 +1710,9 @@
         "size": 90
       },
       {
-        "md5": "19f55c169a3e469419235016b74caeab",
+        "md5": "390ed57cf497b2a83f768e34bffb5ac9",
         "name": "genomic_resource.yaml",
-        "size": 862
+        "size": 949
       },
       {
         "md5": "46b270f9f7a3eb36ca4a2cff73277cd7",
@@ -1724,6 +1736,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L2\\_3\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L2_3_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L2_3_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L2_3_IT cell type"
       },
       "scores": [
@@ -1769,9 +1787,9 @@
         "size": 94
       },
       {
-        "md5": "cd6402e72d01003e21276ba195fbb109",
+        "md5": "0904a18e0bebe5c0b5741ea4ffb47a48",
         "name": "genomic_resource.yaml",
-        "size": 882
+        "size": 972
       },
       {
         "md5": "0f4ab8b5654498ce6c720075f3142c9e",
@@ -1795,6 +1813,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L4\\_5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L4_5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L4_5_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L4_5_IT cell type"
       },
       "scores": [
@@ -1840,9 +1864,9 @@
         "size": 94
       },
       {
-        "md5": "88c3188c9510e1ca3fecdcc4c8aa8611",
+        "md5": "3886a13b662258bd8cace52df88719e2",
         "name": "genomic_resource.yaml",
-        "size": 882
+        "size": 972
       },
       {
         "md5": "d4293e67f9bf3b87aa8b0600579e73d4",
@@ -1866,6 +1890,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L5\\_6\\_NP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L5_6_NP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_6_NP",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L5_6_NP cell type"
       },
       "scores": [
@@ -1911,9 +1941,9 @@
         "size": 93
       },
       {
-        "md5": "e0f2f6c77679e3c3fda56e94a667e2e6",
+        "md5": "ab0771cdc5fce2d61abb6aefced91fc1",
         "name": "genomic_resource.yaml",
-        "size": 882
+        "size": 972
       },
       {
         "md5": "d2f21387d7b6ed7e904728f252f775d8",
@@ -1937,6 +1967,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L5\\_ET\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L5_ET_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_ET",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L5_ET cell type"
       },
       "scores": [
@@ -1982,9 +2018,9 @@
         "size": 91
       },
       {
-        "md5": "0babf4f7e85e3b9b57ba456de5341590",
+        "md5": "0b5c4fa3270a9a0eb4f179fc8eb5a81b",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 957
       },
       {
         "md5": "b5e8d4cfdc7c4a6e502fdfe5d434d242",
@@ -2008,6 +2044,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L5_IT cell type"
       },
       "scores": [
@@ -2053,9 +2095,9 @@
         "size": 91
       },
       {
-        "md5": "d83cd81996a089ac70a9bdc8ffd3857b",
+        "md5": "e72f8790be052ae7f5fbd044883ca7d6",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 957
       },
       {
         "md5": "96e8be051fc9d24b9a8719d863a94a93",
@@ -2079,6 +2121,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L6\\_CT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L6_CT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_CT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L6_CT cell type"
       },
       "scores": [
@@ -2124,9 +2172,9 @@
         "size": 91
       },
       {
-        "md5": "dffef2e54dcf1269d908845474bff4a1",
+        "md5": "468398b2c990f6cb8897a5eb03896bdd",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 957
       },
       {
         "md5": "9f89fcc4814556fc9d4b76b8d252e40a",
@@ -2150,6 +2198,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L6\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L6_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L6_IT cell type"
       },
       "scores": [
@@ -2195,9 +2249,9 @@
         "size": 91
       },
       {
-        "md5": "ed1b49c9ecc76f84b0d26bd54318ae15",
+        "md5": "d40cba43cc32aa302572d3436a906bda",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 957
       },
       {
         "md5": "33ae8a69c4e063613b84bf1d0f28e78c",
@@ -2221,6 +2275,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L6\\_IT\\_CAR3\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L6_IT_CAR3_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_IT_CAR3",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -2266,9 +2326,9 @@
         "size": 96
       },
       {
-        "md5": "6e97c254c8ae2a65d2b87f102529eeb2",
+        "md5": "e81d493ad90a947ba845d6c4f71499f7",
         "name": "genomic_resource.yaml",
-        "size": 900
+        "size": 993
       },
       {
         "md5": "d722e2a9c4399f232c96728ece8ee63f",
@@ -2292,6 +2352,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/L6b\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/L6b_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6b",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for L6b cell type"
       },
       "scores": [
@@ -2337,9 +2403,9 @@
         "size": 89
       },
       {
-        "md5": "e423da720b5aa229394973dd3d15312c",
+        "md5": "a3de9dbdb214806215b81da256944ca2",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "72d5eb34aaed822d970fed748a65b8d7",
@@ -2363,6 +2429,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/LAMP5\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/LAMP5_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "LAMP5",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for LAMP5 cell type"
       },
       "scores": [
@@ -2408,9 +2480,9 @@
         "size": 91
       },
       {
-        "md5": "ea30912e381f8b1a64b4aacda7291143",
+        "md5": "e10de8e4a59f069dea2e3579171c9646",
         "name": "genomic_resource.yaml",
-        "size": 868
+        "size": 956
       },
       {
         "md5": "3a0d48f38f602721107bdf0b9f0ab5d8",
@@ -2434,6 +2506,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/MGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/MGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "MGC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for MGC cell type"
       },
       "scores": [
@@ -2479,9 +2557,9 @@
         "size": 89
       },
       {
-        "md5": "4ab2691ed2a0044fcbb5e0eb528ddef1",
+        "md5": "124bc215a73a117051906a00dd39cce8",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "22fa7b91f8ad52ce60cf1c10569fd582",
@@ -2505,6 +2583,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/OGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/OGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "ODC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for ODC cell type"
       },
       "scores": [
@@ -2550,9 +2634,9 @@
         "size": 90
       },
       {
-        "md5": "2010d2c9347083d2a69bc4402a22d127",
+        "md5": "ff05b902ed9729cedcd6413a9ff9e3a0",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "f81ff0a7ebc6d9b930fdbf985a09f76d",
@@ -2576,6 +2660,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/OPC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/OPC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "OPC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for OPC cell type"
       },
       "scores": [
@@ -2621,9 +2711,9 @@
         "size": 89
       },
       {
-        "md5": "6e5f3988b47eacce2262a6d6d4ef9153",
+        "md5": "b4bf622b8f2277223393b08b076739f9",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "2691b1ab15e80f6d3548a6614d945c98",
@@ -2647,6 +2737,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/PVALB\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/PVALB_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "PVALB",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for PVALB cell type"
       },
       "scores": [
@@ -2692,9 +2788,9 @@
         "size": 92
       },
       {
-        "md5": "95fe5f6bcf1cd4c8f9130a3e46ffe8a4",
+        "md5": "806f893fb4594b4eb5af77aaf78bf22a",
         "name": "genomic_resource.yaml",
-        "size": 868
+        "size": 956
       },
       {
         "md5": "262c1626412b5005d9a9ea867aa1cf47",
@@ -2718,6 +2814,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/SNCG\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/SNCG_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "SNCG",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for SNCG cell type"
       },
       "scores": [
@@ -2763,9 +2865,9 @@
         "size": 90
       },
       {
-        "md5": "8ef528173948803d7f1b41acac28faf9",
+        "md5": "3d476ff163e4059ac65f4957a539673c",
         "name": "genomic_resource.yaml",
-        "size": 862
+        "size": 949
       },
       {
         "md5": "da06f0336448d15ac6079a60fa584962",
@@ -2789,6 +2891,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/SST\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/SST_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "SST",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for SST cell type"
       },
       "scores": [
@@ -2834,9 +2942,9 @@
         "size": 89
       },
       {
-        "md5": "54af07bed0678b65dd3434f98dc76f8b",
+        "md5": "c1981071f524f8318dd969de2cab851d",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "42f5a1a50a7f31cd1c5b6db4dd2afea6",
@@ -2860,6 +2968,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/VIP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/VIP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "VIP",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for VIP cell type"
       },
       "scores": [
@@ -2905,9 +3019,9 @@
         "size": 89
       },
       {
-        "md5": "dc340cfd0c67394620034112e7235728",
+        "md5": "5e5d1b4d326b753aa14e72e35b9e8e3c",
         "name": "genomic_resource.yaml",
-        "size": 856
+        "size": 942
       },
       {
         "md5": "b23c2a1ac19476efe8c571b0b9ac6633",
@@ -2931,6 +3045,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_atac/VLMC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_atac/VLMC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "VLMC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk atac track in human_m1 for VLMC cell type"
       },
       "scores": [
@@ -2976,9 +3096,9 @@
         "size": 90
       },
       {
-        "md5": "9eaa0b5fba4830b98b74456427eece82",
+        "md5": "07c4322f6f6ee680832eae8553243060",
         "name": "genomic_resource.yaml",
-        "size": 862
+        "size": 949
       },
       {
         "md5": "6ed047de6f028595c55af81de037d4aa",
@@ -3002,6 +3122,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/ASC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/ASC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "ASC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for ASC cell type"
       },
       "scores": [
@@ -3047,9 +3173,9 @@
         "size": 89
       },
       {
-        "md5": "bbe3869197a743d918a6abfe43cf11ad",
+        "md5": "3730697aa9393f2f5c2d276ca126b8c3",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "bac55b6a426999de16a989d005f33e14",
@@ -3073,6 +3199,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/Endo\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/Endo_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "Endo",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for Endo cell type"
       },
       "scores": [
@@ -3118,9 +3250,9 @@
         "size": 90
       },
       {
-        "md5": "b193bf379e442f8177c729640fba1d7e",
+        "md5": "ff7371c161a9058f80e120ffc6234274",
         "name": "genomic_resource.yaml",
-        "size": 872
+        "size": 961
       },
       {
         "md5": "24027590e9ce9c60146e9648706b68fd",
@@ -3144,6 +3276,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L2\\_3\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L2_3_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L2_3_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L2_3_IT cell type"
       },
       "scores": [
@@ -3189,9 +3327,9 @@
         "size": 94
       },
       {
-        "md5": "456c81061a49484e838609536f77db83",
+        "md5": "f97fc87174c8c53b848215813480b6f3",
         "name": "genomic_resource.yaml",
-        "size": 892
+        "size": 984
       },
       {
         "md5": "55e0e4da91993eaaf6733fe158231791",
@@ -3215,6 +3353,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L4\\_5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L4_5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L4_5_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L4_5_IT cell type"
       },
       "scores": [
@@ -3260,9 +3404,9 @@
         "size": 93
       },
       {
-        "md5": "21cb891fa7445f93ce367568ccbc6a1c",
+        "md5": "81c63214ce397bfc80446ca172c82d7a",
         "name": "genomic_resource.yaml",
-        "size": 892
+        "size": 984
       },
       {
         "md5": "984b0a1a89e96aa9d1228c3573ec1bb0",
@@ -3286,6 +3430,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L5\\_6\\_NP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L5_6_NP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_6_NP",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L5_6_NP cell type"
       },
       "scores": [
@@ -3331,9 +3481,9 @@
         "size": 93
       },
       {
-        "md5": "62882b6c571c7e4e5557899269cae81f",
+        "md5": "2ffe524ef5b1fbc41beabe1f77f16e80",
         "name": "genomic_resource.yaml",
-        "size": 892
+        "size": 984
       },
       {
         "md5": "8f878eb8df3a5353682b8767d56825a6",
@@ -3357,6 +3507,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L5\\_ET\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L5_ET_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_ET",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L5_ET cell type"
       },
       "scores": [
@@ -3402,9 +3558,9 @@
         "size": 91
       },
       {
-        "md5": "441d2e266f18585621934495edb7bf81",
+        "md5": "85e79b4d3dd48d76a3fe7e02bbb4ce3e",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "68940cfd3f779626d5aafc29f988e585",
@@ -3428,6 +3584,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L5_IT cell type"
       },
       "scores": [
@@ -3473,9 +3635,9 @@
         "size": 91
       },
       {
-        "md5": "6a8a1c041af69c352c0ae3e7204fc36f",
+        "md5": "087076a4c5955339c1e89e336dba77c8",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "28406899f2214d9cb76e4fd01dc87c3e",
@@ -3499,6 +3661,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L6\\_CT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L6_CT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_CT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L6_CT cell type"
       },
       "scores": [
@@ -3544,9 +3712,9 @@
         "size": 91
       },
       {
-        "md5": "3fa6f374da5a6050a75e8e1eefce3c8a",
+        "md5": "7883c237bc330f0996da9bcfb5dc2f89",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "bff6c53b977cc9a1e5cefb290c519d32",
@@ -3570,6 +3738,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L6\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L6_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L6_IT cell type"
       },
       "scores": [
@@ -3615,9 +3789,9 @@
         "size": 91
       },
       {
-        "md5": "ef21c3c714f279ebb0f168540391482a",
+        "md5": "8384431fdbb96130b75237fa6dc5ae54",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "e7f878902956c631d9b798d52a050ad3",
@@ -3641,6 +3815,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L6\\_IT\\_CAR3\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L6_IT_CAR3_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_IT_CAR3",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -3686,9 +3866,9 @@
         "size": 96
       },
       {
-        "md5": "5671063dbee94d4c56e7e4d090a02381",
+        "md5": "fc8849b19e97f6c42f425c76c27e0ae8",
         "name": "genomic_resource.yaml",
-        "size": 910
+        "size": 1005
       },
       {
         "md5": "e314e9a9d591e9714f5612f9d76014f2",
@@ -3712,6 +3892,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/L6b\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/L6b_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6b",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for L6b cell type"
       },
       "scores": [
@@ -3757,9 +3943,9 @@
         "size": 89
       },
       {
-        "md5": "3ec092d03db124d7a00eb3a5f605ede9",
+        "md5": "746351425a6086e2d020f00866a66832",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "66e6e77009f25d9d19fbe5a40c284d8a",
@@ -3783,6 +3969,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/LAMP5\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/LAMP5_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "LAMP5",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for LAMP5 cell type"
       },
       "scores": [
@@ -3828,9 +4020,9 @@
         "size": 91
       },
       {
-        "md5": "92823711201ac20680e202eb456a19ad",
+        "md5": "3af12bb38a3a053965be9bbf4bb9b9a8",
         "name": "genomic_resource.yaml",
-        "size": 878
+        "size": 968
       },
       {
         "md5": "a7e2bbf57fa270bea5843bd45ccd7410",
@@ -3854,6 +4046,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/MGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/MGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "MGC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for MGC cell type"
       },
       "scores": [
@@ -3899,9 +4097,9 @@
         "size": 89
       },
       {
-        "md5": "018e9f4b38c4487d93025b97cab6d066",
+        "md5": "3fa16fc6988fa40e8ff1e481969dd822",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "8c6f80e9f613030d5fa38506c5535607",
@@ -3925,6 +4123,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/OGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/OGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "ODC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for ODC cell type"
       },
       "scores": [
@@ -3970,9 +4174,9 @@
         "size": 90
       },
       {
-        "md5": "9545a970c8fe8af59de55935259de97f",
+        "md5": "ca3d5e954ffd0d2c044ff0784c7bf4ea",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "663188ccfbf4c0d4b18988638ccd6b70",
@@ -3996,6 +4200,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/OPC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/OPC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "OPC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for OPC cell type"
       },
       "scores": [
@@ -4041,9 +4251,9 @@
         "size": 89
       },
       {
-        "md5": "8de0b78f0ef9a108a23df31578b44268",
+        "md5": "56555a21ba218d2601709a1a0f066267",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "0521806c1c5f55cffdb481ae1f6ce140",
@@ -4067,6 +4277,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/PVALB\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/PVALB_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "PVALB",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for PVALB cell type"
       },
       "scores": [
@@ -4112,9 +4328,9 @@
         "size": 91
       },
       {
-        "md5": "e55f693bacc962b37255039b75c83d4a",
+        "md5": "ee2e11f8df007cd7340242b9218dd317",
         "name": "genomic_resource.yaml",
-        "size": 878
+        "size": 968
       },
       {
         "md5": "49b9fb596ff8a86b751c4c7db7b9092a",
@@ -4138,6 +4354,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/SNCG\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/SNCG_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "SNCG",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for SNCG cell type"
       },
       "scores": [
@@ -4183,9 +4405,9 @@
         "size": 90
       },
       {
-        "md5": "dd4f93834b0383d0f87db3f666201b0e",
+        "md5": "a34b1ce5721c13c73b47cb0b092d8375",
         "name": "genomic_resource.yaml",
-        "size": 872
+        "size": 961
       },
       {
         "md5": "0d102b26c58033cd770b6dab457d5b55",
@@ -4209,6 +4431,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/SST\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/SST_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "SST",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for SST cell type"
       },
       "scores": [
@@ -4254,9 +4482,9 @@
         "size": 89
       },
       {
-        "md5": "5e7f331d3862e82874d1d799b3c5e5dc",
+        "md5": "f6d148f64829475e0fdee36accf6aba6",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "63c234987e254575143610af0095c2f4",
@@ -4280,6 +4508,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/VIP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/VIP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "VIP",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for VIP cell type"
       },
       "scores": [
@@ -4325,9 +4559,9 @@
         "size": 89
       },
       {
-        "md5": "f6f67fb527102cd4de608799b311a5d1",
+        "md5": "8e14f2b1111206b424712059371d9814",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "e5b0ab82b6f8b91c27fc453bb1b34ce3",
@@ -4351,6 +4585,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_atac/VLMC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_atac/VLMC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "VLMC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk atac track in macaque_m1 for VLMC cell type"
       },
       "scores": [
@@ -4396,9 +4636,9 @@
         "size": 90
       },
       {
-        "md5": "e8adfd9c1e268af20f8dc09fea16bc79",
+        "md5": "c672cddd339c46dbd8a2b70cd350bc58",
         "name": "genomic_resource.yaml",
-        "size": 872
+        "size": 961
       },
       {
         "md5": "4dfc0d169e31c79385de465c4cc76b5a",
@@ -4422,6 +4662,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/ASC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/ASC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "ASC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for ASC cell type"
       },
       "scores": [
@@ -4467,9 +4713,9 @@
         "size": 89
       },
       {
-        "md5": "06b0faaf091d5c63288bf71b005283f4",
+        "md5": "3bc883368252bf65a7616e1b348c6604",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "8c5aca80ec27953799d3b43edf1e134a",
@@ -4493,6 +4739,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/Endo\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/Endo_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "Endo",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for Endo cell type"
       },
       "scores": [
@@ -4538,9 +4790,9 @@
         "size": 90
       },
       {
-        "md5": "8fe7599db5badadde4cc3c46265af8ec",
+        "md5": "d445e82a5a2742ef0f13504869f1246e",
         "name": "genomic_resource.yaml",
-        "size": 877
+        "size": 967
       },
       {
         "md5": "e7061bfb06ce5d3f7cfdc1222920abfb",
@@ -4564,6 +4816,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L2\\_3\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L2_3_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L2_3_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L2_3_IT cell type"
       },
       "scores": [
@@ -4609,9 +4867,9 @@
         "size": 94
       },
       {
-        "md5": "8873c39d92cca02adf1541eab322894b",
+        "md5": "a0e8ea16f2b2b48b7b00d940062e543b",
         "name": "genomic_resource.yaml",
-        "size": 897
+        "size": 990
       },
       {
         "md5": "eaf639217174b4a949b715b21d41ca1f",
@@ -4635,6 +4893,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L4\\_5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L4_5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L4_5_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L4_5_IT cell type"
       },
       "scores": [
@@ -4680,9 +4944,9 @@
         "size": 94
       },
       {
-        "md5": "60739279056359850894e317a397a149",
+        "md5": "859af2af8538fd85ac2d0cf7f160a386",
         "name": "genomic_resource.yaml",
-        "size": 897
+        "size": 990
       },
       {
         "md5": "d5e9567eaf829acd489152eef05fd6e5",
@@ -4706,6 +4970,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L5\\_6\\_NP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L5_6_NP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_6_NP",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L5_6_NP cell type"
       },
       "scores": [
@@ -4751,9 +5021,9 @@
         "size": 93
       },
       {
-        "md5": "3b1edb9106e3c1e205287d69aed7fad0",
+        "md5": "03d7822e5145dc1410e21c86c049f605",
         "name": "genomic_resource.yaml",
-        "size": 897
+        "size": 990
       },
       {
         "md5": "6cdf3982fa1df48001a0b72a8e88bc9c",
@@ -4777,6 +5047,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L5\\_ET\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L5_ET_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_ET",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L5_ET cell type"
       },
       "scores": [
@@ -4822,9 +5098,9 @@
         "size": 91
       },
       {
-        "md5": "487e782a8834776287b60cc46ef01e1b",
+        "md5": "ff5f61fa6ccefe3cbba243d35fcc23d7",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "865aefbe2ba491c23d03c735e27ca85f",
@@ -4848,6 +5124,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L5_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L5_IT cell type"
       },
       "scores": [
@@ -4893,9 +5175,9 @@
         "size": 92
       },
       {
-        "md5": "3c9162290ee7eb276261b1aaf869d364",
+        "md5": "dd9708e7964eaebe95b2f43eebb32d47",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "a8075b89b9c2ce5a3415005faf1e7f57",
@@ -4919,6 +5201,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L6\\_CT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L6_CT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_CT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L6_CT cell type"
       },
       "scores": [
@@ -4964,9 +5252,9 @@
         "size": 92
       },
       {
-        "md5": "ab5ed9edc3af5d4c93875b491b3c59eb",
+        "md5": "f9e6047242aa405d2ed4d292fd4e90b6",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "77a668c86f0b3339fea3e42c136c2352",
@@ -4990,6 +5278,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L6\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L6_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L6_IT cell type"
       },
       "scores": [
@@ -5035,9 +5329,9 @@
         "size": 92
       },
       {
-        "md5": "bd8014520576cc9aec5c99075ac82218",
+        "md5": "2294f2c6d22f30b0b0500e7643c7f043",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "c44b3f57a7c5d20073bdad51ee31fedf",
@@ -5061,6 +5355,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L6\\_IT\\_CAR3\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L6_IT_CAR3_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6_IT_CAR3",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -5106,9 +5406,9 @@
         "size": 96
       },
       {
-        "md5": "d3547bb07cf71d594c84868cc9a6eaeb",
+        "md5": "b1599d7afee31417ee363b4c3b7f85ac",
         "name": "genomic_resource.yaml",
-        "size": 915
+        "size": 1011
       },
       {
         "md5": "ae88fc5b1566e86e0fd8648d278a8d30",
@@ -5132,6 +5432,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/L6b\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/L6b_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "L6b",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for L6b cell type"
       },
       "scores": [
@@ -5177,9 +5483,9 @@
         "size": 89
       },
       {
-        "md5": "3cde3929614dd6c43adff195c2213524",
+        "md5": "6c8f27bbabd21139f3458d865cbd51e3",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "42a48dbe81ddb39d5e1449da3cea3f00",
@@ -5203,6 +5509,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/LAMP5\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/LAMP5_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "LAMP5",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for LAMP5 cell type"
       },
       "scores": [
@@ -5248,9 +5560,9 @@
         "size": 91
       },
       {
-        "md5": "0d7595c9e1ed6173582d09d5c5a76340",
+        "md5": "2537a85a7d31ec50476ceb785890da19",
         "name": "genomic_resource.yaml",
-        "size": 883
+        "size": 974
       },
       {
         "md5": "011cbbd7d86a6dd633bc739c7dfc4d57",
@@ -5274,6 +5586,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/MGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/MGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "MGC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for MGC cell type"
       },
       "scores": [
@@ -5319,9 +5637,9 @@
         "size": 89
       },
       {
-        "md5": "1fc251a5048fc5745fb2bdbd381edb03",
+        "md5": "410f1191567a97585d5c76bb84438c66",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "888a8e75765f54693c82da1ebd257008",
@@ -5345,6 +5663,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/OGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/OGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "ODC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for ODC cell type"
       },
       "scores": [
@@ -5390,9 +5714,9 @@
         "size": 90
       },
       {
-        "md5": "f577ca861501827333b2933b317bde2e",
+        "md5": "21428e97d6dc3e9e91ab5424ef081911",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "9635fc1e2df75a9b1d0158f882c11bdc",
@@ -5416,6 +5740,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/OPC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/OPC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "OPC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for OPC cell type"
       },
       "scores": [
@@ -5461,9 +5791,9 @@
         "size": 89
       },
       {
-        "md5": "9982f12df835adc62444d7c5b9348841",
+        "md5": "96aafc53e7b51b3fe2a621f0b68f12cd",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "b44e9f5f93aafa88c959b9398e09a74e",
@@ -5487,6 +5817,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/PVALB\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/PVALB_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "PVALB",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for PVALB cell type"
       },
       "scores": [
@@ -5532,9 +5868,9 @@
         "size": 92
       },
       {
-        "md5": "49b60715af1d885be23476720260a891",
+        "md5": "ba821caa1b64a0c8d1cb6f85ae5d9048",
         "name": "genomic_resource.yaml",
-        "size": 883
+        "size": 974
       },
       {
         "md5": "c441f7456aa505f26b6082d30f95deea",
@@ -5558,6 +5894,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/SNCG\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/SNCG_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "SNCG",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for SNCG cell type"
       },
       "scores": [
@@ -5603,9 +5945,9 @@
         "size": 90
       },
       {
-        "md5": "4f309e3dd227351b57fce2a27947aef3",
+        "md5": "6ae3758607a518b4f3a26be9c2cc9e67",
         "name": "genomic_resource.yaml",
-        "size": 877
+        "size": 967
       },
       {
         "md5": "5791f494425a9c15ffaae36b87b1c139",
@@ -5629,6 +5971,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/SST\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/SST_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "SST",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for SST cell type"
       },
       "scores": [
@@ -5674,9 +6022,9 @@
         "size": 89
       },
       {
-        "md5": "7583560be08f9f3ba2bbadb576bf739e",
+        "md5": "a0f5d81271ea769ff9c534e4b2c2ca85",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "15b5cbdd00801a7372c118ffd7c65e63",
@@ -5700,6 +6048,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/VIP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/VIP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "VIP",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for VIP cell type"
       },
       "scores": [
@@ -5745,9 +6099,9 @@
         "size": 89
       },
       {
-        "md5": "3d5bcb51095ffc3baf1bc70c1cdfd975",
+        "md5": "318cbe0eb377833bd118658938e6da22",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "1926b890e64ac9cd6df99e272daaf08a",
@@ -5771,6 +6125,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_atac/VLMC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_atac/VLMC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "m1",
+          "cell_type": "VLMC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk atac track in marmoset_m1 for VLMC cell type"
       },
       "scores": [
@@ -5816,9 +6176,9 @@
         "size": 90
       },
       {
-        "md5": "e810f11ddbdb06d0a9582934d3ac5324",
+        "md5": "f02763ca91aac9ae7f3f01dcdbac0e11",
         "name": "genomic_resource.yaml",
-        "size": 877
+        "size": 967
       },
       {
         "md5": "d8c6ccbd96da975c53456683b7795296",
@@ -5842,6 +6202,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/ASC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/ASC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "ASC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for ASC cell type"
       },
       "scores": [
@@ -5887,9 +6253,9 @@
         "size": 89
       },
       {
-        "md5": "13fb22fe89446f0562efc94c3fe9117b",
+        "md5": "26fb8f402d89d13fcee572d6e1362acf",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "1ffa8f99649ffcdfd3e53b91ae6da174",
@@ -5913,6 +6279,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/Endo\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/Endo_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "Endo",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for Endo cell type"
       },
       "scores": [
@@ -5958,9 +6330,9 @@
         "size": 89
       },
       {
-        "md5": "20e226608755700f577cb63d4acf173c",
+        "md5": "6c0d1df5f9dc1ef92cc160b80260282c",
         "name": "genomic_resource.yaml",
-        "size": 867
+        "size": 955
       },
       {
         "md5": "b66dce8f2b4d06b0aea746835c973a02",
@@ -5984,6 +6356,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L2\\_3\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L2_3_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L2_3_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L2_3_IT cell type"
       },
       "scores": [
@@ -6029,9 +6407,9 @@
         "size": 94
       },
       {
-        "md5": "6aef3b5c7082519c86dca5e633a4bce1",
+        "md5": "5b9817186866570853d472dccc144a7f",
         "name": "genomic_resource.yaml",
-        "size": 887
+        "size": 978
       },
       {
         "md5": "e2109c8a6b55d26aa98789da97af6450",
@@ -6055,6 +6433,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L4\\_5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L4_5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L4_5_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L4_5_IT cell type"
       },
       "scores": [
@@ -6100,9 +6484,9 @@
         "size": 94
       },
       {
-        "md5": "5527915140bdeb29331289e5a10a182d",
+        "md5": "2fad1a21c0f3855160ddb8e564b9b1b2",
         "name": "genomic_resource.yaml",
-        "size": 887
+        "size": 978
       },
       {
         "md5": "8403e93e34fe05a22ad3fcf936c37aa8",
@@ -6126,6 +6510,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L5\\_6\\_NP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L5_6_NP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L5_6_NP",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L5_6_NP cell type"
       },
       "scores": [
@@ -6171,9 +6561,9 @@
         "size": 93
       },
       {
-        "md5": "6567998b2bc4e38a9870bfd372abb58c",
+        "md5": "78cc6a43e8a52f4eb7619e9d792615c9",
         "name": "genomic_resource.yaml",
-        "size": 887
+        "size": 978
       },
       {
         "md5": "b477a5dee3d06e5abfba5b280cd71119",
@@ -6197,6 +6587,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L5\\_ET\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L5_ET_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L5_ET",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L5_ET cell type"
       },
       "scores": [
@@ -6242,9 +6638,9 @@
         "size": 91
       },
       {
-        "md5": "7bcfc153990431173344b0f4b2c397ba",
+        "md5": "547f0386f45f39dc9453ab1b5a6309b5",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "2467fac753a372f84f7d121b6d83ee22",
@@ -6268,6 +6664,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L5\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L5_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L5_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L5_IT cell type"
       },
       "scores": [
@@ -6313,9 +6715,9 @@
         "size": 92
       },
       {
-        "md5": "ceab0d044acb3176cc69495d76c08872",
+        "md5": "ec371daf74a2e9c51a3692db809d916d",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "984c8e89fd188216bb99afac9622106a",
@@ -6339,6 +6741,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L6\\_CT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L6_CT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L6_CT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L6_CT cell type"
       },
       "scores": [
@@ -6384,9 +6792,9 @@
         "size": 92
       },
       {
-        "md5": "47e26f9858c24bda53f855d264dbc247",
+        "md5": "347aafc34c41f75b5ff506a86c31fdc7",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "1b49c04b047378315326b78fdf3a6fc4",
@@ -6410,6 +6818,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L6\\_IT\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L6_IT_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L6_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L6_IT cell type"
       },
       "scores": [
@@ -6455,9 +6869,9 @@
         "size": 91
       },
       {
-        "md5": "5f13249a88def0f2ccd15aa02f655d8f",
+        "md5": "809d31f2d9da3df33d062447b55ff860",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "39b19f88c62f9557edcf7b9a25504a11",
@@ -6481,6 +6895,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L6\\_IT\\_CAR3\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L6_IT_CAR3_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L6_IT_CAR3",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -6526,9 +6946,9 @@
         "size": 96
       },
       {
-        "md5": "1551f27a7224647cbea7be09954d8cce",
+        "md5": "54aeb0d45c44171808850f11cf8a1c5c",
         "name": "genomic_resource.yaml",
-        "size": 905
+        "size": 999
       },
       {
         "md5": "9679535d308125247a6bedda39e7d02c",
@@ -6552,6 +6972,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/L6b\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/L6b_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "L6b",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for L6b cell type"
       },
       "scores": [
@@ -6597,9 +7023,9 @@
         "size": 89
       },
       {
-        "md5": "b2d3212e3c754057c0e027030a5e3217",
+        "md5": "df2ac717d7811abd8ad0c4822d81d1db",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "26fbdd1479dd62c76c42670e87e182ba",
@@ -6623,6 +7049,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/LAMP5\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/LAMP5_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "LAMP5",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for LAMP5 cell type"
       },
       "scores": [
@@ -6668,9 +7100,9 @@
         "size": 91
       },
       {
-        "md5": "9c2d7f5630c3745e0631ea3ef7a9fbc4",
+        "md5": "8933ddc6017aef49e46206d727464a37",
         "name": "genomic_resource.yaml",
-        "size": 873
+        "size": 962
       },
       {
         "md5": "461d496f4887c73afa6d72aa785d90ce",
@@ -6694,6 +7126,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/MGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/MGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "MGC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for MGC cell type"
       },
       "scores": [
@@ -6739,9 +7177,9 @@
         "size": 89
       },
       {
-        "md5": "93c5a696a126ac64aef743df9bf619a1",
+        "md5": "9e55fc3c18dea1963e064e9918627747",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "9b0da626eb04ddee2b67a5557cb7c499",
@@ -6765,6 +7203,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/OGC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/OGC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "ODC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for ODC cell type"
       },
       "scores": [
@@ -6810,9 +7254,9 @@
         "size": 89
       },
       {
-        "md5": "3419c41f2efcf9ac1cecc9bbd66e00c5",
+        "md5": "a655bf89c1d00f1a09a3e13644f80015",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "3130a89ff504fe1ffca8fc636aa8ede5",
@@ -6836,6 +7280,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/OPC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/OPC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "OPC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for OPC cell type"
       },
       "scores": [
@@ -6881,9 +7331,9 @@
         "size": 89
       },
       {
-        "md5": "21eb630ec13c012f1cb2d8a268c234d4",
+        "md5": "5c2147c735da58909e688493bc0c10c6",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "ed7d878d2d9c5123049815002dddd150",
@@ -6907,6 +7357,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/PVALB\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/PVALB_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "PVALB",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for PVALB cell type"
       },
       "scores": [
@@ -6952,9 +7408,9 @@
         "size": 91
       },
       {
-        "md5": "f4e0227a3fb60d9cb0cf1a8a2a878574",
+        "md5": "0e0b163d7413f361ebdeec314cb92650",
         "name": "genomic_resource.yaml",
-        "size": 873
+        "size": 962
       },
       {
         "md5": "ad5b0c2de560795a1ff22d776cae73e9",
@@ -6978,6 +7434,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/SNCG\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/SNCG_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "SNCG",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for SNCG cell type"
       },
       "scores": [
@@ -7023,9 +7485,9 @@
         "size": 90
       },
       {
-        "md5": "e894c63fa7afc52e194a120d2e5cefd9",
+        "md5": "e49b0eb3e61e70c69e892c05b9cea623",
         "name": "genomic_resource.yaml",
-        "size": 867
+        "size": 955
       },
       {
         "md5": "69cd73b8ee1799ac0aebbff16048d194",
@@ -7049,6 +7511,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/SST\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/SST_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "SST",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for SST cell type"
       },
       "scores": [
@@ -7094,9 +7562,9 @@
         "size": 89
       },
       {
-        "md5": "94e6328474dd70f873ba67d3eaae3af8",
+        "md5": "c6eb2966ecdaff8ef1d4361d76f3eed0",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "65e4a47f1842c4aa3960fdab1e081ae4",
@@ -7120,6 +7588,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/VIP\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/VIP_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "VIP",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for VIP cell type"
       },
       "scores": [
@@ -7165,9 +7639,9 @@
         "size": 89
       },
       {
-        "md5": "c81bb24927d44d58d1c7fc4e27a6849c",
+        "md5": "d6e9a7560fac9e3498f1c1137e28f6b1",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "67641c229b669bce58122e19a05df520",
@@ -7201,6 +7675,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_atac/VLMC\\_ATAC\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_atac/VLMC_ATAC_RPKM.bw)\n",
+        "labels": {
+          "assay": "atac",
+          "brain_region": "mop",
+          "cell_type": "VLMC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk atac track in mouse_mop for VLMC cell type"
       },
       "scores": [
@@ -7246,9 +7726,9 @@
         "size": 90
       },
       {
-        "md5": "0f9520d4c9b9e5499708f480d977be2a",
+        "md5": "2e2330425c402c487d6108134cb2a63b",
         "name": "genomic_resource.yaml",
-        "size": 867
+        "size": 955
       },
       {
         "md5": "c89cc6be6095e64ef225bd1d18193e42",
@@ -7286,6 +7766,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Astro",
     "manifest": [
       {
+        "md5": "9b3c6d168c8d65b7f11ab1104b199873",
+        "name": "Astro.hic",
+        "size": 3028435728
+      },
+      {
         "md5": "293e54bf3f11cca383e60bdc75794692",
         "name": "Astro.hic.dvc",
         "size": 95
@@ -7320,6 +7805,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/CLA",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/CLA",
     "manifest": [
+      {
+        "md5": "f0f2e6143c1a78bc4265c5f334a3e6c5",
+        "name": "CLA.hic",
+        "size": 329742384
+      },
       {
         "md5": "64c6288d684896d07330e5e1961f73f1",
         "name": "CLA.hic.dvc",
@@ -7356,6 +7846,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L23",
     "manifest": [
       {
+        "md5": "eb0c053ad1482c6e35bc11bbf1cedca5",
+        "name": "L23.hic",
+        "size": 4341109660
+      },
+      {
         "md5": "a1a66204a96f8695df86b1d92c04797c",
         "name": "L23.hic.dvc",
         "size": 93
@@ -7390,6 +7885,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L4",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L4",
     "manifest": [
+      {
+        "md5": "c38e775c38230684cf0261be51ca22b7",
+        "name": "L4.hic",
+        "size": 2279890409
+      },
       {
         "md5": "1413505e4488f97c87fc9cfb57cbdf1a",
         "name": "L4.hic.dvc",
@@ -7426,6 +7926,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L5-ET",
     "manifest": [
       {
+        "md5": "48d8a358e529b9c72d7f7e310d529586",
+        "name": "L5-ET.hic",
+        "size": 313692410
+      },
+      {
         "md5": "6a2d17841278c690461345e9bcd2be4e",
         "name": "L5-ET.hic.dvc",
         "size": 94
@@ -7460,6 +7965,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L5-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L5-IT",
     "manifest": [
+      {
+        "md5": "650ca57bfd019d14afa12260892ab1f5",
+        "name": "L5-IT.hic",
+        "size": 1560610529
+      },
       {
         "md5": "1315533b34102c0d8d20ef206a459f2e",
         "name": "L5-IT.hic.dvc",
@@ -7496,6 +8006,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L6-CT",
     "manifest": [
       {
+        "md5": "2c4e56308017d10460c68ec7e4f1eca6",
+        "name": "L6-CT.hic",
+        "size": 967466389
+      },
+      {
         "md5": "170a00f6acf3ab10b65ef2b81ec0c5ef",
         "name": "L6-CT.hic.dvc",
         "size": 94
@@ -7530,6 +8045,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L6-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L6-IT",
     "manifest": [
+      {
+        "md5": "0ba147e19c0a5aa94a080c5596750c4f",
+        "name": "L6-IT.hic",
+        "size": 1791951263
+      },
       {
         "md5": "8b79004b25dd3d94cd0485d0504c7b22",
         "name": "L6-IT.hic.dvc",
@@ -7566,6 +8086,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/L6b",
     "manifest": [
       {
+        "md5": "f29748803909b39ac4a2ebf4b5616d36",
+        "name": "L6b.hic",
+        "size": 777399070
+      },
+      {
         "md5": "7c77c545518a46f72c13d60148a16324",
         "name": "L6b.hic.dvc",
         "size": 92
@@ -7600,6 +8125,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Lamp5",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Lamp5",
     "manifest": [
+      {
+        "md5": "69a23824f607c9916dcb4170fa592274",
+        "name": "Lamp5.hic",
+        "size": 1492093456
+      },
       {
         "md5": "a53c11ce11acc9659e251edf37048013",
         "name": "Lamp5.hic.dvc",
@@ -7636,6 +8166,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/MG",
     "manifest": [
       {
+        "md5": "ad89ee45a5ddb1eaa1f5c8a8e925dd33",
+        "name": "MG.hic",
+        "size": 1758025468
+      },
+      {
         "md5": "6a8f8b04a0d2bd5075a90f0056684a8e",
         "name": "MG.hic.dvc",
         "size": 92
@@ -7670,6 +8205,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/NP",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/NP",
     "manifest": [
+      {
+        "md5": "f16fc17b4ff137cb165d433362f54eaf",
+        "name": "NP.hic",
+        "size": 640567623
+      },
       {
         "md5": "ba5be6343dd034b83e458c478f056c4b",
         "name": "NP.hic.dvc",
@@ -7706,6 +8246,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/ODC",
     "manifest": [
       {
+        "md5": "6baeb4d5035f79dfff30d2cbb18f1494",
+        "name": "ODC.hic",
+        "size": 6194870766
+      },
+      {
         "md5": "3a5111cd54a559fe8120a0e8b73733bc",
         "name": "ODC.hic.dvc",
         "size": 93
@@ -7740,6 +8285,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/OPC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/OPC",
     "manifest": [
+      {
+        "md5": "dec0d5685c13bd2da700ac4e87b6d93f",
+        "name": "OPC.hic",
+        "size": 1234144867
+      },
       {
         "md5": "0cc1b7151073afe08348ffc728a3de00",
         "name": "OPC.hic.dvc",
@@ -7776,6 +8326,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Pvalb-BC",
     "manifest": [
       {
+        "md5": "ef2769b3bd74a79c7635e0fff94468f9",
+        "name": "Pvalb-BC.hic",
+        "size": 2041513882
+      },
+      {
         "md5": "c37df47e8dfae86d2633e74938dcd55f",
         "name": "Pvalb-BC.hic.dvc",
         "size": 98
@@ -7810,6 +8365,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Pvalb-ChC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Pvalb-ChC",
     "manifest": [
+      {
+        "md5": "3fb0cf8f84c0878bd025b5e446226e64",
+        "name": "Pvalb-ChC.hic",
+        "size": 542367329
+      },
       {
         "md5": "9805cbfc38f0516c2d98f96970f9a474",
         "name": "Pvalb-ChC.hic.dvc",
@@ -7846,6 +8406,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Sncg",
     "manifest": [
       {
+        "md5": "ff4fc394cb02a3d4ea4770a45a8eb576",
+        "name": "Sncg.hic",
+        "size": 830573448
+      },
+      {
         "md5": "d5ccf0a7f439a7378dc37a52aa738818",
         "name": "Sncg.hic.dvc",
         "size": 93
@@ -7880,6 +8445,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Sst",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Sst",
     "manifest": [
+      {
+        "md5": "546eab46768b8ed3720978e9c54bcbcd",
+        "name": "Sst.hic",
+        "size": 2183646464
+      },
       {
         "md5": "6900bad2c9a90217a63e26adfc71f9a9",
         "name": "Sst.hic.dvc",
@@ -7916,6 +8486,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Vip",
     "manifest": [
       {
+        "md5": "d3fb6a228b679a58090b83b707bbbe90",
+        "name": "Vip.hic",
+        "size": 2032628394
+      },
+      {
         "md5": "3c6f6c0a5b08dcc35aea4778230a277f",
         "name": "Vip.hic.dvc",
         "size": 93
@@ -7950,6 +8525,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Vsc",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Human/Vsc",
     "manifest": [
+      {
+        "md5": "77544293c287967a72bfe685d418bc72",
+        "name": "Vsc.hic",
+        "size": 1260383943
+      },
       {
         "md5": "57f88dd7fe3895aecab281246cbacfea",
         "name": "Vsc.hic.dvc",
@@ -7986,6 +8566,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Astro",
     "manifest": [
       {
+        "md5": "f030c6135a045fee7ff50e7197b4b47e",
+        "name": "Astro.hic",
+        "size": 902220126
+      },
+      {
         "md5": "ac8bea139cb58a70acee205aaf3b7913",
         "name": "Astro.hic.dvc",
         "size": 94
@@ -8020,6 +8605,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/CLA",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/CLA",
     "manifest": [
+      {
+        "md5": "650f67650db9d414b9d284ca4d4464f4",
+        "name": "CLA.hic",
+        "size": 257649091
+      },
       {
         "md5": "e4cee01b285c1ef8b0226a0af32b7017",
         "name": "CLA.hic.dvc",
@@ -8056,6 +8646,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L23",
     "manifest": [
       {
+        "md5": "a888ba9714caef63ea13395a0ad9ace3",
+        "name": "L23.hic",
+        "size": 2246513122
+      },
+      {
         "md5": "04c92df9aa5a6b0b532d738dc5073447",
         "name": "L23.hic.dvc",
         "size": 93
@@ -8090,6 +8685,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L4",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L4",
     "manifest": [
+      {
+        "md5": "02322933b4c3e243894723ef1e7416da",
+        "name": "L4.hic",
+        "size": 1626263508
+      },
       {
         "md5": "80673dcd0aef58e362ed1eebc25aaca7",
         "name": "L4.hic.dvc",
@@ -8126,6 +8726,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L5-ET",
     "manifest": [
       {
+        "md5": "a7c0a7eb0871a10b27f62c1c661a753b",
+        "name": "L5-ET.hic",
+        "size": 138486411
+      },
+      {
         "md5": "d8c7503ef4787f2ca5d9edc7e485cf81",
         "name": "L5-ET.hic.dvc",
         "size": 94
@@ -8160,6 +8765,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L5-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L5-IT",
     "manifest": [
+      {
+        "md5": "b42cedaebcce76458223d5c8b426f70e",
+        "name": "L5-IT.hic",
+        "size": 1064813746
+      },
       {
         "md5": "8c06ac0c9699e36fcd10034dea156495",
         "name": "L5-IT.hic.dvc",
@@ -8196,6 +8806,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L6-CT",
     "manifest": [
       {
+        "md5": "a2a9e80202e98ec9d64f4116e8d89cfd",
+        "name": "L6-CT.hic",
+        "size": 1194234225
+      },
+      {
         "md5": "316bcec0e24c4fef13b8ea71092550f9",
         "name": "L6-CT.hic.dvc",
         "size": 95
@@ -8230,6 +8845,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L6-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L6-IT",
     "manifest": [
+      {
+        "md5": "ee1ea0a5b9bb9e4401dd1aac53cd1c37",
+        "name": "L6-IT.hic",
+        "size": 1435657760
+      },
       {
         "md5": "f02bbdfbca4e5e160fa748a58abfa3d6",
         "name": "L6-IT.hic.dvc",
@@ -8266,6 +8886,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/L6b",
     "manifest": [
       {
+        "md5": "7a017419c18453098f08238102d3bcf8",
+        "name": "L6b.hic",
+        "size": 617734576
+      },
+      {
         "md5": "81adf77ed4cafb3f7d8123454cc615b1",
         "name": "L6b.hic.dvc",
         "size": 92
@@ -8300,6 +8925,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Lamp5",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Lamp5",
     "manifest": [
+      {
+        "md5": "8e9086a0d0fe92cbe4e99f64259d5fd3",
+        "name": "Lamp5.hic",
+        "size": 1035396012
+      },
       {
         "md5": "c103876fac678710875cef3e328bcdae",
         "name": "Lamp5.hic.dvc",
@@ -8336,6 +8966,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/MG",
     "manifest": [
       {
+        "md5": "d9328eefba2b2afd583f06f9761e8a06",
+        "name": "MG.hic",
+        "size": 909075036
+      },
+      {
         "md5": "5f3079a5e8daa5bf508ddc62073ce68a",
         "name": "MG.hic.dvc",
         "size": 91
@@ -8370,6 +9005,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/NP",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/NP",
     "manifest": [
+      {
+        "md5": "48d3a713661d5da5a0fdb1761cdb8ff4",
+        "name": "NP.hic",
+        "size": 472777772
+      },
       {
         "md5": "97509ffb2481bd4ca0ea04f9411ef96b",
         "name": "NP.hic.dvc",
@@ -8406,6 +9046,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/ODC",
     "manifest": [
       {
+        "md5": "3f2ca348aaff62106d809521b4eb2354",
+        "name": "ODC.hic",
+        "size": 3861844146
+      },
+      {
         "md5": "e087494b19260916e1cd1170d1e461f8",
         "name": "ODC.hic.dvc",
         "size": 93
@@ -8440,6 +9085,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/OPC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/OPC",
     "manifest": [
+      {
+        "md5": "a1b192a7e475aa5c6b2ac2e7be1bde65",
+        "name": "OPC.hic",
+        "size": 836398591
+      },
       {
         "md5": "6e2dd9dc0a04e4acab2e8eecb5b893d2",
         "name": "OPC.hic.dvc",
@@ -8476,6 +9126,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Pvalb-BC",
     "manifest": [
       {
+        "md5": "abd1ac96ce6d3fc8fd41c057ab1033f3",
+        "name": "Pvalb-BC.hic",
+        "size": 1749980715
+      },
+      {
         "md5": "2fb9ea00d8fead0603b8f23f28c35b61",
         "name": "Pvalb-BC.hic.dvc",
         "size": 98
@@ -8510,6 +9165,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Pvalb-ChC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Pvalb-ChC",
     "manifest": [
+      {
+        "md5": "861b56b9c733c5cc6695484a432b351c",
+        "name": "Pvalb-ChC.hic",
+        "size": 449228671
+      },
       {
         "md5": "783d00a90ec44a06baf280f4d6c92b36",
         "name": "Pvalb-ChC.hic.dvc",
@@ -8546,6 +9206,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Sncg",
     "manifest": [
       {
+        "md5": "ee993e148dd90c6c6abb4ea23b2fc5f6",
+        "name": "Sncg.hic",
+        "size": 540416977
+      },
+      {
         "md5": "bfd216b90a95f586ce6188fc21b5a294",
         "name": "Sncg.hic.dvc",
         "size": 93
@@ -8580,6 +9245,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Sst",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Sst",
     "manifest": [
+      {
+        "md5": "045dbeba05a2b93e824ee4e07b2204a9",
+        "name": "Sst.hic",
+        "size": 1785903127
+      },
       {
         "md5": "e48b3084f3c151fb43052c9d33be8560",
         "name": "Sst.hic.dvc",
@@ -8616,6 +9286,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Vip",
     "manifest": [
       {
+        "md5": "bb3ee68997a2e4607bc358c73b295b8d",
+        "name": "Vip.hic",
+        "size": 1472202844
+      },
+      {
         "md5": "21da1412dd365a236cbb44effed61a39",
         "name": "Vip.hic.dvc",
         "size": 93
@@ -8650,6 +9325,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Vsc",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Macaque/Vsc",
     "manifest": [
+      {
+        "md5": "bd1248093d62a8fdd78100bc36207fcd",
+        "name": "Vsc.hic",
+        "size": 398398527
+      },
       {
         "md5": "a0294d3ad76d59079b6386f2f95fa0d2",
         "name": "Vsc.hic.dvc",
@@ -8686,6 +9366,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Astro",
     "manifest": [
       {
+        "md5": "89d672062eaedfd63f40e33f74ad1a7a",
+        "name": "Astro.hic",
+        "size": 1324918362
+      },
+      {
         "md5": "307d87695ca09ed44a0bc1b49fd4c7f9",
         "name": "Astro.hic.dvc",
         "size": 95
@@ -8720,6 +9405,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/CLA",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/CLA",
     "manifest": [
+      {
+        "md5": "a468f7cdb56aa718024ac2b92df166f0",
+        "name": "CLA.hic",
+        "size": 373040754
+      },
       {
         "md5": "9070b48ca9d9abfe7a7106f1d6a386f6",
         "name": "CLA.hic.dvc",
@@ -8756,6 +9446,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L23",
     "manifest": [
       {
+        "md5": "2bb9323f488c26ec90f71ca9b3978643",
+        "name": "L23.hic",
+        "size": 2829586616
+      },
+      {
         "md5": "25343c2d5b0686bb604a1fc2bd5cfbd3",
         "name": "L23.hic.dvc",
         "size": 93
@@ -8790,6 +9485,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L4",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L4",
     "manifest": [
+      {
+        "md5": "6f263b895fc5722cae7726a87038c452",
+        "name": "L4.hic",
+        "size": 2215081064
+      },
       {
         "md5": "faba947517e3b2aab6c6160075a17b4c",
         "name": "L4.hic.dvc",
@@ -8826,6 +9526,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L5-ET",
     "manifest": [
       {
+        "md5": "c276470de5413b0624f0a00d969726e3",
+        "name": "L5-ET.hic",
+        "size": 417075962
+      },
+      {
         "md5": "58f315b13572f9cb01a57e0f17fc68d8",
         "name": "L5-ET.hic.dvc",
         "size": 94
@@ -8860,6 +9565,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L5-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L5-IT",
     "manifest": [
+      {
+        "md5": "f1f7e1910492c24b2e125324d8ad4314",
+        "name": "L5-IT.hic",
+        "size": 2010673545
+      },
       {
         "md5": "a4744dfcc344a046e8d4fad370782821",
         "name": "L5-IT.hic.dvc",
@@ -8896,6 +9606,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L6-CT",
     "manifest": [
       {
+        "md5": "ef5d57105f964c012bcd7b1a62e00298",
+        "name": "L6-CT.hic",
+        "size": 1932855078
+      },
+      {
         "md5": "b2f706d3733b430fcffc5226587eeab6",
         "name": "L6-CT.hic.dvc",
         "size": 95
@@ -8930,6 +9645,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L6-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L6-IT",
     "manifest": [
+      {
+        "md5": "dd2544952c6b3939fd826ba7a279513c",
+        "name": "L6-IT.hic",
+        "size": 2237561097
+      },
       {
         "md5": "04ae4b2cb507eaddc902754893598679",
         "name": "L6-IT.hic.dvc",
@@ -8966,6 +9686,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/L6b",
     "manifest": [
       {
+        "md5": "1f0b3e2187a0314aa098968b07f64b92",
+        "name": "L6b.hic",
+        "size": 861774975
+      },
+      {
         "md5": "115e2e02e6da458b9a18e039a3da4e0d",
         "name": "L6b.hic.dvc",
         "size": 92
@@ -9000,6 +9725,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Lamp5",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Lamp5",
     "manifest": [
+      {
+        "md5": "49318a909bdd7d1a7787bf20b69b6896",
+        "name": "Lamp5.hic",
+        "size": 577998448
+      },
       {
         "md5": "2b1e049bb13759bfd7e8252bd814b90d",
         "name": "Lamp5.hic.dvc",
@@ -9036,6 +9766,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/MG",
     "manifest": [
       {
+        "md5": "216650900d4d0de89120ff4096a0698c",
+        "name": "MG.hic",
+        "size": 677139623
+      },
+      {
         "md5": "7b108aa84c0cd2358c62774312a76362",
         "name": "MG.hic.dvc",
         "size": 91
@@ -9070,6 +9805,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/NP",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/NP",
     "manifest": [
+      {
+        "md5": "c67d02c3f2887b72d2f7286c4bfc8aa1",
+        "name": "NP.hic",
+        "size": 583163302
+      },
       {
         "md5": "0178dd594ff31d8c2eab31abd06f5ee4",
         "name": "NP.hic.dvc",
@@ -9106,6 +9846,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/ODC",
     "manifest": [
       {
+        "md5": "966fe1b2ade527ce72398c345e6915fe",
+        "name": "ODC.hic",
+        "size": 2173531698
+      },
+      {
         "md5": "1fcd20055d93447c028ee7ec69160350",
         "name": "ODC.hic.dvc",
         "size": 93
@@ -9140,6 +9885,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/OPC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/OPC",
     "manifest": [
+      {
+        "md5": "bfbc3886953d9e641a2b6bfca41115bd",
+        "name": "OPC.hic",
+        "size": 561400061
+      },
       {
         "md5": "6a22aeb11b5e38a9e001f7730a1d4ace",
         "name": "OPC.hic.dvc",
@@ -9176,6 +9926,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Pvalb-BC",
     "manifest": [
       {
+        "md5": "2aac2e913145456674f2af9f123d718b",
+        "name": "Pvalb-BC.hic",
+        "size": 1191544355
+      },
+      {
         "md5": "5f57b2831e7f40bf12d352096cb43250",
         "name": "Pvalb-BC.hic.dvc",
         "size": 98
@@ -9210,6 +9965,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Pvalb-ChC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Pvalb-ChC",
     "manifest": [
+      {
+        "md5": "18ad17b238c64e8cd59f209c3d654f7e",
+        "name": "Pvalb-ChC.hic",
+        "size": 193552060
+      },
       {
         "md5": "67c1e0a37c8c10f40dade372eef0cf20",
         "name": "Pvalb-ChC.hic.dvc",
@@ -9246,6 +10006,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Sncg",
     "manifest": [
       {
+        "md5": "ab6717dc4072d1e18423cd0f53cf0c86",
+        "name": "Sncg.hic",
+        "size": 298584526
+      },
+      {
         "md5": "53896f4bbacbf202bbbb4c1d809fd45c",
         "name": "Sncg.hic.dvc",
         "size": 93
@@ -9280,6 +10045,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Sst",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Sst",
     "manifest": [
+      {
+        "md5": "d7ecae26fff07eaa764006ba92352e12",
+        "name": "Sst.hic",
+        "size": 1116807416
+      },
       {
         "md5": "b3dfedacd617e4e8c771d4828fb640df",
         "name": "Sst.hic.dvc",
@@ -9316,6 +10086,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Vip",
     "manifest": [
       {
+        "md5": "36fcd6abffd6fa753a2d4b866b602e58",
+        "name": "Vip.hic",
+        "size": 843832583
+      },
+      {
         "md5": "d6959ea2e088e3f7edff96f6b52553d6",
         "name": "Vip.hic.dvc",
         "size": 92
@@ -9350,6 +10125,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Vsc",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Marmoset/Vsc",
     "manifest": [
+      {
+        "md5": "7b08172c481467a243366e8d781fe655",
+        "name": "Vsc.hic",
+        "size": 892230897
+      },
       {
         "md5": "cdf0af5d2bf451132712754235bbdd1c",
         "name": "Vsc.hic.dvc",
@@ -9386,6 +10166,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Astro",
     "manifest": [
       {
+        "md5": "97cf74e39ce12e008c9f7ed6cca90290",
+        "name": "Astro.hic",
+        "size": 1564113817
+      },
+      {
         "md5": "6c2f1f32d4f04e590fa6cc2cc932d18e",
         "name": "Astro.hic.dvc",
         "size": 95
@@ -9420,6 +10205,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/CLA",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/CLA",
     "manifest": [
+      {
+        "md5": "2f7ad37b4305739241a2fb303cb7c77c",
+        "name": "CLA.hic",
+        "size": 113656022
+      },
       {
         "md5": "1577722fb38549a9704c2bff4462d1ff",
         "name": "CLA.hic.dvc",
@@ -9456,6 +10246,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L23",
     "manifest": [
       {
+        "md5": "95e3ee7698c9f1d9375dd04ea9533241",
+        "name": "L23.hic",
+        "size": 2497607838
+      },
+      {
         "md5": "eb8880bd06cfadab17e36fcbdfa69afc",
         "name": "L23.hic.dvc",
         "size": 93
@@ -9490,6 +10285,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L4",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L4",
     "manifest": [
+      {
+        "md5": "69b7578bdaec402757fdd7a26f23457b",
+        "name": "L4.hic",
+        "size": 810928984
+      },
       {
         "md5": "85da73a0af435a7156e9ad33fb325e77",
         "name": "L4.hic.dvc",
@@ -9526,6 +10326,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L5-ET",
     "manifest": [
       {
+        "md5": "ad6b705c945ade809331d4f7b69481ff",
+        "name": "L5-ET.hic",
+        "size": 311090842
+      },
+      {
         "md5": "9c356af993b6bfe14c38fcc89d2304e2",
         "name": "L5-ET.hic.dvc",
         "size": 94
@@ -9560,6 +10365,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L5-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L5-IT",
     "manifest": [
+      {
+        "md5": "99db2fa2c657eadf8492b6922c229466",
+        "name": "L5-IT.hic",
+        "size": 859849077
+      },
       {
         "md5": "f6eb74db8a506d54f01050bd8d90125e",
         "name": "L5-IT.hic.dvc",
@@ -9596,6 +10406,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L6-CT",
     "manifest": [
       {
+        "md5": "f22531f9ece5260f8416051ceb24dff4",
+        "name": "L6-CT.hic",
+        "size": 1379700091
+      },
+      {
         "md5": "c65b3512548929d459203500289906ff",
         "name": "L6-CT.hic.dvc",
         "size": 95
@@ -9630,6 +10445,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L6-IT",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L6-IT",
     "manifest": [
+      {
+        "md5": "d8eae3efd277dfec29d01021d1330b1a",
+        "name": "L6-IT.hic",
+        "size": 954111393
+      },
       {
         "md5": "0a277c0132ff45bee65ad9ecd3634c24",
         "name": "L6-IT.hic.dvc",
@@ -9666,6 +10486,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/L6b",
     "manifest": [
       {
+        "md5": "b3fdff9a0678c1eb0e47d07bab2938f9",
+        "name": "L6b.hic",
+        "size": 212531984
+      },
+      {
         "md5": "c4d51bd75b5b6d698895741e951c3d52",
         "name": "L6b.hic.dvc",
         "size": 92
@@ -9700,6 +10525,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Lamp5",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Lamp5",
     "manifest": [
+      {
+        "md5": "3d25d05ffb1b197a74a413e067eb1501",
+        "name": "Lamp5.hic",
+        "size": 482970800
+      },
       {
         "md5": "e67b86af6f00fb9437f210d9d8df583e",
         "name": "Lamp5.hic.dvc",
@@ -9736,6 +10566,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/MG",
     "manifest": [
       {
+        "md5": "a493a066952a18759f73de8c2cef431a",
+        "name": "MG.hic",
+        "size": 1571243134
+      },
+      {
         "md5": "ce0abaf7ad227cf68074abb9fd90a604",
         "name": "MG.hic.dvc",
         "size": 92
@@ -9770,6 +10605,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/NP",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/NP",
     "manifest": [
+      {
+        "md5": "b897fbb36ee42e1c19faa0ccebdfe678",
+        "name": "NP.hic",
+        "size": 392490474
+      },
       {
         "md5": "727c88cf934044ac0b3c9f55d4ef77ec",
         "name": "NP.hic.dvc",
@@ -9806,6 +10646,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/ODC",
     "manifest": [
       {
+        "md5": "110176f472aca2c33499f599f8329e63",
+        "name": "ODC.hic",
+        "size": 2276824612
+      },
+      {
         "md5": "a0920a397d4f0dd0d3d230f8cd0a0392",
         "name": "ODC.hic.dvc",
         "size": 93
@@ -9840,6 +10685,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/OPC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/OPC",
     "manifest": [
+      {
+        "md5": "2315c503ba42fac4e190dafbc7bcced7",
+        "name": "OPC.hic",
+        "size": 759174917
+      },
       {
         "md5": "86c172eada9039f24d40b93f14dcbf76",
         "name": "OPC.hic.dvc",
@@ -9876,6 +10726,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Pvalb-BC",
     "manifest": [
       {
+        "md5": "17d10f04f3d853b4dc6c37bcce610732",
+        "name": "Pvalb-BC.hic",
+        "size": 769008812
+      },
+      {
         "md5": "10ea1e8ce1b0b7225a2720414c0c2cd4",
         "name": "Pvalb-BC.hic.dvc",
         "size": 97
@@ -9910,6 +10765,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Pvalb-ChC",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Pvalb-ChC",
     "manifest": [
+      {
+        "md5": "5a12e16b7ec4e494f90a725f56cc3b16",
+        "name": "Pvalb-ChC.hic",
+        "size": 92823966
+      },
       {
         "md5": "e996a17491f2a93301061d1706703f33",
         "name": "Pvalb-ChC.hic.dvc",
@@ -9946,6 +10806,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Sncg",
     "manifest": [
       {
+        "md5": "c073d5d0eb8c36f8a61777f44a0423fb",
+        "name": "Sncg.hic",
+        "size": 224022016
+      },
+      {
         "md5": "222e4f19f1d4f7338ff0b1120eb4cc56",
         "name": "Sncg.hic.dvc",
         "size": 93
@@ -9980,6 +10845,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Sst",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Sst",
     "manifest": [
+      {
+        "md5": "96f9d29fb22d2d1af7a72a24e8361abd",
+        "name": "Sst.hic",
+        "size": 660930831
+      },
       {
         "md5": "60f19d144974eba22b4002abd33a6b21",
         "name": "Sst.hic.dvc",
@@ -10016,6 +10886,11 @@
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Vip",
     "manifest": [
       {
+        "md5": "639879dfd6ce2d3cf216f77008c18d50",
+        "name": "Vip.hic",
+        "size": 472128097
+      },
+      {
         "md5": "b2eba15a4bca3256c0653b8f390f79c4",
         "name": "Vip.hic.dvc",
         "size": 92
@@ -10050,6 +10925,11 @@
     "full_id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Vsc",
     "id": "summary/zemke2023Conserved/pseudo_bulk_hic/Mouse/Vsc",
     "manifest": [
+      {
+        "md5": "a3632df3ae1f7cb042b4ec9386fdc347",
+        "name": "Vsc.hic",
+        "size": 1044428316
+      },
       {
         "md5": "9f2111e9f4c419b391430efe0cd82c87",
         "name": "Vsc.hic.dvc",
@@ -24792,6 +25672,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/ASC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/ASC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "ASC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for ASC cell type"
       },
       "scores": [
@@ -24837,9 +25723,9 @@
         "size": 87
       },
       {
-        "md5": "501e7be6299d1af4c4e349bfb1327d27",
+        "md5": "90dc863daea9c8a96c4db22c04f98638",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "c735dcbedb99110e55c56f556aefe9e5",
@@ -24863,6 +25749,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/Endo\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/Endo_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "Endo",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for Endo cell type"
       },
       "scores": [
@@ -24908,9 +25800,9 @@
         "size": 88
       },
       {
-        "md5": "c4ee4f4484cd577eda5f4a61d959d427",
+        "md5": "9f013f17e46e320718b4c2dacdde879e",
         "name": "genomic_resource.yaml",
-        "size": 854
+        "size": 940
       },
       {
         "md5": "b58bab8f6a3b12a770403b520d4ca6cb",
@@ -24934,6 +25826,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L2\\_3\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L2_3_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L2_3_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L2_3_IT cell type"
       },
       "scores": [
@@ -24979,9 +25877,9 @@
         "size": 92
       },
       {
-        "md5": "94ba73d645588cbea1572fede849cb8a",
+        "md5": "195edee1dddd9b981db43e1b01122b5e",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "67a6a0b6833c92c5bc19e4f9c99d6b75",
@@ -25005,6 +25903,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L4\\_5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L4_5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L4_5_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L4_5_IT cell type"
       },
       "scores": [
@@ -25050,9 +25954,9 @@
         "size": 91
       },
       {
-        "md5": "a67bb533445daf7e6e011238a8655b9b",
+        "md5": "0112174cae07ac1956cd87bacc5dc6dd",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "dd79054c360481d29c237706caea8198",
@@ -25076,6 +25980,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L5\\_6\\_NP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L5_6_NP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_6_NP",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L5_6_NP cell type"
       },
       "scores": [
@@ -25121,9 +26031,9 @@
         "size": 91
       },
       {
-        "md5": "6f06e7fb9a4128a208e3589468ddd1ab",
+        "md5": "bbe4943a69fe28ddac76f2512df8ccec",
         "name": "genomic_resource.yaml",
-        "size": 874
+        "size": 963
       },
       {
         "md5": "b19664a5f106c8612ec1fa063291b4d3",
@@ -25147,6 +26057,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L5\\_ET\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L5_ET_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_ET",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L5_ET cell type"
       },
       "scores": [
@@ -25192,9 +26108,9 @@
         "size": 89
       },
       {
-        "md5": "8ff01a753f8b6ed5666f5b23fcf2ace5",
+        "md5": "03e572548083ee52fbcaa8e4c9830278",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "40cd53e8dbcbc9b611aeab9c6a1d76cf",
@@ -25218,6 +26134,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L5_IT cell type"
       },
       "scores": [
@@ -25263,9 +26185,9 @@
         "size": 89
       },
       {
-        "md5": "78b68cbf70ee8eea7543137b6e0cd2ad",
+        "md5": "e5c940cd9918d8793e3df26f952a0ea6",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "3fcef3fec845987ddeece549260d9a3b",
@@ -25289,6 +26211,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L6\\_CT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L6_CT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_CT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L6_CT cell type"
       },
       "scores": [
@@ -25334,9 +26262,9 @@
         "size": 89
       },
       {
-        "md5": "67ae33404daf42c71d97ccd60a6b2d12",
+        "md5": "270b6e8c667343c067e1a580923ee87e",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "871d5a5451ddcf52e0a119b518215fb7",
@@ -25360,6 +26288,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L6\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L6_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_IT",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L6_IT cell type"
       },
       "scores": [
@@ -25405,9 +26339,9 @@
         "size": 89
       },
       {
-        "md5": "6261fbdd712430f798ebbd33d7530b10",
+        "md5": "d1803d48f5d24de6a3f5b0eebb415c7f",
         "name": "genomic_resource.yaml",
-        "size": 861
+        "size": 948
       },
       {
         "md5": "a2ad75980b9a5fbed3acf0e0e4a7a8a3",
@@ -25431,6 +26365,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L6\\_IT\\_CAR3\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L6_IT_CAR3_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_IT_CAR3",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -25476,9 +26416,9 @@
         "size": 94
       },
       {
-        "md5": "c4f81778a5238450df82129ebacc5517",
+        "md5": "27754e9b576b5e7d98a82fd97940a555",
         "name": "genomic_resource.yaml",
-        "size": 892
+        "size": 984
       },
       {
         "md5": "086702fba4698540ac86ae158f9224c4",
@@ -25502,6 +26442,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/L6b\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/L6b_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6b",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for L6b cell type"
       },
       "scores": [
@@ -25547,9 +26493,9 @@
         "size": 87
       },
       {
-        "md5": "bfb782dd47e23b5130c6cd30b7c82c2b",
+        "md5": "4122c6f271f9f45a25ae3b287d3e80c6",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "a58fa2caa0d9ae5ce0d8de6b343b91a6",
@@ -25573,6 +26519,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/LAMP5\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/LAMP5_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "LAMP5",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for LAMP5 cell type"
       },
       "scores": [
@@ -25618,9 +26570,9 @@
         "size": 89
       },
       {
-        "md5": "489d999ce7003bc92507e75b64449a7a",
+        "md5": "f3b50d58a62f312db1f626beec9fcdff",
         "name": "genomic_resource.yaml",
-        "size": 860
+        "size": 947
       },
       {
         "md5": "4fc486f7a4207fa75bbc70c11efe133a",
@@ -25644,6 +26596,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/MGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/MGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "MGC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for MGC cell type"
       },
       "scores": [
@@ -25689,9 +26647,9 @@
         "size": 87
       },
       {
-        "md5": "5e2baa1f502c35764e7791df9fb2b32b",
+        "md5": "2ec044ee2da420f01bf9986ae32d496a",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "f5bcade3ec8fe1c95c1aef465e7427cb",
@@ -25715,6 +26673,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/OGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/OGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "ODC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for ODC cell type"
       },
       "scores": [
@@ -25760,9 +26724,9 @@
         "size": 88
       },
       {
-        "md5": "52af43cb5963bab22c0bdb263b333f06",
+        "md5": "ea47ef2fe1b8f640ee1a4b49259bd2b0",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "ec297048d3d1c0ea61bd23122ddcaa59",
@@ -25786,6 +26750,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/OPC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/OPC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "OPC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for OPC cell type"
       },
       "scores": [
@@ -25831,9 +26801,9 @@
         "size": 87
       },
       {
-        "md5": "8eb5b196df320605730d4dbbc0272cef",
+        "md5": "fd4ddf2e9110b2895c50ee0c46ba3f61",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "15cdeb42ad4896daad414429b8fe5964",
@@ -25857,6 +26827,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/PVALB\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/PVALB_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "PVALB",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for PVALB cell type"
       },
       "scores": [
@@ -25902,9 +26878,9 @@
         "size": 90
       },
       {
-        "md5": "d36e1ba2697f75e92ad2df4705675e7a",
+        "md5": "4aa1e05eed3a873ff190b5f2173790f3",
         "name": "genomic_resource.yaml",
-        "size": 860
+        "size": 947
       },
       {
         "md5": "0be68e7d45c10fcaba06d2262d266b72",
@@ -25928,6 +26904,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/SNCG\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/SNCG_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "SNCG",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for SNCG cell type"
       },
       "scores": [
@@ -25973,9 +26955,9 @@
         "size": 88
       },
       {
-        "md5": "afcbfcee4821878729328e62b9f3ae3b",
+        "md5": "3331140049825caea6daee49457157e8",
         "name": "genomic_resource.yaml",
-        "size": 854
+        "size": 940
       },
       {
         "md5": "d7ca4c820f88b2f4195a52a3923d70c4",
@@ -25999,6 +26981,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/SST\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/SST_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "SST",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for SST cell type"
       },
       "scores": [
@@ -26044,9 +27032,9 @@
         "size": 88
       },
       {
-        "md5": "48317b2347fa8d3cd48e2f3286bafaba",
+        "md5": "ff225a7b7975cfaf41a383a62d670aa8",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "2173cb8f4e88186228cfad7ac2fabf58",
@@ -26070,6 +27058,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/VIP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/VIP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "VIP",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for VIP cell type"
       },
       "scores": [
@@ -26115,9 +27109,9 @@
         "size": 88
       },
       {
-        "md5": "faa90c4b381c4702fc8aae8a698375d2",
+        "md5": "f51f0048a34bceb957de4b6cbc0c77d3",
         "name": "genomic_resource.yaml",
-        "size": 848
+        "size": 933
       },
       {
         "md5": "424886693737da9e7898656fbb17d4ce",
@@ -26141,6 +27135,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/human\\_m1\\_rna/VLMC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/human_m1_rna/VLMC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "VLMC",
+          "species": "human"
+        },
         "summary": "Pseudo-bulk rna track in human_m1 for VLMC cell type"
       },
       "scores": [
@@ -26186,9 +27186,9 @@
         "size": 88
       },
       {
-        "md5": "ce82dacab01c81c5cd7b12e89388904d",
+        "md5": "2da0aa737d077e774ed0fbbac9117144",
         "name": "genomic_resource.yaml",
-        "size": 854
+        "size": 940
       },
       {
         "md5": "6405d2786ff81ade1879016e6fac0c2a",
@@ -26212,6 +27212,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/ASC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/ASC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "ASC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for ASC cell type"
       },
       "scores": [
@@ -26257,9 +27263,9 @@
         "size": 87
       },
       {
-        "md5": "4fabb0d7bc9774c6cf3eca53c269cc48",
+        "md5": "f11bbd3dbfbde357bfa7f96de1425213",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "24bd26ae2f7c6ae752c70650b697b81c",
@@ -26283,6 +27289,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/Endo\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/Endo_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "Endo",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for Endo cell type"
       },
       "scores": [
@@ -26328,9 +27340,9 @@
         "size": 88
       },
       {
-        "md5": "96823b3ffd286ab94ebf1efd36f15986",
+        "md5": "38a3f50bd31c9f540b04c19fcc59f71e",
         "name": "genomic_resource.yaml",
-        "size": 864
+        "size": 952
       },
       {
         "md5": "9cd2cf5b660a42ce66c3621d31c1813b",
@@ -26354,6 +27366,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L2\\_3\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L2_3_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L2_3_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L2_3_IT cell type"
       },
       "scores": [
@@ -26399,9 +27417,9 @@
         "size": 92
       },
       {
-        "md5": "124f5f2e0d7ea2c48d044fa99b7269e0",
+        "md5": "f0777abff66f0bc8cf6f041bfe76684d",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "91ffa8c8c8a2533c8f93f50abec80e0e",
@@ -26425,6 +27443,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L4\\_5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L4_5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L4_5_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L4_5_IT cell type"
       },
       "scores": [
@@ -26470,9 +27494,9 @@
         "size": 92
       },
       {
-        "md5": "54e8f96e401cc833b1c319e119759d21",
+        "md5": "d0e7c3396d7229d122b25888c1a3b80f",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "540cbd33da5359c47a4782aa1227fb13",
@@ -26496,6 +27520,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L5\\_6\\_NP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L5_6_NP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_6_NP",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L5_6_NP cell type"
       },
       "scores": [
@@ -26541,9 +27571,9 @@
         "size": 91
       },
       {
-        "md5": "a8b7618374f45c63d4dda702a9570b61",
+        "md5": "edeaec90fb7e5604989e1b17825413ba",
         "name": "genomic_resource.yaml",
-        "size": 884
+        "size": 975
       },
       {
         "md5": "76cf417c711cf89c894c15d6603f74aa",
@@ -26567,6 +27597,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L5\\_ET\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L5_ET_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_ET",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L5_ET cell type"
       },
       "scores": [
@@ -26612,9 +27648,9 @@
         "size": 89
       },
       {
-        "md5": "3406f3906636d4519c00eaeb6d15dd7e",
+        "md5": "443302473c668ddec5cf0f22bdbba7b1",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "63407bd8853da45fa2e7f69d0f8f851c",
@@ -26638,6 +27674,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L5_IT cell type"
       },
       "scores": [
@@ -26683,9 +27725,9 @@
         "size": 90
       },
       {
-        "md5": "399c92c02707acb2edf7a80e525c2b16",
+        "md5": "a822f6e5d1ad649a53cc602ea2f2c691",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "b2d4ce9b4d30e6ae9b884d02adab2978",
@@ -26709,6 +27751,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L6\\_CT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L6_CT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_CT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L6_CT cell type"
       },
       "scores": [
@@ -26754,9 +27802,9 @@
         "size": 90
       },
       {
-        "md5": "55ed420e9c4e28c03d0e39b7d2bc2462",
+        "md5": "2a59c401ce1be18b09de9b70985f0d6f",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "900e83851066e6b791728c1b797f0ce7",
@@ -26780,6 +27828,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L6\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L6_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_IT",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L6_IT cell type"
       },
       "scores": [
@@ -26825,9 +27879,9 @@
         "size": 90
       },
       {
-        "md5": "5146689fe049e122d3135ceec741b525",
+        "md5": "c8eb84020ad6d56fe764b78cfd074fcc",
         "name": "genomic_resource.yaml",
-        "size": 871
+        "size": 960
       },
       {
         "md5": "fa7ef63b1f93e946d317a80c13685f2f",
@@ -26851,6 +27905,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L6\\_IT\\_CAR3\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L6_IT_CAR3_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_IT_CAR3",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -26896,9 +27956,9 @@
         "size": 94
       },
       {
-        "md5": "74b6ba6a648deb17c3b67513391aa759",
+        "md5": "8071b34c4f31e08d1f8ccaddebca7c32",
         "name": "genomic_resource.yaml",
-        "size": 902
+        "size": 996
       },
       {
         "md5": "7e4b0a6b066f0aba7f2b1420cb5cbe1a",
@@ -26922,6 +27982,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/L6b\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/L6b_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6b",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for L6b cell type"
       },
       "scores": [
@@ -26967,9 +28033,9 @@
         "size": 87
       },
       {
-        "md5": "7ad88db326917d991c283953fefb49fe",
+        "md5": "aa99d73d44baea9c5561a28c3341c403",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "89806a4886891163ff2f4e667ec99305",
@@ -26993,6 +28059,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/LAMP5\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/LAMP5_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "LAMP5",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for LAMP5 cell type"
       },
       "scores": [
@@ -27038,9 +28110,9 @@
         "size": 89
       },
       {
-        "md5": "4b78a04dbb32ba09f2d83d1a09dbf0a7",
+        "md5": "7a634131e1988c5e615ad80fad437b71",
         "name": "genomic_resource.yaml",
-        "size": 870
+        "size": 959
       },
       {
         "md5": "f0cf71358bb2615f084146311c981b7c",
@@ -27064,6 +28136,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/MGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/MGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "MGC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for MGC cell type"
       },
       "scores": [
@@ -27109,9 +28187,9 @@
         "size": 87
       },
       {
-        "md5": "e6973a3def56d1ec8356a98f2dc7f937",
+        "md5": "cd4661309561ecb82ee30ffc4f31e988",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "e51d0fcc87971abdc465a600cd2396b8",
@@ -27135,6 +28213,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/OGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/OGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "ODC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for ODC cell type"
       },
       "scores": [
@@ -27180,9 +28264,9 @@
         "size": 88
       },
       {
-        "md5": "fc826ea411dc98b5489345278ad1940b",
+        "md5": "0ec454b92973ef7615c08e9bf3df2673",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "df31d62dc7998946f486bdeea23faca3",
@@ -27206,6 +28290,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/OPC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/OPC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "OPC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for OPC cell type"
       },
       "scores": [
@@ -27251,9 +28341,9 @@
         "size": 87
       },
       {
-        "md5": "ebe259f837a42275ee07ccba27a0271d",
+        "md5": "f6053cc1c8191c8bf03d2be208881142",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "f1174fedb99eed9a674028d7eefdf97f",
@@ -27277,6 +28367,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/PVALB\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/PVALB_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "PVALB",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for PVALB cell type"
       },
       "scores": [
@@ -27322,9 +28418,9 @@
         "size": 90
       },
       {
-        "md5": "f37c411c35bf167f34a31469d428a8af",
+        "md5": "55f4e6d50d6bbb5767bf6963fb096217",
         "name": "genomic_resource.yaml",
-        "size": 870
+        "size": 959
       },
       {
         "md5": "c1313c74c01cc2768feb3df57d57000b",
@@ -27348,6 +28444,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/SNCG\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/SNCG_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "SNCG",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for SNCG cell type"
       },
       "scores": [
@@ -27393,9 +28495,9 @@
         "size": 88
       },
       {
-        "md5": "b71cc5d69947c9a995635aa83940c11b",
+        "md5": "836eed625b2e051c05e7447598bc6109",
         "name": "genomic_resource.yaml",
-        "size": 864
+        "size": 952
       },
       {
         "md5": "a89ff8c33f7bc9e429ead848fc6604c2",
@@ -27419,6 +28521,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/SST\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/SST_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "SST",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for SST cell type"
       },
       "scores": [
@@ -27464,9 +28572,9 @@
         "size": 88
       },
       {
-        "md5": "3609431b31a696747591736df60c1c5d",
+        "md5": "de61a3e2635d1c0c86108665446f75c0",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "c555818975cf341b209e7b9e0b73fe02",
@@ -27490,6 +28598,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/VIP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/VIP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "VIP",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for VIP cell type"
       },
       "scores": [
@@ -27535,9 +28649,9 @@
         "size": 87
       },
       {
-        "md5": "7fd2bd27f34504601e3bbdca4f26a967",
+        "md5": "9ab48478a27405f18a2c3f8859e31dca",
         "name": "genomic_resource.yaml",
-        "size": 858
+        "size": 945
       },
       {
         "md5": "a495073bc9ad1e8ede40d551d6614eb3",
@@ -27561,6 +28675,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/macaque\\_m1\\_rna/VLMC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/macaque_m1_rna/VLMC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "VLMC",
+          "species": "macaque"
+        },
         "summary": "Pseudo-bulk rna track in macaque_m1 for VLMC cell type"
       },
       "scores": [
@@ -27606,9 +28726,9 @@
         "size": 88
       },
       {
-        "md5": "62572c1723b0b2a3f0829bb7d8f242f9",
+        "md5": "8ce1047c7d9d4821397634434271474f",
         "name": "genomic_resource.yaml",
-        "size": 864
+        "size": 952
       },
       {
         "md5": "9cefc2ef936aad72b066e1a6d1654534",
@@ -27632,6 +28752,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/ASC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/ASC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "ASC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for ASC cell type"
       },
       "scores": [
@@ -27677,9 +28803,9 @@
         "size": 87
       },
       {
-        "md5": "27ef6839563eb444f8af8cd47b656b8d",
+        "md5": "054b5d6fd32ef14f7ac10cfd7ff3b142",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "a5b0a51a2775b21e144f374412976744",
@@ -27703,6 +28829,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/Endo\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/Endo_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "Endo",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for Endo cell type"
       },
       "scores": [
@@ -27748,9 +28880,9 @@
         "size": 88
       },
       {
-        "md5": "458c76aad4779fd43902bb8b7f416603",
+        "md5": "46dc408e9c325c6ccced2f5390e9ed4e",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 958
       },
       {
         "md5": "dcc9d032278e9613371b52dc65791b2a",
@@ -27774,6 +28906,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L2\\_3\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L2_3_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L2_3_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L2_3_IT cell type"
       },
       "scores": [
@@ -27819,9 +28957,9 @@
         "size": 92
       },
       {
-        "md5": "53bf00503b5137efd0a7355f236dc496",
+        "md5": "dc6a770233871d5412a188df7aa09e1a",
         "name": "genomic_resource.yaml",
-        "size": 889
+        "size": 981
       },
       {
         "md5": "de3e2ea3a5ec36875dcfa7f7d6d95053",
@@ -27845,6 +28983,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L4\\_5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L4_5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L4_5_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L4_5_IT cell type"
       },
       "scores": [
@@ -27890,9 +29034,9 @@
         "size": 92
       },
       {
-        "md5": "3c545814ddb1272aec24e945063b7fad",
+        "md5": "c2279dcf5b74be3304c08e301e5d4c5f",
         "name": "genomic_resource.yaml",
-        "size": 889
+        "size": 981
       },
       {
         "md5": "8cd0346db65dccbf09cc06edf9c352be",
@@ -27916,6 +29060,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L5\\_6\\_NP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L5_6_NP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_6_NP",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L5_6_NP cell type"
       },
       "scores": [
@@ -27961,9 +29111,9 @@
         "size": 91
       },
       {
-        "md5": "98c7dbfdd66a9e0b509b5d16bf20873f",
+        "md5": "2acb11cef6f9504cef2f484aa36b0c8a",
         "name": "genomic_resource.yaml",
-        "size": 889
+        "size": 981
       },
       {
         "md5": "aec47ed14aa29407a85bbc195cdab8ba",
@@ -27987,6 +29137,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L5\\_ET\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L5_ET_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_ET",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L5_ET cell type"
       },
       "scores": [
@@ -28032,9 +29188,9 @@
         "size": 89
       },
       {
-        "md5": "2ba72f457329965b1ab5ea11c703dac8",
+        "md5": "1b500f016c27bb9cdadf0e6a979bc781",
         "name": "genomic_resource.yaml",
-        "size": 876
+        "size": 966
       },
       {
         "md5": "2ae4f204880197665940446db37b6da1",
@@ -28058,6 +29214,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L5_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L5_IT cell type"
       },
       "scores": [
@@ -28103,9 +29265,9 @@
         "size": 90
       },
       {
-        "md5": "e09088476edaf781a33723eb332a0a96",
+        "md5": "621eaffa19ac7a667be95a6a2036adf4",
         "name": "genomic_resource.yaml",
-        "size": 876
+        "size": 966
       },
       {
         "md5": "bff86bab1072111390bc2fab6879ac12",
@@ -28129,6 +29291,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L6\\_CT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L6_CT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_CT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L6_CT cell type"
       },
       "scores": [
@@ -28174,9 +29342,9 @@
         "size": 90
       },
       {
-        "md5": "225db83ca65f0e147d26a64d3ca23b44",
+        "md5": "af171bc749ba3120d87ff428db9673c0",
         "name": "genomic_resource.yaml",
-        "size": 876
+        "size": 966
       },
       {
         "md5": "d56c247d29e111f7c6866f465b1f222d",
@@ -28200,6 +29368,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L6\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L6_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_IT",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L6_IT cell type"
       },
       "scores": [
@@ -28245,9 +29419,9 @@
         "size": 90
       },
       {
-        "md5": "af79504d85004901ee02e8d75b86e97e",
+        "md5": "0fcffd9cd296cab395cd07e7b582a840",
         "name": "genomic_resource.yaml",
-        "size": 876
+        "size": 966
       },
       {
         "md5": "52bb44501a956f31079b6f846ab2df8d",
@@ -28271,6 +29445,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L6\\_IT\\_CAR3\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L6_IT_CAR3_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6_IT_CAR3",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -28316,9 +29496,9 @@
         "size": 94
       },
       {
-        "md5": "a30442072d9acdaed30e87651ade65e5",
+        "md5": "a247c4e75a6074fe178cd0f488ae3103",
         "name": "genomic_resource.yaml",
-        "size": 907
+        "size": 1002
       },
       {
         "md5": "61a31e453d90111e3e0840bcd7dfe8af",
@@ -28342,6 +29522,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/L6b\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/L6b_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "L6b",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for L6b cell type"
       },
       "scores": [
@@ -28387,9 +29573,9 @@
         "size": 87
       },
       {
-        "md5": "54320766829a907ed01ad9fac1178ae4",
+        "md5": "0c9f1273dec34b0080981454d803d54e",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "2755d71e2fe7d1aa2f36a5d744ee49c7",
@@ -28413,6 +29599,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/LAMP5\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/LAMP5_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "LAMP5",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for LAMP5 cell type"
       },
       "scores": [
@@ -28458,9 +29650,9 @@
         "size": 89
       },
       {
-        "md5": "07c2a1e16fdcdf14b18a17b2ea9a997b",
+        "md5": "dce493ae5f3fed2cb2e689be522f4237",
         "name": "genomic_resource.yaml",
-        "size": 875
+        "size": 965
       },
       {
         "md5": "a0e037c13d818a508760676a6ffa684c",
@@ -28484,6 +29676,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/MGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/MGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "MGC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for MGC cell type"
       },
       "scores": [
@@ -28529,9 +29727,9 @@
         "size": 87
       },
       {
-        "md5": "8a028234b6ba8ed6d9c89326af094f12",
+        "md5": "eca70be1e7af050599455a0609386748",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "c96a81f6412bac0db9bedc82e84d16de",
@@ -28555,6 +29753,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/OGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/OGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "ODC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for ODC cell type"
       },
       "scores": [
@@ -28600,9 +29804,9 @@
         "size": 87
       },
       {
-        "md5": "4a506f8b3f6a89edb361712468e5d171",
+        "md5": "6f6bdbc1860c863e398ba2be00559c06",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "bc47a0e1165091c03c3836f4fddc8a46",
@@ -28626,6 +29830,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/OPC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/OPC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "OPC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for OPC cell type"
       },
       "scores": [
@@ -28671,9 +29881,9 @@
         "size": 87
       },
       {
-        "md5": "c021f0764e9bc718b15b54248cfeb450",
+        "md5": "a930718b3e6afc96c19ec61de5d82dc7",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "ebb1550c2be208695715219fb0bbf7a4",
@@ -28697,6 +29907,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/PVALB\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/PVALB_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "PVALB",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for PVALB cell type"
       },
       "scores": [
@@ -28742,9 +29958,9 @@
         "size": 90
       },
       {
-        "md5": "9dbab24cf3f9dfcc2044476879f6b32f",
+        "md5": "9eeb7520408012e17d741d4a878319a5",
         "name": "genomic_resource.yaml",
-        "size": 875
+        "size": 965
       },
       {
         "md5": "4ba6ab896ab91e645958cb2d2dd24deb",
@@ -28768,6 +29984,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/SNCG\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/SNCG_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "SNCG",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for SNCG cell type"
       },
       "scores": [
@@ -28813,9 +30035,9 @@
         "size": 88
       },
       {
-        "md5": "bac509ebce7cd4925ab41850258e0174",
+        "md5": "d506a0040da600cb8e000c62e64f3c73",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 958
       },
       {
         "md5": "108d7eac788098a3bcb78a3f0f4ddaa4",
@@ -28839,6 +30061,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/SST\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/SST_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "SST",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for SST cell type"
       },
       "scores": [
@@ -28884,9 +30112,9 @@
         "size": 87
       },
       {
-        "md5": "dac4c0a83b18722b414e933dafea6535",
+        "md5": "af96b62f0c98ff1ba7c39af9a90acfde",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "c4b9b0df5cdf810aa3a9eae65bae88ce",
@@ -28910,6 +30138,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/VIP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/VIP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "VIP",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for VIP cell type"
       },
       "scores": [
@@ -28955,9 +30189,9 @@
         "size": 87
       },
       {
-        "md5": "d50880f95389880aadf3a40c78b871d1",
+        "md5": "90e623555084a5148608eeb28d8c234f",
         "name": "genomic_resource.yaml",
-        "size": 863
+        "size": 951
       },
       {
         "md5": "363318a0355e0b6432905aed7f111bb8",
@@ -28981,6 +30215,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/marmoset\\_m1\\_rna/VLMC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/marmoset_m1_rna/VLMC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "m1",
+          "cell_type": "VLMC",
+          "species": "marmoset"
+        },
         "summary": "Pseudo-bulk rna track in marmoset_m1 for VLMC cell type"
       },
       "scores": [
@@ -29026,9 +30266,9 @@
         "size": 88
       },
       {
-        "md5": "1995b091121dde608aa18c081f354e2a",
+        "md5": "a17c05da7e40a4ef07743c774196e5d2",
         "name": "genomic_resource.yaml",
-        "size": 869
+        "size": 958
       },
       {
         "md5": "65dd05b7442e93fdb5e9bbe7abe047d9",
@@ -29052,6 +30292,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/ASC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/ASC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "ASC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for ASC cell type"
       },
       "scores": [
@@ -29097,9 +30343,9 @@
         "size": 87
       },
       {
-        "md5": "80a12d7714b2b1998356f6ca65431ce2",
+        "md5": "7e634c5b10cd426ca4ca776627b7cbbc",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "dc4bdcd2f29e84fd8cdffde455e2b565",
@@ -29123,6 +30369,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/Endo\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/Endo_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "Endo",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for Endo cell type"
       },
       "scores": [
@@ -29168,9 +30420,9 @@
         "size": 87
       },
       {
-        "md5": "bb8c91aada5dd86beb2b826117f85c7e",
+        "md5": "476b10f62ec476e443676972a24290ec",
         "name": "genomic_resource.yaml",
-        "size": 859
+        "size": 946
       },
       {
         "md5": "2046acd91b76238b5763e75ba3514aba",
@@ -29194,6 +30446,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L2\\_3\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L2_3_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L2_3_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L2_3_IT cell type"
       },
       "scores": [
@@ -29239,9 +30497,9 @@
         "size": 92
       },
       {
-        "md5": "27e8d4d432d6fe4371814fb96f9d4248",
+        "md5": "c0e20c221d690f21dd85c0bdda819474",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "be18b8466dfc5955701a5891c8cf1770",
@@ -29265,6 +30523,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L4\\_5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L4_5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L4_5_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L4_5_IT cell type"
       },
       "scores": [
@@ -29310,9 +30574,9 @@
         "size": 92
       },
       {
-        "md5": "7cc3085369f88667b23278c2b30e0d97",
+        "md5": "09c2c1a14eb735a64bcd090378402193",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "7f228496e0fc640c73cdea442d0bd277",
@@ -29336,6 +30600,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L5\\_6\\_NP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L5_6_NP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L5_6_NP",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L5_6_NP cell type"
       },
       "scores": [
@@ -29381,9 +30651,9 @@
         "size": 91
       },
       {
-        "md5": "ef37632bd53e0d69836c74e35c6082cb",
+        "md5": "cd3b1efe23438e138034320852cd58b9",
         "name": "genomic_resource.yaml",
-        "size": 879
+        "size": 969
       },
       {
         "md5": "4c48e150f2243b83fc99680b4962b77d",
@@ -29407,6 +30677,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L5\\_ET\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L5_ET_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L5_ET",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L5_ET cell type"
       },
       "scores": [
@@ -29452,9 +30728,9 @@
         "size": 90
       },
       {
-        "md5": "09347cd95df7a8dba1e84ab1ec9c444b",
+        "md5": "f6c2825218856484fc004509edcc6944",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "040a36c5804b062462afb71b00e497fa",
@@ -29478,6 +30754,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L5\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L5_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L5_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L5_IT cell type"
       },
       "scores": [
@@ -29523,9 +30805,9 @@
         "size": 90
       },
       {
-        "md5": "65b36356847de449bc5646adb8dae64c",
+        "md5": "4fdee5030bde94b7db885caeac11f1d9",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "3d2717b54e2411f6118b21e98e416386",
@@ -29549,6 +30831,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L6\\_CT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L6_CT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L6_CT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L6_CT cell type"
       },
       "scores": [
@@ -29594,9 +30882,9 @@
         "size": 90
       },
       {
-        "md5": "63acfa99d9f0cbac6ae29082dc482b50",
+        "md5": "2de36a4cb3d811b6c7005e880da29484",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "f73dac1d1bde72b2ffb2bf93230c9c45",
@@ -29620,6 +30908,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L6\\_IT\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L6_IT_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L6_IT",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L6_IT cell type"
       },
       "scores": [
@@ -29665,9 +30959,9 @@
         "size": 89
       },
       {
-        "md5": "259041f6540437a5789e40c47b8549d3",
+        "md5": "5af43d95e8715eb8bde196393bf0f4ec",
         "name": "genomic_resource.yaml",
-        "size": 866
+        "size": 954
       },
       {
         "md5": "d9cb95e2bf8a2c8a792b3565df7690f6",
@@ -29691,6 +30985,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L6\\_IT\\_CAR3\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L6_IT_CAR3_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L6_IT_CAR3",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L6_IT_CAR3 cell type"
       },
       "scores": [
@@ -29736,9 +31036,9 @@
         "size": 94
       },
       {
-        "md5": "b33fe80dedce4bf3d5030f9d7ac218d5",
+        "md5": "a472de08863f33a8cd39019e80cbbf5d",
         "name": "genomic_resource.yaml",
-        "size": 897
+        "size": 990
       },
       {
         "md5": "68d04d4f9bc538063a42dd983fb98607",
@@ -29762,6 +31062,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/L6b\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/L6b_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "L6b",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for L6b cell type"
       },
       "scores": [
@@ -29807,9 +31113,9 @@
         "size": 87
       },
       {
-        "md5": "608ea335e2c3d4406662d1ee2b032a72",
+        "md5": "02682bbd87642b56bd19b5b797b72ede",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "429246c4866a3d6192f2c6c228127d05",
@@ -29833,6 +31139,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/LAMP5\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/LAMP5_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "LAMP5",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for LAMP5 cell type"
       },
       "scores": [
@@ -29878,9 +31190,9 @@
         "size": 89
       },
       {
-        "md5": "358ea426df087af75cfa170b7c75912b",
+        "md5": "9ebc8c075995fae14cf3d16ebcdb7c4d",
         "name": "genomic_resource.yaml",
-        "size": 865
+        "size": 953
       },
       {
         "md5": "fa302a067d7d621587a638dc80c0267f",
@@ -29904,6 +31216,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/MGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/MGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "MGC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for MGC cell type"
       },
       "scores": [
@@ -29949,9 +31267,9 @@
         "size": 87
       },
       {
-        "md5": "f9f232199704252198f398d5f65b8237",
+        "md5": "ced23baa944fea2823c5c0de20bdf85a",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "55f2d5627a4238dd6a4c2fffdff6eb96",
@@ -29975,6 +31293,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/OGC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/OGC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "ODC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for ODC cell type"
       },
       "scores": [
@@ -30020,9 +31344,9 @@
         "size": 87
       },
       {
-        "md5": "4775080d059b884dec0c6b194af9a18c",
+        "md5": "4d46764f3ba35f2437bde76cb322087f",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "26992d249d162ffc5d3e7e9aeacbdf82",
@@ -30046,6 +31370,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/OPC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/OPC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "OPC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for OPC cell type"
       },
       "scores": [
@@ -30091,9 +31421,9 @@
         "size": 87
       },
       {
-        "md5": "fbc3eb5379fc9edb87a32c6b64da5ba6",
+        "md5": "573530c9e2958c615aa7dcb0525d845b",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "ae36165dec4f89e6205383160ae102fb",
@@ -30117,6 +31447,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/PVALB\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/PVALB_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "PVALB",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for PVALB cell type"
       },
       "scores": [
@@ -30162,9 +31498,9 @@
         "size": 89
       },
       {
-        "md5": "b3de5d6842c44dee25599bd4dbd64361",
+        "md5": "144d4a7492beab4c71dc3c8b30ccc1be",
         "name": "genomic_resource.yaml",
-        "size": 865
+        "size": 953
       },
       {
         "md5": "a931da0ef43fc17cfbe322d56c601743",
@@ -30188,6 +31524,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/SNCG\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/SNCG_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "SNCG",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for SNCG cell type"
       },
       "scores": [
@@ -30233,9 +31575,9 @@
         "size": 88
       },
       {
-        "md5": "a4af1ef31f3cdd47ba78ac4daebe5f9d",
+        "md5": "b354d819955304541833b95fcf131dc1",
         "name": "genomic_resource.yaml",
-        "size": 859
+        "size": 946
       },
       {
         "md5": "9d3f50f1d447cd0a4543f0ed3346c2dc",
@@ -30259,6 +31601,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/SST\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/SST_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "SST",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for SST cell type"
       },
       "scores": [
@@ -30304,9 +31652,9 @@
         "size": 87
       },
       {
-        "md5": "32516f99b51858f5d70838a89c59aa89",
+        "md5": "f0c06c4b56eff2e62e9ee5a095bcc213",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "4ad24f15499b63cf7b612ee1acd6fdcf",
@@ -30330,6 +31678,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/VIP\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/VIP_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "VIP",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for VIP cell type"
       },
       "scores": [
@@ -30375,9 +31729,9 @@
         "size": 87
       },
       {
-        "md5": "527447da9286b64f8061da846387d7e9",
+        "md5": "ae94d4b040201092240f1c9361d7fad5",
         "name": "genomic_resource.yaml",
-        "size": 853
+        "size": 939
       },
       {
         "md5": "0b27f1612c056b75cf6a6c761d3ade2b",
@@ -30401,6 +31755,12 @@
     "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://epigenome.wustl.edu/renlab/mouse\\_mop\\_rna/VLMC\\_RNA\\_RPKM.bw](https://epigenome.wustl.edu/renlab/mouse_mop_rna/VLMC_RNA_RPKM.bw)\n",
+        "labels": {
+          "assay": "rna",
+          "brain_region": "mop",
+          "cell_type": "VLMC",
+          "species": "mouse"
+        },
         "summary": "Pseudo-bulk rna track in mouse_mop for VLMC cell type"
       },
       "scores": [
@@ -30446,9 +31806,9 @@
         "size": 88
       },
       {
-        "md5": "fb616ff99ef704957824e70fa7cce43c",
+        "md5": "cf5ec3bd09b22ecc1f8cc20476316257",
         "name": "genomic_resource.yaml",
-        "size": 859
+        "size": 946
       },
       {
         "md5": "90711aaf88775308bbd7df49b767f3d7",

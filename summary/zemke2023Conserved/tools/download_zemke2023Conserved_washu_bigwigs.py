@@ -71,7 +71,7 @@ for species_rgn in SPECIES_RGN:
                 cell_type_remote = other_id
             url = f"https://epigenome.wustl.edu/renlab/{species_rgn}_{track}/{cell_type_remote}_{track.upper()}_RPKM.bw"
             url_md = url.replace("_", '\\_')
-            local_dir = f"../pseudo_bulk_{track}_bw/{species_rgn}_{cell_type}"
+            local_dir = f"../pseudo_bulk_{track}_bw/{species_rgn}/{cell_type}"
             local_file_name = f"{cell_type}_{track.upper()}_RPKM.bw"
             score = f"zemke2023Conserved_{species_rgn}_{cell_type}_{track}_rpkm"
             local_file = local_dir + "/" + local_file_name
@@ -128,6 +128,12 @@ meta:
     Downloaded from:
 
     [{url_md}]({url})
+  labels:
+    species: {species_rgn.split("_")[0]}
+    cell_type: {cell_type}
+    assay: {track}
+    brain_region: {species_rgn.split("_")[1]}
+
 '''
             with open(f"{local_dir}/genomic_resource.yaml", "w", encoding="utf-8") as RCF:
                 print(resource_config_str, file=RCF, end="")
