@@ -2,9 +2,10 @@
     analytics = false
     autostage = true
     remote = gs
-
 [cache]
     type = "hardlink,symlink"
-
+    dir = /gpfs/commons/datasets/controlled/NYGC_AI_Initiative/DVC/SC_summaries_cache
+    shared = group
+    protected = true
 ['remote "gs"']
     url = gs://nygc-demo-grr-dvc/grr-nygc-single-cell-demo
