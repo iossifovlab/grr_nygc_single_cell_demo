@@ -2,6 +2,7 @@ import glob, os
 from pathlib import Path
 from typing import Any
 import yaml
+from textwrap import dedent
 
 
 repo_dir = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR"
@@ -57,12 +58,13 @@ for ff in glob.glob(f"{yoonHaDD}/*.fragments.tsv.gz"):
         "index_file": iff.split("/")[-1],
         "meta": {
             "summary": f"Sample ATAC fragments for {sm_id} from liu2026Multiomics.",
-            "description": """
-                [Zemke, et al, Conserved and divergent gene regulatory programs of the mammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)
+            "description": dedent("""
+                [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
 
-                Downloaded from:
-                "Downloaded from [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651)."
-            """,
+                Downloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).
+
+                Genomic coordinates in fragment files are 0-based.
+            """),
             "labels": {
                 "assay": "atac_fragmets",
                 "technology": "SHARE-seq",
@@ -70,6 +72,7 @@ for ff in glob.glob(f"{yoonHaDD}/*.fragments.tsv.gz"):
                 "exp_batch": batch_n,
                 "organ": organ,
                 "pcw_age": pcw_age,
+                "dataset": "liu2026Multiomics"
             }
         }
     }

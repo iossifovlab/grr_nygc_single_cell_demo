@@ -1,6 +1,4516 @@
 [
   {
     "config": {
+      "file": "T014_b11_Heart_PCW18.fragments.tsv.gz",
+      "index_file": "T014_b11_Heart_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T014"
+        },
+        "summary": "Sample ATAC fragments for T014_b11_Heart_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T014_b11_Heart_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T014_b11_Heart_PCW18",
+    "manifest": [
+      {
+        "md5": "4d5e1d77b5f4394bb518ea87f19d0862",
+        "name": "T014_b11_Heart_PCW18.fragments.tsv.gz",
+        "size": 3798645426
+      },
+      {
+        "md5": "26657681807ac5ec0db58f18251bfbdc",
+        "name": "T014_b11_Heart_PCW18.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "955723468bb5eeba8606a675e7ead6e4",
+        "name": "T014_b11_Heart_PCW18.fragments.tsv.gz.tbi",
+        "size": 1481098
+      },
+      {
+        "md5": "88733a4d34a5fae27317268e3db0bf4b",
+        "name": "T014_b11_Heart_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "08f1069779d287b0af57852511694b8c",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T032_b11_Heart_PCW12.fragments.tsv.gz",
+      "index_file": "T032_b11_Heart_PCW12.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 12,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T032"
+        },
+        "summary": "Sample ATAC fragments for T032_b11_Heart_PCW12 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T032_b11_Heart_PCW12",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T032_b11_Heart_PCW12",
+    "manifest": [
+      {
+        "md5": "abc5352d612c1efb73f8004e8a979385",
+        "name": "T032_b11_Heart_PCW12.fragments.tsv.gz",
+        "size": 4496787206
+      },
+      {
+        "md5": "2f315b7ae7b9e831ecbd21a9572bd52c",
+        "name": "T032_b11_Heart_PCW12.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "2bbac5a9b4f63a746a85330917b370f1",
+        "name": "T032_b11_Heart_PCW12.fragments.tsv.gz.tbi",
+        "size": 1646531
+      },
+      {
+        "md5": "bfe2cdfeb234c006b5b4267b58ba3ef3",
+        "name": "T032_b11_Heart_PCW12.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "34b2798802c0fe4418b439ee173288a8",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T104_b11_Heart_PCW17.fragments.tsv.gz",
+      "index_file": "T104_b11_Heart_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T104"
+        },
+        "summary": "Sample ATAC fragments for T104_b11_Heart_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T104_b11_Heart_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T104_b11_Heart_PCW17",
+    "manifest": [
+      {
+        "md5": "4647aa00ba80d79a7469f716bb94ed72",
+        "name": "T104_b11_Heart_PCW17.fragments.tsv.gz",
+        "size": 3110743172
+      },
+      {
+        "md5": "4b441a26090d19821850628922b600cf",
+        "name": "T104_b11_Heart_PCW17.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "ec33e936f35e3204668932ec3c29de3e",
+        "name": "T104_b11_Heart_PCW17.fragments.tsv.gz.tbi",
+        "size": 1334606
+      },
+      {
+        "md5": "833a74f8b16076afcf07e0ef3952011e",
+        "name": "T104_b11_Heart_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "157ac08a9bd1daa6a99b9a0d8ade3a22",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T106_b13_Eye_PCW17.fragments.tsv.gz",
+      "index_file": "T106_b13_Eye_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T106"
+        },
+        "summary": "Sample ATAC fragments for T106_b13_Eye_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T106_b13_Eye_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T106_b13_Eye_PCW17",
+    "manifest": [
+      {
+        "md5": "01cb672457f88909c510d861904236e6",
+        "name": "T106_b13_Eye_PCW17.fragments.tsv.gz",
+        "size": 5355148334
+      },
+      {
+        "md5": "69a35c01288171a4c50cab8182d8b52f",
+        "name": "T106_b13_Eye_PCW17.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "b324d8a4f0fb8e6450efaf3d6e15eedb",
+        "name": "T106_b13_Eye_PCW17.fragments.tsv.gz.tbi",
+        "size": 1483694
+      },
+      {
+        "md5": "dce162ec6e11115e1d9e08670a6ddf13",
+        "name": "T106_b13_Eye_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "d2c38d36941e350dc11a0003e7b6a6b0",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T107_b12_Lung_PCW17.fragments.tsv.gz",
+      "index_file": "T107_b12_Lung_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T107"
+        },
+        "summary": "Sample ATAC fragments for T107_b12_Lung_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T107_b12_Lung_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T107_b12_Lung_PCW17",
+    "manifest": [
+      {
+        "md5": "8c23c85b667ae447562deb777035e256",
+        "name": "T107_b12_Lung_PCW17.fragments.tsv.gz",
+        "size": 3805996410
+      },
+      {
+        "md5": "4a179f95f2abcbcd002fa98b92b355aa",
+        "name": "T107_b12_Lung_PCW17.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "6882170c9c27c8034f7188276bf08ce7",
+        "name": "T107_b12_Lung_PCW17.fragments.tsv.gz.tbi",
+        "size": 1528313
+      },
+      {
+        "md5": "a3236f58b63e046a7d82c6180019b932",
+        "name": "T107_b12_Lung_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "13d62c62e1dce15317e86772f97230aa",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T10_b9_Muscle_PCW19.fragments.tsv.gz",
+      "index_file": "T10_b9_Muscle_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T10"
+        },
+        "summary": "Sample ATAC fragments for T10_b9_Muscle_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T10_b9_Muscle_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T10_b9_Muscle_PCW19",
+    "manifest": [
+      {
+        "md5": "dcd65da8ecf5b338251782aeb54c296b",
+        "name": "T10_b9_Muscle_PCW19.fragments.tsv.gz",
+        "size": 2956416907
+      },
+      {
+        "md5": "455b4e7b35cab1f7747b3b854e4edfdb",
+        "name": "T10_b9_Muscle_PCW19.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "162c0c043d4c85e340503b178c3ab0ea",
+        "name": "T10_b9_Muscle_PCW19.fragments.tsv.gz.tbi",
+        "size": 1350740
+      },
+      {
+        "md5": "9a27b9cde0a63f93937bdaa323230edc",
+        "name": "T10_b9_Muscle_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "5827a0fbf1c94535faf7b27d389c1d2e",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T11_b19_Skin_PCW19.fragments.tsv.gz",
+      "index_file": "T11_b19_Skin_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T11"
+        },
+        "summary": "Sample ATAC fragments for T11_b19_Skin_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T11_b19_Skin_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T11_b19_Skin_PCW19",
+    "manifest": [
+      {
+        "md5": "928dafa1d6b634d6a58f591f3ea6c44c",
+        "name": "T11_b19_Skin_PCW19.fragments.tsv.gz",
+        "size": 4826657099
+      },
+      {
+        "md5": "88ac1d174c17f1745fcd16b18788f493",
+        "name": "T11_b19_Skin_PCW19.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "98a5ac2ddef059cb2e8f56b5d8aefbf1",
+        "name": "T11_b19_Skin_PCW19.fragments.tsv.gz.tbi",
+        "size": 1609010
+      },
+      {
+        "md5": "0624955a62fa8b9d8dcd439262ea80ee",
+        "name": "T11_b19_Skin_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "58ecdb8ea7e84d24183ab638df875df3",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T123_b9_Muscle_PCW22.fragments.tsv.gz",
+      "index_file": "T123_b9_Muscle_PCW22.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 22,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T123"
+        },
+        "summary": "Sample ATAC fragments for T123_b9_Muscle_PCW22 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T123_b9_Muscle_PCW22",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T123_b9_Muscle_PCW22",
+    "manifest": [
+      {
+        "md5": "81e5be11fd9530007f486d8ad4c8911e",
+        "name": "T123_b9_Muscle_PCW22.fragments.tsv.gz",
+        "size": 3607011665
+      },
+      {
+        "md5": "fdbba6b9bca3ebc3dd44b6424a3df892",
+        "name": "T123_b9_Muscle_PCW22.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "551f0159dcfcf6d6cf76b24c399e211d",
+        "name": "T123_b9_Muscle_PCW22.fragments.tsv.gz.tbi",
+        "size": 1474635
+      },
+      {
+        "md5": "27f681a4deeb5de557ab47152224e7cb",
+        "name": "T123_b9_Muscle_PCW22.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "7170d72eb1bd981a9d63f64e519635e8",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T129_b4_Brain_PCW22.fragments.tsv.gz",
+      "index_file": "T129_b4_Brain_PCW22.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 22,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T129"
+        },
+        "summary": "Sample ATAC fragments for T129_b4_Brain_PCW22 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T129_b4_Brain_PCW22",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T129_b4_Brain_PCW22",
+    "manifest": [
+      {
+        "md5": "d177b8a68f24e3474d574b9ea9b9269b",
+        "name": "T129_b4_Brain_PCW22.fragments.tsv.gz",
+        "size": 1827442936
+      },
+      {
+        "md5": "e950108d20234dc8878443a6fca27bc3",
+        "name": "T129_b4_Brain_PCW22.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "b09086d853446b601268a0bc47e5632a",
+        "name": "T129_b4_Brain_PCW22.fragments.tsv.gz.tbi",
+        "size": 1038571
+      },
+      {
+        "md5": "43ff134f0d4841b68eb37070cc280680",
+        "name": "T129_b4_Brain_PCW22.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "1b7cf2b6cd3ecaefff43996f7f63200c",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T132_b12_Lung_PCW21.fragments.tsv.gz",
+      "index_file": "T132_b12_Lung_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T132"
+        },
+        "summary": "Sample ATAC fragments for T132_b12_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T132_b12_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T132_b12_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "981531c58fefe5a8dcb962f5678dbf29",
+        "name": "T132_b12_Lung_PCW21.fragments.tsv.gz",
+        "size": 4436267094
+      },
+      {
+        "md5": "633307bcc4a37a63e728dd13791213a0",
+        "name": "T132_b12_Lung_PCW21.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "843dbdcdb94ae83929751718b1cc5511",
+        "name": "T132_b12_Lung_PCW21.fragments.tsv.gz.tbi",
+        "size": 1621445
+      },
+      {
+        "md5": "badb114bf718acdbe56cc0524ea5c4c8",
+        "name": "T132_b12_Lung_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "e8fd799b50ac1c768c659fb47e5f0284",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T136_b16_Thyroid_PCW21.fragments.tsv.gz",
+      "index_file": "T136_b16_Thyroid_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Thyroid",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T136"
+        },
+        "summary": "Sample ATAC fragments for T136_b16_Thyroid_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T136_b16_Thyroid_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T136_b16_Thyroid_PCW21",
+    "manifest": [
+      {
+        "md5": "76cad8f674bf3c46abf655415d428d38",
+        "name": "T136_b16_Thyroid_PCW21.fragments.tsv.gz",
+        "size": 471510380
+      },
+      {
+        "md5": "a67286d3852e365deed26b0370acb4e7",
+        "name": "T136_b16_Thyroid_PCW21.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "60900c670718756b4765a78d232f2211",
+        "name": "T136_b16_Thyroid_PCW21.fragments.tsv.gz.tbi",
+        "size": 639772
+      },
+      {
+        "md5": "fcfd2bc4b04d6084a767b8d9d60360ea",
+        "name": "T136_b16_Thyroid_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "ab07009899043e99fd7048905530e4bd",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T136_b22_Thyroid_PCW21.fragments.tsv.gz",
+      "index_file": "T136_b22_Thyroid_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 22,
+          "organ": "Thyroid",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T136"
+        },
+        "summary": "Sample ATAC fragments for T136_b22_Thyroid_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T136_b22_Thyroid_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T136_b22_Thyroid_PCW21",
+    "manifest": [
+      {
+        "md5": "0c1aec07ec9f91ac2ab9d866d988ab8b",
+        "name": "T136_b22_Thyroid_PCW21.fragments.tsv.gz",
+        "size": 3746271037
+      },
+      {
+        "md5": "5e247bb379c1351976ea47f0b5210a3a",
+        "name": "T136_b22_Thyroid_PCW21.fragments.tsv.gz.dvc",
+        "size": 125
+      },
+      {
+        "md5": "0da3fc4739041be8533e60673318aa15",
+        "name": "T136_b22_Thyroid_PCW21.fragments.tsv.gz.tbi",
+        "size": 1517026
+      },
+      {
+        "md5": "b55e6f26b1f6c76bcd8ef6ba16e3f9e2",
+        "name": "T136_b22_Thyroid_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
+        "md5": "8c794990ccc089b222ce84c0bedbcf54",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T155_b4_Brain_PCW10.fragments.tsv.gz",
+      "index_file": "T155_b4_Brain_PCW10.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 10,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T155"
+        },
+        "summary": "Sample ATAC fragments for T155_b4_Brain_PCW10 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T155_b4_Brain_PCW10",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T155_b4_Brain_PCW10",
+    "manifest": [
+      {
+        "md5": "e894f1f3aeab6b70b9a832e16d82c97c",
+        "name": "T155_b4_Brain_PCW10.fragments.tsv.gz",
+        "size": 1345628795
+      },
+      {
+        "md5": "28d764307a42ce86bdbc3ed783622f24",
+        "name": "T155_b4_Brain_PCW10.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "32a8353662c180e203cd4956b4e4f390",
+        "name": "T155_b4_Brain_PCW10.fragments.tsv.gz.tbi",
+        "size": 883603
+      },
+      {
+        "md5": "a6be90497121fe9b65f869e9d2c3b5b7",
+        "name": "T155_b4_Brain_PCW10.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "3aa7af386122b1deb4ce3a13c5da6195",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T161_b9_Muscle_PCW10.fragments.tsv.gz",
+      "index_file": "T161_b9_Muscle_PCW10.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 10,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T161"
+        },
+        "summary": "Sample ATAC fragments for T161_b9_Muscle_PCW10 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T161_b9_Muscle_PCW10",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T161_b9_Muscle_PCW10",
+    "manifest": [
+      {
+        "md5": "b832cba2569adf0cff3a22466a118dc9",
+        "name": "T161_b9_Muscle_PCW10.fragments.tsv.gz",
+        "size": 3832284781
+      },
+      {
+        "md5": "7cd85ff4eadbc17bba99761a6a09d711",
+        "name": "T161_b9_Muscle_PCW10.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "9b72a2dcd0b1f5e53e2981d3e4b8e724",
+        "name": "T161_b9_Muscle_PCW10.fragments.tsv.gz.tbi",
+        "size": 1399378
+      },
+      {
+        "md5": "68d38d2d522af15c8f295920d64f035d",
+        "name": "T161_b9_Muscle_PCW10.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "a32e4c0f225e5821d4441cd94ed511e8",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T164_b12_Lung_PCW10.fragments.tsv.gz",
+      "index_file": "T164_b12_Lung_PCW10.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 10,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T164"
+        },
+        "summary": "Sample ATAC fragments for T164_b12_Lung_PCW10 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T164_b12_Lung_PCW10",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T164_b12_Lung_PCW10",
+    "manifest": [
+      {
+        "md5": "17ceb0b5fadb50d26373f7ae75a571f9",
+        "name": "T164_b12_Lung_PCW10.fragments.tsv.gz",
+        "size": 6856706033
+      },
+      {
+        "md5": "703a3e03e329572a8695f96ede96186a",
+        "name": "T164_b12_Lung_PCW10.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "7cc9ffe79c7ef3b364e26ce8dc776218",
+        "name": "T164_b12_Lung_PCW10.fragments.tsv.gz.tbi",
+        "size": 1912055
+      },
+      {
+        "md5": "1aa956ca169f6b19f5bca5b42eb029f7",
+        "name": "T164_b12_Lung_PCW10.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "68c54c060cdf985fa80b0e35977ede89",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T165_b17_Spleen_PCW19.fragments.tsv.gz",
+      "index_file": "T165_b17_Spleen_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T165"
+        },
+        "summary": "Sample ATAC fragments for T165_b17_Spleen_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T165_b17_Spleen_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T165_b17_Spleen_PCW19",
+    "manifest": [
+      {
+        "md5": "c6a9804ee2be4f1e22f1eac444979fde",
+        "name": "T165_b17_Spleen_PCW19.fragments.tsv.gz",
+        "size": 7599916111
+      },
+      {
+        "md5": "55a01ff4fc826c2a46b7baba14b0ccb2",
+        "name": "T165_b17_Spleen_PCW19.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "1334cf49db11c742712be4d18c0611fb",
+        "name": "T165_b17_Spleen_PCW19.fragments.tsv.gz.tbi",
+        "size": 2090646
+      },
+      {
+        "md5": "462a4a32285eb28b296f45400c6e1439",
+        "name": "T165_b17_Spleen_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "ef4fff2c6978f545900048632cdb0476",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T166_b15_Liver_PCW19.fragments.tsv.gz",
+      "index_file": "T166_b15_Liver_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T166"
+        },
+        "summary": "Sample ATAC fragments for T166_b15_Liver_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T166_b15_Liver_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T166_b15_Liver_PCW19",
+    "manifest": [
+      {
+        "md5": "93a0e0fa2671508ddeb44f420b6ea711",
+        "name": "T166_b15_Liver_PCW19.fragments.tsv.gz",
+        "size": 2683575872
+      },
+      {
+        "md5": "c150f2ed4d62db101bede919ba3b05b5",
+        "name": "T166_b15_Liver_PCW19.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "3462fe5dea067e9d79f09d5fd0291917",
+        "name": "T166_b15_Liver_PCW19.fragments.tsv.gz.tbi",
+        "size": 1206240
+      },
+      {
+        "md5": "d1f44f8eb9a593fdd1383ed34b1a67bc",
+        "name": "T166_b15_Liver_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "64573e370a109af274cec7a9fe0facde",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T175_b18_Lung_PCW19.fragments.tsv.gz",
+      "index_file": "T175_b18_Lung_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T175"
+        },
+        "summary": "Sample ATAC fragments for T175_b18_Lung_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T175_b18_Lung_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T175_b18_Lung_PCW19",
+    "manifest": [
+      {
+        "md5": "5d40c41fdd3f03e34246928599761c06",
+        "name": "T175_b18_Lung_PCW19.fragments.tsv.gz",
+        "size": 3102274417
+      },
+      {
+        "md5": "e0ba7539b3d4eebaeeb77d32f27e4c0b",
+        "name": "T175_b18_Lung_PCW19.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "850da5c9b5885d93768ac014c562d50f",
+        "name": "T175_b18_Lung_PCW19.fragments.tsv.gz.tbi",
+        "size": 1340046
+      },
+      {
+        "md5": "401fd746d76c0fc3bc67f6eedcb9b845",
+        "name": "T175_b18_Lung_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "8e35df551046d1654d3fd18aacccd62e",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T176_b16_Thyroid_PCW19.fragments.tsv.gz",
+      "index_file": "T176_b16_Thyroid_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Thyroid",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T176"
+        },
+        "summary": "Sample ATAC fragments for T176_b16_Thyroid_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T176_b16_Thyroid_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T176_b16_Thyroid_PCW19",
+    "manifest": [
+      {
+        "md5": "aec3fe8fe3eabd0773796b566beca315",
+        "name": "T176_b16_Thyroid_PCW19.fragments.tsv.gz",
+        "size": 354602146
+      },
+      {
+        "md5": "6449a139e2021ca5e57605596a5203a9",
+        "name": "T176_b16_Thyroid_PCW19.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "fe7bdfebfd7ee1c7958837161b9478c9",
+        "name": "T176_b16_Thyroid_PCW19.fragments.tsv.gz.tbi",
+        "size": 605659
+      },
+      {
+        "md5": "df26788db138efa0d0adb958d89c42f0",
+        "name": "T176_b16_Thyroid_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "fde714c9e2199e58c2b4997f0a073d7c",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T176_b22_Thyroid_PCW19.fragments.tsv.gz",
+      "index_file": "T176_b22_Thyroid_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 22,
+          "organ": "Thyroid",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T176"
+        },
+        "summary": "Sample ATAC fragments for T176_b22_Thyroid_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T176_b22_Thyroid_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T176_b22_Thyroid_PCW19",
+    "manifest": [
+      {
+        "md5": "39582a269fd0a7a24decd73cee5ea3fb",
+        "name": "T176_b22_Thyroid_PCW19.fragments.tsv.gz",
+        "size": 1563153442
+      },
+      {
+        "md5": "fb0aeb94abc69664ea4fc14f6cc74fd5",
+        "name": "T176_b22_Thyroid_PCW19.fragments.tsv.gz.dvc",
+        "size": 125
+      },
+      {
+        "md5": "2807450b67464dddde16365bb2be3119",
+        "name": "T176_b22_Thyroid_PCW19.fragments.tsv.gz.tbi",
+        "size": 932234
+      },
+      {
+        "md5": "292a6705475f45dc52bd3992bdd0d855",
+        "name": "T176_b22_Thyroid_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "70ea7b3c29349c559f5f1af0b514ecff",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T180_b13_Eye_PCW19.fragments.tsv.gz",
+      "index_file": "T180_b13_Eye_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T180"
+        },
+        "summary": "Sample ATAC fragments for T180_b13_Eye_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T180_b13_Eye_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T180_b13_Eye_PCW19",
+    "manifest": [
+      {
+        "md5": "3b0b5bcf8816098d6fc19d00b18413ce",
+        "name": "T180_b13_Eye_PCW19.fragments.tsv.gz",
+        "size": 2640379659
+      },
+      {
+        "md5": "7c7d53f32521b45c5d5ee5b0c337d9e7",
+        "name": "T180_b13_Eye_PCW19.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "9433cdc71e981607d76cd66d7a16600e",
+        "name": "T180_b13_Eye_PCW19.fragments.tsv.gz.tbi",
+        "size": 1285015
+      },
+      {
+        "md5": "1de86ee9f0b477e25fc6510c4fadec4e",
+        "name": "T180_b13_Eye_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "50cd7ba4702607cce19ae4df2773f5fb",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T183_b4_Brain_PCW19.fragments.tsv.gz",
+      "index_file": "T183_b4_Brain_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T183"
+        },
+        "summary": "Sample ATAC fragments for T183_b4_Brain_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T183_b4_Brain_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T183_b4_Brain_PCW19",
+    "manifest": [
+      {
+        "md5": "f11efc5b0a32f9bbb4489732480daca6",
+        "name": "T183_b4_Brain_PCW19.fragments.tsv.gz",
+        "size": 2566421080
+      },
+      {
+        "md5": "53206076cbf368aa1d01b9ab709f00cc",
+        "name": "T183_b4_Brain_PCW19.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "1e723b790e715cbbf7db113c4a5cb313",
+        "name": "T183_b4_Brain_PCW19.fragments.tsv.gz.tbi",
+        "size": 1286355
+      },
+      {
+        "md5": "8d88d05fcd046402d19149b2edd0dca3",
+        "name": "T183_b4_Brain_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "1695e7b2a5a935ffba29d125a920466d",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T186_b13_Eye_PCW23.fragments.tsv.gz",
+      "index_file": "T186_b13_Eye_PCW23.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 23,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T186"
+        },
+        "summary": "Sample ATAC fragments for T186_b13_Eye_PCW23 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T186_b13_Eye_PCW23",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T186_b13_Eye_PCW23",
+    "manifest": [
+      {
+        "md5": "dcdafbcb61a819cdacb797190d4f2902",
+        "name": "T186_b13_Eye_PCW23.fragments.tsv.gz",
+        "size": 3876565367
+      },
+      {
+        "md5": "93e7770f7d2d6f1e6023014ec702a2f5",
+        "name": "T186_b13_Eye_PCW23.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "aaa2133459f26344156167b308061240",
+        "name": "T186_b13_Eye_PCW23.fragments.tsv.gz.tbi",
+        "size": 1491068
+      },
+      {
+        "md5": "eb05dc920ef6ca319c3a29030e3a8796",
+        "name": "T186_b13_Eye_PCW23.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "1f4c7348adeb864d4f0b19da5fc4a939",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T187_b19_Skin_PCW23.fragments.tsv.gz",
+      "index_file": "T187_b19_Skin_PCW23.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 23,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T187"
+        },
+        "summary": "Sample ATAC fragments for T187_b19_Skin_PCW23 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T187_b19_Skin_PCW23",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T187_b19_Skin_PCW23",
+    "manifest": [
+      {
+        "md5": "02d4394804288837f1c7b49380b0fbc0",
+        "name": "T187_b19_Skin_PCW23.fragments.tsv.gz",
+        "size": 4917955697
+      },
+      {
+        "md5": "f1b44e64cc12f41cbbdd3dae4c8fa600",
+        "name": "T187_b19_Skin_PCW23.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "8442763a006b0177cfb17996d99ec0aa",
+        "name": "T187_b19_Skin_PCW23.fragments.tsv.gz.tbi",
+        "size": 1474218
+      },
+      {
+        "md5": "18dd1d3816d68039aef51e74a1bc0de3",
+        "name": "T187_b19_Skin_PCW23.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "2d3cbf31b48cf60bd22a2b5cf509fd55",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T198_b18_Lung_PCW23.fragments.tsv.gz",
+      "index_file": "T198_b18_Lung_PCW23.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 23,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T198"
+        },
+        "summary": "Sample ATAC fragments for T198_b18_Lung_PCW23 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T198_b18_Lung_PCW23",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T198_b18_Lung_PCW23",
+    "manifest": [
+      {
+        "md5": "b74a9d7ca856e3484a3c6956623e5957",
+        "name": "T198_b18_Lung_PCW23.fragments.tsv.gz",
+        "size": 4610783203
+      },
+      {
+        "md5": "72e476abf205305cd9e0ac1274db5ea1",
+        "name": "T198_b18_Lung_PCW23.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "faa20445ca796fdc7f93d7056045fd0e",
+        "name": "T198_b18_Lung_PCW23.fragments.tsv.gz.tbi",
+        "size": 1670536
+      },
+      {
+        "md5": "901b509810cc987a265f67979360cd77",
+        "name": "T198_b18_Lung_PCW23.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "c6084e714b22923e148a09bc438c4fed",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T226_b12_Lung_PCW21.fragments.tsv.gz",
+      "index_file": "T226_b12_Lung_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T226"
+        },
+        "summary": "Sample ATAC fragments for T226_b12_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T226_b12_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T226_b12_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "3d5cce3cc0b62674f224177cf301ae0b",
+        "name": "T226_b12_Lung_PCW21.fragments.tsv.gz",
+        "size": 7218019035
+      },
+      {
+        "md5": "98719a033db2d6e7c8b12570543d3174",
+        "name": "T226_b12_Lung_PCW21.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "3390433dd521791172adf4755d025982",
+        "name": "T226_b12_Lung_PCW21.fragments.tsv.gz.tbi",
+        "size": 2057883
+      },
+      {
+        "md5": "8407c765875faac7ff25683f86fc7d3d",
+        "name": "T226_b12_Lung_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "82408cb6c7570d61bfe1d088c5e63c08",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T233_b17_Thymus_PCW21.fragments.tsv.gz",
+      "index_file": "T233_b17_Thymus_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T233"
+        },
+        "summary": "Sample ATAC fragments for T233_b17_Thymus_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T233_b17_Thymus_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T233_b17_Thymus_PCW21",
+    "manifest": [
+      {
+        "md5": "17efc117b4897ea40a76798335254168",
+        "name": "T233_b17_Thymus_PCW21.fragments.tsv.gz",
+        "size": 3098636002
+      },
+      {
+        "md5": "87d871855a2d63ea60d2ad7a2d37cc4c",
+        "name": "T233_b17_Thymus_PCW21.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "5ddc7b43d809ce8835f259f3d30d1bdd",
+        "name": "T233_b17_Thymus_PCW21.fragments.tsv.gz.tbi",
+        "size": 1376013
+      },
+      {
+        "md5": "5929af20d9f5ddd577b77f1f763eeddc",
+        "name": "T233_b17_Thymus_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "3e30b07127da63a4e3806599dd2873b0",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T235_b15_Liver_PCW21.fragments.tsv.gz",
+      "index_file": "T235_b15_Liver_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T235"
+        },
+        "summary": "Sample ATAC fragments for T235_b15_Liver_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T235_b15_Liver_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T235_b15_Liver_PCW21",
+    "manifest": [
+      {
+        "md5": "1e691aae67623267e6a2d89fa7cdd3b1",
+        "name": "T235_b15_Liver_PCW21.fragments.tsv.gz",
+        "size": 3740452726
+      },
+      {
+        "md5": "25b661843a8660273465d16407fd792c",
+        "name": "T235_b15_Liver_PCW21.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "4ae90e8d9a1300af6dd5f202c825cabe",
+        "name": "T235_b15_Liver_PCW21.fragments.tsv.gz.tbi",
+        "size": 1488537
+      },
+      {
+        "md5": "baff655f452e47e91963b67f4ca49603",
+        "name": "T235_b15_Liver_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "7018b8c9750b266848423f555e2de327",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T238_b10_Stomach_PCW21.fragments.tsv.gz",
+      "index_file": "T238_b10_Stomach_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T238"
+        },
+        "summary": "Sample ATAC fragments for T238_b10_Stomach_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T238_b10_Stomach_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T238_b10_Stomach_PCW21",
+    "manifest": [
+      {
+        "md5": "2297f5ed2ee7aee94ca68acda900e437",
+        "name": "T238_b10_Stomach_PCW21.fragments.tsv.gz",
+        "size": 4200576568
+      },
+      {
+        "md5": "8ed77d99968f1f62c9f06e17e717e9d7",
+        "name": "T238_b10_Stomach_PCW21.fragments.tsv.gz.dvc",
+        "size": 125
+      },
+      {
+        "md5": "2614f2dde3923547e213dd96ee105067",
+        "name": "T238_b10_Stomach_PCW21.fragments.tsv.gz.tbi",
+        "size": 1487310
+      },
+      {
+        "md5": "41ec2ff1f0ad71dd1684a9d72965bc7e",
+        "name": "T238_b10_Stomach_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
+        "md5": "871cac72cffffdd1eed5e72b1d7e8b06",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T23_b17_Thymus_PCW17.fragments.tsv.gz",
+      "index_file": "T23_b17_Thymus_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T23"
+        },
+        "summary": "Sample ATAC fragments for T23_b17_Thymus_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T23_b17_Thymus_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T23_b17_Thymus_PCW17",
+    "manifest": [
+      {
+        "md5": "d42c839447aa93b42bc320ea8a9ec8fe",
+        "name": "T23_b17_Thymus_PCW17.fragments.tsv.gz",
+        "size": 8050684172
+      },
+      {
+        "md5": "c3486e54078d799e77101be03194cb65",
+        "name": "T23_b17_Thymus_PCW17.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "8d3c46f75ff438053a0bf364d9742740",
+        "name": "T23_b17_Thymus_PCW17.fragments.tsv.gz.tbi",
+        "size": 2127065
+      },
+      {
+        "md5": "331f2d4dc26de1ece0f59757745a8d51",
+        "name": "T23_b17_Thymus_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "e24846651d1ea4772ec7b24ebf41ba59",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T24_b18_Lung_PCW17.fragments.tsv.gz",
+      "index_file": "T24_b18_Lung_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T24"
+        },
+        "summary": "Sample ATAC fragments for T24_b18_Lung_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T24_b18_Lung_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T24_b18_Lung_PCW17",
+    "manifest": [
+      {
+        "md5": "c479d71c7abbd2b1089968d71047ac9f",
+        "name": "T24_b18_Lung_PCW17.fragments.tsv.gz",
+        "size": 3500177202
+      },
+      {
+        "md5": "27c6d2c8c65ae98a6c61745f63c98e26",
+        "name": "T24_b18_Lung_PCW17.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "16ea974c4640a0757f8b0390f6652ecf",
+        "name": "T24_b18_Lung_PCW17.fragments.tsv.gz.tbi",
+        "size": 1476196
+      },
+      {
+        "md5": "446d169feb5790a90fbeeb0102b23388",
+        "name": "T24_b18_Lung_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ff01820db2364db3ef90ca87ce278843",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T256_b12_Lung_PCW18.fragments.tsv.gz",
+      "index_file": "T256_b12_Lung_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T256"
+        },
+        "summary": "Sample ATAC fragments for T256_b12_Lung_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T256_b12_Lung_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T256_b12_Lung_PCW18",
+    "manifest": [
+      {
+        "md5": "41091709a49520113b68822a6f370183",
+        "name": "T256_b12_Lung_PCW18.fragments.tsv.gz",
+        "size": 3869599899
+      },
+      {
+        "md5": "21a7a9a51ac2e0aeccabd92587394759",
+        "name": "T256_b12_Lung_PCW18.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "5b54e02c6cf5d4ac93c22afcb9ec5917",
+        "name": "T256_b12_Lung_PCW18.fragments.tsv.gz.tbi",
+        "size": 1546719
+      },
+      {
+        "md5": "84211f5f9a0cbd51b99ce8ec4f380987",
+        "name": "T256_b12_Lung_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "30a6cf80cdff708632fec0bb91f67f94",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T269_b10_Stomach_PCW18.fragments.tsv.gz",
+      "index_file": "T269_b10_Stomach_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T269"
+        },
+        "summary": "Sample ATAC fragments for T269_b10_Stomach_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T269_b10_Stomach_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T269_b10_Stomach_PCW18",
+    "manifest": [
+      {
+        "md5": "decaff816bc0647b5c5efeeb858e812c",
+        "name": "T269_b10_Stomach_PCW18.fragments.tsv.gz",
+        "size": 4484711049
+      },
+      {
+        "md5": "32223fe19e554cae67a31143c4775b72",
+        "name": "T269_b10_Stomach_PCW18.fragments.tsv.gz.dvc",
+        "size": 125
+      },
+      {
+        "md5": "dc4eb88b88ed2d5efb82e2f629ab15d8",
+        "name": "T269_b10_Stomach_PCW18.fragments.tsv.gz.tbi",
+        "size": 1558682
+      },
+      {
+        "md5": "780add57fcc3020dd7b242909aaf2313",
+        "name": "T269_b10_Stomach_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
+        "md5": "04e06e7a88c666a0da943c2afb222901",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T270_b17_Spleen_PCW18.fragments.tsv.gz",
+      "index_file": "T270_b17_Spleen_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T270"
+        },
+        "summary": "Sample ATAC fragments for T270_b17_Spleen_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T270_b17_Spleen_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T270_b17_Spleen_PCW18",
+    "manifest": [
+      {
+        "md5": "f6e713330e1d5567cce4d8af0774b0e4",
+        "name": "T270_b17_Spleen_PCW18.fragments.tsv.gz",
+        "size": 6274215358
+      },
+      {
+        "md5": "a38d683e139403336a155d9a0d368a4d",
+        "name": "T270_b17_Spleen_PCW18.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "9124edf2b4d66d09c7bf475726dcfcfa",
+        "name": "T270_b17_Spleen_PCW18.fragments.tsv.gz.tbi",
+        "size": 1866808
+      },
+      {
+        "md5": "99945e835a6d51039616be9900a40f1e",
+        "name": "T270_b17_Spleen_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "53bae9f3aa3f8f97ad5b69db74dbb601",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T273_b16_Adr_PCW18.fragments.tsv.gz",
+      "index_file": "T273_b16_Adr_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T273"
+        },
+        "summary": "Sample ATAC fragments for T273_b16_Adr_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T273_b16_Adr_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T273_b16_Adr_PCW18",
+    "manifest": [
+      {
+        "md5": "589983bbdf12ea93310dd5dd1df6c117",
+        "name": "T273_b16_Adr_PCW18.fragments.tsv.gz",
+        "size": 179609280
+      },
+      {
+        "md5": "00cce954684fcc4ad9b199d6d4216ca0",
+        "name": "T273_b16_Adr_PCW18.fragments.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "8e1d907ecb178e8f83c5796e9b315985",
+        "name": "T273_b16_Adr_PCW18.fragments.tsv.gz.tbi",
+        "size": 572804
+      },
+      {
+        "md5": "2b1c66a9c4ef417f465ae7002e8e79d9",
+        "name": "T273_b16_Adr_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 121
+      },
+      {
+        "md5": "a4f0658ee51e587bf4d608389adb5359",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T275_b15_Liver_PCW18.fragments.tsv.gz",
+      "index_file": "T275_b15_Liver_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T275"
+        },
+        "summary": "Sample ATAC fragments for T275_b15_Liver_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T275_b15_Liver_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T275_b15_Liver_PCW18",
+    "manifest": [
+      {
+        "md5": "cd1d8cc9b87b6c61a1b5c981a97a6767",
+        "name": "T275_b15_Liver_PCW18.fragments.tsv.gz",
+        "size": 2961183261
+      },
+      {
+        "md5": "069a28295f49c7dbed32799a42f0ecf4",
+        "name": "T275_b15_Liver_PCW18.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "f4afa77083829975654d00b6be2e9b83",
+        "name": "T275_b15_Liver_PCW18.fragments.tsv.gz.tbi",
+        "size": 1261201
+      },
+      {
+        "md5": "c34669dfc5212dee13600ff145061b52",
+        "name": "T275_b15_Liver_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "1f23dd61726b6c63d502cfe2df5b036b",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T286_b12_Lung_PCW14.fragments.tsv.gz",
+      "index_file": "T286_b12_Lung_PCW14.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 14,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T286"
+        },
+        "summary": "Sample ATAC fragments for T286_b12_Lung_PCW14 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T286_b12_Lung_PCW14",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T286_b12_Lung_PCW14",
+    "manifest": [
+      {
+        "md5": "880b9ae832095ca2111c2e406cfa090b",
+        "name": "T286_b12_Lung_PCW14.fragments.tsv.gz",
+        "size": 4875856383
+      },
+      {
+        "md5": "a1c425babed1f80c89ee41ff03c7c46a",
+        "name": "T286_b12_Lung_PCW14.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "c3da5974b87e9a34a76d0130d47c054b",
+        "name": "T286_b12_Lung_PCW14.fragments.tsv.gz.tbi",
+        "size": 1639431
+      },
+      {
+        "md5": "69f5bbc35de8f7d6830d2fcfac463617",
+        "name": "T286_b12_Lung_PCW14.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "fc7840ba5240d9b8088b2c2bd76198c2",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T299_b19_Scalp_PCW21.fragments.tsv.gz",
+      "index_file": "T299_b19_Scalp_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Scalp",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T299"
+        },
+        "summary": "Sample ATAC fragments for T299_b19_Scalp_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T299_b19_Scalp_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T299_b19_Scalp_PCW21",
+    "manifest": [
+      {
+        "md5": "9e1b9dfdc4fd0d8bb8e5d147443924aa",
+        "name": "T299_b19_Scalp_PCW21.fragments.tsv.gz",
+        "size": 4697100113
+      },
+      {
+        "md5": "d960193b7fa0e0176d32da839c71fb68",
+        "name": "T299_b19_Scalp_PCW21.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "37e75575f7024e91ed5568042ea8dd4a",
+        "name": "T299_b19_Scalp_PCW21.fragments.tsv.gz.tbi",
+        "size": 1458397
+      },
+      {
+        "md5": "e0a62fc16b5c36337db6e70be82d976b",
+        "name": "T299_b19_Scalp_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "550c47122a3e268eddb66cba06a5ea2f",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T303_b10_Esophagus_PCW21.fragments.tsv.gz",
+      "index_file": "T303_b10_Esophagus_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Esophagus",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T303"
+        },
+        "summary": "Sample ATAC fragments for T303_b10_Esophagus_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T303_b10_Esophagus_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T303_b10_Esophagus_PCW21",
+    "manifest": [
+      {
+        "md5": "35d6f4a435bd25f255ad37f1ba2c8556",
+        "name": "T303_b10_Esophagus_PCW21.fragments.tsv.gz",
+        "size": 3576864708
+      },
+      {
+        "md5": "231ee033ab04a3f97b9ef67147b814f6",
+        "name": "T303_b10_Esophagus_PCW21.fragments.tsv.gz.dvc",
+        "size": 127
+      },
+      {
+        "md5": "be372db9a0ab68736041ebfd6ddce211",
+        "name": "T303_b10_Esophagus_PCW21.fragments.tsv.gz.tbi",
+        "size": 1438098
+      },
+      {
+        "md5": "473c04c6eac448500e62b354ffda2f4a",
+        "name": "T303_b10_Esophagus_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 128
+      },
+      {
+        "md5": "edd693fb1b669d9b56621d9c44db2ad2",
+        "name": "genomic_resource.yaml",
+        "size": 732
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T304_b12_Lung_PCW21.fragments.tsv.gz",
+      "index_file": "T304_b12_Lung_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T304"
+        },
+        "summary": "Sample ATAC fragments for T304_b12_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T304_b12_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T304_b12_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "8d6da5df610ca12ca95baae7c81cdc39",
+        "name": "T304_b12_Lung_PCW21.fragments.tsv.gz",
+        "size": 3337382275
+      },
+      {
+        "md5": "f4f386c4582d70c74ce42ca9f5d6c0e2",
+        "name": "T304_b12_Lung_PCW21.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ecfbba977976253b470176afeceab6aa",
+        "name": "T304_b12_Lung_PCW21.fragments.tsv.gz.tbi",
+        "size": 1414333
+      },
+      {
+        "md5": "e41f66d132cb2339af5772122f79575f",
+        "name": "T304_b12_Lung_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "5c79a1da5b91e88000ed37cf160995f7",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T305_b18_Lung_PCW21.fragments.tsv.gz",
+      "index_file": "T305_b18_Lung_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T305"
+        },
+        "summary": "Sample ATAC fragments for T305_b18_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T305_b18_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T305_b18_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "f2ea9af18b1ee15052c4ff4fb2957dc9",
+        "name": "T305_b18_Lung_PCW21.fragments.tsv.gz",
+        "size": 3611192250
+      },
+      {
+        "md5": "68ea37fc28936930a353d14b9d30adf4",
+        "name": "T305_b18_Lung_PCW21.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "436521f02b08c249b55ab32a7afd271e",
+        "name": "T305_b18_Lung_PCW21.fragments.tsv.gz.tbi",
+        "size": 1503875
+      },
+      {
+        "md5": "63cfb8f51421adb234465d49fcb4da64",
+        "name": "T305_b18_Lung_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "2807edeb259d320a81cd39403bdd7129",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T30_b11_Heart_PCW17.fragments.tsv.gz",
+      "index_file": "T30_b11_Heart_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T30"
+        },
+        "summary": "Sample ATAC fragments for T30_b11_Heart_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T30_b11_Heart_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T30_b11_Heart_PCW17",
+    "manifest": [
+      {
+        "md5": "c6e78ad03a105f1bcbc0c12913e6b9c4",
+        "name": "T30_b11_Heart_PCW17.fragments.tsv.gz",
+        "size": 3315833526
+      },
+      {
+        "md5": "e88f2f9569a6dd9fb8ae22da4382d504",
+        "name": "T30_b11_Heart_PCW17.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "f626827bb3f5f39b9c21a807535a3367",
+        "name": "T30_b11_Heart_PCW17.fragments.tsv.gz.tbi",
+        "size": 1359903
+      },
+      {
+        "md5": "86dc4fd5ad7757dcea8a2966d017392d",
+        "name": "T30_b11_Heart_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "10c53f25226e6c64efe272b0196e7dda",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T314_b16_Spleen_PCW21.fragments.tsv.gz",
+      "index_file": "T314_b16_Spleen_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Spleen",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T314"
+        },
+        "summary": "Sample ATAC fragments for T314_b16_Spleen_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T314_b16_Spleen_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T314_b16_Spleen_PCW21",
+    "manifest": [
+      {
+        "md5": "662a9a907656939f8324a69b8266cc9a",
+        "name": "T314_b16_Spleen_PCW21.fragments.tsv.gz",
+        "size": 251208095
+      },
+      {
+        "md5": "daa33d5011decb94f65dad45d959a00f",
+        "name": "T314_b16_Spleen_PCW21.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "779ad82724b34a7124455b093b15beda",
+        "name": "T314_b16_Spleen_PCW21.fragments.tsv.gz.tbi",
+        "size": 580416
+      },
+      {
+        "md5": "06f1e4c1a13df1daf26759ecc89963c2",
+        "name": "T314_b16_Spleen_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "6638ae95898fdbad58e29fdb6e76b616",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T314_b17_Spleen_PCW21.fragments.tsv.gz",
+      "index_file": "T314_b17_Spleen_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T314"
+        },
+        "summary": "Sample ATAC fragments for T314_b17_Spleen_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T314_b17_Spleen_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T314_b17_Spleen_PCW21",
+    "manifest": [
+      {
+        "md5": "bc4c03def28f6f5a6f6b2381608e96db",
+        "name": "T314_b17_Spleen_PCW21.fragments.tsv.gz",
+        "size": 6097750624
+      },
+      {
+        "md5": "f94e6f14a8ef2b6507b34146b483770c",
+        "name": "T314_b17_Spleen_PCW21.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "bced8532739eef57a15c2ec5d8572011",
+        "name": "T314_b17_Spleen_PCW21.fragments.tsv.gz.tbi",
+        "size": 1882984
+      },
+      {
+        "md5": "3e2359fc1c37b9e6b1c24ac53eb65636",
+        "name": "T314_b17_Spleen_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "93c429a56cbf597aa4faa7af9a082c9e",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T318_b16_Adr_PCW21.fragments.tsv.gz",
+      "index_file": "T318_b16_Adr_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T318"
+        },
+        "summary": "Sample ATAC fragments for T318_b16_Adr_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T318_b16_Adr_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T318_b16_Adr_PCW21",
+    "manifest": [
+      {
+        "md5": "51b04b25807c84d5f57e41ba4e020d4a",
+        "name": "T318_b16_Adr_PCW21.fragments.tsv.gz",
+        "size": 311074168
+      },
+      {
+        "md5": "550bb184ca65ca5842bebd3f2d7d0825",
+        "name": "T318_b16_Adr_PCW21.fragments.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "04c77c931d39d54c00421d3b7c3ae1e0",
+        "name": "T318_b16_Adr_PCW21.fragments.tsv.gz.tbi",
+        "size": 596765
+      },
+      {
+        "md5": "490dc68e40d84d655df6485feefec4f5",
+        "name": "T318_b16_Adr_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 121
+      },
+      {
+        "md5": "0b1433be8652d61a1ba80a084a990ea6",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T322_b10_Stomach_PCW21.fragments.tsv.gz",
+      "index_file": "T322_b10_Stomach_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T322"
+        },
+        "summary": "Sample ATAC fragments for T322_b10_Stomach_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T322_b10_Stomach_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T322_b10_Stomach_PCW21",
+    "manifest": [
+      {
+        "md5": "6596c92cc10e7f6a5c11345003567be4",
+        "name": "T322_b10_Stomach_PCW21.fragments.tsv.gz",
+        "size": 3066833095
+      },
+      {
+        "md5": "463e5d267e8aa3cdd883eaef70f2a751",
+        "name": "T322_b10_Stomach_PCW21.fragments.tsv.gz.dvc",
+        "size": 125
+      },
+      {
+        "md5": "e78c1b1d4125f4edcda41e1f5117a6f0",
+        "name": "T322_b10_Stomach_PCW21.fragments.tsv.gz.tbi",
+        "size": 1356617
+      },
+      {
+        "md5": "97f34296199a275e54cb30922d4ed76c",
+        "name": "T322_b10_Stomach_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
+        "md5": "afdef1032c93e9526fb14a15496fb94c",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T333_b18_Lung_PCW21.fragments.tsv.gz",
+      "index_file": "T333_b18_Lung_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T333"
+        },
+        "summary": "Sample ATAC fragments for T333_b18_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T333_b18_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T333_b18_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "e96a95cdfc1d47da5670d1d973d2103a",
+        "name": "T333_b18_Lung_PCW21.fragments.tsv.gz",
+        "size": 3244397746
+      },
+      {
+        "md5": "795c714922df86384ddefbb5a771b188",
+        "name": "T333_b18_Lung_PCW21.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "b495e978ca65c5f64e14c8a396c041ba",
+        "name": "T333_b18_Lung_PCW21.fragments.tsv.gz.tbi",
+        "size": 1435971
+      },
+      {
+        "md5": "4f50f595b9d16af6699f08e904b55113",
+        "name": "T333_b18_Lung_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "79aae50c8008d4af56e1e300de27fff8",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T350_b15_Liver_PCW21.fragments.tsv.gz",
+      "index_file": "T350_b15_Liver_PCW21.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T350"
+        },
+        "summary": "Sample ATAC fragments for T350_b15_Liver_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T350_b15_Liver_PCW21",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T350_b15_Liver_PCW21",
+    "manifest": [
+      {
+        "md5": "948fe3fdc7b0fd0fa2ca9c39f0c334b2",
+        "name": "T350_b15_Liver_PCW21.fragments.tsv.gz",
+        "size": 3672557992
+      },
+      {
+        "md5": "5fa432adc1cd8a9a81774f5346a07138",
+        "name": "T350_b15_Liver_PCW21.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "ae6a6fe6d44f9392546ecc9cb0e47da5",
+        "name": "T350_b15_Liver_PCW21.fragments.tsv.gz.tbi",
+        "size": 1470511
+      },
+      {
+        "md5": "589cf94079b48bb9af6fabf3b4cdc145",
+        "name": "T350_b15_Liver_PCW21.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "e2cd5f865af088ad62a91b3a49686b5a",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T35_b10_Stomach_PCW17.fragments.tsv.gz",
+      "index_file": "T35_b10_Stomach_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T35"
+        },
+        "summary": "Sample ATAC fragments for T35_b10_Stomach_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T35_b10_Stomach_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T35_b10_Stomach_PCW17",
+    "manifest": [
+      {
+        "md5": "b66ec3345b3ab7a939b70f2c565493a8",
+        "name": "T35_b10_Stomach_PCW17.fragments.tsv.gz",
+        "size": 3392056163
+      },
+      {
+        "md5": "503478ce2bcf526eb96967e66c8479be",
+        "name": "T35_b10_Stomach_PCW17.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "3259479519d21811e57aefc58893f7a7",
+        "name": "T35_b10_Stomach_PCW17.fragments.tsv.gz.tbi",
+        "size": 1422221
+      },
+      {
+        "md5": "511b3244bd4cdce362f1d9d0195d2c65",
+        "name": "T35_b10_Stomach_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "3842f7a60bdbea9a9fa38f8f4910ae0f",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T361_b11_Heart_PCW20.fragments.tsv.gz",
+      "index_file": "T361_b11_Heart_PCW20.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T361"
+        },
+        "summary": "Sample ATAC fragments for T361_b11_Heart_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T361_b11_Heart_PCW20",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T361_b11_Heart_PCW20",
+    "manifest": [
+      {
+        "md5": "a2e4e7a9dfe9d24b130eec04952cc852",
+        "name": "T361_b11_Heart_PCW20.fragments.tsv.gz",
+        "size": 1944344528
+      },
+      {
+        "md5": "941ae537adb2780cc83f2172d62cddb0",
+        "name": "T361_b11_Heart_PCW20.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "ad426e557dfbe352b76f318e6fe11626",
+        "name": "T361_b11_Heart_PCW20.fragments.tsv.gz.tbi",
+        "size": 1020476
+      },
+      {
+        "md5": "c960a07bdede4b50355e0909e3ba7b1d",
+        "name": "T361_b11_Heart_PCW20.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "6ffaa4dd67b5efff82523929b5a78565",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T375_b15_Liver_PCW15.fragments.tsv.gz",
+      "index_file": "T375_b15_Liver_PCW15.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T375"
+        },
+        "summary": "Sample ATAC fragments for T375_b15_Liver_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T375_b15_Liver_PCW15",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T375_b15_Liver_PCW15",
+    "manifest": [
+      {
+        "md5": "f49e4591ad767407c9965f2742388f4f",
+        "name": "T375_b15_Liver_PCW15.fragments.tsv.gz",
+        "size": 2697288651
+      },
+      {
+        "md5": "90e8f1f779b17ee8d7ce8604ba535832",
+        "name": "T375_b15_Liver_PCW15.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "610937c9532faa29fe42f0c9bb123c8a",
+        "name": "T375_b15_Liver_PCW15.fragments.tsv.gz.tbi",
+        "size": 1206828
+      },
+      {
+        "md5": "06115d63a0f3dfe7be5383e2e57e8633",
+        "name": "T375_b15_Liver_PCW15.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "f271ef120e5cb6efe6710b29f902234f",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T377_b9_Muscle_PCW15.fragments.tsv.gz",
+      "index_file": "T377_b9_Muscle_PCW15.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T377"
+        },
+        "summary": "Sample ATAC fragments for T377_b9_Muscle_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T377_b9_Muscle_PCW15",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T377_b9_Muscle_PCW15",
+    "manifest": [
+      {
+        "md5": "fdcb0a4043ae46c13af8de4e5dc92cb3",
+        "name": "T377_b9_Muscle_PCW15.fragments.tsv.gz",
+        "size": 4501732622
+      },
+      {
+        "md5": "41dd17e1dcf3e69f124e4b19f12780f2",
+        "name": "T377_b9_Muscle_PCW15.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "9ed2df9343d9cacf4983955c6669a37e",
+        "name": "T377_b9_Muscle_PCW15.fragments.tsv.gz.tbi",
+        "size": 1443016
+      },
+      {
+        "md5": "6cde0f4253bcf88c66f27741220c0476",
+        "name": "T377_b9_Muscle_PCW15.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "48374069c46daf51bbbfbb99af0e8fde",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T379_b11_Heart_PCW15.fragments.tsv.gz",
+      "index_file": "T379_b11_Heart_PCW15.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T379"
+        },
+        "summary": "Sample ATAC fragments for T379_b11_Heart_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T379_b11_Heart_PCW15",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T379_b11_Heart_PCW15",
+    "manifest": [
+      {
+        "md5": "7ff740dcf750b9361263dfac404958e4",
+        "name": "T379_b11_Heart_PCW15.fragments.tsv.gz",
+        "size": 8907278910
+      },
+      {
+        "md5": "ed48ed90fa713eb5460febc6869b4480",
+        "name": "T379_b11_Heart_PCW15.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "8b71c43b3684fb24ed42f957781227c0",
+        "name": "T379_b11_Heart_PCW15.fragments.tsv.gz.tbi",
+        "size": 1996849
+      },
+      {
+        "md5": "a5d2550e4683df6745d92c8f78a888b9",
+        "name": "T379_b11_Heart_PCW15.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "52dc2e4b584b513a66a4fc2e44c19490",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T382_b4_Brain_PCW15.fragments.tsv.gz",
+      "index_file": "T382_b4_Brain_PCW15.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T382"
+        },
+        "summary": "Sample ATAC fragments for T382_b4_Brain_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T382_b4_Brain_PCW15",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T382_b4_Brain_PCW15",
+    "manifest": [
+      {
+        "md5": "467f22637f20f8d004865e1662b53742",
+        "name": "T382_b4_Brain_PCW15.fragments.tsv.gz",
+        "size": 2380224263
+      },
+      {
+        "md5": "79537eba42b71c500e5f96a89d333296",
+        "name": "T382_b4_Brain_PCW15.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ddc1ad6a430917e61500aa0a83e616ae",
+        "name": "T382_b4_Brain_PCW15.fragments.tsv.gz.tbi",
+        "size": 1169441
+      },
+      {
+        "md5": "51324e71ff8aa614384bfd1c88d57a12",
+        "name": "T382_b4_Brain_PCW15.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "b28458fa0894e5f0a44cbfaad7ad368a",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T390_b16_Adr_PCW13.fragments.tsv.gz",
+      "index_file": "T390_b16_Adr_PCW13.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 13,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T390"
+        },
+        "summary": "Sample ATAC fragments for T390_b16_Adr_PCW13 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T390_b16_Adr_PCW13",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T390_b16_Adr_PCW13",
+    "manifest": [
+      {
+        "md5": "2f15fbee44bed5ab143547e780348f31",
+        "name": "T390_b16_Adr_PCW13.fragments.tsv.gz",
+        "size": 62897724
+      },
+      {
+        "md5": "305a4d8eafae1ce8d61e4379b3421f84",
+        "name": "T390_b16_Adr_PCW13.fragments.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "e81e91e563f0eb5d4e90de70ece05e88",
+        "name": "T390_b16_Adr_PCW13.fragments.tsv.gz.tbi",
+        "size": 664606
+      },
+      {
+        "md5": "ab91e4d0c330672b1245bac0623e533d",
+        "name": "T390_b16_Adr_PCW13.fragments.tsv.gz.tbi.dvc",
+        "size": 121
+      },
+      {
+        "md5": "253d00cf3a2b3b0cc6f82363d57096ef",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T398_b15_Liver_PCW17.fragments.tsv.gz",
+      "index_file": "T398_b15_Liver_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T398"
+        },
+        "summary": "Sample ATAC fragments for T398_b15_Liver_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T398_b15_Liver_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T398_b15_Liver_PCW17",
+    "manifest": [
+      {
+        "md5": "6ded87c2b0149112e6f4e8c01182179a",
+        "name": "T398_b15_Liver_PCW17.fragments.tsv.gz",
+        "size": 3467336935
+      },
+      {
+        "md5": "f610106eee143ee52328a466e5e0971c",
+        "name": "T398_b15_Liver_PCW17.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "6fd19c65ed83327d966d3cc53b0ec495",
+        "name": "T398_b15_Liver_PCW17.fragments.tsv.gz.tbi",
+        "size": 1366706
+      },
+      {
+        "md5": "defbbb0cf001d2b141cf96feb66660ac",
+        "name": "T398_b15_Liver_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "5aee814817963d083d0e401aa2f6d7a2",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T399_b10_Stomach_PCW17.fragments.tsv.gz",
+      "index_file": "T399_b10_Stomach_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T399"
+        },
+        "summary": "Sample ATAC fragments for T399_b10_Stomach_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T399_b10_Stomach_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T399_b10_Stomach_PCW17",
+    "manifest": [
+      {
+        "md5": "27dd8c9a187592e031ba54eacbf0a5d7",
+        "name": "T399_b10_Stomach_PCW17.fragments.tsv.gz",
+        "size": 3532675754
+      },
+      {
+        "md5": "f957debb14efcf98fd132834d47a1bb0",
+        "name": "T399_b10_Stomach_PCW17.fragments.tsv.gz.dvc",
+        "size": 125
+      },
+      {
+        "md5": "ee61ac6cf76f0b67e6f5aa3948695678",
+        "name": "T399_b10_Stomach_PCW17.fragments.tsv.gz.tbi",
+        "size": 1443975
+      },
+      {
+        "md5": "0dd3eb041db538e834e305629ffa41a9",
+        "name": "T399_b10_Stomach_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
+        "md5": "42a15b5920577c7c14e6d9a7c025c81f",
+        "name": "genomic_resource.yaml",
+        "size": 724
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T406_b17_Thymus_PCW19.fragments.tsv.gz",
+      "index_file": "T406_b17_Thymus_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T406"
+        },
+        "summary": "Sample ATAC fragments for T406_b17_Thymus_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T406_b17_Thymus_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T406_b17_Thymus_PCW19",
+    "manifest": [
+      {
+        "md5": "de04b3b0937439c83fc2824bc0648468",
+        "name": "T406_b17_Thymus_PCW19.fragments.tsv.gz",
+        "size": 5976442765
+      },
+      {
+        "md5": "135e9fc9ddcf72d7a5232c1298bb1650",
+        "name": "T406_b17_Thymus_PCW19.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "246bc6234bf37f40549d0b03ab856c37",
+        "name": "T406_b17_Thymus_PCW19.fragments.tsv.gz.tbi",
+        "size": 1752721
+      },
+      {
+        "md5": "883ab875ba79c670c701dea944b86127",
+        "name": "T406_b17_Thymus_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "b2837e0b94c03a239950993ca71e5641",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T407_b11_Heart_PCW19.fragments.tsv.gz",
+      "index_file": "T407_b11_Heart_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T407"
+        },
+        "summary": "Sample ATAC fragments for T407_b11_Heart_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T407_b11_Heart_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T407_b11_Heart_PCW19",
+    "manifest": [
+      {
+        "md5": "47ff3f4864fa2ae7afb99ae4812ce597",
+        "name": "T407_b11_Heart_PCW19.fragments.tsv.gz",
+        "size": 1957527477
+      },
+      {
+        "md5": "8656e8977ce6b54bf13f772d9c26a65f",
+        "name": "T407_b11_Heart_PCW19.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "515839333a21a544afecf5b7abd81029",
+        "name": "T407_b11_Heart_PCW19.fragments.tsv.gz.tbi",
+        "size": 1024995
+      },
+      {
+        "md5": "0e3065409f4b4487770cf228a0aa15af",
+        "name": "T407_b11_Heart_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "40647c20855d4ad81da7da82722e08e4",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T408L_b12_Lung_PCW19.fragments.tsv.gz",
+      "index_file": "T408L_b12_Lung_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T408L"
+        },
+        "summary": "Sample ATAC fragments for T408L_b12_Lung_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T408L_b12_Lung_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T408L_b12_Lung_PCW19",
+    "manifest": [
+      {
+        "md5": "6bc6f6146e3926bb388ecb340fd44cce",
+        "name": "T408L_b12_Lung_PCW19.fragments.tsv.gz",
+        "size": 2273229218
+      },
+      {
+        "md5": "6418801097d2c1efb20744edf69b37c4",
+        "name": "T408L_b12_Lung_PCW19.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "bdfe1ea2e691b5174d4fa32c40ec4e28",
+        "name": "T408L_b12_Lung_PCW19.fragments.tsv.gz.tbi",
+        "size": 1113340
+      },
+      {
+        "md5": "8e838cf82cb3c6ad3612fea12698bd45",
+        "name": "T408L_b12_Lung_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "dab7c264a3ee51bcd0dbd9440c0707f1",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T408S_b19_Skin_PCW19.fragments.tsv.gz",
+      "index_file": "T408S_b19_Skin_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T408S"
+        },
+        "summary": "Sample ATAC fragments for T408S_b19_Skin_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T408S_b19_Skin_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T408S_b19_Skin_PCW19",
+    "manifest": [
+      {
+        "md5": "cf2c008851c54b87d8defd6c00d12f80",
+        "name": "T408S_b19_Skin_PCW19.fragments.tsv.gz",
+        "size": 6583161952
+      },
+      {
+        "md5": "d46da0bc09f4317c74639b3942ff1276",
+        "name": "T408S_b19_Skin_PCW19.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "0bf5ac8849d286227c6f231139744004",
+        "name": "T408S_b19_Skin_PCW19.fragments.tsv.gz.tbi",
+        "size": 1709927
+      },
+      {
+        "md5": "4d0de58c97acf7d9807f4bb6545ada24",
+        "name": "T408S_b19_Skin_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "4909189ad69d9925052de0bbb72953ed",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T40_b16_Adr_PCW17.fragments.tsv.gz",
+      "index_file": "T40_b16_Adr_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T40"
+        },
+        "summary": "Sample ATAC fragments for T40_b16_Adr_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T40_b16_Adr_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T40_b16_Adr_PCW17",
+    "manifest": [
+      {
+        "md5": "bbf11d5852fafed91bc623c698cb4d90",
+        "name": "T40_b16_Adr_PCW17.fragments.tsv.gz",
+        "size": 244836115
+      },
+      {
+        "md5": "a7ba6198755fa3bd03d3915cf8e8c038",
+        "name": "T40_b16_Adr_PCW17.fragments.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "70cd13f584404a59559f729acdef7819",
+        "name": "T40_b16_Adr_PCW17.fragments.tsv.gz.tbi",
+        "size": 576849
+      },
+      {
+        "md5": "2b33f9aaef834e92cb7e26c1af971d36",
+        "name": "T40_b16_Adr_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 120
+      },
+      {
+        "md5": "4a7f65900b05c2b9b614cbd88d104f10",
+        "name": "genomic_resource.yaml",
+        "size": 704
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T410_b13_Eye_PCW13.fragments.tsv.gz",
+      "index_file": "T410_b13_Eye_PCW13.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 13,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T410"
+        },
+        "summary": "Sample ATAC fragments for T410_b13_Eye_PCW13 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T410_b13_Eye_PCW13",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T410_b13_Eye_PCW13",
+    "manifest": [
+      {
+        "md5": "21e11c1aea339730cc9d8d5aa22eb9b1",
+        "name": "T410_b13_Eye_PCW13.fragments.tsv.gz",
+        "size": 4839268473
+      },
+      {
+        "md5": "956f43688139ab0689879a798544e69f",
+        "name": "T410_b13_Eye_PCW13.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "4b818a18190535c795dc44836ae58d0c",
+        "name": "T410_b13_Eye_PCW13.fragments.tsv.gz.tbi",
+        "size": 1621071
+      },
+      {
+        "md5": "0f600cd2a58e6f7eafacfb834a71f645",
+        "name": "T410_b13_Eye_PCW13.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ffa7059f4c818f70f6f36a3d62110bea",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T44_b9_Muscle_PCW17.fragments.tsv.gz",
+      "index_file": "T44_b9_Muscle_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T44"
+        },
+        "summary": "Sample ATAC fragments for T44_b9_Muscle_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T44_b9_Muscle_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T44_b9_Muscle_PCW17",
+    "manifest": [
+      {
+        "md5": "a597d50e30472e44963b91912009067b",
+        "name": "T44_b9_Muscle_PCW17.fragments.tsv.gz",
+        "size": 4259176293
+      },
+      {
+        "md5": "cf7703b77e97e34c5195efe202907e6e",
+        "name": "T44_b9_Muscle_PCW17.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "d4585a89955ca4adaf61e3f1516f7e7e",
+        "name": "T44_b9_Muscle_PCW17.fragments.tsv.gz.tbi",
+        "size": 1543779
+      },
+      {
+        "md5": "09be50b1b273528d04019d404657a13a",
+        "name": "T44_b9_Muscle_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "5ec30050f65f387014cd289d3b7e4d90",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T45_b19_Skin_PCW17.fragments.tsv.gz",
+      "index_file": "T45_b19_Skin_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T45"
+        },
+        "summary": "Sample ATAC fragments for T45_b19_Skin_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T45_b19_Skin_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T45_b19_Skin_PCW17",
+    "manifest": [
+      {
+        "md5": "a568c8bc2a1fd1efad4a9263a899aef5",
+        "name": "T45_b19_Skin_PCW17.fragments.tsv.gz",
+        "size": 6724100331
+      },
+      {
+        "md5": "7d35022f9edbc581a50aad9eb0e18c3a",
+        "name": "T45_b19_Skin_PCW17.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "2413bd76bf5109c8a83752d8964e9207",
+        "name": "T45_b19_Skin_PCW17.fragments.tsv.gz.tbi",
+        "size": 1854698
+      },
+      {
+        "md5": "15c571b03e6fc1892bb2b170a9b04dcd",
+        "name": "T45_b19_Skin_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "c1f1b3b1d24bdaff9d74007739db9922",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T47_b4_Brain_PCW17.fragments.tsv.gz",
+      "index_file": "T47_b4_Brain_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T47"
+        },
+        "summary": "Sample ATAC fragments for T47_b4_Brain_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T47_b4_Brain_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T47_b4_Brain_PCW17",
+    "manifest": [
+      {
+        "md5": "bbb8a5ab78589b3038d2a99ded65f98f",
+        "name": "T47_b4_Brain_PCW17.fragments.tsv.gz",
+        "size": 1818984962
+      },
+      {
+        "md5": "55268e4e3bf1d011408f4b7df9a92281",
+        "name": "T47_b4_Brain_PCW17.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "24efece40f1cd33bcb5ca9146035ffbc",
+        "name": "T47_b4_Brain_PCW17.fragments.tsv.gz.tbi",
+        "size": 1019291
+      },
+      {
+        "md5": "14fd7e1609572057e6b3107a00735d46",
+        "name": "T47_b4_Brain_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ed5f603def38402dda8165816c93a20e",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T49_b18_Lung_PCW20.fragments.tsv.gz",
+      "index_file": "T49_b18_Lung_PCW20.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T49"
+        },
+        "summary": "Sample ATAC fragments for T49_b18_Lung_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T49_b18_Lung_PCW20",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T49_b18_Lung_PCW20",
+    "manifest": [
+      {
+        "md5": "14940c7629fdc189c4d52e2e87b86a47",
+        "name": "T49_b18_Lung_PCW20.fragments.tsv.gz",
+        "size": 3931137164
+      },
+      {
+        "md5": "03ac100f6a467a4c00f3dc4544218912",
+        "name": "T49_b18_Lung_PCW20.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "77972a1eda8e30652aeae8d39491aa26",
+        "name": "T49_b18_Lung_PCW20.fragments.tsv.gz.tbi",
+        "size": 1548812
+      },
+      {
+        "md5": "2d9bb461d03aecb869bbebeee37447a1",
+        "name": "T49_b18_Lung_PCW20.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "9e495d61d344002f608f6bb504829553",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T51_b13_Eye_PCW20.fragments.tsv.gz",
+      "index_file": "T51_b13_Eye_PCW20.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T51"
+        },
+        "summary": "Sample ATAC fragments for T51_b13_Eye_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T51_b13_Eye_PCW20",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T51_b13_Eye_PCW20",
+    "manifest": [
+      {
+        "md5": "20bad7c82f96353665d53fe0244f849a",
+        "name": "T51_b13_Eye_PCW20.fragments.tsv.gz",
+        "size": 2816555893
+      },
+      {
+        "md5": "203427bef7da19eeee07520bc6d18fbb",
+        "name": "T51_b13_Eye_PCW20.fragments.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "2402af395cd77fac4617e9f08ad3093e",
+        "name": "T51_b13_Eye_PCW20.fragments.tsv.gz.tbi",
+        "size": 1313590
+      },
+      {
+        "md5": "4f907f6fb6667686fee647ad911582e4",
+        "name": "T51_b13_Eye_PCW20.fragments.tsv.gz.tbi.dvc",
+        "size": 121
+      },
+      {
+        "md5": "4bd52efc5a253a7ff6357f886accde36",
+        "name": "genomic_resource.yaml",
+        "size": 704
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T53_b10_Stomach_PCW20.fragments.tsv.gz",
+      "index_file": "T53_b10_Stomach_PCW20.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T53"
+        },
+        "summary": "Sample ATAC fragments for T53_b10_Stomach_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T53_b10_Stomach_PCW20",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T53_b10_Stomach_PCW20",
+    "manifest": [
+      {
+        "md5": "0c44754a5fa81841aee3227ca22f4423",
+        "name": "T53_b10_Stomach_PCW20.fragments.tsv.gz",
+        "size": 2770524795
+      },
+      {
+        "md5": "fb05bd774a903facc9e5f00ff120df1a",
+        "name": "T53_b10_Stomach_PCW20.fragments.tsv.gz.dvc",
+        "size": 124
+      },
+      {
+        "md5": "a4da8c54e1089aad1a594c8db9d231f4",
+        "name": "T53_b10_Stomach_PCW20.fragments.tsv.gz.tbi",
+        "size": 1320742
+      },
+      {
+        "md5": "b4143dbde3156a95bd033b0b58cf847c",
+        "name": "T53_b10_Stomach_PCW20.fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
+        "md5": "87034c2a5a13a89c44f3b608dd05f1aa",
+        "name": "genomic_resource.yaml",
+        "size": 720
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T5_b13_Eye_PCW19.fragments.tsv.gz",
+      "index_file": "T5_b13_Eye_PCW19.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T5"
+        },
+        "summary": "Sample ATAC fragments for T5_b13_Eye_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T5_b13_Eye_PCW19",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T5_b13_Eye_PCW19",
+    "manifest": [
+      {
+        "md5": "564e372b3a9030e1c8fa936cc285bbf1",
+        "name": "T5_b13_Eye_PCW19.fragments.tsv.gz",
+        "size": 4295986251
+      },
+      {
+        "md5": "36d25c14103b3dfdd3d5df84e3eaa592",
+        "name": "T5_b13_Eye_PCW19.fragments.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "bc18d014252e1d6a48f6d2e2e1bcb7ab",
+        "name": "T5_b13_Eye_PCW19.fragments.tsv.gz.tbi",
+        "size": 1450492
+      },
+      {
+        "md5": "8237e9445853f27a7f0448f1109069ec",
+        "name": "T5_b13_Eye_PCW19.fragments.tsv.gz.tbi.dvc",
+        "size": 120
+      },
+      {
+        "md5": "e48aa5e3e3133e3041ec161915ea60af",
+        "name": "genomic_resource.yaml",
+        "size": 700
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T61_b9_Muscle_PCW20.fragments.tsv.gz",
+      "index_file": "T61_b9_Muscle_PCW20.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T61"
+        },
+        "summary": "Sample ATAC fragments for T61_b9_Muscle_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T61_b9_Muscle_PCW20",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T61_b9_Muscle_PCW20",
+    "manifest": [
+      {
+        "md5": "c8e5ecc2303c959ec8e981c47f69b340",
+        "name": "T61_b9_Muscle_PCW20.fragments.tsv.gz",
+        "size": 2700734853
+      },
+      {
+        "md5": "57be53c9f2ed8758fc8f10297cb53c4e",
+        "name": "T61_b9_Muscle_PCW20.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ebe621c2edadac3912f4d9c91a1744e6",
+        "name": "T61_b9_Muscle_PCW20.fragments.tsv.gz.tbi",
+        "size": 1313863
+      },
+      {
+        "md5": "f861111380c36ba956f383add5833a61",
+        "name": "T61_b9_Muscle_PCW20.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "4105b60caa6c300cee1a9f50513e8981",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T63_b4_Brain_PCW20.fragments.tsv.gz",
+      "index_file": "T63_b4_Brain_PCW20.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T63"
+        },
+        "summary": "Sample ATAC fragments for T63_b4_Brain_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T63_b4_Brain_PCW20",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T63_b4_Brain_PCW20",
+    "manifest": [
+      {
+        "md5": "e75695bd2be241422842510b2e7487e3",
+        "name": "T63_b4_Brain_PCW20.fragments.tsv.gz",
+        "size": 2350759667
+      },
+      {
+        "md5": "2fe1099681f2724fb3c83da94057f7e0",
+        "name": "T63_b4_Brain_PCW20.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "cb0bd727a35b4c5dce1371481f0a3664",
+        "name": "T63_b4_Brain_PCW20.fragments.tsv.gz.tbi",
+        "size": 1240272
+      },
+      {
+        "md5": "7b77cf80416571fa76453b2b64109e36",
+        "name": "T63_b4_Brain_PCW20.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "bdd90eae3f12d3cdc213755b287bd9f8",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T64_b4_Brain_PCW18.fragments.tsv.gz",
+      "index_file": "T64_b4_Brain_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T64"
+        },
+        "summary": "Sample ATAC fragments for T64_b4_Brain_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T64_b4_Brain_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T64_b4_Brain_PCW18",
+    "manifest": [
+      {
+        "md5": "9377c183347b64099cb5b51ae9744d1d",
+        "name": "T64_b4_Brain_PCW18.fragments.tsv.gz",
+        "size": 2378766876
+      },
+      {
+        "md5": "a396981ceb1468c6a68c0ed676d3b0e5",
+        "name": "T64_b4_Brain_PCW18.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "16a5f7a043c726281603ba9890529c6d",
+        "name": "T64_b4_Brain_PCW18.fragments.tsv.gz.tbi",
+        "size": 1179750
+      },
+      {
+        "md5": "6574e8f70432f4b049a0126a64ce493a",
+        "name": "T64_b4_Brain_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "2d6f45b7fd856493205cc7f86c09641b",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T71_b15_Liver_PCW18.fragments.tsv.gz",
+      "index_file": "T71_b15_Liver_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T71"
+        },
+        "summary": "Sample ATAC fragments for T71_b15_Liver_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T71_b15_Liver_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T71_b15_Liver_PCW18",
+    "manifest": [
+      {
+        "md5": "1d703c31e9fd435be89f139b46040e19",
+        "name": "T71_b15_Liver_PCW18.fragments.tsv.gz",
+        "size": 2650760228
+      },
+      {
+        "md5": "6cac09dd78822636f1d6b50e1fd79ea2",
+        "name": "T71_b15_Liver_PCW18.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "7e1746b4e407463c97436ae1aaf7996e",
+        "name": "T71_b15_Liver_PCW18.fragments.tsv.gz.tbi",
+        "size": 1190504
+      },
+      {
+        "md5": "6eca189a5f7020ddc3676ca4d2b915a2",
+        "name": "T71_b15_Liver_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "9d6f516ea82692bc50b03accdceea502",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T77_b18_Lung_PCW18.fragments.tsv.gz",
+      "index_file": "T77_b18_Lung_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T77"
+        },
+        "summary": "Sample ATAC fragments for T77_b18_Lung_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T77_b18_Lung_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T77_b18_Lung_PCW18",
+    "manifest": [
+      {
+        "md5": "5906b2146d8e3df2f6be36558b6f3f1b",
+        "name": "T77_b18_Lung_PCW18.fragments.tsv.gz",
+        "size": 4167066296
+      },
+      {
+        "md5": "40a97416ecf9f1ae2aa888b48a8ff7b7",
+        "name": "T77_b18_Lung_PCW18.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "6ab621ddc9e2fe466ddd527fb765a5d2",
+        "name": "T77_b18_Lung_PCW18.fragments.tsv.gz.tbi",
+        "size": 1586336
+      },
+      {
+        "md5": "7b46b4b1be14ca43f66447539d00ca1a",
+        "name": "T77_b18_Lung_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
+        "md5": "ec5a0c766bdf47a3005f67d78687075f",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T79_b13_Eye_PCW18.fragments.tsv.gz",
+      "index_file": "T79_b13_Eye_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T79"
+        },
+        "summary": "Sample ATAC fragments for T79_b13_Eye_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T79_b13_Eye_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T79_b13_Eye_PCW18",
+    "manifest": [
+      {
+        "md5": "8940236d218d07f7e7925fe9b2927f9f",
+        "name": "T79_b13_Eye_PCW18.fragments.tsv.gz",
+        "size": 3246962223
+      },
+      {
+        "md5": "153fc9bd9d8eed92ca7f7467e4369a8a",
+        "name": "T79_b13_Eye_PCW18.fragments.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "570c56f889f5c479a2d82962f16a6bd1",
+        "name": "T79_b13_Eye_PCW18.fragments.tsv.gz.tbi",
+        "size": 1379925
+      },
+      {
+        "md5": "79f6e38ec9428384ea3b0923faf22e20",
+        "name": "T79_b13_Eye_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 121
+      },
+      {
+        "md5": "fe6a4b2860b4e55f31efb53d0ff3a74a",
+        "name": "genomic_resource.yaml",
+        "size": 704
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T87_b9_Muscle_PCW18.fragments.tsv.gz",
+      "index_file": "T87_b9_Muscle_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T87"
+        },
+        "summary": "Sample ATAC fragments for T87_b9_Muscle_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T87_b9_Muscle_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T87_b9_Muscle_PCW18",
+    "manifest": [
+      {
+        "md5": "c611cb3fc36798838b15d27a13c2cd7d",
+        "name": "T87_b9_Muscle_PCW18.fragments.tsv.gz",
+        "size": 2863453744
+      },
+      {
+        "md5": "47d94a89b34651c314f82876bb2a6f00",
+        "name": "T87_b9_Muscle_PCW18.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "cf161deeb3e5ee95d42bca0c7ecbe105",
+        "name": "T87_b9_Muscle_PCW18.fragments.tsv.gz.tbi",
+        "size": 1345194
+      },
+      {
+        "md5": "0589f4c217f142ac20742e7f3509088d",
+        "name": "T87_b9_Muscle_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "551fc86fd951c675f300b09e4b448e04",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T88_b17_Spleen_PCW18.fragments.tsv.gz",
+      "index_file": "T88_b17_Spleen_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T88"
+        },
+        "summary": "Sample ATAC fragments for T88_b17_Spleen_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T88_b17_Spleen_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T88_b17_Spleen_PCW18",
+    "manifest": [
+      {
+        "md5": "57e1fbce3f33e87544a1889d2eac9526",
+        "name": "T88_b17_Spleen_PCW18.fragments.tsv.gz",
+        "size": 4406914432
+      },
+      {
+        "md5": "1b1be11c08150bdca690ac2bf3bb21b1",
+        "name": "T88_b17_Spleen_PCW18.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "a7acbebeb6203c7d9e9705969bbbbbe7",
+        "name": "T88_b17_Spleen_PCW18.fragments.tsv.gz.tbi",
+        "size": 1653492
+      },
+      {
+        "md5": "c16c17f442c0f0b8d2991d3f8f16130e",
+        "name": "T88_b17_Spleen_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "2963d571b84bf07af79788597630d64e",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T90_b17_Thymus_PCW18.fragments.tsv.gz",
+      "index_file": "T90_b17_Thymus_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T90"
+        },
+        "summary": "Sample ATAC fragments for T90_b17_Thymus_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T90_b17_Thymus_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T90_b17_Thymus_PCW18",
+    "manifest": [
+      {
+        "md5": "00dd8fa30c8f8ccad86df20db104641a",
+        "name": "T90_b17_Thymus_PCW18.fragments.tsv.gz",
+        "size": 5752806885
+      },
+      {
+        "md5": "6925501af38cb70c4ae6c7ea94af9ffd",
+        "name": "T90_b17_Thymus_PCW18.fragments.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "b330b5bb81e4c3f891d2dc7dbe74c29f",
+        "name": "T90_b17_Thymus_PCW18.fragments.tsv.gz.tbi",
+        "size": 1833969
+      },
+      {
+        "md5": "b54d3775f06797b22f64dbe41b89a3b2",
+        "name": "T90_b17_Thymus_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
+        "md5": "2218067eed8d9300644f7f2c156d5ad0",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T92_b11_Heart_PCW18.fragments.tsv.gz",
+      "index_file": "T92_b11_Heart_PCW18.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T92"
+        },
+        "summary": "Sample ATAC fragments for T92_b11_Heart_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T92_b11_Heart_PCW18",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T92_b11_Heart_PCW18",
+    "manifest": [
+      {
+        "md5": "0a4a7ca0f1885ccc7cfb45d3f0350860",
+        "name": "T92_b11_Heart_PCW18.fragments.tsv.gz",
+        "size": 2921319680
+      },
+      {
+        "md5": "00ceba53e65b97c208a9266c1150189f",
+        "name": "T92_b11_Heart_PCW18.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "7b8ab0a7578941f8e20bd705c34bc1af",
+        "name": "T92_b11_Heart_PCW18.fragments.tsv.gz.tbi",
+        "size": 1285939
+      },
+      {
+        "md5": "f3f40f355a9c0548946374d1871cb700",
+        "name": "T92_b11_Heart_PCW18.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "7a3d79293edcf287a130b3f205326b73",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T94_b4_Brain_PCW17.fragments.tsv.gz",
+      "index_file": "T94_b4_Brain_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T94"
+        },
+        "summary": "Sample ATAC fragments for T94_b4_Brain_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T94_b4_Brain_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T94_b4_Brain_PCW17",
+    "manifest": [
+      {
+        "md5": "ab02c0f836d08c9caad2fdaeadfc7521",
+        "name": "T94_b4_Brain_PCW17.fragments.tsv.gz",
+        "size": 1720411640
+      },
+      {
+        "md5": "e5d785cb7060292f95a47cbfaa14344a",
+        "name": "T94_b4_Brain_PCW17.fragments.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "51151770c69506b85162b2c3e553ccb1",
+        "name": "T94_b4_Brain_PCW17.fragments.tsv.gz.tbi",
+        "size": 989903
+      },
+      {
+        "md5": "8e0528886855a8d20d7542ccee5182ca",
+        "name": "T94_b4_Brain_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 121
+      },
+      {
+        "md5": "43de02f79f577c6fea2f857ad4e517c1",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "T96_b9_Muscle_PCW17.fragments.tsv.gz",
+      "index_file": "T96_b9_Muscle_PCW17.fragments.tsv.gz.tbi",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n\nGenomic coordinates in fragment files are 0-based.\n",
+        "labels": {
+          "assay": "atac_fragmets",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T96"
+        },
+        "summary": "Sample ATAC fragments for T96_b9_Muscle_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_atac_fragments/T96_b9_Muscle_PCW17",
+    "id": "summary/liu2026Multiomics/sample_atac_fragments/T96_b9_Muscle_PCW17",
+    "manifest": [
+      {
+        "md5": "7d6adb3f31268f14e86fb4aa0fe509ea",
+        "name": "T96_b9_Muscle_PCW17.fragments.tsv.gz",
+        "size": 3617504459
+      },
+      {
+        "md5": "4507eb17fa57e25c3167e49edd1003d9",
+        "name": "T96_b9_Muscle_PCW17.fragments.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "76a1777193d17a096ce309889eb64206",
+        "name": "T96_b9_Muscle_PCW17.fragments.tsv.gz.tbi",
+        "size": 1400053
+      },
+      {
+        "md5": "b53f464b5b8d6e4fd1ebe077c448e803",
+        "name": "T96_b9_Muscle_PCW17.fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
+        "md5": "94428e76e37ce688ff6308d54d124c1b",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
