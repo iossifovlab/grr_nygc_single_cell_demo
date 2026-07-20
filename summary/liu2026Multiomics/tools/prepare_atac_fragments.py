@@ -23,7 +23,7 @@ def prepapre_resrouce(resource_id: str, files: list[str],
         symlink_path.symlink_to(remote_file)
 
     with open(resource_dir + "/genomic_resource.yaml", 'w') as file:
-        yaml.dump(config, file, default_flow_style=False)
+        yaml.dump(config, file, default_flow_style=False, sort_keys=False)
 
 
 yoonHaDD = "/gpfs/commons/groups/iossifov_lab/ylee/GRR/HDMA/ATAC_RNA"
@@ -77,5 +77,4 @@ for ff in glob.glob(f"{yoonHaDD}/*.fragments.tsv.gz"):
         }
     }
     prepapre_resrouce(resource_id, files, conf)
-
 

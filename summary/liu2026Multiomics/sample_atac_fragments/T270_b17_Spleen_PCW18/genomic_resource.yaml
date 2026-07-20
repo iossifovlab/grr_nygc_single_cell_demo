@@ -1,6 +1,8 @@
+type: basic
 file: T270_b17_Spleen_PCW18.fragments.tsv.gz
 index_file: T270_b17_Spleen_PCW18.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T270_b17_Spleen_PCW18 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T270
     exp_batch: 17
     organ: Spleen
     pcw_age: 18
-    technology: SHARE-seq
-    tissue_storage_code: T270
-  summary: Sample ATAC fragments for T270_b17_Spleen_PCW18 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

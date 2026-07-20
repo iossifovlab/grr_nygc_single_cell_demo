@@ -1,6 +1,8 @@
+type: basic
 file: T180_b13_Eye_PCW19.fragments.tsv.gz
 index_file: T180_b13_Eye_PCW19.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T180_b13_Eye_PCW19 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T180
     exp_batch: 13
     organ: Eye
     pcw_age: 19
-    technology: SHARE-seq
-    tissue_storage_code: T180
-  summary: Sample ATAC fragments for T180_b13_Eye_PCW19 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

@@ -1,6 +1,8 @@
+type: basic
 file: T40_b16_Adr_PCW17.fragments.tsv.gz
 index_file: T40_b16_Adr_PCW17.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T40_b16_Adr_PCW17 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T40
     exp_batch: 16
     organ: Adr
     pcw_age: 17
-    technology: SHARE-seq
-    tissue_storage_code: T40
-  summary: Sample ATAC fragments for T40_b16_Adr_PCW17 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

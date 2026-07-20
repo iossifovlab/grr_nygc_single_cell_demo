@@ -1,6 +1,8 @@
+type: basic
 file: T136_b22_Thyroid_PCW21.fragments.tsv.gz
 index_file: T136_b22_Thyroid_PCW21.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T136_b22_Thyroid_PCW21 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T136
     exp_batch: 22
     organ: Thyroid
     pcw_age: 21
-    technology: SHARE-seq
-    tissue_storage_code: T136
-  summary: Sample ATAC fragments for T136_b22_Thyroid_PCW21 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

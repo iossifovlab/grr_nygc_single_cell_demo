@@ -1,6 +1,8 @@
+type: basic
 file: T318_b16_Adr_PCW21.fragments.tsv.gz
 index_file: T318_b16_Adr_PCW21.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T318_b16_Adr_PCW21 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T318
     exp_batch: 16
     organ: Adr
     pcw_age: 21
-    technology: SHARE-seq
-    tissue_storage_code: T318
-  summary: Sample ATAC fragments for T318_b16_Adr_PCW21 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

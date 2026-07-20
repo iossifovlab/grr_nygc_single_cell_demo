@@ -1,6 +1,8 @@
+type: basic
 file: T10_b9_Muscle_PCW19.fragments.tsv.gz
 index_file: T10_b9_Muscle_PCW19.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T10_b9_Muscle_PCW19 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T10
     exp_batch: 9
     organ: Muscle
     pcw_age: 19
-    technology: SHARE-seq
-    tissue_storage_code: T10
-  summary: Sample ATAC fragments for T10_b9_Muscle_PCW19 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

@@ -1,6 +1,8 @@
+type: basic
 file: T375_b15_Liver_PCW15.fragments.tsv.gz
 index_file: T375_b15_Liver_PCW15.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T375_b15_Liver_PCW15 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T375
     exp_batch: 15
     organ: Liver
     pcw_age: 15
-    technology: SHARE-seq
-    tissue_storage_code: T375
-  summary: Sample ATAC fragments for T375_b15_Liver_PCW15 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

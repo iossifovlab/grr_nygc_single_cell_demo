@@ -1,6 +1,8 @@
+type: basic
 file: T382_b4_Brain_PCW15.fragments.tsv.gz
 index_file: T382_b4_Brain_PCW15.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T382_b4_Brain_PCW15 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T382
     exp_batch: 4
     organ: Brain
     pcw_age: 15
-    technology: SHARE-seq
-    tissue_storage_code: T382
-  summary: Sample ATAC fragments for T382_b4_Brain_PCW15 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics

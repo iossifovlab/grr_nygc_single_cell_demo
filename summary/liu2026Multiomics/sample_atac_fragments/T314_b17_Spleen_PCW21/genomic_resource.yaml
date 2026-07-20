@@ -1,6 +1,8 @@
+type: basic
 file: T314_b17_Spleen_PCW21.fragments.tsv.gz
 index_file: T314_b17_Spleen_PCW21.fragments.tsv.gz.tbi
 meta:
+  summary: Sample ATAC fragments for T314_b17_Spleen_PCW21 from liu2026Multiomics.
   description: '
 
     [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
@@ -15,11 +17,9 @@ meta:
     '
   labels:
     assay: atac_fragmets
-    dataset: liu2026Multiomics
+    technology: SHARE-seq
+    tissue_storage_code: T314
     exp_batch: 17
     organ: Spleen
     pcw_age: 21
-    technology: SHARE-seq
-    tissue_storage_code: T314
-  summary: Sample ATAC fragments for T314_b17_Spleen_PCW21 from liu2026Multiomics.
-type: basic
+    dataset: liu2026Multiomics
