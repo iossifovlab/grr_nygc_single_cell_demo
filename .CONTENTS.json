@@ -4511,6 +4511,5418 @@
   },
   {
     "config": {
+      "barcodes_file": "T014_b11_Heart_PCW18.barcodes.tsv.gz",
+      "features_file": "T014_b11_Heart_PCW18.features.tsv.gz",
+      "file": "T014_b11_Heart_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T014"
+        },
+        "summary": "Sample cell expression matrix for T014_b11_Heart_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T014_b11_Heart_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T014_b11_Heart_PCW18",
+    "manifest": [
+      {
+        "md5": "aab7e690d3273f123114c62cc54a5421",
+        "name": "T014_b11_Heart_PCW18.barcodes.tsv.gz",
+        "size": 2205697
+      },
+      {
+        "md5": "47a26eff2cec3aa0dc4287d5bb092b74",
+        "name": "T014_b11_Heart_PCW18.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T014_b11_Heart_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "c14e1a33804fffc944b08ecb56d124c4",
+        "name": "T014_b11_Heart_PCW18.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "13315d53e972ade0ffe2cbe32a9e0b9a",
+        "name": "T014_b11_Heart_PCW18.matrix.mtx.gz",
+        "size": 771571472
+      },
+      {
+        "md5": "6faceb75e49b2e49b02239e65420cbbc",
+        "name": "T014_b11_Heart_PCW18.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "a69d7bd9aaf4de209881c68776a69640",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T032_b11_Heart_PCW12.barcodes.tsv.gz",
+      "features_file": "T032_b11_Heart_PCW12.features.tsv.gz",
+      "file": "T032_b11_Heart_PCW12.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 12,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T032"
+        },
+        "summary": "Sample cell expression matrix for T032_b11_Heart_PCW12 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T032_b11_Heart_PCW12",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T032_b11_Heart_PCW12",
+    "manifest": [
+      {
+        "md5": "fe88cc3188b8979ebde356bd93c64062",
+        "name": "T032_b11_Heart_PCW12.barcodes.tsv.gz",
+        "size": 2205679
+      },
+      {
+        "md5": "48549989197428dc88cda62f007b673f",
+        "name": "T032_b11_Heart_PCW12.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T032_b11_Heart_PCW12.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "6d7bb576139a2d7feef53ae729a9c8bf",
+        "name": "T032_b11_Heart_PCW12.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "e645d3e6cdbd600c7aea3693817c253f",
+        "name": "T032_b11_Heart_PCW12.matrix.mtx.gz",
+        "size": 937573339
+      },
+      {
+        "md5": "efe5c0bf647b941e131cdbbe56a5e8e2",
+        "name": "T032_b11_Heart_PCW12.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "78eb160214c61fdc5584cda9fa5f3be9",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T104_b11_Heart_PCW17.barcodes.tsv.gz",
+      "features_file": "T104_b11_Heart_PCW17.features.tsv.gz",
+      "file": "T104_b11_Heart_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T104"
+        },
+        "summary": "Sample cell expression matrix for T104_b11_Heart_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T104_b11_Heart_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T104_b11_Heart_PCW17",
+    "manifest": [
+      {
+        "md5": "1125636ba2082670928fb5b4ebbdb540",
+        "name": "T104_b11_Heart_PCW17.barcodes.tsv.gz",
+        "size": 2205888
+      },
+      {
+        "md5": "94b9278bf533ec64672039d96684e367",
+        "name": "T104_b11_Heart_PCW17.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T104_b11_Heart_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "58f119fb0bd202f26284e1728866b775",
+        "name": "T104_b11_Heart_PCW17.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "0ebc83b0125bc6ff4665694ee7238232",
+        "name": "T104_b11_Heart_PCW17.matrix.mtx.gz",
+        "size": 579276077
+      },
+      {
+        "md5": "2e221522e10771a981cd91fe131ba4a4",
+        "name": "T104_b11_Heart_PCW17.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "636d8084ee9fa70cdfcda4afda653acb",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T106_b13_Eye_PCW17.barcodes.tsv.gz",
+      "features_file": "T106_b13_Eye_PCW17.features.tsv.gz",
+      "file": "T106_b13_Eye_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T106"
+        },
+        "summary": "Sample cell expression matrix for T106_b13_Eye_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T106_b13_Eye_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T106_b13_Eye_PCW17",
+    "manifest": [
+      {
+        "md5": "9f968515f3d068976b6682a644ca9877",
+        "name": "T106_b13_Eye_PCW17.barcodes.tsv.gz",
+        "size": 2205658
+      },
+      {
+        "md5": "ddb79479787c4cad3a08801978a16ceb",
+        "name": "T106_b13_Eye_PCW17.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T106_b13_Eye_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a7a4f568b14261cdd57b509ec30352d9",
+        "name": "T106_b13_Eye_PCW17.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "2bd41deb3af9f11fd0bb4ebb2c5c903e",
+        "name": "T106_b13_Eye_PCW17.matrix.mtx.gz",
+        "size": 640421638
+      },
+      {
+        "md5": "064c7f7b79157cebbc1ebbb23569b49f",
+        "name": "T106_b13_Eye_PCW17.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "a22f2a4a178b932d13ed68f0f265e802",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T107_b12_Lung_PCW17.barcodes.tsv.gz",
+      "features_file": "T107_b12_Lung_PCW17.features.tsv.gz",
+      "file": "T107_b12_Lung_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T107"
+        },
+        "summary": "Sample cell expression matrix for T107_b12_Lung_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T107_b12_Lung_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T107_b12_Lung_PCW17",
+    "manifest": [
+      {
+        "md5": "54d84b68288a218646f8113dcf9d6cd0",
+        "name": "T107_b12_Lung_PCW17.barcodes.tsv.gz",
+        "size": 2205810
+      },
+      {
+        "md5": "5b89bcad717b610c4826af1b80782bbd",
+        "name": "T107_b12_Lung_PCW17.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T107_b12_Lung_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a5008fb5d5e4463b4333af6e176a0b76",
+        "name": "T107_b12_Lung_PCW17.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "c9571492067702db2f06e06dd29a3afc",
+        "name": "T107_b12_Lung_PCW17.matrix.mtx.gz",
+        "size": 654301192
+      },
+      {
+        "md5": "a27d35a9a29a9f923726af74ab512e4a",
+        "name": "T107_b12_Lung_PCW17.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "95509c3a2eea74bfe61f0d01a7f45747",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T10_b9_Muscle_PCW19.barcodes.tsv.gz",
+      "features_file": "T10_b9_Muscle_PCW19.features.tsv.gz",
+      "file": "T10_b9_Muscle_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T10"
+        },
+        "summary": "Sample cell expression matrix for T10_b9_Muscle_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T10_b9_Muscle_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T10_b9_Muscle_PCW19",
+    "manifest": [
+      {
+        "md5": "7caefbb4980eafd2b8f8ff339c95b74c",
+        "name": "T10_b9_Muscle_PCW19.barcodes.tsv.gz",
+        "size": 2205654
+      },
+      {
+        "md5": "923e69a1643163b117ff803ef738bfc8",
+        "name": "T10_b9_Muscle_PCW19.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T10_b9_Muscle_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "88500d7fbfdb96be8d27c03be78ff846",
+        "name": "T10_b9_Muscle_PCW19.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "0cb2935927b5fcd674898b1b34c70b40",
+        "name": "T10_b9_Muscle_PCW19.matrix.mtx.gz",
+        "size": 603122179
+      },
+      {
+        "md5": "14dbc0a4c189745cef6f286553a2962f",
+        "name": "T10_b9_Muscle_PCW19.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "b05e70894edc909699bc4cb575004cfd",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T11_b19_Skin_PCW19.barcodes.tsv.gz",
+      "features_file": "T11_b19_Skin_PCW19.features.tsv.gz",
+      "file": "T11_b19_Skin_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T11"
+        },
+        "summary": "Sample cell expression matrix for T11_b19_Skin_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T11_b19_Skin_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T11_b19_Skin_PCW19",
+    "manifest": [
+      {
+        "md5": "adaf7e216809496dbfbe78eca58cc2a1",
+        "name": "T11_b19_Skin_PCW19.barcodes.tsv.gz",
+        "size": 3339836
+      },
+      {
+        "md5": "fd40f542edcfd99abd8f15fd274adab3",
+        "name": "T11_b19_Skin_PCW19.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "6c7efda49eff80bb2b1286621a5a5b0f",
+        "name": "T11_b19_Skin_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "5264d0b49b88aec75003a7ae5d12f4ea",
+        "name": "T11_b19_Skin_PCW19.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "ca0e55f348b152046ba0bf3fa2d43971",
+        "name": "T11_b19_Skin_PCW19.matrix.mtx.gz",
+        "size": 594033999
+      },
+      {
+        "md5": "9f1b68ba0e44d0622e7e98f65596e5e5",
+        "name": "T11_b19_Skin_PCW19.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "097e35dd6892a2e954cce80152ab5fcb",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T123_b9_Muscle_PCW22.barcodes.tsv.gz",
+      "features_file": "T123_b9_Muscle_PCW22.features.tsv.gz",
+      "file": "T123_b9_Muscle_PCW22.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 22,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T123"
+        },
+        "summary": "Sample cell expression matrix for T123_b9_Muscle_PCW22 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T123_b9_Muscle_PCW22",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T123_b9_Muscle_PCW22",
+    "manifest": [
+      {
+        "md5": "7c5493f0b4417efd8b9566760bb5eaba",
+        "name": "T123_b9_Muscle_PCW22.barcodes.tsv.gz",
+        "size": 2205693
+      },
+      {
+        "md5": "289e8bbfc6b0f98fc7fcfd85a2c579e5",
+        "name": "T123_b9_Muscle_PCW22.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T123_b9_Muscle_PCW22.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "ea994db1ae0fe97b54c2ecc2f7cb3a0f",
+        "name": "T123_b9_Muscle_PCW22.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "4f498fe41d87dec5a41a94bd8921af93",
+        "name": "T123_b9_Muscle_PCW22.matrix.mtx.gz",
+        "size": 704711045
+      },
+      {
+        "md5": "dfdc6f179003733af85760a16f0e61a6",
+        "name": "T123_b9_Muscle_PCW22.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "2a535abe610801676000ec3cceb41ce0",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T129_b4_Brain_PCW22.barcodes.tsv.gz",
+      "features_file": "T129_b4_Brain_PCW22.features.tsv.gz",
+      "file": "T129_b4_Brain_PCW22.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 22,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T129"
+        },
+        "summary": "Sample cell expression matrix for T129_b4_Brain_PCW22 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T129_b4_Brain_PCW22",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T129_b4_Brain_PCW22",
+    "manifest": [
+      {
+        "md5": "0ca9dfabac0008e77c6534e4d137786d",
+        "name": "T129_b4_Brain_PCW22.barcodes.tsv.gz",
+        "size": 2205910
+      },
+      {
+        "md5": "49c5aae2dfb8fd01807e2678dcfb00eb",
+        "name": "T129_b4_Brain_PCW22.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T129_b4_Brain_PCW22.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "6b7ee3b964d00efd5e0eacebe43bfdbe",
+        "name": "T129_b4_Brain_PCW22.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "34b414b664d4729e0ddd98d51fb2ead2",
+        "name": "T129_b4_Brain_PCW22.matrix.mtx.gz",
+        "size": 501192217
+      },
+      {
+        "md5": "0ff9784c6b5e2a535913ef09dfff2898",
+        "name": "T129_b4_Brain_PCW22.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "3dbd1019569c9f77b1d32de8fea224a5",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T132_b12_Lung_PCW21.barcodes.tsv.gz",
+      "features_file": "T132_b12_Lung_PCW21.features.tsv.gz",
+      "file": "T132_b12_Lung_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T132"
+        },
+        "summary": "Sample cell expression matrix for T132_b12_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T132_b12_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T132_b12_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "28e2519f0fd3740a77a2ccd818cd4d41",
+        "name": "T132_b12_Lung_PCW21.barcodes.tsv.gz",
+        "size": 2205060
+      },
+      {
+        "md5": "c2ce0a4f0838ff59a009c82139c8e0ae",
+        "name": "T132_b12_Lung_PCW21.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T132_b12_Lung_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "0e1cf2cd664066ec8f0628c1893bfa16",
+        "name": "T132_b12_Lung_PCW21.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "6d245d9098b847588d11fde0acc57b20",
+        "name": "T132_b12_Lung_PCW21.matrix.mtx.gz",
+        "size": 480652365
+      },
+      {
+        "md5": "ab9cd053a36485dab4c9ae8493c7c655",
+        "name": "T132_b12_Lung_PCW21.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "a6d0ae410367415fe195a89deabfd1c4",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T136_b16_Thyroid_PCW21.barcodes.tsv.gz",
+      "features_file": "T136_b16_Thyroid_PCW21.features.tsv.gz",
+      "file": "T136_b16_Thyroid_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Thyroid",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T136"
+        },
+        "summary": "Sample cell expression matrix for T136_b16_Thyroid_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T136_b16_Thyroid_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T136_b16_Thyroid_PCW21",
+    "manifest": [
+      {
+        "md5": "6c67bcb81a51620b55c7d84a748fa88a",
+        "name": "T136_b16_Thyroid_PCW21.barcodes.tsv.gz",
+        "size": 512176
+      },
+      {
+        "md5": "764fa225a6968b474f2137065b045f8f",
+        "name": "T136_b16_Thyroid_PCW21.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T136_b16_Thyroid_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "0ae7c1a8eef3ec19a429e681dbf3b04c",
+        "name": "T136_b16_Thyroid_PCW21.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "5b31cb5540b03b0d8ab4ef49b335f2ff",
+        "name": "T136_b16_Thyroid_PCW21.matrix.mtx.gz",
+        "size": 37372330
+      },
+      {
+        "md5": "7f0a78f1a115c51683a7f88251b18eaf",
+        "name": "T136_b16_Thyroid_PCW21.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "7aacfc8976d4c08b0ede6377856679cc",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T136_b22_Thyroid_PCW21.barcodes.tsv.gz",
+      "features_file": "T136_b22_Thyroid_PCW21.features.tsv.gz",
+      "file": "T136_b22_Thyroid_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 22,
+          "organ": "Thyroid",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T136"
+        },
+        "summary": "Sample cell expression matrix for T136_b22_Thyroid_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T136_b22_Thyroid_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T136_b22_Thyroid_PCW21",
+    "manifest": [
+      {
+        "md5": "77366ff8de4b4df5e3a28f13bf64e2c3",
+        "name": "T136_b22_Thyroid_PCW21.barcodes.tsv.gz",
+        "size": 2226688
+      },
+      {
+        "md5": "89cbb399300c55f01e4175e36f9d0f50",
+        "name": "T136_b22_Thyroid_PCW21.barcodes.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "889088d7e7a52d757b915f396efdc6fc",
+        "name": "T136_b22_Thyroid_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "1d4079eb023af59c86a621d3294ca1c5",
+        "name": "T136_b22_Thyroid_PCW21.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "eac8ce96c4ba22c7ca3559e2e4376dab",
+        "name": "T136_b22_Thyroid_PCW21.matrix.mtx.gz",
+        "size": 379651103
+      },
+      {
+        "md5": "a66e3c4a0ad932a5c00fccaa888481ac",
+        "name": "T136_b22_Thyroid_PCW21.matrix.mtx.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "cc1e021bc09908daebc1415f06a9634c",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T155_b4_Brain_PCW10.barcodes.tsv.gz",
+      "features_file": "T155_b4_Brain_PCW10.features.tsv.gz",
+      "file": "T155_b4_Brain_PCW10.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 10,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T155"
+        },
+        "summary": "Sample cell expression matrix for T155_b4_Brain_PCW10 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T155_b4_Brain_PCW10",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T155_b4_Brain_PCW10",
+    "manifest": [
+      {
+        "md5": "a45bb64d0e731b457cb45eb1826c3978",
+        "name": "T155_b4_Brain_PCW10.barcodes.tsv.gz",
+        "size": 2205860
+      },
+      {
+        "md5": "f2eceb40768f0692ee6ba3684126fd6a",
+        "name": "T155_b4_Brain_PCW10.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T155_b4_Brain_PCW10.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "fc14d92d6de27f45498b805be133a6a0",
+        "name": "T155_b4_Brain_PCW10.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "a040a403cc8b88bf62faa83eee5dd301",
+        "name": "T155_b4_Brain_PCW10.matrix.mtx.gz",
+        "size": 432849965
+      },
+      {
+        "md5": "51cc1db93bb44aacc1d781edb81c58ad",
+        "name": "T155_b4_Brain_PCW10.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "93fd0b3d7b1b092406a56f56c7a52f84",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T161_b9_Muscle_PCW10.barcodes.tsv.gz",
+      "features_file": "T161_b9_Muscle_PCW10.features.tsv.gz",
+      "file": "T161_b9_Muscle_PCW10.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 10,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T161"
+        },
+        "summary": "Sample cell expression matrix for T161_b9_Muscle_PCW10 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T161_b9_Muscle_PCW10",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T161_b9_Muscle_PCW10",
+    "manifest": [
+      {
+        "md5": "1c407ba53deb824d28a7871770481c92",
+        "name": "T161_b9_Muscle_PCW10.barcodes.tsv.gz",
+        "size": 2205657
+      },
+      {
+        "md5": "91461cf9b4f97543b3769828d4096a5e",
+        "name": "T161_b9_Muscle_PCW10.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T161_b9_Muscle_PCW10.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "596dc437cdf46bf7d69a971abaac3d33",
+        "name": "T161_b9_Muscle_PCW10.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "4dbb0d19d1c5fefe94778ee13ec37506",
+        "name": "T161_b9_Muscle_PCW10.matrix.mtx.gz",
+        "size": 764190632
+      },
+      {
+        "md5": "5028adb6f56767fdc7c2b169f8e1d38c",
+        "name": "T161_b9_Muscle_PCW10.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "a8ceaf3634a9735ccc04dfe0474b217a",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T164_b12_Lung_PCW10.barcodes.tsv.gz",
+      "features_file": "T164_b12_Lung_PCW10.features.tsv.gz",
+      "file": "T164_b12_Lung_PCW10.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 10,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T164"
+        },
+        "summary": "Sample cell expression matrix for T164_b12_Lung_PCW10 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T164_b12_Lung_PCW10",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T164_b12_Lung_PCW10",
+    "manifest": [
+      {
+        "md5": "e993ee8edb60e6335c817569c5df0b51",
+        "name": "T164_b12_Lung_PCW10.barcodes.tsv.gz",
+        "size": 2205697
+      },
+      {
+        "md5": "e50b0bb63748b19968b8fca2af178399",
+        "name": "T164_b12_Lung_PCW10.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T164_b12_Lung_PCW10.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "e3c797dd8a5a996cbe123cd600a14410",
+        "name": "T164_b12_Lung_PCW10.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "ea950f6e786b801a17041b2c271a58f5",
+        "name": "T164_b12_Lung_PCW10.matrix.mtx.gz",
+        "size": 1361366138
+      },
+      {
+        "md5": "ff5707654660a81fe9a137dd30cbac20",
+        "name": "T164_b12_Lung_PCW10.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "6cabb2891e18c29a026a641b923066cf",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T165_b17_Spleen_PCW19.barcodes.tsv.gz",
+      "features_file": "T165_b17_Spleen_PCW19.features.tsv.gz",
+      "file": "T165_b17_Spleen_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T165"
+        },
+        "summary": "Sample cell expression matrix for T165_b17_Spleen_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T165_b17_Spleen_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T165_b17_Spleen_PCW19",
+    "manifest": [
+      {
+        "md5": "6c2fd0baa08654f42cb1bf081b4cf6fe",
+        "name": "T165_b17_Spleen_PCW19.barcodes.tsv.gz",
+        "size": 4228340
+      },
+      {
+        "md5": "da222b44b02448505200d6e30f412611",
+        "name": "T165_b17_Spleen_PCW19.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T165_b17_Spleen_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "1e09452aa3f93fdc7fa73dd591d72c94",
+        "name": "T165_b17_Spleen_PCW19.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "08c4f8659d203d5227247cdcddf067c1",
+        "name": "T165_b17_Spleen_PCW19.matrix.mtx.gz",
+        "size": 386851596
+      },
+      {
+        "md5": "1bca62dfb1f545a6066ec5c1ccdcf0c9",
+        "name": "T165_b17_Spleen_PCW19.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "9d259a3d021f1b0fc70d54adface7104",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T166_b15_Liver_PCW19.barcodes.tsv.gz",
+      "features_file": "T166_b15_Liver_PCW19.features.tsv.gz",
+      "file": "T166_b15_Liver_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T166"
+        },
+        "summary": "Sample cell expression matrix for T166_b15_Liver_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T166_b15_Liver_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T166_b15_Liver_PCW19",
+    "manifest": [
+      {
+        "md5": "d8bc9f62478458f6569a11db92fb6278",
+        "name": "T166_b15_Liver_PCW19.barcodes.tsv.gz",
+        "size": 2670292
+      },
+      {
+        "md5": "85a58af4ab7380405c59d4a7bf2a1cfe",
+        "name": "T166_b15_Liver_PCW19.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T166_b15_Liver_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a043c1a0217ae229fd799853f4cd6031",
+        "name": "T166_b15_Liver_PCW19.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5fbd53646c468dfbb96cbc4c12aa3ed7",
+        "name": "T166_b15_Liver_PCW19.matrix.mtx.gz",
+        "size": 207203694
+      },
+      {
+        "md5": "fc74c26ef4fdee9b3d9181e83d45170c",
+        "name": "T166_b15_Liver_PCW19.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "b127f49a441788aaf06a053fb4f75922",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T175_b18_Lung_PCW19.barcodes.tsv.gz",
+      "features_file": "T175_b18_Lung_PCW19.features.tsv.gz",
+      "file": "T175_b18_Lung_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T175"
+        },
+        "summary": "Sample cell expression matrix for T175_b18_Lung_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T175_b18_Lung_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T175_b18_Lung_PCW19",
+    "manifest": [
+      {
+        "md5": "8afbf56721fafbc256712e3681a45c65",
+        "name": "T175_b18_Lung_PCW19.barcodes.tsv.gz",
+        "size": 2226388
+      },
+      {
+        "md5": "91bbd781492e64a234c138ebbab56c9e",
+        "name": "T175_b18_Lung_PCW19.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T175_b18_Lung_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "da12bdc3a0b14e25532141c5f38d8181",
+        "name": "T175_b18_Lung_PCW19.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "e5d699fb99d58b79e07bafd045649746",
+        "name": "T175_b18_Lung_PCW19.matrix.mtx.gz",
+        "size": 378197163
+      },
+      {
+        "md5": "0c6d47d261ed77413a156d9b1e06e396",
+        "name": "T175_b18_Lung_PCW19.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "ecaa511b6c4fc97cede16aeb7b302d48",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T176_b16_Thyroid_PCW19.barcodes.tsv.gz",
+      "features_file": "T176_b16_Thyroid_PCW19.features.tsv.gz",
+      "file": "T176_b16_Thyroid_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Thyroid",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T176"
+        },
+        "summary": "Sample cell expression matrix for T176_b16_Thyroid_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T176_b16_Thyroid_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T176_b16_Thyroid_PCW19",
+    "manifest": [
+      {
+        "md5": "2a695774fbfda7eb7cea7a6cb6f94988",
+        "name": "T176_b16_Thyroid_PCW19.barcodes.tsv.gz",
+        "size": 514269
+      },
+      {
+        "md5": "c5a646b616793120e3c0c104f142c302",
+        "name": "T176_b16_Thyroid_PCW19.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T176_b16_Thyroid_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a30a19d1f290d145fc6f5a530dd056f4",
+        "name": "T176_b16_Thyroid_PCW19.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "c0fe029c357ee8891bbd429f92074b64",
+        "name": "T176_b16_Thyroid_PCW19.matrix.mtx.gz",
+        "size": 37465544
+      },
+      {
+        "md5": "4be78c83b8c2cb810de98f2bdd38fc57",
+        "name": "T176_b16_Thyroid_PCW19.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "ded5f0adbaad984cfe261d34a798a912",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T176_b22_Thyroid_PCW19.barcodes.tsv.gz",
+      "features_file": "T176_b22_Thyroid_PCW19.features.tsv.gz",
+      "file": "T176_b22_Thyroid_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 22,
+          "organ": "Thyroid",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T176"
+        },
+        "summary": "Sample cell expression matrix for T176_b22_Thyroid_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T176_b22_Thyroid_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T176_b22_Thyroid_PCW19",
+    "manifest": [
+      {
+        "md5": "a047be79602dde37ccd5978c67f977e7",
+        "name": "T176_b22_Thyroid_PCW19.barcodes.tsv.gz",
+        "size": 2225954
+      },
+      {
+        "md5": "313ee1e50b27b2a3b3ff6d7e8c205169",
+        "name": "T176_b22_Thyroid_PCW19.barcodes.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "889088d7e7a52d757b915f396efdc6fc",
+        "name": "T176_b22_Thyroid_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "c06ef30e38634a92daed27fbf3bf038d",
+        "name": "T176_b22_Thyroid_PCW19.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "e61281cf268f4d7dda17bd55c1090807",
+        "name": "T176_b22_Thyroid_PCW19.matrix.mtx.gz",
+        "size": 130832706
+      },
+      {
+        "md5": "cab50b99f44c88e450cb99a4c0af70a8",
+        "name": "T176_b22_Thyroid_PCW19.matrix.mtx.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "32a3619a08ee0246a744e5f924421550",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T180_b13_Eye_PCW19.barcodes.tsv.gz",
+      "features_file": "T180_b13_Eye_PCW19.features.tsv.gz",
+      "file": "T180_b13_Eye_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T180"
+        },
+        "summary": "Sample cell expression matrix for T180_b13_Eye_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T180_b13_Eye_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T180_b13_Eye_PCW19",
+    "manifest": [
+      {
+        "md5": "cf30a35d05a2eada3928ccc573590c12",
+        "name": "T180_b13_Eye_PCW19.barcodes.tsv.gz",
+        "size": 2205363
+      },
+      {
+        "md5": "4f56edb1d7234226057d1e7347c55f25",
+        "name": "T180_b13_Eye_PCW19.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T180_b13_Eye_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "e78a2e39d46cdb7d223c2c4d5fd013d2",
+        "name": "T180_b13_Eye_PCW19.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "94a7165797d8ace4fe5b458c8c54a7ad",
+        "name": "T180_b13_Eye_PCW19.matrix.mtx.gz",
+        "size": 282839344
+      },
+      {
+        "md5": "f5e5cd4c665c9dcd8f40b88f691da2c0",
+        "name": "T180_b13_Eye_PCW19.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "33930531096a494a55686c2cb3e65562",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T183_b4_Brain_PCW19.barcodes.tsv.gz",
+      "features_file": "T183_b4_Brain_PCW19.features.tsv.gz",
+      "file": "T183_b4_Brain_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T183"
+        },
+        "summary": "Sample cell expression matrix for T183_b4_Brain_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T183_b4_Brain_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T183_b4_Brain_PCW19",
+    "manifest": [
+      {
+        "md5": "5cc07570d1437cab23ce1cfece8a8a5c",
+        "name": "T183_b4_Brain_PCW19.barcodes.tsv.gz",
+        "size": 2205659
+      },
+      {
+        "md5": "69205493ec28a5a9172188ce27981ac1",
+        "name": "T183_b4_Brain_PCW19.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T183_b4_Brain_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "d84edabc5994c20f2c9947bb386d07fe",
+        "name": "T183_b4_Brain_PCW19.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "840198155dd8a263448f2459ff10a67e",
+        "name": "T183_b4_Brain_PCW19.matrix.mtx.gz",
+        "size": 1296736925
+      },
+      {
+        "md5": "890085ad5c3880db87d2bfce2cc0f767",
+        "name": "T183_b4_Brain_PCW19.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "94b996857f9239cc723a69712eb0fd51",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T186_b13_Eye_PCW23.barcodes.tsv.gz",
+      "features_file": "T186_b13_Eye_PCW23.features.tsv.gz",
+      "file": "T186_b13_Eye_PCW23.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 23,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T186"
+        },
+        "summary": "Sample cell expression matrix for T186_b13_Eye_PCW23 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T186_b13_Eye_PCW23",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T186_b13_Eye_PCW23",
+    "manifest": [
+      {
+        "md5": "961fed5e4a2bf82b24d906a2487f2fbd",
+        "name": "T186_b13_Eye_PCW23.barcodes.tsv.gz",
+        "size": 2205833
+      },
+      {
+        "md5": "c068ef14cb2bea29bbf74c14d3fea139",
+        "name": "T186_b13_Eye_PCW23.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T186_b13_Eye_PCW23.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "cfe40b63b2055124ce27c3fd8ad9e2d3",
+        "name": "T186_b13_Eye_PCW23.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "f8875409f39f286bb23e8c7c6e7d53d6",
+        "name": "T186_b13_Eye_PCW23.matrix.mtx.gz",
+        "size": 353056486
+      },
+      {
+        "md5": "c4cd1e67052a445f29e8fe074eeb5bdd",
+        "name": "T186_b13_Eye_PCW23.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "2bc775ad5b189d6c31da489cbdb15d17",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T187_b19_Skin_PCW23.barcodes.tsv.gz",
+      "features_file": "T187_b19_Skin_PCW23.features.tsv.gz",
+      "file": "T187_b19_Skin_PCW23.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 23,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T187"
+        },
+        "summary": "Sample cell expression matrix for T187_b19_Skin_PCW23 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T187_b19_Skin_PCW23",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T187_b19_Skin_PCW23",
+    "manifest": [
+      {
+        "md5": "1d486e6d1603cbec38f0faaf60011059",
+        "name": "T187_b19_Skin_PCW23.barcodes.tsv.gz",
+        "size": 3339731
+      },
+      {
+        "md5": "dc5afeec5ef0ad5e2aaa8d04a8531528",
+        "name": "T187_b19_Skin_PCW23.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "6c7efda49eff80bb2b1286621a5a5b0f",
+        "name": "T187_b19_Skin_PCW23.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "28b4d85d9c63aa2b3eb67af6ba10321b",
+        "name": "T187_b19_Skin_PCW23.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "47d0dc1dc445627bf974717597de7381",
+        "name": "T187_b19_Skin_PCW23.matrix.mtx.gz",
+        "size": 283344719
+      },
+      {
+        "md5": "2ebde26aa6c00ce82d9c009e85d01c4f",
+        "name": "T187_b19_Skin_PCW23.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "ecbe8af17182baaa95f2ff942b6a03ef",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T198_b18_Lung_PCW23.barcodes.tsv.gz",
+      "features_file": "T198_b18_Lung_PCW23.features.tsv.gz",
+      "file": "T198_b18_Lung_PCW23.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 23,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T198"
+        },
+        "summary": "Sample cell expression matrix for T198_b18_Lung_PCW23 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T198_b18_Lung_PCW23",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T198_b18_Lung_PCW23",
+    "manifest": [
+      {
+        "md5": "5123a4c635d9afbcb4c8a95a7774e344",
+        "name": "T198_b18_Lung_PCW23.barcodes.tsv.gz",
+        "size": 2225392
+      },
+      {
+        "md5": "030de1c4fa10e5a25ce4fe4db99fd778",
+        "name": "T198_b18_Lung_PCW23.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T198_b18_Lung_PCW23.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "dee873a6c7e4ac59a46573b406512f65",
+        "name": "T198_b18_Lung_PCW23.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "a0ea3da4e77d51a3eb009648e6156bb1",
+        "name": "T198_b18_Lung_PCW23.matrix.mtx.gz",
+        "size": 319646063
+      },
+      {
+        "md5": "ec09021652a857a0d3d7628a4347c713",
+        "name": "T198_b18_Lung_PCW23.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "d40156fbbae6428712a8c2c3bde18124",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T226_b12_Lung_PCW21.barcodes.tsv.gz",
+      "features_file": "T226_b12_Lung_PCW21.features.tsv.gz",
+      "file": "T226_b12_Lung_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T226"
+        },
+        "summary": "Sample cell expression matrix for T226_b12_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T226_b12_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T226_b12_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "9a9293314e447f3c063dbd8b09aa6cc1",
+        "name": "T226_b12_Lung_PCW21.barcodes.tsv.gz",
+        "size": 2205417
+      },
+      {
+        "md5": "f0a124437bece171a5645b94e06841fb",
+        "name": "T226_b12_Lung_PCW21.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T226_b12_Lung_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "34e051c9ef03afcb5472d85ecd900c43",
+        "name": "T226_b12_Lung_PCW21.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "7273ec8e302b8be8765d09a05b7d6f74",
+        "name": "T226_b12_Lung_PCW21.matrix.mtx.gz",
+        "size": 566118810
+      },
+      {
+        "md5": "2978f2dd89064d0dc1b99086acdb2d7a",
+        "name": "T226_b12_Lung_PCW21.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "d7a2667c87997a9fe1066dc69d282ae1",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T233_b17_Thymus_PCW21.barcodes.tsv.gz",
+      "features_file": "T233_b17_Thymus_PCW21.features.tsv.gz",
+      "file": "T233_b17_Thymus_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T233"
+        },
+        "summary": "Sample cell expression matrix for T233_b17_Thymus_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21",
+    "manifest": [
+      {
+        "md5": "7ec43793c6c9a904b170a3641a2e24f4",
+        "name": "T233_b17_Thymus_PCW21.barcodes.tsv.gz",
+        "size": 3721626
+      },
+      {
+        "md5": "1c46772e713ca69569a3b9148f4c7b49",
+        "name": "T233_b17_Thymus_PCW21.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T233_b17_Thymus_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "0f64c2543ac64014c8221f41ce6e6500",
+        "name": "T233_b17_Thymus_PCW21.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "b146c608cfd997508d37e707b3a4cfc9",
+        "name": "T233_b17_Thymus_PCW21.matrix.mtx.gz",
+        "size": 110617000
+      },
+      {
+        "md5": "a4f21501890ff088bf7fff658d56c134",
+        "name": "T233_b17_Thymus_PCW21.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "5f96f7b34bbe3f3899dccfd8bcaad9dc",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T235_b15_Liver_PCW21.barcodes.tsv.gz",
+      "features_file": "T235_b15_Liver_PCW21.features.tsv.gz",
+      "file": "T235_b15_Liver_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T235"
+        },
+        "summary": "Sample cell expression matrix for T235_b15_Liver_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T235_b15_Liver_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T235_b15_Liver_PCW21",
+    "manifest": [
+      {
+        "md5": "b15ad7122150c9c627655941e2078b0b",
+        "name": "T235_b15_Liver_PCW21.barcodes.tsv.gz",
+        "size": 2738592
+      },
+      {
+        "md5": "82a88719836013e8e173a6bd5b4927a5",
+        "name": "T235_b15_Liver_PCW21.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T235_b15_Liver_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "b03f1557e45b52ddceafac775581a21e",
+        "name": "T235_b15_Liver_PCW21.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "0fb356209509c03a142ef0d90cdc2825",
+        "name": "T235_b15_Liver_PCW21.matrix.mtx.gz",
+        "size": 327491490
+      },
+      {
+        "md5": "a2b5d9197268b568296e9d3389cc8d5c",
+        "name": "T235_b15_Liver_PCW21.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "d058bfdcc5ba2301ba40819d267b8e78",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T238_b10_Stomach_PCW21.barcodes.tsv.gz",
+      "features_file": "T238_b10_Stomach_PCW21.features.tsv.gz",
+      "file": "T238_b10_Stomach_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T238"
+        },
+        "summary": "Sample cell expression matrix for T238_b10_Stomach_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T238_b10_Stomach_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T238_b10_Stomach_PCW21",
+    "manifest": [
+      {
+        "md5": "78f8bc7fa054ccbbea6d9de465ff09e8",
+        "name": "T238_b10_Stomach_PCW21.barcodes.tsv.gz",
+        "size": 2200716
+      },
+      {
+        "md5": "50662bd3b7fc9d64576d1da77f489f88",
+        "name": "T238_b10_Stomach_PCW21.barcodes.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T238_b10_Stomach_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "54256db6182ee4fc2d49e1ad87699b1d",
+        "name": "T238_b10_Stomach_PCW21.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "b66b6c348b9c26aa0d2af6687e1b0029",
+        "name": "T238_b10_Stomach_PCW21.matrix.mtx.gz",
+        "size": 280031761
+      },
+      {
+        "md5": "d37812a2808f791671689172dd4d116b",
+        "name": "T238_b10_Stomach_PCW21.matrix.mtx.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "c9df192f9b2e8991c0031729a17b81d0",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T23_b17_Thymus_PCW17.barcodes.tsv.gz",
+      "features_file": "T23_b17_Thymus_PCW17.features.tsv.gz",
+      "file": "T23_b17_Thymus_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T23"
+        },
+        "summary": "Sample cell expression matrix for T23_b17_Thymus_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T23_b17_Thymus_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T23_b17_Thymus_PCW17",
+    "manifest": [
+      {
+        "md5": "1e50615bc46728f4b9b0624bd2b46dee",
+        "name": "T23_b17_Thymus_PCW17.barcodes.tsv.gz",
+        "size": 4391040
+      },
+      {
+        "md5": "da4fc4222d617966176dfda0e257ecd5",
+        "name": "T23_b17_Thymus_PCW17.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T23_b17_Thymus_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "7c943f7d097ece655a0fb7400a45d212",
+        "name": "T23_b17_Thymus_PCW17.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "ead526cb8e762df963691187144ada44",
+        "name": "T23_b17_Thymus_PCW17.matrix.mtx.gz",
+        "size": 767223658
+      },
+      {
+        "md5": "6599b682277ae338aed9e2d6ae12546e",
+        "name": "T23_b17_Thymus_PCW17.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "f6666c9482de345493a97e771b8c8e58",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T24_b18_Lung_PCW17.barcodes.tsv.gz",
+      "features_file": "T24_b18_Lung_PCW17.features.tsv.gz",
+      "file": "T24_b18_Lung_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T24"
+        },
+        "summary": "Sample cell expression matrix for T24_b18_Lung_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T24_b18_Lung_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T24_b18_Lung_PCW17",
+    "manifest": [
+      {
+        "md5": "65ae3f52247aa48a7e69b6cf4ecfb9ee",
+        "name": "T24_b18_Lung_PCW17.barcodes.tsv.gz",
+        "size": 2226902
+      },
+      {
+        "md5": "2b531076db8291eece67a21aae9d5c99",
+        "name": "T24_b18_Lung_PCW17.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T24_b18_Lung_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "94b302ff43ee6a95e711739fa176dc6d",
+        "name": "T24_b18_Lung_PCW17.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "2936f06390b0636efa339ccaefe79401",
+        "name": "T24_b18_Lung_PCW17.matrix.mtx.gz",
+        "size": 635998442
+      },
+      {
+        "md5": "c22ef613b3dfd5479cd8c9c60b7c8103",
+        "name": "T24_b18_Lung_PCW17.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "71e07715bfc8ed61856c8e3fd25f5e33",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T256_b12_Lung_PCW18.barcodes.tsv.gz",
+      "features_file": "T256_b12_Lung_PCW18.features.tsv.gz",
+      "file": "T256_b12_Lung_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T256"
+        },
+        "summary": "Sample cell expression matrix for T256_b12_Lung_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T256_b12_Lung_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T256_b12_Lung_PCW18",
+    "manifest": [
+      {
+        "md5": "86ed26c6ba1dd9ff6ffc33c189e3fa51",
+        "name": "T256_b12_Lung_PCW18.barcodes.tsv.gz",
+        "size": 2205524
+      },
+      {
+        "md5": "d36a9e02dd4f7ddea1ba0d5c382055e6",
+        "name": "T256_b12_Lung_PCW18.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T256_b12_Lung_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a3785858824ad3ef6b0f6f196aaace50",
+        "name": "T256_b12_Lung_PCW18.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "07c1c5ab048e6f786c8330b10b597b40",
+        "name": "T256_b12_Lung_PCW18.matrix.mtx.gz",
+        "size": 521203381
+      },
+      {
+        "md5": "074801be50a29faed5f4d783901add70",
+        "name": "T256_b12_Lung_PCW18.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "987ddf3c16b09aecf5fa7e5a44c8d8e6",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T269_b10_Stomach_PCW18.barcodes.tsv.gz",
+      "features_file": "T269_b10_Stomach_PCW18.features.tsv.gz",
+      "file": "T269_b10_Stomach_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T269"
+        },
+        "summary": "Sample cell expression matrix for T269_b10_Stomach_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T269_b10_Stomach_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T269_b10_Stomach_PCW18",
+    "manifest": [
+      {
+        "md5": "775542d245063a534bbf9f398b1257b0",
+        "name": "T269_b10_Stomach_PCW18.barcodes.tsv.gz",
+        "size": 2205394
+      },
+      {
+        "md5": "83ddaba2d007897cd19a3acecee01b02",
+        "name": "T269_b10_Stomach_PCW18.barcodes.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T269_b10_Stomach_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "e54017a3361531138f9868cd4a9fe310",
+        "name": "T269_b10_Stomach_PCW18.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "2338a3eb91958fe975ae3eb2f2bdcba0",
+        "name": "T269_b10_Stomach_PCW18.matrix.mtx.gz",
+        "size": 539189175
+      },
+      {
+        "md5": "bf956990c4dc7828207b509d6c1a7dd4",
+        "name": "T269_b10_Stomach_PCW18.matrix.mtx.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "15ea46ffc4f28ac34f6e75d79e46dbe9",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T270_b17_Spleen_PCW18.barcodes.tsv.gz",
+      "features_file": "T270_b17_Spleen_PCW18.features.tsv.gz",
+      "file": "T270_b17_Spleen_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T270"
+        },
+        "summary": "Sample cell expression matrix for T270_b17_Spleen_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T270_b17_Spleen_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T270_b17_Spleen_PCW18",
+    "manifest": [
+      {
+        "md5": "d8b9bd00eda7003431907795a41c4266",
+        "name": "T270_b17_Spleen_PCW18.barcodes.tsv.gz",
+        "size": 4184814
+      },
+      {
+        "md5": "de30fec1fd7792cbc44643ed83efb361",
+        "name": "T270_b17_Spleen_PCW18.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T270_b17_Spleen_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "3942f215876ebb9e4d00190d831ee741",
+        "name": "T270_b17_Spleen_PCW18.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "2dfcc833dff24171d4590ef558ab0577",
+        "name": "T270_b17_Spleen_PCW18.matrix.mtx.gz",
+        "size": 347774867
+      },
+      {
+        "md5": "67960b7db453423560a9df7d7ee6a318",
+        "name": "T270_b17_Spleen_PCW18.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "1ff32658fc559f7d2f71479119df1da8",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T273_b16_Adr_PCW18.barcodes.tsv.gz",
+      "features_file": "T273_b16_Adr_PCW18.features.tsv.gz",
+      "file": "T273_b16_Adr_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T273"
+        },
+        "summary": "Sample cell expression matrix for T273_b16_Adr_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T273_b16_Adr_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T273_b16_Adr_PCW18",
+    "manifest": [
+      {
+        "md5": "00ff03185769786ff34ad07a61bff1f8",
+        "name": "T273_b16_Adr_PCW18.barcodes.tsv.gz",
+        "size": 543280
+      },
+      {
+        "md5": "e4288f0f3a5926782554f60f90ca93e2",
+        "name": "T273_b16_Adr_PCW18.barcodes.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T273_b16_Adr_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "fb9f26dd7e647a601dd1e5dc79f0042e",
+        "name": "T273_b16_Adr_PCW18.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "71d82b249bebf2ab49b3e8e3a318cd21",
+        "name": "T273_b16_Adr_PCW18.matrix.mtx.gz",
+        "size": 66541556
+      },
+      {
+        "md5": "661e7a0c16b3060bbefc9b6156b7e254",
+        "name": "T273_b16_Adr_PCW18.matrix.mtx.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "d914f85fe21de1cf12ffacf2a84da84f",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T275_b15_Liver_PCW18.barcodes.tsv.gz",
+      "features_file": "T275_b15_Liver_PCW18.features.tsv.gz",
+      "file": "T275_b15_Liver_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T275"
+        },
+        "summary": "Sample cell expression matrix for T275_b15_Liver_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T275_b15_Liver_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T275_b15_Liver_PCW18",
+    "manifest": [
+      {
+        "md5": "ea68f8f13b976c1dd8fe5b2b1dcfe990",
+        "name": "T275_b15_Liver_PCW18.barcodes.tsv.gz",
+        "size": 2671280
+      },
+      {
+        "md5": "0b2030a4b7218f707653759afc86c9f6",
+        "name": "T275_b15_Liver_PCW18.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T275_b15_Liver_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "9d2284f7fd9e58c2866c37b6b009c37f",
+        "name": "T275_b15_Liver_PCW18.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "38913364769b94d184932389b66c7172",
+        "name": "T275_b15_Liver_PCW18.matrix.mtx.gz",
+        "size": 206862626
+      },
+      {
+        "md5": "d18d87443058cb1245fe8a2d3199e8d4",
+        "name": "T275_b15_Liver_PCW18.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "fa4b493d2e4be9e5321467b4565d68f7",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T286_b12_Lung_PCW14.barcodes.tsv.gz",
+      "features_file": "T286_b12_Lung_PCW14.features.tsv.gz",
+      "file": "T286_b12_Lung_PCW14.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 14,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T286"
+        },
+        "summary": "Sample cell expression matrix for T286_b12_Lung_PCW14 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T286_b12_Lung_PCW14",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T286_b12_Lung_PCW14",
+    "manifest": [
+      {
+        "md5": "d688596bb718548ff2f023630e46fb42",
+        "name": "T286_b12_Lung_PCW14.barcodes.tsv.gz",
+        "size": 2205846
+      },
+      {
+        "md5": "14dc91be8464518601b98839fc6e42ad",
+        "name": "T286_b12_Lung_PCW14.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T286_b12_Lung_PCW14.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "10d8e936d6ea3008b7c05b42fd633eaf",
+        "name": "T286_b12_Lung_PCW14.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "732c15688b1ed5b77c2521fda9a403f4",
+        "name": "T286_b12_Lung_PCW14.matrix.mtx.gz",
+        "size": 694012074
+      },
+      {
+        "md5": "7bdecb5210cf7408c822749cbe5599bd",
+        "name": "T286_b12_Lung_PCW14.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "0745b90383d69147c88085f863023d61",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T299_b19_Scalp_PCW21.barcodes.tsv.gz",
+      "features_file": "T299_b19_Scalp_PCW21.features.tsv.gz",
+      "file": "T299_b19_Scalp_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Scalp",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T299"
+        },
+        "summary": "Sample cell expression matrix for T299_b19_Scalp_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T299_b19_Scalp_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T299_b19_Scalp_PCW21",
+    "manifest": [
+      {
+        "md5": "e981a147dc52d7e7d315def685d28dce",
+        "name": "T299_b19_Scalp_PCW21.barcodes.tsv.gz",
+        "size": 3340588
+      },
+      {
+        "md5": "ed6f61203a397ee7bb4331ac2a52b092",
+        "name": "T299_b19_Scalp_PCW21.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "6c7efda49eff80bb2b1286621a5a5b0f",
+        "name": "T299_b19_Scalp_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "8289dfa5104ac69299c30a5567e1abfb",
+        "name": "T299_b19_Scalp_PCW21.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "db3f39d6b2cb4035313dc4dd94ce9d0f",
+        "name": "T299_b19_Scalp_PCW21.matrix.mtx.gz",
+        "size": 233046922
+      },
+      {
+        "md5": "deb14daebb5408e49b00e914d907766b",
+        "name": "T299_b19_Scalp_PCW21.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "f876c1c97746669f3628892c2b3e84ee",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T303_b10_Esophagus_PCW21.barcodes.tsv.gz",
+      "features_file": "T303_b10_Esophagus_PCW21.features.tsv.gz",
+      "file": "T303_b10_Esophagus_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Esophagus",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T303"
+        },
+        "summary": "Sample cell expression matrix for T303_b10_Esophagus_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T303_b10_Esophagus_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T303_b10_Esophagus_PCW21",
+    "manifest": [
+      {
+        "md5": "c8082bbb143502fc6fd139a51ac36613",
+        "name": "T303_b10_Esophagus_PCW21.barcodes.tsv.gz",
+        "size": 2205890
+      },
+      {
+        "md5": "49f6be384fd62b63dc50b1c2a71a5aad",
+        "name": "T303_b10_Esophagus_PCW21.barcodes.tsv.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T303_b10_Esophagus_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "d1e87a21627f3fa186495711a803858c",
+        "name": "T303_b10_Esophagus_PCW21.features.tsv.gz.dvc",
+        "size": 122
+      },
+      {
+        "md5": "31843ff9ada6f0aa337989be62690d80",
+        "name": "T303_b10_Esophagus_PCW21.matrix.mtx.gz",
+        "size": 763676236
+      },
+      {
+        "md5": "c44e74b849692443cdbc941246e85402",
+        "name": "T303_b10_Esophagus_PCW21.matrix.mtx.gz.dvc",
+        "size": 123
+      },
+      {
+        "md5": "4e93670aaca1045e51052febca1a9eec",
+        "name": "genomic_resource.yaml",
+        "size": 736
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T304_b12_Lung_PCW21.barcodes.tsv.gz",
+      "features_file": "T304_b12_Lung_PCW21.features.tsv.gz",
+      "file": "T304_b12_Lung_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T304"
+        },
+        "summary": "Sample cell expression matrix for T304_b12_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T304_b12_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T304_b12_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "8d932c2e3dbaf2d38f308aa65e8a752b",
+        "name": "T304_b12_Lung_PCW21.barcodes.tsv.gz",
+        "size": 2203105
+      },
+      {
+        "md5": "c9a2ec22222f3d8117fd715149ffdc0e",
+        "name": "T304_b12_Lung_PCW21.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T304_b12_Lung_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "ae45a7e516b269f71fd3708940b8f2a4",
+        "name": "T304_b12_Lung_PCW21.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "68454da9b88994001cf349e110e3ba2f",
+        "name": "T304_b12_Lung_PCW21.matrix.mtx.gz",
+        "size": 381710253
+      },
+      {
+        "md5": "de420aad674abf6e83860a2fa4c88d11",
+        "name": "T304_b12_Lung_PCW21.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "0dc822e5faa2f0871ad5261fb6d3296c",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T305_b18_Lung_PCW21.barcodes.tsv.gz",
+      "features_file": "T305_b18_Lung_PCW21.features.tsv.gz",
+      "file": "T305_b18_Lung_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T305"
+        },
+        "summary": "Sample cell expression matrix for T305_b18_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T305_b18_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T305_b18_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "50d7d21c6e5a50509080f9e4ef65d0cb",
+        "name": "T305_b18_Lung_PCW21.barcodes.tsv.gz",
+        "size": 2226602
+      },
+      {
+        "md5": "71db2a5ab208a1328ad3507d78269f5d",
+        "name": "T305_b18_Lung_PCW21.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T305_b18_Lung_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "32985de0be2af2a112dca8ece8fa0ccd",
+        "name": "T305_b18_Lung_PCW21.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "5c5e2404c1fb81cc5caedeed7c1086b4",
+        "name": "T305_b18_Lung_PCW21.matrix.mtx.gz",
+        "size": 494051716
+      },
+      {
+        "md5": "3787f396f4bae5ad3b07abcdd9038f62",
+        "name": "T305_b18_Lung_PCW21.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "622a512c93f20bb151bd0922735bd795",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T30_b11_Heart_PCW17.barcodes.tsv.gz",
+      "features_file": "T30_b11_Heart_PCW17.features.tsv.gz",
+      "file": "T30_b11_Heart_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T30"
+        },
+        "summary": "Sample cell expression matrix for T30_b11_Heart_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T30_b11_Heart_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T30_b11_Heart_PCW17",
+    "manifest": [
+      {
+        "md5": "39b794667b75d811a488ab00990f3698",
+        "name": "T30_b11_Heart_PCW17.barcodes.tsv.gz",
+        "size": 2205650
+      },
+      {
+        "md5": "7f493903d60c845b2613c3f8f91e1e59",
+        "name": "T30_b11_Heart_PCW17.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T30_b11_Heart_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a72de06773d0a6bd5953ac47a3689b9e",
+        "name": "T30_b11_Heart_PCW17.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "a477766eae85929a25268872c0c478e1",
+        "name": "T30_b11_Heart_PCW17.matrix.mtx.gz",
+        "size": 775574159
+      },
+      {
+        "md5": "148773de6cf7289fb45dbbc92a75ca1c",
+        "name": "T30_b11_Heart_PCW17.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "2c6b6a0c6799574e9a56f5baba94d677",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T314_b16_Spleen_PCW21.barcodes.tsv.gz",
+      "features_file": "T314_b16_Spleen_PCW21.features.tsv.gz",
+      "file": "T314_b16_Spleen_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Spleen",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T314"
+        },
+        "summary": "Sample cell expression matrix for T314_b16_Spleen_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T314_b16_Spleen_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T314_b16_Spleen_PCW21",
+    "manifest": [
+      {
+        "md5": "a73ea09fdb422eb9ec5a617d944e1e1d",
+        "name": "T314_b16_Spleen_PCW21.barcodes.tsv.gz",
+        "size": 475563
+      },
+      {
+        "md5": "43e48eebcc13f65b4cd0f3395ce49676",
+        "name": "T314_b16_Spleen_PCW21.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T314_b16_Spleen_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "58934b918f8536446ddab20a6c0b23f0",
+        "name": "T314_b16_Spleen_PCW21.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ab722e2ae8a8bf77dfa9239340108322",
+        "name": "T314_b16_Spleen_PCW21.matrix.mtx.gz",
+        "size": 18986269
+      },
+      {
+        "md5": "40755a0cf368e7b13669b808dcdea46b",
+        "name": "T314_b16_Spleen_PCW21.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "5cc6bec4f0b17dc0bdbb76814c04867e",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T314_b17_Spleen_PCW21.barcodes.tsv.gz",
+      "features_file": "T314_b17_Spleen_PCW21.features.tsv.gz",
+      "file": "T314_b17_Spleen_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T314"
+        },
+        "summary": "Sample cell expression matrix for T314_b17_Spleen_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T314_b17_Spleen_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T314_b17_Spleen_PCW21",
+    "manifest": [
+      {
+        "md5": "192f6b8c2a80c76e0e3f2d0697ce0324",
+        "name": "T314_b17_Spleen_PCW21.barcodes.tsv.gz",
+        "size": 3832894
+      },
+      {
+        "md5": "be38b08b4c31ba013e196d6202ab40fb",
+        "name": "T314_b17_Spleen_PCW21.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T314_b17_Spleen_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "2ec1cf80eed4a3468b5fa20eee48ae97",
+        "name": "T314_b17_Spleen_PCW21.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "7975f97faeda6865f3720c16e5dab9e1",
+        "name": "T314_b17_Spleen_PCW21.matrix.mtx.gz",
+        "size": 161831694
+      },
+      {
+        "md5": "1e7e94bb283bfcf1c7850b8da56f7dbe",
+        "name": "T314_b17_Spleen_PCW21.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "8b8857d7231768076023c97a84872c76",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T318_b16_Adr_PCW21.barcodes.tsv.gz",
+      "features_file": "T318_b16_Adr_PCW21.features.tsv.gz",
+      "file": "T318_b16_Adr_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T318"
+        },
+        "summary": "Sample cell expression matrix for T318_b16_Adr_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T318_b16_Adr_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T318_b16_Adr_PCW21",
+    "manifest": [
+      {
+        "md5": "664616b30770f865fdafc4dd44347a7b",
+        "name": "T318_b16_Adr_PCW21.barcodes.tsv.gz",
+        "size": 548731
+      },
+      {
+        "md5": "4ed36b6fa10373d142b35cd1f5ccaa16",
+        "name": "T318_b16_Adr_PCW21.barcodes.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T318_b16_Adr_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "9a7e3d39cd057e418347a878f99b041a",
+        "name": "T318_b16_Adr_PCW21.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "ea19d346db8c7c2c2e9210dd4fcd040f",
+        "name": "T318_b16_Adr_PCW21.matrix.mtx.gz",
+        "size": 92103866
+      },
+      {
+        "md5": "79d3e5daa11dc24ca6303337bb38420a",
+        "name": "T318_b16_Adr_PCW21.matrix.mtx.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "b6545384b103971b6ac6f67c98ad85f6",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T322_b10_Stomach_PCW21.barcodes.tsv.gz",
+      "features_file": "T322_b10_Stomach_PCW21.features.tsv.gz",
+      "file": "T322_b10_Stomach_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T322"
+        },
+        "summary": "Sample cell expression matrix for T322_b10_Stomach_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T322_b10_Stomach_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T322_b10_Stomach_PCW21",
+    "manifest": [
+      {
+        "md5": "40cc8d00c8ae176aa3ff793965b0f7a4",
+        "name": "T322_b10_Stomach_PCW21.barcodes.tsv.gz",
+        "size": 2202711
+      },
+      {
+        "md5": "ce189d54edc52371a74160b2df898453",
+        "name": "T322_b10_Stomach_PCW21.barcodes.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T322_b10_Stomach_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "0750d96ed6bfb51f5a61f7f9ba653ca4",
+        "name": "T322_b10_Stomach_PCW21.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "b3c6d56caafc1ec2a5ab0ea02843dc8e",
+        "name": "T322_b10_Stomach_PCW21.matrix.mtx.gz",
+        "size": 319534325
+      },
+      {
+        "md5": "6aeb0490422141bf25b166ff9c0a8c65",
+        "name": "T322_b10_Stomach_PCW21.matrix.mtx.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "945cefe61f18018054cd92ae5f7c9137",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T333_b18_Lung_PCW21.barcodes.tsv.gz",
+      "features_file": "T333_b18_Lung_PCW21.features.tsv.gz",
+      "file": "T333_b18_Lung_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T333"
+        },
+        "summary": "Sample cell expression matrix for T333_b18_Lung_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T333_b18_Lung_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T333_b18_Lung_PCW21",
+    "manifest": [
+      {
+        "md5": "feadd98ae3a7e0e8678c1a02fdbb5b70",
+        "name": "T333_b18_Lung_PCW21.barcodes.tsv.gz",
+        "size": 2226359
+      },
+      {
+        "md5": "3a72dde29b7f1f705b96371f39dd6232",
+        "name": "T333_b18_Lung_PCW21.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T333_b18_Lung_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "96a7900f2e1c3d3a205197490ea5c26d",
+        "name": "T333_b18_Lung_PCW21.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "0cbc2a4b3c067c076c238627bda8df0d",
+        "name": "T333_b18_Lung_PCW21.matrix.mtx.gz",
+        "size": 396742789
+      },
+      {
+        "md5": "1997fc1277c03f369fc6f88f2125ccfa",
+        "name": "T333_b18_Lung_PCW21.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "6b4dbc66dc9e64880da762ef43b3354b",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T350_b15_Liver_PCW21.barcodes.tsv.gz",
+      "features_file": "T350_b15_Liver_PCW21.features.tsv.gz",
+      "file": "T350_b15_Liver_PCW21.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 21,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T350"
+        },
+        "summary": "Sample cell expression matrix for T350_b15_Liver_PCW21 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T350_b15_Liver_PCW21",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T350_b15_Liver_PCW21",
+    "manifest": [
+      {
+        "md5": "bd434e3da71b79835d6cbba87ed61711",
+        "name": "T350_b15_Liver_PCW21.barcodes.tsv.gz",
+        "size": 2687546
+      },
+      {
+        "md5": "c529277f951f4f4733c52c074fed5884",
+        "name": "T350_b15_Liver_PCW21.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T350_b15_Liver_PCW21.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "2cd8305f2a64bf3b6f164e3746076d85",
+        "name": "T350_b15_Liver_PCW21.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "a537703d510df07b0e44cb6c3db48139",
+        "name": "T350_b15_Liver_PCW21.matrix.mtx.gz",
+        "size": 209766989
+      },
+      {
+        "md5": "47ceca2871412bd14f52d8f9809d69b8",
+        "name": "T350_b15_Liver_PCW21.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "d7bc4c930349219c4c93c2cf6ac05186",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T35_b10_Stomach_PCW17.barcodes.tsv.gz",
+      "features_file": "T35_b10_Stomach_PCW17.features.tsv.gz",
+      "file": "T35_b10_Stomach_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T35"
+        },
+        "summary": "Sample cell expression matrix for T35_b10_Stomach_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T35_b10_Stomach_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T35_b10_Stomach_PCW17",
+    "manifest": [
+      {
+        "md5": "04ee37483e43a81dec0fbdadcb279f65",
+        "name": "T35_b10_Stomach_PCW17.barcodes.tsv.gz",
+        "size": 2205612
+      },
+      {
+        "md5": "8181b07c57b37a2162bb10d45993e718",
+        "name": "T35_b10_Stomach_PCW17.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T35_b10_Stomach_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "6cba91c109f19e637b1754abf7d6d9c1",
+        "name": "T35_b10_Stomach_PCW17.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "fa52cced78d0c7fb14e14fb10aab7078",
+        "name": "T35_b10_Stomach_PCW17.matrix.mtx.gz",
+        "size": 561398426
+      },
+      {
+        "md5": "940d4313da773c8c51b773588e01a93d",
+        "name": "T35_b10_Stomach_PCW17.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "fb1bcdde7f40d035fbf00f0a07531f64",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T361_b11_Heart_PCW20.barcodes.tsv.gz",
+      "features_file": "T361_b11_Heart_PCW20.features.tsv.gz",
+      "file": "T361_b11_Heart_PCW20.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T361"
+        },
+        "summary": "Sample cell expression matrix for T361_b11_Heart_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T361_b11_Heart_PCW20",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T361_b11_Heart_PCW20",
+    "manifest": [
+      {
+        "md5": "7a1944b463228e552682da30014f7b55",
+        "name": "T361_b11_Heart_PCW20.barcodes.tsv.gz",
+        "size": 2205825
+      },
+      {
+        "md5": "acb83212f4a1e84ac5e2b6590019c67f",
+        "name": "T361_b11_Heart_PCW20.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T361_b11_Heart_PCW20.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "b61ea82ee98b62f0146b85d0556c5830",
+        "name": "T361_b11_Heart_PCW20.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "185d7b12947b29248fffc4e0d94b73cb",
+        "name": "T361_b11_Heart_PCW20.matrix.mtx.gz",
+        "size": 498255583
+      },
+      {
+        "md5": "98eec03ec079ba99831004788c9ba7d7",
+        "name": "T361_b11_Heart_PCW20.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "bd112029cd1c1dce6227e082201a4507",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T375_b15_Liver_PCW15.barcodes.tsv.gz",
+      "features_file": "T375_b15_Liver_PCW15.features.tsv.gz",
+      "file": "T375_b15_Liver_PCW15.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T375"
+        },
+        "summary": "Sample cell expression matrix for T375_b15_Liver_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T375_b15_Liver_PCW15",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T375_b15_Liver_PCW15",
+    "manifest": [
+      {
+        "md5": "0258d262f0a8f1580f9f168cdd676682",
+        "name": "T375_b15_Liver_PCW15.barcodes.tsv.gz",
+        "size": 2769393
+      },
+      {
+        "md5": "01d66be3b82c47aa306d3b0c82af2911",
+        "name": "T375_b15_Liver_PCW15.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T375_b15_Liver_PCW15.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "32b6e6f20775ae79592d3948aae4242b",
+        "name": "T375_b15_Liver_PCW15.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "1b9c40de3713bf8f78e08702f17998bb",
+        "name": "T375_b15_Liver_PCW15.matrix.mtx.gz",
+        "size": 448357263
+      },
+      {
+        "md5": "ab3cfdd885b033647632371f8546664b",
+        "name": "T375_b15_Liver_PCW15.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "b3c0d67aa48800308bd01a6532a60221",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T377_b9_Muscle_PCW15.barcodes.tsv.gz",
+      "features_file": "T377_b9_Muscle_PCW15.features.tsv.gz",
+      "file": "T377_b9_Muscle_PCW15.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T377"
+        },
+        "summary": "Sample cell expression matrix for T377_b9_Muscle_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T377_b9_Muscle_PCW15",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T377_b9_Muscle_PCW15",
+    "manifest": [
+      {
+        "md5": "4575b799d323f06931841be67059456a",
+        "name": "T377_b9_Muscle_PCW15.barcodes.tsv.gz",
+        "size": 2205679
+      },
+      {
+        "md5": "63e61a6babc0126cc4da8f7f09c9a20f",
+        "name": "T377_b9_Muscle_PCW15.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T377_b9_Muscle_PCW15.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "0dfedec3f4839ff5fc60b596c705166f",
+        "name": "T377_b9_Muscle_PCW15.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "a85f53897e4766df53af3d54c7ac94af",
+        "name": "T377_b9_Muscle_PCW15.matrix.mtx.gz",
+        "size": 636545035
+      },
+      {
+        "md5": "61bc427a21f10120d2cd557f41b5af4d",
+        "name": "T377_b9_Muscle_PCW15.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "af707e26484f4e4a8212867a15fab608",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T379_b11_Heart_PCW15.barcodes.tsv.gz",
+      "features_file": "T379_b11_Heart_PCW15.features.tsv.gz",
+      "file": "T379_b11_Heart_PCW15.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T379"
+        },
+        "summary": "Sample cell expression matrix for T379_b11_Heart_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T379_b11_Heart_PCW15",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T379_b11_Heart_PCW15",
+    "manifest": [
+      {
+        "md5": "3bdfa74d12c54aaec37b8410e28d753e",
+        "name": "T379_b11_Heart_PCW15.barcodes.tsv.gz",
+        "size": 2205658
+      },
+      {
+        "md5": "75343f9baace5074b7a1f6d8530fb0e5",
+        "name": "T379_b11_Heart_PCW15.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T379_b11_Heart_PCW15.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "f2c94d25df0aedcfa9b3ebebd8606598",
+        "name": "T379_b11_Heart_PCW15.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "67100708b87c4decd485cb8f4901b24e",
+        "name": "T379_b11_Heart_PCW15.matrix.mtx.gz",
+        "size": 617157527
+      },
+      {
+        "md5": "73e825a9d7998dfc2bbf0d8ca06a657f",
+        "name": "T379_b11_Heart_PCW15.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "502d8f00a9bd5c38d45ffdff11410923",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T382_b4_Brain_PCW15.barcodes.tsv.gz",
+      "features_file": "T382_b4_Brain_PCW15.features.tsv.gz",
+      "file": "T382_b4_Brain_PCW15.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 15,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T382"
+        },
+        "summary": "Sample cell expression matrix for T382_b4_Brain_PCW15 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T382_b4_Brain_PCW15",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T382_b4_Brain_PCW15",
+    "manifest": [
+      {
+        "md5": "82bfb41da78b5e62304213b1ba2c9a6f",
+        "name": "T382_b4_Brain_PCW15.barcodes.tsv.gz",
+        "size": 2205650
+      },
+      {
+        "md5": "19f2d5b9cee90247530d6723dc554202",
+        "name": "T382_b4_Brain_PCW15.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T382_b4_Brain_PCW15.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "7b0f73e855625eb51a351766a8b810fd",
+        "name": "T382_b4_Brain_PCW15.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "505ba818462ce38665e81d5083690cb1",
+        "name": "T382_b4_Brain_PCW15.matrix.mtx.gz",
+        "size": 641542596
+      },
+      {
+        "md5": "d9703d7b335a366706430bab9d98ea9e",
+        "name": "T382_b4_Brain_PCW15.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "2536ad90b469830f3c2ee25f55dd2ef0",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T390_b16_Adr_PCW13.barcodes.tsv.gz",
+      "features_file": "T390_b16_Adr_PCW13.features.tsv.gz",
+      "file": "T390_b16_Adr_PCW13.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 13,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T390"
+        },
+        "summary": "Sample cell expression matrix for T390_b16_Adr_PCW13 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T390_b16_Adr_PCW13",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T390_b16_Adr_PCW13",
+    "manifest": [
+      {
+        "md5": "37465210dd3668809e15bf25462588ea",
+        "name": "T390_b16_Adr_PCW13.barcodes.tsv.gz",
+        "size": 519560
+      },
+      {
+        "md5": "ce767438d56c5ffc562edf550bdbc03e",
+        "name": "T390_b16_Adr_PCW13.barcodes.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T390_b16_Adr_PCW13.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "ba5cc97431aecc3554648506a3e3f3ba",
+        "name": "T390_b16_Adr_PCW13.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "90faff6d0f8482379174db2fd50e76ad",
+        "name": "T390_b16_Adr_PCW13.matrix.mtx.gz",
+        "size": 30498557
+      },
+      {
+        "md5": "043fb75b4d682297d716b81fccac7cb1",
+        "name": "T390_b16_Adr_PCW13.matrix.mtx.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "8f240afd2c7b22b8786a810b57266ac6",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T398_b15_Liver_PCW17.barcodes.tsv.gz",
+      "features_file": "T398_b15_Liver_PCW17.features.tsv.gz",
+      "file": "T398_b15_Liver_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T398"
+        },
+        "summary": "Sample cell expression matrix for T398_b15_Liver_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T398_b15_Liver_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T398_b15_Liver_PCW17",
+    "manifest": [
+      {
+        "md5": "89cd6489930e2a874944f9d168e23eff",
+        "name": "T398_b15_Liver_PCW17.barcodes.tsv.gz",
+        "size": 2752896
+      },
+      {
+        "md5": "9ddc03b6822ba0fb692a8cd70cbc214d",
+        "name": "T398_b15_Liver_PCW17.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T398_b15_Liver_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "97e15f0eb75ca46a1a441e192f69c537",
+        "name": "T398_b15_Liver_PCW17.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5433cd95a306be89d02d23eb63594b2d",
+        "name": "T398_b15_Liver_PCW17.matrix.mtx.gz",
+        "size": 360882249
+      },
+      {
+        "md5": "5d2b7290eba460db0d21d007cd050829",
+        "name": "T398_b15_Liver_PCW17.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "6e46fdb68c07a89c5ef039f4903e049b",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T399_b10_Stomach_PCW17.barcodes.tsv.gz",
+      "features_file": "T399_b10_Stomach_PCW17.features.tsv.gz",
+      "file": "T399_b10_Stomach_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T399"
+        },
+        "summary": "Sample cell expression matrix for T399_b10_Stomach_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T399_b10_Stomach_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T399_b10_Stomach_PCW17",
+    "manifest": [
+      {
+        "md5": "94d9288e8842381de0b16f4a9b15395e",
+        "name": "T399_b10_Stomach_PCW17.barcodes.tsv.gz",
+        "size": 2205438
+      },
+      {
+        "md5": "bf797eb6711521517bac8e975b84c9bb",
+        "name": "T399_b10_Stomach_PCW17.barcodes.tsv.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T399_b10_Stomach_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "48d11968de60ff634299157bea378b5c",
+        "name": "T399_b10_Stomach_PCW17.features.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "39cf9833efcfdc5096ddfab581794045",
+        "name": "T399_b10_Stomach_PCW17.matrix.mtx.gz",
+        "size": 485100631
+      },
+      {
+        "md5": "c5af70e1c4d9eb732f9d8ed391e092c1",
+        "name": "T399_b10_Stomach_PCW17.matrix.mtx.gz.dvc",
+        "size": 121
+      },
+      {
+        "md5": "847a0524993fa81e401ebacdcaef63d0",
+        "name": "genomic_resource.yaml",
+        "size": 726
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T406_b17_Thymus_PCW19.barcodes.tsv.gz",
+      "features_file": "T406_b17_Thymus_PCW19.features.tsv.gz",
+      "file": "T406_b17_Thymus_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T406"
+        },
+        "summary": "Sample cell expression matrix for T406_b17_Thymus_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T406_b17_Thymus_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T406_b17_Thymus_PCW19",
+    "manifest": [
+      {
+        "md5": "4c7d15631eb6c3641bd9e69f7db1b7d9",
+        "name": "T406_b17_Thymus_PCW19.barcodes.tsv.gz",
+        "size": 4399567
+      },
+      {
+        "md5": "c837b5835a4d4fc17179f831b000aa0d",
+        "name": "T406_b17_Thymus_PCW19.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T406_b17_Thymus_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "2ff5f61195ef7e8a70ffd913acf09897",
+        "name": "T406_b17_Thymus_PCW19.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "336c4c9675834349abedb5b30121a4c6",
+        "name": "T406_b17_Thymus_PCW19.matrix.mtx.gz",
+        "size": 802896097
+      },
+      {
+        "md5": "7340d96e411fa85a7f2b7e671a0be3d9",
+        "name": "T406_b17_Thymus_PCW19.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "b8839ef09156f77dc0eaf445451c3fa0",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T407_b11_Heart_PCW19.barcodes.tsv.gz",
+      "features_file": "T407_b11_Heart_PCW19.features.tsv.gz",
+      "file": "T407_b11_Heart_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T407"
+        },
+        "summary": "Sample cell expression matrix for T407_b11_Heart_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T407_b11_Heart_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T407_b11_Heart_PCW19",
+    "manifest": [
+      {
+        "md5": "a4127a6786bc0fe36850c76cc4c22589",
+        "name": "T407_b11_Heart_PCW19.barcodes.tsv.gz",
+        "size": 2205881
+      },
+      {
+        "md5": "131212944c2b6a1a0cf2a0c0ff75e249",
+        "name": "T407_b11_Heart_PCW19.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T407_b11_Heart_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "76d4f05ad3b4df43b432e3f6a81cf5dd",
+        "name": "T407_b11_Heart_PCW19.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "cbdb87c9fac0b2946881b04e61d31bfc",
+        "name": "T407_b11_Heart_PCW19.matrix.mtx.gz",
+        "size": 562576591
+      },
+      {
+        "md5": "1ab28c6e80940f7828ca1904e3a27f67",
+        "name": "T407_b11_Heart_PCW19.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "89632f50bac54d12dc8460e885ba3813",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T408L_b12_Lung_PCW19.barcodes.tsv.gz",
+      "features_file": "T408L_b12_Lung_PCW19.features.tsv.gz",
+      "file": "T408L_b12_Lung_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 12,
+          "organ": "Lung",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T408L"
+        },
+        "summary": "Sample cell expression matrix for T408L_b12_Lung_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T408L_b12_Lung_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T408L_b12_Lung_PCW19",
+    "manifest": [
+      {
+        "md5": "5c46260b9e1d02cdf67d367e5a9781e3",
+        "name": "T408L_b12_Lung_PCW19.barcodes.tsv.gz",
+        "size": 2204763
+      },
+      {
+        "md5": "c1d8961ef6e3b90454cac3f475a17976",
+        "name": "T408L_b12_Lung_PCW19.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "aacb296bef4cc4febe62df0d38e628e5",
+        "name": "T408L_b12_Lung_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "14fb20a56efb23c0aea2711efe3d7112",
+        "name": "T408L_b12_Lung_PCW19.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "760cc807aee34fd4a6d40cc39ecb4099",
+        "name": "T408L_b12_Lung_PCW19.matrix.mtx.gz",
+        "size": 474636560
+      },
+      {
+        "md5": "897c05db547c2263c48d228543814629",
+        "name": "T408L_b12_Lung_PCW19.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "2f327d1c53647902ae01a7018dc5d8dd",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T408S_b19_Skin_PCW19.barcodes.tsv.gz",
+      "features_file": "T408S_b19_Skin_PCW19.features.tsv.gz",
+      "file": "T408S_b19_Skin_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T408S"
+        },
+        "summary": "Sample cell expression matrix for T408S_b19_Skin_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T408S_b19_Skin_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T408S_b19_Skin_PCW19",
+    "manifest": [
+      {
+        "md5": "2090c06aa2db5a8149c322bdbeaf0eb3",
+        "name": "T408S_b19_Skin_PCW19.barcodes.tsv.gz",
+        "size": 3342284
+      },
+      {
+        "md5": "5dd6d1ecab5e733293016e96592f4799",
+        "name": "T408S_b19_Skin_PCW19.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "6c7efda49eff80bb2b1286621a5a5b0f",
+        "name": "T408S_b19_Skin_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "79d68d150b0b8f066091631ef93db83a",
+        "name": "T408S_b19_Skin_PCW19.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "d79f103b51d65e9f43e84ccf853131bc",
+        "name": "T408S_b19_Skin_PCW19.matrix.mtx.gz",
+        "size": 799061585
+      },
+      {
+        "md5": "19a344ccf3023d62fb6b61a16867d42f",
+        "name": "T408S_b19_Skin_PCW19.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "cacaa8ac00bfd9a3059ba285fd36c8a8",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T40_b16_Adr_PCW17.barcodes.tsv.gz",
+      "features_file": "T40_b16_Adr_PCW17.features.tsv.gz",
+      "file": "T40_b16_Adr_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 16,
+          "organ": "Adr",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T40"
+        },
+        "summary": "Sample cell expression matrix for T40_b16_Adr_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T40_b16_Adr_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T40_b16_Adr_PCW17",
+    "manifest": [
+      {
+        "md5": "21c7a18e14cebc813844621bbf9acf3b",
+        "name": "T40_b16_Adr_PCW17.barcodes.tsv.gz",
+        "size": 545704
+      },
+      {
+        "md5": "904ea0f31bebd4e7888edda4e70e4d7d",
+        "name": "T40_b16_Adr_PCW17.barcodes.tsv.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "fcf05c952c86942846f4fc7d5d9aa9ba",
+        "name": "T40_b16_Adr_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "b44b42f434bf9545f2903a2547a9bd9d",
+        "name": "T40_b16_Adr_PCW17.features.tsv.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "c6f6caf8265ccf5da662cce708f36eb9",
+        "name": "T40_b16_Adr_PCW17.matrix.mtx.gz",
+        "size": 73691394
+      },
+      {
+        "md5": "e2fa720729fd3e7533a88d44b587f37c",
+        "name": "T40_b16_Adr_PCW17.matrix.mtx.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "f004340a49ed11238e0101143cd9f24c",
+        "name": "genomic_resource.yaml",
+        "size": 701
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T410_b13_Eye_PCW13.barcodes.tsv.gz",
+      "features_file": "T410_b13_Eye_PCW13.features.tsv.gz",
+      "file": "T410_b13_Eye_PCW13.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 13,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T410"
+        },
+        "summary": "Sample cell expression matrix for T410_b13_Eye_PCW13 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T410_b13_Eye_PCW13",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T410_b13_Eye_PCW13",
+    "manifest": [
+      {
+        "md5": "28e0c0005b157634d6e7a615ea87bba1",
+        "name": "T410_b13_Eye_PCW13.barcodes.tsv.gz",
+        "size": 2205680
+      },
+      {
+        "md5": "19f022bd1a3d3eb828f85ab0ae1c13ea",
+        "name": "T410_b13_Eye_PCW13.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T410_b13_Eye_PCW13.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "20257f88924adf4cb705a9907eec5980",
+        "name": "T410_b13_Eye_PCW13.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "6052602faa70f5f21a9d80608bc24233",
+        "name": "T410_b13_Eye_PCW13.matrix.mtx.gz",
+        "size": 1211631567
+      },
+      {
+        "md5": "042fb3d15a6d0ad28ed210bea31bc189",
+        "name": "T410_b13_Eye_PCW13.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "eea0d2a9c2f95a88f6d4b6eab793dff9",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T44_b9_Muscle_PCW17.barcodes.tsv.gz",
+      "features_file": "T44_b9_Muscle_PCW17.features.tsv.gz",
+      "file": "T44_b9_Muscle_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T44"
+        },
+        "summary": "Sample cell expression matrix for T44_b9_Muscle_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T44_b9_Muscle_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T44_b9_Muscle_PCW17",
+    "manifest": [
+      {
+        "md5": "1c20b6dc1e31c260fe1a6d75990e2b44",
+        "name": "T44_b9_Muscle_PCW17.barcodes.tsv.gz",
+        "size": 2205645
+      },
+      {
+        "md5": "f37c8f9211c7739e00bcaff306bb528f",
+        "name": "T44_b9_Muscle_PCW17.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T44_b9_Muscle_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "8d19f7d0a311023dff65d35094888d20",
+        "name": "T44_b9_Muscle_PCW17.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "d9b8d62ce962479b307d9fda1159441d",
+        "name": "T44_b9_Muscle_PCW17.matrix.mtx.gz",
+        "size": 539244657
+      },
+      {
+        "md5": "6f5de558d66daecd484f367c509b6289",
+        "name": "T44_b9_Muscle_PCW17.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "d349732795e89878ba491e3547369c5f",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T45_b19_Skin_PCW17.barcodes.tsv.gz",
+      "features_file": "T45_b19_Skin_PCW17.features.tsv.gz",
+      "file": "T45_b19_Skin_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 19,
+          "organ": "Skin",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T45"
+        },
+        "summary": "Sample cell expression matrix for T45_b19_Skin_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T45_b19_Skin_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T45_b19_Skin_PCW17",
+    "manifest": [
+      {
+        "md5": "00766e39691a6bba67feba5fffae42f8",
+        "name": "T45_b19_Skin_PCW17.barcodes.tsv.gz",
+        "size": 3342294
+      },
+      {
+        "md5": "d3c3a31d89136c9b5e2d025cb7593c5a",
+        "name": "T45_b19_Skin_PCW17.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "6c7efda49eff80bb2b1286621a5a5b0f",
+        "name": "T45_b19_Skin_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "36cf606b90169165df256179c8aec075",
+        "name": "T45_b19_Skin_PCW17.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "d5b35578274c86b2bf524013fd3eb04f",
+        "name": "T45_b19_Skin_PCW17.matrix.mtx.gz",
+        "size": 835954180
+      },
+      {
+        "md5": "c90b37c491141fa9946ddfc08bc92d08",
+        "name": "T45_b19_Skin_PCW17.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "dd2dde26bfbce15ef151992a53efe892",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T47_b4_Brain_PCW17.barcodes.tsv.gz",
+      "features_file": "T47_b4_Brain_PCW17.features.tsv.gz",
+      "file": "T47_b4_Brain_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T47"
+        },
+        "summary": "Sample cell expression matrix for T47_b4_Brain_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T47_b4_Brain_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T47_b4_Brain_PCW17",
+    "manifest": [
+      {
+        "md5": "209a680c735b5c3af970bec6345db314",
+        "name": "T47_b4_Brain_PCW17.barcodes.tsv.gz",
+        "size": 2205657
+      },
+      {
+        "md5": "c42587ac9846ca9e165cc48c35465279",
+        "name": "T47_b4_Brain_PCW17.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T47_b4_Brain_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "d859ce688494a45acb0301ff1a01889c",
+        "name": "T47_b4_Brain_PCW17.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "497bc5b97f0c053ad6adfc4a365553f6",
+        "name": "T47_b4_Brain_PCW17.matrix.mtx.gz",
+        "size": 829544490
+      },
+      {
+        "md5": "f924fb0fc30da5821a209fe2f0d336e2",
+        "name": "T47_b4_Brain_PCW17.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "eda3d4c9905930ebd3b6b61268effaeb",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T49_b18_Lung_PCW20.barcodes.tsv.gz",
+      "features_file": "T49_b18_Lung_PCW20.features.tsv.gz",
+      "file": "T49_b18_Lung_PCW20.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T49"
+        },
+        "summary": "Sample cell expression matrix for T49_b18_Lung_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T49_b18_Lung_PCW20",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T49_b18_Lung_PCW20",
+    "manifest": [
+      {
+        "md5": "01afe28635d6a9c38a8824ea0c74dbba",
+        "name": "T49_b18_Lung_PCW20.barcodes.tsv.gz",
+        "size": 2226605
+      },
+      {
+        "md5": "a27d78dffa3f82ad768346a239e80ae3",
+        "name": "T49_b18_Lung_PCW20.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T49_b18_Lung_PCW20.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "094f7e52aa06d1c4767e1bcec3461fb8",
+        "name": "T49_b18_Lung_PCW20.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "a55b80e1185f7d5831a553308452f53f",
+        "name": "T49_b18_Lung_PCW20.matrix.mtx.gz",
+        "size": 413625997
+      },
+      {
+        "md5": "8a0fd4cd12fb08f199e11351f6a04bda",
+        "name": "T49_b18_Lung_PCW20.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "3ddb1a9575d8b11f05995003f3ef6f58",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T51_b13_Eye_PCW20.barcodes.tsv.gz",
+      "features_file": "T51_b13_Eye_PCW20.features.tsv.gz",
+      "file": "T51_b13_Eye_PCW20.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T51"
+        },
+        "summary": "Sample cell expression matrix for T51_b13_Eye_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T51_b13_Eye_PCW20",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T51_b13_Eye_PCW20",
+    "manifest": [
+      {
+        "md5": "52138d0606f0923cf60e590e43682cc1",
+        "name": "T51_b13_Eye_PCW20.barcodes.tsv.gz",
+        "size": 2205787
+      },
+      {
+        "md5": "f23651b19f79ba78e7577d4690fa52ca",
+        "name": "T51_b13_Eye_PCW20.barcodes.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T51_b13_Eye_PCW20.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "2cb0ffd3b3a07706122ce4d61ec7f99d",
+        "name": "T51_b13_Eye_PCW20.features.tsv.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "bcfbaa6ef02bbb5ae77a332b56bd4ade",
+        "name": "T51_b13_Eye_PCW20.matrix.mtx.gz",
+        "size": 348805593
+      },
+      {
+        "md5": "e0d865575942e21d1935beff500878d8",
+        "name": "T51_b13_Eye_PCW20.matrix.mtx.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "f38c87f3dc69559304c7e9b2cd2a7f20",
+        "name": "genomic_resource.yaml",
+        "size": 701
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T53_b10_Stomach_PCW20.barcodes.tsv.gz",
+      "features_file": "T53_b10_Stomach_PCW20.features.tsv.gz",
+      "file": "T53_b10_Stomach_PCW20.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 10,
+          "organ": "Stomach",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T53"
+        },
+        "summary": "Sample cell expression matrix for T53_b10_Stomach_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T53_b10_Stomach_PCW20",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T53_b10_Stomach_PCW20",
+    "manifest": [
+      {
+        "md5": "e700c95b9d3c921117f445e4259f2b1b",
+        "name": "T53_b10_Stomach_PCW20.barcodes.tsv.gz",
+        "size": 2192252
+      },
+      {
+        "md5": "12c069dd3ff8cc122f67b82b33946678",
+        "name": "T53_b10_Stomach_PCW20.barcodes.tsv.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "caf146f6e6c60ed792045bf8272f144f",
+        "name": "T53_b10_Stomach_PCW20.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "1722d251691b10a97459d3b74c4d55b4",
+        "name": "T53_b10_Stomach_PCW20.features.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "26d1eafa2d6f4dc870de75404d82c91e",
+        "name": "T53_b10_Stomach_PCW20.matrix.mtx.gz",
+        "size": 217114574
+      },
+      {
+        "md5": "d625e976d552fbdee8c663964672921a",
+        "name": "T53_b10_Stomach_PCW20.matrix.mtx.gz.dvc",
+        "size": 120
+      },
+      {
+        "md5": "a9acce407fd3b205074c95022f04f465",
+        "name": "genomic_resource.yaml",
+        "size": 721
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T5_b13_Eye_PCW19.barcodes.tsv.gz",
+      "features_file": "T5_b13_Eye_PCW19.features.tsv.gz",
+      "file": "T5_b13_Eye_PCW19.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 19,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T5"
+        },
+        "summary": "Sample cell expression matrix for T5_b13_Eye_PCW19 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T5_b13_Eye_PCW19",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T5_b13_Eye_PCW19",
+    "manifest": [
+      {
+        "md5": "d1e23a4e752ec3ea5f2718fc20c2e14a",
+        "name": "T5_b13_Eye_PCW19.barcodes.tsv.gz",
+        "size": 2205651
+      },
+      {
+        "md5": "a7736484a7c47f18be88f519a5c982c2",
+        "name": "T5_b13_Eye_PCW19.barcodes.tsv.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T5_b13_Eye_PCW19.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "a722423ffe52c37f511efcc62b2ce5aa",
+        "name": "T5_b13_Eye_PCW19.features.tsv.gz.dvc",
+        "size": 114
+      },
+      {
+        "md5": "c8385673b87b80941e7677eb48134db7",
+        "name": "T5_b13_Eye_PCW19.matrix.mtx.gz",
+        "size": 520704849
+      },
+      {
+        "md5": "85388780cf5c8044c70adc3ae168a608",
+        "name": "T5_b13_Eye_PCW19.matrix.mtx.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "71c404755715372623f9bb2c9781cfa8",
+        "name": "genomic_resource.yaml",
+        "size": 696
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T61_b9_Muscle_PCW20.barcodes.tsv.gz",
+      "features_file": "T61_b9_Muscle_PCW20.features.tsv.gz",
+      "file": "T61_b9_Muscle_PCW20.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T61"
+        },
+        "summary": "Sample cell expression matrix for T61_b9_Muscle_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T61_b9_Muscle_PCW20",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T61_b9_Muscle_PCW20",
+    "manifest": [
+      {
+        "md5": "b864252b9483d506641713d4f031d6d6",
+        "name": "T61_b9_Muscle_PCW20.barcodes.tsv.gz",
+        "size": 2205675
+      },
+      {
+        "md5": "a7b5a0904c76721dc0ae6521a6b3be44",
+        "name": "T61_b9_Muscle_PCW20.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T61_b9_Muscle_PCW20.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "f20ff909957d33b00b9499d4ed54bac0",
+        "name": "T61_b9_Muscle_PCW20.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "2c9b0b6ee7288e2c35052c52ea99598b",
+        "name": "T61_b9_Muscle_PCW20.matrix.mtx.gz",
+        "size": 568098902
+      },
+      {
+        "md5": "f8eafee267c0f4be2bf6210269e5dba9",
+        "name": "T61_b9_Muscle_PCW20.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "a94c3ef13f3370adfe3a1c88d3ba6f3b",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T63_b4_Brain_PCW20.barcodes.tsv.gz",
+      "features_file": "T63_b4_Brain_PCW20.features.tsv.gz",
+      "file": "T63_b4_Brain_PCW20.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 20,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T63"
+        },
+        "summary": "Sample cell expression matrix for T63_b4_Brain_PCW20 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T63_b4_Brain_PCW20",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T63_b4_Brain_PCW20",
+    "manifest": [
+      {
+        "md5": "cc5904ad9e89911e37edb61c1ecdaf5d",
+        "name": "T63_b4_Brain_PCW20.barcodes.tsv.gz",
+        "size": 2205680
+      },
+      {
+        "md5": "08f210ff99974539b62897b50283fdee",
+        "name": "T63_b4_Brain_PCW20.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T63_b4_Brain_PCW20.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "bd73561553b2b240bb83b441d64226f4",
+        "name": "T63_b4_Brain_PCW20.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "512b52153c0b4125a14ef32db89d2bba",
+        "name": "T63_b4_Brain_PCW20.matrix.mtx.gz",
+        "size": 853292384
+      },
+      {
+        "md5": "536f2709f54dfd387fb9fc2d4242f22b",
+        "name": "T63_b4_Brain_PCW20.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "7b714acf6913f2224ee6f67904db11b3",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T64_b4_Brain_PCW18.barcodes.tsv.gz",
+      "features_file": "T64_b4_Brain_PCW18.features.tsv.gz",
+      "file": "T64_b4_Brain_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T64"
+        },
+        "summary": "Sample cell expression matrix for T64_b4_Brain_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T64_b4_Brain_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T64_b4_Brain_PCW18",
+    "manifest": [
+      {
+        "md5": "23593c76f00cab3720bd657eea4b6855",
+        "name": "T64_b4_Brain_PCW18.barcodes.tsv.gz",
+        "size": 2205657
+      },
+      {
+        "md5": "db508b31412b59133e1245532c730c43",
+        "name": "T64_b4_Brain_PCW18.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T64_b4_Brain_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "d49de69a9b1705527e493adcb3f9b032",
+        "name": "T64_b4_Brain_PCW18.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "e1368a95e95bb25f5b08c23cee9d7b75",
+        "name": "T64_b4_Brain_PCW18.matrix.mtx.gz",
+        "size": 1122139734
+      },
+      {
+        "md5": "1b1d20d8ab759ef20e980176f89d9a71",
+        "name": "T64_b4_Brain_PCW18.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "8923d911ee8d1610fa4ceb505ca483b9",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T71_b15_Liver_PCW18.barcodes.tsv.gz",
+      "features_file": "T71_b15_Liver_PCW18.features.tsv.gz",
+      "file": "T71_b15_Liver_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 15,
+          "organ": "Liver",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T71"
+        },
+        "summary": "Sample cell expression matrix for T71_b15_Liver_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T71_b15_Liver_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T71_b15_Liver_PCW18",
+    "manifest": [
+      {
+        "md5": "ea17e48c75a8cdfbb583abee7af8efb4",
+        "name": "T71_b15_Liver_PCW18.barcodes.tsv.gz",
+        "size": 2701279
+      },
+      {
+        "md5": "793e397782ce36fc689a2354a2a14246",
+        "name": "T71_b15_Liver_PCW18.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "4472e402593187dc928617319a3e2b75",
+        "name": "T71_b15_Liver_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "927f374576af22a5dde2a66dfeb38dc1",
+        "name": "T71_b15_Liver_PCW18.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "325e3d9bfe355b3c39755949b86858f4",
+        "name": "T71_b15_Liver_PCW18.matrix.mtx.gz",
+        "size": 232238871
+      },
+      {
+        "md5": "e86a3674d15d37cdb90fe2c639f2818a",
+        "name": "T71_b15_Liver_PCW18.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "b98f25eb1d21c85ae10007eb380c30d0",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T77_b18_Lung_PCW18.barcodes.tsv.gz",
+      "features_file": "T77_b18_Lung_PCW18.features.tsv.gz",
+      "file": "T77_b18_Lung_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 18,
+          "organ": "Lung",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T77"
+        },
+        "summary": "Sample cell expression matrix for T77_b18_Lung_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T77_b18_Lung_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T77_b18_Lung_PCW18",
+    "manifest": [
+      {
+        "md5": "de4677c8a071496ab4870128f3216b27",
+        "name": "T77_b18_Lung_PCW18.barcodes.tsv.gz",
+        "size": 2226368
+      },
+      {
+        "md5": "28ddfa6776ff262dd29ec90885f2d1ea",
+        "name": "T77_b18_Lung_PCW18.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "58774ac3e9ba749b7ef3852570c81d4c",
+        "name": "T77_b18_Lung_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "f453dd91aaeb7061fde11912ad2b08dd",
+        "name": "T77_b18_Lung_PCW18.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "38e263fdead6f5eb58f11515f6d20b25",
+        "name": "T77_b18_Lung_PCW18.matrix.mtx.gz",
+        "size": 475353123
+      },
+      {
+        "md5": "4676d7793c0535d31b6c8eadfa81fb7a",
+        "name": "T77_b18_Lung_PCW18.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "d9276b4f3ceaa508406eed5f4aeb08e7",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T79_b13_Eye_PCW18.barcodes.tsv.gz",
+      "features_file": "T79_b13_Eye_PCW18.features.tsv.gz",
+      "file": "T79_b13_Eye_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 13,
+          "organ": "Eye",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T79"
+        },
+        "summary": "Sample cell expression matrix for T79_b13_Eye_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T79_b13_Eye_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T79_b13_Eye_PCW18",
+    "manifest": [
+      {
+        "md5": "f6021f5adbd32a5c848c2db1ea4e4f89",
+        "name": "T79_b13_Eye_PCW18.barcodes.tsv.gz",
+        "size": 2205758
+      },
+      {
+        "md5": "263ec100977d703510e5701c396f2196",
+        "name": "T79_b13_Eye_PCW18.barcodes.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "97d3a15ac906bd0fb1b127c1d19c7101",
+        "name": "T79_b13_Eye_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "577dc1e2e0bd16e5f155a7ac802d7f7e",
+        "name": "T79_b13_Eye_PCW18.features.tsv.gz.dvc",
+        "size": 115
+      },
+      {
+        "md5": "da0df00eebc4e938a5a2870ad4fc7129",
+        "name": "T79_b13_Eye_PCW18.matrix.mtx.gz",
+        "size": 442036122
+      },
+      {
+        "md5": "df2a4844991bb29e1cfe4d4a95794ab6",
+        "name": "T79_b13_Eye_PCW18.matrix.mtx.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "9aa1b84aa537fbc52276825e08e7ffe4",
+        "name": "genomic_resource.yaml",
+        "size": 701
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T87_b9_Muscle_PCW18.barcodes.tsv.gz",
+      "features_file": "T87_b9_Muscle_PCW18.features.tsv.gz",
+      "file": "T87_b9_Muscle_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T87"
+        },
+        "summary": "Sample cell expression matrix for T87_b9_Muscle_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T87_b9_Muscle_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T87_b9_Muscle_PCW18",
+    "manifest": [
+      {
+        "md5": "66d086220e26ec17f05779ed1ed32e63",
+        "name": "T87_b9_Muscle_PCW18.barcodes.tsv.gz",
+        "size": 2205653
+      },
+      {
+        "md5": "7e04a33d6393017ca9f1e24669f84864",
+        "name": "T87_b9_Muscle_PCW18.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T87_b9_Muscle_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "7c2a5d956e5e18c9ac38a62b27e99820",
+        "name": "T87_b9_Muscle_PCW18.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "fa5a77de4565d70dfbe45de3ba4483c1",
+        "name": "T87_b9_Muscle_PCW18.matrix.mtx.gz",
+        "size": 450272591
+      },
+      {
+        "md5": "a3fbec4486ffc7733bae91e7a54e0ada",
+        "name": "T87_b9_Muscle_PCW18.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "31d3a3a935786ecaaf65c4ed9ceb9ec6",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T88_b17_Spleen_PCW18.barcodes.tsv.gz",
+      "features_file": "T88_b17_Spleen_PCW18.features.tsv.gz",
+      "file": "T88_b17_Spleen_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Spleen",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T88"
+        },
+        "summary": "Sample cell expression matrix for T88_b17_Spleen_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T88_b17_Spleen_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T88_b17_Spleen_PCW18",
+    "manifest": [
+      {
+        "md5": "46d6cecb14dd1b4979b3afddf2ff1eb0",
+        "name": "T88_b17_Spleen_PCW18.barcodes.tsv.gz",
+        "size": 3971069
+      },
+      {
+        "md5": "1e6987babe95975dd67b7762c371b26b",
+        "name": "T88_b17_Spleen_PCW18.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T88_b17_Spleen_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "8029b680eab5c2a805fa408fec3b28ef",
+        "name": "T88_b17_Spleen_PCW18.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "35ca3e745b438bb5910b0bb7f3d1d824",
+        "name": "T88_b17_Spleen_PCW18.matrix.mtx.gz",
+        "size": 197481393
+      },
+      {
+        "md5": "226c05e5dfa210a0406e507904681b54",
+        "name": "T88_b17_Spleen_PCW18.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "9ab160c1dd0b8b1fb8399f482a011761",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T90_b17_Thymus_PCW18.barcodes.tsv.gz",
+      "features_file": "T90_b17_Thymus_PCW18.features.tsv.gz",
+      "file": "T90_b17_Thymus_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 17,
+          "organ": "Thymus",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T90"
+        },
+        "summary": "Sample cell expression matrix for T90_b17_Thymus_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T90_b17_Thymus_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T90_b17_Thymus_PCW18",
+    "manifest": [
+      {
+        "md5": "753815aca95f743f1391c4b0e3fe2e3e",
+        "name": "T90_b17_Thymus_PCW18.barcodes.tsv.gz",
+        "size": 4107941
+      },
+      {
+        "md5": "b2745bdfbfcc5c0b50ab68355d29f875",
+        "name": "T90_b17_Thymus_PCW18.barcodes.tsv.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "d233626e7d7d1dd2dc29e3b6c672f000",
+        "name": "T90_b17_Thymus_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "1d3b1b052bae7c953e567a5517538142",
+        "name": "T90_b17_Thymus_PCW18.features.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "f487a507c2703a867f7a40b3f224b59f",
+        "name": "T90_b17_Thymus_PCW18.matrix.mtx.gz",
+        "size": 240999517
+      },
+      {
+        "md5": "a5a5bb3941297e27789c51d62caab899",
+        "name": "T90_b17_Thymus_PCW18.matrix.mtx.gz.dvc",
+        "size": 119
+      },
+      {
+        "md5": "8837a788a352626b5613053c653442df",
+        "name": "genomic_resource.yaml",
+        "size": 716
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T92_b11_Heart_PCW18.barcodes.tsv.gz",
+      "features_file": "T92_b11_Heart_PCW18.features.tsv.gz",
+      "file": "T92_b11_Heart_PCW18.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 11,
+          "organ": "Heart",
+          "pcw_age": 18,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T92"
+        },
+        "summary": "Sample cell expression matrix for T92_b11_Heart_PCW18 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T92_b11_Heart_PCW18",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T92_b11_Heart_PCW18",
+    "manifest": [
+      {
+        "md5": "24bf978194639dc509986c6f56150d1d",
+        "name": "T92_b11_Heart_PCW18.barcodes.tsv.gz",
+        "size": 2205883
+      },
+      {
+        "md5": "f04b568bd461980ef380c2031d18c8a2",
+        "name": "T92_b11_Heart_PCW18.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "ac8d3fcea32769e90e91ef45b5256640",
+        "name": "T92_b11_Heart_PCW18.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "eef36b0b8861784f9f9bd196e710ea3c",
+        "name": "T92_b11_Heart_PCW18.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "c3f9ed7ce5138fc7226d09ade5907fc6",
+        "name": "T92_b11_Heart_PCW18.matrix.mtx.gz",
+        "size": 549791258
+      },
+      {
+        "md5": "b4c04a868c9ade27f61129fb89ebb0b6",
+        "name": "T92_b11_Heart_PCW18.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5230306686ba58ec8a8cec7c53bfc76a",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T94_b4_Brain_PCW17.barcodes.tsv.gz",
+      "features_file": "T94_b4_Brain_PCW17.features.tsv.gz",
+      "file": "T94_b4_Brain_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 4,
+          "organ": "Brain",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T94"
+        },
+        "summary": "Sample cell expression matrix for T94_b4_Brain_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T94_b4_Brain_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T94_b4_Brain_PCW17",
+    "manifest": [
+      {
+        "md5": "a139b8cbe419f51831c0f527641d2640",
+        "name": "T94_b4_Brain_PCW17.barcodes.tsv.gz",
+        "size": 2205650
+      },
+      {
+        "md5": "dc3c03bc920a50ac5fea6abcbd62a740",
+        "name": "T94_b4_Brain_PCW17.barcodes.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "66aad3eabadd306962a5146611dfed24",
+        "name": "T94_b4_Brain_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "d45a2e74e41e48283d7eb32c0a519384",
+        "name": "T94_b4_Brain_PCW17.features.tsv.gz.dvc",
+        "size": 116
+      },
+      {
+        "md5": "cbe026ab89a43f33394635bcf3d57ddb",
+        "name": "T94_b4_Brain_PCW17.matrix.mtx.gz",
+        "size": 671262599
+      },
+      {
+        "md5": "3182f1ed4f47b9b1f5f024493c038fd0",
+        "name": "T94_b4_Brain_PCW17.matrix.mtx.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "eeccadc23837114a0bddcb9b68d0eefd",
+        "name": "genomic_resource.yaml",
+        "size": 706
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "barcodes_file": "T96_b9_Muscle_PCW17.barcodes.tsv.gz",
+      "features_file": "T96_b9_Muscle_PCW17.features.tsv.gz",
+      "file": "T96_b9_Muscle_PCW17.matrix.mtx.gz",
+      "meta": {
+        "description": "\n[Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)\n\nDownloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).\n",
+        "labels": {
+          "assay": "cell_expression",
+          "dataset": "liu2026Multiomics",
+          "exp_batch": 9,
+          "organ": "Muscle",
+          "pcw_age": 17,
+          "technology": "SHARE-seq",
+          "tissue_storage_code": "T96"
+        },
+        "summary": "Sample cell expression matrix for T96_b9_Muscle_PCW17 from liu2026Multiomics."
+      },
+      "type": "basic"
+    },
+    "full_id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T96_b9_Muscle_PCW17",
+    "id": "summary/liu2026Multiomics/sample_cell_expression_matrix/T96_b9_Muscle_PCW17",
+    "manifest": [
+      {
+        "md5": "6e7b4370fb965cff3ded19bfa16c2112",
+        "name": "T96_b9_Muscle_PCW17.barcodes.tsv.gz",
+        "size": 2205646
+      },
+      {
+        "md5": "ebc089399f85edc8b7de9c74a43dce2c",
+        "name": "T96_b9_Muscle_PCW17.barcodes.tsv.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "5f2d9a4e28b86bd234837a9346b2f449",
+        "name": "T96_b9_Muscle_PCW17.features.tsv.gz",
+        "size": 312726
+      },
+      {
+        "md5": "213954b1b9ed055f7b0093b74ef9ef50",
+        "name": "T96_b9_Muscle_PCW17.features.tsv.gz.dvc",
+        "size": 117
+      },
+      {
+        "md5": "8919ef2d25890236f9c5afcd4f940ff1",
+        "name": "T96_b9_Muscle_PCW17.matrix.mtx.gz",
+        "size": 499995876
+      },
+      {
+        "md5": "d6faff538a7bb663f09ee36378bcb4b6",
+        "name": "T96_b9_Muscle_PCW17.matrix.mtx.gz.dvc",
+        "size": 118
+      },
+      {
+        "md5": "7cf9b717771b808dca4ac574335ad7e6",
+        "name": "genomic_resource.yaml",
+        "size": 711
+      },
+      {
+        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "name": "statistics/stats_hash",
+        "size": 11
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {

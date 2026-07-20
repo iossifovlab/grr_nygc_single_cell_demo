@@ -1,0 +1,23 @@
+type: basic
+file: T175_b18_Lung_PCW19.matrix.mtx.gz
+features_file: T175_b18_Lung_PCW19.features.tsv.gz
+barcodes_file: T175_b18_Lung_PCW19.barcodes.tsv.gz
+meta:
+  summary: Sample cell expression matrix for T175_b18_Lung_PCW19 from liu2026Multiomics.
+  description: '
+
+    [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
+    Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
+
+
+    Downloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).
+
+    '
+  labels:
+    assay: cell_expression
+    technology: SHARE-seq
+    tissue_storage_code: T175
+    exp_batch: 18
+    organ: Lung
+    pcw_age: 19
+    dataset: liu2026Multiomics

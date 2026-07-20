@@ -1,0 +1,23 @@
+type: basic
+file: T187_b19_Skin_PCW23.matrix.mtx.gz
+features_file: T187_b19_Skin_PCW23.features.tsv.gz
+barcodes_file: T187_b19_Skin_PCW23.barcodes.tsv.gz
+meta:
+  summary: Sample cell expression matrix for T187_b19_Skin_PCW23 from liu2026Multiomics.
+  description: '
+
+    [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
+    Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
+
+
+    Downloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).
+
+    '
+  labels:
+    assay: cell_expression
+    technology: SHARE-seq
+    tissue_storage_code: T187
+    exp_batch: 19
+    organ: Skin
+    pcw_age: 23
+    dataset: liu2026Multiomics

@@ -1,0 +1,23 @@
+type: basic
+file: T379_b11_Heart_PCW15.matrix.mtx.gz
+features_file: T379_b11_Heart_PCW15.features.tsv.gz
+barcodes_file: T379_b11_Heart_PCW15.barcodes.tsv.gz
+meta:
+  summary: Sample cell expression matrix for T379_b11_Heart_PCW15 from liu2026Multiomics.
+  description: '
+
+    [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
+    Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
+
+
+    Downloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).
+
+    '
+  labels:
+    assay: cell_expression
+    technology: SHARE-seq
+    tissue_storage_code: T379
+    exp_batch: 11
+    organ: Heart
+    pcw_age: 15
+    dataset: liu2026Multiomics

@@ -1,0 +1,23 @@
+type: basic
+file: T63_b4_Brain_PCW20.matrix.mtx.gz
+features_file: T63_b4_Brain_PCW20.features.tsv.gz
+barcodes_file: T63_b4_Brain_PCW20.barcodes.tsv.gz
+meta:
+  summary: Sample cell expression matrix for T63_b4_Brain_PCW20 from liu2026Multiomics.
+  description: '
+
+    [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
+    Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
+
+
+    Downloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).
+
+    '
+  labels:
+    assay: cell_expression
+    technology: SHARE-seq
+    tissue_storage_code: T63
+    exp_batch: 4
+    organ: Brain
+    pcw_age: 20
+    dataset: liu2026Multiomics

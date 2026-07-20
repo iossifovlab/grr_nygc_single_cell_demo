@@ -9,7 +9,7 @@ for ff in glob.glob(f"{yoonHaDD}/*.matrix.mtx.gz"):
     fn = ff.split("/")[-1]
     sm_id = ff.split("/")[-1].split(".")[0]
 
-    files = []
+    files = [ff]
     for sufx in [".features.tsv.gz", ".barcodes.tsv.gz"]:
         eff = f"{yoonHaDD}/{sm_id}{sufx}"
         assert os.path.isfile(eff)
@@ -53,5 +53,4 @@ for ff in glob.glob(f"{yoonHaDD}/*.matrix.mtx.gz"):
             }
         }
     }
-    # prepapre_resrouce(resource_id, files, conf)
-
+    prepapre_resrouce(resource_id, files, conf)
