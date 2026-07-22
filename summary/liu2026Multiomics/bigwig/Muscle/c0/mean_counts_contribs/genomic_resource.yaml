@@ -1,0 +1,39 @@
+type: position_score
+table:
+  filename: Muscle_c0__mean_counts_contribs.bw
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+scores:
+- id: liu2026Multiomics_Muscle_c0_mean_counts_contribs
+  type: float
+  desc: base-resolution contribution scores for the counts head of ChromBPNet as computed
+    by DeepLIFT
+  index: 3
+  histogram:
+    type: number
+    number_of_bins: 100
+    y_log_scale: true
+    x_log_scale: false
+meta:
+  summary: mean_counts_contribs for Muscle for cell cluster c0
+  description: '
+
+    [Liu, et al, Multiomics and deep learning dissect regulatory syntax in human development,
+    Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
+
+
+    Downloaded from: [https://zenodo.org/records/15066651](https://zenodo.org/records/15066651).
+
+    Description of the data and download instructions can be found [https://github.com/GreenleafLab/HDMA/blob/main/DATA.md](https://github.com/GreenleafLab/HDMA/blob/main/DATA.md)
+
+    '
+  labels:
+    assay: pseudo_bulk_atac
+    technology: SHARE-seq
+    organ: Muscle
+    cluster: Muscle_c0
+    dataset: liu2026Multiomics

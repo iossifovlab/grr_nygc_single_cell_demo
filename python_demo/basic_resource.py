@@ -8,17 +8,7 @@ from gain.genomic_resources.genomic_scores import PositionScore
 
 
 
-## to get connected to *this* repository
-local_repo_path = str(pathlib.Path(__file__).absolute().parent.parent)
-grr_def = {
-    "id": "local",
-    "type": "directory",
-    "directory": local_repo_path
-}
-grr = build_genomic_resource_repository(definition=grr_def)
-
-## alternativealy to get connected to the configured repository
-# grr = build_genomic_resource_repository()
+grr = build_genomic_resource_repository()
 
 
 ## Find all resources for a cell-type
@@ -34,8 +24,8 @@ print(features)
 
 
 ## Using basic resource
-score_id = "summary/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1_ASC"
-score = cast(PositionScore, build_score_from_resource_id(score_id, grr).open())
+score_id = "summary/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1/ASC"
+score = cast(PositionScore, build_score_from_resource_id(score_id).open())
 
 xs = []
 ys = []
