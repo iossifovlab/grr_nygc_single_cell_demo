@@ -1,42 +1,85 @@
+#!/usr/bin/env python
+
 from gain.genomic_resources.repository_factory import build_genomic_resource_repository
 import pyBigWig
 from urllib.parse import urlparse
 from urllib.request import url2pathname
 import numpy as np
 from collections import defaultdict
+from typing import cast
+
+from gain.utils.verbosity_configuration import VerbosityConfiguration
+from gain import logging
+VerbosityConfiguration.adjust_verbosity(logging.DEBUG)
+
+from gain.genomic_resources.genomic_scores import build_score_from_resource
+from gain.genomic_resources.genomic_scores import PositionScore
+
 
 try:
     grr
 except NameError:
     grr = build_genomic_resource_repository()
 
-# res = grr.get_resource("summary/zemke2023Conserved/pseudo_bulk_atac_bw/human_m1/L4_5_IT")
+
+resources = [
+    grr.get_resource("summary/zemke2023Conserved/pseudo_bulk_mc_bedgraph/Human/CLA/CGN")
+]
+for res0 in grr.search_resources("liu2026Multiomics Thyroid c5", resource_type="position_score"):
+    res = grr.get_resource(res0.resource_id)
+    resources.append(res)
 
 
-for res in grr.search_resources("liu2026Multiomics Thyroid c6 obs_pval_signal", resource_type="position_score"):
-    interval_lenght_hist = defaultdict(int)
+for res in resources:
+    print(f"working with {res.resource_id}")
+    print("The file url0 is:", res0.get_file_url(res.config["table"]["filename"]))
+    print("The file url is:", res.get_file_url(res.config["table"]["filename"]))
 
-    print("Working with", res.resource_id)
-    file_url = res.get_file_url(res.config["table"]["filename"])
-    if file_url.startswith("file"):
-        bw = pyBigWig.open(url2pathname(urlparse(file_url).path))
-    else:
-        bw = pyBigWig.open(file_url)
+    # #
+    # # do that with bigwig's native interface 
+    # #
+    # bw = res.open_bigwig_file(res.config["table"]["filename"])
+    # interval_length_hist = defaultdict(int)
+    # mn = np.inf
+    # mx = -np.inf
+   
+    # chrom_sizes = bw.chroms()
+    # for chr_i, (chrom, length) in enumerate(chrom_sizes.items()):
+    #     intervals = bw.intervals(chrom, 0, length)
+    #     print(chrom, len(intervals))
+    #     if intervals:
+    #         for iii, (start, end, value) in enumerate(intervals):
+    #             if (iii % 100_000) == 0:
+    #                 print(iii, (start, end, value))
+    #             # Process your data here (e.g., write to a file or analyze)
+    #             # print(f"{chrom}:{start}-{end} = {value}")
+    #             mn = min(mn, value)
+    #             mx = max(mx, value)
+    #             interval_length_hist[end-start] += 1
+    #     break
+    # print("Result", res, mn, mx, interval_length_hist)
 
-    chrom_sizes = bw.chroms()
-
+    #
+    # do that with bigwig's directly
+    #
+    score = cast(PositionScore, build_score_from_resource(res).open())
+    interval_length_hist = defaultdict(int)
     mn = np.inf
     mx = -np.inf
-    for chrom, length in chrom_sizes.items():
-        intervals = bw.intervals(chrom, 0, length)
-        print(chrom, len(intervals))
-        if intervals:
-            for start, end, value in intervals:
-                # Process your data here (e.g., write to a file or analyze)
-                print(f"{chrom}:{start}-{end} = {value}")
+    assert len(score.get_all_scores()) == 1
+
+    for chr_i, chrom in enumerate(score.get_all_chromosomes()):
+        for iii, (start, end, values) in enumerate(score.fetch_region(chrom, 1, 300_000_000)):
+            if (iii % 100_000) == 0:
+                print(iii, (start, end, values))
+            # print(start, end, values)
+            if values is not None:
+                assert len(values) == 1
+                value = values[0]
                 mn = min(mn, value)
                 mx = max(mx, value)
-                interval_lenght_hist[end-start] += 1
+                interval_length_hist[end-start] += 1
+        # if chr_i > 3:
+        break
+    print("Result", res, mn, mx, interval_length_hist)
 
-    bw.close()
-    print("Result", res, mn, mx, interval_lenght_hist)
