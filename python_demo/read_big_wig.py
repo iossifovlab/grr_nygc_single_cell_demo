@@ -23,7 +23,7 @@ except NameError:
 
 
 resources = [
-    grr.get_resource("summary/zemke2023Conserved/pseudo_bulk_mc_bedgraph/Human/CLA/CGN")
+#     grr.get_resource("summary/zemke2023Conserved/pseudo_bulk_mc_bedgraph/Human/CLA/CGN")
 ]
 for res0 in grr.search_resources("liu2026Multiomics Thyroid c5", resource_type="position_score"):
     res = grr.get_resource(res0.resource_id)
@@ -38,26 +38,26 @@ for res in resources:
     # #
     # # do that with bigwig's native interface 
     # #
-    # bw = res.open_bigwig_file(res.config["table"]["filename"])
-    # interval_length_hist = defaultdict(int)
-    # mn = np.inf
-    # mx = -np.inf
-   
-    # chrom_sizes = bw.chroms()
-    # for chr_i, (chrom, length) in enumerate(chrom_sizes.items()):
-    #     intervals = bw.intervals(chrom, 0, length)
-    #     print(chrom, len(intervals))
-    #     if intervals:
-    #         for iii, (start, end, value) in enumerate(intervals):
-    #             if (iii % 100_000) == 0:
-    #                 print(iii, (start, end, value))
-    #             # Process your data here (e.g., write to a file or analyze)
-    #             # print(f"{chrom}:{start}-{end} = {value}")
-    #             mn = min(mn, value)
-    #             mx = max(mx, value)
-    #             interval_length_hist[end-start] += 1
-    #     break
-    # print("Result", res, mn, mx, interval_length_hist)
+    bw = res.open_bigwig_file(res.config["table"]["filename"])
+    interval_length_hist = defaultdict(int)
+    mn = np.inf
+    mx = -np.inf
+  
+    chrom_sizes = bw.chroms()
+    for chr_i, (chrom, length) in enumerate(chrom_sizes.items()):
+        intervals = bw.intervals(chrom, 0, length)
+        print(chrom, len(intervals))
+        if intervals:
+            for iii, (start, end, value) in enumerate(intervals):
+                if (iii % 100_000) == 0:
+                    print(iii, (start, end, value))
+                # Process your data here (e.g., write to a file or analyze)
+                # print(f"{chrom}:{start}-{end} = {value}")
+                mn = min(mn, value)
+                mx = max(mx, value)
+                interval_length_hist[end-start] += 1
+        break
+    print("Result", res, mn, mx, interval_length_hist)
 
     #
     # do that with bigwig's directly

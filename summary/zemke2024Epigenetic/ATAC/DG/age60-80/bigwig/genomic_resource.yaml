@@ -1,0 +1,35 @@
+type: position_score
+table:
+  filename: GSE278576_ATAC_DG_age60-80.bw
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+scores:
+- id: zemke2024Epigenetic_ATAC_DG_age60-80
+  type: float
+  desc: RPKM?
+  index: 3
+  histogram:
+    type: number
+    number_of_bins: 100
+    y_log_scale: true
+meta:
+  summary: ATAC for DG cell type for age_range age60-80
+  description: '
+
+    [Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human
+    hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)
+
+
+    Downloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).
+
+    '
+  labels:
+    assay: ATAC
+    technology: 10x genomics
+    cell_type: DG
+    age_range: age60-80
+    dataset: zemke2024Epigenetic
