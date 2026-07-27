@@ -7,7 +7,7 @@ yoonHaDD = "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576"
 
 cell_types = Counter()
 age_ranges = Counter()
-for ff in glob.glob(f"{yoonHaDD}/GSE278576_*_raw_feature_bc_matrix.h5"):
+for ff in glob.glob(f"{yoonHaDD}/*_raw_feature_bc_matrix.h5"):
     fn = ff.split("/")[-1]
     fn_parts = fn.split(".")[0].split("_")
     assert len(fn_parts) == 6
