@@ -1,0 +1,35 @@
+type: position_score
+table:
+  filename: GPe_SOX6-CTXND1_GABA.bw
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+scores:
+- id: johansen2025Crossspecies_atac_marmoset_GPe_SOX6-CTXND1_GABA
+  type: float
+  desc: RPKM?
+  index: 3
+  histogram:
+    type: number
+    number_of_bins: 100
+    y_log_scale: true
+meta:
+  summary: ATAC big wig for GPe_SOX6-CTXND1_GABA cell type from marmoset
+  description: '
+
+    [Johansen et al., Cross-species consensus atlas of the primate basal ganglia,
+    bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)
+
+
+    Downloaded from: [s3://hmba-bican-sharing-802451596237-us-west-2/BasalGanglia_pre-print_ATAC](s3://hmba-bican-sharing-802451596237-us-west-2/BasalGanglia_pre-print_ATAC).
+
+    '
+  labels:
+    assay: ATAC
+    technology: 10x genomics
+    cell_type: GPe_SOX6-CTXND1_GABA
+    species: marmoset
+    dataset: johansen2025Crossspecies

@@ -1,0 +1,43 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "number",
+        "view_range": {
+          "min": null,
+          "max": null
+        },
+        "number_of_bins": 100,
+        "x_log_scale": false,
+        "y_log_scale": true,
+        "x_min_log": null
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "STR-BF_TAC3-PLPP4-LHX8_GABA.bw",
+        "chrom": {
+          "index": 0
+        },
+        "pos_begin": {
+          "index": 1
+        },
+        "pos_end": {
+          "index": 2
+        }
+      },
+      "files_md5": {
+        "STR-BF_TAC3-PLPP4-LHX8_GABA.bw": "56aba1d3469e1923869ddc02d207294d"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "johansen2025Crossspecies_atac_macaque_STR-BF_TAC3-PLPP4-LHX8_GABA",
+      "type": "float",
+      "name": null,
+      "index": 3,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}
