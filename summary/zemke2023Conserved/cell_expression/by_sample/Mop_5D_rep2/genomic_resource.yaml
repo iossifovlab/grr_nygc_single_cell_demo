@@ -1,17 +1,23 @@
-
-type: basic
-
-
+type: ann_data
+file: Mop_5D_rep2.h5ad
 meta:
-  summary: "Cell Expression Matrix by_sample for Mop_5D_rep2 with genes_and_atac_peaks features"
-
-  description: |
+  summary: Cell Expression Matrix by_sample for Mop_5D_rep2 with genes_and_atac_peaks
+    features
+  description: '
 
     [Zemke, et al, Conserved and divergent gene regulatory programs of the
+
     mammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)
+
 
     Downloaded from:
 
+
     [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)
+
+    '
   labels:
     assay: cell_expression
+    sample: Mop_5D_rep2
+    dataset: zemke2023Conserved
+    technology: 10x genomics

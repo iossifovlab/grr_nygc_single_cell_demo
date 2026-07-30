@@ -65919,18 +65919,32 @@
   },
   {
     "config": {
+      "file": "M1_Dheni.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_Dheni",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_Dheni with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Dheni",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Dheni",
     "manifest": [
+      {
+        "md5": "8152fe999d9b60a9f940f4bdb3f29ddf",
+        "name": "M1_Dheni.h5ad",
+        "size": 1182845248
+      },
+      {
+        "md5": "b00d8206da01ef9297d9876e0674ffbc",
+        "name": "M1_Dheni.h5ad.dvc",
+        "size": 99
+      },
       {
         "md5": "f4d4978a082ecd5f6a07d4b2edcd591e",
         "name": "M1_Dheni_barcodes.tsv.gz",
@@ -65962,32 +65976,56 @@
         "size": 107
       },
       {
-        "md5": "e667395364feb37b66c2d6720384cd32",
+        "md5": "3f09102651bb2d8583bf658912ec1922",
         "name": "genomic_resource.yaml",
-        "size": 489
+        "size": 602
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "585f7e558c1e567a025dcd83f4743335",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 281
+      },
+      {
+        "md5": "5f6865ce161164ae08bb20168d21b677",
+        "name": "statistics/describe_var.csv",
+        "size": 380
+      },
+      {
+        "md5": "61eec67b27d575768d624304b730ae3d",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 141
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_Dheni_neun.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_Dheni_neun",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_Dheni_neun with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Dheni_neun",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Dheni_neun",
     "manifest": [
+      {
+        "md5": "d536a1f703978c1bf6a56288cd7f172a",
+        "name": "M1_Dheni_neun.h5ad",
+        "size": 1180110156
+      },
+      {
+        "md5": "9b350cbf66246f9afe5f1598aeb44d89",
+        "name": "M1_Dheni_neun.h5ad.dvc",
+        "size": 104
+      },
       {
         "md5": "4454f8fcd52dca99fd48ea357f4b6052",
         "name": "M1_Dheni_neun_barcodes.tsv.gz",
@@ -66019,32 +66057,56 @@
         "size": 112
       },
       {
-        "md5": "e489e9ac70b6d5f705be690a82a5f3f9",
+        "md5": "34ec006a6285416311be4dfc88edc6f1",
         "name": "genomic_resource.yaml",
-        "size": 494
+        "size": 617
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "7a5fc423003c984b9e2a91caebc13218",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 291
+      },
+      {
+        "md5": "ff7607c830ddca4936c5d281f006576f",
+        "name": "statistics/describe_var.csv",
+        "size": 381
+      },
+      {
+        "md5": "bd3bca01d1904714629d408c05ce6c4d",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 146
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_Meadow.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_Meadow",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_Meadow with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Meadow",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Meadow",
     "manifest": [
+      {
+        "md5": "9b0d460aedc0528ef3fc0b586d08ac84",
+        "name": "M1_Meadow.h5ad",
+        "size": 1417702690
+      },
+      {
+        "md5": "f313ed58ea7d1f244eb32bd57c46b95c",
+        "name": "M1_Meadow.h5ad.dvc",
+        "size": 100
+      },
       {
         "md5": "e7b437fe6d980dd1987368fa05dec58d",
         "name": "M1_Meadow_barcodes.tsv.gz",
@@ -66076,32 +66138,56 @@
         "size": 108
       },
       {
-        "md5": "58a040f6f014e7a5e1f8b91ff7768701",
+        "md5": "4db29872ae9f5277dfac6625533dcd46",
         "name": "genomic_resource.yaml",
-        "size": 490
+        "size": 605
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "2cbeed418be8d2e6ca08ebfdf2e29818",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 283
+      },
+      {
+        "md5": "343c983707dfaf0b86afa739a633895c",
+        "name": "statistics/describe_var.csv",
+        "size": 378
+      },
+      {
+        "md5": "32d3419f832524cccbc2ee1712dab34c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 142
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_Peregrine_rep1.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_Peregrine_rep1",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_Peregrine_rep1 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Peregrine_rep1",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Peregrine_rep1",
     "manifest": [
+      {
+        "md5": "bcd589ae8417eca34a24ac3015f67baf",
+        "name": "M1_Peregrine_rep1.h5ad",
+        "size": 1142571638
+      },
+      {
+        "md5": "dc0627c99c83d94a005d7af7d7d481ea",
+        "name": "M1_Peregrine_rep1.h5ad.dvc",
+        "size": 108
+      },
       {
         "md5": "3c93d8d8b4c66b4668aef984fcfa2cba",
         "name": "M1_Peregrine_rep1_barcodes.tsv.gz",
@@ -66133,32 +66219,56 @@
         "size": 116
       },
       {
-        "md5": "a97503463ab7595a1a1d015d44c8d76c",
+        "md5": "e9864e9541eb94130f471c0b4eb150fd",
         "name": "genomic_resource.yaml",
-        "size": 498
+        "size": 629
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "820db7e0e0d3387f007cd3be614cf04b",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 299
+      },
+      {
+        "md5": "12dcb17004411249b6a4656102312d56",
+        "name": "statistics/describe_var.csv",
+        "size": 377
+      },
+      {
+        "md5": "d795ebe97323bfc45d8c6831db083b39",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 150
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_Peregrine_rep2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_Peregrine_rep2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_Peregrine_rep2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Peregrine_rep2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Peregrine_rep2",
     "manifest": [
+      {
+        "md5": "e2a133e57c414da0c2904cff9383884e",
+        "name": "M1_Peregrine_rep2.h5ad",
+        "size": 1024202245
+      },
+      {
+        "md5": "8f913b3d8f88331f9a635c5ed8ce1e27",
+        "name": "M1_Peregrine_rep2.h5ad.dvc",
+        "size": 108
+      },
       {
         "md5": "166d3ffa4d6c57732695909e88e72f25",
         "name": "M1_Peregrine_rep2_barcodes.tsv.gz",
@@ -66190,32 +66300,56 @@
         "size": 116
       },
       {
-        "md5": "c841848d13c7471db5a4c41c0841bb16",
+        "md5": "abb7cb368c84cc6d407d45a111cc7466",
         "name": "genomic_resource.yaml",
-        "size": 498
+        "size": 629
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "89bc91ddf50af8b4efa17db50b305d3b",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 299
+      },
+      {
+        "md5": "36ce3d3b4f860aa3692e869e739fe4d2",
+        "name": "statistics/describe_var.csv",
+        "size": 381
+      },
+      {
+        "md5": "cb3c285525c1df29f4638734a0e54c38",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 150
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_R2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_R2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_R2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_R2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_R2",
     "manifest": [
+      {
+        "md5": "38db756cb568e31beaaf2adaf3f71f19",
+        "name": "M1_R2.h5ad",
+        "size": 652466849
+      },
+      {
+        "md5": "625d2f2095e2a958c8544fbdc98e0ddb",
+        "name": "M1_R2.h5ad.dvc",
+        "size": 95
+      },
       {
         "md5": "61b10a0c398c4d9b1a680194bc4333d9",
         "name": "M1_R2_barcodes.tsv.gz",
@@ -66247,32 +66381,56 @@
         "size": 104
       },
       {
-        "md5": "cfc8dd1fd7bc3b9c4a6e4bf00edebf94",
+        "md5": "bca5e0f49f0f3d48f7f2b4b0b989b438",
         "name": "genomic_resource.yaml",
-        "size": 486
+        "size": 589
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "907e56824535ea89f29d5e317d58bab1",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 275
+      },
+      {
+        "md5": "6eaf3607b4d32f8b877ae998d2aa4046",
+        "name": "statistics/describe_var.csv",
+        "size": 384
+      },
+      {
+        "md5": "64a3d2e5f80f8bc54a4ca227e3910af3",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 138
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_Webster.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_Webster",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_Webster with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Webster",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_Webster",
     "manifest": [
+      {
+        "md5": "d80768c0c3ad8343f9ea009b7fb6d635",
+        "name": "M1_Webster.h5ad",
+        "size": 1237617265
+      },
+      {
+        "md5": "46bf31fbf39c1e9f36352e2ec8e2eaa8",
+        "name": "M1_Webster.h5ad.dvc",
+        "size": 101
+      },
       {
         "md5": "b9c3058364bfe75ed8743ccce81f8913",
         "name": "M1_Webster_barcodes.tsv.gz",
@@ -66304,32 +66462,56 @@
         "size": 109
       },
       {
-        "md5": "95ca1bb01c7bb486155c93fe14f2ec72",
+        "md5": "1c79ba7431244564370b7834d77181ad",
         "name": "genomic_resource.yaml",
-        "size": 491
+        "size": 608
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "8fa683305baea555ce0c8e087d731e5d",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 285
+      },
+      {
+        "md5": "0d3934b6000ad8ed3ff53de0c5bdc881",
+        "name": "statistics/describe_var.csv",
+        "size": 377
+      },
+      {
+        "md5": "9b08457f5e1e313d1caeddcd4de17e3a",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 143
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor1.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor1",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor1 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor1",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor1",
     "manifest": [
+      {
+        "md5": "981927fcf85ce82a88d921b498ec5c00",
+        "name": "M1_donor1.h5ad",
+        "size": 492222122
+      },
+      {
+        "md5": "d5cfc99a481fd8ec737732a2a5388762",
+        "name": "M1_donor1.h5ad.dvc",
+        "size": 99
+      },
       {
         "md5": "2c710aa6403ec89a0fa7bf7284733984",
         "name": "M1_donor1_barcodes.tsv.gz",
@@ -66361,32 +66543,56 @@
         "size": 108
       },
       {
-        "md5": "8d2a985b7815f804b836bdf72714363e",
+        "md5": "1df79652d1787945472faf939b1f210a",
         "name": "genomic_resource.yaml",
-        "size": 490
+        "size": 605
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "239a82b6e39638e7453735ec968a5e79",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 282
+      },
+      {
+        "md5": "1a5c51bf117838ab80a1d4c5d30491de",
+        "name": "statistics/describe_var.csv",
+        "size": 388
+      },
+      {
+        "md5": "7230e43eaf4269210ee807cb65753a48",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 142
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor1_neun.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor1_neun",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor1_neun with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor1_neun",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor1_neun",
     "manifest": [
+      {
+        "md5": "778761c5d8210959a96a30bb035e6fab",
+        "name": "M1_donor1_neun.h5ad",
+        "size": 1511428974
+      },
+      {
+        "md5": "59ad78f0d177e7f2c431e9bc9602fa4c",
+        "name": "M1_donor1_neun.h5ad.dvc",
+        "size": 105
+      },
       {
         "md5": "0f7bd6df541dce41b1a8dbc23ec7edfe",
         "name": "M1_donor1_neun_barcodes.tsv.gz",
@@ -66418,32 +66624,56 @@
         "size": 113
       },
       {
-        "md5": "d25fdb2f52eacddd8bda45f45e496cbc",
+        "md5": "e065833e9a34a5d95c632d22d8426d7b",
         "name": "genomic_resource.yaml",
-        "size": 495
+        "size": 620
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "2c5313cbd2dea7443ba26be6d3dc3d69",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 293
+      },
+      {
+        "md5": "712df40cd728224a7b39a70cea5d50ed",
+        "name": "statistics/describe_var.csv",
+        "size": 391
+      },
+      {
+        "md5": "8525793a84a2931e2d0fbebbb82f9872",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 147
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor2",
     "manifest": [
+      {
+        "md5": "72ff7d3e986ce32d1083a034b6f90c6b",
+        "name": "M1_donor2.h5ad",
+        "size": 728029244
+      },
+      {
+        "md5": "3f8391ceb6cc3793f60c7abefc75ee95",
+        "name": "M1_donor2.h5ad.dvc",
+        "size": 99
+      },
       {
         "md5": "2bf4c19c8f025da18f9e86d2e877817a",
         "name": "M1_donor2_barcodes.tsv.gz",
@@ -66475,32 +66705,56 @@
         "size": 108
       },
       {
-        "md5": "bbf2c645542b58e998aba11bb2aacbba",
+        "md5": "f0a92f74957ecad5476e2c65075b05e1",
         "name": "genomic_resource.yaml",
-        "size": 490
+        "size": 605
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "8a732feee916769d3936c040af7cc957",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 283
+      },
+      {
+        "md5": "40872dcbe91f999ce2095694bfd878f4",
+        "name": "statistics/describe_var.csv",
+        "size": 390
+      },
+      {
+        "md5": "f14b3c7c05ee5b90b767d805b3049980",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 142
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor2_neun.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor2_neun",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor2_neun with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor2_neun",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor2_neun",
     "manifest": [
+      {
+        "md5": "4a4e9458bc80fbf44d33d581daf9bc3e",
+        "name": "M1_donor2_neun.h5ad",
+        "size": 1340808789
+      },
+      {
+        "md5": "c053dff1b45d30bdebcd6d3de0b7240c",
+        "name": "M1_donor2_neun.h5ad.dvc",
+        "size": 105
+      },
       {
         "md5": "ea53220cf0590e41b62da64be8518616",
         "name": "M1_donor2_neun_barcodes.tsv.gz",
@@ -66532,32 +66786,56 @@
         "size": 113
       },
       {
-        "md5": "af84900f7ca6e5ffb1e180b3a6e806e0",
+        "md5": "b7b69b9131460154333811644305b880",
         "name": "genomic_resource.yaml",
-        "size": 495
+        "size": 620
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "0ae10effda8a2b271863d08c25d501ce",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 293
+      },
+      {
+        "md5": "b6f349700204d73d9759c682b7d603f3",
+        "name": "statistics/describe_var.csv",
+        "size": 392
+      },
+      {
+        "md5": "fd941f0f653e9604c0e0c16bacc4838a",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 147
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor3.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor3",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor3 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor3",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor3",
     "manifest": [
+      {
+        "md5": "3fdfdb97058d2c13f8d879446c7530f5",
+        "name": "M1_donor3.h5ad",
+        "size": 967186459
+      },
+      {
+        "md5": "d4270768804623465349943a07f243d1",
+        "name": "M1_donor3.h5ad.dvc",
+        "size": 99
+      },
       {
         "md5": "3a994177c5e0605e7187cb6c4bc9678a",
         "name": "M1_donor3_barcodes.tsv.gz",
@@ -66589,32 +66867,56 @@
         "size": 108
       },
       {
-        "md5": "faf9e3b5b5e27d4e05494e2419d0b062",
+        "md5": "c9953e3945436b41a469a09e915952bd",
         "name": "genomic_resource.yaml",
-        "size": 490
+        "size": 605
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "d639d694369ac06c14ccf4c50e61f2da",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 283
+      },
+      {
+        "md5": "496ec9c69b9b1c86e2d80f26bb64f212",
+        "name": "statistics/describe_var.csv",
+        "size": 389
+      },
+      {
+        "md5": "848a4699057ff180764f9a617e703c83",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 142
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor3_neun.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor3_neun",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor3_neun with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor3_neun",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor3_neun",
     "manifest": [
+      {
+        "md5": "aeba81217a68ef6b4d77b05125c81dbf",
+        "name": "M1_donor3_neun.h5ad",
+        "size": 198156578
+      },
+      {
+        "md5": "1a46dc29e9dd4c6168ca11055edbed43",
+        "name": "M1_donor3_neun.h5ad.dvc",
+        "size": 104
+      },
       {
         "md5": "1c5de1bf18938998d50d10d4ef0a021d",
         "name": "M1_donor3_neun_barcodes.tsv.gz",
@@ -66646,32 +66948,56 @@
         "size": 112
       },
       {
-        "md5": "2250f29581ecc67a173b168c47b89172",
+        "md5": "9d35357af492e5e1a7aec942a7a185a0",
         "name": "genomic_resource.yaml",
-        "size": 495
+        "size": 620
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9c64ef4abeda464927bcf5a2b7e99d83",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 292
+      },
+      {
+        "md5": "7442ae9400bc76acbce42634ebc39a44",
+        "name": "statistics/describe_var.csv",
+        "size": 387
+      },
+      {
+        "md5": "a997435017b3311f15d28cff19c5cf86",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 147
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_donor3_rep2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_donor3_rep2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_donor3_rep2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor3_rep2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_donor3_rep2",
     "manifest": [
+      {
+        "md5": "1226bfb22112dd46267cd278c7202ee4",
+        "name": "M1_donor3_rep2.h5ad",
+        "size": 176959948
+      },
+      {
+        "md5": "ad25335975d8f4fae86e38d1a01a25f3",
+        "name": "M1_donor3_rep2.h5ad.dvc",
+        "size": 104
+      },
       {
         "md5": "a5139ce7db94d7c4681ebb692ee55841",
         "name": "M1_donor3_rep2_barcodes.tsv.gz",
@@ -66703,32 +67029,56 @@
         "size": 112
       },
       {
-        "md5": "831bea6b6c7c40eb28e89c913dc5d1dd",
+        "md5": "5241a1304ccfe64ef8d2983f365e3347",
         "name": "genomic_resource.yaml",
-        "size": 495
+        "size": 620
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "cd8bdc5c642f21387affcf9f0dbf41e1",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 292
+      },
+      {
+        "md5": "daba93b1470e2d77b5abac55ac93026b",
+        "name": "statistics/describe_var.csv",
+        "size": 387
+      },
+      {
+        "md5": "787c43a5b70555201ec3dc6e19faf427",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 147
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "M1_mac3.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "M1_mac3",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for M1_mac3 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_mac3",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/M1_mac3",
     "manifest": [
+      {
+        "md5": "1f14348c59130d4897f9c6251b887b29",
+        "name": "M1_mac3.h5ad",
+        "size": 1450989612
+      },
+      {
+        "md5": "a000d74c5b9d85e687b4c1cdd5f3a066",
+        "name": "M1_mac3.h5ad.dvc",
+        "size": 98
+      },
       {
         "md5": "8838520e295c995d0a98bb0ebed05eb2",
         "name": "M1_mac3_barcodes.tsv.gz",
@@ -66760,32 +67110,56 @@
         "size": 106
       },
       {
-        "md5": "b4c5ca9700f86879fd578b2b116ab837",
+        "md5": "62f9a64e64806f0d999afcf76cbe051a",
         "name": "genomic_resource.yaml",
-        "size": 488
+        "size": 599
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "d93addc5670b8f3d88d78962d51437cc",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 279
+      },
+      {
+        "md5": "40901836e815144bbc89e24b519c2826",
+        "name": "statistics/describe_var.csv",
+        "size": 382
+      },
+      {
+        "md5": "f605b9a7003be2f725f1429eab652ba5",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 140
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_2C_rep1.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_2C_rep1",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_2C_rep1 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_2C_rep1",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_2C_rep1",
     "manifest": [
+      {
+        "md5": "0b821d61193cfa0fcccd326b4bbb9e82",
+        "name": "Mop_2C_rep1.h5ad",
+        "size": 774422537
+      },
+      {
+        "md5": "fc74389c14254d7dabac6be04cf473bf",
+        "name": "Mop_2C_rep1.h5ad.dvc",
+        "size": 101
+      },
       {
         "md5": "19cb80243362ade5b6a6eae1b85a639e",
         "name": "Mop_2C_rep1_barcodes.tsv.gz",
@@ -66817,32 +67191,56 @@
         "size": 110
       },
       {
-        "md5": "84be964c0671c8573039aed673dfd550",
+        "md5": "469c242b98393041b4d6f1a002ce883e",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "7c168d12b3b920ac188de52fa023b965",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 286
+      },
+      {
+        "md5": "e12f72fd84bf6ebc4247612469910593",
+        "name": "statistics/describe_var.csv",
+        "size": 383
+      },
+      {
+        "md5": "6f4f78286b763093526677261c79404b",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_2C_rep2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_2C_rep2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_2C_rep2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_2C_rep2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_2C_rep2",
     "manifest": [
+      {
+        "md5": "f37e372d6cf1db3025c750af2c17eb6f",
+        "name": "Mop_2C_rep2.h5ad",
+        "size": 1276317152
+      },
+      {
+        "md5": "fa00c5219ea6f0ec9b49ce9e213e89e7",
+        "name": "Mop_2C_rep2.h5ad.dvc",
+        "size": 102
+      },
       {
         "md5": "4e168b5243f465e7e429b11b3fcf8220",
         "name": "Mop_2C_rep2_barcodes.tsv.gz",
@@ -66874,32 +67272,56 @@
         "size": 110
       },
       {
-        "md5": "c925a8b3b2c1067b41abd7354320bc6a",
+        "md5": "2a2f32bccec7581ffa5db50bf0e93eb9",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "0519f0cbcfbe2efd2785802aefd98359",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 286
+      },
+      {
+        "md5": "9c9525533de1d4da8fe42c5903328683",
+        "name": "statistics/describe_var.csv",
+        "size": 383
+      },
+      {
+        "md5": "e9811c0281317b7d4ff7bb4da1f31bc9",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_3C_rep1.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_3C_rep1",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_3C_rep1 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_3C_rep1",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_3C_rep1",
     "manifest": [
+      {
+        "md5": "59283015309888442c26b09580dcca16",
+        "name": "Mop_3C_rep1.h5ad",
+        "size": 895245523
+      },
+      {
+        "md5": "3b0b4f335cac79a1d3cbe94b9dc5ce15",
+        "name": "Mop_3C_rep1.h5ad.dvc",
+        "size": 101
+      },
       {
         "md5": "97aed8c6578a37112cb4c40f2f4e39d0",
         "name": "Mop_3C_rep1_barcodes.tsv.gz",
@@ -66931,32 +67353,56 @@
         "size": 110
       },
       {
-        "md5": "9a9f4a9bd78e288739081efc9e53fd83",
+        "md5": "6653a011893622086a8d1e7766e652a7",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "558806be938e69f17b992a56f4929e47",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 286
+      },
+      {
+        "md5": "7bf0af411f85f2dffb56ef66565eb517",
+        "name": "statistics/describe_var.csv",
+        "size": 383
+      },
+      {
+        "md5": "0a747e43a12e1a92bd01045ca6615691",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_3C_rep2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_3C_rep2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_3C_rep2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_3C_rep2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_3C_rep2",
     "manifest": [
+      {
+        "md5": "2313c7fb574d83111e6862b292b8515e",
+        "name": "Mop_3C_rep2.h5ad",
+        "size": 1398560770
+      },
+      {
+        "md5": "37cb8546cf1fd1def22aa17f1cfd2451",
+        "name": "Mop_3C_rep2.h5ad.dvc",
+        "size": 102
+      },
       {
         "md5": "9c566cff8741b555e12ba81cf4bfb2c6",
         "name": "Mop_3C_rep2_barcodes.tsv.gz",
@@ -66988,32 +67434,56 @@
         "size": 110
       },
       {
-        "md5": "e9441476457569cf6ebdca8bc5b5ae2f",
+        "md5": "74f86a8488200eedff1cc1199661aa89",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "af9c4af94fe0cddc6b183a29b88fda43",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 286
+      },
+      {
+        "md5": "7d9482e3f1ff8cce42a89f9d3e08d61f",
+        "name": "statistics/describe_var.csv",
+        "size": 380
+      },
+      {
+        "md5": "a9d299319dfd9c795c6306e81a6cf077",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_4B_rep1.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_4B_rep1",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_4B_rep1 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_4B_rep1",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_4B_rep1",
     "manifest": [
+      {
+        "md5": "a1dc1ba90ff20f66f01a9267ca00ffe9",
+        "name": "Mop_4B_rep1.h5ad",
+        "size": 514684406
+      },
+      {
+        "md5": "787739a153bf7f649fb8e140eead486c",
+        "name": "Mop_4B_rep1.h5ad.dvc",
+        "size": 101
+      },
       {
         "md5": "e5fdc9a382aad87c84b5563464600762",
         "name": "Mop_4B_rep1_barcodes.tsv.gz",
@@ -67045,32 +67515,56 @@
         "size": 110
       },
       {
-        "md5": "dab661ee6477af5782a950f5c76661b7",
+        "md5": "18170cbf3891d72427d0a4c69202ed44",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "73fb53e05f8e8365b316579d1aef024a",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 286
+      },
+      {
+        "md5": "a3fa0e0e4209d004d44b59e383fadd99",
+        "name": "statistics/describe_var.csv",
+        "size": 379
+      },
+      {
+        "md5": "742f0737774652ab71389c5ed281a03c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_4B_rep2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_4B_rep2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_4B_rep2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_4B_rep2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_4B_rep2",
     "manifest": [
+      {
+        "md5": "1ab8581b3cd3240758a56e40dff434fe",
+        "name": "Mop_4B_rep2.h5ad",
+        "size": 1536691056
+      },
+      {
+        "md5": "13aaef8dbcb265ee804fbe5ed3be7779",
+        "name": "Mop_4B_rep2.h5ad.dvc",
+        "size": 102
+      },
       {
         "md5": "8597de799b5f10e44a07253bc343d1b6",
         "name": "Mop_4B_rep2_barcodes.tsv.gz",
@@ -67102,32 +67596,56 @@
         "size": 110
       },
       {
-        "md5": "4f3db5b22c04de07c0ecbeca4f1294b8",
+        "md5": "7665fdc1ed9c4544b3e7b6acb97aabbe",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "33a4dc05458c76fbe892d0d90b1381f4",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 287
+      },
+      {
+        "md5": "5a26be8012f6d1cd2fe95b37eda90a4e",
+        "name": "statistics/describe_var.csv",
+        "size": 380
+      },
+      {
+        "md5": "0110f5ff5c9d2d96fe2a62aec3c39770",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_5D_rep1.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_5D_rep1",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_5D_rep1 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_5D_rep1",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_5D_rep1",
     "manifest": [
+      {
+        "md5": "c8ee5806a6b220c5832c49df539ded93",
+        "name": "Mop_5D_rep1.h5ad",
+        "size": 2819756242
+      },
+      {
+        "md5": "b6e44a63961c4f767cb50da42d589078",
+        "name": "Mop_5D_rep1.h5ad.dvc",
+        "size": 102
+      },
       {
         "md5": "c12186b6c86d0b3364d1c2eb9ce6e03c",
         "name": "Mop_5D_rep1_barcodes.tsv.gz",
@@ -67159,32 +67677,56 @@
         "size": 111
       },
       {
-        "md5": "8800af27966e0a175b36a2e45d23952f",
+        "md5": "0988ac99b7e05404c82d5fbd5b6220c9",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "520f4bff378e90d04cee2171ec989334",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 287
+      },
+      {
+        "md5": "ed12b3b19bfb3fa75afb146f10813021",
+        "name": "statistics/describe_var.csv",
+        "size": 383
+      },
+      {
+        "md5": "ba0ed53422730a55a0669957d68e64b3",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "Mop_5D_rep2.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "sample": "Mop_5D_rep2",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_sample for Mop_5D_rep2 with genes_and_atac_peaks features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_5D_rep2",
     "id": "summary/zemke2023Conserved/cell_expression/by_sample/Mop_5D_rep2",
     "manifest": [
+      {
+        "md5": "5043744fb3a332ea720f8517d879bf52",
+        "name": "Mop_5D_rep2.h5ad",
+        "size": 909142496
+      },
+      {
+        "md5": "548dad32c1e59514f59c4a464e6c0d79",
+        "name": "Mop_5D_rep2.h5ad.dvc",
+        "size": 101
+      },
       {
         "md5": "1496137829730e451afde7f6351ff144",
         "name": "Mop_5D_rep2_barcodes.tsv.gz",
@@ -67216,32 +67758,56 @@
         "size": 110
       },
       {
-        "md5": "fc0e80b2a68d0f4ef090ecb181b947fd",
+        "md5": "48504eee36572a4c3b0ccba72d443627",
         "name": "genomic_resource.yaml",
-        "size": 492
+        "size": 611
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "e6ab9f05716e86ecec3e373529225c74",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 286
+      },
+      {
+        "md5": "1a78863146644b1aca1ef7d16a714746",
+        "name": "statistics/describe_var.csv",
+        "size": 384
+      },
+      {
+        "md5": "6ed2a0ef8f15e84b96e0b455c7190cad",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 144
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "GSE229169_human_filtered.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "species": "human",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_species for human with genes features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_species/human",
     "id": "summary/zemke2023Conserved/cell_expression/by_species/human",
     "manifest": [
+      {
+        "md5": "cc65ca7bc771544ca1e6567fa3b416df",
+        "name": "GSE229169_human_filtered.h5ad",
+        "size": 1453505100
+      },
+      {
+        "md5": "fc743c0d7aa2347b381cc37402537813",
+        "name": "GSE229169_human_filtered.h5ad.dvc",
+        "size": 115
+      },
       {
         "md5": "6155736f0eb9447ebdd860bb81c8c5f6",
         "name": "GSE229169_human_filtered_barcodes.tsv.gz",
@@ -67283,32 +67849,56 @@
         "size": 122
       },
       {
-        "md5": "e026725174a4b17511b5c0bfdd5335e5",
+        "md5": "e402690a1507b6461380b009315d3172",
         "name": "genomic_resource.yaml",
-        "size": 472
+        "size": 595
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "36b3b0b8d3cb6aa56b7ec855ec3b4004",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 262
+      },
+      {
+        "md5": "5d23f8b443ce039d6571d5e44e210101",
+        "name": "statistics/describe_obs.csv",
+        "size": 91
+      },
+      {
+        "md5": "9f2870e2ad6c50c39548917a44bbaa32",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 157
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "GSE229169_macaque_filtered.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "species": "macaque",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_species for macaque with genes features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_species/macaque",
     "id": "summary/zemke2023Conserved/cell_expression/by_species/macaque",
     "manifest": [
+      {
+        "md5": "446e78a5e2214a79f5e3df659827a6c3",
+        "name": "GSE229169_macaque_filtered.h5ad",
+        "size": 1057864048
+      },
+      {
+        "md5": "91dc8cc6f861fa3c981cb89adbe73b1e",
+        "name": "GSE229169_macaque_filtered.h5ad.dvc",
+        "size": 117
+      },
       {
         "md5": "abe7205261ad8ff5712b07664217166a",
         "name": "GSE229169_macaque_filtered_barcodes.tsv.gz",
@@ -67350,32 +67940,56 @@
         "size": 124
       },
       {
-        "md5": "629238d6244e14962ff454ec421da7e6",
+        "md5": "7ba7e1692fcb4dc357cc88679fd4d165",
         "name": "genomic_resource.yaml",
-        "size": 474
+        "size": 601
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "b457b21c6d394e828fdc4eb58229721d",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 266
+      },
+      {
+        "md5": "f6a82d06196f90ce912fb8094437b7ee",
+        "name": "statistics/describe_obs.csv",
+        "size": 81
+      },
+      {
+        "md5": "e3076a7fe8da9804acf39e97c9214eff",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 159
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "GSE229169_marmoset_filtered.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "species": "marmoset",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_species for marmoset with genes features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_species/marmoset",
     "id": "summary/zemke2023Conserved/cell_expression/by_species/marmoset",
     "manifest": [
+      {
+        "md5": "cef8af6db3d3bbbb093cdde785047fca",
+        "name": "GSE229169_marmoset_filtered.h5ad",
+        "size": 1057160840
+      },
+      {
+        "md5": "7a6eb917529046600a802903a7884508",
+        "name": "GSE229169_marmoset_filtered.h5ad.dvc",
+        "size": 118
+      },
       {
         "md5": "d364f5eeebf3af4763839fd87ed63dfc",
         "name": "GSE229169_marmoset_filtered_barcodes.tsv.gz",
@@ -67417,32 +68031,56 @@
         "size": 125
       },
       {
-        "md5": "dbed1d7d0ea690497da1cf94b3e179b2",
+        "md5": "d4c855c93e76b0ffef5252499cd5dab7",
         "name": "genomic_resource.yaml",
-        "size": 475
+        "size": 604
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9e5384433d2d0087fb6358b36a0fc234",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 268
+      },
+      {
+        "md5": "3053c77ba94dd5793ceda28fd86ecd93",
+        "name": "statistics/describe_obs.csv",
+        "size": 89
+      },
+      {
+        "md5": "07f7f6e82a0f917cf7dda232cd154962",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 160
       }
     ],
     "version": "0"
   },
   {
     "config": {
+      "file": "GSE229169_mouse_filtered.h5ad",
       "meta": {
         "description": "\n[Zemke, et al, Conserved and divergent gene regulatory programs of the\nmammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)\n\nDownloaded from:\n\n[https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)\n",
         "labels": {
-          "assay": "cell_expression"
+          "assay": "cell_expression",
+          "dataset": "zemke2023Conserved",
+          "species": "mouse",
+          "technology": "10x genomics"
         },
         "summary": "Cell Expression Matrix by_species for mouse with genes features"
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2023Conserved/cell_expression/by_species/mouse",
     "id": "summary/zemke2023Conserved/cell_expression/by_species/mouse",
     "manifest": [
+      {
+        "md5": "4379ffa8caae42207459d644e9ea1e9f",
+        "name": "GSE229169_mouse_filtered.h5ad",
+        "size": 1373333561
+      },
+      {
+        "md5": "1c2495fc2a2fd3d894721a35ab36abb5",
+        "name": "GSE229169_mouse_filtered.h5ad.dvc",
+        "size": 115
+      },
       {
         "md5": "8458f893c7ce02c3d214317c52a6ad3b",
         "name": "GSE229169_mouse_filtered_barcodes.tsv.gz",
@@ -67484,14 +68122,24 @@
         "size": 122
       },
       {
-        "md5": "1b6c50626c6481bf41883bd55139045d",
+        "md5": "d761dec32883fc6378831a61f9949ea9",
         "name": "genomic_resource.yaml",
-        "size": 472
+        "size": 595
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "a3f1ad6c16c9e9d7a1445837be211584",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 262
+      },
+      {
+        "md5": "5aba142522ced6e13a9f62ee9af80240",
+        "name": "statistics/describe_obs.csv",
+        "size": 86
+      },
+      {
+        "md5": "d906c4b6a1fc99aa13513d9919e390c2",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 157
       }
     ],
     "version": "0"

@@ -1,17 +1,22 @@
-
-type: basic
-
-
+type: ann_data
+file: GSE229169_marmoset_filtered.h5ad
 meta:
-  summary: "Cell Expression Matrix by_species for marmoset with genes features"
-
-  description: |
+  summary: Cell Expression Matrix by_species for marmoset with genes features
+  description: '
 
     [Zemke, et al, Conserved and divergent gene regulatory programs of the
+
     mammalian neocortex, Nature 2023.](https://www.nature.com/articles/s41586-023-06819-6)
+
 
     Downloaded from:
 
+
     [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE229169)
+
+    '
   labels:
     assay: cell_expression
+    species: marmoset
+    dataset: zemke2023Conserved
+    technology: 10x genomics
