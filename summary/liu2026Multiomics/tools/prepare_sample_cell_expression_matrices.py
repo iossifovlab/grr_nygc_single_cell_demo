@@ -1,7 +1,8 @@
 import glob
 import os
+import gzip
 from textwrap import dedent
-from prepare_resrouce import prepapre_resrouce
+from prepare_resrouce import prepapre_resrouce, get_resource_dir
 
 yoonHaDD = "/gpfs/commons/groups/iossifov_lab/ylee/GRR/HDMA/ATAC_RNA"
 
@@ -13,7 +14,10 @@ for ff in glob.glob(f"{yoonHaDD}/*.matrix.mtx.gz"):
     for sufx in [".features.tsv.gz", ".barcodes.tsv.gz"]:
         eff = f"{yoonHaDD}/{sm_id}{sufx}"
         assert os.path.isfile(eff)
-        files.append(eff)
+        if sufx == ".features.tsv.gz":
+            files.append((eff, f"{sm_id}{sufx}.orig"))
+        else:
+            files.append(eff)
 
     print(sm_id, sm_id)
 
@@ -29,12 +33,13 @@ for ff in glob.glob(f"{yoonHaDD}/*.matrix.mtx.gz"):
 
     print(sm_id, tissue_sc, batch_n, organ, pcw_age)
 
+
     resource_id = f"summary/liu2026Multiomics/sample_cell_expression_matrix/{sm_id}"
     conf = {
-        "type": "basic",
+        "type": "ann_data",
         "file": f"{sm_id}.matrix.mtx.gz",
-        "features_file": f"{sm_id}.features.tsv.gz",
-        "barcodes_file": f"{sm_id}.barcodes.tsv.gz",
+        # "features_file": f"{sm_id}.features.tsv.gz",
+        # "barcodes_file": f"{sm_id}.barcodes.tsv.gz",
         "meta": {
             "summary": f"Sample cell expression matrix for {sm_id} from liu2026Multiomics.",
             "description": dedent("""
@@ -54,3 +59,15 @@ for ff in glob.glob(f"{yoonHaDD}/*.matrix.mtx.gz"):
         }
     }
     prepapre_resrouce(resource_id, files, conf)
+
+    features_file = f"{get_resource_dir(resource_id)}/{sm_id}.features.tsv.gz"
+    if os.path.isfile(features_file):
+        continue
+    features_file_orid = f"{get_resource_dir(resource_id)}/{sm_id}.features.tsv.gz.orig"
+    with gzip.open(features_file_orid, "rt") as IF:
+        with gzip.open(features_file, "wt") as OF:
+            for l in IF:
+                cs = l.strip("\n\r").split("\t")
+                assert len(cs) == 2
+                print(*cs, "Gene Expression", sep="\t", file=OF)
+ 

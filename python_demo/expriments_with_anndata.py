@@ -114,34 +114,29 @@ def describe_adata(adata):
 # adata.file.close()
 
 
-# #################### DONE after adding a third columns with "Gene Expression" values to the features files.
-# ## zcat T233_b17_Thymus_PCW21.features.tsv.gz-orig | awk -F'\t' 'BEGIN{OFS="\t"}{print $1, $2, "Gene Expression"}' | gzip > T233_b17_Thymus_PCW21.features.tsv.gz
-# matrix_type = "liu2026Multiomics/sample_cell_expression_matrix"
+#################### DONE after adding a third columns with "Gene Expression" values to the features files.
+## zcat T233_b17_Thymus_PCW21.features.tsv.gz-orig | awk -F'\t' 'BEGIN{OFS="\t"}{print $1, $2, "Gene Expression"}' | gzip > T233_b17_Thymus_PCW21.features.tsv.gz
+matrix_type = "liu2026Multiomics/sample_cell_expression_matrix"
 
-# features_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21/T233_b17_Thymus_PCW21.features.tsv.gz"
-# barcodes_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21/T233_b17_Thymus_PCW21.barcodes.tsv.gz"
-# mtx_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21/T233_b17_Thymus_PCW21.matrix.mtx.gz"
-# assert_files_exist([features_file, barcodes_file, mtx_file])
-# drr, pfx = mtx_file_to_dir_and_prefix(mtx_file)
-# drr = "./demo_data"
-# adata = sc.read_10x_mtx(drr, prefix=pfx)
-# proc_ann_data(adata)
-# adata.file.close()
-
-
-
-
-
-#################### DONE
-matrix_type = "zemke2024Epigenetic/RNAmatrix"
-h5_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/zemke2024Epigenetic/RNAmatrix/hc77/GSE278576_hc77_raw_feature_bc_matrix.h5"
-assert_files_exist([h5_file])
-adata = sc.read_10x_h5(h5_file, gex_only=False)
+features_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21/T233_b17_Thymus_PCW21.features.tsv.gz"
+barcodes_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21/T233_b17_Thymus_PCW21.barcodes.tsv.gz"
+mtx_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/liu2026Multiomics/sample_cell_expression_matrix/T233_b17_Thymus_PCW21/T233_b17_Thymus_PCW21.matrix.mtx.gz"
+assert_files_exist([features_file, barcodes_file, mtx_file])
+drr, pfx = mtx_file_to_dir_and_prefix(mtx_file)
+adata = sc.read_10x_mtx(drr, prefix=pfx)
 proc_ann_data(adata)
 adata.file.close()
 
 
 
 
+
+# #################### DONE
+# matrix_type = "zemke2024Epigenetic/RNAmatrix"
+# h5_file = "/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/zemke2024Epigenetic/RNAmatrix/hc77/GSE278576_hc77_raw_feature_bc_matrix.h5"
+# assert_files_exist([h5_file])
+# adata = sc.read_10x_h5(h5_file, gex_only=False)
+# proc_ann_data(adata)
+# adata.file.close()
 
 
