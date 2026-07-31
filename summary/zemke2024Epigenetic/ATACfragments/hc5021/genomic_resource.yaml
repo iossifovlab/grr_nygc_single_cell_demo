@@ -1,6 +1,32 @@
-type: basic
-file: GSM8549627_hc5021_atac_fragments.tsv.gz
-index_file: /gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549627_hc5021_atac_fragments.tsv.gz.tbi.gz
+type: fragment_score
+table:
+  filename: GSM8549627_hc5021_atac_fragments.tsv.gz
+  format: tabix
+  header_mode: none
+  zero_based: true
+  chrom:
+    column_index: 0
+  pos_begin:
+    column_index: 1
+  pos_end:
+    column_index: 2
+scores:
+- id: cell
+  column_index: 3
+  type: str
+  histogram:
+    type: categorical
+    plot_function: fragment_count_dist_plot.py:plot_fragment_per_cell_count
+    displayed_values_count: 5
+- id: count
+  column_index: 4
+  type: int
+  histogram:
+    type: number
+    view_range:
+      min: 1
+      max: 20
+    number_of_bins: 20
 meta:
   summary: ATAC fragments for hc5021 from zemke2024Epigenetic.
   description: '

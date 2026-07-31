@@ -189,7 +189,9 @@
         cursor: pointer;
       }
 
-      
+      table {
+    table-layout: fixed;
+}
     </style>
 
     <script>
@@ -242,7 +244,7 @@
             </tr>
             <tr>
                 <th>Type</th>
-                <td>basic</td>
+                <td>fragment_score</td>
             </tr>
             <tr>
                 <th>Version</th>
@@ -313,6 +315,98 @@
     
 
 
+
+<h2>Scores (2)</h2>
+<div class="scrollable-table-container">  
+<table>
+    <colgroup>
+        <col style="width: 15%">
+        <col style="width: 6%">
+        <col style="width: 15%">
+        <col>
+        <col style="width: 220px">
+        <col style="width: 15%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Default annotation</th>
+            <th>Description</th>
+            <th>Histogram</th>
+            <th>Range</th>
+        </tr>
+    </thead><tr class="score-definition">
+            <td>cell</td>
+            <td>str</td>
+            
+            
+                <td>
+                    <p>cell</p>
+                </td>
+            
+
+            <td>
+                <div></div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_cell.png"
+                    alt="HISTOGRAM FOR cell"
+                    title=cell
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-cell"></td>
+            <td>
+                CTTGCTCAGGCTGGCT-1, GATGACTTCTCCTCTT-1, GCAGCTATCTTAGGGT-1, AGGGCTACAGCAGGTA-1, AGTAGGATCGTTATCT-1, Other</td>
+        </tr><tr class="score-definition">
+            <td>count</td>
+            <td>int</td>
+            
+            
+                <td>
+                    <p>count</p>
+                </td>
+            
+
+            <td>
+                <div></div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_count.png"
+                    alt="HISTOGRAM FOR count"
+                    title=count
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-count"></td>
+            <td>
+                [1, 20]</td>
+        </tr><div id="modal-cell" class="modal">
+            <div class="modal-content">
+                <span title=cell class="close">&times;</span>
+                <img src="statistics/histogram_cell.png"
+                    alt="HISTOGRAM FOR cell"
+                    title=cell
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div><div id="modal-count" class="modal">
+            <div class="modal-content">
+                <span title=count class="close">&times;</span>
+                <img src="statistics/histogram_count.png"
+                    alt="HISTOGRAM FOR count"
+                    title=count
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div>
+</table>
+</div>
+
+
     <h2 style="margin-top: 70px;">Files</h2>
     <table>
     <thead>
@@ -344,6 +438,24 @@
             <tr>
                 
                     <td class="nowrap">
+                        <a href='GSM8549626_hc13414_atac_fragments.tsv.gz.tbi'>GSM8549626_hc13414_atac_fragments.tsv.gz.tbi</a>
+                    </td>
+                
+                <td class="nowrap">1.33 MB</td>
+                <td class="nowrap">245843d0867b748424a71416e158a54b</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.dvc'>GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.dvc</a>
+                    </td>
+                
+                <td class="nowrap">127.0 B</td>
+                <td class="nowrap">7af96df733e13b0d9081a9ffa0387b70</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
                         <a href='GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.gz'>GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.gz</a>
                     </td>
                 
@@ -362,11 +474,20 @@
             <tr>
                 
                     <td class="nowrap">
+                        <a href='fragment_count_dist_plot.py'>fragment_count_dist_plot.py</a>
+                    </td>
+                
+                <td class="nowrap">853.0 B</td>
+                <td class="nowrap">9d735ee8c687286d50484e7f1e398e60</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">740.0 B</td>
-                <td class="nowrap">a1604682203649530a52eea361718553</td>
+                <td class="nowrap">1.1 KB</td>
+                <td class="nowrap">bdf5bdbd5461eba0fe4bb728b75b3c8d</td>
             </tr>
             <tr>
                 

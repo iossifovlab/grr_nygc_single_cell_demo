@@ -22,15 +22,57 @@ for ff in glob.glob(f"{yoonHaDD}/*_atac_fragments.tsv.gz"):
 
     print(ff, fn, fn_parts)
 
-    files = [ff, indx_fn]
+    draw_file = os.path.abspath("./fragment_count_dist_plot.py")
+    files = [ff, indx_fn, draw_file]
+
 
     resource_id = f"summary/zemke2024Epigenetic/ATACfragments/{individual_id}"
     print(resource_id)
 
     conf = {
-        "type": "basic",
-        "file": fn,
-        "index_file": indx_fn,
+        "type": "fragment_score",
+
+        "table": {
+            "filename": fn,
+            "format": "tabix",
+            "header_mode": "none",
+            "zero_based": True,
+
+            "chrom": {
+                "column_index": 0
+            },
+            "pos_begin": {
+                "column_index": 1
+            },
+            "pos_end": {
+                "column_index": 2
+            }
+        },
+        "scores": [
+            {
+                "id": "cell",
+                "column_index": 3,
+                "type": "str",
+                "histogram": {
+                    "type": "categorical",
+                    "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+                    "displayed_values_count": 5
+                }
+            },
+            {
+                "id": "count",
+                "column_index": 4,
+                "type": "int",
+                "histogram": {
+                    "type": "number",
+                    "view_range": {
+                        "min": 1,
+                        "max": 20
+                    },
+                    "number_of_bins": 20
+                }
+            }
+        ],
         "meta": {
             "summary": f"ATAC fragments for {individual_id} from zemke2024Epigenetic.",
             "description": dedent("""

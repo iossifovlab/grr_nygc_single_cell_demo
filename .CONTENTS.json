@@ -105388,8 +105388,6 @@
   },
   {
     "config": {
-      "file": "GSM8549647_hc11_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549647_hc11_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105401,7 +105399,47 @@
         },
         "summary": "ATAC fragments for hc11 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549647_hc11_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc11",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc11",
@@ -105417,6 +105455,16 @@
         "size": 123
       },
       {
+        "md5": "85675d9fccf1bdcc0834288dd3749a12",
+        "name": "GSM8549647_hc11_atac_fragments.tsv.gz.tbi",
+        "size": 855087
+      },
+      {
+        "md5": "ee07a1df93257c53a332416c3736f353",
+        "name": "GSM8549647_hc11_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
         "md5": "d99c23561da25fa66e0ab0227ffe841a",
         "name": "GSM8549647_hc11_atac_fragments.tsv.gz.tbi.gz",
         "size": 857098
@@ -105427,22 +105475,45 @@
         "size": 126
       },
       {
-        "md5": "9de3fb1f3aba30691291421e4ccddaa9",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "c3aa8fbbf4d9ba659fb5dad9a4998a9e",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "6a91304be0cfa15c56a991d4387f5026",
+        "name": "statistics/histogram_cell.json",
+        "size": 14739600
+      },
+      {
+        "md5": "ac5fb09f9d8a3294ccb0eeae6768bfb6",
+        "name": "statistics/histogram_cell.png",
+        "size": 124738
+      },
+      {
+        "md5": "fe5c3077869dbb0181b98153d1925689",
+        "name": "statistics/histogram_count.json",
+        "size": 803
+      },
+      {
+        "md5": "e94a2a2301efca11ddc247fbbe695be1",
+        "name": "statistics/histogram_count.png",
+        "size": 19186
+      },
+      {
+        "md5": "f519075d494088ca2791822dfe4fbeee",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549625_hc1134_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549625_hc1134_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105454,7 +105525,47 @@
         },
         "summary": "ATAC fragments for hc1134 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549625_hc1134_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1134",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1134",
@@ -105470,6 +105581,16 @@
         "size": 125
       },
       {
+        "md5": "7d742806241f9d6885f817f2c26c7389",
+        "name": "GSM8549625_hc1134_atac_fragments.tsv.gz.tbi",
+        "size": 875265
+      },
+      {
+        "md5": "1aa46e001fe63050f6480b5b901af7cc",
+        "name": "GSM8549625_hc1134_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "2ef785d72b3365ab15c6cbf08939d4e1",
         "name": "GSM8549625_hc1134_atac_fragments.tsv.gz.tbi.gz",
         "size": 874496
@@ -105480,22 +105601,45 @@
         "size": 128
       },
       {
-        "md5": "242564a73ff4b53069748f0574d01de9",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "e65c12cd1bc56d8d0017b245be8274a1",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "6e05ff01e9abfd8a1a1f9df3596f220b",
+        "name": "statistics/histogram_cell.json",
+        "size": 19357344
+      },
+      {
+        "md5": "61ec7b193caf3454e55e7420fd0a922d",
+        "name": "statistics/histogram_cell.png",
+        "size": 135774
+      },
+      {
+        "md5": "688c3b53e0a8a19cd12ecc87117ecb35",
+        "name": "statistics/histogram_count.json",
+        "size": 836
+      },
+      {
+        "md5": "65f014b70b5b266a079818995d8ec99c",
+        "name": "statistics/histogram_count.png",
+        "size": 18381
+      },
+      {
+        "md5": "7d85387465556e84a32b3436702ef1ec",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549641_hc1153_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549641_hc1153_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105507,7 +105651,47 @@
         },
         "summary": "ATAC fragments for hc1153 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549641_hc1153_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1153",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1153",
@@ -105523,6 +105707,16 @@
         "size": 124
       },
       {
+        "md5": "172273ca2d07caf1ce072fdc24b90d5e",
+        "name": "GSM8549641_hc1153_atac_fragments.tsv.gz.tbi",
+        "size": 764270
+      },
+      {
+        "md5": "5f3cb9cde3c980dbc64eb0363331449b",
+        "name": "GSM8549641_hc1153_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "3d8330baabaa1b1eb228fdafb95c43bf",
         "name": "GSM8549641_hc1153_atac_fragments.tsv.gz.tbi.gz",
         "size": 763099
@@ -105533,22 +105727,45 @@
         "size": 128
       },
       {
-        "md5": "10f027f932a30f0dd10799382fd232a7",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "444e0360f50c806f9096c93ee31e2d78",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "db06f378c409136a9459bcd5f9f95cfd",
+        "name": "statistics/histogram_cell.json",
+        "size": 12286607
+      },
+      {
+        "md5": "8c808be8b770d5383535cc0f0c1b54dd",
+        "name": "statistics/histogram_cell.png",
+        "size": 137924
+      },
+      {
+        "md5": "944b8e841e6a17c3787f06ff8a990080",
+        "name": "statistics/histogram_count.json",
+        "size": 837
+      },
+      {
+        "md5": "b70bdd57c8f7b9f8b6e07877c056d231",
+        "name": "statistics/histogram_count.png",
+        "size": 21329
+      },
+      {
+        "md5": "b56d961572d35b5ee2f4a2250b9861fe",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549646_hc12_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549646_hc12_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105560,7 +105777,47 @@
         },
         "summary": "ATAC fragments for hc12 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549646_hc12_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc12",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc12",
@@ -105576,6 +105833,16 @@
         "size": 123
       },
       {
+        "md5": "0ede5a83baf0deb7a23baca808bdd16f",
+        "name": "GSM8549646_hc12_atac_fragments.tsv.gz.tbi",
+        "size": 961051
+      },
+      {
+        "md5": "72ca1b2dc31ebc42f00b63fb405aec3f",
+        "name": "GSM8549646_hc12_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
         "md5": "553f2c23bfc950cf77a1810f5cbc39b3",
         "name": "GSM8549646_hc12_atac_fragments.tsv.gz.tbi.gz",
         "size": 960444
@@ -105586,22 +105853,45 @@
         "size": 126
       },
       {
-        "md5": "eb369208a43997e725c5f6a98c9cb22c",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "d8aab60fd14a2e8edcd78cd80da02548",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "7b06559a8389e5b0d69a2e83ad435eab",
+        "name": "statistics/histogram_cell.json",
+        "size": 14448104
+      },
+      {
+        "md5": "f0ed6b4a8d65333a6c81a22b83434426",
+        "name": "statistics/histogram_cell.png",
+        "size": 143255
+      },
+      {
+        "md5": "042a20413ce42d9e03e18b54a70f1bfd",
+        "name": "statistics/histogram_count.json",
+        "size": 865
+      },
+      {
+        "md5": "afb5f6c876ff9e5461264751869142c3",
+        "name": "statistics/histogram_count.png",
+        "size": 17541
+      },
+      {
+        "md5": "6b32a6000cf5fc0f84ce9a82119e32c1",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549642_hc1203_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549642_hc1203_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105613,7 +105903,47 @@
         },
         "summary": "ATAC fragments for hc1203 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549642_hc1203_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1203",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1203",
@@ -105629,6 +105959,16 @@
         "size": 125
       },
       {
+        "md5": "0b825a79ad3170ac32fa53b1bfc5dc7d",
+        "name": "GSM8549642_hc1203_atac_fragments.tsv.gz.tbi",
+        "size": 1003803
+      },
+      {
+        "md5": "7c815cfaae50a6c99e620a97748d8518",
+        "name": "GSM8549642_hc1203_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "b6d6f400d40390cd9303a403c15b17af",
         "name": "GSM8549642_hc1203_atac_fragments.tsv.gz.tbi.gz",
         "size": 1003639
@@ -105639,22 +105979,45 @@
         "size": 129
       },
       {
-        "md5": "bf27c25b63117f29f388d176d810a56d",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "843364d014448701a4d76cffeebefd7f",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "9ce937ce68718649f26af2141fcea207",
+        "name": "statistics/histogram_cell.json",
+        "size": 18564638
+      },
+      {
+        "md5": "929308a1321a0b00d9399cfa6476962a",
+        "name": "statistics/histogram_cell.png",
+        "size": 126347
+      },
+      {
+        "md5": "27f3f36a94724b9c4ee3cc818e09f5e5",
+        "name": "statistics/histogram_count.json",
+        "size": 829
+      },
+      {
+        "md5": "6f42d46d0d01cb9cbf804575b56d8e69",
+        "name": "statistics/histogram_count.png",
+        "size": 19713
+      },
+      {
+        "md5": "3b007a04f613120cdaa9418ccac73c59",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549644_hc1216_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549644_hc1216_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105666,7 +106029,47 @@
         },
         "summary": "ATAC fragments for hc1216 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549644_hc1216_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1216",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1216",
@@ -105682,6 +106085,16 @@
         "size": 125
       },
       {
+        "md5": "911489c70e09cc873f468c3552bc8e1a",
+        "name": "GSM8549644_hc1216_atac_fragments.tsv.gz.tbi",
+        "size": 906342
+      },
+      {
+        "md5": "a7367628c063d6adbd1dfc93aad058c4",
+        "name": "GSM8549644_hc1216_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "106e167a0456a1551e15362e2d2c83ab",
         "name": "GSM8549644_hc1216_atac_fragments.tsv.gz.tbi.gz",
         "size": 906498
@@ -105692,22 +106105,45 @@
         "size": 128
       },
       {
-        "md5": "a2f45c1d3a8d0cc810c11c6a371ee523",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "f9614c167c5c05b809f874ed1a99d157",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "fbcff0be8a360b6ba07741e36c674b36",
+        "name": "statistics/histogram_cell.json",
+        "size": 17600043
+      },
+      {
+        "md5": "4c75d11b93e9dd8fa9571a0364446196",
+        "name": "statistics/histogram_cell.png",
+        "size": 142628
+      },
+      {
+        "md5": "042d5641b5ca0a276a8536ef20d584bb",
+        "name": "statistics/histogram_count.json",
+        "size": 815
+      },
+      {
+        "md5": "e645e2314ee2216c2f82ce9f323e41e4",
+        "name": "statistics/histogram_count.png",
+        "size": 19582
+      },
+      {
+        "md5": "e65d73aefc595c43d5b59a593494e2eb",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549638_hc1265_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549638_hc1265_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105719,7 +106155,47 @@
         },
         "summary": "ATAC fragments for hc1265 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549638_hc1265_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1265",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1265",
@@ -105735,6 +106211,16 @@
         "size": 125
       },
       {
+        "md5": "92da837919e83861ae58f917b4e4bf70",
+        "name": "GSM8549638_hc1265_atac_fragments.tsv.gz.tbi",
+        "size": 1304602
+      },
+      {
+        "md5": "ab78d62ef07c8d9401c768bc1e5eaf9c",
+        "name": "GSM8549638_hc1265_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "a5342fbfa15cb7af82c1fb160c0c8f78",
         "name": "GSM8549638_hc1265_atac_fragments.tsv.gz.tbi.gz",
         "size": 1303358
@@ -105745,22 +106231,45 @@
         "size": 129
       },
       {
-        "md5": "e8a401d2b222da23e2c8f00a73d4aeac",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "5ffebeba5cc04f514ba50d06d4879f16",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "cd47d15674e3427d805eb3d2b8f0d108",
+        "name": "statistics/histogram_cell.json",
+        "size": 17441753
+      },
+      {
+        "md5": "f6a8ec2b297edb84176f723124d52618",
+        "name": "statistics/histogram_cell.png",
+        "size": 143131
+      },
+      {
+        "md5": "e6b4397b319fd6f6e06066ed394d3d80",
+        "name": "statistics/histogram_count.json",
+        "size": 824
+      },
+      {
+        "md5": "7822d237d9a3d45b31b5dd2e9eca214f",
+        "name": "statistics/histogram_count.png",
+        "size": 22611
+      },
+      {
+        "md5": "c02b2e0bd0c5ff30be085a06c5b9dd4b",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549640_hc1271_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549640_hc1271_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105772,7 +106281,47 @@
         },
         "summary": "ATAC fragments for hc1271 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549640_hc1271_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1271",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1271",
@@ -105788,6 +106337,16 @@
         "size": 125
       },
       {
+        "md5": "d7e95062174d5a2b231886f460af8d4c",
+        "name": "GSM8549640_hc1271_atac_fragments.tsv.gz.tbi",
+        "size": 1307610
+      },
+      {
+        "md5": "0c349e3494d93fd507fa7f2bc62aca36",
+        "name": "GSM8549640_hc1271_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "316faa0d4969f512453fd391619eb8f1",
         "name": "GSM8549640_hc1271_atac_fragments.tsv.gz.tbi.gz",
         "size": 1304887
@@ -105798,22 +106357,45 @@
         "size": 129
       },
       {
-        "md5": "91b06f80f6ee046598fd40b211076d67",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9bff3b98e4ece96bca567e3b92da9abf",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "e1c24d55e9cad9168cd7385bba3aed1a",
+        "name": "statistics/histogram_cell.json",
+        "size": 18034290
+      },
+      {
+        "md5": "4139b81e6c0236ea45d3f62ac20f5146",
+        "name": "statistics/histogram_cell.png",
+        "size": 139910
+      },
+      {
+        "md5": "8c244984600fd8c107bb9a3819d84733",
+        "name": "statistics/histogram_count.json",
+        "size": 838
+      },
+      {
+        "md5": "6889c8d913988ce2739d90fced880845",
+        "name": "statistics/histogram_count.png",
+        "size": 21538
+      },
+      {
+        "md5": "35f27bb0137546bf92162a669c338349",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549622_hc13344_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549622_hc13344_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105825,7 +106407,47 @@
         },
         "summary": "ATAC fragments for hc13344 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549622_hc13344_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc13344",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc13344",
@@ -105841,6 +106463,16 @@
         "size": 126
       },
       {
+        "md5": "a0858f8ae409edaacee0e28ad06ad94b",
+        "name": "GSM8549622_hc13344_atac_fragments.tsv.gz.tbi",
+        "size": 976115
+      },
+      {
+        "md5": "7187cddb6ec37a54ee23610eb28fc2e2",
+        "name": "GSM8549622_hc13344_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "715b261e0df854157cd9fbf7d019ba8d",
         "name": "GSM8549622_hc13344_atac_fragments.tsv.gz.tbi.gz",
         "size": 977762
@@ -105851,22 +106483,45 @@
         "size": 129
       },
       {
-        "md5": "ad19e8e08beb51be679a70a021672af5",
-        "name": "genomic_resource.yaml",
-        "size": 740
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "0fd6295880c906ec7238935527d8863c",
+        "name": "genomic_resource.yaml",
+        "size": 1125
+      },
+      {
+        "md5": "d5cfbfa95fd40c0c02765f66d90492d4",
+        "name": "statistics/histogram_cell.json",
+        "size": 16483925
+      },
+      {
+        "md5": "f860c131e6394c7964501243a8b173f4",
+        "name": "statistics/histogram_cell.png",
+        "size": 127348
+      },
+      {
+        "md5": "3a27b7c579738edfb2a00b291481729c",
+        "name": "statistics/histogram_count.json",
+        "size": 812
+      },
+      {
+        "md5": "1e5c6c1ee141b45483534523a5bfa52b",
+        "name": "statistics/histogram_count.png",
+        "size": 20149
+      },
+      {
+        "md5": "ae05ef679226744f6f73f19ce201a3d7",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1398
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549635_hc13394_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549635_hc13394_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105878,7 +106533,47 @@
         },
         "summary": "ATAC fragments for hc13394 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549635_hc13394_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc13394",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc13394",
@@ -105894,6 +106589,16 @@
         "size": 126
       },
       {
+        "md5": "2293950d3c563139b36739bf99940110",
+        "name": "GSM8549635_hc13394_atac_fragments.tsv.gz.tbi",
+        "size": 1419688
+      },
+      {
+        "md5": "32119d976cf096c4f6b39b08f09dde8d",
+        "name": "GSM8549635_hc13394_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 127
+      },
+      {
         "md5": "31cfa4d5448174aae0407564c86f4c67",
         "name": "GSM8549635_hc13394_atac_fragments.tsv.gz.tbi.gz",
         "size": 1419315
@@ -105904,22 +106609,45 @@
         "size": 130
       },
       {
-        "md5": "f5e3c41a22a970bfe2832c93e01414fe",
-        "name": "genomic_resource.yaml",
-        "size": 740
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "906b5c34d4cc01da635a9eedbdeb91de",
+        "name": "genomic_resource.yaml",
+        "size": 1125
+      },
+      {
+        "md5": "5024f5c96485a7a8eae4f75e6bd46197",
+        "name": "statistics/histogram_cell.json",
+        "size": 19977738
+      },
+      {
+        "md5": "6f786540da41f4a69365f1c537afb109",
+        "name": "statistics/histogram_cell.png",
+        "size": 148300
+      },
+      {
+        "md5": "03dabbf92996ca846529323ec6d4eae5",
+        "name": "statistics/histogram_count.json",
+        "size": 836
+      },
+      {
+        "md5": "6f9f2b221ce2088897f9bff072d9c78c",
+        "name": "statistics/histogram_count.png",
+        "size": 21902
+      },
+      {
+        "md5": "3e868df33074b02446510f6f393c8bbe",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1398
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549626_hc13414_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105931,7 +106659,47 @@
         },
         "summary": "ATAC fragments for hc13414 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549626_hc13414_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc13414",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc13414",
@@ -105947,6 +106715,16 @@
         "size": 126
       },
       {
+        "md5": "245843d0867b748424a71416e158a54b",
+        "name": "GSM8549626_hc13414_atac_fragments.tsv.gz.tbi",
+        "size": 1399361
+      },
+      {
+        "md5": "7af96df733e13b0d9081a9ffa0387b70",
+        "name": "GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 127
+      },
+      {
         "md5": "84640c2ddd1b2e35ed87c778b0bb42b6",
         "name": "GSM8549626_hc13414_atac_fragments.tsv.gz.tbi.gz",
         "size": 1397979
@@ -105957,22 +106735,45 @@
         "size": 130
       },
       {
-        "md5": "a1604682203649530a52eea361718553",
-        "name": "genomic_resource.yaml",
-        "size": 740
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "bdf5bdbd5461eba0fe4bb728b75b3c8d",
+        "name": "genomic_resource.yaml",
+        "size": 1125
+      },
+      {
+        "md5": "1fffb387adae0202ff5ced68061db1a9",
+        "name": "statistics/histogram_cell.json",
+        "size": 19508605
+      },
+      {
+        "md5": "298798fe82e192491993ab02cf6d08c0",
+        "name": "statistics/histogram_cell.png",
+        "size": 140456
+      },
+      {
+        "md5": "28825f42513c1a56a34b6ee1f2eec1fd",
+        "name": "statistics/histogram_count.json",
+        "size": 829
+      },
+      {
+        "md5": "a75ff53fabad88059373d11b4e589829",
+        "name": "statistics/histogram_count.png",
+        "size": 21928
+      },
+      {
+        "md5": "977a74b8a45d881cbd5c688a91477c0f",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1398
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549629_hc1745_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549629_hc1745_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -105984,7 +106785,47 @@
         },
         "summary": "ATAC fragments for hc1745 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549629_hc1745_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc1745",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc1745",
@@ -106000,6 +106841,16 @@
         "size": 125
       },
       {
+        "md5": "fce2e57f40fae669833f2c446f3222ab",
+        "name": "GSM8549629_hc1745_atac_fragments.tsv.gz.tbi",
+        "size": 1230456
+      },
+      {
+        "md5": "679eb1446a7171b2a0a9bf440cb84e37",
+        "name": "GSM8549629_hc1745_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "5298aa11c6a7123424413612eb01202d",
         "name": "GSM8549629_hc1745_atac_fragments.tsv.gz.tbi.gz",
         "size": 1228398
@@ -106010,22 +106861,45 @@
         "size": 129
       },
       {
-        "md5": "b85f6d7bc46adbb3d18e3f7733ea1507",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "63a779e0f05de1d11d2f0eb385556883",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "d03a2f488698d8608e2cf67bc9405cb9",
+        "name": "statistics/histogram_cell.json",
+        "size": 19147710
+      },
+      {
+        "md5": "0fe348ad98fe49393661a25a53efbcab",
+        "name": "statistics/histogram_cell.png",
+        "size": 122969
+      },
+      {
+        "md5": "998accf39007f587f9581c9169b26d8d",
+        "name": "statistics/histogram_count.json",
+        "size": 826
+      },
+      {
+        "md5": "49e1e98c0719bb793667bee4c489ed51",
+        "name": "statistics/histogram_count.png",
+        "size": 21424
+      },
+      {
+        "md5": "dc7b0c21d4b635e507ceaf0b6c48207f",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549649_hc19_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549649_hc19_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106037,7 +106911,47 @@
         },
         "summary": "ATAC fragments for hc19 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549649_hc19_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc19",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc19",
@@ -106053,6 +106967,16 @@
         "size": 123
       },
       {
+        "md5": "a2da3492e9bb86acc909ae3f5d578e56",
+        "name": "GSM8549649_hc19_atac_fragments.tsv.gz.tbi",
+        "size": 1132433
+      },
+      {
+        "md5": "3bba8ab6b195a0a43e340595a2514ec5",
+        "name": "GSM8549649_hc19_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "f25ffbfd902a5e2521a4bb179eb0cefe",
         "name": "GSM8549649_hc19_atac_fragments.tsv.gz.tbi.gz",
         "size": 1129491
@@ -106063,22 +106987,45 @@
         "size": 127
       },
       {
-        "md5": "832f115452ecfffb971227346194dce8",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9af8b5e23cb30f3a8a5ef89e9e1ea6ff",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "3314a935380f6d53627b956c97fa18dd",
+        "name": "statistics/histogram_cell.json",
+        "size": 16570793
+      },
+      {
+        "md5": "9b534fe5953ca8f2753da18f835297fc",
+        "name": "statistics/histogram_cell.png",
+        "size": 132989
+      },
+      {
+        "md5": "64d675726840d03ff0783f4b6ace3292",
+        "name": "statistics/histogram_count.json",
+        "size": 838
+      },
+      {
+        "md5": "d54400c3f49ac74f436c76d65c76cfd8",
+        "name": "statistics/histogram_count.png",
+        "size": 17597
+      },
+      {
+        "md5": "cdf4f172c8f45ebcab4b92307036c6b4",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549652_hc212191_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549652_hc212191_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106090,7 +107037,47 @@
         },
         "summary": "ATAC fragments for hc212191 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549652_hc212191_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc212191",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc212191",
@@ -106106,6 +107093,16 @@
         "size": 127
       },
       {
+        "md5": "22b06d30383f2fdabfffbd5b9882856c",
+        "name": "GSM8549652_hc212191_atac_fragments.tsv.gz.tbi",
+        "size": 962696
+      },
+      {
+        "md5": "6a8079b97787d13e7e8e7c044755b210",
+        "name": "GSM8549652_hc212191_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 127
+      },
+      {
         "md5": "fb2170bcf4e80ba28fae321b271ccccf",
         "name": "GSM8549652_hc212191_atac_fragments.tsv.gz.tbi.gz",
         "size": 962458
@@ -106116,22 +107113,45 @@
         "size": 130
       },
       {
-        "md5": "2edfa12f193e692fce4c080ca5c83947",
-        "name": "genomic_resource.yaml",
-        "size": 744
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "0fc4424102f605cea0857323a5765b81",
+        "name": "genomic_resource.yaml",
+        "size": 1128
+      },
+      {
+        "md5": "6e06426f7d9517e283fd7b4df330b963",
+        "name": "statistics/histogram_cell.json",
+        "size": 14617574
+      },
+      {
+        "md5": "652be2946e5543c85a584480a1c9aa10",
+        "name": "statistics/histogram_cell.png",
+        "size": 119321
+      },
+      {
+        "md5": "b3a70769772910d2a632ce0ac787372a",
+        "name": "statistics/histogram_count.json",
+        "size": 826
+      },
+      {
+        "md5": "ed81d9d4bc2b5e24cb7d496847edf36c",
+        "name": "statistics/histogram_count.png",
+        "size": 19321
+      },
+      {
+        "md5": "2c4f10322aec8e6ea2c4e10b3d58f5ca",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1401
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549650_hc26_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549650_hc26_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106143,7 +107163,47 @@
         },
         "summary": "ATAC fragments for hc26 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549650_hc26_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc26",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc26",
@@ -106159,6 +107219,16 @@
         "size": 123
       },
       {
+        "md5": "aa92d6ed622fba7097b73f89f645c349",
+        "name": "GSM8549650_hc26_atac_fragments.tsv.gz.tbi",
+        "size": 1067673
+      },
+      {
+        "md5": "6249b235cba2a513dced8dd536163947",
+        "name": "GSM8549650_hc26_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "64cd2a55b14c1a6586e1d1975fd231c6",
         "name": "GSM8549650_hc26_atac_fragments.tsv.gz.tbi.gz",
         "size": 1062658
@@ -106169,22 +107239,45 @@
         "size": 127
       },
       {
-        "md5": "989911f3832e7b8007f2b806c44ee003",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "e1d4a36ee4e99613d927ed076210487d",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "bcf55de36d47ea8018bd3ecc79126410",
+        "name": "statistics/histogram_cell.json",
+        "size": 15970442
+      },
+      {
+        "md5": "84aebc89bb0fc1cb48f6cb7657b6d382",
+        "name": "statistics/histogram_cell.png",
+        "size": 134607
+      },
+      {
+        "md5": "d4a0b73925e3bf34aaa34c7660aa338e",
+        "name": "statistics/histogram_count.json",
+        "size": 866
+      },
+      {
+        "md5": "e516315804f9d88444ce3e4776480fd3",
+        "name": "statistics/histogram_count.png",
+        "size": 18446
+      },
+      {
+        "md5": "490304c9f07b3ce5a305888bb082eeab",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549619_hc29_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549619_hc29_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106196,7 +107289,47 @@
         },
         "summary": "ATAC fragments for hc29 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549619_hc29_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc29",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc29",
@@ -106212,6 +107345,16 @@
         "size": 123
       },
       {
+        "md5": "e037df6c40eb6f81f98e0f903b20e51e",
+        "name": "GSM8549619_hc29_atac_fragments.tsv.gz.tbi",
+        "size": 838703
+      },
+      {
+        "md5": "ca5af1bea3f180e5020316725561eb4b",
+        "name": "GSM8549619_hc29_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
         "md5": "b72e07074201d1826c5b944214142e73",
         "name": "GSM8549619_hc29_atac_fragments.tsv.gz.tbi.gz",
         "size": 837895
@@ -106222,22 +107365,45 @@
         "size": 126
       },
       {
-        "md5": "b457b92535159c5a2acb8a5ca6da8d8d",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "08ac0181e0bc37bf0d1843eab6281ea6",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "e35d3096980a12486266b57ab833a2f7",
+        "name": "statistics/histogram_cell.json",
+        "size": 14254403
+      },
+      {
+        "md5": "656a74beef2f7d645bfa66f437597c7d",
+        "name": "statistics/histogram_cell.png",
+        "size": 127958
+      },
+      {
+        "md5": "be7f05716aecdb32deb6912bf29eac54",
+        "name": "statistics/histogram_count.json",
+        "size": 845
+      },
+      {
+        "md5": "686d060b43b2bc13ac8eb78bf585b126",
+        "name": "statistics/histogram_count.png",
+        "size": 21457
+      },
+      {
+        "md5": "7bb66552be783857e32c323c277f066c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549653_hc35_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549653_hc35_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106249,7 +107415,47 @@
         },
         "summary": "ATAC fragments for hc35 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549653_hc35_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc35",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc35",
@@ -106265,6 +107471,16 @@
         "size": 123
       },
       {
+        "md5": "fcd06004d306fa1e5a025d8c1ceb960e",
+        "name": "GSM8549653_hc35_atac_fragments.tsv.gz.tbi",
+        "size": 1047783
+      },
+      {
+        "md5": "45c0b508438f9342f5a7a184e29b7c84",
+        "name": "GSM8549653_hc35_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "ee38dadef2aa2fcddd339e6869d0133d",
         "name": "GSM8549653_hc35_atac_fragments.tsv.gz.tbi.gz",
         "size": 1044902
@@ -106275,22 +107491,45 @@
         "size": 127
       },
       {
-        "md5": "e7a3b7856d628c6cd04d725989d942a2",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "6296291f1e1796291593bc58b3d1fff8",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "83248fde0a6aa063bb61722623e11c65",
+        "name": "statistics/histogram_cell.json",
+        "size": 15592213
+      },
+      {
+        "md5": "5a479f3c7efa866ddf5af0c943e53507",
+        "name": "statistics/histogram_cell.png",
+        "size": 137787
+      },
+      {
+        "md5": "db5e694bdafaa6d9312cd14106770ef7",
+        "name": "statistics/histogram_count.json",
+        "size": 853
+      },
+      {
+        "md5": "cd394828c5314b52ff0008b621405fb1",
+        "name": "statistics/histogram_count.png",
+        "size": 18866
+      },
+      {
+        "md5": "6b2e3972cbb3db3a38010608b674380a",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549651_hc40_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549651_hc40_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106302,7 +107541,47 @@
         },
         "summary": "ATAC fragments for hc40 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549651_hc40_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc40",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc40",
@@ -106318,6 +107597,16 @@
         "size": 123
       },
       {
+        "md5": "c3395fb4ecca49e5232f81eef2bf3812",
+        "name": "GSM8549651_hc40_atac_fragments.tsv.gz.tbi",
+        "size": 1257689
+      },
+      {
+        "md5": "8f404b2e645fb94d3efbe747ed990394",
+        "name": "GSM8549651_hc40_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "b910a3716f213bf3a42ac5b92c1153a3",
         "name": "GSM8549651_hc40_atac_fragments.tsv.gz.tbi.gz",
         "size": 1254275
@@ -106328,22 +107617,45 @@
         "size": 127
       },
       {
-        "md5": "a114c833eb39ec9b78b7a4ca2d7ea3ee",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "bfa4c0685aace830c63a6b18e3e96992",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "07b31829981cb30156f955a925286a8e",
+        "name": "statistics/histogram_cell.json",
+        "size": 17923349
+      },
+      {
+        "md5": "4e911ec7662230ae9878b047b70d6048",
+        "name": "statistics/histogram_cell.png",
+        "size": 137028
+      },
+      {
+        "md5": "bcdee4afe7f7b80a9a9fcd815833d322",
+        "name": "statistics/histogram_count.json",
+        "size": 832
+      },
+      {
+        "md5": "fcede7b6c9d59de9645d7bfc87418a4d",
+        "name": "statistics/histogram_count.png",
+        "size": 20293
+      },
+      {
+        "md5": "3be1db147f12ad149090697383a4dee9",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549637_hc46426_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549637_hc46426_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106355,7 +107667,47 @@
         },
         "summary": "ATAC fragments for hc46426 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549637_hc46426_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc46426",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc46426",
@@ -106371,6 +107723,16 @@
         "size": 126
       },
       {
+        "md5": "1ce0de83334b1746466dd600c3b90c12",
+        "name": "GSM8549637_hc46426_atac_fragments.tsv.gz.tbi",
+        "size": 1165885
+      },
+      {
+        "md5": "ab5fb0ae3596c8769a7a50bcd6bef151",
+        "name": "GSM8549637_hc46426_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 127
+      },
+      {
         "md5": "ab0a090ca696be75da4bb457a225afdc",
         "name": "GSM8549637_hc46426_atac_fragments.tsv.gz.tbi.gz",
         "size": 1163985
@@ -106381,22 +107743,45 @@
         "size": 130
       },
       {
-        "md5": "d22536836a177b2bc0c39562d865cec3",
-        "name": "genomic_resource.yaml",
-        "size": 740
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "1e2e384a4374c9900b8284caf615fd3b",
+        "name": "genomic_resource.yaml",
+        "size": 1125
+      },
+      {
+        "md5": "45b593d40a2b4f18465871f2fd8aa8d7",
+        "name": "statistics/histogram_cell.json",
+        "size": 20121581
+      },
+      {
+        "md5": "17e9c947026026a38a9edf1b8209f261",
+        "name": "statistics/histogram_cell.png",
+        "size": 131644
+      },
+      {
+        "md5": "fbced5c1e55a6669557e46f031258865",
+        "name": "statistics/histogram_count.json",
+        "size": 842
+      },
+      {
+        "md5": "8f7654277e9b1d1524aae25a9460bc41",
+        "name": "statistics/histogram_count.png",
+        "size": 20297
+      },
+      {
+        "md5": "46e06cf0a0c164631f1e2bf4e5afcca6",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1398
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549630_hc4781_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549630_hc4781_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106408,7 +107793,47 @@
         },
         "summary": "ATAC fragments for hc4781 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549630_hc4781_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc4781",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc4781",
@@ -106424,6 +107849,16 @@
         "size": 125
       },
       {
+        "md5": "fdf99c634a62f7ac546d2a65be99b99f",
+        "name": "GSM8549630_hc4781_atac_fragments.tsv.gz.tbi",
+        "size": 1094576
+      },
+      {
+        "md5": "e3c37ceb474703e405128bc12a598c3a",
+        "name": "GSM8549630_hc4781_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "b58d1aa261a772c0093edc251f568fdc",
         "name": "GSM8549630_hc4781_atac_fragments.tsv.gz.tbi.gz",
         "size": 1092706
@@ -106434,22 +107869,45 @@
         "size": 129
       },
       {
-        "md5": "dc2d1129e13da4c063c5fba179952ac3",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "b01b7734addffcd608c59ff7749512f3",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "cd1ddd38c40838e192f4cb49b1d4c4ef",
+        "name": "statistics/histogram_cell.json",
+        "size": 18919553
+      },
+      {
+        "md5": "f718d988a5cd1b730c61f6174b1ac7b1",
+        "name": "statistics/histogram_cell.png",
+        "size": 125515
+      },
+      {
+        "md5": "70aa6620c964d320a69ebbba3f25b615",
+        "name": "statistics/histogram_count.json",
+        "size": 835
+      },
+      {
+        "md5": "98359a9a7fda1b4694cfcb8c277a3573",
+        "name": "statistics/histogram_count.png",
+        "size": 19701
+      },
+      {
+        "md5": "988026fe677f06f9a83391cf8c27d35a",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549627_hc5021_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549627_hc5021_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106461,7 +107919,47 @@
         },
         "summary": "ATAC fragments for hc5021 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549627_hc5021_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc5021",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc5021",
@@ -106477,6 +107975,16 @@
         "size": 125
       },
       {
+        "md5": "9196c76fd0b49fe64d32d49eec4e3ee0",
+        "name": "GSM8549627_hc5021_atac_fragments.tsv.gz.tbi",
+        "size": 935891
+      },
+      {
+        "md5": "dee3d3e6fbf4d1a1936c6cdab5b751bc",
+        "name": "GSM8549627_hc5021_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "025354e1d14b42cb00273783512aa3de",
         "name": "GSM8549627_hc5021_atac_fragments.tsv.gz.tbi.gz",
         "size": 934647
@@ -106487,22 +107995,45 @@
         "size": 128
       },
       {
-        "md5": "d57b94b157f60db2a951a08bf3a55510",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "30813c46b08b67af5ea66f9cdbadb9f6",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "cba49873d06e87c474e63ab77f6dea46",
+        "name": "statistics/histogram_cell.json",
+        "size": 16389897
+      },
+      {
+        "md5": "5e8a24607a63426985f358f358b9ac2b",
+        "name": "statistics/histogram_cell.png",
+        "size": 113849
+      },
+      {
+        "md5": "da9cb56071da8170b767e456896e5122",
+        "name": "statistics/histogram_count.json",
+        "size": 825
+      },
+      {
+        "md5": "db11868dcf60e68f6993f4deed1de00c",
+        "name": "statistics/histogram_count.png",
+        "size": 19306
+      },
+      {
+        "md5": "a85f1186efc609f61a42ab816203071f",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549628_hc5087_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549628_hc5087_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106514,7 +108045,47 @@
         },
         "summary": "ATAC fragments for hc5087 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549628_hc5087_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc5087",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc5087",
@@ -106530,6 +108101,16 @@
         "size": 125
       },
       {
+        "md5": "40e84aa63a03de7fedb693a63f967ccc",
+        "name": "GSM8549628_hc5087_atac_fragments.tsv.gz.tbi",
+        "size": 1279577
+      },
+      {
+        "md5": "d0febc7990f58b5cf2865b9293080a7e",
+        "name": "GSM8549628_hc5087_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "42e2e723e958eec94c93741fb9a5d024",
         "name": "GSM8549628_hc5087_atac_fragments.tsv.gz.tbi.gz",
         "size": 1277007
@@ -106540,22 +108121,45 @@
         "size": 129
       },
       {
-        "md5": "b39332a79966c41d2e94672fe92762f7",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "81b8f52edd36708d07c4384bd4970de3",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "b284cdeb027a8fccb4a52cf29cce4494",
+        "name": "statistics/histogram_cell.json",
+        "size": 18791650
+      },
+      {
+        "md5": "fda32de826162a0cdd8024feeeab23db",
+        "name": "statistics/histogram_cell.png",
+        "size": 140987
+      },
+      {
+        "md5": "388bb0539090aca2583c6f25d195c385",
+        "name": "statistics/histogram_count.json",
+        "size": 826
+      },
+      {
+        "md5": "c99ff1d3af952ab537055b0d634e498b",
+        "name": "statistics/histogram_count.png",
+        "size": 21404
+      },
+      {
+        "md5": "219c8b46430b7c7658d1e9a6d476509c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549633_hc5551_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549633_hc5551_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106567,7 +108171,47 @@
         },
         "summary": "ATAC fragments for hc5551 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549633_hc5551_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc5551",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc5551",
@@ -106583,6 +108227,16 @@
         "size": 125
       },
       {
+        "md5": "bb046ec044a2abfd2d7ead07f7218c8a",
+        "name": "GSM8549633_hc5551_atac_fragments.tsv.gz.tbi",
+        "size": 1500579
+      },
+      {
+        "md5": "1608fd6955cd69b23b303be4ac03f5f9",
+        "name": "GSM8549633_hc5551_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "05b5f0db3f6acaf916f71e1a0f7e4f86",
         "name": "GSM8549633_hc5551_atac_fragments.tsv.gz.tbi.gz",
         "size": 1499872
@@ -106593,22 +108247,45 @@
         "size": 129
       },
       {
-        "md5": "10a71bd805451cf9bd03d4ee34a52aaf",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9451f0eea44afd28ece04b55c3f9d343",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "72c82e30c42f84e5997a58677cfd4e8d",
+        "name": "statistics/histogram_cell.json",
+        "size": 20059119
+      },
+      {
+        "md5": "69006c5481e9f7b9d602cf26a199ee8c",
+        "name": "statistics/histogram_cell.png",
+        "size": 146130
+      },
+      {
+        "md5": "64210bb1983529c4b81c5e2c6c9bc2c8",
+        "name": "statistics/histogram_count.json",
+        "size": 832
+      },
+      {
+        "md5": "836e6c42ca21ab9f878ed784778043be",
+        "name": "statistics/histogram_count.png",
+        "size": 22819
+      },
+      {
+        "md5": "689df4e76e714322daeb0a6c2db26d21",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549617_hc5579_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549617_hc5579_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106620,7 +108297,47 @@
         },
         "summary": "ATAC fragments for hc5579 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549617_hc5579_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc5579",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc5579",
@@ -106636,6 +108353,16 @@
         "size": 125
       },
       {
+        "md5": "a9a39da785cf199464cd0a7806788b49",
+        "name": "GSM8549617_hc5579_atac_fragments.tsv.gz.tbi",
+        "size": 1386109
+      },
+      {
+        "md5": "770a6874b0e426d72677464d95a84f5f",
+        "name": "GSM8549617_hc5579_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "09b4d98393cfa334295b36e36b00cb81",
         "name": "GSM8549617_hc5579_atac_fragments.tsv.gz.tbi.gz",
         "size": 1384401
@@ -106646,22 +108373,45 @@
         "size": 129
       },
       {
-        "md5": "63d6f5c976184c98cf78b7589e5ce9b1",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "825f98f211d366288d05ca74aa0d5744",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "92599d65812b84bd95a0da819c926ed7",
+        "name": "statistics/histogram_cell.json",
+        "size": 17084965
+      },
+      {
+        "md5": "948bec01750823d31a466bcccf21c9f9",
+        "name": "statistics/histogram_cell.png",
+        "size": 142930
+      },
+      {
+        "md5": "dac5ab15d879bb5d08c9b894ce5fa61f",
+        "name": "statistics/histogram_count.json",
+        "size": 826
+      },
+      {
+        "md5": "17eae411465ab388015043500b7b336d",
+        "name": "statistics/histogram_count.png",
+        "size": 22691
+      },
+      {
+        "md5": "0d255100a52ac3b48f474c6c53b75b9c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549632_hc5610_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549632_hc5610_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106673,7 +108423,47 @@
         },
         "summary": "ATAC fragments for hc5610 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549632_hc5610_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc5610",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc5610",
@@ -106689,6 +108479,16 @@
         "size": 125
       },
       {
+        "md5": "3543c6a69c9947f98c2f1016d3bd8de9",
+        "name": "GSM8549632_hc5610_atac_fragments.tsv.gz.tbi",
+        "size": 1051037
+      },
+      {
+        "md5": "430421400af096a12dd5d1eb9bcbdba9",
+        "name": "GSM8549632_hc5610_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "575873aa25c74c81c072db82737353a8",
         "name": "GSM8549632_hc5610_atac_fragments.tsv.gz.tbi.gz",
         "size": 1048679
@@ -106699,22 +108499,45 @@
         "size": 129
       },
       {
-        "md5": "8735e49f0a53df343d4b6e20150983ff",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "a914d6e19d262e1a6ccc81c871109d7a",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "3723264b85c87722a5713c8549103581",
+        "name": "statistics/histogram_cell.json",
+        "size": 19786320
+      },
+      {
+        "md5": "2e171cf5935490c4a6719a1b2405f44d",
+        "name": "statistics/histogram_cell.png",
+        "size": 137181
+      },
+      {
+        "md5": "5a90bccb93b98263e369bc118ecd88c6",
+        "name": "statistics/histogram_count.json",
+        "size": 829
+      },
+      {
+        "md5": "773b7d84f5f46c08a67233b0572a8dbb",
+        "name": "statistics/histogram_count.png",
+        "size": 19634
+      },
+      {
+        "md5": "400c6314122929948427f6fee3904dc5",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549621_hc5614_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549621_hc5614_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106726,7 +108549,47 @@
         },
         "summary": "ATAC fragments for hc5614 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549621_hc5614_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc5614",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc5614",
@@ -106742,6 +108605,16 @@
         "size": 125
       },
       {
+        "md5": "db0de36dcbf23e58978b856f38c66a12",
+        "name": "GSM8549621_hc5614_atac_fragments.tsv.gz.tbi",
+        "size": 1251406
+      },
+      {
+        "md5": "c67c94baf58646303e9dad75ac7d3aee",
+        "name": "GSM8549621_hc5614_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "d98b6e0256cecb3625747b52fa110a5c",
         "name": "GSM8549621_hc5614_atac_fragments.tsv.gz.tbi.gz",
         "size": 1252827
@@ -106752,22 +108625,45 @@
         "size": 129
       },
       {
-        "md5": "106ddb82c3831a341a2f0c9081ae0f60",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "bf72b6828c1888afa63b32de8c332c9e",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "88be6545f58c840dddab34d4453b6e30",
+        "name": "statistics/histogram_cell.json",
+        "size": 16287678
+      },
+      {
+        "md5": "403cd6ee7c00fc89f3267537c261eb89",
+        "name": "statistics/histogram_cell.png",
+        "size": 126277
+      },
+      {
+        "md5": "4cdf0573b4a50e6a36842caebf43f616",
+        "name": "statistics/histogram_count.json",
+        "size": 813
+      },
+      {
+        "md5": "2d393a08c8de51cf3b4d8aef403e8e80",
+        "name": "statistics/histogram_count.png",
+        "size": 21795
+      },
+      {
+        "md5": "e5c981cb37c67abfb2c44f379e63b504",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549634_hc6021_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549634_hc6021_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106779,7 +108675,47 @@
         },
         "summary": "ATAC fragments for hc6021 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549634_hc6021_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc6021",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc6021",
@@ -106795,6 +108731,16 @@
         "size": 125
       },
       {
+        "md5": "80db5b7260793fd3cba40adc271bef98",
+        "name": "GSM8549634_hc6021_atac_fragments.tsv.gz.tbi",
+        "size": 1302712
+      },
+      {
+        "md5": "9bb1094360abbe4ad7d6296e3b289d71",
+        "name": "GSM8549634_hc6021_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "31ac6104fe11e35be915233a98cc2304",
         "name": "GSM8549634_hc6021_atac_fragments.tsv.gz.tbi.gz",
         "size": 1300760
@@ -106805,22 +108751,45 @@
         "size": 129
       },
       {
-        "md5": "ba85f2d1faaa71008aaded58baa28f91",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "6a9afe04ab6a9c2b2c21dcf0b2679c71",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "15a8307e61d96774b84f1bfa60acf990",
+        "name": "statistics/histogram_cell.json",
+        "size": 18686103
+      },
+      {
+        "md5": "72c5b2b20604438e5cc9748329660af1",
+        "name": "statistics/histogram_cell.png",
+        "size": 131257
+      },
+      {
+        "md5": "9b6036f8149122a51ed279f1ba3b3d41",
+        "name": "statistics/histogram_count.json",
+        "size": 825
+      },
+      {
+        "md5": "7eab930797b622c79a6baae5c8b9e68a",
+        "name": "statistics/histogram_count.png",
+        "size": 21879
+      },
+      {
+        "md5": "e74a1f416f2d3d1fc8b56c2f9b622835",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549620_hc6052_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549620_hc6052_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106832,7 +108801,47 @@
         },
         "summary": "ATAC fragments for hc6052 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549620_hc6052_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc6052",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc6052",
@@ -106848,6 +108857,16 @@
         "size": 124
       },
       {
+        "md5": "27fc3c6dee60c45ce36b729aa153b86c",
+        "name": "GSM8549620_hc6052_atac_fragments.tsv.gz.tbi",
+        "size": 759826
+      },
+      {
+        "md5": "8b1f80d10c4776fe7791526ad6ca0f8a",
+        "name": "GSM8549620_hc6052_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "2292b059e11960faf0c63e39b9bc36bb",
         "name": "GSM8549620_hc6052_atac_fragments.tsv.gz.tbi.gz",
         "size": 756246
@@ -106858,22 +108877,45 @@
         "size": 128
       },
       {
-        "md5": "3a0772acc4201cd828b9b7c293f078f1",
-        "name": "genomic_resource.yaml",
-        "size": 736
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "2e48f11d97cc9a3aa94f5b5f229e7e5c",
+        "name": "genomic_resource.yaml",
+        "size": 1122
+      },
+      {
+        "md5": "c041edfc3467fcb0cc960e4e561d21a1",
+        "name": "statistics/histogram_cell.json",
+        "size": 12508557
+      },
+      {
+        "md5": "113cf8cddb06f3cabcdd5708e82b703d",
+        "name": "statistics/histogram_cell.png",
+        "size": 131584
+      },
+      {
+        "md5": "085286f74daee1458aff85240b6cd5d6",
+        "name": "statistics/histogram_count.json",
+        "size": 828
+      },
+      {
+        "md5": "c855c6a22bc49f3bccf9dd3aae01440c",
+        "name": "statistics/histogram_count.png",
+        "size": 17382
+      },
+      {
+        "md5": "5dbc5aac796146f637a144f2af840243",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1395
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549643_hc69984_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549643_hc69984_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106885,7 +108927,47 @@
         },
         "summary": "ATAC fragments for hc69984 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549643_hc69984_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc69984",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc69984",
@@ -106901,6 +108983,16 @@
         "size": 125
       },
       {
+        "md5": "ac2e5afd08baa419423edc1fc20efe5a",
+        "name": "GSM8549643_hc69984_atac_fragments.tsv.gz.tbi",
+        "size": 753919
+      },
+      {
+        "md5": "76a017e4639502d5a71c5d7c6c6ea989",
+        "name": "GSM8549643_hc69984_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 126
+      },
+      {
         "md5": "26dac8d76189a9952a018a235d112ed6",
         "name": "GSM8549643_hc69984_atac_fragments.tsv.gz.tbi.gz",
         "size": 752608
@@ -106911,22 +109003,45 @@
         "size": 129
       },
       {
-        "md5": "eeb4b8000477c354f5bb9a1b2aa3fba0",
-        "name": "genomic_resource.yaml",
-        "size": 740
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "524a1b98c6f04a1cdbb3308d5de22d07",
+        "name": "genomic_resource.yaml",
+        "size": 1125
+      },
+      {
+        "md5": "3a977d9cce73af010cc2ece09768650e",
+        "name": "statistics/histogram_cell.json",
+        "size": 15937837
+      },
+      {
+        "md5": "cee40588760c41a6def62d559d86342c",
+        "name": "statistics/histogram_cell.png",
+        "size": 138555
+      },
+      {
+        "md5": "c38308fd0b7a6e2702d7ba1b6e5af561",
+        "name": "statistics/histogram_count.json",
+        "size": 850
+      },
+      {
+        "md5": "cfe8c8831f38c71024c2b8aac4dd4e6b",
+        "name": "statistics/histogram_count.png",
+        "size": 20022
+      },
+      {
+        "md5": "3b26bb22c65847f7f8056c2482a64079",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1398
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549648_hc73_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549648_hc73_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106938,7 +109053,47 @@
         },
         "summary": "ATAC fragments for hc73 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549648_hc73_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc73",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc73",
@@ -106954,6 +109109,16 @@
         "size": 123
       },
       {
+        "md5": "7ff25e86acdc1e1e305c948bae119afc",
+        "name": "GSM8549648_hc73_atac_fragments.tsv.gz.tbi",
+        "size": 1729613
+      },
+      {
+        "md5": "547b3a8bae2468f979f6fd21ac2c67dd",
+        "name": "GSM8549648_hc73_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "79589914a8c2c96d566043d078499fa7",
         "name": "GSM8549648_hc73_atac_fragments.tsv.gz.tbi.gz",
         "size": 1727901
@@ -106964,22 +109129,45 @@
         "size": 127
       },
       {
-        "md5": "1d1cc011cbf7622922a4c9301ca991c5",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "a7964a6e56196f22ce82a2c23175e0c9",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "bd3486865ba00ce16086245316bc6a14",
+        "name": "statistics/histogram_cell.json",
+        "size": 20229233
+      },
+      {
+        "md5": "6ba4209b265882f236bc3e5d9b78438c",
+        "name": "statistics/histogram_cell.png",
+        "size": 134470
+      },
+      {
+        "md5": "89f8b4668f6c0fae21a96acdfbba8abb",
+        "name": "statistics/histogram_count.json",
+        "size": 848
+      },
+      {
+        "md5": "e209e1e499fedb204b6b86e61005f337",
+        "name": "statistics/histogram_count.png",
+        "size": 20021
+      },
+      {
+        "md5": "db8e904a4783fc52996b55ed1f7efe00",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549636_hc73787_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549636_hc73787_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -106991,7 +109179,47 @@
         },
         "summary": "ATAC fragments for hc73787 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549636_hc73787_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc73787",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc73787",
@@ -107007,6 +109235,16 @@
         "size": 126
       },
       {
+        "md5": "c0daad61c6848e0f92a8e01ec3d0252c",
+        "name": "GSM8549636_hc73787_atac_fragments.tsv.gz.tbi",
+        "size": 1348158
+      },
+      {
+        "md5": "96a5fba0b1661de78ad94a3a2b8ddac3",
+        "name": "GSM8549636_hc73787_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 127
+      },
+      {
         "md5": "bd1fc616124216c94dde852cee512d2a",
         "name": "GSM8549636_hc73787_atac_fragments.tsv.gz.tbi.gz",
         "size": 1344773
@@ -107017,22 +109255,45 @@
         "size": 130
       },
       {
-        "md5": "ea73a12d1fc618ecaddf0e4efae36388",
-        "name": "genomic_resource.yaml",
-        "size": 740
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "cfba8922533f9fabfe816065929d0f92",
+        "name": "genomic_resource.yaml",
+        "size": 1125
+      },
+      {
+        "md5": "7b4d49d64ba9cbed2b58e1744ba31324",
+        "name": "statistics/histogram_cell.json",
+        "size": 18773944
+      },
+      {
+        "md5": "6d770d78971c33d9d96ad238251dd206",
+        "name": "statistics/histogram_cell.png",
+        "size": 141990
+      },
+      {
+        "md5": "d259f45a0120a7f4658dc487afcb1655",
+        "name": "statistics/histogram_count.json",
+        "size": 843
+      },
+      {
+        "md5": "1dd64a8f897cad664ae973955beb2f66",
+        "name": "statistics/histogram_count.png",
+        "size": 20889
+      },
+      {
+        "md5": "0fd697dd9e617b47c37b6106b9cd1dd0",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1398
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549618_hc76_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549618_hc76_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107044,7 +109305,47 @@
         },
         "summary": "ATAC fragments for hc76 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549618_hc76_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc76",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc76",
@@ -107060,6 +109361,16 @@
         "size": 123
       },
       {
+        "md5": "5a358a220b9e7481b204d128baa60d07",
+        "name": "GSM8549618_hc76_atac_fragments.tsv.gz.tbi",
+        "size": 885004
+      },
+      {
+        "md5": "13acd0e6bd08d90e5a9cc2c16a3b4c69",
+        "name": "GSM8549618_hc76_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
         "md5": "c4f2f5c8541d6594d6fb453b8643708d",
         "name": "GSM8549618_hc76_atac_fragments.tsv.gz.tbi.gz",
         "size": 884590
@@ -107070,22 +109381,45 @@
         "size": 126
       },
       {
-        "md5": "fb908d4af2ae5dfcc03db68daa2798df",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "d723bd37c27daba39fd02307d66d5f24",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "0a907563f679c0ebef795014a7b7b017",
+        "name": "statistics/histogram_cell.json",
+        "size": 15218411
+      },
+      {
+        "md5": "c61896bfe09bd827c8b5608b39d40557",
+        "name": "statistics/histogram_cell.png",
+        "size": 127762
+      },
+      {
+        "md5": "5f903ca36132a6f7ea8cc281400619ef",
+        "name": "statistics/histogram_count.json",
+        "size": 853
+      },
+      {
+        "md5": "32934b73809773dded7748c58155201a",
+        "name": "statistics/histogram_count.png",
+        "size": 17476
+      },
+      {
+        "md5": "159757bb54fb2b457e69569be69505cf",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549615_hc77_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549615_hc77_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107097,7 +109431,47 @@
         },
         "summary": "ATAC fragments for hc77 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549615_hc77_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc77",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc77",
@@ -107113,6 +109487,16 @@
         "size": 123
       },
       {
+        "md5": "7db00d5356f2ec08dd85b9fd340dd14e",
+        "name": "GSM8549615_hc77_atac_fragments.tsv.gz.tbi",
+        "size": 864582
+      },
+      {
+        "md5": "c165b45c2b105909bcb15291bd447c54",
+        "name": "GSM8549615_hc77_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
         "md5": "d45b9184bc5e68997cfdf5e4d1b1d9cf",
         "name": "GSM8549615_hc77_atac_fragments.tsv.gz.tbi.gz",
         "size": 863848
@@ -107123,22 +109507,45 @@
         "size": 126
       },
       {
-        "md5": "e190485a2407d2e26f3cac27daed9660",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "5debf0978fe76d8f8bc8afcb07177e6e",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "25f98d1b9fdf8e3064385e7c91b04634",
+        "name": "statistics/histogram_cell.json",
+        "size": 14072346
+      },
+      {
+        "md5": "5690d254ede45b4b40a2dc149a146e10",
+        "name": "statistics/histogram_cell.png",
+        "size": 129610
+      },
+      {
+        "md5": "c9d8d1b8af2ac2777a4717d7bd19c613",
+        "name": "statistics/histogram_count.json",
+        "size": 845
+      },
+      {
+        "md5": "509409b2d50357d28339ecd1a77897b3",
+        "name": "statistics/histogram_count.png",
+        "size": 17426
+      },
+      {
+        "md5": "72cefca448a9bc947bcdb050cf28c9d7",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549616_hc78_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549616_hc78_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107150,7 +109557,47 @@
         },
         "summary": "ATAC fragments for hc78 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549616_hc78_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc78",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc78",
@@ -107166,6 +109613,16 @@
         "size": 123
       },
       {
+        "md5": "ca394c82c360afea8df07a85dce38576",
+        "name": "GSM8549616_hc78_atac_fragments.tsv.gz.tbi",
+        "size": 1173784
+      },
+      {
+        "md5": "622c9e695f03b461b8e725b206cec297",
+        "name": "GSM8549616_hc78_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "dd3301517b5efa0d04ec4bf1f181fb62",
         "name": "GSM8549616_hc78_atac_fragments.tsv.gz.tbi.gz",
         "size": 1169684
@@ -107176,22 +109633,45 @@
         "size": 127
       },
       {
-        "md5": "9d22cf76e3655b13fa595c68d0cd99e8",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "64fb1c8ebd7baa880bc3e99f99595d25",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "cd8ef650d8f9aed1539a7e85f990a21c",
+        "name": "statistics/histogram_cell.json",
+        "size": 16825624
+      },
+      {
+        "md5": "f6c467b7d5e5d4a750f8b0d94d29389d",
+        "name": "statistics/histogram_cell.png",
+        "size": 128400
+      },
+      {
+        "md5": "2067fca8a7787b75a8ed9319f08e4149",
+        "name": "statistics/histogram_count.json",
+        "size": 829
+      },
+      {
+        "md5": "3834df3a7810c78163dea972d2d96c7d",
+        "name": "statistics/histogram_count.png",
+        "size": 19682
+      },
+      {
+        "md5": "1f16125099b688fd15573884a835c930",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549639_hc8_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549639_hc8_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107203,7 +109683,47 @@
         },
         "summary": "ATAC fragments for hc8 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549639_hc8_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc8",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc8",
@@ -107219,6 +109739,16 @@
         "size": 122
       },
       {
+        "md5": "f61828d54c4ae312c77464effd88b145",
+        "name": "GSM8549639_hc8_atac_fragments.tsv.gz.tbi",
+        "size": 1777006
+      },
+      {
+        "md5": "a5415ed5aa9e4cf1c208460a69f730e5",
+        "name": "GSM8549639_hc8_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 123
+      },
+      {
         "md5": "f0ff4e8b6d8a8ce07f978f9e97cdad5b",
         "name": "GSM8549639_hc8_atac_fragments.tsv.gz.tbi.gz",
         "size": 1777491
@@ -107229,22 +109759,45 @@
         "size": 126
       },
       {
-        "md5": "7b56d717667168da52294af2aafde455",
-        "name": "genomic_resource.yaml",
-        "size": 724
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "05f6a48a8d17a70d412a5bfe6f043e0b",
+        "name": "genomic_resource.yaml",
+        "size": 1113
+      },
+      {
+        "md5": "86c0faaa4efb874768d17a83d74f89b1",
+        "name": "statistics/histogram_cell.json",
+        "size": 20150103
+      },
+      {
+        "md5": "4e0c80bfd336d2a7504b35fe4ee06b7a",
+        "name": "statistics/histogram_cell.png",
+        "size": 144140
+      },
+      {
+        "md5": "4021200784698c03b0b7bd1518a8194d",
+        "name": "statistics/histogram_count.json",
+        "size": 838
+      },
+      {
+        "md5": "ee662c599dec1af1ba5dd8a1de76adfb",
+        "name": "statistics/histogram_count.png",
+        "size": 20048
+      },
+      {
+        "md5": "68a1d2dae81ff9a6719a471e2bb75a80",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1386
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549631_hc81_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549631_hc81_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107256,7 +109809,47 @@
         },
         "summary": "ATAC fragments for hc81 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549631_hc81_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc81",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc81",
@@ -107272,6 +109865,16 @@
         "size": 123
       },
       {
+        "md5": "242f762f52d739294bafad51b51dbb70",
+        "name": "GSM8549631_hc81_atac_fragments.tsv.gz.tbi",
+        "size": 1400909
+      },
+      {
+        "md5": "a313b0c1266da0ccb14266cc045b0fdd",
+        "name": "GSM8549631_hc81_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "62c0d6ec133b048065e8cb18f9e46c84",
         "name": "GSM8549631_hc81_atac_fragments.tsv.gz.tbi.gz",
         "size": 1398849
@@ -107282,22 +109885,45 @@
         "size": 127
       },
       {
-        "md5": "8b174fb085bcee6238eaf72792cfef95",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "3421f1650b35f5347eb87a8ec5e0759e",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "de65e6c0ec822749c9e4263eb8cc00a2",
+        "name": "statistics/histogram_cell.json",
+        "size": 18880161
+      },
+      {
+        "md5": "272b07c87ef277c617b5f67b885161ba",
+        "name": "statistics/histogram_cell.png",
+        "size": 142662
+      },
+      {
+        "md5": "12343c8181ab82d2ff8c01081caebd78",
+        "name": "statistics/histogram_count.json",
+        "size": 825
+      },
+      {
+        "md5": "37a11f62636e7941d03b5e4c0efa4ea2",
+        "name": "statistics/histogram_count.png",
+        "size": 22693
+      },
+      {
+        "md5": "263dbcc30c21281ddbd866f0cdb5fd0d",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549654_hc9_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549654_hc9_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107309,7 +109935,47 @@
         },
         "summary": "ATAC fragments for hc9 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549654_hc9_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc9",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc9",
@@ -107325,6 +109991,16 @@
         "size": 122
       },
       {
+        "md5": "c0e078bc5e4d6232779908c59000365e",
+        "name": "GSM8549654_hc9_atac_fragments.tsv.gz.tbi",
+        "size": 928828
+      },
+      {
+        "md5": "500f34f7975dd3e928e3bd1f02c87e4b",
+        "name": "GSM8549654_hc9_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 122
+      },
+      {
         "md5": "ce4b30ddc04b42f252729ea0c0970440",
         "name": "GSM8549654_hc9_atac_fragments.tsv.gz.tbi.gz",
         "size": 927444
@@ -107335,22 +110011,45 @@
         "size": 125
       },
       {
-        "md5": "341f6e2ee777a3656c260297ea77bac1",
-        "name": "genomic_resource.yaml",
-        "size": 724
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "cd5b128c1e1220d75b09c5d65a321e1a",
+        "name": "genomic_resource.yaml",
+        "size": 1113
+      },
+      {
+        "md5": "8fac360ee2a7bf72eeb78f2722f1eec3",
+        "name": "statistics/histogram_cell.json",
+        "size": 15936926
+      },
+      {
+        "md5": "02eba1ae15584ba1ae4bfe8b0a2a0b13",
+        "name": "statistics/histogram_cell.png",
+        "size": 125060
+      },
+      {
+        "md5": "3bc1cd86e8e09b1141b226252a7bc59a",
+        "name": "statistics/histogram_count.json",
+        "size": 866
+      },
+      {
+        "md5": "b33245d2a72de4ada2dbc5b422ec5a99",
+        "name": "statistics/histogram_count.png",
+        "size": 17894
+      },
+      {
+        "md5": "d8031c2461bdb0a29f749b5e0b47cb6f",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1386
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549623_hc935_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549623_hc935_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107362,7 +110061,47 @@
         },
         "summary": "ATAC fragments for hc935 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549623_hc935_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc935",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc935",
@@ -107378,6 +110117,16 @@
         "size": 124
       },
       {
+        "md5": "39c76c06cb70238b513149002729d999",
+        "name": "GSM8549623_hc935_atac_fragments.tsv.gz.tbi",
+        "size": 1179862
+      },
+      {
+        "md5": "c2239fcb21d2911b52f43f94e719323d",
+        "name": "GSM8549623_hc935_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "f18c7e8b3ffa668e69a047a44169a774",
         "name": "GSM8549623_hc935_atac_fragments.tsv.gz.tbi.gz",
         "size": 1177143
@@ -107388,22 +110137,45 @@
         "size": 128
       },
       {
-        "md5": "5c4d4f95e6e7afd65c7a3111a00c2531",
-        "name": "genomic_resource.yaml",
-        "size": 732
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "4de00fa80ff1885d1f6595fb53f90f25",
+        "name": "genomic_resource.yaml",
+        "size": 1119
+      },
+      {
+        "md5": "08fc1b1758b42d0bba897302d080d921",
+        "name": "statistics/histogram_cell.json",
+        "size": 18218963
+      },
+      {
+        "md5": "e1841c19451641343cf8026829aa5114",
+        "name": "statistics/histogram_cell.png",
+        "size": 137870
+      },
+      {
+        "md5": "88e415a3bf4e83fb45b968f0d5445df0",
+        "name": "statistics/histogram_count.json",
+        "size": 836
+      },
+      {
+        "md5": "5cbf3319b2903846ef0ffb4be41c1dda",
+        "name": "statistics/histogram_count.png",
+        "size": 20279
+      },
+      {
+        "md5": "68a29c3e91ce15d383eb94fdc12adb88",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1392
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549624_hc937_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549624_hc937_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107415,7 +110187,47 @@
         },
         "summary": "ATAC fragments for hc937 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549624_hc937_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc937",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc937",
@@ -107431,6 +110243,16 @@
         "size": 124
       },
       {
+        "md5": "1741e0f126d620bf2efddd522ea119b1",
+        "name": "GSM8549624_hc937_atac_fragments.tsv.gz.tbi",
+        "size": 1223076
+      },
+      {
+        "md5": "33af8ad99226ded23c4d08ae42333c42",
+        "name": "GSM8549624_hc937_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 125
+      },
+      {
         "md5": "5d66b0fdf90f5d11ba4d454aadd6bc89",
         "name": "GSM8549624_hc937_atac_fragments.tsv.gz.tbi.gz",
         "size": 1221989
@@ -107441,22 +110263,45 @@
         "size": 128
       },
       {
-        "md5": "4fa488ae8e4a2c34817f417c8fdde64a",
-        "name": "genomic_resource.yaml",
-        "size": 732
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "05432145488e779d55d48da39bc288e1",
+        "name": "genomic_resource.yaml",
+        "size": 1119
+      },
+      {
+        "md5": "8c28be214624d8aaf3908d248af05759",
+        "name": "statistics/histogram_cell.json",
+        "size": 19129900
+      },
+      {
+        "md5": "0dbfbe0f2118a09ba128d26bb6233273",
+        "name": "statistics/histogram_cell.png",
+        "size": 141835
+      },
+      {
+        "md5": "2b06beb7bd02de738dc2d4c7e9c34fda",
+        "name": "statistics/histogram_count.json",
+        "size": 843
+      },
+      {
+        "md5": "b6d2e3b87e1a09f71d02f57e11cd8b06",
+        "name": "statistics/histogram_count.png",
+        "size": 19723
+      },
+      {
+        "md5": "0cd2c49e4f8da7a99ab27ce4b94ed1b0",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1392
       }
     ],
     "version": "0"
   },
   {
     "config": {
-      "file": "GSM8549645_hc98_atac_fragments.tsv.gz",
-      "index_file": "/gpfs/commons/groups/iossifov_lab/ylee/GRR/GSE278576/GSM8549645_hc98_atac_fragments.tsv.gz.tbi.gz",
       "meta": {
         "description": "\n[Zemke et al., Epigenetic and 3D genome reprogramming during the aging of human hippocampus, bioRxiv, 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618338v1)\n\nDownloaded from: [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278576).\n",
         "labels": {
@@ -107468,7 +110313,47 @@
         },
         "summary": "ATAC fragments for hc98 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "scores": [
+        {
+          "column_index": 3,
+          "histogram": {
+            "displayed_values_count": 5,
+            "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+            "type": "categorical"
+          },
+          "id": "cell",
+          "type": "str"
+        },
+        {
+          "column_index": 4,
+          "histogram": {
+            "number_of_bins": 20,
+            "type": "number",
+            "view_range": {
+              "max": 20,
+              "min": 1
+            }
+          },
+          "id": "count",
+          "type": "int"
+        }
+      ],
+      "table": {
+        "chrom": {
+          "column_index": 0
+        },
+        "filename": "GSM8549645_hc98_atac_fragments.tsv.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        },
+        "zero_based": true
+      },
+      "type": "fragment_score"
     },
     "full_id": "summary/zemke2024Epigenetic/ATACfragments/hc98",
     "id": "summary/zemke2024Epigenetic/ATACfragments/hc98",
@@ -107484,6 +110369,16 @@
         "size": 123
       },
       {
+        "md5": "a57e16c77e1657798a64dd6729de2dff",
+        "name": "GSM8549645_hc98_atac_fragments.tsv.gz.tbi",
+        "size": 1350845
+      },
+      {
+        "md5": "10a8b760e83af6dc67353ed827f99595",
+        "name": "GSM8549645_hc98_atac_fragments.tsv.gz.tbi.dvc",
+        "size": 124
+      },
+      {
         "md5": "1e7bd551c321575809c6629724a46b7f",
         "name": "GSM8549645_hc98_atac_fragments.tsv.gz.tbi.gz",
         "size": 1348664
@@ -107494,14 +110389,39 @@
         "size": 127
       },
       {
-        "md5": "5e13e7192a350a3ca6de79f0114109c4",
-        "name": "genomic_resource.yaml",
-        "size": 728
+        "md5": "9d735ee8c687286d50484e7f1e398e60",
+        "name": "fragment_count_dist_plot.py",
+        "size": 853
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "7277b9e0f1bd484e65fa20b439910dbf",
+        "name": "genomic_resource.yaml",
+        "size": 1116
+      },
+      {
+        "md5": "41ba34cfca11baa917f4bdfe121a6e5a",
+        "name": "statistics/histogram_cell.json",
+        "size": 19032767
+      },
+      {
+        "md5": "9a77edb6b1b18152b403134b955a5a6d",
+        "name": "statistics/histogram_cell.png",
+        "size": 129197
+      },
+      {
+        "md5": "ad7785230fa14d5217fe031ddf36b870",
+        "name": "statistics/histogram_count.json",
+        "size": 848
+      },
+      {
+        "md5": "aa29265da82dd0e7702d857857d5647d",
+        "name": "statistics/histogram_count.png",
+        "size": 20942
+      },
+      {
+        "md5": "e93988903d99a3cd85aa1829ca55409c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 1389
       }
     ],
     "version": "0"
@@ -114511,7 +117431,7 @@
         },
         "summary": "Sample cell expression matrix for hc11 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc11",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc11",
@@ -114527,14 +117447,24 @@
         "size": 123
       },
       {
-        "md5": "e9db4e86d3d0f5ce6a2745d7205b98f5",
+        "md5": "ff5b32d55315fd5ac0f4d0667ff30a97",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9b4f71a0a259fc3b84874e8eb1a7ec4f",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "bfde1e17557a7c6904326a694d6ae69b",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -114552,7 +117482,7 @@
         },
         "summary": "Sample cell expression matrix for hc1134 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1134",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1134",
@@ -114568,14 +117498,24 @@
         "size": 125
       },
       {
-        "md5": "bcf57bc12404eef79c4a975d00c14136",
+        "md5": "63efdb5ff1bba1d26a02fcda3c86cb8e",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "7b1c98331d015148d60299017048436f",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "7522d3de81a9cca559d9f800d44bbd45",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -114593,7 +117533,7 @@
         },
         "summary": "Sample cell expression matrix for hc1153 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1153",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1153",
@@ -114609,14 +117549,24 @@
         "size": 125
       },
       {
-        "md5": "efc179dcbbc266d75559196d31c122e6",
+        "md5": "7f8c61a170055e76080c26a19ff6af7a",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "770fd4952bdb2ee617a4b46743a88711",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "43b3748c89f64857a33bcbeebc14c58c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -114634,7 +117584,7 @@
         },
         "summary": "Sample cell expression matrix for hc12 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc12",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc12",
@@ -114650,14 +117600,24 @@
         "size": 123
       },
       {
-        "md5": "390e21992974869492ca57df4dc301db",
+        "md5": "d19ccbbce18e01bd5422a2031907fc6a",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "6d2ed07f2bab6cf092de1c5427f04b88",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "daef4d47dc020703ab7cf0e3c4749a41",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -114675,7 +117635,7 @@
         },
         "summary": "Sample cell expression matrix for hc1203 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1203",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1203",
@@ -114691,14 +117651,24 @@
         "size": 126
       },
       {
-        "md5": "446d18a90073cf823d5d7b8cf8503f49",
+        "md5": "127d2ee60221d476f6926c57f9a906a9",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "88cbf53d93b181deddeee2258ca8d177",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "b46edc4bc2f516af1d4fc6f756af1237",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -114716,7 +117686,7 @@
         },
         "summary": "Sample cell expression matrix for hc1216 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1216",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1216",
@@ -114732,14 +117702,24 @@
         "size": 126
       },
       {
-        "md5": "2c3c5ebd8a4315b67807507a664edd98",
+        "md5": "fa3b41a1350eb9579dc8d5101fe188a1",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "4c8583a69b95f396d3706aec36169a52",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "149236fe54671083a1bd3aa75cd19658",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -114757,7 +117737,7 @@
         },
         "summary": "Sample cell expression matrix for hc1265 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1265",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1265",
@@ -114773,14 +117753,24 @@
         "size": 126
       },
       {
-        "md5": "17b9b794c38eb2b4a8964b30f46db059",
+        "md5": "19f015ce7c06f969f4acc2da8433403d",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "93a956e01eda3d4abebf50ebe9fbeba6",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "7384c8bb0938751d5f7d754a3f921a84",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -114798,7 +117788,7 @@
         },
         "summary": "Sample cell expression matrix for hc1271 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1271",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1271",
@@ -114814,14 +117804,24 @@
         "size": 126
       },
       {
-        "md5": "c2b305f6e74be69318d8b3c4fe9d7ced",
+        "md5": "e1d16c5578cc7f2e5f177ec26b8d4109",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "c2623694ee9ee62ab89541c8e5ce6342",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "9da6e3457a6cd0a399bf93ab9eca5759",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -114839,7 +117839,7 @@
         },
         "summary": "Sample cell expression matrix for hc13344 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc13344",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc13344",
@@ -114855,14 +117855,24 @@
         "size": 127
       },
       {
-        "md5": "65731f8eb805b600388b23cc07890c06",
+        "md5": "79696a78dc1abc4c95d3e6610883a413",
         "name": "genomic_resource.yaml",
-        "size": 622
+        "size": 625
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "3436d888d662baca613dc814241f4402",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "6b5ce50627ae68be282a3d54b0404341",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 170
       }
     ],
     "version": "0"
@@ -114880,7 +117890,7 @@
         },
         "summary": "Sample cell expression matrix for hc13394 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc13394",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc13394",
@@ -114896,14 +117906,24 @@
         "size": 127
       },
       {
-        "md5": "1338e106de7ac5b7f57c4be42612f601",
+        "md5": "e154c3678212e99ccac64bf3f9b71749",
         "name": "genomic_resource.yaml",
-        "size": 622
+        "size": 625
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "0c8e03465a9bb18a1b302a1aeaebc362",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "80d1982c047a7fac9cf91b6a6c049392",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 170
       }
     ],
     "version": "0"
@@ -114921,7 +117941,7 @@
         },
         "summary": "Sample cell expression matrix for hc13414 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc13414",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc13414",
@@ -114937,14 +117957,24 @@
         "size": 127
       },
       {
-        "md5": "001334a880cdb9d37d8e7144ce15037d",
+        "md5": "d6e7516795e2343ba556a0e29bbc8e51",
         "name": "genomic_resource.yaml",
-        "size": 622
+        "size": 625
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "1738e486c9a62771a3a1b22e783de25d",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "aa79897fc40d5893c57233b0471fd11a",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 170
       }
     ],
     "version": "0"
@@ -114962,7 +117992,7 @@
         },
         "summary": "Sample cell expression matrix for hc1745 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc1745",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc1745",
@@ -114978,14 +118008,24 @@
         "size": 126
       },
       {
-        "md5": "3c6db838c0fb9e17f040af98026267d8",
+        "md5": "ad8d23068280f21508d08f979915b76e",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "2f108bd9c0ff600b28b4b608f2812368",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "a6af2ac8ff807d2d4ae7647dc375541a",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115003,7 +118043,7 @@
         },
         "summary": "Sample cell expression matrix for hc19 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc19",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc19",
@@ -115019,14 +118059,24 @@
         "size": 123
       },
       {
-        "md5": "17d910cddfc20eec35383da5959de24a",
+        "md5": "d1eafb2e1f1047456b2ce91d33638f0e",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "9cc72f253b6f2e5c47a3975f80f82f6a",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "13180069751b0fd8b816a0f15fbb92bc",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115044,7 +118094,7 @@
         },
         "summary": "Sample cell expression matrix for hc212191 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc212191",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc212191",
@@ -115060,14 +118110,24 @@
         "size": 127
       },
       {
-        "md5": "dc4a3206c78c2823e1eff779e0ef8580",
+        "md5": "780f87a09386c7b4db4b7801fef9dbb6",
         "name": "genomic_resource.yaml",
-        "size": 625
+        "size": 628
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "bf961cc3ce8b697c1ad3ab79eb8806e2",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "73304e1c391e15e409781288e4051b57",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 171
       }
     ],
     "version": "0"
@@ -115085,7 +118145,7 @@
         },
         "summary": "Sample cell expression matrix for hc26 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc26",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc26",
@@ -115101,14 +118161,24 @@
         "size": 124
       },
       {
-        "md5": "7f9c2e349047d39588c0394beb86e450",
+        "md5": "33768a9393a5a1267a1ed7c9d114c6e2",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "deffcce021caf553ff1da781174ce7e9",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "fea5f292054fe93e6e0c601086a91463",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115126,7 +118196,7 @@
         },
         "summary": "Sample cell expression matrix for hc29 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc29",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc29",
@@ -115142,14 +118212,24 @@
         "size": 123
       },
       {
-        "md5": "cf80ab799a6dd7f6c017807ceba822d5",
+        "md5": "daf133f9f10b16122aea1c5fb0edefd1",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "e102d6192233dba6b1f9e8c5d10d9962",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "dd3a1f58efdd28d57f23e5fd4500c4ec",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115167,7 +118247,7 @@
         },
         "summary": "Sample cell expression matrix for hc35 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc35",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc35",
@@ -115183,14 +118263,24 @@
         "size": 124
       },
       {
-        "md5": "039171af0e92cb77a30a1d2d67c1ffad",
+        "md5": "6fb4cd57b05e5356dffb3505367d284b",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "76d8254882dbba0f48eb0100ff7ed4ff",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "5d4d45428854dd01cce7fa0e48f64666",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115208,7 +118298,7 @@
         },
         "summary": "Sample cell expression matrix for hc40 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc40",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc40",
@@ -115224,14 +118314,24 @@
         "size": 124
       },
       {
-        "md5": "b9d3bf276cbd2ac6d2584ae7a32414ce",
+        "md5": "5c748580e83c75fab5eac35c17f89898",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "4b7eefa965f6bd74fa82c80f57483d17",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "aecdfee7d995e1dd648d9ca05cbd6251",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115249,7 +118349,7 @@
         },
         "summary": "Sample cell expression matrix for hc46426 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc46426",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc46426",
@@ -115265,14 +118365,24 @@
         "size": 127
       },
       {
-        "md5": "ee9047d0ab8b7fb838133786c794a7d5",
+        "md5": "9635948728d8ce5a48a02ac83a2b8932",
         "name": "genomic_resource.yaml",
-        "size": 622
+        "size": 625
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "e9bb0426e71b740544b3f90a1492132c",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "4dcf3ab5c7b1a40c3cfd483c68134260",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 170
       }
     ],
     "version": "0"
@@ -115290,7 +118400,7 @@
         },
         "summary": "Sample cell expression matrix for hc4781 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc4781",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc4781",
@@ -115306,14 +118416,24 @@
         "size": 125
       },
       {
-        "md5": "6f8d3e4115cb40876217dda638fb30a0",
+        "md5": "5d7f48b736854c77b506ff5d4e6478be",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "eb6044d9445de1395c8c4a67ce7013c2",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "b522ebc3aba6785483407c5f4835e225",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115331,7 +118451,7 @@
         },
         "summary": "Sample cell expression matrix for hc5021 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc5021",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc5021",
@@ -115347,14 +118467,24 @@
         "size": 125
       },
       {
-        "md5": "4dd6b67de8db8e6f7580dcb2c8d8885a",
+        "md5": "118c516e8d1885d355b1129f470abbd6",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "d4af03628638f645ccb83382ecf742f7",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "33f97ac72a17e806f9e396fba12640ca",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115372,7 +118502,7 @@
         },
         "summary": "Sample cell expression matrix for hc5087 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc5087",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc5087",
@@ -115388,14 +118518,24 @@
         "size": 126
       },
       {
-        "md5": "f67a264d0812b3d56ef471d1e43c36dc",
+        "md5": "3ba6d9409b5952fda05941e032e2b17f",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "cea8144bd4959f50aace51299b669754",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "f913eadadd56a8eb22088dc5a16a7f14",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115413,7 +118553,7 @@
         },
         "summary": "Sample cell expression matrix for hc5551 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc5551",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc5551",
@@ -115429,14 +118569,24 @@
         "size": 126
       },
       {
-        "md5": "6e1217299d095f4b14f38e3c74cf9bcb",
+        "md5": "1b168f5d26463f9c6344c98a9acbafa6",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "bfbfd11b1c089848e48ca65b768df9bb",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "5957950c7f9aecdf991837f84f2f1685",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115454,7 +118604,7 @@
         },
         "summary": "Sample cell expression matrix for hc5579 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc5579",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc5579",
@@ -115470,14 +118620,24 @@
         "size": 126
       },
       {
-        "md5": "06ac96f6f2eab09d32f6c0bf52081b23",
+        "md5": "ff934c3c313b76551968d73a88e4b399",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "86a033b0bc2f2bad92c9998bcc797e36",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "59e5695e05332763f5a4c4af8418a423",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115495,7 +118655,7 @@
         },
         "summary": "Sample cell expression matrix for hc5610 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc5610",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc5610",
@@ -115511,14 +118671,24 @@
         "size": 126
       },
       {
-        "md5": "d4b37fe206fa083cfe892cc2bf152bee",
+        "md5": "37a5fda947f20352823edf985e9152db",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "e74098aa1e7c3b4396c4dd006706bd3b",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "d602b94eafeaf2bd087c3b8eb3c19503",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115536,7 +118706,7 @@
         },
         "summary": "Sample cell expression matrix for hc5614 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc5614",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc5614",
@@ -115552,14 +118722,24 @@
         "size": 126
       },
       {
-        "md5": "22cae114c94c324f0cca6862966c0265",
+        "md5": "e4edd056cf3c6898a72fc4004565ecd9",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "3a3d46256341f7e66d2d6c8f989135f2",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "d0c475cfa7a443935eb7e8aec9261e78",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115577,7 +118757,7 @@
         },
         "summary": "Sample cell expression matrix for hc6021 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc6021",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc6021",
@@ -115593,14 +118773,24 @@
         "size": 126
       },
       {
-        "md5": "67e6c230c0ba49d7bd38fd608ca05815",
+        "md5": "9eeedd4349d764b8b92be086e169a71f",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "407492518cb4c88f9483e939f49901fc",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "341f985202c6eebc0eea5655b562e652",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115618,7 +118808,7 @@
         },
         "summary": "Sample cell expression matrix for hc6052 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc6052",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc6052",
@@ -115634,14 +118824,24 @@
         "size": 125
       },
       {
-        "md5": "012f95cacaf5456c0c0080a93798ec01",
+        "md5": "cfd888ff63898daf6ee701e604dd90d0",
         "name": "genomic_resource.yaml",
-        "size": 619
+        "size": 622
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "6a508c11bd50dc372c6b41f6684f576a",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "7bcd87b399d622f4b10d5b9b237c7634",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 169
       }
     ],
     "version": "0"
@@ -115659,7 +118859,7 @@
         },
         "summary": "Sample cell expression matrix for hc69984 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc69984",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc69984",
@@ -115675,14 +118875,24 @@
         "size": 126
       },
       {
-        "md5": "bfb9c0742659ea916667a5606f03624f",
+        "md5": "0ad68f0f8bab7a0bc0ee2a4bd9f515bf",
         "name": "genomic_resource.yaml",
-        "size": 622
+        "size": 625
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "f24a3d2ac22a3893947dcd4494ad56ce",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "625631487fa590d7b74e917001cf57ed",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 170
       }
     ],
     "version": "0"
@@ -115700,7 +118910,7 @@
         },
         "summary": "Sample cell expression matrix for hc73 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc73",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc73",
@@ -115716,14 +118926,24 @@
         "size": 124
       },
       {
-        "md5": "6dbbdf63c232bb068d52728fc1c1b4e8",
+        "md5": "030aeaf74f75b29227242de775369c43",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "bfbbbf5b20f97a78a72bad36ec055697",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "a0c89149db5b9723b78ead4c5925093d",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115741,7 +118961,7 @@
         },
         "summary": "Sample cell expression matrix for hc73787 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc73787",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc73787",
@@ -115757,14 +118977,24 @@
         "size": 127
       },
       {
-        "md5": "61c20aaaf9264dc364e7b78821126977",
+        "md5": "e8d72ab06a17f0db0afe4558de8496d3",
         "name": "genomic_resource.yaml",
-        "size": 622
+        "size": 625
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "84e85a30fbc0530fc699a3bf6278f917",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "3fce106cf6a070ceb2d6bb79cfa0cb3d",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 170
       }
     ],
     "version": "0"
@@ -115782,7 +119012,7 @@
         },
         "summary": "Sample cell expression matrix for hc76 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc76",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc76",
@@ -115798,14 +119028,24 @@
         "size": 123
       },
       {
-        "md5": "24e0b51e31dd2bf4965225f9d26203e3",
+        "md5": "89e27b25ed1d15efa8eb55d62b1f5624",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "336f11dc0e2098bb106ad3f17bb5f5e4",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "da4eb7adefcf8a8f666b6c8a316747ba",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115823,7 +119063,7 @@
         },
         "summary": "Sample cell expression matrix for hc77 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc77",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc77",
@@ -115839,14 +119079,24 @@
         "size": 123
       },
       {
-        "md5": "16d5d6f2543520916865a23adfc88276",
+        "md5": "3a6682f322d9c333ef9aa17bdd418c38",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "38c810af2e81e566aef017cdadaec768",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "b4d4a02288f77e14ff266e3629282507",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115864,7 +119114,7 @@
         },
         "summary": "Sample cell expression matrix for hc78 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc78",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc78",
@@ -115880,14 +119130,24 @@
         "size": 123
       },
       {
-        "md5": "823fded2d7789a5a154ca6e13d20b1b6",
+        "md5": "59bf0c034bb11b92ce64949a5966db7a",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "2bee05c5e04c34d51a1e5eb36fd14077",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "938c387b8b2295d4f8b7c6e3faebb44e",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115905,7 +119165,7 @@
         },
         "summary": "Sample cell expression matrix for hc8 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc8",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc8",
@@ -115921,14 +119181,24 @@
         "size": 123
       },
       {
-        "md5": "ee71ac0809fa3cd380532bfc94edd0d2",
+        "md5": "94da7183ce43e4f353188b1ec753b333",
         "name": "genomic_resource.yaml",
-        "size": 610
+        "size": 613
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "ffeb9f7449cc48fa84fda2b138844705",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "a17ec141a046016b9f3359fc51ccd674",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 166
       }
     ],
     "version": "0"
@@ -115946,7 +119216,7 @@
         },
         "summary": "Sample cell expression matrix for hc81 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc81",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc81",
@@ -115962,14 +119232,24 @@
         "size": 124
       },
       {
-        "md5": "16e9d01930a68d3b68d5e80ad09c0bf1",
+        "md5": "1849a3da9005e22fe203a7135abd3856",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "4551bf7aac96da4653a43fe8ae2b3cba",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "97c926fa2a8879398e14e280faa9c50b",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
@@ -115987,7 +119267,7 @@
         },
         "summary": "Sample cell expression matrix for hc9 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc9",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc9",
@@ -116003,14 +119283,24 @@
         "size": 122
       },
       {
-        "md5": "27a986d3b635d8033ffc1505939117a7",
+        "md5": "ca182577030c0c1bdf6016152728be2c",
         "name": "genomic_resource.yaml",
-        "size": 610
+        "size": 613
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "1701bb3dc25ef2d49385c9ea1d3cea3a",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "bcc0845b46b84f2c33ba4547490e0aa9",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 166
       }
     ],
     "version": "0"
@@ -116028,7 +119318,7 @@
         },
         "summary": "Sample cell expression matrix for hc935 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc935",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc935",
@@ -116044,14 +119334,24 @@
         "size": 125
       },
       {
-        "md5": "03e97c1c1f2740046be681a2eb73262d",
+        "md5": "7d3085c0195a3f6a4c5b0d5341828883",
         "name": "genomic_resource.yaml",
-        "size": 616
+        "size": 619
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "3047d6cfd78aac188b608fb22b808330",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "d2cb8cbe32c9281e790b1b51c7123d1c",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 168
       }
     ],
     "version": "0"
@@ -116069,7 +119369,7 @@
         },
         "summary": "Sample cell expression matrix for hc937 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc937",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc937",
@@ -116085,14 +119385,24 @@
         "size": 125
       },
       {
-        "md5": "f739cb598e9f36ff63a4c6ca60878942",
+        "md5": "eea7a55b3b856906eb14d3dd8a1ee098",
         "name": "genomic_resource.yaml",
-        "size": 616
+        "size": 619
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "cb66fb62ea8ce7a1edf94caacbe9aae4",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "b35e2a20241ebb14d14cc12b4720cafa",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 168
       }
     ],
     "version": "0"
@@ -116110,7 +119420,7 @@
         },
         "summary": "Sample cell expression matrix for hc98 from zemke2024Epigenetic."
       },
-      "type": "basic"
+      "type": "ann_data"
     },
     "full_id": "summary/zemke2024Epigenetic/RNAmatrix/hc98",
     "id": "summary/zemke2024Epigenetic/RNAmatrix/hc98",
@@ -116126,14 +119436,24 @@
         "size": 124
       },
       {
-        "md5": "1e33c384b9e8f9ece3b9deb8f967f278",
+        "md5": "4fe438d748b0d1c637b4397433e6b0cc",
         "name": "genomic_resource.yaml",
-        "size": 613
+        "size": 616
       },
       {
-        "md5": "6a99c575ab87f8c7d1ed1e52e7e349ce",
+        "md5": "94a591a6a11dade85a43dddd891030a6",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 135
+      },
+      {
+        "md5": "899ee98adef43d7c03128962b60099e5",
+        "name": "statistics/describe_var.csv",
+        "size": 161
+      },
+      {
+        "md5": "e9b0b0b9f3ff973c6421d49f66ab2187",
         "name": "statistics/stats_hash",
-        "size": 11
+        "size": 167
       }
     ],
     "version": "0"
