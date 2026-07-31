@@ -1,0 +1,745 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S2</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Cluster annotations and QC metrics, related to Fig. 1
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>Cluster</code></td>
+  <td>unique cluster id</td>
+</tr>
+<tr>
+  <td><code>organ</code></td>
+  <td>organ name</td>
+</tr>
+<tr>
+  <td><code>organ_code</code></td>
+  <td>abbreviated organ name</td>
+</tr>
+<tr>
+  <td><code>cluster_id</code></td>
+  <td>cluster id within organ</td>
+</tr>
+<tr>
+  <td><code>compartment</code></td>
+  <td>cellular compartment (epithelial/endothelial/immune/stromal)</td>
+</tr>
+<tr>
+  <td><code>L1_annot</code></td>
+  <td>level 1 cell type annotation (n=203)</td>
+</tr>
+<tr>
+  <td><code>L2_annot</code></td>
+  <td>level 2 cell type annotation (n=134)</td>
+</tr>
+<tr>
+  <td><code>L3_annot</code></td>
+  <td>level 3 cell type annotation (n=37)</td>
+</tr>
+<tr>
+  <td><code>dend_order</code></td>
+  <td>order of cluster from hierarchically clustering L1 cell types</td>
+</tr>
+<tr>
+  <td><code>ncell</code></td>
+  <td>number of cells in cluster</td>
+</tr>
+<tr>
+  <td><code>median_numi</code></td>
+  <td>median RNA number of UMIs per cell</td>
+</tr>
+<tr>
+  <td><code>median_ngene</code></td>
+  <td>median RNA number of genes per cell</td>
+</tr>
+<tr>
+  <td><code>median_nfrags</code></td>
+  <td>median ATAC number of fragments per cell</td>
+</tr>
+<tr>
+  <td><code>median_tss</code></td>
+  <td>median ATAC TSS enrichment ratio per cell</td>
+</tr>
+<tr>
+  <td><code>median_frip</code></td>
+  <td>median ATAC fraction of reads in peaks per cell</td>
+</tr>
+<tr>
+  <td><code>note</code></td>
+  <td>notes used for cell type annotation</td>
+</tr>
+<tr>
+  <td><code>organ_color</code></td>
+  <td>color for clusters based on organ</td>
+</tr>
+<tr>
+  <td><code>compartment_color</code></td>
+  <td>color for clusters based on compartment</td>
+</tr>
+<tr>
+  <td><code>Cluster_ChromBPNet</code></td>
+  <td>cluster id used in ChromBPNet models</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Cluster</th>
+      <td>203</td>
+      <td>203</td>
+      <td>LI_13</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organ</th>
+      <td>203</td>
+      <td>12</td>
+      <td>Eye</td>
+      <td>22</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organ_code</th>
+      <td>203</td>
+      <td>12</td>
+      <td>EY</td>
+      <td>22</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cluster_id</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.428571</td>
+      <td>5.598671</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>compartment</th>
+      <td>203</td>
+      <td>4</td>
+      <td>epi</td>
+      <td>79</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L1_annot</th>
+      <td>203</td>
+      <td>203</td>
+      <td>LI_13_cholangiocyte</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L2_annot</th>
+      <td>203</td>
+      <td>134</td>
+      <td>Brain excitatory neurons</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L3_annot</th>
+      <td>203</td>
+      <td>37</td>
+      <td>fibroblasts</td>
+      <td>24</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>dend_order</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>102.0</td>
+      <td>58.745213</td>
+      <td>1.0</td>
+      <td>51.5</td>
+      <td>102.0</td>
+      <td>152.5</td>
+      <td>203.0</td>
+    </tr>
+    <tr>
+      <th>ncell</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4028.275862</td>
+      <td>4689.280484</td>
+      <td>25.0</td>
+      <td>965.5</td>
+      <td>2660.0</td>
+      <td>5595.0</td>
+      <td>33620.0</td>
+    </tr>
+    <tr>
+      <th>median_numi</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2914.007389</td>
+      <td>1917.521095</td>
+      <td>877.0</td>
+      <td>1742.0</td>
+      <td>2297.0</td>
+      <td>3383.75</td>
+      <td>12916.0</td>
+    </tr>
+    <tr>
+      <th>median_ngene</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1761.921182</td>
+      <td>664.749514</td>
+      <td>690.5</td>
+      <td>1290.5</td>
+      <td>1567.5</td>
+      <td>2143.75</td>
+      <td>4536.0</td>
+    </tr>
+    <tr>
+      <th>median_nfrags</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7010.389163</td>
+      <td>3391.098553</td>
+      <td>1581.0</td>
+      <td>4483.25</td>
+      <td>6221.0</td>
+      <td>9077.75</td>
+      <td>20768.5</td>
+    </tr>
+    <tr>
+      <th>median_tss</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.180724</td>
+      <td>1.735068</td>
+      <td>6.2295</td>
+      <td>8.039</td>
+      <td>8.9465</td>
+      <td>10.121</td>
+      <td>16.468</td>
+    </tr>
+    <tr>
+      <th>median_frip</th>
+      <td>203.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.335284</td>
+      <td>0.092777</td>
+      <td>0.169153</td>
+      <td>0.26875</td>
+      <td>0.313053</td>
+      <td>0.379597</td>
+      <td>0.611671</td>
+    </tr>
+    <tr>
+      <th>note</th>
+      <td>203</td>
+      <td>174</td>
+      <td>TPO, TG, TSHR+</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organ_color</th>
+      <td>203</td>
+      <td>12</td>
+      <td>#ff9f0f</td>
+      <td>22</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>compartment_color</th>
+      <td>203</td>
+      <td>4</td>
+      <td>#11A579</td>
+      <td>79</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Cluster_ChromBPNet</th>
+      <td>203</td>
+      <td>203</td>
+      <td>Liver_c13</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S2.xlsx'>S2.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">31.27 KB</td>
+                <td class="nowrap">3ff4e09b245f728fdd0a38ae99dff204</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S2.xlsx.dvc'>S2.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">88.0 B</td>
+                <td class="nowrap">50e4bb345914ad62cd4d65d55a83e884</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">2.16 KB</td>
+                <td class="nowrap">805c6065d312d39c5586eddc572f5f5b</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

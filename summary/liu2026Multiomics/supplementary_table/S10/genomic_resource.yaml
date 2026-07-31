@@ -1,0 +1,16 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name       | column_description                      |
+
+    | ----------------- | --------------------------------------- |
+
+    | `study_id`        | CAUSALdb unique ID for trait            |
+
+    | `MeSH_id`         | Medical Subject Headings ID for trait   |
+
+    | `full_trait_name` | Name of trait                           |'
+  summary: Causal variants linked to relevant traits, related to Fig. 6
+parameters:
+  sheet_name: S10
+type: data_frame

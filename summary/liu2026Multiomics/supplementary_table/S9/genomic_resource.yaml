@@ -1,0 +1,27 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name      | column_description                                            |
+
+    | ---------------- | -------------------------------------------------------------
+    |
+
+    | `meta_ID`        | CAUSALdb unique ID for trait                                  |
+
+    | `MeSH_ID`        | Medical Subject Headings ID for trait                         |
+
+    | `trait_name`     | Name of trait                                                 |
+
+    | `fetal_celltype` | Fetal cell type enriched with variants from indicated trait   |
+
+    | `z`              | Z score of gchromVAR enrichment                               |
+
+    | `p`              | p value of gchromVAR enrichment                               |
+
+    | `FDR`            | False discovery rate (Benjamini-Hochberg adjusted p value)    |
+
+    | `organ`          | Organ the fetal cell type is found in                         |'
+  summary: g-chromVAR results, related to Fig. 6
+parameters:
+  sheet_name: S9
+type: data_frame

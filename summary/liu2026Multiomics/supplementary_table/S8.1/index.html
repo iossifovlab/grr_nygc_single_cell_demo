@@ -1,0 +1,484 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S8.1</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">eQTL tables (S8.1) and fisher exact test statistic (S8.2), related to Fig. 5
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>organ</code></td>
+  <td>Organ name</td>
+</tr>
+<tr>
+  <td><code>eQTL_direction</code></td>
+  <td>Direction of effect of eQTL variant on gene expression. "negative" indicates variant is associated with decreased gene expression. "positive" indicates variant is associated with increased gene expression.</td>
+</tr>
+<tr>
+  <td><code>motif_pattern_class</code></td>
+  <td>Whether motif is classified as positive or negative</td>
+</tr>
+<tr>
+  <td><code>motif</code></td>
+  <td>Unique motif name</td>
+</tr>
+<tr>
+  <td><code>broad_motif_group</code></td>
+  <td>Broader motif annotation group</td>
+</tr>
+<tr>
+  <td><code>variant</code></td>
+  <td>eQTL variant name from GTEx V8 indicating (chromosome<em>position</em>ref_alt)</td>
+</tr>
+<tr>
+  <td><code>gene_ID</code></td>
+  <td>Ensembl gene ID of affected gene</td>
+</tr>
+<tr>
+  <td><code>gene_name</code></td>
+  <td>Gene symbol of affected gene</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>organ</th>
+      <td>2365</td>
+      <td>10</td>
+      <td>Heart</td>
+      <td>629</td>
+    </tr>
+    <tr>
+      <th>eQTL_direction</th>
+      <td>2365</td>
+      <td>2</td>
+      <td>negative</td>
+      <td>1593</td>
+    </tr>
+    <tr>
+      <th>motif_pattern_class</th>
+      <td>2365</td>
+      <td>2</td>
+      <td>positive</td>
+      <td>1617</td>
+    </tr>
+    <tr>
+      <th>motif</th>
+      <td>2365</td>
+      <td>30</td>
+      <td>157|ETS:ELF/ETV#1</td>
+      <td>717</td>
+    </tr>
+    <tr>
+      <th>broad_motif_group</th>
+      <td>2365</td>
+      <td>26</td>
+      <td>ETS</td>
+      <td>858</td>
+    </tr>
+    <tr>
+      <th>variant</th>
+      <td>2365</td>
+      <td>1569</td>
+      <td>chr8_33473169_A_C_b38</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>gene_ID</th>
+      <td>2365</td>
+      <td>1601</td>
+      <td>ENSG00000204920.10</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>gene_name</th>
+      <td>2365</td>
+      <td>1601</td>
+      <td>ZNF155</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S8.1.xlsx'>S8.1.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">115.52 KB</td>
+                <td class="nowrap">5a55e9632a501c9bdf63498eb10c0842</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S8.1.xlsx.dvc'>S8.1.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">91.0 B</td>
+                <td class="nowrap">4a366685415a6e7a6f9d443a9d854558</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">2.58 KB</td>
+                <td class="nowrap">fdf4ee849ff1415fc58ff1f17859d744</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

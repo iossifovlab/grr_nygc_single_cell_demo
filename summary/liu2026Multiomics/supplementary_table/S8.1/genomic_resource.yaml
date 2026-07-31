@@ -1,0 +1,30 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name           | column_description                                                                                                                                                                                              |
+
+    | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `organ`               | Organ name                                                                                                                                                                                                      |
+
+    | `eQTL_direction`      | Direction of effect of eQTL variant on gene expression.
+    "negative" indicates variant is associated with decreased gene expression. "positive"
+    indicates variant is associated with increased gene expression.   |
+
+    | `motif_pattern_class` | Whether motif is classified as positive or negative                                                                                                                                                             |
+
+    | `motif`               | Unique motif name                                                                                                                                                                                               |
+
+    | `broad_motif_group`   | Broader motif annotation group                                                                                                                                                                                  |
+
+    | `variant`             | eQTL variant name from GTEx V8 indicating (chromosome_position_ref_alt)                                                                                                                                         |
+
+    | `gene_ID`             | Ensembl gene ID of affected gene                                                                                                                                                                                |
+
+    | `gene_name`           | Gene symbol of affected gene                                                                                                                                                                                    |'
+  summary: eQTL tables (S8.1) and fisher exact test statistic (S8.2), related to Fig.
+    5
+parameters:
+  sheet_name: S8.1
+type: data_frame

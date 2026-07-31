@@ -1,0 +1,23 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name | column_description                           |
+
+    | ----------- | -------------------------------------------- |
+
+    | `ENCODE_ID` | ENCODE unique identifier for peak set data   |
+
+    | `tissue`    | Tissue of peak set                           |
+
+    | `celltype`  | Cell type of peak set                        |
+
+    | `organ`     | Matched fetal organ                          |
+
+    | `peak_type` | Type of peak set used                        |
+
+    | `assay`     | Assay type of peak set data                  |'
+  summary: List of ENCODE accessions of the adult snATAC-seq peak sets, related to
+    Fig. 6
+parameters:
+  sheet_name: S12
+type: data_frame

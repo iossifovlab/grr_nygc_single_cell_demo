@@ -1,0 +1,781 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S7</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Results of in silico tests for synergy, related to Fig. 4
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>motif_name</code></td>
+  <td>unique name for the motif within the compendium, as in Table S6. Out of 138 motif pairs tested, only the 120 motifs where inserted sequences were confirmed to drive predicted accessibilty are shown here.</td>
+</tr>
+<tr>
+  <td><code>idx_uniq</code></td>
+  <td>unique ID for the motif within the compendium, as in Table S6</td>
+</tr>
+<tr>
+  <td><code>category</code></td>
+  <td>motif category as in Table S6 (homocomposite or heterocomposite)</td>
+</tr>
+<tr>
+  <td><code>result</code></td>
+  <td>result of in silico experiment. hard: motifs have synergy with hard syntax. hard &amp; soft: motifs have both synergy with both hard and soft syntax. soft: motifs have synergy with soft syntax. no synergy: motifs do not have synergy.</td>
+</tr>
+<tr>
+  <td><code>Cluster_ChromBPNet</code></td>
+  <td>cluster for which ChromBPNet models were used in the in silico experiments for this motif</td>
+</tr>
+<tr>
+  <td><code>annotation_broad</code></td>
+  <td>broad annotation for the motif</td>
+</tr>
+<tr>
+  <td><code>component_motifA</code></td>
+  <td>annotation of the first constituent of the composite motif</td>
+</tr>
+<tr>
+  <td><code>component_motifB</code></td>
+  <td>annotation of the second constituent of the composite motif</td>
+</tr>
+<tr>
+  <td><code>seqA</code></td>
+  <td>sequence tested for component motif A in the "head" orientation</td>
+</tr>
+<tr>
+  <td><code>seqB</code></td>
+  <td>sequence tested for component motif B in the "head" orientation</td>
+</tr>
+<tr>
+  <td><code>best_orientation</code></td>
+  <td>orientation of motifs for the motif arrangement with maximum effect (HH: head-to-head; TT: tail-to-tail; HT: head-to-tail; A,B HT: head-to-tail with A first; B,A HT: head-to-tail with B first)</td>
+</tr>
+<tr>
+  <td><code>best_distance_between_motifs</code></td>
+  <td>distance between motifs for the motif arrangement with maximum effect</td>
+</tr>
+<tr>
+  <td><code>best_dist_centers</code></td>
+  <td>distance between motif centers for the motif arrangement with the maximum effect</td>
+</tr>
+<tr>
+  <td><code>best_seq</code></td>
+  <td>nucleotide sequence for motifs at the orientation and distance with the maximum effect (spacer nucleotides between motifs are represented by Ns)</td>
+</tr>
+<tr>
+  <td><code>joint_effect_log_counts</code></td>
+  <td>joint effect of the two motifs at their best arrangement in log counts, defined as the difference between predicted log counts for the motifs together and predicted log counts for the background (delta<em>J = y</em>J - y_0 in Methods)</td>
+</tr>
+<tr>
+  <td><code>joint_vs_sum_p_value</code></td>
+  <td>p-value for Wilcoxon signed-rank test between joint and sum of independent effects</td>
+</tr>
+<tr>
+  <td><code>joint_vs_sum_p_value_adj</code></td>
+  <td>adjusted p-value after Benjamini-Hochberg method</td>
+</tr>
+<tr>
+  <td><code>Z_scored_joint_effect</code></td>
+  <td>Z-score of the joint effect at the best arrangement (joint effects were Z-scored across all arrangements)</td>
+</tr>
+<tr>
+  <td><code>independent_effect</code></td>
+  <td>log-additive independent effects for two motifs inserted independently, in log counts (delta<em>S = y</em>A - y<em>0 + y</em>B - y_0 in Methods)</td>
+</tr>
+<tr>
+  <td><code>seqA_palindrome</code></td>
+  <td>whether sequence A is a true palindrome (P), quasi-palindrome (Q), or neither (-)</td>
+</tr>
+<tr>
+  <td><code>seqB_palindrome</code></td>
+  <td>whether sequence B is a true palindrome (P), quasi-palindrome (Q), or neither (-)</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>motif_name</th>
+      <td>120</td>
+      <td>120</td>
+      <td>106|BZIP:ATF/CREB_MEF2</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>idx_uniq</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>207.0</td>
+      <td>136.409295</td>
+      <td>1.0</td>
+      <td>78.0</td>
+      <td>208.5</td>
+      <td>313.5</td>
+      <td>467.0</td>
+    </tr>
+    <tr>
+      <th>category</th>
+      <td>120</td>
+      <td>2</td>
+      <td>heterocomposite</td>
+      <td>90</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>result</th>
+      <td>120</td>
+      <td>4</td>
+      <td>no synergy</td>
+      <td>53</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Cluster_ChromBPNet</th>
+      <td>120</td>
+      <td>57</td>
+      <td>Skin_c0</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>annotation_broad</th>
+      <td>120</td>
+      <td>92</td>
+      <td>BHLH_BHLH</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>component_motifA</th>
+      <td>120</td>
+      <td>45</td>
+      <td>BHLH</td>
+      <td>12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>component_motifB</th>
+      <td>120</td>
+      <td>45</td>
+      <td>SP/KLF</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>seqA</th>
+      <td>120</td>
+      <td>45</td>
+      <td>CAGCTG</td>
+      <td>16</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>seqB</th>
+      <td>120</td>
+      <td>69</td>
+      <td>GCCCCGCCC</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>best_orientation</th>
+      <td>120</td>
+      <td>5</td>
+      <td>HH</td>
+      <td>33</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>best_distance_between_motifs</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.666667</td>
+      <td>9.43116</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>best_dist_centers</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>13.941667</td>
+      <td>9.600679</td>
+      <td>4.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>14.0</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>best_seq</th>
+      <td>120</td>
+      <td>120</td>
+      <td>TCACGTCANNNNCTAAAAATAG</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>joint_effect_log_counts</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.534695</td>
+      <td>0.348299</td>
+      <td>0.085524</td>
+      <td>0.303725</td>
+      <td>0.456811</td>
+      <td>0.666983</td>
+      <td>1.832275</td>
+    </tr>
+    <tr>
+      <th>joint_vs_sum_p_value</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.00235</td>
+      <td>0.011814</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000002</td>
+      <td>0.111118</td>
+    </tr>
+    <tr>
+      <th>joint_vs_sum_p_value_adj</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.002416</td>
+      <td>0.011948</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000003</td>
+      <td>0.111929</td>
+    </tr>
+    <tr>
+      <th>Z_scored_joint_effect</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.468874</td>
+      <td>4.453045</td>
+      <td>2.056279</td>
+      <td>3.124728</td>
+      <td>4.552346</td>
+      <td>8.757325</td>
+      <td>19.883507</td>
+    </tr>
+    <tr>
+      <th>independent_effect</th>
+      <td>120.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.272766</td>
+      <td>0.222053</td>
+      <td>0.039968</td>
+      <td>0.123425</td>
+      <td>0.206533</td>
+      <td>0.341651</td>
+      <td>1.381913</td>
+    </tr>
+    <tr>
+      <th>seqA_palindrome</th>
+      <td>120</td>
+      <td>3</td>
+      <td>-</td>
+      <td>56</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>seqB_palindrome</th>
+      <td>120</td>
+      <td>3</td>
+      <td>-</td>
+      <td>94</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S7.xlsx'>S7.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">24.13 KB</td>
+                <td class="nowrap">4037def676550d87f82981b53be01db1</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S7.xlsx.dvc'>S7.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">88.0 B</td>
+                <td class="nowrap">91bc8e1f7284d659f4d528ad8e5c22d8</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">6.45 KB</td>
+                <td class="nowrap">af9c8707d608895d4df1fb96d0623ee4</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

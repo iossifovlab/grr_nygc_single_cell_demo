@@ -1,0 +1,14 @@
+file: Supplemental Table S6.2.xlsx
+format: excel
+meta:
+  description: "Summary of sequencing model analysis for genome-wide significant variants\
+    \ associated with SCZ and Alzheimer\u2019s disease. For each variant, a proximal\
+    \ gene is listed, and the predicted impact on chromatin accessibility is quantified\
+    \ using contribution scores across MAGMA-significant cell types. The Delta of\
+    \ Chromatin Accessibility is reported (predicted accessibility of the reference\
+    \ sequence minus accessibility of the mutated sequence)."
+  summary: Effects of genome-wide significant variants on predicted chromatin accessibility.
+    - SCZ_SNPs
+parameters:
+  sheet_name: SCZ_SNPs
+type: data_frame

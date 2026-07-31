@@ -1,0 +1,50 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name          | column_description                                              |
+
+    | -------------------- | ---------------------------------------------------------------
+    |
+
+    | `Cluster`            | unique cluster id                                               |
+
+    | `organ`              | organ name                                                      |
+
+    | `organ_code`         | abbreviated organ name                                          |
+
+    | `cluster_id`         | cluster id within organ                                         |
+
+    | `compartment`        | cellular compartment (epithelial/endothelial/immune/stromal)    |
+
+    | `L1_annot`           | level 1 cell type annotation (n=203)                            |
+
+    | `L2_annot`           | level 2 cell type annotation (n=134)                            |
+
+    | `L3_annot`           | level 3 cell type annotation (n=37)                             |
+
+    | `dend_order`         | order of cluster from hierarchically clustering L1 cell
+    types   |
+
+    | `ncell`              | number of cells in cluster                                      |
+
+    | `median_numi`        | median RNA number of UMIs per cell                              |
+
+    | `median_ngene`       | median RNA number of genes per cell                             |
+
+    | `median_nfrags`      | median ATAC number of fragments per cell                        |
+
+    | `median_tss`         | median ATAC TSS enrichment ratio per cell                       |
+
+    | `median_frip`        | median ATAC fraction of reads in peaks per cell                 |
+
+    | `note`               | notes used for cell type annotation                             |
+
+    | `organ_color`        | color for clusters based on organ                               |
+
+    | `compartment_color`  | color for clusters based on compartment                         |
+
+    | `Cluster_ChromBPNet` | cluster id used in ChromBPNet models                            |'
+  summary: Cluster annotations and QC metrics, related to Fig. 1
+parameters:
+  sheet_name: S2
+type: data_frame

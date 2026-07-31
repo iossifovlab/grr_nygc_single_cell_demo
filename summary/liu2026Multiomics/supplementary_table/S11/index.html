@@ -1,0 +1,853 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S11</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">List of motifs with disease causal variants, related to Fig. 6
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>meta_id</code></td>
+  <td>CAUSALdb unique ID for trait</td>
+</tr>
+<tr>
+  <td><code>mesh_id</code></td>
+  <td>Medical Subject Headings ID for trait</td>
+</tr>
+<tr>
+  <td><code>trait</code></td>
+  <td>Name of trait</td>
+</tr>
+<tr>
+  <td><code>motifName</code></td>
+  <td>Unique motif name</td>
+</tr>
+<tr>
+  <td><code>organ</code></td>
+  <td>Organ the cell type is found in</td>
+</tr>
+<tr>
+  <td><code>celltype</code></td>
+  <td>Cell type enriched with trait variants</td>
+</tr>
+<tr>
+  <td><code>susie</code></td>
+  <td>SuSiE posterior inclusion probability score (PIP)</td>
+</tr>
+<tr>
+  <td><code>z</code></td>
+  <td>Z score of gchromVAR enrichment</td>
+</tr>
+<tr>
+  <td><code>p</code></td>
+  <td>p value of gchromVAR enrichment</td>
+</tr>
+<tr>
+  <td><code>FDR</code></td>
+  <td>False discovery rate (Benjamini-Hochberg adjusted p value)</td>
+</tr>
+<tr>
+  <td><code>motifChr.hg38</code></td>
+  <td>Chromosome of motif position (hg38)</td>
+</tr>
+<tr>
+  <td><code>motifStart.hg38</code></td>
+  <td>Start coordinate of motif position (hg38)</td>
+</tr>
+<tr>
+  <td><code>motifEnd.hg38</code></td>
+  <td>End coordinate of motif position (hg38)</td>
+</tr>
+<tr>
+  <td><code>motifChr.hg19</code></td>
+  <td>Chromosome of motif position (hg19)</td>
+</tr>
+<tr>
+  <td><code>motifStart.hg19</code></td>
+  <td>Start coordinate of motif position (hg19)</td>
+</tr>
+<tr>
+  <td><code>motifEnd.hg19</code></td>
+  <td>End coordinate of motif position (hg19)</td>
+</tr>
+<tr>
+  <td><code>snpChr.hg38</code></td>
+  <td>Chromosome of causal SNP position (hg38)</td>
+</tr>
+<tr>
+  <td><code>snpPos.hg38</code></td>
+  <td>Coordinate of causal SNP position (hg38)</td>
+</tr>
+<tr>
+  <td><code>snpChr.hg19</code></td>
+  <td>Chromosome of causal SNP position (hg19)</td>
+</tr>
+<tr>
+  <td><code>snpPos.hg19</code></td>
+  <td>Coordinate of causal SNP position (hg19)</td>
+</tr>
+<tr>
+  <td><code>rsid</code></td>
+  <td>RS identifier for SNP</td>
+</tr>
+<tr>
+  <td><code>adult_celltype</code></td>
+  <td>Cell type of matching adult peak sets used</td>
+</tr>
+<tr>
+  <td><code>found_in_X_adult_peaksets</code></td>
+  <td>Number of adult peaksets overlapping causal SNP</td>
+</tr>
+<tr>
+  <td><code>total_adult_peaksets</code></td>
+  <td>Total number of adult peak sets examined</td>
+</tr>
+<tr>
+  <td><code>found_in_min_2_peakset</code></td>
+  <td>Indication of whether at least 2 adult peak sets overlap the causal SNP. "fetalOnly": &lt; 2, "both": &gt;=2, "notChecked": No matching adult peak sets were availabe for overlapping</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>meta_id</th>
+      <td>182</td>
+      <td>37</td>
+      <td>GCST90038616</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mesh_id</th>
+      <td>182</td>
+      <td>25</td>
+      <td>D001249</td>
+      <td>41</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>trait</th>
+      <td>182</td>
+      <td>32</td>
+      <td>Asthma</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>motifName</th>
+      <td>182</td>
+      <td>37</td>
+      <td>456|ZEB/SNAI</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organ</th>
+      <td>182</td>
+      <td>10</td>
+      <td>Heart</td>
+      <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>celltype</th>
+      <td>182</td>
+      <td>31</td>
+      <td>vascular.endothelium</td>
+      <td>19</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>susie</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.96226</td>
+      <td>0.05693</td>
+      <td>0.80364</td>
+      <td>0.956911</td>
+      <td>0.990624</td>
+      <td>0.999278</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>z</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.731037</td>
+      <td>0.842621</td>
+      <td>2.693304</td>
+      <td>3.189951</td>
+      <td>3.40872</td>
+      <td>4.184051</td>
+      <td>6.433906</td>
+    </tr>
+    <tr>
+      <th>p</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000595</td>
+      <td>0.000816</td>
+      <td>0.0</td>
+      <td>0.000014</td>
+      <td>0.000326</td>
+      <td>0.000712</td>
+      <td>0.003537</td>
+    </tr>
+    <tr>
+      <th>FDR</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.014892</td>
+      <td>0.014587</td>
+      <td>0.0</td>
+      <td>0.001268</td>
+      <td>0.012175</td>
+      <td>0.02516</td>
+      <td>0.04988</td>
+    </tr>
+    <tr>
+      <th>motifChr.hg38</th>
+      <td>182</td>
+      <td>15</td>
+      <td>chr1</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>motifStart.hg38</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79813435.928571</td>
+      <td>59391049.119374</td>
+      <td>6051175.0</td>
+      <td>30028142.0</td>
+      <td>67121281.0</td>
+      <td>113194849.5</td>
+      <td>236465833.0</td>
+    </tr>
+    <tr>
+      <th>motifEnd.hg38</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79813443.379121</td>
+      <td>59391049.794081</td>
+      <td>6051182.0</td>
+      <td>30028146.0</td>
+      <td>67121288.0</td>
+      <td>113194855.25</td>
+      <td>236465839.0</td>
+    </tr>
+    <tr>
+      <th>motifChr.hg19</th>
+      <td>182</td>
+      <td>15</td>
+      <td>chr1</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>motifStart.hg19</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79787364.879121</td>
+      <td>59370553.769914</td>
+      <td>6093138.0</td>
+      <td>30317071.0</td>
+      <td>67413619.0</td>
+      <td>113597677.75</td>
+      <td>236629133.0</td>
+    </tr>
+    <tr>
+      <th>motifEnd.hg19</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79787372.32967</td>
+      <td>59370554.437376</td>
+      <td>6093145.0</td>
+      <td>30317075.0</td>
+      <td>67413626.0</td>
+      <td>113597685.0</td>
+      <td>236629139.0</td>
+    </tr>
+    <tr>
+      <th>snpChr.hg38</th>
+      <td>182</td>
+      <td>15</td>
+      <td>chr1</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>snpPos.hg38</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79813439.467033</td>
+      <td>59391049.550032</td>
+      <td>6051176.0</td>
+      <td>30028144.0</td>
+      <td>67121286.0</td>
+      <td>113194852.5</td>
+      <td>236465834.0</td>
+    </tr>
+    <tr>
+      <th>snpChr.hg19</th>
+      <td>182</td>
+      <td>15</td>
+      <td>chr1</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>snpPos.hg19</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79787368.417582</td>
+      <td>59370554.197398</td>
+      <td>6093139.0</td>
+      <td>30317073.0</td>
+      <td>67413624.0</td>
+      <td>113597681.25</td>
+      <td>236629134.0</td>
+    </tr>
+    <tr>
+      <th>rsid</th>
+      <td>182</td>
+      <td>43</td>
+      <td>rs117683492</td>
+      <td>21</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>adult_celltype</th>
+      <td>182</td>
+      <td>20</td>
+      <td>Unavailable</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>found_in_X_adult_peaksets</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.928571</td>
+      <td>7.690875</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>4.75</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>total_adult_peaksets</th>
+      <td>182.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.906593</td>
+      <td>12.770696</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>8.0</td>
+      <td>69.0</td>
+    </tr>
+    <tr>
+      <th>found_in_min_2_peakset</th>
+      <td>182</td>
+      <td>3</td>
+      <td>both</td>
+      <td>79</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S11.xlsx'>S11.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">28.86 KB</td>
+                <td class="nowrap">417e88c4e13ea490122c972d920c0513</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S11.xlsx.dvc'>S11.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">89.0 B</td>
+                <td class="nowrap">f32914e56d24c13494a492ba2d6dc144</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">5.93 KB</td>
+                <td class="nowrap">3223114383768a7730178bf2226bbb0e</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

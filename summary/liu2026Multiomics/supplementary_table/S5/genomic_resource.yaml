@@ -1,0 +1,64 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name                             | column_description                                                                                                                                                                                 |
+
+    | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `Organ`                                 | organ from which the cluster was derived                                                                                                                                                           |
+
+    | `Cluster_ChromBPNet`                    | cluster ID in the format used for
+    ChromBPNet training & analyses (as in Table S2)                                                                                                                  |
+
+    | `L1_annot`                              | level 1 cell type annotation (n=203)                                                                                                                                                               |
+
+    | `Total_n_fragments`                     | total number of fragments for all
+    cells in the cluster                                                                                                                                             |
+
+    | `Model`                                 | ID for the model (defined by cluster
+    and fold)                                                                                                                                                     |
+
+    | `Fold`                                  | training fold (0 to 4)                                                                                                                                                                             |
+
+    | `Pass_QC`                               | binary variable indicating whether
+    the model passed performance thresholds and QC and was used for downstream analysis                                                                             |
+
+    | `Reason`                                | reason for rejecting model                                                                                                                                                                         |
+
+    | `counts_metrics.peaks.spearmanr`        | ChromBPNet model performance metric:
+    Spearman''s rank correlation between observed and predicted log counts in peaks
+    on test chromosomes                                                            |
+
+    | `counts_metrics.peaks.pearsonr`         | ChromBPNet model performance metric:
+    Pearson correlation between observed and predicted log counts in peaks on test
+    chromosomes                                                                    |
+
+    | `counts_metrics.peaks.mse`              | ChromBPNet model performance metric:
+    mean squared error between observed and predicted log counts in peak on test chromosomes                                                                      |
+
+    | `profile_metrics.peaks.median_jsd`      | ChromBPNet model performance metric:
+    median Jensen Shannon Divergence between observed and predicted profiles for peaks
+    on test chromosomes (lower is better)                                      |
+
+    | `profile_metrics.peaks.median_norm_jsd` | ChromBPNet model performance metric:
+    median min-max normalized JSD (higher is better)                                                                                                              |
+
+    | `tn5_motif_1`                           | ChromBPNet model performance metric:
+    max of predicted marginal footprint for Tn5 motif #1 in bias-corrected model (high
+    response indicate that the model is still senstive to Tn5 sequence bias)   |
+
+    | `tn5_motif_2`                           | as above for Tn5 motif #2                                                                                                                                                                          |
+
+    | `tn5_motif_3`                           | as above for Tn5 motif #3                                                                                                                                                                          |
+
+    | `tn5_motif_4`                           | as above for Tn5 motif #4                                                                                                                                                                          |
+
+    | `tn5_motif_5`                           | as above for Tn5 motif #5                                                                                                                                                                          |
+
+    | `max_tn5_response`                      | max of tn5_motif_1, tn5_motif_2, tn5_motif_3,
+    tn5_motif_4, tn5_motif_5                                                                                                                             |'
+  summary: ChromBPNet model QC, related to Fig. 3
+parameters:
+  sheet_name: S5
+type: data_frame

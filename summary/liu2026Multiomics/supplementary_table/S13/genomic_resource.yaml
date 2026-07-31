@@ -1,0 +1,40 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name           | column_description                                                             |
+
+    | --------------------- | ------------------------------------------------------------------------------
+    |
+
+    | `meta_id`             | CAUSALdb unique ID for trait                                                   |
+
+    | `mesh_id`             | Medical Subject Headings ID for trait                                          |
+
+    | `trait`               | Name of trait                                                                  |
+
+    | `rsid`                | RS identifier for SNP                                                          |
+
+    | `snpChr.hg38`         | Chromosome of causal SNP position (hg38)                                       |
+
+    | `snpPos.hg38`         | Coordinate of causal SNP position (hg38)                                       |
+
+    | `non_effect_allele`   | REF base                                                                       |
+
+    | `effect_allele`       | ALT base                                                                       |
+
+    | `gwas_beta`           | log odds ratio of SNP reported in GWAS                                         |
+
+    | `gwas_p`              | p value of SNP reported in GWAS                                                |
+
+    | `organ`               | Organ the cell type is found in                                                |
+
+    | `celltype`            | Cell type the hit is found in                                                  |
+
+    | `selected_L1_cluster` | L1 cluster ID of the representative cell type model
+    used for variant scoring   |
+
+    | `motifs`              | Motifs overlapped by causal variant                                            |'
+  summary: Fetal-only hits for variant scoring, related to Fig. 6
+parameters:
+  sheet_name: S13
+type: data_frame

@@ -1,0 +1,977 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/zemke2023Conserved/supplementary_table/S10A</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Human Vs macaque differential chromatin accessibility.
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style>N/A
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>index</th>
+      <td>330795</td>
+      <td>330795</td>
+      <td>chr14-103715355-103715854</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>logFC_ASC</th>
+      <td>111720.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.139819</td>
+      <td>1.264676</td>
+      <td>-7.178873</td>
+      <td>-0.561954</td>
+      <td>0.010976</td>
+      <td>0.704531</td>
+      <td>11.04461</td>
+    </tr>
+    <tr>
+      <th>FDR_ASC</th>
+      <td>111720.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.321717</td>
+      <td>0.327404</td>
+      <td>0.0</td>
+      <td>0.012578</td>
+      <td>0.202598</td>
+      <td>0.599922</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_ChC</th>
+      <td>17014.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.066532</td>
+      <td>0.767151</td>
+      <td>-6.236182</td>
+      <td>-0.308065</td>
+      <td>0.027482</td>
+      <td>0.367248</td>
+      <td>7.955624</td>
+    </tr>
+    <tr>
+      <th>FDR_ChC</th>
+      <td>17014.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.616875</td>
+      <td>0.304937</td>
+      <td>0.0</td>
+      <td>0.392775</td>
+      <td>0.701005</td>
+      <td>0.880079</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_Endo</th>
+      <td>18962.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.03181</td>
+      <td>1.056285</td>
+      <td>-8.039937</td>
+      <td>-0.411919</td>
+      <td>-0.004523</td>
+      <td>0.424003</td>
+      <td>8.486088</td>
+    </tr>
+    <tr>
+      <th>FDR_Endo</th>
+      <td>18962.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.570989</td>
+      <td>0.327753</td>
+      <td>0.0</td>
+      <td>0.28521</td>
+      <td>0.64631</td>
+      <td>0.862422</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_L2_3_IT</th>
+      <td>329945.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.069805</td>
+      <td>1.048383</td>
+      <td>-10.26368</td>
+      <td>-0.556143</td>
+      <td>0.003095</td>
+      <td>0.634378</td>
+      <td>12.493753</td>
+    </tr>
+    <tr>
+      <th>FDR_L2_3_IT</th>
+      <td>329945.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.280317</td>
+      <td>0.319316</td>
+      <td>0.0</td>
+      <td>0.002844</td>
+      <td>0.128347</td>
+      <td>0.524761</td>
+      <td>0.999985</td>
+    </tr>
+    <tr>
+      <th>logFC_L4_5_IT</th>
+      <td>284220.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.140243</td>
+      <td>1.098774</td>
+      <td>-7.844754</td>
+      <td>-0.564431</td>
+      <td>0.062804</td>
+      <td>0.786809</td>
+      <td>11.256973</td>
+    </tr>
+    <tr>
+      <th>FDR_L4_5_IT</th>
+      <td>284220.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.350729</td>
+      <td>0.330877</td>
+      <td>0.0</td>
+      <td>0.027957</td>
+      <td>0.256792</td>
+      <td>0.64171</td>
+      <td>0.999999</td>
+    </tr>
+    <tr>
+      <th>logFC_L5_6_NP</th>
+      <td>79700.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.004954</td>
+      <td>1.038501</td>
+      <td>-7.930818</td>
+      <td>-0.564432</td>
+      <td>-0.064993</td>
+      <td>0.506016</td>
+      <td>9.346987</td>
+    </tr>
+    <tr>
+      <th>FDR_L5_6_NP</th>
+      <td>79700.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.530123</td>
+      <td>0.314997</td>
+      <td>0.0</td>
+      <td>0.248937</td>
+      <td>0.561597</td>
+      <td>0.818196</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_L5_ET</th>
+      <td>136111.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.065177</td>
+      <td>1.289739</td>
+      <td>-8.572283</td>
+      <td>-0.647543</td>
+      <td>-0.01906</td>
+      <td>0.732516</td>
+      <td>9.951165</td>
+    </tr>
+    <tr>
+      <th>FDR_L5_ET</th>
+      <td>136111.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.418025</td>
+      <td>0.329717</td>
+      <td>0.0</td>
+      <td>0.091721</td>
+      <td>0.379657</td>
+      <td>0.721789</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_L5_IT</th>
+      <td>265125.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.036675</td>
+      <td>1.09335</td>
+      <td>-8.936855</td>
+      <td>-0.725187</td>
+      <td>-0.090367</td>
+      <td>0.617618</td>
+      <td>10.662437</td>
+    </tr>
+    <tr>
+      <th>FDR_L5_IT</th>
+      <td>265125.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.376613</td>
+      <td>0.332263</td>
+      <td>0.0</td>
+      <td>0.045961</td>
+      <td>0.306112</td>
+      <td>0.676919</td>
+      <td>0.999994</td>
+    </tr>
+    <tr>
+      <th>logFC_L6b</th>
+      <td>103864.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.035837</td>
+      <td>0.975138</td>
+      <td>-7.460318</td>
+      <td>-0.506202</td>
+      <td>-0.025051</td>
+      <td>0.508878</td>
+      <td>8.90917</td>
+    </tr>
+    <tr>
+      <th>FDR_L6b</th>
+      <td>103864.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.439551</td>
+      <td>0.33465</td>
+      <td>0.0</td>
+      <td>0.102329</td>
+      <td>0.423293</td>
+      <td>0.74995</td>
+      <td>0.999985</td>
+    </tr>
+    <tr>
+      <th>logFC_L6_CT</th>
+      <td>232919.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.130672</td>
+      <td>1.126753</td>
+      <td>-7.6393</td>
+      <td>-0.550445</td>
+      <td>0.021836</td>
+      <td>0.719304</td>
+      <td>11.23536</td>
+    </tr>
+    <tr>
+      <th>FDR_L6_CT</th>
+      <td>232919.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.381016</td>
+      <td>0.336526</td>
+      <td>0.0</td>
+      <td>0.041115</td>
+      <td>0.314925</td>
+      <td>0.68848</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_L6_IT_CAR3</th>
+      <td>39901.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.009755</td>
+      <td>0.914623</td>
+      <td>-5.787045</td>
+      <td>-0.452331</td>
+      <td>-0.039911</td>
+      <td>0.39231</td>
+      <td>8.203192</td>
+    </tr>
+    <tr>
+      <th>FDR_L6_IT_CAR3</th>
+      <td>39901.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.649159</td>
+      <td>0.300615</td>
+      <td>0.0</td>
+      <td>0.452301</td>
+      <td>0.745519</td>
+      <td>0.899894</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_L6_IT</th>
+      <td>218683.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.04763</td>
+      <td>1.154656</td>
+      <td>-9.095973</td>
+      <td>-0.642846</td>
+      <td>-0.036517</td>
+      <td>0.6835</td>
+      <td>10.604189</td>
+    </tr>
+    <tr>
+      <th>FDR_L6_IT</th>
+      <td>218683.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.337451</td>
+      <td>0.33132</td>
+      <td>0.0</td>
+      <td>0.017073</td>
+      <td>0.23072</td>
+      <td>0.628233</td>
+      <td>0.999985</td>
+    </tr>
+    <tr>
+      <th>logFC_LAMP5</th>
+      <td>103938.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.132122</td>
+      <td>0.960385</td>
+      <td>-8.090296</td>
+      <td>-0.433524</td>
+      <td>0.041297</td>
+      <td>0.620928</td>
+      <td>10.021421</td>
+    </tr>
+    <tr>
+      <th>FDR_LAMP5</th>
+      <td>103938.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.34274</td>
+      <td>0.327669</td>
+      <td>0.0</td>
+      <td>0.02803</td>
+      <td>0.242934</td>
+      <td>0.626188</td>
+      <td>0.999999</td>
+    </tr>
+    <tr>
+      <th>logFC_MGC</th>
+      <td>80354.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.077686</td>
+      <td>1.536885</td>
+      <td>-9.4416</td>
+      <td>-0.696912</td>
+      <td>-0.043569</td>
+      <td>0.720146</td>
+      <td>9.370605</td>
+    </tr>
+    <tr>
+      <th>FDR_MGC</th>
+      <td>80354.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.309337</td>
+      <td>0.327123</td>
+      <td>0.0</td>
+      <td>0.006186</td>
+      <td>0.180232</td>
+      <td>0.583345</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_ODC</th>
+      <td>216381.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.095968</td>
+      <td>1.207296</td>
+      <td>-7.229846</td>
+      <td>-0.576615</td>
+      <td>-0.015983</td>
+      <td>0.655756</td>
+      <td>11.707929</td>
+    </tr>
+    <tr>
+      <th>FDR_ODC</th>
+      <td>216381.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.299399</td>
+      <td>0.326537</td>
+      <td>0.0</td>
+      <td>0.003572</td>
+      <td>0.157795</td>
+      <td>0.566074</td>
+      <td>0.99996</td>
+    </tr>
+    <tr>
+      <th>logFC_OPC</th>
+      <td>75829.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.122196</td>
+      <td>1.188575</td>
+      <td>-8.580553</td>
+      <td>-0.471218</td>
+      <td>0.022842</td>
+      <td>0.616862</td>
+      <td>9.902045</td>
+    </tr>
+    <tr>
+      <th>FDR_OPC</th>
+      <td>75829.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.343598</td>
+      <td>0.332583</td>
+      <td>0.0</td>
+      <td>0.018159</td>
+      <td>0.245503</td>
+      <td>0.63641</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>logFC_PVALB</th>
+      <td>229418.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.097787</td>
+      <td>0.954814</td>
+      <td>-7.568027</td>
+      <td>-0.509892</td>
+      <td>0.067103</td>
+      <td>0.674931</td>
+      <td>10.70928</td>
+    </tr>
+    <tr>
+      <th>FDR_PVALB</th>
+      <td>229418.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.327894</td>
+      <td>0.327385</td>
+      <td>0.0</td>
+      <td>0.016389</td>
+      <td>0.216235</td>
+      <td>0.605758</td>
+      <td>0.999998</td>
+    </tr>
+    <tr>
+      <th>logFC_SNCG</th>
+      <td>60809.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.095627</td>
+      <td>0.865067</td>
+      <td>-7.346032</td>
+      <td>-0.381849</td>
+      <td>0.020883</td>
+      <td>0.489655</td>
+      <td>8.977678</td>
+    </tr>
+    <tr>
+      <th>FDR_SNCG</th>
+      <td>60809.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.451575</td>
+      <td>0.327889</td>
+      <td>0.0</td>
+      <td>0.129859</td>
+      <td>0.441162</td>
+      <td>0.751811</td>
+      <td>0.99997</td>
+    </tr>
+    <tr>
+      <th>logFC_SST</th>
+      <td>181816.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.072357</td>
+      <td>0.957416</td>
+      <td>-7.359765</td>
+      <td>-0.489256</td>
+      <td>0.01912</td>
+      <td>0.596355</td>
+      <td>10.694965</td>
+    </tr>
+    <tr>
+      <th>FDR_SST</th>
+      <td>181816.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.35509</td>
+      <td>0.329972</td>
+      <td>0.0</td>
+      <td>0.031585</td>
+      <td>0.267463</td>
+      <td>0.64523</td>
+      <td>0.999992</td>
+    </tr>
+    <tr>
+      <th>logFC_VIP</th>
+      <td>106613.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.137833</td>
+      <td>1.011641</td>
+      <td>-8.159346</td>
+      <td>-0.449051</td>
+      <td>0.03423</td>
+      <td>0.618709</td>
+      <td>9.841083</td>
+    </tr>
+    <tr>
+      <th>FDR_VIP</th>
+      <td>106613.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.32026</td>
+      <td>0.324439</td>
+      <td>0.0</td>
+      <td>0.015448</td>
+      <td>0.203721</td>
+      <td>0.590121</td>
+      <td>0.999983</td>
+    </tr>
+    <tr>
+      <th>logFC_VLMC</th>
+      <td>34754.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.042042</td>
+      <td>1.153123</td>
+      <td>-8.236564</td>
+      <td>-0.515872</td>
+      <td>-0.01927</td>
+      <td>0.450226</td>
+      <td>9.348946</td>
+    </tr>
+    <tr>
+      <th>FDR_VLMC</th>
+      <td>34754.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.480563</td>
+      <td>0.329226</td>
+      <td>0.0</td>
+      <td>0.164688</td>
+      <td>0.491026</td>
+      <td>0.785317</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Table_10A.xlsx'>Supplementary_Table_10A.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">102.2 MB</td>
+                <td class="nowrap">26f076a5ec08d48d10c7c1c5b33d3fed</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Table_10A.xlsx.dvc'>Supplementary_Table_10A.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">113.0 B</td>
+                <td class="nowrap">72ba647e076282da84198d657ae2bb83</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">198.0 B</td>
+                <td class="nowrap">57261ea455e801719c2c078096f99e8e</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

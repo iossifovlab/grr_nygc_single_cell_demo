@@ -1,0 +1,11 @@
+file: Supplemental Table S6.1.xlsx
+format: excel
+meta:
+  description: Gene-set analysis results from MAGMA, testing for associations between
+    genetic risk for each phenotype and gene expression profiles across cell clusters.
+    Each row represents a cell cluster, and columns include the test statistic, p-value.
+    Results are shown for multiple phenotypes and ancestries (SCZ only).
+  summary: MAGMA results. Cluster-level associations across brain cell types. - bipolar_disorder_european
+parameters:
+  sheet_name: bipolar_disorder_european
+type: data_frame

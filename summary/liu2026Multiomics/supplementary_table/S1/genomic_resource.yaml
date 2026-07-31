@@ -1,0 +1,72 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name                 | column_description                                                                                                                                            |
+
+    | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `sample`                    | unique sample name                                                                                                                                            |
+
+    | `exp_batch`                 | SHARE-seq experiment batch that the sample was
+    processed in                                                                                                   |
+
+    | `exp_barcode_row`           | Rows in SHARE-seq round 1 split-and-pool barcoding
+    plate that the sample was distributed to; important for demultiplexing sequencing
+    reads in preprocessing   |
+
+    | `tissue_storage_code`       | unique sample ID                                                                                                                                              |
+
+    | `organ`                     | sample organ name                                                                                                                                             |
+
+    | `organ_code`                | abbreviated sample organ name                                                                                                                                 |
+
+    | `tissue_PCW`                | sample age in post conception weeks                                                                                                                           |
+
+    | `tissue_bioID`              | unique individual ID                                                                                                                                          |
+
+    | `tissue_sex`                | sample sex based on expression of sex marker genes                                                                                                            |
+
+    | `exp_run_date`              | SHARE-seq experiment date                                                                                                                                     |
+
+    | `cutoff_rna_nUMIs`          | cutoff used in preprocessing for RNA number of
+    UMIs per cell                                                                                                  |
+
+    | `cutoff_rna_nGenes`         | cutoff used in preprocessing for RNA number of
+    genes per cell                                                                                                 |
+
+    | `cutoff_rna_pctMT`          | cutoff used in preprocessing for RNA percentage
+    of mitochondrial reads per cell                                                                               |
+
+    | `cutoff_atac_TSS`           | cutoff used in preprocessing for ATAC TSS enrichment
+    ratio per cell                                                                                           |
+
+    | `cutoff_atac_nFrags`        | cutoff used in preprocessing for ATAC number of
+    fragments per cell                                                                                            |
+
+    | `cutoff_nFrags_nUMIs_ratio` | cutoff used in preprocessing for the ratio between
+    ATAC number of fragments and RNA number of UMIs per cell                                                   |
+
+    | `nCells`                    | total number of final whitelisted cells from sample                                                                                                           |
+
+    | `median_rna_nGenes`         | median RNA number of genes per cell for final
+    whitelisted cells                                                                                               |
+
+    | `median_rna_nUMIs`          | median RNA number of UMIs per cell for final whitelisted
+    cells                                                                                                |
+
+    | `median_rna_pctMT`          | median RNA percentage of mitochondrial reads per
+    cell for final whitelisted cells                                                                             |
+
+    | `median_atac_TSS`           | median ATAC TSS enrichment ratio per cell for
+    final whitelisted cells                                                                                         |
+
+    | `median_atac_nFrags`        | median ATAC number of fragments per cell for final
+    whitelisted cells                                                                                          |
+
+    | `median_atac_frip`          | median ATAC fraction of reads in peaks per cell
+    for final whitelisted cells                                                                                   |'
+  summary: Sample meta data + QC thresholds per sample, related to Fig. 1
+parameters:
+  sheet_name: S1
+type: data_frame

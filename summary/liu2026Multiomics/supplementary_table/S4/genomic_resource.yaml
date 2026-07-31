@@ -1,0 +1,22 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name  | column_description                                                                       |
+
+    | ------------ | ----------------------------------------------------------------------------------------
+    |
+
+    | `gene`       | HLG gene name                                                                            |
+
+    | `npeak`      | number of peaks/HDMA cCREs linked to this gene within the cluster
+    through ABC analysis   |
+
+    | `gene_rank`  | rank order of gene based on npeak within the cluster                                     |
+
+    | `L3_cluster` | L3 cell cluster name or "global" which are consistent links across
+    L3 cell clusters      |'
+  summary: L3 cell cluster highly linked genes (HLGs) and global HLGs, related to
+    Fig. 2
+parameters:
+  sheet_name: S4
+type: data_frame

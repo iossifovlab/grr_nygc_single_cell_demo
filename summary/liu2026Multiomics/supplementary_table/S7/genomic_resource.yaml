@@ -1,0 +1,79 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name                    | column_description                                                                                                                                                                                                                      |
+
+    | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `motif_name`                   | unique name for the motif within the compendium,
+    as in Table S6. Out of 138 motif pairs tested, only the 120 motifs where inserted
+    sequences were confirmed to drive predicted accessibilty are shown here.                             |
+
+    | `idx_uniq`                     | unique ID for the motif within the compendium,
+    as in Table S6                                                                                                                                                                           |
+
+    | `category`                     | motif category as in Table S6 (homocomposite
+    or heterocomposite)                                                                                                                                                                        |
+
+    | `result`                       | result of in silico experiment. hard: motifs
+    have synergy with hard syntax. hard & soft: motifs have both synergy with both
+    hard and soft syntax. soft: motifs have synergy with soft syntax. no synergy:
+    motifs do not have synergy.   |
+
+    | `Cluster_ChromBPNet`           | cluster for which ChromBPNet models were used
+    in the in silico experiments for this motif                                                                                                                                               |
+
+    | `annotation_broad`             | broad annotation for the motif                                                                                                                                                                                                          |
+
+    | `component_motifA`             | annotation of the first constituent of the
+    composite motif                                                                                                                                                                              |
+
+    | `component_motifB`             | annotation of the second constituent of the
+    composite motif                                                                                                                                                                             |
+
+    | `seqA`                         | sequence tested for component motif A in the
+    "head" orientation                                                                                                                                                                         |
+
+    | `seqB`                         | sequence tested for component motif B in the
+    "head" orientation                                                                                                                                                                         |
+
+    | `best_orientation`             | orientation of motifs for the motif arrangement
+    with maximum effect (HH: head-to-head; TT: tail-to-tail; HT: head-to-tail; A,B
+    HT: head-to-tail with A first; B,A HT: head-to-tail with B first)                                        |
+
+    | `best_distance_between_motifs` | distance between motifs for the motif arrangement
+    with maximum effect                                                                                                                                                                   |
+
+    | `best_dist_centers`            | distance between motif centers for the motif
+    arrangement with the maximum effect                                                                                                                                                        |
+
+    | `best_seq`                     | nucleotide sequence for motifs at the orientation
+    and distance with the maximum effect (spacer nucleotides between motifs are represented
+    by Ns)                                                                                        |
+
+    | `joint_effect_log_counts`      | joint effect of the two motifs at their best
+    arrangement in log counts, defined as the difference between predicted log counts
+    for the motifs together and predicted log counts for the background (delta_J =
+    y_J - y_0 in Methods)     |
+
+    | `joint_vs_sum_p_value`         | p-value for Wilcoxon signed-rank test between
+    joint and sum of independent effects                                                                                                                                                      |
+
+    | `joint_vs_sum_p_value_adj`     | adjusted p-value after Benjamini-Hochberg method                                                                                                                                                                                        |
+
+    | `Z_scored_joint_effect`        | Z-score of the joint effect at the best arrangement
+    (joint effects were Z-scored across all arrangements)                                                                                                                               |
+
+    | `independent_effect`           | log-additive independent effects for two motifs
+    inserted independently, in log counts (delta_S = y_A - y_0 + y_B - y_0 in Methods)                                                                                                      |
+
+    | `seqA_palindrome`              | whether sequence A is a true palindrome (P),
+    quasi-palindrome (Q), or neither (-)                                                                                                                                                       |
+
+    | `seqB_palindrome`              | whether sequence B is a true palindrome (P),
+    quasi-palindrome (Q), or neither (-)                                                                                                                                                       |'
+  summary: Results of in silico tests for synergy, related to Fig. 4
+parameters:
+  sheet_name: S7
+type: data_frame

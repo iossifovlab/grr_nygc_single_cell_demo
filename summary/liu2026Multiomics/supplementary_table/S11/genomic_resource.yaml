@@ -1,0 +1,64 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name                 | column_description                                                                                                                                                                |
+
+    | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `meta_id`                   | CAUSALdb unique ID for trait                                                                                                                                                      |
+
+    | `mesh_id`                   | Medical Subject Headings ID for trait                                                                                                                                             |
+
+    | `trait`                     | Name of trait                                                                                                                                                                     |
+
+    | `motifName`                 | Unique motif name                                                                                                                                                                 |
+
+    | `organ`                     | Organ the cell type is found in                                                                                                                                                   |
+
+    | `celltype`                  | Cell type enriched with trait variants                                                                                                                                            |
+
+    | `susie`                     | SuSiE posterior inclusion probability score (PIP)                                                                                                                                 |
+
+    | `z`                         | Z score of gchromVAR enrichment                                                                                                                                                   |
+
+    | `p`                         | p value of gchromVAR enrichment                                                                                                                                                   |
+
+    | `FDR`                       | False discovery rate (Benjamini-Hochberg adjusted
+    p value)                                                                                                                        |
+
+    | `motifChr.hg38`             | Chromosome of motif position (hg38)                                                                                                                                               |
+
+    | `motifStart.hg38`           | Start coordinate of motif position (hg38)                                                                                                                                         |
+
+    | `motifEnd.hg38`             | End coordinate of motif position (hg38)                                                                                                                                           |
+
+    | `motifChr.hg19`             | Chromosome of motif position (hg19)                                                                                                                                               |
+
+    | `motifStart.hg19`           | Start coordinate of motif position (hg19)                                                                                                                                         |
+
+    | `motifEnd.hg19`             | End coordinate of motif position (hg19)                                                                                                                                           |
+
+    | `snpChr.hg38`               | Chromosome of causal SNP position (hg38)                                                                                                                                          |
+
+    | `snpPos.hg38`               | Coordinate of causal SNP position (hg38)                                                                                                                                          |
+
+    | `snpChr.hg19`               | Chromosome of causal SNP position (hg19)                                                                                                                                          |
+
+    | `snpPos.hg19`               | Coordinate of causal SNP position (hg19)                                                                                                                                          |
+
+    | `rsid`                      | RS identifier for SNP                                                                                                                                                             |
+
+    | `adult_celltype`            | Cell type of matching adult peak sets used                                                                                                                                        |
+
+    | `found_in_X_adult_peaksets` | Number of adult peaksets overlapping causal SNP                                                                                                                                   |
+
+    | `total_adult_peaksets`      | Total number of adult peak sets examined                                                                                                                                          |
+
+    | `found_in_min_2_peakset`    | Indication of whether at least 2 adult peak sets
+    overlap the causal SNP. "fetalOnly": < 2, "both": >=2, "notChecked": No matching
+    adult peak sets were availabe for overlapping   |'
+  summary: List of motifs with disease causal variants, related to Fig. 6
+parameters:
+  sheet_name: S11
+type: data_frame

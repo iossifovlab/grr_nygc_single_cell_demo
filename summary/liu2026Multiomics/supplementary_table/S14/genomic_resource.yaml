@@ -1,0 +1,21 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name | column_description                       |
+
+    | ----------- | ---------------------------------------- |
+
+    | `data_type` | type of data in Zenodo depo              |
+
+    | `size`      | total size of all files in Zenodo depo   |
+
+    | `depo_name` | name of the Zenodo depo                  |
+
+    | `record_id` | unique Zenodo depo record ID             |
+
+    | `url`       | Zenodo depo permanent doi url            |'
+  summary: List of uploaded files, file types and Zenodo depositions they can be found
+    in
+parameters:
+  sheet_name: S14
+type: data_frame

@@ -1,0 +1,670 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/johansen2025Crossspecies/supplementary_table/S6.2/SCZ_SNPs</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Effects of genome-wide significant variants on predicted chromatin accessibility. - SCZ_SNPs
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><p>Summary of sequencing model analysis for genome-wide significant variants associated with SCZ and Alzheimer’s disease. For each variant, a proximal gene is listed, and the predicted impact on chromatin accessibility is quantified using contribution scores across MAGMA-significant cell types. The Delta of Chromatin Accessibility is reported (predicted accessibility of the reference sequence minus accessibility of the mutated sequence).</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>rsid</th>
+      <td>45</td>
+      <td>44</td>
+      <td>rs6914052</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>gene</th>
+      <td>45</td>
+      <td>17</td>
+      <td>TSNARE1</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cell_type</th>
+      <td>45</td>
+      <td>11</td>
+      <td>GPe_MEIS2-SOX6_GABA</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>STRd_D1_Striosome_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2.669474</td>
+      <td>16.792595</td>
+      <td>-111.49072</td>
+      <td>-0.462006</td>
+      <td>-0.156807</td>
+      <td>0.296284</td>
+      <td>8.066406</td>
+    </tr>
+    <tr>
+      <th>STRd_D2_Matrix_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2.0879</td>
+      <td>14.692445</td>
+      <td>-97.30267</td>
+      <td>-0.511055</td>
+      <td>-0.128693</td>
+      <td>0.209831</td>
+      <td>10.746704</td>
+    </tr>
+    <tr>
+      <th>STRd_D2_Striosome_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2.469759</td>
+      <td>15.875968</td>
+      <td>-105.37341</td>
+      <td>-0.47998</td>
+      <td>-0.115692</td>
+      <td>0.261322</td>
+      <td>8.329864</td>
+    </tr>
+    <tr>
+      <th>STRv_D1_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2.327788</td>
+      <td>12.690398</td>
+      <td>-83.121216</td>
+      <td>-0.550385</td>
+      <td>-0.234325</td>
+      <td>0.289963</td>
+      <td>10.449738</td>
+    </tr>
+    <tr>
+      <th>STRv_D2_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2.035169</td>
+      <td>11.814446</td>
+      <td>-77.160706</td>
+      <td>-0.592438</td>
+      <td>-0.152649</td>
+      <td>0.424881</td>
+      <td>10.681061</td>
+    </tr>
+    <tr>
+      <th>STRd_D2_StrioMat_Hybrid_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-1.297425</td>
+      <td>7.601848</td>
+      <td>-47.52893</td>
+      <td>-0.650452</td>
+      <td>-0.079784</td>
+      <td>0.466324</td>
+      <td>6.386871</td>
+    </tr>
+    <tr>
+      <th>STRv_D1_NUDAP_MSN</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.974551</td>
+      <td>4.037518</td>
+      <td>-22.919067</td>
+      <td>-0.570236</td>
+      <td>-0.121666</td>
+      <td>0.311142</td>
+      <td>3.041946</td>
+    </tr>
+    <tr>
+      <th>OT_D1_ICj</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-1.165721</td>
+      <td>4.612025</td>
+      <td>-20.682892</td>
+      <td>-0.526531</td>
+      <td>-0.194489</td>
+      <td>0.176304</td>
+      <td>4.280762</td>
+    </tr>
+    <tr>
+      <th>GPe_MEIS2-SOX6_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.186125</td>
+      <td>7.831659</td>
+      <td>-19.008133</td>
+      <td>-1.043732</td>
+      <td>-0.426399</td>
+      <td>0.311234</td>
+      <td>45.305756</td>
+    </tr>
+    <tr>
+      <th>AMY-SLEA-BNST_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.804233</td>
+      <td>2.597724</td>
+      <td>-10.17128</td>
+      <td>-0.961426</td>
+      <td>-0.375519</td>
+      <td>0.142914</td>
+      <td>5.765594</td>
+    </tr>
+    <tr>
+      <th>OB_FRMD7_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.606467</td>
+      <td>12.354778</td>
+      <td>-33.11022</td>
+      <td>-0.402666</td>
+      <td>-0.076994</td>
+      <td>0.254238</td>
+      <td>73.24057</td>
+    </tr>
+    <tr>
+      <th>VIP_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.53998</td>
+      <td>5.112486</td>
+      <td>-4.094772</td>
+      <td>-0.545441</td>
+      <td>-0.093529</td>
+      <td>0.212486</td>
+      <td>32.44008</td>
+    </tr>
+    <tr>
+      <th>LAMP5-CXCL14_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.579685</td>
+      <td>11.532528</td>
+      <td>-5.635498</td>
+      <td>-0.703308</td>
+      <td>-0.087402</td>
+      <td>0.338684</td>
+      <td>75.63989</td>
+    </tr>
+    <tr>
+      <th>STR_SST-RSPO2_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.150767</td>
+      <td>5.323922</td>
+      <td>-12.01733</td>
+      <td>-0.775707</td>
+      <td>-0.225121</td>
+      <td>0.183304</td>
+      <td>30.460434</td>
+    </tr>
+    <tr>
+      <th>STR_LYPD6-RSPO2_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.083414</td>
+      <td>3.292129</td>
+      <td>-10.181641</td>
+      <td>-0.711426</td>
+      <td>-0.210503</td>
+      <td>0.362976</td>
+      <td>16.899414</td>
+    </tr>
+    <tr>
+      <th>LAMP5-LHX6_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.621022</td>
+      <td>12.244317</td>
+      <td>-7.88411</td>
+      <td>-0.749146</td>
+      <td>-0.147858</td>
+      <td>0.481201</td>
+      <td>80.035034</td>
+    </tr>
+    <tr>
+      <th>STR-BF_TAC3-PLPP4-LHX8_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.028744</td>
+      <td>1.666505</td>
+      <td>-3.12973</td>
+      <td>-0.544701</td>
+      <td>-0.059883</td>
+      <td>0.206047</td>
+      <td>7.723053</td>
+    </tr>
+    <tr>
+      <th>STRd_Cholinergic_GABA</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.113123</td>
+      <td>3.290383</td>
+      <td>-11.615555</td>
+      <td>-0.766651</td>
+      <td>-0.124527</td>
+      <td>0.58551</td>
+      <td>16.33313</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplemental Table S6.2.xlsx'>Supplemental Table S6.2.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">32.68 KB</td>
+                <td class="nowrap">7f37c430c6f837c73513d70123329b89</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplemental Table S6.2.xlsx.dvc'>Supplemental Table S6.2.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">109.0 B</td>
+                <td class="nowrap">941ff2f49472dedf16d3118e56b008cb</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">711.0 B</td>
+                <td class="nowrap">0cbcba49b36e05004d7e450227c82576</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

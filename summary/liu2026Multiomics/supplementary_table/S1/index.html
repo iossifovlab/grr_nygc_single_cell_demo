@@ -1,0 +1,808 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S1</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Sample meta data + QC thresholds per sample, related to Fig. 1
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>sample</code></td>
+  <td>unique sample name</td>
+</tr>
+<tr>
+  <td><code>exp_batch</code></td>
+  <td>SHARE-seq experiment batch that the sample was processed in</td>
+</tr>
+<tr>
+  <td><code>exp_barcode_row</code></td>
+  <td>Rows in SHARE-seq round 1 split-and-pool barcoding plate that the sample was distributed to; important for demultiplexing sequencing reads in preprocessing</td>
+</tr>
+<tr>
+  <td><code>tissue_storage_code</code></td>
+  <td>unique sample ID</td>
+</tr>
+<tr>
+  <td><code>organ</code></td>
+  <td>sample organ name</td>
+</tr>
+<tr>
+  <td><code>organ_code</code></td>
+  <td>abbreviated sample organ name</td>
+</tr>
+<tr>
+  <td><code>tissue_PCW</code></td>
+  <td>sample age in post conception weeks</td>
+</tr>
+<tr>
+  <td><code>tissue_bioID</code></td>
+  <td>unique individual ID</td>
+</tr>
+<tr>
+  <td><code>tissue_sex</code></td>
+  <td>sample sex based on expression of sex marker genes</td>
+</tr>
+<tr>
+  <td><code>exp_run_date</code></td>
+  <td>SHARE-seq experiment date</td>
+</tr>
+<tr>
+  <td><code>cutoff_rna_nUMIs</code></td>
+  <td>cutoff used in preprocessing for RNA number of UMIs per cell</td>
+</tr>
+<tr>
+  <td><code>cutoff_rna_nGenes</code></td>
+  <td>cutoff used in preprocessing for RNA number of genes per cell</td>
+</tr>
+<tr>
+  <td><code>cutoff_rna_pctMT</code></td>
+  <td>cutoff used in preprocessing for RNA percentage of mitochondrial reads per cell</td>
+</tr>
+<tr>
+  <td><code>cutoff_atac_TSS</code></td>
+  <td>cutoff used in preprocessing for ATAC TSS enrichment ratio per cell</td>
+</tr>
+<tr>
+  <td><code>cutoff_atac_nFrags</code></td>
+  <td>cutoff used in preprocessing for ATAC number of fragments per cell</td>
+</tr>
+<tr>
+  <td><code>cutoff_nFrags_nUMIs_ratio</code></td>
+  <td>cutoff used in preprocessing for the ratio between ATAC number of fragments and RNA number of UMIs per cell</td>
+</tr>
+<tr>
+  <td><code>nCells</code></td>
+  <td>total number of final whitelisted cells from sample</td>
+</tr>
+<tr>
+  <td><code>median_rna_nGenes</code></td>
+  <td>median RNA number of genes per cell for final whitelisted cells</td>
+</tr>
+<tr>
+  <td><code>median_rna_nUMIs</code></td>
+  <td>median RNA number of UMIs per cell for final whitelisted cells</td>
+</tr>
+<tr>
+  <td><code>median_rna_pctMT</code></td>
+  <td>median RNA percentage of mitochondrial reads per cell for final whitelisted cells</td>
+</tr>
+<tr>
+  <td><code>median_atac_TSS</code></td>
+  <td>median ATAC TSS enrichment ratio per cell for final whitelisted cells</td>
+</tr>
+<tr>
+  <td><code>median_atac_nFrags</code></td>
+  <td>median ATAC number of fragments per cell for final whitelisted cells</td>
+</tr>
+<tr>
+  <td><code>median_atac_frip</code></td>
+  <td>median ATAC fraction of reads in peaks per cell for final whitelisted cells</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sample</th>
+      <td>76</td>
+      <td>76</td>
+      <td>T014_b11_Heart_PCW18</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>exp_batch</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.592105</td>
+      <td>4.333367</td>
+      <td>4.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+      <td>16.0</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>exp_barcode_row</th>
+      <td>76</td>
+      <td>12</td>
+      <td>F</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tissue_storage_code</th>
+      <td>76.0</td>
+      <td>75.0</td>
+      <td>136.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organ</th>
+      <td>76</td>
+      <td>13</td>
+      <td>Lung</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organ_code</th>
+      <td>76</td>
+      <td>13</td>
+      <td>LU</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tissue_PCW</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.144737</td>
+      <td>2.779467</td>
+      <td>10.0</td>
+      <td>17.0</td>
+      <td>18.0</td>
+      <td>20.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>tissue_bioID</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.368421</td>
+      <td>5.630493</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>17.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>tissue_sex</th>
+      <td>76</td>
+      <td>2</td>
+      <td>F</td>
+      <td>42</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>exp_run_date</th>
+      <td>76</td>
+      <td>12</td>
+      <td>2025-12-07 00:00:00</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cutoff_rna_nUMIs</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1158.552632</td>
+      <td>399.532073</td>
+      <td>700.0</td>
+      <td>1000.0</td>
+      <td>1000.0</td>
+      <td>1225.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>cutoff_rna_nGenes</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>542.105263</td>
+      <td>127.815657</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>1000.0</td>
+    </tr>
+    <tr>
+      <th>cutoff_rna_pctMT</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20.0</td>
+      <td>0.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>cutoff_atac_TSS</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.697368</td>
+      <td>0.864403</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>cutoff_atac_nFrags</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1598.684211</td>
+      <td>621.931062</td>
+      <td>1000.0</td>
+      <td>1000.0</td>
+      <td>1500.0</td>
+      <td>2000.0</td>
+      <td>3000.0</td>
+    </tr>
+    <tr>
+      <th>cutoff_nFrags_nUMIs_ratio</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.092105</td>
+      <td>0.405878</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>nCells</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10759.736842</td>
+      <td>6132.233299</td>
+      <td>112.0</td>
+      <td>6446.25</td>
+      <td>10229.5</td>
+      <td>14433.75</td>
+      <td>24830.0</td>
+    </tr>
+    <tr>
+      <th>median_rna_nGenes</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1588.355263</td>
+      <td>544.843083</td>
+      <td>868.0</td>
+      <td>1221.75</td>
+      <td>1416.5</td>
+      <td>1879.5</td>
+      <td>3525.0</td>
+    </tr>
+    <tr>
+      <th>median_rna_nUMIs</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2578.75</td>
+      <td>1641.669476</td>
+      <td>1133.0</td>
+      <td>1587.0</td>
+      <td>1951.0</td>
+      <td>2990.125</td>
+      <td>9910.5</td>
+    </tr>
+    <tr>
+      <th>median_rna_pctMT</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.003747</td>
+      <td>0.012206</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.086244</td>
+    </tr>
+    <tr>
+      <th>median_atac_TSS</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.664204</td>
+      <td>2.040738</td>
+      <td>6.4295</td>
+      <td>7.843875</td>
+      <td>9.47325</td>
+      <td>11.26825</td>
+      <td>14.103</td>
+    </tr>
+    <tr>
+      <th>median_atac_nFrags</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6206.881579</td>
+      <td>3013.076473</td>
+      <td>2276.0</td>
+      <td>4233.25</td>
+      <td>5413.5</td>
+      <td>7424.0</td>
+      <td>19986.0</td>
+    </tr>
+    <tr>
+      <th>median_atac_frip</th>
+      <td>76.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.367986</td>
+      <td>0.111255</td>
+      <td>0.186239</td>
+      <td>0.283462</td>
+      <td>0.337691</td>
+      <td>0.461358</td>
+      <td>0.595807</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S1.xlsx'>S1.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">14.14 KB</td>
+                <td class="nowrap">617b3b54091cf9a53a82dc15afd303c6</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">5.07 KB</td>
+                <td class="nowrap">9f23a60492710c288e4c93e0e2995512</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

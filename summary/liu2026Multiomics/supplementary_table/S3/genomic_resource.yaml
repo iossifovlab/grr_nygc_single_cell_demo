@@ -1,0 +1,26 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: '| column_name  | column_description                                                                                                                        |
+
+    | ------------ | -----------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `p_val`      | raw p value from a one-vs-all Wilcoxon Rank Sum Test between
+    the cluster (foreground) and all other clusters in that organ (background)   |
+
+    | `avg_log2FC` | average log2 fold change between foregroud and background                                                                                 |
+
+    | `pct.1`      | percentage of cells in foreground expressing the gene                                                                                     |
+
+    | `pct.2`      | percentage of cells in background expressing the gene                                                                                     |
+
+    | `p_val_adj`  | adjusted p value                                                                                                                          |
+
+    | `cluster`    | unique cluster id                                                                                                                         |
+
+    | `gene`       | marker gene name                                                                                                                          |'
+  summary: Cluster marker genes, related to Fig. 1
+parameters:
+  sheet_name: S3
+type: data_frame

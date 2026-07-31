@@ -1,0 +1,171 @@
+file: liu2026Multiomics-supplentary-tables.xlsx
+format: excel
+meta:
+  description: "| column_name                            | column_description    \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                       |\n| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+    \ |\n| `idx_uniq`                             | unique index for the motif within\
+    \ the compendium                                                             \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \            |\n| `motif_name`                           | unique name for the\
+    \ motif within the compendium, where the prefix matches the idx_uniq column and\
+    \ suffix matches the annotation column                                       \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                        |\n| `motif_name_safe`                      | computationally\
+    \ safe version of motif_name without slashes or pipe                         \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                              |\n| `class`                                | class\
+    \ representing motif contribution to accessibility (Activating or Repressive)\
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                        |\n| `total_instances_across_celltypes`\
+    \     | total number of motif instances across all 189 cell types used for downstream\
+    \ modeling analysis                                                          \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                            |\n| `cwm_logo_fwd`             \
+    \            | name of the contribution weight matrix (CWM) logo (forward) PNG\
+    \ file (see Table S14)                                                       \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                          |\n| `cwm_logo_rev`\
+    \                         | name of the contribution weight matrix (CWM) logo\
+    \ (reverse) PNG file (see Table S14)                                         \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                        |\n|\
+    \ `query_consensus`                      | consensus sequence for trimmed CWM\
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \           |\n| `annotation`                           | granular motif annotation,\
+    \ in the form \"<family>:<TF>#<index>\u201D when a specific TF is unambiguous,\
+    \ or \"<family>:<subfamily>/<alternative_subfamily>#<index>\u201D where families\
+    \ and subfamilies of TFs could recognize the same motif, following the naming\
+    \ convention from the Vierstra v2.1 motif clustering. Index is used to distinguish\
+    \ variants of the same motif, typically representing subtle variations in nucleotide\
+    \ preferences or flanks. For composite motifs, constituents are separated by underscores.\
+    \   |\n| `annotation_broad`                     | broad motif annotation, used\
+    \ throughout analyses and figures to group motifs together                   \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                 |\n| `category`                             | motif category\
+    \ (base, base_with_flanks, homocomposite, heterocomposite, partial, repeat, unresolved)\
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                     |\n| `best_match_TF`                        | TF associated\
+    \ with best matching known motif in databases (see Methods)                  \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                |\n| `best_match_motif`                     |\
+    \ best matching known motif in databases                                     \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                              |\n| `best_match_TOMTOM_qval` \
+    \              | q-value from TOMTOM representing similarity between best matching\
+    \ known motif                                                                \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                        |\n| `best_match_TFs_in_family`\
+    \             | other TFs in the same family as best_match_TF, obtained from HOCOMOCO\
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                    |\n| `best_match_TFs_in_Vierstra_archetype`\
+    \ | other TFs with motifs in the same cluster as the best matching known motif,\
+    \ according to the Vierstra v2.1 motif clustering                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                              |\n| `total_seqlets_across_celltypes`\
+    \       | total number of seqlets (short loci used by TF-MoDISco to construct\
+    \ motifs) across all individual motifs which were aggregated into this compendium\
+    \ motif                                                                      \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                  |\n| `merged_pattern`     \
+    \                  | name of the cluster of per-cell-type motifs which corresponds\
+    \ to this compendium motif; can mapped back to the constituent motifs        \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                            |\n| `n_constituent_motifs`\
+    \                 | number of motifs aggregated into this compendium motif   \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                |\n| `n_constituent_celltypes`\
+    \              | number of cell types where at least one motif learned in that\
+    \ cell type (through TF-MoDISco) was aggregated into this compendium motif   \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                            |\n| `constituent_organs`\
+    \                   | number of organs where at least one motif learned in a cell\
+    \ type in that organ (through TF-MoDISco) was aggregated into this compendium\
+    \ motif                                                                      \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                              |\n| `constituent_celltypes`\
+    \                | L2_annot for the cell types where at least one motif learned\
+    \ in that cell type was aggregated into this compendium motif                \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                                            \
+    \                                                             |"
+  summary: Motif lexicon summary, related to Fig. 4-5
+parameters:
+  sheet_name: S6
+type: data_frame

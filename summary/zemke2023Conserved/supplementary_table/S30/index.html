@@ -1,0 +1,697 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/zemke2023Conserved/supplementary_table/S30</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Mouse ABC.
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style>N/A
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mouse_peak_union_id</th>
+      <td>265056</td>
+      <td>114995</td>
+      <td>Endo_peak_8448</td>
+      <td>67</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>putative_target_gene</th>
+      <td>265056</td>
+      <td>15920</td>
+      <td>Cntnap5b</td>
+      <td>82</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>VIP</th>
+      <td>97942.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.022167</td>
+      <td>0.032175</td>
+      <td>0.000037</td>
+      <td>0.007161</td>
+      <td>0.014098</td>
+      <td>0.025222</td>
+      <td>0.880744</td>
+    </tr>
+    <tr>
+      <th>SNCG</th>
+      <td>98930.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.023066</td>
+      <td>0.030646</td>
+      <td>0.000066</td>
+      <td>0.007511</td>
+      <td>0.015647</td>
+      <td>0.027389</td>
+      <td>0.880665</td>
+    </tr>
+    <tr>
+      <th>LAMP5</th>
+      <td>102825.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021037</td>
+      <td>0.026899</td>
+      <td>0.000076</td>
+      <td>0.007485</td>
+      <td>0.014423</td>
+      <td>0.024954</td>
+      <td>0.802893</td>
+    </tr>
+    <tr>
+      <th>SST</th>
+      <td>100601.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021837</td>
+      <td>0.028604</td>
+      <td>0.000099</td>
+      <td>0.007667</td>
+      <td>0.014754</td>
+      <td>0.02556</td>
+      <td>0.870631</td>
+    </tr>
+    <tr>
+      <th>PVALB</th>
+      <td>101540.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021623</td>
+      <td>0.027782</td>
+      <td>0.000082</td>
+      <td>0.007769</td>
+      <td>0.014858</td>
+      <td>0.025555</td>
+      <td>0.836979</td>
+    </tr>
+    <tr>
+      <th>ChC</th>
+      <td>42971.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.046418</td>
+      <td>0.076159</td>
+      <td>0.000113</td>
+      <td>0.01129</td>
+      <td>0.025576</td>
+      <td>0.048573</td>
+      <td>0.991581</td>
+    </tr>
+    <tr>
+      <th>L2_3_IT</th>
+      <td>120035.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.02086</td>
+      <td>0.022212</td>
+      <td>0.000082</td>
+      <td>0.008743</td>
+      <td>0.015626</td>
+      <td>0.025483</td>
+      <td>0.670235</td>
+    </tr>
+    <tr>
+      <th>L4_5_IT</th>
+      <td>116408.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021037</td>
+      <td>0.023203</td>
+      <td>0.000087</td>
+      <td>0.008562</td>
+      <td>0.015343</td>
+      <td>0.025527</td>
+      <td>0.713046</td>
+    </tr>
+    <tr>
+      <th>L5_IT</th>
+      <td>120466.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.020698</td>
+      <td>0.021927</td>
+      <td>0.00012</td>
+      <td>0.008574</td>
+      <td>0.015576</td>
+      <td>0.025482</td>
+      <td>0.723898</td>
+    </tr>
+    <tr>
+      <th>L6_IT</th>
+      <td>119713.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021262</td>
+      <td>0.022224</td>
+      <td>0.000088</td>
+      <td>0.00898</td>
+      <td>0.016073</td>
+      <td>0.026068</td>
+      <td>0.948316</td>
+    </tr>
+    <tr>
+      <th>L6_IT_CAR3</th>
+      <td>101347.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.02766</td>
+      <td>0.02879</td>
+      <td>0.000099</td>
+      <td>0.010906</td>
+      <td>0.021986</td>
+      <td>0.034236</td>
+      <td>0.881138</td>
+    </tr>
+    <tr>
+      <th>L5_ET</th>
+      <td>124056.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021275</td>
+      <td>0.022484</td>
+      <td>0.000084</td>
+      <td>0.00823</td>
+      <td>0.016266</td>
+      <td>0.026951</td>
+      <td>0.821207</td>
+    </tr>
+    <tr>
+      <th>L5_6_NP</th>
+      <td>97441.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.022273</td>
+      <td>0.030149</td>
+      <td>0.000053</td>
+      <td>0.007567</td>
+      <td>0.014848</td>
+      <td>0.026073</td>
+      <td>0.941379</td>
+    </tr>
+    <tr>
+      <th>L6_CT</th>
+      <td>115766.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.021115</td>
+      <td>0.023304</td>
+      <td>0.000057</td>
+      <td>0.008664</td>
+      <td>0.015539</td>
+      <td>0.025708</td>
+      <td>0.955632</td>
+    </tr>
+    <tr>
+      <th>L6b</th>
+      <td>108168.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.02273</td>
+      <td>0.026024</td>
+      <td>0.000076</td>
+      <td>0.008254</td>
+      <td>0.016583</td>
+      <td>0.027897</td>
+      <td>0.663858</td>
+    </tr>
+    <tr>
+      <th>Endo</th>
+      <td>42128.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.04569</td>
+      <td>0.05493</td>
+      <td>0.000227</td>
+      <td>0.020784</td>
+      <td>0.02897</td>
+      <td>0.049411</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>VLMC</th>
+      <td>110547.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.020804</td>
+      <td>0.0294</td>
+      <td>0.000061</td>
+      <td>0.006493</td>
+      <td>0.013112</td>
+      <td>0.024375</td>
+      <td>0.937204</td>
+    </tr>
+    <tr>
+      <th>MGC</th>
+      <td>77608.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.02708</td>
+      <td>0.036122</td>
+      <td>0.000054</td>
+      <td>0.008104</td>
+      <td>0.019952</td>
+      <td>0.032002</td>
+      <td>0.985576</td>
+    </tr>
+    <tr>
+      <th>OPC</th>
+      <td>89715.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.025117</td>
+      <td>0.033174</td>
+      <td>0.000082</td>
+      <td>0.008692</td>
+      <td>0.016551</td>
+      <td>0.028518</td>
+      <td>0.868378</td>
+    </tr>
+    <tr>
+      <th>ODC</th>
+      <td>79421.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.026276</td>
+      <td>0.036119</td>
+      <td>0.000078</td>
+      <td>0.007847</td>
+      <td>0.017137</td>
+      <td>0.02995</td>
+      <td>0.847297</td>
+    </tr>
+    <tr>
+      <th>ASC</th>
+      <td>94649.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.024529</td>
+      <td>0.031706</td>
+      <td>0.000079</td>
+      <td>0.008066</td>
+      <td>0.016387</td>
+      <td>0.028624</td>
+      <td>0.942446</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Table_30.tsv.gz'>Supplementary_Table_30.tsv.gz</a>
+                    </td>
+                
+                <td class="nowrap">8.21 MB</td>
+                <td class="nowrap">3dc5ee0dbaabd715dbb6dd5966d0f8df</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Table_30.tsv.gz.dvc'>Supplementary_Table_30.tsv.gz.dvc</a>
+                    </td>
+                
+                <td class="nowrap">112.0 B</td>
+                <td class="nowrap">b543b39ad77ec9d447ffc5d452033787</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">135.0 B</td>
+                <td class="nowrap">af0250b19bb7a8e7f88e66a45b476e66</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

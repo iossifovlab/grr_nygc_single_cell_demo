@@ -1,0 +1,515 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/zemke2023Conserved/supplementary_table/S16</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Conservation GLS T-statistic for DMRs.
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style>N/A
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Unnamed: 0</th>
+      <td>927168.0</td>
+      <td>463583.500000</td>
+      <td>267650.491530</td>
+      <td>0.000000e+00</td>
+      <td>231791.750000</td>
+      <td>463583.500000</td>
+      <td>695375.250000</td>
+      <td>927167.000000</td>
+    </tr>
+    <tr>
+      <th>GLS_t_value_human_v_macaque</th>
+      <td>927168.0</td>
+      <td>4.052483</td>
+      <td>3.642791</td>
+      <td>-4.456150e+00</td>
+      <td>1.799965</td>
+      <td>3.280514</td>
+      <td>5.343462</td>
+      <td>235.937656</td>
+    </tr>
+    <tr>
+      <th>adjusted_p_value_human_v_macaque</th>
+      <td>927168.0</td>
+      <td>0.394722</td>
+      <td>0.441587</td>
+      <td>9.488337e-26</td>
+      <td>0.002397</td>
+      <td>0.115706</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>GLS_t_value_human_v_marmoset</th>
+      <td>838159.0</td>
+      <td>2.764638</td>
+      <td>2.788089</td>
+      <td>-4.761345e+00</td>
+      <td>1.022254</td>
+      <td>2.199264</td>
+      <td>3.791315</td>
+      <td>103.667201</td>
+    </tr>
+    <tr>
+      <th>adjusted_p_value_human_v_marmoset</th>
+      <td>838159.0</td>
+      <td>0.613849</td>
+      <td>0.440419</td>
+      <td>2.259842e-19</td>
+      <td>0.072932</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>GLS_t_value_human_v_mouse</th>
+      <td>418687.0</td>
+      <td>3.638381</td>
+      <td>3.914024</td>
+      <td>-3.741630e+00</td>
+      <td>1.487124</td>
+      <td>2.847552</td>
+      <td>4.718460</td>
+      <td>201.033077</td>
+    </tr>
+    <tr>
+      <th>adjusted_p_value_human_v_mouse</th>
+      <td>418687.0</td>
+      <td>0.470448</td>
+      <td>0.450531</td>
+      <td>7.214268e-25</td>
+      <td>0.009658</td>
+      <td>0.290405</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>GLS_t_value_macaque_v_marmoset</th>
+      <td>759887.0</td>
+      <td>3.396318</td>
+      <td>4.254329</td>
+      <td>-6.655717e+00</td>
+      <td>1.356552</td>
+      <td>2.662656</td>
+      <td>4.437834</td>
+      <td>801.260043</td>
+    </tr>
+    <tr>
+      <th>adjusted_p_value_macaque_v_marmoset</th>
+      <td>759887.0</td>
+      <td>0.510858</td>
+      <td>0.451403</td>
+      <td>2.543508e-33</td>
+      <td>0.017689</td>
+      <td>0.443144</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>GLS_t_value_macaque_v_mouse</th>
+      <td>385234.0</td>
+      <td>3.928069</td>
+      <td>5.796732</td>
+      <td>-3.610693e+00</td>
+      <td>1.630460</td>
+      <td>3.001248</td>
+      <td>4.845152</td>
+      <td>556.548769</td>
+    </tr>
+    <tr>
+      <th>adjusted_p_value_macaque_v_mouse</th>
+      <td>385234.0</td>
+      <td>0.439686</td>
+      <td>0.445685</td>
+      <td>7.253366e-33</td>
+      <td>0.007615</td>
+      <td>0.209998</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>GLS_t_value_marmoset_v_mouse</th>
+      <td>366048.0</td>
+      <td>4.028128</td>
+      <td>7.089318</td>
+      <td>-3.933762e+00</td>
+      <td>1.549474</td>
+      <td>2.975531</td>
+      <td>4.905287</td>
+      <td>802.371604</td>
+    </tr>
+    <tr>
+      <th>adjusted_p_value_marmoset_v_mouse</th>
+      <td>366048.0</td>
+      <td>0.446283</td>
+      <td>0.449076</td>
+      <td>9.486566e-36</td>
+      <td>0.006414</td>
+      <td>0.219528</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Table_16.tsv.gz'>Supplementary_Table_16.tsv.gz</a>
+                    </td>
+                
+                <td class="nowrap">51.49 MB</td>
+                <td class="nowrap">0107309bec074cb332250bd59b469a40</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Table_16.tsv.gz.dvc'>Supplementary_Table_16.tsv.gz.dvc</a>
+                    </td>
+                
+                <td class="nowrap">113.0 B</td>
+                <td class="nowrap">a306253770632d07124bd46c56e93378</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">163.0 B</td>
+                <td class="nowrap">0534c1df49c1f2cf2639bf4cdc50904f</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

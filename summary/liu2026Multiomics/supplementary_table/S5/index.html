@@ -1,0 +1,745 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S5</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">ChromBPNet model QC, related to Fig. 3
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>Organ</code></td>
+  <td>organ from which the cluster was derived</td>
+</tr>
+<tr>
+  <td><code>Cluster_ChromBPNet</code></td>
+  <td>cluster ID in the format used for ChromBPNet training &amp; analyses (as in Table S2)</td>
+</tr>
+<tr>
+  <td><code>L1_annot</code></td>
+  <td>level 1 cell type annotation (n=203)</td>
+</tr>
+<tr>
+  <td><code>Total_n_fragments</code></td>
+  <td>total number of fragments for all cells in the cluster</td>
+</tr>
+<tr>
+  <td><code>Model</code></td>
+  <td>ID for the model (defined by cluster and fold)</td>
+</tr>
+<tr>
+  <td><code>Fold</code></td>
+  <td>training fold (0 to 4)</td>
+</tr>
+<tr>
+  <td><code>Pass_QC</code></td>
+  <td>binary variable indicating whether the model passed performance thresholds and QC and was used for downstream analysis</td>
+</tr>
+<tr>
+  <td><code>Reason</code></td>
+  <td>reason for rejecting model</td>
+</tr>
+<tr>
+  <td><code>counts_metrics.peaks.spearmanr</code></td>
+  <td>ChromBPNet model performance metric: Spearman's rank correlation between observed and predicted log counts in peaks on test chromosomes</td>
+</tr>
+<tr>
+  <td><code>counts_metrics.peaks.pearsonr</code></td>
+  <td>ChromBPNet model performance metric: Pearson correlation between observed and predicted log counts in peaks on test chromosomes</td>
+</tr>
+<tr>
+  <td><code>counts_metrics.peaks.mse</code></td>
+  <td>ChromBPNet model performance metric: mean squared error between observed and predicted log counts in peak on test chromosomes</td>
+</tr>
+<tr>
+  <td><code>profile_metrics.peaks.median_jsd</code></td>
+  <td>ChromBPNet model performance metric: median Jensen Shannon Divergence between observed and predicted profiles for peaks on test chromosomes (lower is better)</td>
+</tr>
+<tr>
+  <td><code>profile_metrics.peaks.median_norm_jsd</code></td>
+  <td>ChromBPNet model performance metric: median min-max normalized JSD (higher is better)</td>
+</tr>
+<tr>
+  <td><code>tn5_motif_1</code></td>
+  <td>ChromBPNet model performance metric: max of predicted marginal footprint for Tn5 motif #1 in bias-corrected model (high response indicate that the model is still senstive to Tn5 sequence bias)</td>
+</tr>
+<tr>
+  <td><code>tn5_motif_2</code></td>
+  <td>as above for Tn5 motif #2</td>
+</tr>
+<tr>
+  <td><code>tn5_motif_3</code></td>
+  <td>as above for Tn5 motif #3</td>
+</tr>
+<tr>
+  <td><code>tn5_motif_4</code></td>
+  <td>as above for Tn5 motif #4</td>
+</tr>
+<tr>
+  <td><code>tn5_motif_5</code></td>
+  <td>as above for Tn5 motif #5</td>
+</tr>
+<tr>
+  <td><code>max_tn5_response</code></td>
+  <td>max of tn5<em>motif</em>1, tn5<em>motif</em>2, tn5<em>motif</em>3, tn5<em>motif</em>4, tn5<em>motif</em>5</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Organ</th>
+      <td>1015</td>
+      <td>12</td>
+      <td>Eye</td>
+      <td>110</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Cluster_ChromBPNet</th>
+      <td>1015</td>
+      <td>203</td>
+      <td>Adrenal_c0</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L1_annot</th>
+      <td>1015</td>
+      <td>203</td>
+      <td>AG_0_adrenal cortex 1</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Total_n_fragments</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>34871195.226601</td>
+      <td>42444767.438002</td>
+      <td>127313.0</td>
+      <td>8168151.0</td>
+      <td>21796391.0</td>
+      <td>42437969.0</td>
+      <td>309315313.0</td>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <td>1015</td>
+      <td>1015</td>
+      <td>Adrenal_c0_fold_0</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Fold</th>
+      <td>1015</td>
+      <td>5</td>
+      <td>fold_0</td>
+      <td>203</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Pass_QC</th>
+      <td>1015</td>
+      <td>2</td>
+      <td>True</td>
+      <td>945</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Reason</th>
+      <td>70</td>
+      <td>2</td>
+      <td>Failed post-MoDISco QC</td>
+      <td>50</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>counts_metrics.peaks.spearmanr</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.722667</td>
+      <td>0.063495</td>
+      <td>0.407937</td>
+      <td>0.686926</td>
+      <td>0.732019</td>
+      <td>0.768614</td>
+      <td>0.851811</td>
+    </tr>
+    <tr>
+      <th>counts_metrics.peaks.pearsonr</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.772013</td>
+      <td>0.047759</td>
+      <td>0.387902</td>
+      <td>0.746941</td>
+      <td>0.7802</td>
+      <td>0.80419</td>
+      <td>0.864516</td>
+    </tr>
+    <tr>
+      <th>counts_metrics.peaks.mse</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.380476</td>
+      <td>0.136505</td>
+      <td>0.10631</td>
+      <td>0.293945</td>
+      <td>0.348588</td>
+      <td>0.440717</td>
+      <td>1.01982</td>
+    </tr>
+    <tr>
+      <th>profile_metrics.peaks.median_jsd</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.559368</td>
+      <td>0.1067</td>
+      <td>0.31537</td>
+      <td>0.487901</td>
+      <td>0.553415</td>
+      <td>0.627458</td>
+      <td>0.811805</td>
+    </tr>
+    <tr>
+      <th>profile_metrics.peaks.median_norm_jsd</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.253564</td>
+      <td>0.100429</td>
+      <td>0.018743</td>
+      <td>0.19214</td>
+      <td>0.255436</td>
+      <td>0.31984</td>
+      <td>0.495912</td>
+    </tr>
+    <tr>
+      <th>tn5_motif_1</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.001018</td>
+      <td>0.000366</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.012</td>
+    </tr>
+    <tr>
+      <th>tn5_motif_2</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.001024</td>
+      <td>0.000663</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.022</td>
+    </tr>
+    <tr>
+      <th>tn5_motif_3</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.001007</td>
+      <td>0.000104</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.003</td>
+    </tr>
+    <tr>
+      <th>tn5_motif_4</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.001002</td>
+      <td>0.000044</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.002</td>
+    </tr>
+    <tr>
+      <th>tn5_motif_5</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.001008</td>
+      <td>0.000117</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.004</td>
+    </tr>
+    <tr>
+      <th>max_tn5_response</th>
+      <td>1015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.001054</td>
+      <td>0.000767</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.001</td>
+      <td>0.022</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S5.xlsx'>S5.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">124.48 KB</td>
+                <td class="nowrap">d745c2a6a15e72f5d6c3ec511ea11e41</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S5.xlsx.dvc'>S5.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">89.0 B</td>
+                <td class="nowrap">3263675917545536654946de382b405f</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">5.28 KB</td>
+                <td class="nowrap">44384bba4525e0866be967d95edf919d</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

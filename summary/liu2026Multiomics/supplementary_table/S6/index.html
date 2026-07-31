@@ -1,0 +1,799 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/liu2026Multiomics/supplementary_table/S6</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Motif lexicon summary, related to Fig. 4-5
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><table>
+<thead>
+<tr>
+  <th>column_name</th>
+  <th>column_description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>idx_uniq</code></td>
+  <td>unique index for the motif within the compendium</td>
+</tr>
+<tr>
+  <td><code>motif_name</code></td>
+  <td>unique name for the motif within the compendium, where the prefix matches the idx_uniq column and suffix matches the annotation column</td>
+</tr>
+<tr>
+  <td><code>motif_name_safe</code></td>
+  <td>computationally safe version of motif_name without slashes or pipe</td>
+</tr>
+<tr>
+  <td><code>class</code></td>
+  <td>class representing motif contribution to accessibility (Activating or Repressive)</td>
+</tr>
+<tr>
+  <td><code>total_instances_across_celltypes</code></td>
+  <td>total number of motif instances across all 189 cell types used for downstream modeling analysis</td>
+</tr>
+<tr>
+  <td><code>cwm_logo_fwd</code></td>
+  <td>name of the contribution weight matrix (CWM) logo (forward) PNG file (see Table S14)</td>
+</tr>
+<tr>
+  <td><code>cwm_logo_rev</code></td>
+  <td>name of the contribution weight matrix (CWM) logo (reverse) PNG file (see Table S14)</td>
+</tr>
+<tr>
+  <td><code>query_consensus</code></td>
+  <td>consensus sequence for trimmed CWM</td>
+</tr>
+<tr>
+  <td><code>annotation</code></td>
+  <td>granular motif annotation, in the form "<family>:<TF>#<index>” when a specific TF is unambiguous, or "<family>:<subfamily>/<alternative_subfamily>#<index>” where families and subfamilies of TFs could recognize the same motif, following the naming convention from the Vierstra v2.1 motif clustering. Index is used to distinguish variants of the same motif, typically representing subtle variations in nucleotide preferences or flanks. For composite motifs, constituents are separated by underscores.</td>
+</tr>
+<tr>
+  <td><code>annotation_broad</code></td>
+  <td>broad motif annotation, used throughout analyses and figures to group motifs together</td>
+</tr>
+<tr>
+  <td><code>category</code></td>
+  <td>motif category (base, base<em>with</em>flanks, homocomposite, heterocomposite, partial, repeat, unresolved)</td>
+</tr>
+<tr>
+  <td><code>best_match_TF</code></td>
+  <td>TF associated with best matching known motif in databases (see Methods)</td>
+</tr>
+<tr>
+  <td><code>best_match_motif</code></td>
+  <td>best matching known motif in databases</td>
+</tr>
+<tr>
+  <td><code>best_match_TOMTOM_qval</code></td>
+  <td>q-value from TOMTOM representing similarity between best matching known motif</td>
+</tr>
+<tr>
+  <td><code>best_match_TFs_in_family</code></td>
+  <td>other TFs in the same family as best<em>match</em>TF, obtained from HOCOMOCO</td>
+</tr>
+<tr>
+  <td><code>best_match_TFs_in_Vierstra_archetype</code></td>
+  <td>other TFs with motifs in the same cluster as the best matching known motif, according to the Vierstra v2.1 motif clustering</td>
+</tr>
+<tr>
+  <td><code>total_seqlets_across_celltypes</code></td>
+  <td>total number of seqlets (short loci used by TF-MoDISco to construct motifs) across all individual motifs which were aggregated into this compendium motif</td>
+</tr>
+<tr>
+  <td><code>merged_pattern</code></td>
+  <td>name of the cluster of per-cell-type motifs which corresponds to this compendium motif; can mapped back to the constituent motifs</td>
+</tr>
+<tr>
+  <td><code>n_constituent_motifs</code></td>
+  <td>number of motifs aggregated into this compendium motif</td>
+</tr>
+<tr>
+  <td><code>n_constituent_celltypes</code></td>
+  <td>number of cell types where at least one motif learned in that cell type (through TF-MoDISco) was aggregated into this compendium motif</td>
+</tr>
+<tr>
+  <td><code>constituent_organs</code></td>
+  <td>number of organs where at least one motif learned in a cell type in that organ (through TF-MoDISco) was aggregated into this compendium motif</td>
+</tr>
+<tr>
+  <td><code>constituent_celltypes</code></td>
+  <td>L2_annot for the cell types where at least one motif learned in that cell type was aggregated into this compendium motif</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>idx_uniq</th>
+      <td>508.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>253.582677</td>
+      <td>146.922926</td>
+      <td>0.0</td>
+      <td>126.75</td>
+      <td>253.5</td>
+      <td>380.25</td>
+      <td>508.0</td>
+    </tr>
+    <tr>
+      <th>motif_name</th>
+      <td>508</td>
+      <td>508</td>
+      <td>0|AP-2</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>motif_name_safe</th>
+      <td>508</td>
+      <td>508</td>
+      <td>0.AP-2</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td>508</td>
+      <td>2</td>
+      <td>positive</td>
+      <td>493</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>total_instances_across_celltypes</th>
+      <td>508.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>312350.116142</td>
+      <td>1926122.15097</td>
+      <td>1.0</td>
+      <td>1278.0</td>
+      <td>7905.0</td>
+      <td>54238.75</td>
+      <td>34011538.0</td>
+    </tr>
+    <tr>
+      <th>cwm_logo_fwd</th>
+      <td>508</td>
+      <td>508</td>
+      <td>0.AP-2__cwm.fwd.png</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cwm_logo_rev</th>
+      <td>508</td>
+      <td>508</td>
+      <td>0.AP-2__cwm.rev.png</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>query_consensus</th>
+      <td>507</td>
+      <td>507</td>
+      <td>CCCTGAGGC</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>annotation</th>
+      <td>508</td>
+      <td>508</td>
+      <td>AP-2</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>annotation_broad</th>
+      <td>508</td>
+      <td>179</td>
+      <td>unresolved</td>
+      <td>38</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>category</th>
+      <td>508</td>
+      <td>7</td>
+      <td>heterocomposite</td>
+      <td>222</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>best_match_TF</th>
+      <td>508</td>
+      <td>257</td>
+      <td>TWIST1</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>best_match_motif</th>
+      <td>508</td>
+      <td>364</td>
+      <td>M08722_2.00</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>best_match_TOMTOM_qval</th>
+      <td>507.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.185865</td>
+      <td>0.296925</td>
+      <td>0.0</td>
+      <td>0.000821</td>
+      <td>0.02732</td>
+      <td>0.24232</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>best_match_TFs_in_family</th>
+      <td>508</td>
+      <td>134</td>
+      <td>not found in HOCOMOCO</td>
+      <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>best_match_TFs_in_Vierstra_archetype</th>
+      <td>508</td>
+      <td>135</td>
+      <td>AC0609: ATOH1,HAND2,LYL1,NEUROD1,NEUROD2,NEUROG2,OLIG2,OLIG3,PTF1A,TAL1::TCF3,TWIST1,ZBTB18,ZBTB42</td>
+      <td>35</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>total_seqlets_across_celltypes</th>
+      <td>508.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>25459.718504</td>
+      <td>167926.793594</td>
+      <td>20.0</td>
+      <td>38.75</td>
+      <td>105.5</td>
+      <td>730.0</td>
+      <td>2803327.0</td>
+    </tr>
+    <tr>
+      <th>merged_pattern</th>
+      <td>508</td>
+      <td>508</td>
+      <td>pos.Average_272__merged_pattern_1</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>n_constituent_motifs</th>
+      <td>508.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.677165</td>
+      <td>36.783686</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>327.0</td>
+    </tr>
+    <tr>
+      <th>n_constituent_celltypes</th>
+      <td>508.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.153543</td>
+      <td>29.476164</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>189.0</td>
+    </tr>
+    <tr>
+      <th>constituent_organs</th>
+      <td>508</td>
+      <td>112</td>
+      <td>Heart</td>
+      <td>49</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>constituent_celltypes</th>
+      <td>508</td>
+      <td>246</td>
+      <td>fibroblast</td>
+      <td>29</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S6.xlsx'>S6.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">91.7 KB</td>
+                <td class="nowrap">1a23e081a3852061e8f8cd53ab390b1c</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='S6.xlsx.dvc'>S6.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">88.0 B</td>
+                <td class="nowrap">91f77df6b746189ef5e260eaf9a56428</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">14.13 KB</td>
+                <td class="nowrap">dd5ea25f113605f813b8e21f5f448655</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx'>liu2026Multiomics-supplentary-tables.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.85 MB</td>
+                <td class="nowrap">dee44d2161e40186b958cbdde847e435</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='liu2026Multiomics-supplentary-tables.xlsx.dvc'>liu2026Multiomics-supplentary-tables.xlsx.dvc</a>
+                    </td>
+                
+                <td class="nowrap">124.0 B</td>
+                <td class="nowrap">6a94dadc1180fd3fb9b7cfd02180c8d0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>
