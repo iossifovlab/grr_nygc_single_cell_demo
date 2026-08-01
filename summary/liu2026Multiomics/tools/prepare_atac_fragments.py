@@ -26,11 +26,52 @@ for ff in glob.glob(f"{yoonHaDD}/*.fragments.tsv.gz"):
     print(sm_id, tissue_sc, batch_n, organ, pcw_age)
 
     resource_id = f"summary/liu2026Multiomics/sample_atac_fragments/{sm_id}"
-    files = [ff, iff]
+    draw_file = os.path.abspath("./fragment_count_dist_plot.py")
+    files = [ff, iff, draw_file]
     conf = {
-        "type": "basic",
-        "file": ff.split("/")[-1],
-        "index_file": iff.split("/")[-1],
+        "type": "fragment_score",
+
+        "table": {
+            "filename": fn,
+            "format": "tabix",
+            "header_mode": "none",
+            "zero_based": True,
+
+            "chrom": {
+                "column_index": 0
+            },
+            "pos_begin": {
+                "column_index": 1
+            },
+            "pos_end": {
+                "column_index": 2
+            }
+        },
+        "scores": [
+            {
+                "id": "cell",
+                "column_index": 3,
+                "type": "str",
+                "histogram": {
+                    "type": "categorical",
+                    "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count",
+                    "displayed_values_count": 5
+                }
+            },
+            {
+                "id": "count",
+                "column_index": 4,
+                "type": "int",
+                "histogram": {
+                    "type": "number",
+                    "view_range": {
+                        "min": 1,
+                        "max": 20
+                    },
+                    "number_of_bins": 20
+                }
+            }
+        ],
         "meta": {
             "summary": f"Sample ATAC fragments for {sm_id} from liu2026Multiomics.",
             "description": dedent("""

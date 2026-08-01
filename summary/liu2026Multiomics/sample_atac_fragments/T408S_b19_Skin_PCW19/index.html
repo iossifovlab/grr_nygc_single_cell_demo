@@ -189,7 +189,9 @@
         cursor: pointer;
       }
 
-      
+      table {
+    table-layout: fixed;
+}
     </style>
 
     <script>
@@ -242,7 +244,7 @@
             </tr>
             <tr>
                 <th>Type</th>
-                <td>basic</td>
+                <td>fragment_score</td>
             </tr>
             <tr>
                 <th>Version</th>
@@ -319,6 +321,98 @@
     
 
 
+
+<h2>Scores (2)</h2>
+<div class="scrollable-table-container">  
+<table>
+    <colgroup>
+        <col style="width: 15%">
+        <col style="width: 6%">
+        <col style="width: 15%">
+        <col>
+        <col style="width: 220px">
+        <col style="width: 15%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Default annotation</th>
+            <th>Description</th>
+            <th>Histogram</th>
+            <th>Range</th>
+        </tr>
+    </thead><tr class="score-definition">
+            <td>cell</td>
+            <td>str</td>
+            
+            
+                <td>
+                    <p>cell</p>
+                </td>
+            
+
+            <td>
+                <div></div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_cell.png"
+                    alt="HISTOGRAM FOR cell"
+                    title=cell
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-cell"></td>
+            <td>
+                CL142_E03+G03+C08, CL143_D03+B12+H09, CL147_F03+G02+B09, CL144_E02+H11+D05, CL142_D01+C01+A12, Other</td>
+        </tr><tr class="score-definition">
+            <td>count</td>
+            <td>int</td>
+            
+            
+                <td>
+                    <p>count</p>
+                </td>
+            
+
+            <td>
+                <div></div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_count.png"
+                    alt="HISTOGRAM FOR count"
+                    title=count
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-count"></td>
+            <td>
+                [1, 31]</td>
+        </tr><div id="modal-cell" class="modal">
+            <div class="modal-content">
+                <span title=cell class="close">&times;</span>
+                <img src="statistics/histogram_cell.png"
+                    alt="HISTOGRAM FOR cell"
+                    title=cell
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div><div id="modal-count" class="modal">
+            <div class="modal-content">
+                <span title=count class="close">&times;</span>
+                <img src="statistics/histogram_count.png"
+                    alt="HISTOGRAM FOR count"
+                    title=count
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div>
+</table>
+</div>
+
+
     <h2 style="margin-top: 70px;">Files</h2>
     <table>
     <thead>
@@ -368,11 +462,20 @@
             <tr>
                 
                     <td class="nowrap">
+                        <a href='fragment_count_dist_plot.py'>fragment_count_dist_plot.py</a>
+                    </td>
+                
+                <td class="nowrap">853.0 B</td>
+                <td class="nowrap">9d735ee8c687286d50484e7f1e398e60</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">716.0 B</td>
-                <td class="nowrap">62e6c7ba1dc1cd5fcf8dcaad3fe04931</td>
+                <td class="nowrap">1.13 KB</td>
+                <td class="nowrap">1a4b2738ce0930b852d5f71e02faba47</td>
             </tr>
             <tr>
                 
