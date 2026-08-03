@@ -1,0 +1,943 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/johansen2025Crossspecies/expression_meta_data/HMBA-Macaque-PatchSeq/20260228/morphology_features</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Meta data file for expression subset HMBA-Macaque-PatchSeq
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
+
+<p>Downloaded from: <a href="https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html">https://alleninstitute.github.io/abc<em>atlas</em>access/descriptions/HMBA-BG_dataset.html</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>assay: scRNASeq</li>
+                    
+                        <li>directory: HMBA-Macaque-PatchSeq</li>
+                    
+                        <li>release_date: 20260228</li>
+                    
+                        <li>technology: 10x genomics</li>
+                    
+                        <li>dataset: johansen2025Crossspecies</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cell_label</th>
+      <td>717</td>
+      <td>717</td>
+      <td>Q19.26.014.11.04.01</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23_Sholl_PC0</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>2073.589319</td>
+      <td>-2257.455859</td>
+      <td>-1567.609371</td>
+      <td>-683.550364</td>
+      <td>1064.406684</td>
+      <td>5206.836193</td>
+    </tr>
+    <tr>
+      <th>23_Sholl_PC1</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.0</td>
+      <td>906.947612</td>
+      <td>-1375.148191</td>
+      <td>-667.221286</td>
+      <td>-196.303551</td>
+      <td>423.351836</td>
+      <td>1624.135505</td>
+    </tr>
+    <tr>
+      <th>2_Sholl_PC0</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>1702.632552</td>
+      <td>-1926.074576</td>
+      <td>-1199.885566</td>
+      <td>-592.343399</td>
+      <td>799.721041</td>
+      <td>4390.161345</td>
+    </tr>
+    <tr>
+      <th>2_Sholl_PC1</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.0</td>
+      <td>922.011239</td>
+      <td>-1299.948998</td>
+      <td>-659.247592</td>
+      <td>-185.42263</td>
+      <td>570.368466</td>
+      <td>1819.642701</td>
+    </tr>
+    <tr>
+      <th>3_Sholl_PC0</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-0.0</td>
+      <td>240.404185</td>
+      <td>-515.155899</td>
+      <td>-135.090847</td>
+      <td>-15.615586</td>
+      <td>122.285985</td>
+      <td>891.88377</td>
+    </tr>
+    <tr>
+      <th>3_Sholl_PC1</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>130.982962</td>
+      <td>-294.683189</td>
+      <td>-74.383222</td>
+      <td>-9.127534</td>
+      <td>64.238262</td>
+      <td>670.585346</td>
+    </tr>
+    <tr>
+      <th>axon_bias_dorsal</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-17.373735</td>
+      <td>97.301413</td>
+      <td>-256.409643</td>
+      <td>-52.92491</td>
+      <td>-14.078147</td>
+      <td>22.401883</td>
+      <td>186.829788</td>
+    </tr>
+    <tr>
+      <th>axon_bias_medial</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>81.498799</td>
+      <td>71.705063</td>
+      <td>2.173056</td>
+      <td>23.402518</td>
+      <td>64.329042</td>
+      <td>145.31174</td>
+      <td>240.978427</td>
+    </tr>
+    <tr>
+      <th>axon_exit_distance</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.308566</td>
+      <td>11.638952</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>11.074677</td>
+      <td>36.291685</td>
+    </tr>
+    <tr>
+      <th>axon_exit_theta_coronal</th>
+      <td>149.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.53325</td>
+      <td>0.180092</td>
+      <td>0.091717</td>
+      <td>0.428479</td>
+      <td>0.538145</td>
+      <td>0.66715</td>
+      <td>0.953242</td>
+    </tr>
+    <tr>
+      <th>axon_extent_dorsal</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>560.228534</td>
+      <td>298.578979</td>
+      <td>248.843059</td>
+      <td>379.830163</td>
+      <td>474.164118</td>
+      <td>671.6452</td>
+      <td>1461.963893</td>
+    </tr>
+    <tr>
+      <th>axon_extent_medial</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>558.985112</td>
+      <td>237.440879</td>
+      <td>208.251716</td>
+      <td>395.722763</td>
+      <td>504.382962</td>
+      <td>761.091154</td>
+      <td>1032.913949</td>
+    </tr>
+    <tr>
+      <th>axon_max_branch_order</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>30.0</td>
+      <td>18.644034</td>
+      <td>10.0</td>
+      <td>18.0</td>
+      <td>24.0</td>
+      <td>35.0</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <th>axon_max_euclidean_distance</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>376.827163</td>
+      <td>174.384589</td>
+      <td>166.199996</td>
+      <td>275.238124</td>
+      <td>293.469184</td>
+      <td>501.595244</td>
+      <td>786.581963</td>
+    </tr>
+    <tr>
+      <th>axon_max_path_distance</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1245.900196</td>
+      <td>1014.578779</td>
+      <td>524.684351</td>
+      <td>624.307614</td>
+      <td>1019.020956</td>
+      <td>1145.384854</td>
+      <td>5051.520241</td>
+    </tr>
+    <tr>
+      <th>axon_mean_contraction</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.782633</td>
+      <td>0.053917</td>
+      <td>0.717549</td>
+      <td>0.737446</td>
+      <td>0.771479</td>
+      <td>0.821313</td>
+      <td>0.889307</td>
+    </tr>
+    <tr>
+      <th>axon_num_branches</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>439.285714</td>
+      <td>317.758579</td>
+      <td>63.0</td>
+      <td>159.0</td>
+      <td>337.0</td>
+      <td>749.0</td>
+      <td>1179.0</td>
+    </tr>
+    <tr>
+      <th>axon_soma_percentile_dorsal</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.453088</td>
+      <td>0.141845</td>
+      <td>0.240563</td>
+      <td>0.366287</td>
+      <td>0.439836</td>
+      <td>0.537841</td>
+      <td>0.791613</td>
+    </tr>
+    <tr>
+      <th>axon_soma_percentile_medial</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.352339</td>
+      <td>0.089918</td>
+      <td>0.186779</td>
+      <td>0.309504</td>
+      <td>0.359643</td>
+      <td>0.421562</td>
+      <td>0.49346</td>
+    </tr>
+    <tr>
+      <th>axon_total_length</th>
+      <td>21.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20710.038109</td>
+      <td>14773.877131</td>
+      <td>3565.647976</td>
+      <td>8594.573708</td>
+      <td>16537.953182</td>
+      <td>27256.257097</td>
+      <td>60420.44625</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_bias_dorsal</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.055397</td>
+      <td>60.595695</td>
+      <td>-230.429076</td>
+      <td>-29.815958</td>
+      <td>5.643119</td>
+      <td>38.934237</td>
+      <td>197.631769</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_bias_medial</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>41.586917</td>
+      <td>39.292419</td>
+      <td>0.248366</td>
+      <td>12.326967</td>
+      <td>29.4798</td>
+      <td>59.489676</td>
+      <td>182.374261</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_calculate_number_of_stems</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.463576</td>
+      <td>1.982506</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>6.5</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_extent_dorsal</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>332.062536</td>
+      <td>109.911421</td>
+      <td>70.318817</td>
+      <td>270.748244</td>
+      <td>324.02927</td>
+      <td>382.951183</td>
+      <td>814.061958</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_extent_medial</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>337.750433</td>
+      <td>112.477076</td>
+      <td>73.184561</td>
+      <td>273.241391</td>
+      <td>340.935483</td>
+      <td>388.467584</td>
+      <td>799.907028</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_max_branch_order</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.688742</td>
+      <td>1.883916</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_max_euclidean_distance</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>229.714297</td>
+      <td>72.944885</td>
+      <td>72.818722</td>
+      <td>194.584326</td>
+      <td>223.846495</td>
+      <td>248.054992</td>
+      <td>541.627791</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_max_path_distance</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>294.283413</td>
+      <td>123.827108</td>
+      <td>95.980206</td>
+      <td>240.346505</td>
+      <td>271.689165</td>
+      <td>304.036468</td>
+      <td>884.802118</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_mean_contraction</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.819618</td>
+      <td>0.049077</td>
+      <td>0.65091</td>
+      <td>0.785318</td>
+      <td>0.826274</td>
+      <td>0.858176</td>
+      <td>0.926764</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_mean_diameter</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.583895</td>
+      <td>0.074186</td>
+      <td>0.445387</td>
+      <td>0.523856</td>
+      <td>0.569233</td>
+      <td>0.631233</td>
+      <td>0.851333</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_num_branches</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>55.529801</td>
+      <td>25.359234</td>
+      <td>9.0</td>
+      <td>43.0</td>
+      <td>53.0</td>
+      <td>63.0</td>
+      <td>199.0</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_soma_percentile_dorsal</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.479163</td>
+      <td>0.143723</td>
+      <td>0.081188</td>
+      <td>0.391287</td>
+      <td>0.471055</td>
+      <td>0.55932</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_soma_percentile_medial</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.386875</td>
+      <td>0.090649</td>
+      <td>0.10665</td>
+      <td>0.344258</td>
+      <td>0.39866</td>
+      <td>0.457549</td>
+      <td>0.499203</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_stem_exit_MedialLateral</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.655391</td>
+      <td>0.22775</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>0.666667</td>
+      <td>0.8</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_stem_exit_dorsal</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.180427</td>
+      <td>0.156932</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.166667</td>
+      <td>0.25</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_stem_exit_ventral</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.164181</td>
+      <td>0.151746</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.166667</td>
+      <td>0.25</td>
+      <td>0.666667</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_total_length</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4059.99079</td>
+      <td>1914.997102</td>
+      <td>317.221037</td>
+      <td>3054.893608</td>
+      <td>3855.355726</td>
+      <td>4802.69977</td>
+      <td>12052.006734</td>
+    </tr>
+    <tr>
+      <th>basal_dendrite_total_surface_area</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7569.756772</td>
+      <td>4353.314137</td>
+      <td>549.04999</td>
+      <td>5037.977608</td>
+      <td>6913.585444</td>
+      <td>9095.172487</td>
+      <td>29712.798036</td>
+    </tr>
+    <tr>
+      <th>soma_surface_area</th>
+      <td>151.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>579.471263</td>
+      <td>316.072164</td>
+      <td>190.116472</td>
+      <td>369.116435</td>
+      <td>497.493364</td>
+      <td>663.187435</td>
+      <td>2137.330167</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">672.0 B</td>
+                <td class="nowrap">97a1d005d9ce3d10d1f299db14d6c121</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='morphology_features.csv.gz'>morphology_features.csv.gz</a>
+                    </td>
+                
+                <td class="nowrap">31.71 KB</td>
+                <td class="nowrap">44fae98c853989853f7186d1cdac27df</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

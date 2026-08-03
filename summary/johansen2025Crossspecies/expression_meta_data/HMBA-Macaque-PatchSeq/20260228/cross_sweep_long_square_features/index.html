@@ -1,0 +1,649 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/johansen2025Crossspecies/expression_meta_data/HMBA-Macaque-PatchSeq/20260228/cross_sweep_long_square_features</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Meta data file for expression subset HMBA-Macaque-PatchSeq
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
+
+<p>Downloaded from: <a href="https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html">https://alleninstitute.github.io/abc<em>atlas</em>access/descriptions/HMBA-BG_dataset.html</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>assay: scRNASeq</li>
+                    
+                        <li>directory: HMBA-Macaque-PatchSeq</li>
+                    
+                        <li>release_date: 20260228</li>
+                    
+                        <li>technology: 10x genomics</li>
+                    
+                        <li>dataset: johansen2025Crossspecies</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cell_label</th>
+      <td>717</td>
+      <td>717</td>
+      <td>Q19.26.014.11.04.01</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>fi_fit_slope</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.181978</td>
+      <td>0.202782</td>
+      <td>-0.106359</td>
+      <td>0.089016</td>
+      <td>0.136957</td>
+      <td>0.188987</td>
+      <td>2.250002</td>
+    </tr>
+    <tr>
+      <th>input_resistance</th>
+      <td>636.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>138.547046</td>
+      <td>283.285539</td>
+      <td>-639.218867</td>
+      <td>61.120371</td>
+      <td>83.847601</td>
+      <td>124.897856</td>
+      <td>3257.325642</td>
+    </tr>
+    <tr>
+      <th>input_resistance_mohm_qc</th>
+      <td>640.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>200.69101</td>
+      <td>768.797858</td>
+      <td>-14425.182208</td>
+      <td>95.142046</td>
+      <td>132.468416</td>
+      <td>215.615748</td>
+      <td>5208.219648</td>
+    </tr>
+    <tr>
+      <th>input_resistance_ss</th>
+      <td>636.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>129.443303</td>
+      <td>264.560681</td>
+      <td>-46.795868</td>
+      <td>59.75186</td>
+      <td>80.871885</td>
+      <td>116.168486</td>
+      <td>2972.806116</td>
+    </tr>
+    <tr>
+      <th>rheobase_i</th>
+      <td>639.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>178.062597</td>
+      <td>121.466162</td>
+      <td>2.5</td>
+      <td>90.0</td>
+      <td>160.0</td>
+      <td>239.999985</td>
+      <td>1019.999939</td>
+    </tr>
+    <tr>
+      <th>sag</th>
+      <td>636.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.064996</td>
+      <td>0.106387</td>
+      <td>-0.063003</td>
+      <td>0.016049</td>
+      <td>0.034635</td>
+      <td>0.065121</td>
+      <td>0.729242</td>
+    </tr>
+    <tr>
+      <th>sag_area</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.114245</td>
+      <td>0.458453</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.639016</td>
+    </tr>
+    <tr>
+      <th>sag_area_depol</th>
+      <td>577.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.392722</td>
+      <td>0.85966</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.565255</td>
+      <td>11.331373</td>
+    </tr>
+    <tr>
+      <th>sag_depol</th>
+      <td>577.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.086646</td>
+      <td>0.122315</td>
+      <td>-0.054173</td>
+      <td>0.014372</td>
+      <td>0.046514</td>
+      <td>0.115067</td>
+      <td>1.0822</td>
+    </tr>
+    <tr>
+      <th>sag_ratio</th>
+      <td>45.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.109319</td>
+      <td>0.19559</td>
+      <td>0.645697</td>
+      <td>1.062672</td>
+      <td>1.091047</td>
+      <td>1.127199</td>
+      <td>2.235186</td>
+    </tr>
+    <tr>
+      <th>sag_tau</th>
+      <td>53.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.22284</td>
+      <td>0.663406</td>
+      <td>-0.230524</td>
+      <td>0.003701</td>
+      <td>0.058162</td>
+      <td>0.182421</td>
+      <td>4.733438</td>
+    </tr>
+    <tr>
+      <th>sag_tau_depol</th>
+      <td>138.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.140699</td>
+      <td>0.22485</td>
+      <td>0.008081</td>
+      <td>0.032991</td>
+      <td>0.072678</td>
+      <td>0.14955</td>
+      <td>1.647085</td>
+    </tr>
+    <tr>
+      <th>tau</th>
+      <td>630.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.246576</td>
+      <td>5.812974</td>
+      <td>0.003378</td>
+      <td>0.007549</td>
+      <td>0.010039</td>
+      <td>0.015928</td>
+      <td>145.91896</td>
+    </tr>
+    <tr>
+      <th>v_baseline</th>
+      <td>636.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-75.207499</td>
+      <td>7.098097</td>
+      <td>-97.987022</td>
+      <td>-80.067167</td>
+      <td>-77.021389</td>
+      <td>-71.609941</td>
+      <td>-39.525383</td>
+    </tr>
+    <tr>
+      <th>v_baseline_FI</th>
+      <td>48.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-71.131576</td>
+      <td>7.121005</td>
+      <td>-81.934021</td>
+      <td>-75.802666</td>
+      <td>-73.934071</td>
+      <td>-68.808735</td>
+      <td>-51.741745</td>
+    </tr>
+    <tr>
+      <th>v_baseline_chirp</th>
+      <td>38.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-71.165696</td>
+      <td>8.406828</td>
+      <td>-82.703928</td>
+      <td>-76.60567</td>
+      <td>-74.049293</td>
+      <td>-67.74072</td>
+      <td>-51.280948</td>
+    </tr>
+    <tr>
+      <th>v_baseline_short_square</th>
+      <td>11.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-60.680859</td>
+      <td>6.046243</td>
+      <td>-70.790535</td>
+      <td>-64.194092</td>
+      <td>-62.729126</td>
+      <td>-55.353619</td>
+      <td>-51.998535</td>
+    </tr>
+    <tr>
+      <th>vm_for_sag</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-87.141157</td>
+      <td>7.147179</td>
+      <td>-112.812508</td>
+      <td>-91.070314</td>
+      <td>-87.234379</td>
+      <td>-83.500008</td>
+      <td>-46.4375</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='cross_sweep_long_square_features.csv.gz'>cross_sweep_long_square_features.csv.gz</a>
+                    </td>
+                
+                <td class="nowrap">54.33 KB</td>
+                <td class="nowrap">e10c8b0e11783d648f53e6019b4887bc</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">685.0 B</td>
+                <td class="nowrap">54eea1f51a1ca1adfe915bbd25a4b11f</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

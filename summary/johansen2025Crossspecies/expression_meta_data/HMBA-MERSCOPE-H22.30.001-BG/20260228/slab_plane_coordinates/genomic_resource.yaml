@@ -1,0 +1,19 @@
+type: data_frame
+file: slab_plane_coordinates.csv.gz
+meta:
+  summary: Meta data file for expression subset HMBA-MERSCOPE-H22.30.001-BG
+  description: '
+
+    [Johansen et al., Cross-species consensus atlas of the primate basal ganglia,
+    bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)
+
+
+    Downloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).
+
+    '
+  labels:
+    assay: scRNASeq
+    directory: HMBA-MERSCOPE-H22.30.001-BG
+    release_date: '20260228'
+    technology: 10x genomics
+    dataset: johansen2025Crossspecies

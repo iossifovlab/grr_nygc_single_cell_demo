@@ -1,0 +1,621 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/johansen2025Crossspecies/expression_meta_data/HMBA-Macaque-PatchSeq/20260228/sweep_features</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Meta data file for expression subset HMBA-Macaque-PatchSeq
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
+
+<p>Downloaded from: <a href="https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html">https://alleninstitute.github.io/abc<em>atlas</em>access/descriptions/HMBA-BG_dataset.html</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>assay: scRNASeq</li>
+                    
+                        <li>directory: HMBA-Macaque-PatchSeq</li>
+                    
+                        <li>release_date: 20260228</li>
+                    
+                        <li>technology: 10x genomics</li>
+                    
+                        <li>dataset: johansen2025Crossspecies</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cell_label</th>
+      <td>717</td>
+      <td>717</td>
+      <td>Q19.26.014.11.04.01</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>adapt_hero</th>
+      <td>531.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.040791</td>
+      <td>0.068592</td>
+      <td>-0.273997</td>
+      <td>0.008838</td>
+      <td>0.023194</td>
+      <td>0.047204</td>
+      <td>0.807201</td>
+    </tr>
+    <tr>
+      <th>adapt_mean</th>
+      <td>569.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.04919</td>
+      <td>0.087866</td>
+      <td>-0.567242</td>
+      <td>0.012479</td>
+      <td>0.028405</td>
+      <td>0.053291</td>
+      <td>0.914121</td>
+    </tr>
+    <tr>
+      <th>avg_rate_hero</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11.876689</td>
+      <td>12.596699</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>9.0</td>
+      <td>12.25</td>
+      <td>123.0</td>
+    </tr>
+    <tr>
+      <th>avg_rate_max</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>27.834459</td>
+      <td>29.842785</td>
+      <td>1.0</td>
+      <td>13.0</td>
+      <td>20.0</td>
+      <td>29.0</td>
+      <td>244.0</td>
+    </tr>
+    <tr>
+      <th>avg_rate_rheo</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.425676</td>
+      <td>6.424721</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>101.0</td>
+    </tr>
+    <tr>
+      <th>first_isi_inv_hero</th>
+      <td>563.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>21.997383</td>
+      <td>24.066915</td>
+      <td>1.077447</td>
+      <td>9.64882</td>
+      <td>13.667737</td>
+      <td>22.21239</td>
+      <td>284.900285</td>
+    </tr>
+    <tr>
+      <th>first_isi_inv_rheo</th>
+      <td>276.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.429163</td>
+      <td>24.441428</td>
+      <td>1.274697</td>
+      <td>2.696993</td>
+      <td>3.527226</td>
+      <td>6.029008</td>
+      <td>249.376559</td>
+    </tr>
+    <tr>
+      <th>first_isi_rheo</th>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.106629</td>
+      <td>0.128783</td>
+      <td>0.0101</td>
+      <td>0.0135</td>
+      <td>0.03486</td>
+      <td>0.17372</td>
+      <td>0.327</td>
+    </tr>
+    <tr>
+      <th>ir_late_hero</th>
+      <td>421.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.124295</td>
+      <td>0.122303</td>
+      <td>0.002524</td>
+      <td>0.053927</td>
+      <td>0.093116</td>
+      <td>0.148344</td>
+      <td>0.96892</td>
+    </tr>
+    <tr>
+      <th>ir_late_mean</th>
+      <td>525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.134015</td>
+      <td>0.105655</td>
+      <td>0.015382</td>
+      <td>0.074256</td>
+      <td>0.107498</td>
+      <td>0.153174</td>
+      <td>0.839109</td>
+    </tr>
+    <tr>
+      <th>isi_cv_hero</th>
+      <td>563.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.164301</td>
+      <td>0.164261</td>
+      <td>0.0</td>
+      <td>0.076126</td>
+      <td>0.128226</td>
+      <td>0.208188</td>
+      <td>1.404249</td>
+    </tr>
+    <tr>
+      <th>isi_cv_mean</th>
+      <td>584.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.181555</td>
+      <td>0.159336</td>
+      <td>0.0</td>
+      <td>0.094437</td>
+      <td>0.141812</td>
+      <td>0.210221</td>
+      <td>1.473053</td>
+    </tr>
+    <tr>
+      <th>last_spike_t_hero</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.818325</td>
+      <td>0.27906</td>
+      <td>0.006235</td>
+      <td>0.869375</td>
+      <td>0.9378</td>
+      <td>0.973955</td>
+      <td>0.9998</td>
+    </tr>
+    <tr>
+      <th>latency_hero</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.085307</td>
+      <td>0.065816</td>
+      <td>0.0001</td>
+      <td>0.043755</td>
+      <td>0.073813</td>
+      <td>0.108479</td>
+      <td>0.74646</td>
+    </tr>
+    <tr>
+      <th>latency_rheo</th>
+      <td>592.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.344318</td>
+      <td>0.225112</td>
+      <td>0.00328</td>
+      <td>0.17061</td>
+      <td>0.295347</td>
+      <td>0.465779</td>
+      <td>0.992125</td>
+    </tr>
+    <tr>
+      <th>threshold_i_ramp</th>
+      <td>236.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>170.514707</td>
+      <td>102.932036</td>
+      <td>5.3125</td>
+      <td>95.520833</td>
+      <td>162.5</td>
+      <td>222.052083</td>
+      <td>676.791667</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">667.0 B</td>
+                <td class="nowrap">6361160a227d4d0aeefd3412b0ef93f5</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='sweep_features.csv.gz'>sweep_features.csv.gz</a>
+                    </td>
+                
+                <td class="nowrap">51.09 KB</td>
+                <td class="nowrap">53840febbf797564733919d856052ae8</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>
