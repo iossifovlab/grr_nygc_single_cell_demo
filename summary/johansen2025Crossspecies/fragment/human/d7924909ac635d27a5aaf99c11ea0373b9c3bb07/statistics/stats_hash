@@ -1,0 +1,62 @@
+{
+  "config": {
+    "histograms": [
+      {
+        "type": "categorical",
+        "value_order": [],
+        "y_log_scale": false,
+        "label_rotation": 0,
+        "displayed_values_count": 5,
+        "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count"
+      },
+      {
+        "type": "number",
+        "view_range": {
+          "min": 1,
+          "max": 20
+        },
+        "number_of_bins": 20,
+        "x_log_scale": false,
+        "y_log_scale": false,
+        "x_min_log": null
+      }
+    ],
+    "table": {
+      "config": {
+        "filename": "d7924909ac635d27a5aaf99c11ea0373b9c3bb07.gz",
+        "format": "tabix",
+        "header_mode": "none",
+        "zero_based": true,
+        "chrom": {
+          "column_index": 0
+        },
+        "pos_begin": {
+          "column_index": 1
+        },
+        "pos_end": {
+          "column_index": 2
+        }
+      },
+      "files_md5": {
+        "d7924909ac635d27a5aaf99c11ea0373b9c3bb07.gz": "aa1d7b9c4498dae72e4a0a1906966797",
+        "d7924909ac635d27a5aaf99c11ea0373b9c3bb07.gz.tbi": "11b1ba52196d1fb0bb78716da23859d5"
+      }
+    }
+  },
+  "score_config": [
+    {
+      "id": "cell",
+      "type": "str",
+      "name": null,
+      "index": 3,
+      "na_values": "[]"
+    },
+    {
+      "id": "count",
+      "type": "int",
+      "name": null,
+      "index": 4,
+      "na_values": "['', '.', 'NA', 'nan']"
+    }
+  ]
+}
