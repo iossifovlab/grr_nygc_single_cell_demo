@@ -1,6 +1,174 @@
 [
   {
     "config": {
+      "file": "Human_HMBA_basalganglia_AIT_pre-print.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy](https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy).\n\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "species": "Human",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Comprehensive expression matrix for Human"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/comprehensive_expression_matrix/Human",
+    "id": "summary/johansen2025Crossspecies/comprehensive_expression_matrix/Human",
+    "manifest": [
+      {
+        "md5": "d6196915c41c8865e15a05a9df62bf60",
+        "name": "Human_HMBA_basalganglia_AIT_pre-print.h5ad",
+        "size": 112313670448
+      },
+      {
+        "md5": "1d7ecc666eb37e555a372522c3f6fe00",
+        "name": "Human_HMBA_basalganglia_AIT_pre-print.h5ad.dvc",
+        "size": 130
+      },
+      {
+        "md5": "78e661241320a7700c8fd6eb4ecc585a",
+        "name": "genomic_resource.yaml",
+        "size": 641
+      },
+      {
+        "md5": "ac3bdcda6b77a2952ad0dbdfc5aa5d1c",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 3947
+      },
+      {
+        "md5": "de04095a07b4fdf56327f28f27b95752",
+        "name": "statistics/describe_obs.csv",
+        "size": 8607
+      },
+      {
+        "md5": "b7a20d8ebb44192a7a514a6dd6abed4c",
+        "name": "statistics/describe_var.csv",
+        "size": 1957
+      },
+      {
+        "md5": "ab6229cebb2f7362c0f8bdd7d5b2f186",
+        "name": "statistics/stats_hash",
+        "size": 170
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "Macaque_HMBA_basalganglia_AIT_pre-print.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy](https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy).\n\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "species": "Macaque",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Comprehensive expression matrix for Macaque"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/comprehensive_expression_matrix/Macaque",
+    "id": "summary/johansen2025Crossspecies/comprehensive_expression_matrix/Macaque",
+    "manifest": [
+      {
+        "md5": "a9554e8de4837a5c4f4960a498c97456",
+        "name": "Macaque_HMBA_basalganglia_AIT_pre-print.h5ad",
+        "size": 34285754576
+      },
+      {
+        "md5": "41513c56eece33bba9b92a702fc5b472",
+        "name": "Macaque_HMBA_basalganglia_AIT_pre-print.h5ad.dvc",
+        "size": 131
+      },
+      {
+        "md5": "51c06ee4d7433725fb02de269a53f822",
+        "name": "genomic_resource.yaml",
+        "size": 647
+      },
+      {
+        "md5": "b3dcbf911c51c98c628e1e98c8d265bd",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 3705
+      },
+      {
+        "md5": "33afc262d1143d8c967157c0415284dc",
+        "name": "statistics/describe_obs.csv",
+        "size": 8432
+      },
+      {
+        "md5": "0935600050f746e5a16bb73a6db22260",
+        "name": "statistics/describe_var.csv",
+        "size": 1914
+      },
+      {
+        "md5": "0d421f53fe4dc1fb17b732ff0ff87772",
+        "name": "statistics/stats_hash",
+        "size": 172
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy](https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy).\n\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "species": "Marmoset",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Comprehensive expression matrix for Marmoset"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/comprehensive_expression_matrix/Marmoset",
+    "id": "summary/johansen2025Crossspecies/comprehensive_expression_matrix/Marmoset",
+    "manifest": [
+      {
+        "md5": "1b4a694d5ac55e37ed3274e9cbf01b1d",
+        "name": "Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad",
+        "size": 32003091266
+      },
+      {
+        "md5": "f7edb48d18a9c805b6d62d95afb36f28",
+        "name": "Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad.dvc",
+        "size": 132
+      },
+      {
+        "md5": "ee1cc749f7db51358d4a5ea2b2b98980",
+        "name": "genomic_resource.yaml",
+        "size": 650
+      },
+      {
+        "md5": "72a30c243210f72a5341824c9c920258",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 2429
+      },
+      {
+        "md5": "3ed3e34c6320ee3de8b05c00981dcc4c",
+        "name": "statistics/describe_obs.csv",
+        "size": 4994
+      },
+      {
+        "md5": "a675493d0311dcaa57d019fc3134c66e",
+        "name": "statistics/describe_var.csv",
+        "size": 748
+      },
+      {
+        "md5": "abe33a8e203bf568c91a0f54e2ba9da9",
+        "name": "statistics/stats_hash",
+        "size": 173
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
       "file": "HMBA-10xMultiome-BG-Aligned-log2.h5ad",
       "meta": {
         "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",

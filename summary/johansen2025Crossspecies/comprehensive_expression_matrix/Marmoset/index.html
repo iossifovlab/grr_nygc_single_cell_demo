@@ -1,0 +1,1646 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+        cursor: pointer;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/johansen2025Crossspecies/comprehensive_expression_matrix/Marmoset</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>ann_data</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">Comprehensive expression matrix for Marmoset
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style><p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
+
+<p>Downloaded from: <a href="https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy">https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>assay: scRNASeq</li>
+                    
+                        <li>technology: 10x-Genomics</li>
+                    
+                        <li>species: Marmoset</li>
+                    
+                        <li>dataset: johansen2025Crossspecies</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<h1> AnnData descrition </h1>
+
+<pre><code style="font-family: monospace;">
+AnnData object with n_obs × n_vars = 313033 × 35787 backed at '/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/johansen2025Crossspecies/comprehensive_expression_matrix/Marmoset/Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad'
+    obs: 'Neighborhood', 'Class', 'Subclass', 'Group', 'Cluster', 'cluster_id', 'cell_type_ontology_term', 'load_id', 'donor_id', 'assay', 'assay_ontology_term_id', 'organism', 'organism_ontology_term_id', 'development_stage', 'anatomical_region', 'anatomical_region_merged', 'anatomical_region_ontology_term_id', 'brain_region_ontology_term_id', 'self_reported_sex', 'self_reported_sex_ontology_term_id', 'self_reported_ethnicity', 'self_reported_ethnicity_ontology_term_id', 'disease', 'disease_ontology_term_id', 'suspension_type', 'is_primary_data', 'RNA_library_creation_date', 'RNA_library_prep_set', 'RNA_library_name', 'RNA_tapestation_avg_size_bp', 'RNA_library_num_cycles', 'RNA_lib_quantification_ng', 'RNA_library_pool_name', 'ATAC_library_creation_date', 'ATAC_library_prep_set', 'ATAC_library_name', 'ATAC_tapestation_avg_size_bp', 'ATAC_library_num_cycles', 'ATAC_lib_quantification_ng', 'ATAC_library_pool_name', 'RNA_r1_index', 'RNA_r2_index', 'ATAC_index', 'total_counts', 'total_genes', 'doublet_score', 'organism_sci', 'accession_group', 'embedding_set', 'CL:ID_group', 'tokens_group', 'display_order_group', 'literature_support', 'literature_name_short', 'literature_name_long', 'curated_markers', 'color_hex_group', 'color_group', 'accession_subclass', 'CL:ID_subclass', 'tokens_subclass', 'display_order_subclass', 'color_hex_subclass', 'color_subclass', 'accession_class', 'CL:ID_class', 'tokens_class', 'display_order_class', 'color_hex_class', 'color_class', 'accession_neighborhood', 'CL:ID_neighborhood', 'tokens_neighborhood', 'display_order_neighborhood', 'color_hex_neighborhood', 'color_neighborhood', 'cell_barcode', 'barcoded_cell_sample_label', 'alignment_job_id', 'alignment_job_database'
+    var: 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm', 'highly_variable_nbatches', 'ensembl_id'
+    uns: 'batch_condition', 'cluster_algorithm', 'cluster_info', 'dataset_purl', 'default_embedding', 'filter', 'gene_annotation_version', 'hierarchy', 'hvg', 'log1p', 'mode', 'neighbors', 'reference_genome', 'schema_version', 'title'
+    obsm: 'X_scVI', 'X_umap'
+    obsp: 'connectivities', 'distances'
+    layers: None (.X), 'UMIs'
+
+</code></pre>
+
+
+
+
+<h1> obs descrition </h1>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Neighborhood</th>
+      <td>313033</td>
+      <td>4</td>
+      <td>Subpallium GABA</td>
+      <td>169229</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Class</th>
+      <td>313033</td>
+      <td>12</td>
+      <td>CN LGE GABA</td>
+      <td>116176</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Subclass</th>
+      <td>313033</td>
+      <td>34</td>
+      <td>Oligodendrocyte</td>
+      <td>77842</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <td>313033</td>
+      <td>56</td>
+      <td>Oligo OPALIN</td>
+      <td>65164</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Cluster</th>
+      <td>313033</td>
+      <td>594</td>
+      <td>Marmoset-7</td>
+      <td>34662</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cluster_id</th>
+      <td>313033</td>
+      <td>594</td>
+      <td>Marmoset-7</td>
+      <td>34662</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cell_type_ontology_term</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>CL:0000003</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>load_id</th>
+      <td>313033</td>
+      <td>123</td>
+      <td>P0044_1</td>
+      <td>8118</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>donor_id</th>
+      <td>313033</td>
+      <td>4</td>
+      <td>cjNutmeg</td>
+      <td>178386</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>assay</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>10x multiome</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>assay_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>EFO:0030059</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organism</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>Marmoset</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>organism_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>NCBI:txid9483</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>development_stage</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>Adult</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>anatomical_region</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>Brain</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>anatomical_region_merged</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>Brain</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>anatomical_region_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>brain_region_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>self_reported_sex</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>self_reported_sex_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>self_reported_ethnicity</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>self_reported_ethnicity_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>disease</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>normal</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>disease_ontology_term_id</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>PATO:0000461</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>suspension_type</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>nucleus</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>is_primary_data</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>True</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>RNA_library_creation_date</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>238913.398929</td>
+      <td>3703.553491</td>
+      <td>231010.0</td>
+      <td>240123.0</td>
+      <td>240508.0</td>
+      <td>240927.0</td>
+      <td>241114.0</td>
+    </tr>
+    <tr>
+      <th>RNA_library_prep_set</th>
+      <td>313033</td>
+      <td>38</td>
+      <td>LPLCXR_241111_1</td>
+      <td>62867</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>RNA_library_name</th>
+      <td>313033</td>
+      <td>123</td>
+      <td>LPLCXR_240507_1_D3</td>
+      <td>8118</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>RNA_tapestation_avg_size_bp</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>548.01282</td>
+      <td>83.223791</td>
+      <td>368.0</td>
+      <td>496.0</td>
+      <td>546.0</td>
+      <td>582.0</td>
+      <td>823.0</td>
+    </tr>
+    <tr>
+      <th>RNA_library_num_cycles</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.751518</td>
+      <td>1.448461</td>
+      <td>9.0</td>
+      <td>12.0</td>
+      <td>13.0</td>
+      <td>14.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>RNA_lib_quantification_ng</th>
+      <td>313033.0</td>
+      <td>110.0</td>
+      <td>861.0</td>
+      <td>8719.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>RNA_library_pool_name</th>
+      <td>313033</td>
+      <td>8</td>
+      <td>BR_PXR_240917_1</td>
+      <td>58245</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ATAC_library_creation_date</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>238891.753968</td>
+      <td>3695.391202</td>
+      <td>231004.0</td>
+      <td>240123.0</td>
+      <td>240507.0</td>
+      <td>240927.0</td>
+      <td>241104.0</td>
+    </tr>
+    <tr>
+      <th>ATAC_library_prep_set</th>
+      <td>313033</td>
+      <td>37</td>
+      <td>LPLCXA_240123_1</td>
+      <td>40874</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ATAC_library_name</th>
+      <td>313033</td>
+      <td>123</td>
+      <td>LPLCXA_240507_1_D9</td>
+      <td>8118</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ATAC_tapestation_avg_size_bp</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>413.426891</td>
+      <td>23.076698</td>
+      <td>345.0</td>
+      <td>396.0</td>
+      <td>413.0</td>
+      <td>429.0</td>
+      <td>509.0</td>
+    </tr>
+    <tr>
+      <th>ATAC_library_num_cycles</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.824437</td>
+      <td>0.689231</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>ATAC_lib_quantification_ng</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>726.370345</td>
+      <td>488.776797</td>
+      <td>14.78</td>
+      <td>386.0</td>
+      <td>614.0</td>
+      <td>1054.0</td>
+      <td>2520.0</td>
+    </tr>
+    <tr>
+      <th>ATAC_library_pool_name</th>
+      <td>313033</td>
+      <td>8</td>
+      <td>BR_PXA_240917_1</td>
+      <td>58245</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>RNA_r1_index</th>
+      <td>313033</td>
+      <td>110</td>
+      <td>SI-TT-G6_i7</td>
+      <td>10003</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>RNA_r2_index</th>
+      <td>313033</td>
+      <td>110</td>
+      <td>SI-TT-G6_b(i5)</td>
+      <td>10003</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ATAC_index</th>
+      <td>313033</td>
+      <td>112</td>
+      <td>SI-NA-E10</td>
+      <td>9358</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>total_counts</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11865.848329</td>
+      <td>10485.004962</td>
+      <td>2000.0</td>
+      <td>3957.0</td>
+      <td>8715.0</td>
+      <td>16676.0</td>
+      <td>99965.0</td>
+    </tr>
+    <tr>
+      <th>total_genes</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3618.330329</td>
+      <td>1802.144647</td>
+      <td>1000.0</td>
+      <td>1951.0</td>
+      <td>3471.0</td>
+      <td>5008.0</td>
+      <td>11549.0</td>
+    </tr>
+    <tr>
+      <th>doublet_score</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.025045</td>
+      <td>0.083426</td>
+      <td>0.000001</td>
+      <td>0.000474</td>
+      <td>0.001169</td>
+      <td>0.004046</td>
+      <td>0.842655</td>
+    </tr>
+    <tr>
+      <th>organism_sci</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>Callithrix jacchus</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>accession_group</th>
+      <td>313033</td>
+      <td>56</td>
+      <td>CS20250428_GROUP_0025</td>
+      <td>65164</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>embedding_set</th>
+      <td>313033</td>
+      <td>4</td>
+      <td>Nonneuron</td>
+      <td>133383</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CL:ID_group</th>
+      <td>266130</td>
+      <td>27</td>
+      <td>CL:0000128</td>
+      <td>74691</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tokens_group</th>
+      <td>313033</td>
+      <td>56</td>
+      <td>Oligo|OPALIN</td>
+      <td>65164</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>display_order_group</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>29.577728</td>
+      <td>20.851433</td>
+      <td>1.0</td>
+      <td>9.0</td>
+      <td>31.0</td>
+      <td>51.0</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>literature_support</th>
+      <td>270550</td>
+      <td>13</td>
+      <td>He et al. 2021</td>
+      <td>114786</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>literature_name_short</th>
+      <td>139475</td>
+      <td>19</td>
+      <td>D1-Matrix</td>
+      <td>31781</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>literature_name_long</th>
+      <td>1561</td>
+      <td>2</td>
+      <td>D1 Islands of Calleja</td>
+      <td>1145</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>curated_markers</th>
+      <td>150036</td>
+      <td>24</td>
+      <td>STXBP6</td>
+      <td>62233</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>color_hex_group</th>
+      <td>313033</td>
+      <td>54</td>
+      <td>#488edc</td>
+      <td>65164</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>color_group</th>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>accession_subclass</th>
+      <td>313033</td>
+      <td>34</td>
+      <td>CS20250428_SUBCL_0022</td>
+      <td>77842</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CL:ID_subclass</th>
+      <td>259533</td>
+      <td>17</td>
+      <td>CL:0000128</td>
+      <td>77842</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tokens_subclass</th>
+      <td>313033</td>
+      <td>34</td>
+      <td>Oligodendrocyte</td>
+      <td>77842</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>display_order_subclass</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.604764</td>
+      <td>12.083039</td>
+      <td>1.0</td>
+      <td>7.0</td>
+      <td>21.0</td>
+      <td>31.0</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>color_hex_subclass</th>
+      <td>313033</td>
+      <td>34</td>
+      <td>#def476</td>
+      <td>77842</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>color_subclass</th>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>accession_class</th>
+      <td>313033</td>
+      <td>12</td>
+      <td>CS20250428_CLASS_0003</td>
+      <td>116176</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CL:ID_class</th>
+      <td>135487</td>
+      <td>6</td>
+      <td>CL:0000095</td>
+      <td>91955</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tokens_class</th>
+      <td>313033</td>
+      <td>12</td>
+      <td>CN|LGE|GABA</td>
+      <td>116176</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>display_order_class</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.298729</td>
+      <td>3.481512</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>7.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>color_hex_class</th>
+      <td>313033</td>
+      <td>12</td>
+      <td>#d0b83c</td>
+      <td>116176</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>color_class</th>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>accession_neighborhood</th>
+      <td>313033</td>
+      <td>4</td>
+      <td>CS20250428_NEIGH_0002</td>
+      <td>169229</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CL:ID_neighborhood</th>
+      <td>142509</td>
+      <td>2</td>
+      <td>CL:0000000</td>
+      <td>133383</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tokens_neighborhood</th>
+      <td>313033</td>
+      <td>4</td>
+      <td>Subpallium|GABA</td>
+      <td>169229</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>display_order_neighborhood</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.115349</td>
+      <td>0.977283</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>color_hex_neighborhood</th>
+      <td>313033</td>
+      <td>4</td>
+      <td>#19613b</td>
+      <td>169229</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>color_neighborhood</th>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cell_barcode</th>
+      <td>313033</td>
+      <td>255473</td>
+      <td>CCTTACTCAGTTAAAG</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>barcoded_cell_sample_label</th>
+      <td>313033</td>
+      <td>123</td>
+      <td>P0044_1</td>
+      <td>8118</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>alignment_job_id</th>
+      <td>313033.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>242602.018663</td>
+      <td>5512.866659</td>
+      <td>231224.0</td>
+      <td>240323.0</td>
+      <td>240807.0</td>
+      <td>250114.0</td>
+      <td>250114.0</td>
+    </tr>
+    <tr>
+      <th>alignment_job_database</th>
+      <td>313033</td>
+      <td>1</td>
+      <td>Princeton</td>
+      <td>313033</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<h1> var descrition </h1>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>highly_variable</th>
+      <td>35787</td>
+      <td>2</td>
+      <td>False</td>
+      <td>31787</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>highly_variable_rank</th>
+      <td>6000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2327.477295</td>
+      <td>1090.57666</td>
+      <td>0.0</td>
+      <td>1493.5</td>
+      <td>2521.0</td>
+      <td>3233.0</td>
+      <td>3999.0</td>
+    </tr>
+    <tr>
+      <th>means</th>
+      <td>35787.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.451908</td>
+      <td>2.128908</td>
+      <td>0.0</td>
+      <td>0.000766</td>
+      <td>0.017578</td>
+      <td>0.223373</td>
+      <td>117.638746</td>
+    </tr>
+    <tr>
+      <th>variances</th>
+      <td>35787.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.747747</td>
+      <td>187.929581</td>
+      <td>0.0</td>
+      <td>0.000817</td>
+      <td>0.022448</td>
+      <td>0.354639</td>
+      <td>19348.71073</td>
+    </tr>
+    <tr>
+      <th>variances_norm</th>
+      <td>35787.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.990873</td>
+      <td>0.763968</td>
+      <td>0.0</td>
+      <td>0.809481</td>
+      <td>0.925079</td>
+      <td>1.005678</td>
+      <td>63.049012</td>
+    </tr>
+    <tr>
+      <th>highly_variable_nbatches</th>
+      <td>35787.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.44709</td>
+      <td>1.128731</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>ensembl_id</th>
+      <td>35787</td>
+      <td>1</td>
+      <td>unknown</td>
+      <td>35787</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad'>Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad</a>
+                    </td>
+                
+                <td class="nowrap">29.81 GB</td>
+                <td class="nowrap">1b4a694d5ac55e37ed3274e9cbf01b1d</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">650.0 B</td>
+                <td class="nowrap">ee1cc749f7db51358d4a5ea2b2b98980</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>
