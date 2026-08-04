@@ -1,6 +1,891 @@
 [
   {
     "config": {
+      "file": "HMBA-10xMultiome-BG-Aligned-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG-Aligned",
+          "measure": "log2",
+          "release_date": "20260331",
+          "species": "Aligned",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Aligned-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG-Aligned/20260331/HMBA-10xMultiome-BG-Aligned-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG-Aligned/20260331/HMBA-10xMultiome-BG-Aligned-log2",
+    "manifest": [
+      {
+        "md5": "095b9a64cfbc6c5ed1f5e20130e1d23c",
+        "name": "HMBA-10xMultiome-BG-Aligned-log2.h5ad",
+        "size": 15833210094
+      },
+      {
+        "md5": "202a6722b2c9b5aafe646343259337fa",
+        "name": "HMBA-10xMultiome-BG-Aligned-log2.h5ad.dvc",
+        "size": 124
+      },
+      {
+        "md5": "06f1d7dc4b83936e9d21ac753fd42f2d",
+        "name": "genomic_resource.yaml",
+        "size": 718
+      },
+      {
+        "md5": "86d49bbb73f431aba11a6b28d6454b44",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 428
+      },
+      {
+        "md5": "a21c5478ca22e551d52eaa3d4d519b2f",
+        "name": "statistics/describe_obs.csv",
+        "size": 259
+      },
+      {
+        "md5": "7f7554685696df40f97031d3e0e27fb3",
+        "name": "statistics/describe_var.csv",
+        "size": 55
+      },
+      {
+        "md5": "431698378c37d412aa91ca1b155b2394",
+        "name": "statistics/stats_hash",
+        "size": 165
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Aligned-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG-Aligned",
+          "measure": "raw",
+          "release_date": "20260331",
+          "species": "Aligned",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Aligned-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG-Aligned/20260331/HMBA-10xMultiome-BG-Aligned-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG-Aligned/20260331/HMBA-10xMultiome-BG-Aligned-raw",
+    "manifest": [
+      {
+        "md5": "35dbaad0d1e30b096e8f96dcd87e719c",
+        "name": "HMBA-10xMultiome-BG-Aligned-raw.h5ad",
+        "size": 15393010459
+      },
+      {
+        "md5": "09e00b7f6a723cbf807cf126f6b4cfce",
+        "name": "HMBA-10xMultiome-BG-Aligned-raw.h5ad.dvc",
+        "size": 123
+      },
+      {
+        "md5": "31188c8635e960c6c5857e8c07e5ff48",
+        "name": "genomic_resource.yaml",
+        "size": 715
+      },
+      {
+        "md5": "9f91926e7a091ac7927eedaed6dc86c1",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 426
+      },
+      {
+        "md5": "a21c5478ca22e551d52eaa3d4d519b2f",
+        "name": "statistics/describe_obs.csv",
+        "size": 259
+      },
+      {
+        "md5": "7f7554685696df40f97031d3e0e27fb3",
+        "name": "statistics/describe_var.csv",
+        "size": 55
+      },
+      {
+        "md5": "e8c990439dec28afacf8d60c15748c23",
+        "name": "statistics/stats_hash",
+        "size": 164
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Human-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG",
+          "measure": "log2",
+          "release_date": "20250630",
+          "species": "Human",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Human-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Human-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Human-log2",
+    "manifest": [
+      {
+        "md5": "b1fe2c1ac718ef7802327b264670abf1",
+        "name": "HMBA-10xMultiome-BG-Human-log2.h5ad",
+        "size": 15647020882
+      },
+      {
+        "md5": "03b0660b918203a89107e7cba83133c3",
+        "name": "HMBA-10xMultiome-BG-Human-log2.h5ad.dvc",
+        "size": 122
+      },
+      {
+        "md5": "0a273f4e5ce5d682e157a49186ee3410",
+        "name": "genomic_resource.yaml",
+        "size": 704
+      },
+      {
+        "md5": "18272cc46deb78363436379a12a7749e",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 401
+      },
+      {
+        "md5": "31bee17af4347ad2f82a6cc0d4c679a6",
+        "name": "statistics/describe_obs.csv",
+        "size": 251
+      },
+      {
+        "md5": "ba051aefcb2663275e2a11360707f44e",
+        "name": "statistics/describe_var.csv",
+        "size": 64
+      },
+      {
+        "md5": "b8a9fe2a8e201b4ee29279c5e4f79496",
+        "name": "statistics/stats_hash",
+        "size": 163
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Human-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG",
+          "measure": "raw",
+          "release_date": "20250630",
+          "species": "Human",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Human-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Human-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Human-raw",
+    "manifest": [
+      {
+        "md5": "2824097d73e3cb082b6ccddc491c5a54",
+        "name": "HMBA-10xMultiome-BG-Human-raw.h5ad",
+        "size": 15968502672
+      },
+      {
+        "md5": "7b55483b4abcaea5479fefd4e63ff375",
+        "name": "HMBA-10xMultiome-BG-Human-raw.h5ad.dvc",
+        "size": 121
+      },
+      {
+        "md5": "c3fefc3e4d103780a9c2725ddbb8927a",
+        "name": "genomic_resource.yaml",
+        "size": 701
+      },
+      {
+        "md5": "1663548fc216a425962211301a4554af",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 399
+      },
+      {
+        "md5": "31bee17af4347ad2f82a6cc0d4c679a6",
+        "name": "statistics/describe_obs.csv",
+        "size": 251
+      },
+      {
+        "md5": "ba051aefcb2663275e2a11360707f44e",
+        "name": "statistics/describe_var.csv",
+        "size": 64
+      },
+      {
+        "md5": "7566e70adb505dd8e4b044f9c5fd818e",
+        "name": "statistics/stats_hash",
+        "size": 162
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Macaque-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG",
+          "measure": "log2",
+          "release_date": "20250630",
+          "species": "Macaque",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Macaque-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Macaque-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Macaque-log2",
+    "manifest": [
+      {
+        "md5": "1a9a666dc414646420bf8f4db66028d5",
+        "name": "HMBA-10xMultiome-BG-Macaque-log2.h5ad",
+        "size": 7377217683
+      },
+      {
+        "md5": "69a8a6958b44ac0f3eb6c2fa4c9d3544",
+        "name": "HMBA-10xMultiome-BG-Macaque-log2.h5ad.dvc",
+        "size": 123
+      },
+      {
+        "md5": "154b8d541086ce2edea280896c9f4d07",
+        "name": "genomic_resource.yaml",
+        "size": 710
+      },
+      {
+        "md5": "d80bebe3ee0def07148323118f735d85",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 423
+      },
+      {
+        "md5": "115bf03182733fe14496ad07727b0920",
+        "name": "statistics/describe_obs.csv",
+        "size": 243
+      },
+      {
+        "md5": "2a99e4ed9201fe3dd6a05c74701d8174",
+        "name": "statistics/describe_var.csv",
+        "size": 106
+      },
+      {
+        "md5": "341d0803c54f2577aa4a0febc37ad2c8",
+        "name": "statistics/stats_hash",
+        "size": 165
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Macaque-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG",
+          "measure": "raw",
+          "release_date": "20250630",
+          "species": "Macaque",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Macaque-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Macaque-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Macaque-raw",
+    "manifest": [
+      {
+        "md5": "0c2b80f037b6bd386b180907122ed580",
+        "name": "HMBA-10xMultiome-BG-Macaque-raw.h5ad",
+        "size": 7528695907
+      },
+      {
+        "md5": "0bfaf94ecb9f0dd101a55b4abc163549",
+        "name": "HMBA-10xMultiome-BG-Macaque-raw.h5ad.dvc",
+        "size": 122
+      },
+      {
+        "md5": "0dc0969d63a2342d6f0da9057774a2b9",
+        "name": "genomic_resource.yaml",
+        "size": 707
+      },
+      {
+        "md5": "6a075ce736a43d89bdd4f24957d78212",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 421
+      },
+      {
+        "md5": "115bf03182733fe14496ad07727b0920",
+        "name": "statistics/describe_obs.csv",
+        "size": 243
+      },
+      {
+        "md5": "2a99e4ed9201fe3dd6a05c74701d8174",
+        "name": "statistics/describe_var.csv",
+        "size": 106
+      },
+      {
+        "md5": "da7a4adaa71437d85f48736d77c909ae",
+        "name": "statistics/stats_hash",
+        "size": 164
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Marmoset-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG",
+          "measure": "log2",
+          "release_date": "20250630",
+          "species": "Marmoset",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Marmoset-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Marmoset-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Marmoset-log2",
+    "manifest": [
+      {
+        "md5": "1e9b2d4199a5ed8bb0c9cd6c9b189ef2",
+        "name": "HMBA-10xMultiome-BG-Marmoset-log2.h5ad",
+        "size": 3787929889
+      },
+      {
+        "md5": "708b709195d49424e916a22c916a3efe",
+        "name": "HMBA-10xMultiome-BG-Marmoset-log2.h5ad.dvc",
+        "size": 124
+      },
+      {
+        "md5": "418762a76ec77c03c179d02447476762",
+        "name": "genomic_resource.yaml",
+        "size": 713
+      },
+      {
+        "md5": "5980b029274616e62101bae3b16cbbae",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 406
+      },
+      {
+        "md5": "1e5e13ffb0e8db290d69ab4d6804daa0",
+        "name": "statistics/describe_obs.csv",
+        "size": 209
+      },
+      {
+        "md5": "cc34a0f2a83cfaacba0bec3096121792",
+        "name": "statistics/describe_var.csv",
+        "size": 60
+      },
+      {
+        "md5": "8366a1a74c58150c8468eaa1ca0bc4f7",
+        "name": "statistics/stats_hash",
+        "size": 166
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-10xMultiome-BG-Marmoset-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-10xMultiome-BG",
+          "measure": "raw",
+          "release_date": "20250630",
+          "species": "Marmoset",
+          "technology": "10x-Genomics"
+        },
+        "summary": "Expression matrix HMBA-10xMultiome-BG-Marmoset-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Marmoset-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-10xMultiome-BG/20250630/HMBA-10xMultiome-BG-Marmoset-raw",
+    "manifest": [
+      {
+        "md5": "7f5e30925e335aed8f269121412b222e",
+        "name": "HMBA-10xMultiome-BG-Marmoset-raw.h5ad",
+        "size": 3877754982
+      },
+      {
+        "md5": "8d73b6ed0e4bc820a1d228a44311a9da",
+        "name": "HMBA-10xMultiome-BG-Marmoset-raw.h5ad.dvc",
+        "size": 123
+      },
+      {
+        "md5": "037d93862d29b121802200be8f10ecaa",
+        "name": "genomic_resource.yaml",
+        "size": 710
+      },
+      {
+        "md5": "266dac8f2be1d701cf976f063149a333",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 404
+      },
+      {
+        "md5": "1e5e13ffb0e8db290d69ab4d6804daa0",
+        "name": "statistics/describe_obs.csv",
+        "size": 209
+      },
+      {
+        "md5": "cc34a0f2a83cfaacba0bec3096121792",
+        "name": "statistics/describe_var.csv",
+        "size": 60
+      },
+      {
+        "md5": "977f5fe5922976e92e3974c8d69b323d",
+        "name": "statistics/stats_hash",
+        "size": 165
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "MERSCOPE-H22.30.001-BG-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-MERSCOPE-H22.30.001-BG",
+          "measure": "log2",
+          "release_date": "20250930",
+          "species": "Human",
+          "technology": "spatial-MERSCOPE"
+        },
+        "summary": "Expression matrix MERSCOPE-H22.30.001-BG-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-H22.30.001-BG/20250930/MERSCOPE-H22.30.001-BG-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-H22.30.001-BG/20250930/MERSCOPE-H22.30.001-BG-log2",
+    "manifest": [
+      {
+        "md5": "eb166cd019a844ca42c5de1e79325c56",
+        "name": "MERSCOPE-H22.30.001-BG-log2.h5ad",
+        "size": 768223400
+      },
+      {
+        "md5": "86e7fcadf11f0e8babfb7de090733a35",
+        "name": "MERSCOPE-H22.30.001-BG-log2.h5ad.dvc",
+        "size": 117
+      },
+      {
+        "md5": "d7b10ad8968c2ea9f36f8239260965d9",
+        "name": "genomic_resource.yaml",
+        "size": 710
+      },
+      {
+        "md5": "1f8d84cf883345477ede12412202a780",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 366
+      },
+      {
+        "md5": "d460713b8030ce625b49eb23fd00adcf",
+        "name": "statistics/describe_obs.csv",
+        "size": 260
+      },
+      {
+        "md5": "8382f2752c95403149d1c8297bcb263f",
+        "name": "statistics/describe_var.csv",
+        "size": 51
+      },
+      {
+        "md5": "b84f6262d66dfa01f2d01c56d268b871",
+        "name": "statistics/stats_hash",
+        "size": 160
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "MERSCOPE-H22.30.001-BG-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-MERSCOPE-H22.30.001-BG",
+          "measure": "raw",
+          "release_date": "20250930",
+          "species": "Human",
+          "technology": "spatial-MERSCOPE"
+        },
+        "summary": "Expression matrix MERSCOPE-H22.30.001-BG-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-H22.30.001-BG/20250930/MERSCOPE-H22.30.001-BG-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-H22.30.001-BG/20250930/MERSCOPE-H22.30.001-BG-raw",
+    "manifest": [
+      {
+        "md5": "08b20e5836e879049a2ba7df7a125cb8",
+        "name": "MERSCOPE-H22.30.001-BG-raw.h5ad",
+        "size": 671369254
+      },
+      {
+        "md5": "112cbe33b178c718b9882aa0eea1dfd6",
+        "name": "MERSCOPE-H22.30.001-BG-raw.h5ad.dvc",
+        "size": 116
+      },
+      {
+        "md5": "f1d94a3952215ab4dbb15f82790c7718",
+        "name": "genomic_resource.yaml",
+        "size": 707
+      },
+      {
+        "md5": "1a153fcccf085b2e509f8a015032ce25",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 364
+      },
+      {
+        "md5": "d460713b8030ce625b49eb23fd00adcf",
+        "name": "statistics/describe_obs.csv",
+        "size": 260
+      },
+      {
+        "md5": "8382f2752c95403149d1c8297bcb263f",
+        "name": "statistics/describe_var.csv",
+        "size": 51
+      },
+      {
+        "md5": "d2c21614d93d426727eefd77e810d699",
+        "name": "statistics/stats_hash",
+        "size": 159
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "MERSCOPE-QM23.50.001-BG-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-MERSCOPE-QM23.50.001-BG",
+          "measure": "log2",
+          "release_date": "20250630",
+          "species": "Macaque",
+          "technology": "spatial-MERSCOPE"
+        },
+        "summary": "Expression matrix MERSCOPE-QM23.50.001-BG-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-QM23.50.001-BG/20250630/MERSCOPE-QM23.50.001-BG-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-QM23.50.001-BG/20250630/MERSCOPE-QM23.50.001-BG-log2",
+    "manifest": [
+      {
+        "md5": "5ac48b34a9f3d00d5ac521af49ad3f94",
+        "name": "MERSCOPE-QM23.50.001-BG-log2.h5ad",
+        "size": 911960595
+      },
+      {
+        "md5": "635d264a00b6e6e13c0d97fb40de1181",
+        "name": "MERSCOPE-QM23.50.001-BG-log2.h5ad.dvc",
+        "size": 118
+      },
+      {
+        "md5": "7469ecf7839010d0e078dc502e1735a5",
+        "name": "genomic_resource.yaml",
+        "size": 715
+      },
+      {
+        "md5": "72a9ae4f062fe3fecbdbb3775a5cec7b",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 369
+      },
+      {
+        "md5": "69b4dce46c3a7869d63af967fe35c25b",
+        "name": "statistics/describe_obs.csv",
+        "size": 261
+      },
+      {
+        "md5": "3abb75e6b6ee6d1e1d396711a64f5c7f",
+        "name": "statistics/describe_var.csv",
+        "size": 49
+      },
+      {
+        "md5": "6452b8c4427c4de7e591ed78483b3b31",
+        "name": "statistics/stats_hash",
+        "size": 161
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "MERSCOPE-QM23.50.001-BG-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-MERSCOPE-QM23.50.001-BG",
+          "measure": "raw",
+          "release_date": "20250630",
+          "species": "Macaque",
+          "technology": "spatial-MERSCOPE"
+        },
+        "summary": "Expression matrix MERSCOPE-QM23.50.001-BG-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-QM23.50.001-BG/20250630/MERSCOPE-QM23.50.001-BG-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-MERSCOPE-QM23.50.001-BG/20250630/MERSCOPE-QM23.50.001-BG-raw",
+    "manifest": [
+      {
+        "md5": "d172fdf28d4c5c326232949de13f712c",
+        "name": "MERSCOPE-QM23.50.001-BG-raw.h5ad",
+        "size": 724490050
+      },
+      {
+        "md5": "3916e93e34cdb20b4f0a6e5d799550a0",
+        "name": "MERSCOPE-QM23.50.001-BG-raw.h5ad.dvc",
+        "size": 117
+      },
+      {
+        "md5": "a60074a4398da68fabb2aa7ba69e5238",
+        "name": "genomic_resource.yaml",
+        "size": 712
+      },
+      {
+        "md5": "90ba9e1e89316f188adc7768c9ed8d46",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 367
+      },
+      {
+        "md5": "69b4dce46c3a7869d63af967fe35c25b",
+        "name": "statistics/describe_obs.csv",
+        "size": 261
+      },
+      {
+        "md5": "3abb75e6b6ee6d1e1d396711a64f5c7f",
+        "name": "statistics/describe_var.csv",
+        "size": 49
+      },
+      {
+        "md5": "87e0c31f13624284f267a95a62ca5b20",
+        "name": "statistics/stats_hash",
+        "size": 160
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "HMBA-Macaque-PatchSeq-BG-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-Macaque-PatchSeq",
+          "measure": "log2",
+          "release_date": "20260228",
+          "species": "Macaque",
+          "technology": "PatchSeq"
+        },
+        "summary": "Expression matrix HMBA-Macaque-PatchSeq-BG-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-Macaque-PatchSeq/20260228/HMBA-Macaque-PatchSeq-BG-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-Macaque-PatchSeq/20260228/HMBA-Macaque-PatchSeq-BG-log2",
+    "manifest": [
+      {
+        "md5": "1df7b4f01e6b99f17c980c0617f77f10",
+        "name": "HMBA-Macaque-PatchSeq-BG-log2.h5ad",
+        "size": 63797589
+      },
+      {
+        "md5": "a0883bd5af610f1456c48819110b28d8",
+        "name": "HMBA-Macaque-PatchSeq-BG-log2.h5ad.dvc",
+        "size": 118
+      },
+      {
+        "md5": "983de5172d1ef54204ae2496d1fcefa6",
+        "name": "genomic_resource.yaml",
+        "size": 702
+      },
+      {
+        "md5": "fd309f692517195ad8e88d73f19118fd",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 417
+      },
+      {
+        "md5": "1ebb4a229b0ef7395362b44690fb70b7",
+        "name": "statistics/describe_obs.csv",
+        "size": 391
+      },
+      {
+        "md5": "a28f5ca723226602e6a2de6c73d76ba0",
+        "name": "statistics/describe_var.csv",
+        "size": 57
+      },
+      {
+        "md5": "60dbff12ef827decb727c96ddb26d0fa",
+        "name": "statistics/stats_hash",
+        "size": 162
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "Xenium-CJ23.56.004-BG-log2.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-Xenium-CJ23.56.004-BG",
+          "measure": "log2",
+          "release_date": "20250630",
+          "species": "Marmoset",
+          "technology": "spatial-Xenium"
+        },
+        "summary": "Expression matrix Xenium-CJ23.56.004-BG-log2"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-Xenium-CJ23.56.004-BG/20250630/Xenium-CJ23.56.004-BG-log2",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-Xenium-CJ23.56.004-BG/20250630/Xenium-CJ23.56.004-BG-log2",
+    "manifest": [
+      {
+        "md5": "cc861854e9e7caebcca1e8b9f797bdb4",
+        "name": "Xenium-CJ23.56.004-BG-log2.h5ad",
+        "size": 348458720
+      },
+      {
+        "md5": "a3c09d99b635e85aa385d89ad4e433ce",
+        "name": "Xenium-CJ23.56.004-BG-log2.h5ad.dvc",
+        "size": 116
+      },
+      {
+        "md5": "b07e8e309feaddc0b8fbf3487afdc172",
+        "name": "genomic_resource.yaml",
+        "size": 708
+      },
+      {
+        "md5": "9f75d5d193b6b31934777f394de29d67",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 363
+      },
+      {
+        "md5": "2da2ca19a355c6afda49314278606bb6",
+        "name": "statistics/describe_obs.csv",
+        "size": 258
+      },
+      {
+        "md5": "f6696ecb4a5ba4ff095d5a7d2cd21bfc",
+        "name": "statistics/describe_var.csv",
+        "size": 52
+      },
+      {
+        "md5": "444c41c427ea24f1700ba91e3cc8b2ad",
+        "name": "statistics/stats_hash",
+        "size": 159
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
+      "file": "Xenium-CJ23.56.004-BG-raw.h5ad",
+      "meta": {
+        "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
+        "labels": {
+          "assay": "scRNASeq",
+          "dataset": "johansen2025Crossspecies",
+          "directory": "HMBA-Xenium-CJ23.56.004-BG",
+          "measure": "raw",
+          "release_date": "20250630",
+          "species": "Marmoset",
+          "technology": "spatial-Xenium"
+        },
+        "summary": "Expression matrix Xenium-CJ23.56.004-BG-raw"
+      },
+      "type": "ann_data"
+    },
+    "full_id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-Xenium-CJ23.56.004-BG/20250630/Xenium-CJ23.56.004-BG-raw",
+    "id": "summary/johansen2025Crossspecies/expression_matrix/HMBA-Xenium-CJ23.56.004-BG/20250630/Xenium-CJ23.56.004-BG-raw",
+    "manifest": [
+      {
+        "md5": "f27f095ab841fd6a9ee5cdce5a6e7fd2",
+        "name": "Xenium-CJ23.56.004-BG-raw.h5ad",
+        "size": 308156542
+      },
+      {
+        "md5": "ac40215c8fc335d464dcc5a129b130fe",
+        "name": "Xenium-CJ23.56.004-BG-raw.h5ad.dvc",
+        "size": 115
+      },
+      {
+        "md5": "bdcac8bfafb0fc56d8f5f96c02b90ecd",
+        "name": "genomic_resource.yaml",
+        "size": 705
+      },
+      {
+        "md5": "7a463bf0da4f2abc1a117d17889fa2ae",
+        "name": "statistics/describe_ann_data.txt",
+        "size": 361
+      },
+      {
+        "md5": "2da2ca19a355c6afda49314278606bb6",
+        "name": "statistics/describe_obs.csv",
+        "size": 258
+      },
+      {
+        "md5": "f6696ecb4a5ba4ff095d5a7d2cd21bfc",
+        "name": "statistics/describe_var.csv",
+        "size": 52
+      },
+      {
+        "md5": "706f4c74f45743ba9c4b16c77ab8d234",
+        "name": "statistics/stats_hash",
+        "size": 158
+      }
+    ],
+    "version": "0"
+  },
+  {
+    "config": {
       "file": "cell_metadata.csv.gz",
       "meta": {
         "description": "\n[Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025](https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1)\n\nDownloaded from: [https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html](https://alleninstitute.github.io/abc_atlas_access/descriptions/HMBA-BG_dataset.html).\n",
