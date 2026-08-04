@@ -7,20 +7,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from gain.genomic_resources.repository_factory import build_genomic_resource_repository
-from gain.genomic_resources.genomic_scores import build_score_from_resource
+from gain.genomic_resources.genomic_scores import build_position_score_from_resource
 from gain.genomic_resources.genomic_scores import PositionScore
 
 grr = build_genomic_resource_repository()
 
 
-res_to_draw: list[PositionScore] = []
-for r in grr.get_all_resources():
-    if r.get_type() != "position_score":
-        continue
-    if not r.get_id().startswith("summary/liu2026Multiomics/bigwig/Thyroid/c5"):
-        continue
-    res_to_draw.append(cast(PositionScore, build_score_from_resource(r).open()))
+# res_to_draw: list[PositionScore] = []
+# for r in grr.get_all_resources():
+#     if r.get_type() != "position_score":
+#         continue
+#     if not r.get_id().startswith("summary/liu2026Multiomics/bigwig/Thyroid/c5"):
+#         continue
+#     score = build_position_score_from_resource(r).open()
+#     res_to_draw.append(score)
 
+res_to_draw = [build_position_score_from_resource(r).open()
+               for r in grr.search_resources(
+                        "summary liu2026Multiomics bigwig Thyroid c5",
+                        resource_type="position_score")]
 
 chrom = "chr1"
 beg = 27_100_000
