@@ -520,7 +520,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=0fbb2f2dc8f43fd93cd4b5c8ddbdec76`, document.baseURI))
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=36dd41df8969d5bbde1eb8976798de15`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -15925,7 +15925,7 @@
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">298.35 KB</td>
+              <td class="nowrap size-cell">298.26 KB</td>
               <td
                 class="nowrap"
                 title="Supplemental Table S5.1"
