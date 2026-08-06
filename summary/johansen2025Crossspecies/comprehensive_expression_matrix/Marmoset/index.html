@@ -279,7 +279,8 @@
                               a:hover {
                                 color: #4C93C9;
                               }
-                            </style><p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
+                            </style>
+                            <p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
 
 <p>Downloaded from: <a href="https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy">https://brain-map.org/our-research/cell-type-taxonomies/cross-species-basal-ganglia-taxonomy</a>.</p>
 
@@ -317,23 +318,24 @@
 
 
 
-<h1> AnnData descrition </h1>
+<h1> AnnData description </h1>
+
 
 <pre><code style="font-family: monospace;">
-AnnData object with n_obs × n_vars = 313033 × 35787 backed at '/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/johansen2025Crossspecies/comprehensive_expression_matrix/Marmoset/Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad'
-    obs: 'Neighborhood', 'Class', 'Subclass', 'Group', 'Cluster', 'cluster_id', 'cell_type_ontology_term', 'load_id', 'donor_id', 'assay', 'assay_ontology_term_id', 'organism', 'organism_ontology_term_id', 'development_stage', 'anatomical_region', 'anatomical_region_merged', 'anatomical_region_ontology_term_id', 'brain_region_ontology_term_id', 'self_reported_sex', 'self_reported_sex_ontology_term_id', 'self_reported_ethnicity', 'self_reported_ethnicity_ontology_term_id', 'disease', 'disease_ontology_term_id', 'suspension_type', 'is_primary_data', 'RNA_library_creation_date', 'RNA_library_prep_set', 'RNA_library_name', 'RNA_tapestation_avg_size_bp', 'RNA_library_num_cycles', 'RNA_lib_quantification_ng', 'RNA_library_pool_name', 'ATAC_library_creation_date', 'ATAC_library_prep_set', 'ATAC_library_name', 'ATAC_tapestation_avg_size_bp', 'ATAC_library_num_cycles', 'ATAC_lib_quantification_ng', 'ATAC_library_pool_name', 'RNA_r1_index', 'RNA_r2_index', 'ATAC_index', 'total_counts', 'total_genes', 'doublet_score', 'organism_sci', 'accession_group', 'embedding_set', 'CL:ID_group', 'tokens_group', 'display_order_group', 'literature_support', 'literature_name_short', 'literature_name_long', 'curated_markers', 'color_hex_group', 'color_group', 'accession_subclass', 'CL:ID_subclass', 'tokens_subclass', 'display_order_subclass', 'color_hex_subclass', 'color_subclass', 'accession_class', 'CL:ID_class', 'tokens_class', 'display_order_class', 'color_hex_class', 'color_class', 'accession_neighborhood', 'CL:ID_neighborhood', 'tokens_neighborhood', 'display_order_neighborhood', 'color_hex_neighborhood', 'color_neighborhood', 'cell_barcode', 'barcoded_cell_sample_label', 'alignment_job_id', 'alignment_job_database'
-    var: 'highly_variable', 'highly_variable_rank', 'means', 'variances', 'variances_norm', 'highly_variable_nbatches', 'ensembl_id'
-    uns: 'batch_condition', 'cluster_algorithm', 'cluster_info', 'dataset_purl', 'default_embedding', 'filter', 'gene_annotation_version', 'hierarchy', 'hvg', 'log1p', 'mode', 'neighbors', 'reference_genome', 'schema_version', 'title'
-    obsm: 'X_scVI', 'X_umap'
-    obsp: 'connectivities', 'distances'
-    layers: None (.X), 'UMIs'
+AnnData object with n_obs × n_vars = 313033 × 35787 backed at &#39;/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/johansen2025Crossspecies/comprehensive_expression_matrix/Marmoset/Marmoset_HMBA_basalganglia_AIT_pre-print.h5ad&#39;
+    obs: &#39;Neighborhood&#39;, &#39;Class&#39;, &#39;Subclass&#39;, &#39;Group&#39;, &#39;Cluster&#39;, &#39;cluster_id&#39;, &#39;cell_type_ontology_term&#39;, &#39;load_id&#39;, &#39;donor_id&#39;, &#39;assay&#39;, &#39;assay_ontology_term_id&#39;, &#39;organism&#39;, &#39;organism_ontology_term_id&#39;, &#39;development_stage&#39;, &#39;anatomical_region&#39;, &#39;anatomical_region_merged&#39;, &#39;anatomical_region_ontology_term_id&#39;, &#39;brain_region_ontology_term_id&#39;, &#39;self_reported_sex&#39;, &#39;self_reported_sex_ontology_term_id&#39;, &#39;self_reported_ethnicity&#39;, &#39;self_reported_ethnicity_ontology_term_id&#39;, &#39;disease&#39;, &#39;disease_ontology_term_id&#39;, &#39;suspension_type&#39;, &#39;is_primary_data&#39;, &#39;RNA_library_creation_date&#39;, &#39;RNA_library_prep_set&#39;, &#39;RNA_library_name&#39;, &#39;RNA_tapestation_avg_size_bp&#39;, &#39;RNA_library_num_cycles&#39;, &#39;RNA_lib_quantification_ng&#39;, &#39;RNA_library_pool_name&#39;, &#39;ATAC_library_creation_date&#39;, &#39;ATAC_library_prep_set&#39;, &#39;ATAC_library_name&#39;, &#39;ATAC_tapestation_avg_size_bp&#39;, &#39;ATAC_library_num_cycles&#39;, &#39;ATAC_lib_quantification_ng&#39;, &#39;ATAC_library_pool_name&#39;, &#39;RNA_r1_index&#39;, &#39;RNA_r2_index&#39;, &#39;ATAC_index&#39;, &#39;total_counts&#39;, &#39;total_genes&#39;, &#39;doublet_score&#39;, &#39;organism_sci&#39;, &#39;accession_group&#39;, &#39;embedding_set&#39;, &#39;CL:ID_group&#39;, &#39;tokens_group&#39;, &#39;display_order_group&#39;, &#39;literature_support&#39;, &#39;literature_name_short&#39;, &#39;literature_name_long&#39;, &#39;curated_markers&#39;, &#39;color_hex_group&#39;, &#39;color_group&#39;, &#39;accession_subclass&#39;, &#39;CL:ID_subclass&#39;, &#39;tokens_subclass&#39;, &#39;display_order_subclass&#39;, &#39;color_hex_subclass&#39;, &#39;color_subclass&#39;, &#39;accession_class&#39;, &#39;CL:ID_class&#39;, &#39;tokens_class&#39;, &#39;display_order_class&#39;, &#39;color_hex_class&#39;, &#39;color_class&#39;, &#39;accession_neighborhood&#39;, &#39;CL:ID_neighborhood&#39;, &#39;tokens_neighborhood&#39;, &#39;display_order_neighborhood&#39;, &#39;color_hex_neighborhood&#39;, &#39;color_neighborhood&#39;, &#39;cell_barcode&#39;, &#39;barcoded_cell_sample_label&#39;, &#39;alignment_job_id&#39;, &#39;alignment_job_database&#39;
+    var: &#39;highly_variable&#39;, &#39;highly_variable_rank&#39;, &#39;means&#39;, &#39;variances&#39;, &#39;variances_norm&#39;, &#39;highly_variable_nbatches&#39;, &#39;ensembl_id&#39;
+    uns: &#39;batch_condition&#39;, &#39;cluster_algorithm&#39;, &#39;cluster_info&#39;, &#39;dataset_purl&#39;, &#39;default_embedding&#39;, &#39;filter&#39;, &#39;gene_annotation_version&#39;, &#39;hierarchy&#39;, &#39;hvg&#39;, &#39;log1p&#39;, &#39;mode&#39;, &#39;neighbors&#39;, &#39;reference_genome&#39;, &#39;schema_version&#39;, &#39;title&#39;
+    obsm: &#39;X_scVI&#39;, &#39;X_umap&#39;
+    obsp: &#39;connectivities&#39;, &#39;distances&#39;
+    layers: None (.X), &#39;UMIs&#39;
 
 </code></pre>
 
 
 
 
-<h1> obs descrition </h1>
+<h1> obs description </h1>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1478,7 +1480,7 @@ AnnData object with n_obs × n_vars = 313033 × 35787 backed at '/gpfs/commons/g
 
 
 
-<h1> var descrition </h1>
+<h1> var description </h1>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">

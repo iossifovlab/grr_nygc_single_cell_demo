@@ -350,6 +350,168 @@
         pointer-events: none;
         will-change: transform;
       }
+
+      /* ---- View toggle + hierarchical view ---- */
+      #view-toggle-row {
+        margin: 10px 10% 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      #view-toggle {
+        display: inline-flex;
+        border: 1px solid #85a2b9;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .view-btn {
+        border: none;
+        background: white;
+        color: #24699E;
+        font-size: 15px;
+        font-family: inherit;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+
+      .view-btn + .view-btn {
+        border-left: 1px solid #85a2b9;
+      }
+
+      .view-btn.active {
+        background: #5b778c;
+        color: white;
+        cursor: default;
+      }
+
+      #search-container.disabled {
+        opacity: 0.5;
+      }
+
+      #search-container.disabled #type-filter,
+      #search-container.disabled #search-field {
+        cursor: not-allowed;
+      }
+
+      #hierarchical-wrapper {
+        margin: 10px 10%;
+      }
+
+      #breadcrumb {
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+
+      .breadcrumb-item {
+        color: #252e34;
+      }
+
+      a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      #hierarchical-list {
+        border: 1px solid #cfd8df;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .hv-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        border-bottom: 1px solid #eef2f5;
+      }
+
+      .hv-row:last-child {
+        border-bottom: none;
+      }
+
+      .hv-folder {
+        cursor: pointer;
+      }
+
+      .hv-row:hover {
+        background: #f5f8fb;
+      }
+
+      .hv-icon {
+        font-size: 22px;
+        color: #85a2b9;
+        flex-shrink: 0;
+      }
+
+      .hv-main {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        flex: 1;
+      }
+
+      .hv-folder .hv-main {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .hv-name {
+        color: #252e34;
+        font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .hv-link {
+        color: #24699E;
+      }
+
+      .hv-link:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+      }
+
+      .hv-count {
+        color: #85a2b9;
+        font-size: 13px;
+        flex-shrink: 0;
+      }
+
+      .hv-meta {
+        color: #8a9aa8;
+        font-size: 12px;
+        margin-top: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .hv-size {
+        color: #aebccb;
+        font-size: 14px;
+        flex-shrink: 0;
+        margin-left: auto;
+        white-space: nowrap;
+      }
+
+      .hv-empty {
+        padding: 16px;
+        text-align: center;
+        color: #8a9aa8;
+      }
     </style>
  </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -358,7 +520,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=36efa6e5c9fd7b7cb7649d7bfeb92e83`, document.baseURI))
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=0fbb2f2dc8f43fd93cd4b5c8ddbdec76`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -645,20 +807,220 @@
 
     </script>
     <script type="module">
+        // ---- Hierarchical (tree) view ----
+        // Builds a folder tree from the '/'-separated resource full ids in
+        // window.rowData (populated synchronously by the script above) and
+        // renders it as an alternative to the flat table.
+        (function () {
+            const rowData = window.rowData || {};
+
+            // Mirror gain.utils.helpers.convert_size so aggregated folder
+            // sizes are formatted the same way as the per-resource sizes.
+            function formatSize(bytes) {
+                if (!bytes) return "0B";
+                const suffix = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+                const exp = Math.floor(Math.log(bytes) / Math.log(1024));
+                const size = Math.round(bytes / Math.pow(1024, exp) * 100) / 100;
+                // convert_size interpolates a rounded float, so an integral
+                // magnitude keeps a decimal place ("2.0 GB"). String() drops
+                // it, which would print folder sizes in a different format
+                // from the resource sizes listed beside them.
+                const text = Number.isInteger(size)
+                    ? size.toFixed(1)
+                    : String(size);
+                return text + " " + suffix[exp];
+            }
+
+            function escapeHtml(value) {
+                return String(value == null ? "" : value).replace(/[&<>"']/g, (c) => ({
+                    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+                }[c]));
+            }
+
+            function makeNode(name, path) {
+                return { name, path, children: {}, resources: [], count: 0, bytes: 0 };
+            }
+
+            const root = makeNode("All resources", []);
+            for (const fullId of Object.keys(rowData)) {
+                const parts = fullId.split("/");
+                let node = root;
+                for (let i = 0; i < parts.length - 1; i++) {
+                    const seg = parts[i];
+                    if (!node.children[seg]) {
+                        node.children[seg] = makeNode(seg, parts.slice(0, i + 1));
+                    }
+                    node = node.children[seg];
+                }
+                node.resources.push({
+                    name: parts[parts.length - 1], fullId, data: rowData[fullId],
+                });
+            }
+
+            // Precompute recursive resource count + total size for every folder.
+            (function aggregate(node) {
+                let count = node.resources.length;
+                let bytes = node.resources.reduce((s, r) => s + (r.data.sizeInBytes || 0), 0);
+                for (const key of Object.keys(node.children)) {
+                    aggregate(node.children[key]);
+                    count += node.children[key].count;
+                    bytes += node.children[key].bytes;
+                }
+                node.count = count;
+                node.bytes = bytes;
+            })(root);
+
+            function getNode(path) {
+                let node = root;
+                for (const seg of path) {
+                    if (!node.children[seg]) return null;
+                    node = node.children[seg];
+                }
+                return node;
+            }
+
+            const byName = (a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
+
+            const breadcrumbEl = document.getElementById("breadcrumb");
+            const listEl = document.getElementById("hierarchical-list");
+            let currentPath = [];
+
+            function renderBreadcrumb() {
+                breadcrumbEl.innerHTML = "";
+                const crumbs = [{ name: "All resources", path: [] }];
+                currentPath.forEach((seg, i) => {
+                    crumbs.push({ name: seg, path: currentPath.slice(0, i + 1) });
+                });
+                crumbs.forEach((crumb, i) => {
+                    if (i > 0) {
+                        const sep = document.createElement("span");
+                        sep.className = "breadcrumb-sep";
+                        sep.textContent = "/";
+                        breadcrumbEl.appendChild(sep);
+                    }
+                    const isLast = i === crumbs.length - 1;
+                    const el = document.createElement(isLast ? "span" : "a");
+                    el.textContent = crumb.name;
+                    el.className = "breadcrumb-item" + (isLast ? " current" : "");
+                    if (!isLast) {
+                        el.href = "#";
+                        el.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            navigateTo(crumb.path);
+                        });
+                    }
+                    breadcrumbEl.appendChild(el);
+                });
+            }
+
+            function renderList() {
+                const node = getNode(currentPath);
+                listEl.innerHTML = "";
+                if (!node) return;
+
+                for (const folder of Object.values(node.children).sort(byName)) {
+                    const row = document.createElement("div");
+                    row.className = "hv-row hv-folder";
+                    row.innerHTML =
+                        '<span class="material-symbols-outlined hv-icon">folder</span>'
+                        + '<div class="hv-main">'
+                        + '<span class="hv-name">' + escapeHtml(folder.name) + "</span>"
+                        + '<span class="hv-count">(' + folder.count + ")</span>"
+                        + "</div>"
+                        + '<span class="hv-size">' + escapeHtml(formatSize(folder.bytes)) + "</span>";
+                    row.addEventListener("click", () => navigateTo(folder.path));
+                    listEl.appendChild(row);
+                }
+
+                for (const res of [...node.resources].sort(byName)) {
+                    const d = res.data;
+                    const meta = [
+                        d.type,
+                        // get_version_str() renders an unversioned resource
+                        // as "0", which is truthy — version 0 means absent.
+                        d.version && d.version !== "0"
+                            ? "v" + d.version
+                            : null,
+                        d.summary,
+                    ].filter(Boolean).join(" · ");
+                    const row = document.createElement("div");
+                    row.className = "hv-row hv-resource";
+                    row.innerHTML =
+                        '<span class="material-symbols-outlined hv-icon">description</span>'
+                        + '<div class="hv-main">'
+                        + '<a class="hv-name hv-link" href="' + escapeHtml(d.url) + '">'
+                        + escapeHtml(res.name) + "</a>"
+                        + '<span class="hv-meta" title="' + escapeHtml(meta) + '">' + escapeHtml(meta) + "</span>"
+                        + "</div>"
+                        + '<span class="hv-size">' + escapeHtml(d.size) + "</span>";
+                    listEl.appendChild(row);
+                }
+
+                if (!Object.keys(node.children).length && !node.resources.length) {
+                    const empty = document.createElement("div");
+                    empty.className = "hv-empty";
+                    empty.textContent = "No resources";
+                    listEl.appendChild(empty);
+                }
+            }
+
+            function navigateTo(path) {
+                currentPath = path;
+                renderBreadcrumb();
+                renderList();
+            }
+
+            // ---- View toggle ----
+            const tableBtn = document.getElementById("table-view-btn");
+            const hierBtn = document.getElementById("hierarchical-view-btn");
+            const tableWrapper = document.getElementById("table-wrapper");
+            const hierWrapper = document.getElementById("hierarchical-wrapper");
+            const searchContainer = document.getElementById("search-container");
+            const searchField = document.getElementById("search-field");
+            const typeFilter = document.getElementById("type-filter");
+            const statusEl = document.getElementById("status");
+
+            function setView(view) {
+                const isHier = view === "hierarchical";
+                hierBtn.classList.toggle("active", isHier);
+                tableBtn.classList.toggle("active", !isHier);
+                tableWrapper.style.display = isHier ? "none" : "";
+                hierWrapper.style.display = isHier ? "" : "none";
+                if (statusEl) statusEl.style.display = isHier ? "none" : "";
+                // Search + type filter are table-view only.
+                searchField.disabled = isHier;
+                typeFilter.disabled = isHier;
+                searchContainer.classList.toggle("disabled", isHier);
+                if (isHier) navigateTo(currentPath);
+            }
+
+            tableBtn.addEventListener("click", () => setView("table"));
+            hierBtn.addEventListener("click", () => setView("hierarchical"));
+
+            // Pre-render the tree so switching views is instant. Table stays default.
+            renderBreadcrumb();
+            renderList();
+        })();
+    </script>
+    <script type="module">
         const table = document.getElementById('resource-table');
         const cols = Array.from(table.querySelectorAll('colgroup col'));
         const ths = Array.from(table.querySelectorAll('thead th'));
 
         // Proportionally rescale all columns when the wrapper changes size.
-        // Col widths start as CSS percentages; the observer only acts once pixel
-        // widths have been snapshotted on first drag (colTotal is NaN until then).
+        // Col widths start as inline CSS percentages, so colTotal is 100 on the
+        // first observation and the percentages are converted to pixels there.
         const wrapper = document.getElementById('table-wrapper');
         const wrapperObserver = new ResizeObserver(() => {
           const newWidth = table.clientWidth;
           const colTotal = cols.reduce((s, c) => s + parseInt(c.style.width, 10), 0);
+          // Bail on a zero measurement: hiding the wrapper (the hierarchical
+          // view does) fires the observer with clientWidth 0, and scaling by 0
+          // would zero every col permanently — colTotal would then be 0 too, so
+          // the guard below would return early forever and never recover.
           // Guard < 2px to avoid an infinite loop: writing col widths can itself
           // trigger the observer.
-          if (!colTotal || Math.abs(newWidth - colTotal) < 2) return;
+          if (!newWidth || !colTotal || Math.abs(newWidth - colTotal) < 2) return;
           const scale = newWidth / colTotal;
           cols.forEach(c => { c.style.width = Math.round(parseInt(c.style.width, 10) * scale) + 'px'; });
         });
@@ -801,6 +1163,12 @@
             SQLite's FTS syntax.</a>
         </div>
         <p id="status-error"></p>
+        <div id="view-toggle-row">
+          <div id="view-toggle">
+            <button type="button" id="table-view-btn" class="view-btn active">Table view</button>
+            <button type="button" id="hierarchical-view-btn" class="view-btn">Hierarchical view</button>
+          </div>
+        </div>
         <div id="status"></div>
         <div id="table-wrapper">
         <table id="resource-table" class="contents">
@@ -42763,6 +43131,10 @@
               </tr>
           </tbody>
         </table>
+        </div>
+        <div id="hierarchical-wrapper" style="display: none;">
+          <nav id="breadcrumb"></nav>
+          <div id="hierarchical-list"></div>
         </div>
         <p class="searching" style="display: none;">Searching</p>
      </div>

@@ -7,13 +7,13 @@ from gain.genomic_resources.genomic_scores import build_position_score_from_reso
 grr = build_genomic_resource_repository()
 
 
-# Find all resources for a cell-type
-for r in grr.get_all_resources():
-    if r.get_labels().get("cell_type") == "Astro":
-        print(r.resource_id)
+# # Find all resources for a cell-type
+# for r in grr.get_all_resources():
+#     if r.get_labels().get("cell_type") == "Astro":
+#         print(r.resource_id)
 
-# for r in grr.search_resources("cell_type : Astro"):
-#     print(r.resource_id)
+for r in grr.search_resources("cell_type : Astro"):
+    print(r.resource_id)
 
 
 # Using basic resource
