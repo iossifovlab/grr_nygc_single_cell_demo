@@ -271,6 +271,27 @@
         
         <h1>This is a prototype Genomic Resource Repository for single-cell data aggregated by the NYGC for their machine-learning initiative</h1>
 
+<h1>Definition of the Used Labels</h1>
+
+<h3>Score definitions</h3>
+
+<p>| Category | Description |
+|:---------|:------------|
+| 1 (High Confidence) | Each of these genes has been clearly implicated in ASD-typically by the presence of at least three de novo likely-gene-disrupting mutations being reported in the literature-and such mutations identified in the sequencing of the SPARK cohort are typically returned to the participants. Some of these gene meet the most rigorous threshold of genome-wide significance; all at least meet a threshold false discovery rate of &lt; 0.1. |
+| 2 (Strong Candidate) | Genes with two reported de novo likely-gene-disrupting mutations.  A gene uniquely implicated by a genome-wide association study, either reaching genome-wide significance or, if not, consistently replicated and accompanied by evidence that the risk variant has a functional effect. |
+| 3 (Suggestive Evidence) | Genes with a single reported de novo likely-gene-disrupting mutation.  Evidence from a significant but unreplicated association study, or a series of rare inherited mutations for which there is not a rigorous statistical comparison with controls. |</p>
+
+<p>| Label                     | Short definition                                                                                          | Allowed values / examples                                                                    | Example                          |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------- |
+| <strong><code>vendor</code></strong>              | Organization that developed/provides the experimental technology or assay system.                         | <code>10x_Genomics</code>, <code>Bio-Rad</code>, <code>Parse_Biosciences</code>, <code>unknown</code>                                    | <code>10x_Genomics</code>                   |
+| <strong><code>assay</code></strong>               | Specific experimental protocol or assay used to generate the biological data.                             | <code>10x_Multiome</code>, <code>10x_3prime_GEX</code>, <code>10x_ATAC</code>, <code>snm3C-seq</code>, <code>scRNA-seq</code>, <code>scATAC-seq</code>         | <code>10x_Multiome</code>                   |
+| <strong><code>sequencing_platform</code></strong> | Instrument/platform used to sequence the resulting libraries. This is distinct from the assay technology. | <code>Illumina</code>, <code>PacBio</code>, <code>Oxford_Nanopore</code>, <code>unknown</code>                                           | <code>Illumina</code>                       |
+| <strong><code>resolution</code></strong>          | Biological unit at which the measurements are represented.                                                | <code>bulk</code>, <code>single_cell</code>, <code>single_nucleus</code>, <code>cell_type</code>                                         | <code>single_nucleus</code>                 |
+| <strong><code>modalities</code></strong>          | Molecular measurement(s) represented in the dataset. <strong>Can contain multiple values.</strong>                     | <code>RNA</code>, <code>ATAC</code>, <code>DNA_methylation</code>, <code>3D_genome</code>, <code>protein</code>, etc.                               | <code>[RNA, ATAC]</code>                    |
+| <strong><code>data_types</code></strong>          | Specific type of data within each modality. <strong>Can contain multiple values.</strong>                              | <code>gene_expression</code>, <code>peak_counts</code>, <code>fragments</code>, <code>CpG_methylation</code>, <code>chromatin_contacts</code>, etc. | <code>[gene_expression, peak_counts]</code> |
+| <strong><code>file_format</code></strong>         | Format in which the data are stored.                                                                      | <code>h5ad</code>, <code>h5</code>, <code>mtx</code>, <code>tsv</code>, <code>bed</code>, <code>bedGraph</code>, <code>pairs</code>, <code>bigWig</code>, etc.                       | <code>h5ad</code>                           |
+| <strong><code>processing_level</code></strong>    | Degree to which the raw sequencing data have been processed.                                              | <code>raw</code>, <code>processed</code>, <code>normalized</code>, <code>annotated</code>                                                | <code>processed</code>                      |</p>
+
         </div>
     </body>
 </html>
