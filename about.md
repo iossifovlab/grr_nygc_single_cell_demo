@@ -1,9 +1,20 @@
 # This is a prototype Genomic Resource Repository for single-cell data aggregated by the NYGC for their machine-learning initiative
 
+
+# These are the studies:
+
+* [johansen2025Crossspecies](./summary/johansen2025Crossspecies/summary/index.html)
+
+* [liu2026Multiomics](./summary/liu2026Multiomics/summary/index.html)
+
+* [zemke2023Conserved](./summary/zemke2023Conserved/summary/index.html)
+
+* [zemke2024Epigenetic](./summary/zemke2024Epigenetic/summary/index.html)
+
+
+
 # Definition of the Used Labels
 
-
-### Score definitions
 
 
 | Label                     | Short definition                                                                                          | Allowed values / examples                                                                    | Example                          |
