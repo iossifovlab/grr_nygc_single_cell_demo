@@ -1,1 +1,1 @@
-/gpfs/commons/groups/iossifov_lab/SC_Summaries_GRR/summary/zemke2023Conserved/tools/fragment_count_dist_plot.py
+../../tools/fragment_count_dist_plot.py
