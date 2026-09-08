@@ -51,7 +51,7 @@ for ff in glob.glob(f"{yoonHaDD}/*.tsv.gz"):
 
     print(ff, fn, individual_id)
 
-    draw_file = os.path.abspath("./fragment_count_dist_plot.py")
+    draw_file = "../../tools//fragment_count_dist_plot.py"
     files = [ff, indx_fn, draw_file]
 
 
@@ -120,4 +120,4 @@ for ff in glob.glob(f"{yoonHaDD}/*.tsv.gz"):
             }
         }
     }
-    #prepapre_resrouce(resource_id, files, conf)
+    prepapre_resrouce(resource_id, files, conf)
