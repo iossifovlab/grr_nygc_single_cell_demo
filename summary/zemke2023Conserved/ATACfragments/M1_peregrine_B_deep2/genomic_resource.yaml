@@ -41,8 +41,13 @@ meta:
 
     '
   labels:
-    assay: fragments
-    technology: single cell ATAC-seq
+    assay: 10x_Multiome
     individual_id: M1_peregrine_B_deep2
-    organism: white-tufted-ear marmoset
-    dataset: zemke2023Conserved - ATAC-seq (10x multiome) on primary motor cortex
+    dataset: zemke2023Conserved
+    reference_genome: reference/Marmoset/genome/calJac240_pri
+    species: marmoset
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: single_nucleus
+    modalities: ATAC
+    processing_level: aligned

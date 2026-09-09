@@ -3,6 +3,8 @@ format: excel
 meta:
   description: ''
   summary: Human Vs marmoset differential chromatin accessibility.
+  labels:
+    dataset: zemke2023Conserved
 parameters:
   sheet_name: human_v_marmoset
 type: data_frame

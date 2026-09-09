@@ -3,6 +3,8 @@ format: tsv
 meta:
   description: ''
   summary: Macaque ATAC peak summary.
+  labels:
+    dataset: zemke2023Conserved
 parameters:
   sep: "\t"
 type: data_frame

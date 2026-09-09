@@ -1,21 +1,22 @@
-from gain.genomic_resources.repository_factory import build_genomic_resource_repository
+#!/usr/bin/env python
+'''Print summary of the labels in the NYGC single cell GRR.'''
+
 from collections import defaultdict
-import matplotlib.pylab as plt
+from gain.genomic_resources.repository_factory import \
+    build_genomic_resource_repository
 
 try:
     grr
 except NameError:
     grr = build_genomic_resource_repository()
 
-hists = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(int))))
+hists = defaultdict(lambda: defaultdict(lambda: defaultdict(
+                                                    lambda: defaultdict(int))))
 labels_per_paper = defaultdict(set)
 n_objects = defaultdict(int)
 resource_types = defaultdict(lambda: defaultdict(int))
 
-for r in grr.get_all_resources():
-    if not r.resource_id.startswith("summary"):
-        continue
-
+for r in grr.search_resources(resource_query="summary/zemke2023Conserved/*"):
     parts = r.resource_id.split("/")
     assert parts[0] == "summary"
     dataset = parts[1]
@@ -28,10 +29,10 @@ for r in grr.get_all_resources():
         labels_per_paper[dataset].add(label)
 
 for dsi, ds_d in hists.items():
-    print(dsi)
+    print('=========', dsi, '=========')
     sbdirs = [sbdir for dsi_a, sbdir in n_objects if dsi_a == dsi]
     for sbdir in sbdirs:
-        print(f"    {sbdir} [{n_objects[dsi, sbdir]}]")
+        print(f"    ------ {sbdir} [{n_objects[dsi, sbdir]}] ------")
 
         print("      Resource_types:")
         assert len(resource_types[dsi, sbdir]) == 1
@@ -50,35 +51,8 @@ for dsi, ds_d in hists.items():
             cc = sorted(sb_d[lbl].items(), key=lambda x: (-x[1], [0]))
             other_s = ""
             if len(cc) > 5:
-                other_s = f", and {len(cc)-5} others for {sum(v for _, v in cc[5:])} resources"
+                other_s = f", and {len(cc)-5} others for " + \
+                          f"{sum(v for _, v in cc[5:])} resources"
                 cc = cc[:5]
-            print("; ".join([f"{l} [{v}]" for l, v in cc]), other_s, sep="")
-            xlbls = list(sb_d[lbl].keys())
+            print("; ".join([f"{lb} [{v}]" for lb, v in cc]), other_s, sep="")
             ys = list(sb_d[lbl].values())
-
-
-
-
-# for dsi, ds_d in hists.items():
-#     plt.figure(figsize=(20, 20))
-#     spi = 0
-#     for sbdi, (sbdir, sb_d) in enumerate(ds_d.items()):
-#         for lbli, lbl in enumerate(labels_per_paper[dsi]):
-#             spi += 1
-#             plt.subplot(len(ds_d), len(labels_per_paper[dsi]), spi)
-#             # if sbdi == 0:
-#             #     plt.title(f"{lbl}")
-#             if lbli == 0:
-#                 plt.ylabel(f"{sbdir}\n{n_objects[dsi, sbdir]}")
-#             if lbl not in sb_d:
-#                 continue
-#             xlbls = list(sb_d[lbl].keys())
-#             ys = list(sb_d[lbl].values())
-#             plt.plot(ys, '*')
-#             plt.xticks(range(len(ys)), labels=xlbls)
-#             plt.xlabel(lbl)
-#     plt.suptitle(dsi)
-#     plt.tight_layout()
-# plt.show(block=False)
-
-

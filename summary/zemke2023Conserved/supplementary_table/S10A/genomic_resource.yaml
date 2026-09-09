@@ -3,6 +3,8 @@ format: excel
 meta:
   description: ''
   summary: Human Vs macaque differential chromatin accessibility.
+  labels:
+    dataset: zemke2023Conserved
 parameters:
   sheet_name: human_v_macaque
 type: data_frame

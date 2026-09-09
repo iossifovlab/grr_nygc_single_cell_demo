@@ -3,6 +3,8 @@ format: excel
 meta:
   description: ''
   summary: Pairwise differential gene expression. - macaque_v_mouse
+  labels:
+    dataset: zemke2023Conserved
 parameters:
   sheet_name: macaque_v_mouse
 type: data_frame
