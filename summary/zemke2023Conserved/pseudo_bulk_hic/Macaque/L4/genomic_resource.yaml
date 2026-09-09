@@ -14,8 +14,13 @@ meta:
 
     [https://epigenome.wustl.edu/renlab/hic/Macaque/L4.hic](https://epigenome.wustl.edu/renlab/hic/Macaque/L4.hic)
   labels:
-    species: Macaque
+    species: macaque
     cell_type: L4
-    assay: hic
-    brain_region: M1
+    assay: snm3C-seq
+    brain_region: m1
     dataset: zemke2023Conserved
+    vendor: UCSD Single-cell Epigenomics Platform
+    resolution: pseudo_bulk_cell_type
+    modalities: 3D_genome
+    processing_level: processed
+    reference_genome: reference/Macaque/genome/Mmul_10

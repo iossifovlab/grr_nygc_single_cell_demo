@@ -14,8 +14,13 @@ meta:
 
     [https://epigenome.wustl.edu/renlab/hic/Mouse/L6-IT.hic](https://epigenome.wustl.edu/renlab/hic/Mouse/L6-IT.hic)
   labels:
-    species: Mouse
+    species: mouse
     cell_type: L6-IT
-    assay: hic
-    brain_region: M1
+    assay: snm3C-seq
+    brain_region: mop
     dataset: zemke2023Conserved
+    vendor: UCSD Single-cell Epigenomics Platform
+    resolution: pseudo_bulk_cell_type
+    modalities: 3D_genome
+    processing_level: processed
+    reference_genome: reference/Mouse/genome/GRCm39
