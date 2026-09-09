@@ -38,7 +38,13 @@ meta:
   labels:
     species: marmoset
     cell_type: VLMC
-    assay: rna
+    assay: 10x_Multiome
     brain_region: m1
     dataset: zemke2023Conserved
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: pseudo_bulk_cell_type
+    modalities: RNA
+    processing_level: RPKM_normalized
+    reference_genome: reference/Marmoset/genome/calJac240_pri
 

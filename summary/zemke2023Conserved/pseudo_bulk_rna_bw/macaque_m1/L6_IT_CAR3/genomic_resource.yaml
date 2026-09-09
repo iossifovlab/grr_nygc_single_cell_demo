@@ -38,7 +38,13 @@ meta:
   labels:
     species: macaque
     cell_type: L6_IT_CAR3
-    assay: rna
+    assay: 10x_Multiome
     brain_region: m1
     dataset: zemke2023Conserved
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: pseudo_bulk_cell_type
+    modalities: RNA
+    processing_level: RPKM_normalized
+    reference_genome: reference/Macaque/genome/Mmul_10
 
