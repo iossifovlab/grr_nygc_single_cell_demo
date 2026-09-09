@@ -597,7 +597,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=1000ef2ef5e3fc5d51b2e29c2174ecba`, document.baseURI))
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=032efd8b11001ef592f35a52d48cd440`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -33214,7 +33214,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">146.44 MB</td>
+              <td class="nowrap size-cell">146.45 MB</td>
               <td
                 class="nowrap"
                 title="Pseudo-bulk wc track in Human M1 region for L23 cell type"
@@ -35140,7 +35140,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">165.16 MB</td>
+              <td class="nowrap size-cell">165.17 MB</td>
               <td
                 class="nowrap"
                 title="Pseudo-bulk wc track in Marmoset M1 region for Pvalb-ChC cell type"
@@ -35860,7 +35860,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">59.9 MB</td>
+              <td class="nowrap size-cell">59.91 MB</td>
               <td
                 class="nowrap"
                 title="Pseudo-bulk wc track in Mouse M1 region for Pvalb-ChC cell type"

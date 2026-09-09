@@ -33,8 +33,14 @@ meta:
 
     [https://epigenome.wustl.edu/renlab/mC/Human/L5-IT.CGN-both.bedgraph.gz](https://epigenome.wustl.edu/renlab/mC/Human/L5-IT.CGN-both.bedgraph.gz)
   labels:
-    species: Human
+    species: human
     cell_type: L5-IT
-    assay: single cell methylation
-    brain_region: M1
+    assay: snm3C-seq
+    brain_region: m1
     dataset: zemke2023Conserved
+    reference_genome: reference/Human/genome/ucsc-hg38
+    measure: CGN
+    vendor: UCSD Single-cell Epigenomics Platform
+    resolution: pseudo_bulk_cell_type
+    modalities: DNA_methylation
+    processing_level: processed

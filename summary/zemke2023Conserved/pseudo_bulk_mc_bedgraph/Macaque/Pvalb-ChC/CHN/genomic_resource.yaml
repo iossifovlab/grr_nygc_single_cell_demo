@@ -33,8 +33,14 @@ meta:
 
     [https://epigenome.wustl.edu/renlab/mC/Macaque/Pvalb-ChC.CHN-both.bedgraph.gz](https://epigenome.wustl.edu/renlab/mC/Macaque/Pvalb-ChC.CHN-both.bedgraph.gz)
   labels:
-    species: Macaque
+    species: macaque
     cell_type: Pvalb-ChC
-    assay: single cell methylation
-    brain_region: M1
+    assay: snm3C-seq
+    brain_region: m1
     dataset: zemke2023Conserved
+    reference_genome: reference/Macaque/genome/Mmul_10
+    measure: CHN
+    vendor: UCSD Single-cell Epigenomics Platform
+    resolution: pseudo_bulk_cell_type
+    modalities: DNA_methylation
+    processing_level: processed
