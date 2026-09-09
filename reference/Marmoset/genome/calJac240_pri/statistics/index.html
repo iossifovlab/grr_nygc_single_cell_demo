@@ -1,0 +1,426 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        max-width: 1200px;
+        margin: 50px auto 100px auto;
+        padding: 0 40px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair minus the gap, and shrinks together with it. */
+      .figure-pair > .figure-thumbnail {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #chromosomes-table {
+    margin-bottom: 50px;
+}
+    </style>
+  </head>
+  <body>
+      <table>
+        <thead>
+          <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_025586.1_statistic.yaml'>NC_025586.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">364.0 B</td>
+            <td class="nowrap">33216e0a5f5fd316ba3713a1116f9885</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133502.1_statistic.yaml'>NC_133502.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">453.0 B</td>
+            <td class="nowrap">a208d82bc0dbc8092dcb7dee4473792c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133503.1_statistic.yaml'>NC_133503.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">453.0 B</td>
+            <td class="nowrap">67018aeeedf766aad8ee7d86e93c2596</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133504.1_statistic.yaml'>NC_133504.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">449.0 B</td>
+            <td class="nowrap">6d66a553f278eb7a12865fa4ab3e7485</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133505.1_statistic.yaml'>NC_133505.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">449.0 B</td>
+            <td class="nowrap">d850f0bfac80a3cc980608e678e230f5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133506.1_statistic.yaml'>NC_133506.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">448.0 B</td>
+            <td class="nowrap">f7c4d8fa49ea56f6823a3d478df95e70</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133507.1_statistic.yaml'>NC_133507.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">453.0 B</td>
+            <td class="nowrap">d8d1ae9b65be7c9e5767646a2ef2050f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133508.1_statistic.yaml'>NC_133508.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">446.0 B</td>
+            <td class="nowrap">60936f7ea0bac6d4717e749744346e72</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133509.1_statistic.yaml'>NC_133509.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">445.0 B</td>
+            <td class="nowrap">33da9557b19bf515b42cc12a1ab5508e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133510.1_statistic.yaml'>NC_133510.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">443.0 B</td>
+            <td class="nowrap">59e3d2a44a07e383136945f016a12832</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133511.1_statistic.yaml'>NC_133511.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">442.0 B</td>
+            <td class="nowrap">8604c03b8edc5cf53d28c21324475d10</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133512.1_statistic.yaml'>NC_133512.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">442.0 B</td>
+            <td class="nowrap">bf5e7ce78afee75c3219fc382388516a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133513.1_statistic.yaml'>NC_133513.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">441.0 B</td>
+            <td class="nowrap">c2ab420a0ad5953de236ae21f82dd9bf</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133514.1_statistic.yaml'>NC_133514.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">441.0 B</td>
+            <td class="nowrap">a15716e092c20fad7837c8f89f716de2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133515.1_statistic.yaml'>NC_133515.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">441.0 B</td>
+            <td class="nowrap">0494610d106de6445cedf8f982fef090</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133516.1_statistic.yaml'>NC_133516.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">441.0 B</td>
+            <td class="nowrap">c24422e97620b7e8ccdcedbf2a4649ef</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133517.1_statistic.yaml'>NC_133517.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">440.0 B</td>
+            <td class="nowrap">3fcb3443767d6e6f05b127b62275d88f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133518.1_statistic.yaml'>NC_133518.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">437.0 B</td>
+            <td class="nowrap">0a0edb4764a7dab3c5f6dda84deab73b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133519.1_statistic.yaml'>NC_133519.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">446.0 B</td>
+            <td class="nowrap">3cd0d73ef8e82f134feee023d53d4535</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133520.1_statistic.yaml'>NC_133520.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">437.0 B</td>
+            <td class="nowrap">97355a55103a87ecaad47db42145dbd9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133521.1_statistic.yaml'>NC_133521.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">437.0 B</td>
+            <td class="nowrap">3d048ec1587fea76c6c48a077051c6b7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133522.1_statistic.yaml'>NC_133522.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">437.0 B</td>
+            <td class="nowrap">77ffac6586d6e3987ea29704084cd44d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133523.1_statistic.yaml'>NC_133523.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">446.0 B</td>
+            <td class="nowrap">3925128577a9e977f71263b097c8e65e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133524.1_statistic.yaml'>NC_133524.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">447.0 B</td>
+            <td class="nowrap">0b3b6d63816aba2bb2fa1062f589977c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='NC_133525.1_statistic.yaml'>NC_133525.1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">426.0 B</td>
+            <td class="nowrap">529f62c13e111a4ba7da1c437a663b79</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='reference_genome_statistic.yaml'>reference_genome_statistic.yaml</a>
+            </td>
+            <td class="nowrap">1.13 KB</td>
+            <td class="nowrap">14a31b9a7f5b2cfd0a76b3559053aaaf</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='stats_hash'>stats_hash</a>
+            </td>
+            <td class="nowrap">54.0 B</td>
+            <td class="nowrap">60e2b8c8bfb3e3d6ecab293e2555c08d</td>
+          </tr>
+        </tbody>
+      </table>
+  </body>
+</html>

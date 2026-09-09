@@ -1,0 +1,23 @@
+---
+
+type: gene_models
+
+filename: MANE.GRCh38.v1.5.ensembl_genomic.txt.gz
+format: default
+
+meta:
+  summary: |
+    MANE gene model version 1.5
+  description: |
+
+    [MANE](https://useast.ensembl.org/info/genome/genebuild/mane.html) (Matched Annotation from NCBI and EBI) Project aims to produce a genome-wide transcript set that can be useful as a default set for display on genomics browsers and resources. 
+
+    Accurate annotation of the human genome is essential for genomics research and clinical applications. RefSeq (NCBI) and Ensembl/GENCODE (led by EMBL-EBI) produce independent human gene annotation. The large number of alternatively spliced transcripts and the lack of standardised default transcripts displayed across resources present challenges, especially in the clinical context. Matched MANE transcripts are identical in the RefSeq and the Ensembl/GENCODE annotation sets. They facilitate better communication and exchange of data among the scientific community when represented across most public genomic resources. In addition, the MANE dataset represents a high-quality annotation subset backed by expert curators and the combined computational strength of the NCBI and EMBL-EBI.
+
+    [Morales et al, A joint NCBI and EMBL-EBI transcript set for clinical genomics and research, Nature 2022 ](https://www.nature.com/articles/s41586-022-04558-8)
+
+    Downloaded on 4/22/2026 
+    [https://ftp.ncbi.nlm.nih.gov/refseq/MANE/MANE\_human/release\_1.5/MANE.GRCh38.v1.5.ensembl\_genomic.gtf.gz](https://ftp.ncbi.nlm.nih.gov/refseq/MANE/MANE\_human/release\_1.5/MANE.GRCh38.v1.5.ensembl\_genomic.gtf.gz)
+
+  labels:
+    reference_genome: reference/Human/genome/ucsc-hg38 

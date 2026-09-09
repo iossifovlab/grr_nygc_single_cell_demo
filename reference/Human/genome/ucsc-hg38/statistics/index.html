@@ -1,0 +1,3436 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        max-width: 1200px;
+        margin: 50px auto 100px auto;
+        padding: 0 40px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair minus the gap, and shrinks together with it. */
+      .figure-pair > .figure-thumbnail {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #chromosomes-table {
+    margin-bottom: 50px;
+}
+    </style>
+  </head>
+  <body>
+      <table>
+        <thead>
+          <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap">
+                <a href='chr10_GL383545v1_alt_statistic.yaml'>chr10_GL383545v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">f6a6213ce54aabd5544a5ece13d2e4ec</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr10_GL383546v1_alt_statistic.yaml'>chr10_GL383546v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">1416349f7ed4ad259cb90725a0ad3b2c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr10_KI270824v1_alt_statistic.yaml'>chr10_KI270824v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">921619a644236243dcbaa4f7bd0595e4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr10_KI270825v1_alt_statistic.yaml'>chr10_KI270825v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">10aa135f723a6252499132177af0c4c6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr10_statistic.yaml'>chr10_statistic.yaml</a>
+            </td>
+            <td class="nowrap">453.0 B</td>
+            <td class="nowrap">46e7485e282b2ef5714a3d769e2274f3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_GL383547v1_alt_statistic.yaml'>chr11_GL383547v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">786675a44ace7ad4b9f6ccf7cb56cd01</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_JH159136v1_alt_statistic.yaml'>chr11_JH159136v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">ddd3f360f87a5a065827fb1326577147</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_JH159137v1_alt_statistic.yaml'>chr11_JH159137v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">f07b481822ce56e65e807da55c687cf2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270721v1_random_statistic.yaml'>chr11_KI270721v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">d702934bcd98270b19ba4949a4f18380</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270826v1_alt_statistic.yaml'>chr11_KI270826v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">0647385da20bcf409c189cba6e4c34bb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270827v1_alt_statistic.yaml'>chr11_KI270827v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">346bbeb849462e53175dfa0bb6f2f12e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270829v1_alt_statistic.yaml'>chr11_KI270829v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">91af312ba9ad28ecaf09c6a4833921bb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270830v1_alt_statistic.yaml'>chr11_KI270830v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">265a74ea9ee817a78c6391c1913abc9a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270831v1_alt_statistic.yaml'>chr11_KI270831v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">402.0 B</td>
+            <td class="nowrap">394308ffceab4d7d13476c0933ff9f7b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270832v1_alt_statistic.yaml'>chr11_KI270832v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">c48432cd9d1fc2442767cb9b4f01a552</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270902v1_alt_statistic.yaml'>chr11_KI270902v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">e4e1440569b5b96bfe863334995442af</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270903v1_alt_statistic.yaml'>chr11_KI270903v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">dd66efe99f666c56219ea1d9db84f634</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_KI270927v1_alt_statistic.yaml'>chr11_KI270927v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">2dc9313e9f16b608c25052b3f62aa9ed</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr11_statistic.yaml'>chr11_statistic.yaml</a>
+            </td>
+            <td class="nowrap">446.0 B</td>
+            <td class="nowrap">b52221a0c2106971c85ef113f6a20e82</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL383549v1_alt_statistic.yaml'>chr12_GL383549v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">72105690cae96e1ad3e53555bd6ab9af</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL383550v2_alt_statistic.yaml'>chr12_GL383550v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">6550f1331f71734515abb05f8d9d13e5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL383551v1_alt_statistic.yaml'>chr12_GL383551v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">3d39258673166aae4fc339c96875195c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL383552v1_alt_statistic.yaml'>chr12_GL383552v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">37ed56debeae65557c870c118ddc65fe</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL383553v2_alt_statistic.yaml'>chr12_GL383553v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">09d4348ab20aa8c6f76a2d1b5f13811d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL877875v1_alt_statistic.yaml'>chr12_GL877875v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">33c1a2ebcfaf76c8ebcb7d7026ba2486</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_GL877876v1_alt_statistic.yaml'>chr12_GL877876v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">402.0 B</td>
+            <td class="nowrap">f084b59be59cac5f883ba32e05db4403</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_KI270833v1_alt_statistic.yaml'>chr12_KI270833v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">6d3e841af49177c25c2bf9ef379b07c3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_KI270834v1_alt_statistic.yaml'>chr12_KI270834v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">de8ee72787c5e057df7bf011bb630ac0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_KI270835v1_alt_statistic.yaml'>chr12_KI270835v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">d789528287e4c6c8fe11c58749c5eeab</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_KI270836v1_alt_statistic.yaml'>chr12_KI270836v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">f5e4ea2f1eed37477f77f766a1e296f3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_KI270837v1_alt_statistic.yaml'>chr12_KI270837v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">381.0 B</td>
+            <td class="nowrap">ce54c47624cb01cb0e8d70ce1b08845a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_KI270904v1_alt_statistic.yaml'>chr12_KI270904v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">404.0 B</td>
+            <td class="nowrap">f2686ceb4bffe87c4626af640f0c77c5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr12_statistic.yaml'>chr12_statistic.yaml</a>
+            </td>
+            <td class="nowrap">448.0 B</td>
+            <td class="nowrap">263d12dbeeb6ffcd53c28aaa37dc1c2d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_KI270838v1_alt_statistic.yaml'>chr13_KI270838v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">8bf91aba2067e2c417496d9b03108346</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_KI270839v1_alt_statistic.yaml'>chr13_KI270839v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">6eba0936c3fa112fc40ebcda1ff5dce3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_KI270840v1_alt_statistic.yaml'>chr13_KI270840v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">ac895eaba023060f52edad29cffc25c4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_KI270841v1_alt_statistic.yaml'>chr13_KI270841v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">bac41770dda5f7d91e75a311f7d50b6d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_KI270842v1_alt_statistic.yaml'>chr13_KI270842v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">199c5b8716cfbddde2773549e09d91f3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_KI270843v1_alt_statistic.yaml'>chr13_KI270843v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">490d3ed5dc464bb19420995e3c5bf3e9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr13_statistic.yaml'>chr13_statistic.yaml</a>
+            </td>
+            <td class="nowrap">450.0 B</td>
+            <td class="nowrap">8f09fc0fdd66e06356f222badb8eba5c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_GL000009v2_random_statistic.yaml'>chr14_GL000009v2_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">db96d6838695a462e2f245208100dd8a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_GL000194v1_random_statistic.yaml'>chr14_GL000194v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">0a71ef4d88108d56e4af329a17e699d4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_GL000225v1_random_statistic.yaml'>chr14_GL000225v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">403.0 B</td>
+            <td class="nowrap">c5b4ad7a094de5c99a9d0f432363c361</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270722v1_random_statistic.yaml'>chr14_KI270722v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">9775c117eaad23b389afed5485b9969a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270723v1_random_statistic.yaml'>chr14_KI270723v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">2c015ed779dd2ccccc903a2697bbec60</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270724v1_random_statistic.yaml'>chr14_KI270724v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">4583415a341d9671b12c4dbb5f9a4ffa</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270725v1_random_statistic.yaml'>chr14_KI270725v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">984d7123e6b5c5c6fc3ee74229ec4aea</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270726v1_random_statistic.yaml'>chr14_KI270726v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">ade3921d152c464e27142e84049d6838</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270844v1_alt_statistic.yaml'>chr14_KI270844v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">4013c59c465b42f157c8b7bbc9938bac</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270845v1_alt_statistic.yaml'>chr14_KI270845v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">72966de2a2d500e7b154de86cae5b2cb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270846v1_alt_statistic.yaml'>chr14_KI270846v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">410.0 B</td>
+            <td class="nowrap">a4a96172a7361b27e42dfbe3d81489dd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_KI270847v1_alt_statistic.yaml'>chr14_KI270847v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">412.0 B</td>
+            <td class="nowrap">4de9d219be032a4575f0ad69008fd4b4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr14_statistic.yaml'>chr14_statistic.yaml</a>
+            </td>
+            <td class="nowrap">448.0 B</td>
+            <td class="nowrap">48cbba4caa4f6d2a7afa6b5a463a38e4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_GL383554v1_alt_statistic.yaml'>chr15_GL383554v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">2538bda2f0c0654c2885681670013750</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_GL383555v2_alt_statistic.yaml'>chr15_GL383555v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">6e9b38f739c2a59b11a41a7066ffbd62</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270727v1_random_statistic.yaml'>chr15_KI270727v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">405.0 B</td>
+            <td class="nowrap">bb6a3eaadfe88af61e15408dcdfe8138</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270848v1_alt_statistic.yaml'>chr15_KI270848v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">6d473a578bdd506a11a3252497198eb0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270849v1_alt_statistic.yaml'>chr15_KI270849v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">b6fdb01172cb45d44016e20eefd7b8de</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270850v1_alt_statistic.yaml'>chr15_KI270850v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">402.0 B</td>
+            <td class="nowrap">2adde8c52db5f5027aaefba6c233f096</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270851v1_alt_statistic.yaml'>chr15_KI270851v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">21269c1fd3d296b9879824e30e3a58be</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270852v1_alt_statistic.yaml'>chr15_KI270852v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">402.0 B</td>
+            <td class="nowrap">0a16d62196a757c1e25998867bc4e5c9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270905v1_alt_statistic.yaml'>chr15_KI270905v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">435.0 B</td>
+            <td class="nowrap">0fd7d625222b07396d7de154dc5c00b3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_KI270906v1_alt_statistic.yaml'>chr15_KI270906v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">88fbd0e405c97d78ce49a1dabf68188e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr15_statistic.yaml'>chr15_statistic.yaml</a>
+            </td>
+            <td class="nowrap">446.0 B</td>
+            <td class="nowrap">e9da8463b40863f257c159183e13ce2a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_GL383556v1_alt_statistic.yaml'>chr16_GL383556v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">0ec20671b5dd2d63d94b9bdb99ad8520</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_GL383557v1_alt_statistic.yaml'>chr16_GL383557v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">7a50d8d0ad01e9960b5bc14357e2e467</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_KI270728v1_random_statistic.yaml'>chr16_KI270728v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">426.0 B</td>
+            <td class="nowrap">a8c6dc76694358bf79e2473925ecb3bc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_KI270853v1_alt_statistic.yaml'>chr16_KI270853v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">421.0 B</td>
+            <td class="nowrap">6c44196d3adc45fe200b2e6693e82cc8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_KI270854v1_alt_statistic.yaml'>chr16_KI270854v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">23c6cf0ecb4804995c9793d27bb7bd4b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_KI270855v1_alt_statistic.yaml'>chr16_KI270855v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">29c010bfeca96003719d2139d29a854d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_KI270856v1_alt_statistic.yaml'>chr16_KI270856v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">4ca64585cc3cffbb80c374b7d8afc1aa</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr16_statistic.yaml'>chr16_statistic.yaml</a>
+            </td>
+            <td class="nowrap">445.0 B</td>
+            <td class="nowrap">ba86ff1ccf4ab8d108fa9fa6e8056d01</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_GL000205v2_random_statistic.yaml'>chr17_GL000205v2_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">004100668cfdcc6a8dfabe7f0d5e6fe4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_GL000258v2_alt_statistic.yaml'>chr17_GL000258v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">425.0 B</td>
+            <td class="nowrap">2f717d6f686863243fe1f32c0549f63d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_GL383563v3_alt_statistic.yaml'>chr17_GL383563v3_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">fa48f5458d5afca9d6617405647bec9d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_GL383564v2_alt_statistic.yaml'>chr17_GL383564v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">78dbbfc244e380aa5ce4579aae94352b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_GL383565v1_alt_statistic.yaml'>chr17_GL383565v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">6e70fcb5085e9567502f4e3491d8c4c7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_GL383566v1_alt_statistic.yaml'>chr17_GL383566v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">63b07d19037950dd1ec480328ebfc5be</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_JH159146v1_alt_statistic.yaml'>chr17_JH159146v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">07ec717b982b99b26bac41966eeb2a7b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_JH159147v1_alt_statistic.yaml'>chr17_JH159147v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">a1d4798f850eb232fa816b80ef69b510</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_JH159148v1_alt_statistic.yaml'>chr17_JH159148v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">d48836aa63e345bea0bdb92ee9cef1ec</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270729v1_random_statistic.yaml'>chr17_KI270729v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">406.0 B</td>
+            <td class="nowrap">4be14da1ec6360731372ff4a44080df3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270730v1_random_statistic.yaml'>chr17_KI270730v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">ffdac7b8f0f62f51d33aa3facaa607c8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270857v1_alt_statistic.yaml'>chr17_KI270857v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">421.0 B</td>
+            <td class="nowrap">2be30440152376c964c0fbdfab8e4fa8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270858v1_alt_statistic.yaml'>chr17_KI270858v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">ec82b572867d69edaaf30f31531e4dbf</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270859v1_alt_statistic.yaml'>chr17_KI270859v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">e1ef23a213b527b7291b4c943b67c62a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270860v1_alt_statistic.yaml'>chr17_KI270860v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">bae061e8c09d5e25623b38097762d11c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270861v1_alt_statistic.yaml'>chr17_KI270861v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">0c8adb6ed26cce98522358162e223295</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270862v1_alt_statistic.yaml'>chr17_KI270862v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">402.0 B</td>
+            <td class="nowrap">b01767e8fba481aa50b7165290e1c5dc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270907v1_alt_statistic.yaml'>chr17_KI270907v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">4b195ebfedf1624742a4b5c5c06af9e3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270908v1_alt_statistic.yaml'>chr17_KI270908v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">412.0 B</td>
+            <td class="nowrap">6c025452be802db2ce1f78fd6c7845bd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270909v1_alt_statistic.yaml'>chr17_KI270909v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">fc0db94af8434121a233abae8fccce84</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_KI270910v1_alt_statistic.yaml'>chr17_KI270910v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">250e41025a23d6dffd1fdc1d5d6cb4fc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr17_statistic.yaml'>chr17_statistic.yaml</a>
+            </td>
+            <td class="nowrap">448.0 B</td>
+            <td class="nowrap">1bd8e3ac96f71ceba82f52aedd694051</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_GL383567v1_alt_statistic.yaml'>chr18_GL383567v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">04e036f6aaa341fc23389796ac21a967</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_GL383568v1_alt_statistic.yaml'>chr18_GL383568v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">e5008284ed3bd2fe34b352b1cc9e6ccd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_GL383569v1_alt_statistic.yaml'>chr18_GL383569v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">a25c0ab7dc724b52c0428fabbf693f99</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_GL383570v1_alt_statistic.yaml'>chr18_GL383570v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">74234a371eaaca98f39d09b2772b9d01</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_GL383571v1_alt_statistic.yaml'>chr18_GL383571v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">4ff3d5a689e0021473c38e8fe4100c33</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_GL383572v1_alt_statistic.yaml'>chr18_GL383572v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">dcdb1fa9d9bdfee37f3599180da354a4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_KI270863v1_alt_statistic.yaml'>chr18_KI270863v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">f8ae43eda6856763e60dc87941fb5979</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_KI270864v1_alt_statistic.yaml'>chr18_KI270864v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">b6fd87f06bfc60e70e2abfbb7a32ee7c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_KI270911v1_alt_statistic.yaml'>chr18_KI270911v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">faf4162ba38dffd1fe0f5e3b1b29bb97</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_KI270912v1_alt_statistic.yaml'>chr18_KI270912v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">6b193fd21f844161a82843d92c855f7f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr18_statistic.yaml'>chr18_statistic.yaml</a>
+            </td>
+            <td class="nowrap">448.0 B</td>
+            <td class="nowrap">f46e2613062ec1f7d2a2ce908884cd50</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL000209v2_alt_statistic.yaml'>chr19_GL000209v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">8f6819a6fcc2540d57d7f07726822bd1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL383573v1_alt_statistic.yaml'>chr19_GL383573v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">402.0 B</td>
+            <td class="nowrap">2d43337a558043eef423eede4ee76f63</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL383574v1_alt_statistic.yaml'>chr19_GL383574v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">54a4476ee0ac0f7c7b0baebb5d44f41f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL383575v2_alt_statistic.yaml'>chr19_GL383575v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">dba1878ca65555d320dd6b6767938d39</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL383576v1_alt_statistic.yaml'>chr19_GL383576v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">ada7e71da77174b7cf7773ba85c18a0c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949746v1_alt_statistic.yaml'>chr19_GL949746v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">415.0 B</td>
+            <td class="nowrap">70ed0b381b735937958e20b25b2610f6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949747v2_alt_statistic.yaml'>chr19_GL949747v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">413.0 B</td>
+            <td class="nowrap">a280ebb8a2c2e0655a20c2604275ce55</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949748v2_alt_statistic.yaml'>chr19_GL949748v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">416.0 B</td>
+            <td class="nowrap">c0774311130d07b162b25737c170adb2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949749v2_alt_statistic.yaml'>chr19_GL949749v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">416.0 B</td>
+            <td class="nowrap">47cba0ab279ff111081f36ef47e8812c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949750v2_alt_statistic.yaml'>chr19_GL949750v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">415.0 B</td>
+            <td class="nowrap">7222062a9682ed144fd4495da1d6609b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949751v2_alt_statistic.yaml'>chr19_GL949751v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">416.0 B</td>
+            <td class="nowrap">86b85ce35542766c3be8cf7750cf863a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949752v1_alt_statistic.yaml'>chr19_GL949752v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">411.0 B</td>
+            <td class="nowrap">0f6e9be790fc530b91289fec6d731e76</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_GL949753v2_alt_statistic.yaml'>chr19_GL949753v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">415.0 B</td>
+            <td class="nowrap">17974266a1cf0b43962b01d8a45798a7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270865v1_alt_statistic.yaml'>chr19_KI270865v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">ba544303d73bf337aadf09e0e02bedec</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270866v1_alt_statistic.yaml'>chr19_KI270866v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">396c45592d928b082cc5679128f005e5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270867v1_alt_statistic.yaml'>chr19_KI270867v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">0240c15c3357e0cecf4cf1706fa66fc9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270868v1_alt_statistic.yaml'>chr19_KI270868v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">cd7ef08e50ac01b405d2df5c22949ea1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270882v1_alt_statistic.yaml'>chr19_KI270882v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">c525e0e938353e9577aab8fa4434a9d6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270883v1_alt_statistic.yaml'>chr19_KI270883v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">43455fa3ad06a4807e1b5de6f6875a23</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270884v1_alt_statistic.yaml'>chr19_KI270884v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">9bb890479ccf6dbb48aefc4ce051fb09</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270885v1_alt_statistic.yaml'>chr19_KI270885v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">205a7ad7a017e673fb808b7b542cb393</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270886v1_alt_statistic.yaml'>chr19_KI270886v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">066a7fe29d98455655fa2183c08e059c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270887v1_alt_statistic.yaml'>chr19_KI270887v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">e15f2594bbcd51eb24280da046adb3b9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270888v1_alt_statistic.yaml'>chr19_KI270888v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">e443dee49c5264bdd074416e02a6c8af</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270889v1_alt_statistic.yaml'>chr19_KI270889v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">1d8354133f5692459c2892194e5f3bd0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270890v1_alt_statistic.yaml'>chr19_KI270890v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">992fdfa8176d93cca5a178e30e00f35e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270891v1_alt_statistic.yaml'>chr19_KI270891v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">57cdb795aeb287ed31694289c03af108</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270914v1_alt_statistic.yaml'>chr19_KI270914v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">498a1f3731b72cced7b7f450a606e50d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270915v1_alt_statistic.yaml'>chr19_KI270915v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">e85fd03fce0b6e684f34ce8cb6948128</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270916v1_alt_statistic.yaml'>chr19_KI270916v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">cd93615b339dffd83bb5c40d9fadb071</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270917v1_alt_statistic.yaml'>chr19_KI270917v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">361e463ea0a77aa97450f5c6e37369ab</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270918v1_alt_statistic.yaml'>chr19_KI270918v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">385.0 B</td>
+            <td class="nowrap">2e420e8f77d75c45c7cecf8fc144e7a9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270919v1_alt_statistic.yaml'>chr19_KI270919v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">3b59e567998b9a0b9d525bad065df9ae</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270920v1_alt_statistic.yaml'>chr19_KI270920v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">3b4daadacc698f577f5e5457e4d8f3f5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270921v1_alt_statistic.yaml'>chr19_KI270921v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">47394546396eb6054c4e1d52d8d47900</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270922v1_alt_statistic.yaml'>chr19_KI270922v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">f5ef81e2c805dcaa1b724d3ac3230a38</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270923v1_alt_statistic.yaml'>chr19_KI270923v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">0266c98e9fb0a7c27e6fbee743a04b7d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270929v1_alt_statistic.yaml'>chr19_KI270929v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">65ca24b2e8df097b151603f8c5d20386</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270930v1_alt_statistic.yaml'>chr19_KI270930v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">1e0bdb9dcd785b3555766a1ebf326655</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270931v1_alt_statistic.yaml'>chr19_KI270931v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">8dddc3b154bc1062f94e286ecd2b7f58</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270932v1_alt_statistic.yaml'>chr19_KI270932v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">c78c3c65d7a3bc0fa5ba0c9a1d833996</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270933v1_alt_statistic.yaml'>chr19_KI270933v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">6bb01b6cddb4c085f8e5543c40efd3c4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_KI270938v1_alt_statistic.yaml'>chr19_KI270938v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">406.0 B</td>
+            <td class="nowrap">ad37c2c7f124e95de9fb34c0fabf8c80</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr19_statistic.yaml'>chr19_statistic.yaml</a>
+            </td>
+            <td class="nowrap">442.0 B</td>
+            <td class="nowrap">9297f8c56f51dfefcc1aeb3d04c426ad</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_GL383518v1_alt_statistic.yaml'>chr1_GL383518v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">b3ebb9eb452a1e8961d27f16b1406743</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_GL383519v1_alt_statistic.yaml'>chr1_GL383519v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">828e0f2882cdd6b7558110007ad1b054</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_GL383520v2_alt_statistic.yaml'>chr1_GL383520v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">ba79e8c8b45e4655a8cbc55a15d6715b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270706v1_random_statistic.yaml'>chr1_KI270706v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">1bdd12271232449b2c9124c08e130e0a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270707v1_random_statistic.yaml'>chr1_KI270707v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">37fddc069d4f892e24b27624daf958bf</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270708v1_random_statistic.yaml'>chr1_KI270708v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">d25fdff8f29497fb4c91556e129fee26</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270709v1_random_statistic.yaml'>chr1_KI270709v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">5aa7fd448f2a59047f77c1e3a5a17ae3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270710v1_random_statistic.yaml'>chr1_KI270710v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">53e4448916bdc8db4b1316a0f76c2378</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270711v1_random_statistic.yaml'>chr1_KI270711v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">e6474d9a05b2b4c9002053fb449f3d03</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270712v1_random_statistic.yaml'>chr1_KI270712v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">2af5bfe37d7eb85567a12568d7eecac8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270713v1_random_statistic.yaml'>chr1_KI270713v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">3cd2abb779fc67919c03ed2c11d89e82</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270714v1_random_statistic.yaml'>chr1_KI270714v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">f123f545f52fc2be38f0f2addf426f18</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270759v1_alt_statistic.yaml'>chr1_KI270759v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">b740bffe5a1a239c935c61178103cac8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270760v1_alt_statistic.yaml'>chr1_KI270760v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">d360e47da789465c56a4220732ee68c7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270761v1_alt_statistic.yaml'>chr1_KI270761v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">a934615fba5d3990c953466e9a5c835d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270762v1_alt_statistic.yaml'>chr1_KI270762v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">405.0 B</td>
+            <td class="nowrap">baf7ba330a8af52b6dec6548ad60c3f9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270763v1_alt_statistic.yaml'>chr1_KI270763v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">404.0 B</td>
+            <td class="nowrap">934ba8d877dd35c35729769eaf7ce0ac</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270764v1_alt_statistic.yaml'>chr1_KI270764v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">427a6e707c7b6edeb516e261ed05c446</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270765v1_alt_statistic.yaml'>chr1_KI270765v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">4c5936dc4de27184c6232f4a12d3c90c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270766v1_alt_statistic.yaml'>chr1_KI270766v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">f8ca9ba56f9c5790df5e71013ab66fc8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_KI270892v1_alt_statistic.yaml'>chr1_KI270892v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">9bc5aa42d2b0866970acdc6208b4c088</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr1_statistic.yaml'>chr1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">469.0 B</td>
+            <td class="nowrap">22d1ce453e462e29c7a4035670f46efc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr20_GL383577v2_alt_statistic.yaml'>chr20_GL383577v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">de7641cf4f5ec647337f2a81c12f8031</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr20_KI270869v1_alt_statistic.yaml'>chr20_KI270869v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">bad6693a3d5326852b3776c7bd018cae</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr20_KI270870v1_alt_statistic.yaml'>chr20_KI270870v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">34173696180ae5a3df1d94249620197d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr20_KI270871v1_alt_statistic.yaml'>chr20_KI270871v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">723a82858054173f472bd6e663ab3855</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr20_statistic.yaml'>chr20_statistic.yaml</a>
+            </td>
+            <td class="nowrap">449.0 B</td>
+            <td class="nowrap">dc597c90d0e2458e5aea93d032e1dd21</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_GL383578v2_alt_statistic.yaml'>chr21_GL383578v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">a7ffa14a703d1fb8ab97bcdd81253cc4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_GL383579v2_alt_statistic.yaml'>chr21_GL383579v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">597f37c49663f9b176ff263b12f1e008</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_GL383580v2_alt_statistic.yaml'>chr21_GL383580v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">f0b20d704c690ff54afbe599153a7733</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_GL383581v2_alt_statistic.yaml'>chr21_GL383581v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">2141fffce65502ba7414115231753549</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_KI270872v1_alt_statistic.yaml'>chr21_KI270872v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">d30f215aaa6b73d50edf6128650d4dbe</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_KI270873v1_alt_statistic.yaml'>chr21_KI270873v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">883778851efb855e4af5b97a2bf7d033</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_KI270874v1_alt_statistic.yaml'>chr21_KI270874v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">2613a3c3457fadec4126ef37e10c6fb2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr21_statistic.yaml'>chr21_statistic.yaml</a>
+            </td>
+            <td class="nowrap">445.0 B</td>
+            <td class="nowrap">2e53342ab7e5b630e60b1c7f055b9260</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_GL383582v2_alt_statistic.yaml'>chr22_GL383582v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">fce056f0aec0a6fffad074d947c95204</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_GL383583v2_alt_statistic.yaml'>chr22_GL383583v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">7f54dcb05555092869be7467547d5bdf</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KB663609v1_alt_statistic.yaml'>chr22_KB663609v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">c4090ae771ebc5ee74c3be49b6cb4bd5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270731v1_random_statistic.yaml'>chr22_KI270731v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">6addc55fb1efe4a65f10c7e40d0cb944</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270732v1_random_statistic.yaml'>chr22_KI270732v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">9a514e6200d887d59a020d7176be571e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270733v1_random_statistic.yaml'>chr22_KI270733v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">a72296421f4937ae2a5e7e9d74f80dc5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270734v1_random_statistic.yaml'>chr22_KI270734v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">89d846669020a60ffe96b1fb07785a96</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270735v1_random_statistic.yaml'>chr22_KI270735v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">7b5cb78c6fa85b9236b3b4af26d99396</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270736v1_random_statistic.yaml'>chr22_KI270736v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">403.0 B</td>
+            <td class="nowrap">2f461f28fb0d6c5340cfd85cf27d42e1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270737v1_random_statistic.yaml'>chr22_KI270737v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">c465ef67a98cd4d8f5eff838f74b0b63</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270738v1_random_statistic.yaml'>chr22_KI270738v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">c6d306f95a2b83bcdade72ad931c83c2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270739v1_random_statistic.yaml'>chr22_KI270739v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">7923081f14ac57b55fecfc5693ece81d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270875v1_alt_statistic.yaml'>chr22_KI270875v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">1c0806135e6e1d1c3b19d7fd2430f7d5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270876v1_alt_statistic.yaml'>chr22_KI270876v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">ec32066333b8db42c18557641651881b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270877v1_alt_statistic.yaml'>chr22_KI270877v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">385.0 B</td>
+            <td class="nowrap">73a640af259f84bab12875842ddb3d61</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270878v1_alt_statistic.yaml'>chr22_KI270878v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">fa0183d9a710c89b3e5b635cf7b95c47</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270879v1_alt_statistic.yaml'>chr22_KI270879v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">400.0 B</td>
+            <td class="nowrap">cf1ac4bb632c7752a7b936cde53d8f1f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_KI270928v1_alt_statistic.yaml'>chr22_KI270928v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">44148d7a05068efb73520e23ef7f618b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr22_statistic.yaml'>chr22_statistic.yaml</a>
+            </td>
+            <td class="nowrap">448.0 B</td>
+            <td class="nowrap">22c36a7ed455741d08e5de41d23e8075</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_GL383521v1_alt_statistic.yaml'>chr2_GL383521v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">51dcceb87c01ced635bc9c2e8a11a7c1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_GL383522v1_alt_statistic.yaml'>chr2_GL383522v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">e523401044e16fc763505cc634dbee5f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_GL582966v2_alt_statistic.yaml'>chr2_GL582966v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">3f2351357ab8583d127ac4e3c0953920</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270715v1_random_statistic.yaml'>chr2_KI270715v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">857ee2edfc19d65cf4789f9814f1ea2e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270716v1_random_statistic.yaml'>chr2_KI270716v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">678e1ed32dd837eb71ce09a4d7e0c704</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270767v1_alt_statistic.yaml'>chr2_KI270767v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">7cce845b6991cb6c4aac9b369f57de83</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270768v1_alt_statistic.yaml'>chr2_KI270768v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">17bff0ae33d61e4fd4fe69bd4f4cd3e5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270769v1_alt_statistic.yaml'>chr2_KI270769v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">5fbeb29ede6208789967a7d1aa42c94a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270770v1_alt_statistic.yaml'>chr2_KI270770v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">1e8b8b0734319c1654b264f9d912e8d1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270771v1_alt_statistic.yaml'>chr2_KI270771v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">9e0ecd86152e55d998480e8ae6a67c97</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270772v1_alt_statistic.yaml'>chr2_KI270772v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">dfb353e90afac679a11fe12078c8142a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270773v1_alt_statistic.yaml'>chr2_KI270773v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">7cd6e07e311c1305ed169efa248ce01a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270774v1_alt_statistic.yaml'>chr2_KI270774v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">3260ef8aaca17397308db3ae1bcdb549</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270775v1_alt_statistic.yaml'>chr2_KI270775v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">f1e9af58cc2dff60855aa5edda637117</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270776v1_alt_statistic.yaml'>chr2_KI270776v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">348b75fd8f2321620128961f9d59ccec</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270893v1_alt_statistic.yaml'>chr2_KI270893v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">f2f0502114c426bc2b814422341c247f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_KI270894v1_alt_statistic.yaml'>chr2_KI270894v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">23478c0838b44db0f75fe61f9249d931</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr2_statistic.yaml'>chr2_statistic.yaml</a>
+            </td>
+            <td class="nowrap">459.0 B</td>
+            <td class="nowrap">af9e13eafd252310ea6ba81bbfe49233</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_GL000221v1_random_statistic.yaml'>chr3_GL000221v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">cb1e368e51a257989c5071cc12b01a62</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_GL383526v1_alt_statistic.yaml'>chr3_GL383526v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">f91b0d205c5d97113b6f83d9bc76105f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_JH636055v2_alt_statistic.yaml'>chr3_JH636055v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">590804d2e9c2617f5d3a016d08041b00</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270777v1_alt_statistic.yaml'>chr3_KI270777v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">8257090fd02565f6023e84f2527ab943</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270778v1_alt_statistic.yaml'>chr3_KI270778v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">13d4d012dcd9c1354bd2e3a83b370637</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270779v1_alt_statistic.yaml'>chr3_KI270779v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">9b4e9be86f01a7a2c9fc4f1573d7d7f8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270780v1_alt_statistic.yaml'>chr3_KI270780v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">e9ee29d6767113e0b6d94cf887461f07</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270781v1_alt_statistic.yaml'>chr3_KI270781v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">385.0 B</td>
+            <td class="nowrap">74f762fe5804edf84755274935e153bb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270782v1_alt_statistic.yaml'>chr3_KI270782v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">e4b4acc42c8af734a4564b7f77b88fc6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270783v1_alt_statistic.yaml'>chr3_KI270783v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">f2665857e353f4e5300b2b60369c9e33</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270784v1_alt_statistic.yaml'>chr3_KI270784v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">c3a41ecb80f648967bf5439b87464225</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270895v1_alt_statistic.yaml'>chr3_KI270895v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">c6d1c762cfa79e5765ce34dcfe4fed8c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270924v1_alt_statistic.yaml'>chr3_KI270924v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">bac045d17df9f5b46be049f8ca1504fc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270934v1_alt_statistic.yaml'>chr3_KI270934v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">3456a9d12f3203347ebaecea1061a396</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270935v1_alt_statistic.yaml'>chr3_KI270935v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">3ee488988d74a1a1d5376c27c97d87c4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270936v1_alt_statistic.yaml'>chr3_KI270936v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">4613dfd4db171cc88094267a52a35629</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_KI270937v1_alt_statistic.yaml'>chr3_KI270937v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">3e6e85f63c2d400b32064701a93215c9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr3_statistic.yaml'>chr3_statistic.yaml</a>
+            </td>
+            <td class="nowrap">455.0 B</td>
+            <td class="nowrap">0eaa6870cee2ae0ed0d5f2fe9e845f35</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_GL000008v2_random_statistic.yaml'>chr4_GL000008v2_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">a748713273c607c96b20459bc0cedf1e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_GL000257v2_alt_statistic.yaml'>chr4_GL000257v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">403.0 B</td>
+            <td class="nowrap">fe79f5c711106a4c2d062e5ff48936a6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_GL383527v1_alt_statistic.yaml'>chr4_GL383527v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">a9e650ffd30d4f256804d4be877af755</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_GL383528v1_alt_statistic.yaml'>chr4_GL383528v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">3381fa041423c79d299544a61c009082</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270785v1_alt_statistic.yaml'>chr4_KI270785v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">98b2b47d4ca8b20dee9fffff8cefa109</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270786v1_alt_statistic.yaml'>chr4_KI270786v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">97e8704edd251e6d2fc916ac0c71a657</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270787v1_alt_statistic.yaml'>chr4_KI270787v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">384.0 B</td>
+            <td class="nowrap">82aaa1fbe2e25511e70a2c4df85c4269</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270788v1_alt_statistic.yaml'>chr4_KI270788v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">14a6e8ea8fcb43c2ef0e5677e5165859</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270789v1_alt_statistic.yaml'>chr4_KI270789v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">b34092363e9b66b4e316cbb4c7c444a0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270790v1_alt_statistic.yaml'>chr4_KI270790v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">56a9dcdc33c9a44f1a829539469dc12c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270896v1_alt_statistic.yaml'>chr4_KI270896v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">50d45e103a603ce6c04f33c3e59e8c16</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_KI270925v1_alt_statistic.yaml'>chr4_KI270925v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">403.0 B</td>
+            <td class="nowrap">3d20cfb1afd0c50c71d54c9ab5361a7d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr4_statistic.yaml'>chr4_statistic.yaml</a>
+            </td>
+            <td class="nowrap">452.0 B</td>
+            <td class="nowrap">1eebf1e53d0962b13e543d632c9bf1ed</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_GL000208v1_random_statistic.yaml'>chr5_GL000208v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">9aea818adc9125d43b3b982d363b9df2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_GL339449v2_alt_statistic.yaml'>chr5_GL339449v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">422.0 B</td>
+            <td class="nowrap">8d6783d09b820f9a63dd2140a438b8a9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_GL383530v1_alt_statistic.yaml'>chr5_GL383530v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">385.0 B</td>
+            <td class="nowrap">c13c77b80449629dda60c0127fe49e6f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_GL383531v1_alt_statistic.yaml'>chr5_GL383531v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">01d89a691c3d92ccf2172c433502b696</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_GL383532v1_alt_statistic.yaml'>chr5_GL383532v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">cbeea9bfc68f0017316173820a4dff28</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_GL949742v1_alt_statistic.yaml'>chr5_GL949742v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">b5c20e0ba92ddb4c9e563a42ed6fbf12</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270791v1_alt_statistic.yaml'>chr5_KI270791v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">89636adf276f2a2e665471b34a898fc1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270792v1_alt_statistic.yaml'>chr5_KI270792v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">8a8c8a4c7b2b8509c5736c27ef44b9c6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270793v1_alt_statistic.yaml'>chr5_KI270793v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">9f1e065e2fcd245ecfe73e903111578a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270794v1_alt_statistic.yaml'>chr5_KI270794v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">1ed023bb54188df6bda91d29375c7c08</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270795v1_alt_statistic.yaml'>chr5_KI270795v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">20660f39dc58e74ae6c229990d2adafd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270796v1_alt_statistic.yaml'>chr5_KI270796v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">6a4b4814c5bca67694423e299cdfc314</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270897v1_alt_statistic.yaml'>chr5_KI270897v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">415.0 B</td>
+            <td class="nowrap">12f13ef72931bc4350b8430f96607a1c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_KI270898v1_alt_statistic.yaml'>chr5_KI270898v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">ddbce779c7861c63006dc76cefee55b9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr5_statistic.yaml'>chr5_statistic.yaml</a>
+            </td>
+            <td class="nowrap">455.0 B</td>
+            <td class="nowrap">1636b6c37f38e396e2ec36753e906167</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000250v2_alt_statistic.yaml'>chr6_GL000250v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">434.0 B</td>
+            <td class="nowrap">4f8150c6f1e2435bb426217f2a395c2a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000251v2_alt_statistic.yaml'>chr6_GL000251v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">424.0 B</td>
+            <td class="nowrap">70566209c4ecbc2043e07099dadb4c1c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000252v2_alt_statistic.yaml'>chr6_GL000252v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">434.0 B</td>
+            <td class="nowrap">8003a282fac7b336756f751bf9b4c36c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000253v2_alt_statistic.yaml'>chr6_GL000253v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">434.0 B</td>
+            <td class="nowrap">a37b7a385609f44611c2f70ad5e62349</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000254v2_alt_statistic.yaml'>chr6_GL000254v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">436.0 B</td>
+            <td class="nowrap">2c151b0eca2f4278fdca2c00a93b92bc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000255v2_alt_statistic.yaml'>chr6_GL000255v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">432.0 B</td>
+            <td class="nowrap">f7738cfce6435ec4c376d8e8d462cd98</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL000256v2_alt_statistic.yaml'>chr6_GL000256v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">434.0 B</td>
+            <td class="nowrap">9891e631d3690ee9896777e69e3f31ba</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_GL383533v1_alt_statistic.yaml'>chr6_GL383533v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">8f3c71d5ada94506fe667fd357fa0127</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KB021644v2_alt_statistic.yaml'>chr6_KB021644v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">99f88819016fba3f9d3270ecec41491a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270758v1_alt_statistic.yaml'>chr6_KI270758v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">b68097e43167ca717e2a1e17767b1eb3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270797v1_alt_statistic.yaml'>chr6_KI270797v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">4669970f8e861bacac68645dc415bab6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270798v1_alt_statistic.yaml'>chr6_KI270798v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">3f46b518761be96d68cd1182aa1e5de9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270799v1_alt_statistic.yaml'>chr6_KI270799v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">6851d0bc88ccb81d0df0cd41ca80e2c3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270800v1_alt_statistic.yaml'>chr6_KI270800v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">aab11598413742da6d938c94c68177ff</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270801v1_alt_statistic.yaml'>chr6_KI270801v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">404.0 B</td>
+            <td class="nowrap">4f3d343367bdad3479a901fd100f7226</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_KI270802v1_alt_statistic.yaml'>chr6_KI270802v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">8fcd7d5e152713a7283b789fde5cbd3c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr6_statistic.yaml'>chr6_statistic.yaml</a>
+            </td>
+            <td class="nowrap">452.0 B</td>
+            <td class="nowrap">da1cf9a124dac9fc129fcd881c8babe7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_GL383534v2_alt_statistic.yaml'>chr7_GL383534v2_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">09def05b18e980e69b34d23dab9dd11f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270803v1_alt_statistic.yaml'>chr7_KI270803v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">405.0 B</td>
+            <td class="nowrap">1e7f95725bd1418dad6ffa71a7d08f4e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270804v1_alt_statistic.yaml'>chr7_KI270804v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">d347f57294aa6369b999732ae37048c1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270805v1_alt_statistic.yaml'>chr7_KI270805v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">397.0 B</td>
+            <td class="nowrap">9f56df4cdc21eafec2568cb0a0c61a3b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270806v1_alt_statistic.yaml'>chr7_KI270806v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">a9602d3f3d1650eabc0a475aaf5f97e0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270807v1_alt_statistic.yaml'>chr7_KI270807v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">dfef83849ae55def8aaf5e357dd42138</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270808v1_alt_statistic.yaml'>chr7_KI270808v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">d317d66926edb48c86c8d3029a3b7b32</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270809v1_alt_statistic.yaml'>chr7_KI270809v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">78bcadab4a91af72ecef1ba782248eb2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_KI270899v1_alt_statistic.yaml'>chr7_KI270899v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">bd6a40f2281553ab2ee809f6f87d3156</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr7_statistic.yaml'>chr7_statistic.yaml</a>
+            </td>
+            <td class="nowrap">450.0 B</td>
+            <td class="nowrap">15db411a9ed81ea517ccf3650a3b142b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270810v1_alt_statistic.yaml'>chr8_KI270810v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">7fe1c6b2265fd524e5d06ecfd9e7d826</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270811v1_alt_statistic.yaml'>chr8_KI270811v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">cce6b3c5a5d25ccc61d96bd8cc177d5e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270812v1_alt_statistic.yaml'>chr8_KI270812v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">f246d6fca30eb949838148b8b1bc51f4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270813v1_alt_statistic.yaml'>chr8_KI270813v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">59f692795d73f53d18b7621dc00a9f2e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270814v1_alt_statistic.yaml'>chr8_KI270814v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">e71053f57a80280113fc8c1a2c977da8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270815v1_alt_statistic.yaml'>chr8_KI270815v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">9e35516dd63aa01d389d151ea47ef5bc</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270816v1_alt_statistic.yaml'>chr8_KI270816v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">398.0 B</td>
+            <td class="nowrap">c907d6324e0e0fc1829c992a57eff9cd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270817v1_alt_statistic.yaml'>chr8_KI270817v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">392.0 B</td>
+            <td class="nowrap">cc6c58e561a7a16c9e52983a2740ace3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270818v1_alt_statistic.yaml'>chr8_KI270818v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">4e71e4f26710a96bd8199288ad691d56</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270819v1_alt_statistic.yaml'>chr8_KI270819v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">5061fba4182f62e1ad2a2e550260dca2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270820v1_alt_statistic.yaml'>chr8_KI270820v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">378.0 B</td>
+            <td class="nowrap">8006668b4eb47d0c1626cb0145e3671d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270821v1_alt_statistic.yaml'>chr8_KI270821v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">404.0 B</td>
+            <td class="nowrap">956dd07b91833e442cac636e0bf314a7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270822v1_alt_statistic.yaml'>chr8_KI270822v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">403.0 B</td>
+            <td class="nowrap">82b7eecd08ec48b0850286c1f45b328c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270900v1_alt_statistic.yaml'>chr8_KI270900v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">746c635166add7d32eecd7943e984a58</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270901v1_alt_statistic.yaml'>chr8_KI270901v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">386.0 B</td>
+            <td class="nowrap">34766d313a3079ce127b13534b906a59</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_KI270926v1_alt_statistic.yaml'>chr8_KI270926v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">ff3f9461b4f3a8e603592e1c8d65e31c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr8_statistic.yaml'>chr8_statistic.yaml</a>
+            </td>
+            <td class="nowrap">449.0 B</td>
+            <td class="nowrap">7d34986e06235d4c09bf75487c52507b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_GL383539v1_alt_statistic.yaml'>chr9_GL383539v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">259796126bb14eb837828045bc276e88</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_GL383540v1_alt_statistic.yaml'>chr9_GL383540v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">73035d6c82060c3ce9b5ed80c9479c7a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_GL383541v1_alt_statistic.yaml'>chr9_GL383541v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">394.0 B</td>
+            <td class="nowrap">25cf9c4183d0d7b3f8a4ded478edbdfb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_GL383542v1_alt_statistic.yaml'>chr9_GL383542v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">f6ce6008ba239441a77da1a1e721e58b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_KI270717v1_random_statistic.yaml'>chr9_KI270717v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">1fdb06e44769c53652da3bb4f62fe629</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_KI270718v1_random_statistic.yaml'>chr9_KI270718v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">a92cd196968baf00bbdf8339b188c68d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_KI270719v1_random_statistic.yaml'>chr9_KI270719v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">c7eb838ac855e13a2356fa92bbaf62d7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_KI270720v1_random_statistic.yaml'>chr9_KI270720v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">c8c8b997c44e3f83a2ef52ac070c642a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_KI270823v1_alt_statistic.yaml'>chr9_KI270823v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">401.0 B</td>
+            <td class="nowrap">aedc950f77949380612fc34c0e445255</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chr9_statistic.yaml'>chr9_statistic.yaml</a>
+            </td>
+            <td class="nowrap">452.0 B</td>
+            <td class="nowrap">a8eed3a2f64eef325f76c0a93ce8fb69</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrM_statistic.yaml'>chrM_statistic.yaml</a>
+            </td>
+            <td class="nowrap">357.0 B</td>
+            <td class="nowrap">20aa1f46a8694a6ad4fa87ec76116c78</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000195v1_statistic.yaml'>chrUn_GL000195v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">0713cb12fcbde2ce76a8f7802fe9edc1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000213v1_statistic.yaml'>chrUn_GL000213v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">92b73249ab83024861c0d0438d93ebd3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000214v1_statistic.yaml'>chrUn_GL000214v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">385.0 B</td>
+            <td class="nowrap">01310ef77f426cc1f78599ad32a98696</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000216v2_statistic.yaml'>chrUn_GL000216v2_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">3197e07a034cadb064994f6b192f09fd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000218v1_statistic.yaml'>chrUn_GL000218v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">dc932b2fccbfa9adbc4ed6f3cf3d451a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000219v1_statistic.yaml'>chrUn_GL000219v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">147956f0d6980dfb8df755a251ac22cb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000220v1_statistic.yaml'>chrUn_GL000220v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">0b5e2a1911e9a886353550692c8e4eed</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000224v1_statistic.yaml'>chrUn_GL000224v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">393.0 B</td>
+            <td class="nowrap">8b6216f21d445c445a986fce25544c62</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_GL000226v1_statistic.yaml'>chrUn_GL000226v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">369.0 B</td>
+            <td class="nowrap">b0739ba338a7f955d91b72d7583fa312</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270302v1_statistic.yaml'>chrUn_KI270302v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">9f5dc2930d4c51bbb41923578c763d1e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270303v1_statistic.yaml'>chrUn_KI270303v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">350.0 B</td>
+            <td class="nowrap">09aee1d3532dea34fc1c5e934a505d81</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270304v1_statistic.yaml'>chrUn_KI270304v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">350.0 B</td>
+            <td class="nowrap">c8635207e2e2767cd8f4a71d6e5cca84</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270305v1_statistic.yaml'>chrUn_KI270305v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">02f6b62512b2ee8ee5bd18c4612b8421</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270310v1_statistic.yaml'>chrUn_KI270310v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">340.0 B</td>
+            <td class="nowrap">ddfa866d97ffbb684c7d9fd0b153db35</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270311v1_statistic.yaml'>chrUn_KI270311v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">359.0 B</td>
+            <td class="nowrap">1796e909f3602126967605743dcb2607</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270312v1_statistic.yaml'>chrUn_KI270312v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">339.0 B</td>
+            <td class="nowrap">de9839d7b25cf289be70e8d59d09f589</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270315v1_statistic.yaml'>chrUn_KI270315v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">62f0c45ea43fefd636b84b6c273066da</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270316v1_statistic.yaml'>chrUn_KI270316v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">68473d9db0574fbf896781bd67524424</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270317v1_statistic.yaml'>chrUn_KI270317v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">364.0 B</td>
+            <td class="nowrap">7464a001f30a409efef2aeb272920f2d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270320v1_statistic.yaml'>chrUn_KI270320v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">356.0 B</td>
+            <td class="nowrap">31f59d545992be26cb242a544e703564</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270322v1_statistic.yaml'>chrUn_KI270322v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">368.0 B</td>
+            <td class="nowrap">99eb93433fe6e19d9d172c6531698449</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270329v1_statistic.yaml'>chrUn_KI270329v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">340.0 B</td>
+            <td class="nowrap">807b6590f7a781108eef4d4c1384235d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270330v1_statistic.yaml'>chrUn_KI270330v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">7d8a786ef2b5cb844e22b0dda9755acd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270333v1_statistic.yaml'>chrUn_KI270333v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">c07c1852e063481f3673c7115823788b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270334v1_statistic.yaml'>chrUn_KI270334v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">b7501f6379cd97167a3948e0de948ab9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270335v1_statistic.yaml'>chrUn_KI270335v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">340.0 B</td>
+            <td class="nowrap">d3e9e03f93f2548dcb08f50db64413bd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270336v1_statistic.yaml'>chrUn_KI270336v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">338.0 B</td>
+            <td class="nowrap">35e06ae056b92f6797dc21e01e198535</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270337v1_statistic.yaml'>chrUn_KI270337v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">338.0 B</td>
+            <td class="nowrap">b9dbdef90a52f4dc019bdfce932972d2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270338v1_statistic.yaml'>chrUn_KI270338v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">c03710195b63f6a7cef3d94c60e6c881</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270340v1_statistic.yaml'>chrUn_KI270340v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">cdaff98a40f297e08cc6c7c2ac7049c5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270362v1_statistic.yaml'>chrUn_KI270362v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">355.0 B</td>
+            <td class="nowrap">cf966351c6e5bfc07812e1db0c27e8fd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270363v1_statistic.yaml'>chrUn_KI270363v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">f77e1d4fb9e834a738478eb4ce382769</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270364v1_statistic.yaml'>chrUn_KI270364v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">352.0 B</td>
+            <td class="nowrap">f79c0182e3471353de5d19f8ebdaeba6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270366v1_statistic.yaml'>chrUn_KI270366v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">359.0 B</td>
+            <td class="nowrap">3e1bad6969a8e05b450bb79af1053ec0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270371v1_statistic.yaml'>chrUn_KI270371v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">352.0 B</td>
+            <td class="nowrap">1c2cc21f58cae7b1f5ebf2b16aa4c592</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270372v1_statistic.yaml'>chrUn_KI270372v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">bde50a7614b7999e77fddf8ce2795380</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270373v1_statistic.yaml'>chrUn_KI270373v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">b40ca47ffa501843d065666f1c55fb2e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270374v1_statistic.yaml'>chrUn_KI270374v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">352.0 B</td>
+            <td class="nowrap">2a9e8d3e18907bd64cf395c6f806bc69</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270375v1_statistic.yaml'>chrUn_KI270375v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">3441169eb007ee1b839402ae4416c032</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270376v1_statistic.yaml'>chrUn_KI270376v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">341.0 B</td>
+            <td class="nowrap">4d5402d2fb117ef7d3aea948f0b2ec8e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270378v1_statistic.yaml'>chrUn_KI270378v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">341.0 B</td>
+            <td class="nowrap">61aa1a52a96e6f2fec9e93c9024268b1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270379v1_statistic.yaml'>chrUn_KI270379v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">340.0 B</td>
+            <td class="nowrap">d0ce98ca66940d8980a36cf8840e1326</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270381v1_statistic.yaml'>chrUn_KI270381v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">660c427a1f22c4a79e4e664861e7d8f5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270382v1_statistic.yaml'>chrUn_KI270382v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">355.0 B</td>
+            <td class="nowrap">fa0132d1b951fbe07b945c8a671998ca</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270383v1_statistic.yaml'>chrUn_KI270383v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">1584218c575ae712272173b884ffd812</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270384v1_statistic.yaml'>chrUn_KI270384v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">cc5a5e790caed457fc63b9f5b93f07e0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270385v1_statistic.yaml'>chrUn_KI270385v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">340.0 B</td>
+            <td class="nowrap">2c4b387a073c6abd30ce4e040c20bd54</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270386v1_statistic.yaml'>chrUn_KI270386v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">a52735415ea25f32845ff51130e559d5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270387v1_statistic.yaml'>chrUn_KI270387v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">347.0 B</td>
+            <td class="nowrap">ac753a5916ae1134c38339ead0fbe5c6</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270388v1_statistic.yaml'>chrUn_KI270388v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">342.0 B</td>
+            <td class="nowrap">89f3702c5e34d824fc2c1d2d0560ab18</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270389v1_statistic.yaml'>chrUn_KI270389v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">343.0 B</td>
+            <td class="nowrap">88d818a1526005ee4c1a20c44930d20e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270390v1_statistic.yaml'>chrUn_KI270390v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">2f0f2a8a92babe2da27765bdae48b949</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270391v1_statistic.yaml'>chrUn_KI270391v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">347.0 B</td>
+            <td class="nowrap">14367aec68c1b22fd9a2f6dd6c49b088</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270392v1_statistic.yaml'>chrUn_KI270392v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">339.0 B</td>
+            <td class="nowrap">2a9d7a81652d7788ebc47cbe163b1e01</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270393v1_statistic.yaml'>chrUn_KI270393v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">344.0 B</td>
+            <td class="nowrap">baf5a76e6856e03feee0c2e415f18948</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270394v1_statistic.yaml'>chrUn_KI270394v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">339.0 B</td>
+            <td class="nowrap">fb387898c0f9759bf4d6e2b494bc33fb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270395v1_statistic.yaml'>chrUn_KI270395v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">341.0 B</td>
+            <td class="nowrap">d33a2b2797fa45ec1472fb913be7c9e4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270396v1_statistic.yaml'>chrUn_KI270396v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">31bd9645bc4d645a9ab44b996bed5ac8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270411v1_statistic.yaml'>chrUn_KI270411v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">f0ceb9e564f00bf80950b9504bab61af</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270412v1_statistic.yaml'>chrUn_KI270412v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">342.0 B</td>
+            <td class="nowrap">3a438344b748d15fce85285d07f30c30</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270414v1_statistic.yaml'>chrUn_KI270414v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">5a83d3dc16c1e541d9c5117573c006ca</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270417v1_statistic.yaml'>chrUn_KI270417v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">350.0 B</td>
+            <td class="nowrap">11ffe635592ae44e407e0d3ddcd5b6c3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270418v1_statistic.yaml'>chrUn_KI270418v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">54bc028f8f8dab3ade4df5ed907bc4db</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270419v1_statistic.yaml'>chrUn_KI270419v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">341.0 B</td>
+            <td class="nowrap">89fd1b54f88d3df60aeac757044e2074</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270420v1_statistic.yaml'>chrUn_KI270420v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">721f29b49f31013c66fb1c1222d8b4e0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270422v1_statistic.yaml'>chrUn_KI270422v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">1ffa4c1addf85b99a18a6043a90282e2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270423v1_statistic.yaml'>chrUn_KI270423v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">339.0 B</td>
+            <td class="nowrap">772040f8483a7f9313a3506908108ffd</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270424v1_statistic.yaml'>chrUn_KI270424v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">1b1ca7ed7f0e84ceeac7b375a597b9a9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270425v1_statistic.yaml'>chrUn_KI270425v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">46cf69ae2e07211073b282f9028996cf</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270429v1_statistic.yaml'>chrUn_KI270429v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">343.0 B</td>
+            <td class="nowrap">d3aa03b04b4520befee781a7555093d7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270435v1_statistic.yaml'>chrUn_KI270435v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">fd9b4548f284d320ebca6da8e5a22977</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270438v1_statistic.yaml'>chrUn_KI270438v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">829d6f43d4ae9b5ed499e6d4c1c54ff8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270442v1_statistic.yaml'>chrUn_KI270442v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">406.0 B</td>
+            <td class="nowrap">49f1aff6ffc1160b48de50fd5f3235d9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270448v1_statistic.yaml'>chrUn_KI270448v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">358.0 B</td>
+            <td class="nowrap">961201f86f223872b2b89d83fdfc717a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270465v1_statistic.yaml'>chrUn_KI270465v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">5fdbd61bae7c2fa901b78eb58736265a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270466v1_statistic.yaml'>chrUn_KI270466v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">339.0 B</td>
+            <td class="nowrap">5721a7bc63335c6236d6a24572302b68</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270467v1_statistic.yaml'>chrUn_KI270467v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">353.0 B</td>
+            <td class="nowrap">6109e3bd3d814e1565fb05951cc9f958</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270468v1_statistic.yaml'>chrUn_KI270468v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">355.0 B</td>
+            <td class="nowrap">4e4eb7feccb0edccf88075ca1af42538</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270507v1_statistic.yaml'>chrUn_KI270507v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">356.0 B</td>
+            <td class="nowrap">a9eb11fe42144df14f0aa13544c47a6a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270508v1_statistic.yaml'>chrUn_KI270508v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">346.0 B</td>
+            <td class="nowrap">1eb1e2d87b93624aea128a22bf2846f2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270509v1_statistic.yaml'>chrUn_KI270509v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">0997fd822388be224c308b46d6910406</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270510v1_statistic.yaml'>chrUn_KI270510v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">e040e4618d34f83a9915ce5a6ec04f86</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270511v1_statistic.yaml'>chrUn_KI270511v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">359.0 B</td>
+            <td class="nowrap">619655c431e061d95578ee66f16cb3da</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270512v1_statistic.yaml'>chrUn_KI270512v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">371.0 B</td>
+            <td class="nowrap">741f144eefa8a56a169d8d2bd48cc2c9</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270515v1_statistic.yaml'>chrUn_KI270515v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">358.0 B</td>
+            <td class="nowrap">0415b42d7ddb9afe68c80a1ba331d28a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270516v1_statistic.yaml'>chrUn_KI270516v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">343.0 B</td>
+            <td class="nowrap">58bd0cf5797e8fa67365dd45c5617180</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270517v1_statistic.yaml'>chrUn_KI270517v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">354.0 B</td>
+            <td class="nowrap">c1d7275772821e04cc6b95366e33a9b0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270518v1_statistic.yaml'>chrUn_KI270518v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">351.0 B</td>
+            <td class="nowrap">675a890d501e541115c1d21ee196a5d1</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270519v1_statistic.yaml'>chrUn_KI270519v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">dd94bfe99ee92ab34b642cb5c38e3624</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270521v1_statistic.yaml'>chrUn_KI270521v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">358.0 B</td>
+            <td class="nowrap">cc89d8adb5387f49fa9dc62a61cb7b1f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270522v1_statistic.yaml'>chrUn_KI270522v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">357.0 B</td>
+            <td class="nowrap">1caacdb6cc741d326d877c1e7ded8b5d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270528v1_statistic.yaml'>chrUn_KI270528v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">6c54384f101b159dadff7a215b51cc62</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270529v1_statistic.yaml'>chrUn_KI270529v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">349.0 B</td>
+            <td class="nowrap">c9227f20f4b966bae177a4d4e775f045</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270530v1_statistic.yaml'>chrUn_KI270530v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">350.0 B</td>
+            <td class="nowrap">2710c864588203fcbfecb1445b8165ea</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270538v1_statistic.yaml'>chrUn_KI270538v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">f58f71f6bf26481dc2c0f9e09f9b6dd2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270539v1_statistic.yaml'>chrUn_KI270539v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">336.0 B</td>
+            <td class="nowrap">fdde8d73e7c1b0bd657bfb9edef16388</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270544v1_statistic.yaml'>chrUn_KI270544v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">343.0 B</td>
+            <td class="nowrap">88bed42484a3d00f1260bf58b7de0f5f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270548v1_statistic.yaml'>chrUn_KI270548v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">348.0 B</td>
+            <td class="nowrap">d04a1a64da86143edcd7104237ed9c71</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270579v1_statistic.yaml'>chrUn_KI270579v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">375.0 B</td>
+            <td class="nowrap">8f519f563f4153752aad01ca0e59fc95</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270580v1_statistic.yaml'>chrUn_KI270580v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">345.0 B</td>
+            <td class="nowrap">a7b87b55fe9be89ff2e5e11a6dae110b</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270581v1_statistic.yaml'>chrUn_KI270581v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">359.0 B</td>
+            <td class="nowrap">107a1e4df969ca242534d005935e5866</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270582v1_statistic.yaml'>chrUn_KI270582v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">359.0 B</td>
+            <td class="nowrap">277f0ff395cd7eff89cdbbece2ef1718</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270583v1_statistic.yaml'>chrUn_KI270583v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">344.0 B</td>
+            <td class="nowrap">ceb1ddcbb823cfc14bc6e5f96dfc03c5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270584v1_statistic.yaml'>chrUn_KI270584v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">355.0 B</td>
+            <td class="nowrap">cfb77c628a4d05a048f58ee9f341a5ce</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270587v1_statistic.yaml'>chrUn_KI270587v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">353.0 B</td>
+            <td class="nowrap">a449b16073fae02618de189b5860261d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270588v1_statistic.yaml'>chrUn_KI270588v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">358.0 B</td>
+            <td class="nowrap">acd011eab23e6548ee73b3db789e912c</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270589v1_statistic.yaml'>chrUn_KI270589v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">fe5352197362352784b10d5289d7518f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270590v1_statistic.yaml'>chrUn_KI270590v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">355.0 B</td>
+            <td class="nowrap">3e5d7b95dbcc052ea7140ec5852604ff</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270591v1_statistic.yaml'>chrUn_KI270591v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">356.0 B</td>
+            <td class="nowrap">76564da7b16da6f1940b1b2343c52053</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270593v1_statistic.yaml'>chrUn_KI270593v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">354.0 B</td>
+            <td class="nowrap">3153afec253a7e1f0837de6c82a083ee</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270741v1_statistic.yaml'>chrUn_KI270741v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">396.0 B</td>
+            <td class="nowrap">b089ab98a7bb108720bb338fa1ceec62</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270742v1_statistic.yaml'>chrUn_KI270742v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">536a1df517ffab80adbfab800c0ac4f8</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270743v1_statistic.yaml'>chrUn_KI270743v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">395.0 B</td>
+            <td class="nowrap">09d533174499150fc0b39b7473748fe0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270744v1_statistic.yaml'>chrUn_KI270744v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">390.0 B</td>
+            <td class="nowrap">1f5a7a6a357ea865e96ae0950677d876</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270745v1_statistic.yaml'>chrUn_KI270745v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">378.0 B</td>
+            <td class="nowrap">b0085e455b3525ab80783810117fd4c7</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270746v1_statistic.yaml'>chrUn_KI270746v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">379.0 B</td>
+            <td class="nowrap">d82813ec665bb864f3f306de691a0649</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270747v1_statistic.yaml'>chrUn_KI270747v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">391.0 B</td>
+            <td class="nowrap">f8ab72eff50a8020e861759a7c22235a</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270748v1_statistic.yaml'>chrUn_KI270748v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">380.0 B</td>
+            <td class="nowrap">684d2b9c0fc34f04b55916ffe4abb80e</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270749v1_statistic.yaml'>chrUn_KI270749v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">3adeae11f67c90f71a49efd992a0f3a2</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270750v1_statistic.yaml'>chrUn_KI270750v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">387.0 B</td>
+            <td class="nowrap">555919de0e6622c31a23c4dfd288dfe0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270751v1_statistic.yaml'>chrUn_KI270751v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">388.0 B</td>
+            <td class="nowrap">6cdbb9c600ac1725e94dbdeb0b093ff5</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270752v1_statistic.yaml'>chrUn_KI270752v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">375.0 B</td>
+            <td class="nowrap">2d0b0e77c20ddd2c36567fec6fceeed3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270753v1_statistic.yaml'>chrUn_KI270753v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">379.0 B</td>
+            <td class="nowrap">9bb630677397ff9c75e071b7c8754dc3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270754v1_statistic.yaml'>chrUn_KI270754v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">378.0 B</td>
+            <td class="nowrap">988f09848dde07bb0d19d54d35bb280f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270755v1_statistic.yaml'>chrUn_KI270755v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">377.0 B</td>
+            <td class="nowrap">afbb8ffa01fcdfd2882d0084544710eb</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270756v1_statistic.yaml'>chrUn_KI270756v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">383.0 B</td>
+            <td class="nowrap">3bba01f0968794b9182ac0c0158df914</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrUn_KI270757v1_statistic.yaml'>chrUn_KI270757v1_statistic.yaml</a>
+            </td>
+            <td class="nowrap">385.0 B</td>
+            <td class="nowrap">a2b4552c262f1b02eca715dd8e2e74ed</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrX_KI270880v1_alt_statistic.yaml'>chrX_KI270880v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">98b21332e7c190fcef04f156faa593b4</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrX_KI270881v1_alt_statistic.yaml'>chrX_KI270881v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">389.0 B</td>
+            <td class="nowrap">981e7091f41e356dba03b27e464c5683</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrX_KI270913v1_alt_statistic.yaml'>chrX_KI270913v1_alt_statistic.yaml</a>
+            </td>
+            <td class="nowrap">399.0 B</td>
+            <td class="nowrap">d445d973dca6bbafa25cb570928e33c0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrX_statistic.yaml'>chrX_statistic.yaml</a>
+            </td>
+            <td class="nowrap">455.0 B</td>
+            <td class="nowrap">94e507d1286a1496947d8cd87fefb09f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrY_KI270740v1_random_statistic.yaml'>chrY_KI270740v1_random_statistic.yaml</a>
+            </td>
+            <td class="nowrap">382.0 B</td>
+            <td class="nowrap">d512361a469b59a1d848ef850999ecf3</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='chrY_statistic.yaml'>chrY_statistic.yaml</a>
+            </td>
+            <td class="nowrap">447.0 B</td>
+            <td class="nowrap">21fd31cdbc32f197940280db5055887d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='reference_genome_statistic.yaml'>reference_genome_statistic.yaml</a>
+            </td>
+            <td class="nowrap">10.15 KB</td>
+            <td class="nowrap">7954513a7b3cbe9bbabd6e6e192a019d</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='stats_hash'>stats_hash</a>
+            </td>
+            <td class="nowrap">54.0 B</td>
+            <td class="nowrap">0787ca03c672ce42f313fa607f06f973</td>
+          </tr>
+        </tbody>
+      </table>
+  </body>
+</html>

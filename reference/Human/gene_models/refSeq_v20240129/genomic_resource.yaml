@@ -1,0 +1,22 @@
+---
+
+type: gene_models
+
+filename: ncbiRefSeq.txt.gz
+
+format: "refseq"
+
+
+meta: 
+  summary: |
+    refSeq gene models for HG38 from 2024-01-29
+
+  description: |
+
+    downloaded on 2024-05-23 at: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/
+
+    [FTP](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz)
+
+
+  labels:
+    reference_genome: reference/Human/genome/ucsc-hg38 

@@ -1,0 +1,25 @@
+---
+
+type: genome
+
+filename: hg38.fa.bgz
+
+chrom_prefix: "chr"
+
+meta:
+  summary: |
+    Nucleotide sequence of the GRCh38/hg38 human genome assembly from UCSC
+
+  description: |
+    Nucleotide sequence of the GRCh38/hg38 human genome assembly from UCSC. GRCh38/hg38 is the current major human reference genome assembly used by many genomic resources and annotations. The FASTA uses UCSC-style chromosome names, including chr1 through chr22, chrX, chrY, and chrM.
+
+    Downloaded on 6/12/2026
+    
+    [https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz)
+
+    Processing Details: 
+
+    `build.sh` converts the downloaded `hg38.fa.gz` file from regular gzip compression to bgzip compression, then runs `samtools faidx` to create the required FASTA and bgzip index files. The original `hg38.fa.gz` file is removed, leaving only `hg38.fa.bgz`, `hg38.fa.bgz.fai`, and `hg38.fa.bgz.gzi` in the resource directory.
+
+  
+  labels: ~

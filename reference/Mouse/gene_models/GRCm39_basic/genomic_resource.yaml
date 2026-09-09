@@ -1,0 +1,21 @@
+type: gene_models
+
+filename: gencode.vM39.basic.annotation.txt.gz
+format: default
+
+meta:
+  summary: |
+    Mouse (Mus musculus) gene models
+
+  description: |
+
+    GENCODE basic gene annotation for the house mouse (Mus musculus), release M39, on the GRCm39 genome assembly.
+
+    Downloaded from: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode\_mouse/release\_M39/gencode.vM39.basic.annotation.gtf.gz
+
+    Download date: 8/31/2026
+
+    Downloaded GTF is transformed to GAIn format by:
+    to\_gpf\_gene\_models\_format gencode.vM39.basic.annotation.gtf.gz gencode.vM39.basic.annotation.txt.gz
+  labels:
+    reference_genome: reference/Mouse/genome/GRCm39 

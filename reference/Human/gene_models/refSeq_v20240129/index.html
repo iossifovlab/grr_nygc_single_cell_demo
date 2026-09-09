@@ -1,0 +1,4822 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair minus the gap, and shrinks together with it. */
+      .figure-pair > .figure-thumbnail {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward,arrow_upward,unfold_more&display=block">
+<style>
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>reference/Human/gene_models/refSeq_v20240129</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>gene_models</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">refSeq gene models for HG38 from 2024-01-29
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style>
+                            <p>downloaded on 2024-05-23 at: https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/</p>
+
+<p><a href="https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz">FTP</a></p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>reference_genome: reference/Human/genome/ucsc-hg38</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+<h2>Configuration</h2>
+    <p><b>Gene models file:</b> <a href="ncbiRefSeq.txt.gz">
+    ncbiRefSeq.txt.gz
+    </a></p>
+
+    <p><b>Format:</b> refseq</p>
+<h2>Statistics</h2>
+    <h3>Chromosome statistics</h3>
+    <div class="scrollable-table-container">
+        <table id="chromosomes-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Transcript number</th>
+                    <th>Protein coding transcript number</th>
+                    <th>Gene number</th>
+                    <th>Protein coding gene number</th>
+                </tr>
+                <tr>
+                    <th>Global</th>
+                    <td>196,097</td>
+                    <td>144,454</td>
+                    <td>43,000</td>
+                    <td>20,080</td>
+                </tr>
+            </thead>
+            
+                <tr>
+                    <td>chr1</td>
+                    <td>17,116</td>
+                    <td>12,842</td>
+                    <td>4,096</td>
+                    <td>2,050</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10</td>
+                    <td>8,272</td>
+                    <td>6,145</td>
+                    <td>1,771</td>
+                    <td>732</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_GL383545v1_alt</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_GL383546v1_alt</td>
+                    <td>19</td>
+                    <td>17</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_KI270824v1_alt</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_KN196480v1_fix</td>
+                    <td>38</td>
+                    <td>37</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_KN538366v1_fix</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_KQ090020v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_KQ090021v1_fix</td>
+                    <td>11</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_ML143354v1_fix</td>
+                    <td>14</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_ML143355v1_fix</td>
+                    <td>60</td>
+                    <td>47</td>
+                    <td>8</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_MU273367v1_fix</td>
+                    <td>20</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11</td>
+                    <td>9,766</td>
+                    <td>7,513</td>
+                    <td>2,326</td>
+                    <td>1,298</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_JH159136v1_alt</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_JH159137v1_alt</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270826v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270827v1_alt</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270829v1_alt</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270830v1_alt</td>
+                    <td>14</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270831v1_alt</td>
+                    <td>61</td>
+                    <td>48</td>
+                    <td>14</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270832v1_alt</td>
+                    <td>99</td>
+                    <td>93</td>
+                    <td>17</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270902v1_alt</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270903v1_alt</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KI270927v1_alt</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KN196481v1_fix</td>
+                    <td>48</td>
+                    <td>32</td>
+                    <td>11</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KN538368v1_alt</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KQ090022v1_fix</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KQ759759v2_fix</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KV766195v1_fix</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KZ559108v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KZ559109v1_fix</td>
+                    <td>54</td>
+                    <td>46</td>
+                    <td>9</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KZ559110v1_alt</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_KZ559111v1_alt</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_ML143357v1_fix</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_ML143358v1_fix</td>
+                    <td>83</td>
+                    <td>67</td>
+                    <td>15</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_ML143359v1_fix</td>
+                    <td>44</td>
+                    <td>38</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_ML143360v1_fix</td>
+                    <td>39</td>
+                    <td>36</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_MU273368v1_alt</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_MU273369v1_fix</td>
+                    <td>58</td>
+                    <td>48</td>
+                    <td>17</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_MU273370v1_fix</td>
+                    <td>14</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_MU273371v1_fix</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12</td>
+                    <td>9,732</td>
+                    <td>7,292</td>
+                    <td>2,093</td>
+                    <td>1,023</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_GL383550v2_alt</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_GL383551v1_alt</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_GL383552v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_GL383553v2_alt</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_GL877875v1_alt</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_GL877876v1_alt</td>
+                    <td>26</td>
+                    <td>24</td>
+                    <td>20</td>
+                    <td>19</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KI270833v1_alt</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KI270834v1_alt</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KI270835v1_alt</td>
+                    <td>13</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KI270837v1_alt</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KI270904v1_alt</td>
+                    <td>32</td>
+                    <td>28</td>
+                    <td>24</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KN538369v1_fix</td>
+                    <td>41</td>
+                    <td>37</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KN538370v1_fix</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KQ090023v1_alt</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KQ759760v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KZ208916v1_fix</td>
+                    <td>94</td>
+                    <td>78</td>
+                    <td>17</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KZ208917v1_fix</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KZ208918v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_KZ559112v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_ML143361v1_fix</td>
+                    <td>23</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_ML143362v1_fix</td>
+                    <td>60</td>
+                    <td>55</td>
+                    <td>6</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_MU273372v1_fix</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13</td>
+                    <td>3,741</td>
+                    <td>2,487</td>
+                    <td>1,058</td>
+                    <td>337</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KI270838v1_alt</td>
+                    <td>29</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KI270839v1_alt</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KI270840v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KI270842v1_alt</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KN538371v1_fix</td>
+                    <td>25</td>
+                    <td>22</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KN538372v1_fix</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KN538373v1_fix</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_KQ090025v1_alt</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_ML143365v1_fix</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13_ML143366v1_fix</td>
+                    <td>19</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14</td>
+                    <td>5,488</td>
+                    <td>3,985</td>
+                    <td>1,370</td>
+                    <td>603</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_GL000009v2_random</td>
+                    <td>11</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_GL000194v1_random</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KI270722v1_random</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KI270726v1_random</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KI270844v1_alt</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KI270845v1_alt</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KI270846v1_alt</td>
+                    <td>23</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KI270847v1_alt</td>
+                    <td>162</td>
+                    <td>135</td>
+                    <td>32</td>
+                    <td>23</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KZ208919v1_alt</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_KZ208920v1_fix</td>
+                    <td>189</td>
+                    <td>154</td>
+                    <td>42</td>
+                    <td>33</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_ML143367v1_fix</td>
+                    <td>24</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_ML143368v1_alt</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14_MU273373v1_fix</td>
+                    <td>56</td>
+                    <td>50</td>
+                    <td>30</td>
+                    <td>25</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15</td>
+                    <td>5,945</td>
+                    <td>4,254</td>
+                    <td>1,465</td>
+                    <td>601</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_GL383554v1_alt</td>
+                    <td>30</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_GL383555v2_alt</td>
+                    <td>19</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270727v1_random</td>
+                    <td>15</td>
+                    <td>6</td>
+                    <td>11</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270848v1_alt</td>
+                    <td>26</td>
+                    <td>23</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270849v1_alt</td>
+                    <td>15</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270850v1_alt</td>
+                    <td>60</td>
+                    <td>41</td>
+                    <td>19</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270851v1_alt</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270852v1_alt</td>
+                    <td>29</td>
+                    <td>12</td>
+                    <td>18</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270905v1_alt</td>
+                    <td>251</td>
+                    <td>168</td>
+                    <td>83</td>
+                    <td>36</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KI270906v1_alt</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KN538374v1_fix</td>
+                    <td>306</td>
+                    <td>217</td>
+                    <td>85</td>
+                    <td>37</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_KQ031389v1_alt</td>
+                    <td>62</td>
+                    <td>35</td>
+                    <td>27</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_ML143369v1_fix</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_ML143370v1_fix</td>
+                    <td>55</td>
+                    <td>44</td>
+                    <td>12</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_ML143371v1_fix</td>
+                    <td>293</td>
+                    <td>115</td>
+                    <td>117</td>
+                    <td>29</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_ML143372v1_fix</td>
+                    <td>16</td>
+                    <td>1</td>
+                    <td>9</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_MU273374v1_fix</td>
+                    <td>75</td>
+                    <td>43</td>
+                    <td>26</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15_MU273375v1_alt</td>
+                    <td>33</td>
+                    <td>29</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16</td>
+                    <td>6,797</td>
+                    <td>5,204</td>
+                    <td>1,648</td>
+                    <td>847</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_GL383556v1_alt</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_GL383557v1_alt</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KI270728v1_random</td>
+                    <td>32</td>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KI270853v1_alt</td>
+                    <td>276</td>
+                    <td>217</td>
+                    <td>68</td>
+                    <td>26</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KI270854v1_alt</td>
+                    <td>13</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KI270855v1_alt</td>
+                    <td>50</td>
+                    <td>43</td>
+                    <td>12</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KI270856v1_alt</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KQ090026v1_alt</td>
+                    <td>11</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KQ090027v1_alt</td>
+                    <td>25</td>
+                    <td>16</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KV880768v1_fix</td>
+                    <td>111</td>
+                    <td>69</td>
+                    <td>53</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KZ208921v1_alt</td>
+                    <td>21</td>
+                    <td>18</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_KZ559113v1_fix</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_ML143373v1_fix</td>
+                    <td>59</td>
+                    <td>48</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_MU273376v1_fix</td>
+                    <td>25</td>
+                    <td>21</td>
+                    <td>15</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16_MU273377v1_fix</td>
+                    <td>47</td>
+                    <td>30</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17</td>
+                    <td>9,255</td>
+                    <td>7,326</td>
+                    <td>2,112</td>
+                    <td>1,157</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_GL000205v2_random</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_GL000258v2_alt</td>
+                    <td>222</td>
+                    <td>151</td>
+                    <td>35</td>
+                    <td>19</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_GL383563v3_alt</td>
+                    <td>27</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_GL383564v2_alt</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_GL383566v1_alt</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_JH159146v1_alt</td>
+                    <td>38</td>
+                    <td>33</td>
+                    <td>24</td>
+                    <td>22</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_JH159147v1_alt</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_JH159148v1_alt</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270857v1_alt</td>
+                    <td>373</td>
+                    <td>292</td>
+                    <td>90</td>
+                    <td>52</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270860v1_alt</td>
+                    <td>34</td>
+                    <td>18</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270861v1_alt</td>
+                    <td>30</td>
+                    <td>21</td>
+                    <td>11</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270862v1_alt</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270907v1_alt</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270908v1_alt</td>
+                    <td>196</td>
+                    <td>134</td>
+                    <td>31</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270909v1_alt</td>
+                    <td>47</td>
+                    <td>31</td>
+                    <td>18</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KI270910v1_alt</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KV575245v1_fix</td>
+                    <td>42</td>
+                    <td>40</td>
+                    <td>14</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KV766196v1_fix</td>
+                    <td>16</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KV766197v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_KV766198v1_alt</td>
+                    <td>53</td>
+                    <td>43</td>
+                    <td>16</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_ML143374v1_fix</td>
+                    <td>44</td>
+                    <td>43</td>
+                    <td>11</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_ML143375v1_fix</td>
+                    <td>20</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_MU273378v1_alt</td>
+                    <td>35</td>
+                    <td>33</td>
+                    <td>32</td>
+                    <td>30</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_MU273379v1_fix</td>
+                    <td>61</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_MU273380v1_fix</td>
+                    <td>33</td>
+                    <td>22</td>
+                    <td>13</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_MU273381v1_fix</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_MU273382v1_fix</td>
+                    <td>20</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17_MU273383v1_fix</td>
+                    <td>28</td>
+                    <td>24</td>
+                    <td>8</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18</td>
+                    <td>3,454</td>
+                    <td>2,521</td>
+                    <td>798</td>
+                    <td>268</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_GL383567v1_alt</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_GL383569v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_GL383571v1_alt</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_GL383572v1_alt</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KI270863v1_alt</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KI270911v1_alt</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KI270912v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KQ090028v1_fix</td>
+                    <td>31</td>
+                    <td>21</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KQ458385v1_alt</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KZ208922v1_fix</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KZ559115v1_fix</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18_KZ559116v1_alt</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19</td>
+                    <td>9,265</td>
+                    <td>7,522</td>
+                    <td>2,151</td>
+                    <td>1,410</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL000209v2_alt</td>
+                    <td>23</td>
+                    <td>21</td>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL383573v1_alt</td>
+                    <td>22</td>
+                    <td>19</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL383574v1_alt</td>
+                    <td>31</td>
+                    <td>25</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL383575v2_alt</td>
+                    <td>16</td>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL383576v1_alt</td>
+                    <td>22</td>
+                    <td>12</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949746v1_alt</td>
+                    <td>254</td>
+                    <td>211</td>
+                    <td>50</td>
+                    <td>36</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949747v2_alt</td>
+                    <td>180</td>
+                    <td>161</td>
+                    <td>36</td>
+                    <td>31</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949748v2_alt</td>
+                    <td>131</td>
+                    <td>116</td>
+                    <td>27</td>
+                    <td>23</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949749v2_alt</td>
+                    <td>126</td>
+                    <td>110</td>
+                    <td>26</td>
+                    <td>22</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949750v2_alt</td>
+                    <td>128</td>
+                    <td>111</td>
+                    <td>24</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949751v2_alt</td>
+                    <td>135</td>
+                    <td>117</td>
+                    <td>28</td>
+                    <td>23</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949752v1_alt</td>
+                    <td>263</td>
+                    <td>225</td>
+                    <td>55</td>
+                    <td>40</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_GL949753v2_alt</td>
+                    <td>197</td>
+                    <td>171</td>
+                    <td>39</td>
+                    <td>30</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270865v1_alt</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270866v1_alt</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270867v1_alt</td>
+                    <td>62</td>
+                    <td>54</td>
+                    <td>6</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270868v1_alt</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270882v1_alt</td>
+                    <td>26</td>
+                    <td>23</td>
+                    <td>13</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270883v1_alt</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270884v1_alt</td>
+                    <td>16</td>
+                    <td>15</td>
+                    <td>9</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270885v1_alt</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270886v1_alt</td>
+                    <td>20</td>
+                    <td>17</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270887v1_alt</td>
+                    <td>18</td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270888v1_alt</td>
+                    <td>16</td>
+                    <td>14</td>
+                    <td>9</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270889v1_alt</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270890v1_alt</td>
+                    <td>23</td>
+                    <td>21</td>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270891v1_alt</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270914v1_alt</td>
+                    <td>21</td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270915v1_alt</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270916v1_alt</td>
+                    <td>22</td>
+                    <td>20</td>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270917v1_alt</td>
+                    <td>28</td>
+                    <td>26</td>
+                    <td>10</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270918v1_alt</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270919v1_alt</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270920v1_alt</td>
+                    <td>29</td>
+                    <td>26</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270921v1_alt</td>
+                    <td>42</td>
+                    <td>39</td>
+                    <td>15</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270922v1_alt</td>
+                    <td>29</td>
+                    <td>27</td>
+                    <td>10</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270923v1_alt</td>
+                    <td>36</td>
+                    <td>34</td>
+                    <td>11</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270929v1_alt</td>
+                    <td>28</td>
+                    <td>26</td>
+                    <td>10</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270930v1_alt</td>
+                    <td>21</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270931v1_alt</td>
+                    <td>11</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270932v1_alt</td>
+                    <td>22</td>
+                    <td>19</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270933v1_alt</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KI270938v1_alt</td>
+                    <td>291</td>
+                    <td>246</td>
+                    <td>59</td>
+                    <td>43</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KN196484v1_fix</td>
+                    <td>49</td>
+                    <td>47</td>
+                    <td>10</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KQ458386v1_fix</td>
+                    <td>81</td>
+                    <td>71</td>
+                    <td>20</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575246v1_alt</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575247v1_alt</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575248v1_alt</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575249v1_alt</td>
+                    <td>29</td>
+                    <td>26</td>
+                    <td>16</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575250v1_alt</td>
+                    <td>35</td>
+                    <td>32</td>
+                    <td>13</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575251v1_alt</td>
+                    <td>11</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575252v1_alt</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575253v1_alt</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575254v1_alt</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575255v1_alt</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575256v1_alt</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575257v1_alt</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575258v1_alt</td>
+                    <td>28</td>
+                    <td>28</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575259v1_alt</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_KV575260v1_alt</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_ML143376v1_fix</td>
+                    <td>131</td>
+                    <td>111</td>
+                    <td>26</td>
+                    <td>17</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_MU273384v1_fix</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_MU273385v1_fix</td>
+                    <td>45</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_MU273386v1_fix</td>
+                    <td>25</td>
+                    <td>22</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19_MU273387v1_alt</td>
+                    <td>35</td>
+                    <td>33</td>
+                    <td>8</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_GL383518v1_alt</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_GL383519v1_alt</td>
+                    <td>49</td>
+                    <td>39</td>
+                    <td>8</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_GL383520v2_alt</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270706v1_random</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270708v1_random</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270711v1_random</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270712v1_random</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270713v1_random</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270759v1_alt</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270760v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270761v1_alt</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270762v1_alt</td>
+                    <td>73</td>
+                    <td>35</td>
+                    <td>18</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270763v1_alt</td>
+                    <td>49</td>
+                    <td>44</td>
+                    <td>8</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270765v1_alt</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270766v1_alt</td>
+                    <td>13</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KI270892v1_alt</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KN196472v1_fix</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KN196473v1_fix</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KN196474v1_fix</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KN538360v1_fix</td>
+                    <td>24</td>
+                    <td>22</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KN538361v1_fix</td>
+                    <td>29</td>
+                    <td>23</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KQ031383v1_fix</td>
+                    <td>27</td>
+                    <td>24</td>
+                    <td>23</td>
+                    <td>20</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KQ458383v1_alt</td>
+                    <td>55</td>
+                    <td>45</td>
+                    <td>12</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KQ458384v1_alt</td>
+                    <td>15</td>
+                    <td>15</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KQ983255v1_alt</td>
+                    <td>15</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KV880763v1_alt</td>
+                    <td>19</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KZ208904v1_alt</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_KZ208906v1_fix</td>
+                    <td>47</td>
+                    <td>9</td>
+                    <td>44</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273330v1_alt</td>
+                    <td>15</td>
+                    <td>6</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273331v1_alt</td>
+                    <td>47</td>
+                    <td>39</td>
+                    <td>10</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273332v1_alt</td>
+                    <td>22</td>
+                    <td>15</td>
+                    <td>18</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273333v1_fix</td>
+                    <td>235</td>
+                    <td>150</td>
+                    <td>62</td>
+                    <td>22</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273334v1_fix</td>
+                    <td>14</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273335v1_fix</td>
+                    <td>47</td>
+                    <td>40</td>
+                    <td>11</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_MU273336v1_fix</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2</td>
+                    <td>13,355</td>
+                    <td>9,517</td>
+                    <td>2,999</td>
+                    <td>1,254</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20</td>
+                    <td>4,390</td>
+                    <td>3,091</td>
+                    <td>1,140</td>
+                    <td>537</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20_GL383577v2_alt</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20_KI270869v1_alt</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20_KI270870v1_alt</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20_KI270871v1_alt</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20_MU273388v1_fix</td>
+                    <td>42</td>
+                    <td>29</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20_MU273389v1_fix</td>
+                    <td>52</td>
+                    <td>51</td>
+                    <td>6</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21</td>
+                    <td>2,071</td>
+                    <td>1,411</td>
+                    <td>627</td>
+                    <td>238</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_GL383579v2_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_GL383580v2_alt</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_GL383581v2_alt</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_KI270872v1_alt</td>
+                    <td>13</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_KI270873v1_alt</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_KI270874v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_ML143377v1_fix</td>
+                    <td>22</td>
+                    <td>1</td>
+                    <td>19</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_MU273390v1_fix</td>
+                    <td>40</td>
+                    <td>34</td>
+                    <td>11</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_MU273391v1_fix</td>
+                    <td>13</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21_MU273392v1_fix</td>
+                    <td>36</td>
+                    <td>28</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22</td>
+                    <td>3,635</td>
+                    <td>2,732</td>
+                    <td>890</td>
+                    <td>439</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_GL383582v2_alt</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_GL383583v2_alt</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KB663609v1_alt</td>
+                    <td>18</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270731v1_random</td>
+                    <td>23</td>
+                    <td>16</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270733v1_random</td>
+                    <td>12</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270875v1_alt</td>
+                    <td>25</td>
+                    <td>18</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270876v1_alt</td>
+                    <td>29</td>
+                    <td>29</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270877v1_alt</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270878v1_alt</td>
+                    <td>19</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270879v1_alt</td>
+                    <td>70</td>
+                    <td>52</td>
+                    <td>21</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KI270928v1_alt</td>
+                    <td>16</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KN196485v1_alt</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KN196486v1_alt</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KQ458387v1_alt</td>
+                    <td>13</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KQ458388v1_alt</td>
+                    <td>21</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KQ759761v1_alt</td>
+                    <td>29</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_KQ759762v2_fix</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_ML143378v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22_ML143380v1_fix</td>
+                    <td>13</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_GL383521v1_alt</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_GL383522v1_alt</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_GL582966v2_alt</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270767v1_alt</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270768v1_alt</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270769v1_alt</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270770v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270772v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270773v1_alt</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270774v1_alt</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270776v1_alt</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270893v1_alt</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KI270894v1_alt</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KN538362v1_fix</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KN538363v1_fix</td>
+                    <td>28</td>
+                    <td>25</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KQ031384v1_fix</td>
+                    <td>13</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KQ983256v1_alt</td>
+                    <td>42</td>
+                    <td>37</td>
+                    <td>10</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_KZ208908v1_alt</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_ML143341v1_fix</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273337v1_alt</td>
+                    <td>35</td>
+                    <td>21</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273338v1_alt</td>
+                    <td>30</td>
+                    <td>24</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273339v1_alt</td>
+                    <td>51</td>
+                    <td>39</td>
+                    <td>15</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273340v1_alt</td>
+                    <td>22</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273341v1_fix</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273342v1_fix</td>
+                    <td>127</td>
+                    <td>115</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273343v1_fix</td>
+                    <td>23</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273344v1_fix</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2_MU273345v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3</td>
+                    <td>11,228</td>
+                    <td>8,505</td>
+                    <td>2,357</td>
+                    <td>1,064</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_GL000221v1_random</td>
+                    <td>26</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_GL383526v1_alt</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_JH636055v2_alt</td>
+                    <td>16</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270777v1_alt</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270779v1_alt</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270780v1_alt</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270781v1_alt</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270782v1_alt</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270783v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270784v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270895v1_alt</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270924v1_alt</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270934v1_alt</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270935v1_alt</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270936v1_alt</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KI270937v1_alt</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KN196475v1_fix</td>
+                    <td>77</td>
+                    <td>56</td>
+                    <td>19</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KN196476v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KN538364v1_fix</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KQ031385v1_fix</td>
+                    <td>42</td>
+                    <td>23</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KV766192v1_fix</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KZ208909v1_alt</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KZ559102v1_alt</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KZ559103v1_alt</td>
+                    <td>13</td>
+                    <td>12</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KZ559104v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_KZ559105v1_alt</td>
+                    <td>17</td>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_ML143343v1_alt</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_MU273346v1_fix</td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_MU273347v1_fix</td>
+                    <td>17</td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3_MU273348v1_fix</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4</td>
+                    <td>7,630</td>
+                    <td>5,352</td>
+                    <td>1,899</td>
+                    <td>764</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_GL000008v2_random</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_GL000257v2_alt</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>7</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_GL383527v1_alt</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_GL383528v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270785v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270786v1_alt</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270788v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270789v1_alt</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270790v1_alt</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270896v1_alt</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KI270925v1_alt</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KQ090013v1_alt</td>
+                    <td>12</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KQ090014v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KQ090015v1_alt</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KQ983257v1_fix</td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KQ983258v1_alt</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_KV766193v1_alt</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_ML143344v1_fix</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_ML143345v1_fix</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_ML143347v1_fix</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_ML143349v1_fix</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_MU273349v1_alt</td>
+                    <td>21</td>
+                    <td>17</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_MU273350v1_fix</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4_MU273351v1_fix</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5</td>
+                    <td>7,976</td>
+                    <td>5,572</td>
+                    <td>2,077</td>
+                    <td>894</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_GL339449v2_alt</td>
+                    <td>160</td>
+                    <td>127</td>
+                    <td>36</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_GL383530v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_GL383531v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_GL383532v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_GL949742v1_alt</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270791v1_alt</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270792v1_alt</td>
+                    <td>22</td>
+                    <td>15</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270793v1_alt</td>
+                    <td>13</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270794v1_alt</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270795v1_alt</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270796v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270897v1_alt</td>
+                    <td>92</td>
+                    <td>74</td>
+                    <td>25</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KI270898v1_alt</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KN196477v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KV575243v1_alt</td>
+                    <td>13</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KV575244v1_fix</td>
+                    <td>113</td>
+                    <td>94</td>
+                    <td>23</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_KZ208910v1_alt</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_ML143350v1_fix</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_MU273352v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_MU273353v1_fix</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_MU273354v1_fix</td>
+                    <td>137</td>
+                    <td>108</td>
+                    <td>38</td>
+                    <td>18</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_MU273355v1_fix</td>
+                    <td>57</td>
+                    <td>51</td>
+                    <td>37</td>
+                    <td>31</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5_MU273356v1_alt</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6</td>
+                    <td>8,819</td>
+                    <td>6,177</td>
+                    <td>2,288</td>
+                    <td>1,044</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000250v2_alt</td>
+                    <td>426</td>
+                    <td>327</td>
+                    <td>133</td>
+                    <td>83</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000251v2_alt</td>
+                    <td>882</td>
+                    <td>705</td>
+                    <td>264</td>
+                    <td>167</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000252v2_alt</td>
+                    <td>837</td>
+                    <td>671</td>
+                    <td>241</td>
+                    <td>153</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000253v2_alt</td>
+                    <td>749</td>
+                    <td>599</td>
+                    <td>210</td>
+                    <td>132</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000254v2_alt</td>
+                    <td>765</td>
+                    <td>628</td>
+                    <td>228</td>
+                    <td>154</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000255v2_alt</td>
+                    <td>846</td>
+                    <td>683</td>
+                    <td>241</td>
+                    <td>155</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL000256v2_alt</td>
+                    <td>705</td>
+                    <td>546</td>
+                    <td>217</td>
+                    <td>134</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_GL383533v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KB021644v2_alt</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KI270758v1_alt</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KI270797v1_alt</td>
+                    <td>26</td>
+                    <td>21</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KI270798v1_alt</td>
+                    <td>29</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KI270800v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KI270801v1_alt</td>
+                    <td>23</td>
+                    <td>18</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KI270802v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KQ090016v1_fix</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KV766194v1_fix</td>
+                    <td>27</td>
+                    <td>26</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_KZ208911v1_fix</td>
+                    <td>34</td>
+                    <td>24</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6_MU273357v1_alt</td>
+                    <td>40</td>
+                    <td>11</td>
+                    <td>16</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7</td>
+                    <td>8,403</td>
+                    <td>5,903</td>
+                    <td>2,094</td>
+                    <td>935</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_GL383534v2_alt</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270803v1_alt</td>
+                    <td>49</td>
+                    <td>29</td>
+                    <td>21</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270804v1_alt</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270805v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270806v1_alt</td>
+                    <td>47</td>
+                    <td>29</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270808v1_alt</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270809v1_alt</td>
+                    <td>14</td>
+                    <td>13</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KI270899v1_alt</td>
+                    <td>21</td>
+                    <td>6</td>
+                    <td>10</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KQ031388v1_fix</td>
+                    <td>13</td>
+                    <td>11</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KV880764v1_fix</td>
+                    <td>16</td>
+                    <td>15</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KV880765v1_fix</td>
+                    <td>57</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KZ208912v1_fix</td>
+                    <td>44</td>
+                    <td>28</td>
+                    <td>22</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_KZ208913v1_alt</td>
+                    <td>56</td>
+                    <td>44</td>
+                    <td>23</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_ML143352v1_fix</td>
+                    <td>25</td>
+                    <td>8</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7_MU273358v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8</td>
+                    <td>7,027</td>
+                    <td>4,941</td>
+                    <td>1,748</td>
+                    <td>705</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270810v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270811v1_alt</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270812v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270813v1_alt</td>
+                    <td>32</td>
+                    <td>21</td>
+                    <td>19</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270814v1_alt</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270815v1_alt</td>
+                    <td>9</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270816v1_alt</td>
+                    <td>147</td>
+                    <td>129</td>
+                    <td>25</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270817v1_alt</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>8</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270818v1_alt</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270819v1_alt</td>
+                    <td>48</td>
+                    <td>39</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270820v1_alt</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270821v1_alt</td>
+                    <td>51</td>
+                    <td>28</td>
+                    <td>14</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270822v1_alt</td>
+                    <td>31</td>
+                    <td>25</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270900v1_alt</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270901v1_alt</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KI270926v1_alt</td>
+                    <td>17</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KV880766v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KV880767v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KZ208914v1_fix</td>
+                    <td>66</td>
+                    <td>59</td>
+                    <td>18</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KZ208915v1_fix</td>
+                    <td>418</td>
+                    <td>246</td>
+                    <td>178</td>
+                    <td>82</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_KZ559107v1_alt</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_MU273359v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_MU273360v1_fix</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_MU273361v1_fix</td>
+                    <td>39</td>
+                    <td>33</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_MU273362v1_fix</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8_MU273363v1_fix</td>
+                    <td>45</td>
+                    <td>33</td>
+                    <td>11</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9</td>
+                    <td>7,734</td>
+                    <td>5,504</td>
+                    <td>1,788</td>
+                    <td>776</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_GL383540v1_alt</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_GL383541v1_alt</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_KI270718v1_random</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_KI270719v1_random</td>
+                    <td>9</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_KI270720v1_random</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_KI270823v1_alt</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_KN196479v1_fix</td>
+                    <td>79</td>
+                    <td>65</td>
+                    <td>20</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_MU273364v1_fix</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_MU273365v1_fix</td>
+                    <td>66</td>
+                    <td>54</td>
+                    <td>12</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_MU273366v1_fix</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrM</td>
+                    <td>13</td>
+                    <td>13</td>
+                    <td>13</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000195v1</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000213v1</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000214v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000218v1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000219v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000220v1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_GL000224v1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270442v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270741v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270742v1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270743v1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270744v1</td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270745v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270746v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270748v1</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270750v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270751v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270754v1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_KI270755v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX</td>
+                    <td>5,396</td>
+                    <td>4,295</td>
+                    <td>1,448</td>
+                    <td>848</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_KI270880v1_alt</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_KI270881v1_alt</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_KI270913v1_alt</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_ML143381v1_fix</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_ML143382v1_fix</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_MU273393v1_fix</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_MU273394v1_fix</td>
+                    <td>16</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_MU273395v1_alt</td>
+                    <td>116</td>
+                    <td>106</td>
+                    <td>20</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_MU273396v1_alt</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX_MU273397v1_alt</td>
+                    <td>66</td>
+                    <td>64</td>
+                    <td>14</td>
+                    <td>13</td>
+                </tr>
+            
+                <tr>
+                    <td>chrY</td>
+                    <td>670</td>
+                    <td>365</td>
+                    <td>211</td>
+                    <td>66</td>
+                </tr>
+            
+                <tr>
+                    <td>chrY_KN196487v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrY_KZ208924v1_fix</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrY_MU273398v1_fix</td>
+                    <td>107</td>
+                    <td>58</td>
+                    <td>60</td>
+                    <td>25</td>
+                </tr>
+            
+        </table>
+    </div>
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">405.0 B</td>
+                <td class="nowrap">d4f5dae64b4ffd2c1eda8a1968facbf1</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='ncbiRefSeq.txt.gz'>ncbiRefSeq.txt.gz</a>
+                    </td>
+                
+                <td class="nowrap">6.96 MB</td>
+                <td class="nowrap">cf07b29336c55abd92e5bca417bdb679</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>

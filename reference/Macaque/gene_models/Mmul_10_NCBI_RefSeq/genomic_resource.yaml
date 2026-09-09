@@ -1,0 +1,23 @@
+type: gene_models
+
+filename: GCF_003339765.1_Mmul_10_genomic.txt.gz
+format: default
+
+meta:
+  summary: |
+    Rhesus macaque (Macaca mulatta) gene models
+
+  description: |
+
+    NCBI RefSeq gene models for the rhesus macaque (Macaca mulatta), annotation release 103, on the Mmul\_10 (GCF\_003339765.1) genome assembly.
+
+    Mmul\_10 was the previous NCBI reference assembly for rhesus macaque and remains an established assembly used by many existing macaque genomic resources.
+
+    Downloaded from: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/339/765/GCF\_003339765.1\_Mmul\_10/GCF\_003339765.1\_Mmul\_10\_genomic.gtf.gz
+    
+    Download date: 8/20/2026
+
+    Downloaded GTF is transformed to GAIn format by:
+    to\_gpf\_gene\_models\_format GCF\_003339765.1\_Mmul\_10\_genomic.gtf.gz GCF\_003339765.1\_Mmul\_10\_genomic.txt.gz
+  labels:
+    reference_genome: reference/Macaque/genome/Mmul_10

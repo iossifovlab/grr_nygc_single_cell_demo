@@ -1,0 +1,21 @@
+type: gene_models
+
+filename: gencode.v49.chr_patch_hapl_scaff.annotation.txt.gz
+format: default
+
+meta:
+  summary: |
+    GENCODE 49, comprehensive gene annotation on the reference chromosomes, scaffolds, assembly patches and alternate loci (haplotypes)
+  description: |
+    GENCODE project ([www.gencodegenes.org](https://www.gencodegenes.org/)) identifies and classifies all gene features in the human and mouse genomes with high accuracy based on biological evidence, and releases these annotations for the benefit of biomedical research and genome interpretation.
+
+    The GENCODE gene sets are used by the entire ENCODE consortium and by many other projects (eg. Genotype-Tissue Expression (GTEx), The Cancer Genome Atlas (TCGA), International Cancer Genome Consortium (ICGC), NIH Roadmap Epigenomics Mapping Consortium, Blueprint Epigenome Project, Exome Aggregation Consortium (EXAC), Genome Aggregation Database (gnomAD), 1000 Genomes Project and the Human Cell Atlas (HCA)) as reference gene sets.
+
+    [Frankish et al, GENCODE 2021, Nucleic Acids Research 2021](https://academic.oup.com/nar/article/49/D1/D916/6018430)
+
+    Downloaded on: 09/17/2025
+    
+    [https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode\_human/release\_49/gencode.v49.chr\_patch\_hapl\_scaff.annotation.gtf.gz](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode\_human/release\_49/gencode.v49.chr\_patch\_hapl\_scaff.annotation.gtf.gz)
+
+  labels:
+    reference_genome: reference/Human/genome/GRCh38.p14 

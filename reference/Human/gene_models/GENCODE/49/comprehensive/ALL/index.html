@@ -1,0 +1,4886 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair minus the gap, and shrinks together with it. */
+      .figure-pair > .figure-thumbnail {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward,arrow_upward,unfold_more&display=block">
+<style>
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>reference/Human/gene_models/GENCODE/49/comprehensive/ALL</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>gene_models</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">GENCODE 49, comprehensive gene annotation on the reference chromosomes, scaffolds, assembly patches and alternate loci (haplotypes)
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style>
+                            <p>GENCODE project (<a href="https://www.gencodegenes.org/">www.gencodegenes.org</a>) identifies and classifies all gene features in the human and mouse genomes with high accuracy based on biological evidence, and releases these annotations for the benefit of biomedical research and genome interpretation.</p>
+
+<p>The GENCODE gene sets are used by the entire ENCODE consortium and by many other projects (eg. Genotype-Tissue Expression (GTEx), The Cancer Genome Atlas (TCGA), International Cancer Genome Consortium (ICGC), NIH Roadmap Epigenomics Mapping Consortium, Blueprint Epigenome Project, Exome Aggregation Consortium (EXAC), Genome Aggregation Database (gnomAD), 1000 Genomes Project and the Human Cell Atlas (HCA)) as reference gene sets.</p>
+
+<p><a href="https://academic.oup.com/nar/article/49/D1/D916/6018430">Frankish et al, GENCODE 2021, Nucleic Acids Research 2021</a></p>
+
+<p>Downloaded on: 09/17/2025</p>
+
+<p><a href="https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.chr_patch_hapl_scaff.annotation.gtf.gz">https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.chr_patch_hapl_scaff.annotation.gtf.gz</a></p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>reference_genome: reference/Human/genome/GRCh38.p14</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+<h2>Configuration</h2>
+    <p><b>Gene models file:</b> <a href="gencode.v49.chr_patch_hapl_scaff.annotation.txt.gz">
+    gencode.v49.chr_patch_hapl_scaff.annotation.txt.gz
+    </a></p>
+
+    <p><b>Format:</b> default</p>
+<h2>Statistics</h2>
+    <h3>Chromosome statistics</h3>
+    <div class="scrollable-table-container">
+        <table id="chromosomes-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Transcript number</th>
+                    <th>Protein coding transcript number</th>
+                    <th>Gene number</th>
+                    <th>Protein coding gene number</th>
+                </tr>
+                <tr>
+                    <th>Global</th>
+                    <td>533,740</td>
+                    <td>242,668</td>
+                    <td>79,122</td>
+                    <td>20,566</td>
+                </tr>
+            </thead>
+            
+                <tr>
+                    <td>chr1</td>
+                    <td>48,010</td>
+                    <td>22,785</td>
+                    <td>6,944</td>
+                    <td>2,065</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2</td>
+                    <td>38,255</td>
+                    <td>16,464</td>
+                    <td>5,583</td>
+                    <td>1,296</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3</td>
+                    <td>31,373</td>
+                    <td>15,046</td>
+                    <td>4,073</td>
+                    <td>1,081</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4</td>
+                    <td>21,415</td>
+                    <td>8,789</td>
+                    <td>3,520</td>
+                    <td>756</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5</td>
+                    <td>24,027</td>
+                    <td>9,348</td>
+                    <td>3,889</td>
+                    <td>894</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6</td>
+                    <td>25,648</td>
+                    <td>10,568</td>
+                    <td>4,167</td>
+                    <td>1,051</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7</td>
+                    <td>26,951</td>
+                    <td>11,159</td>
+                    <td>3,872</td>
+                    <td>993</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8</td>
+                    <td>20,905</td>
+                    <td>8,365</td>
+                    <td>3,222</td>
+                    <td>703</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9</td>
+                    <td>21,361</td>
+                    <td>8,507</td>
+                    <td>3,128</td>
+                    <td>776</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10</td>
+                    <td>20,905</td>
+                    <td>9,807</td>
+                    <td>3,205</td>
+                    <td>731</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11</td>
+                    <td>27,524</td>
+                    <td>14,616</td>
+                    <td>4,112</td>
+                    <td>1,317</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12</td>
+                    <td>25,993</td>
+                    <td>12,443</td>
+                    <td>3,788</td>
+                    <td>1,037</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13</td>
+                    <td>10,011</td>
+                    <td>3,418</td>
+                    <td>1,989</td>
+                    <td>322</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14</td>
+                    <td>17,051</td>
+                    <td>8,237</td>
+                    <td>2,750</td>
+                    <td>725</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15</td>
+                    <td>17,938</td>
+                    <td>7,194</td>
+                    <td>2,751</td>
+                    <td>608</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16</td>
+                    <td>20,639</td>
+                    <td>10,242</td>
+                    <td>3,141</td>
+                    <td>861</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17</td>
+                    <td>25,996</td>
+                    <td>13,665</td>
+                    <td>3,692</td>
+                    <td>1,187</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18</td>
+                    <td>9,482</td>
+                    <td>3,575</td>
+                    <td>1,626</td>
+                    <td>266</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19</td>
+                    <td>25,328</td>
+                    <td>15,145</td>
+                    <td>3,495</td>
+                    <td>1,473</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20</td>
+                    <td>12,664</td>
+                    <td>5,891</td>
+                    <td>1,936</td>
+                    <td>547</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21</td>
+                    <td>6,806</td>
+                    <td>2,193</td>
+                    <td>1,117</td>
+                    <td>222</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22</td>
+                    <td>11,615</td>
+                    <td>5,692</td>
+                    <td>1,705</td>
+                    <td>490</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX</td>
+                    <td>15,421</td>
+                    <td>8,035</td>
+                    <td>2,896</td>
+                    <td>867</td>
+                </tr>
+            
+                <tr>
+                    <td>chrY</td>
+                    <td>2,010</td>
+                    <td>397</td>
+                    <td>657</td>
+                    <td>61</td>
+                </tr>
+            
+                <tr>
+                    <td>chrM</td>
+                    <td>37</td>
+                    <td>10</td>
+                    <td>37</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273365.1</td>
+                    <td>95</td>
+                    <td>53</td>
+                    <td>17</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273352.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273360.1</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ759759.2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143376.1</td>
+                    <td>109</td>
+                    <td>56</td>
+                    <td>33</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273366.1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538364.1</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143355.1</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143347.1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143352.1</td>
+                    <td>34</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ759762.2</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143375.1</td>
+                    <td>21</td>
+                    <td>16</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ031383.1</td>
+                    <td>39</td>
+                    <td>26</td>
+                    <td>33</td>
+                    <td>20</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273333.1</td>
+                    <td>106</td>
+                    <td>34</td>
+                    <td>47</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538369.1</td>
+                    <td>46</td>
+                    <td>25</td>
+                    <td>16</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273382.1</td>
+                    <td>65</td>
+                    <td>21</td>
+                    <td>15</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143342.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143350.1</td>
+                    <td>29</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143362.1</td>
+                    <td>81</td>
+                    <td>46</td>
+                    <td>11</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>JH159136.1</td>
+                    <td>17</td>
+                    <td>10</td>
+                    <td>16</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143357.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143378.1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>JH159137.1</td>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>12</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143365.1</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273369.1</td>
+                    <td>58</td>
+                    <td>28</td>
+                    <td>18</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273398.1</td>
+                    <td>30</td>
+                    <td>7</td>
+                    <td>18</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208924.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ031387.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KV766195.1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208916.1</td>
+                    <td>123</td>
+                    <td>60</td>
+                    <td>23</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538360.1</td>
+                    <td>22</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208920.1</td>
+                    <td>482</td>
+                    <td>273</td>
+                    <td>57</td>
+                    <td>36</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208906.1</td>
+                    <td>21</td>
+                    <td>5</td>
+                    <td>20</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196484.1</td>
+                    <td>62</td>
+                    <td>44</td>
+                    <td>14</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196476.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ983257.1</td>
+                    <td>46</td>
+                    <td>33</td>
+                    <td>24</td>
+                    <td>15</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196479.1</td>
+                    <td>89</td>
+                    <td>51</td>
+                    <td>22</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273363.1</td>
+                    <td>24</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575245.1</td>
+                    <td>63</td>
+                    <td>44</td>
+                    <td>19</td>
+                    <td>15</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208917.1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273343.1</td>
+                    <td>35</td>
+                    <td>16</td>
+                    <td>12</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208911.1</td>
+                    <td>35</td>
+                    <td>14</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196473.1</td>
+                    <td>28</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559108.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196487.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ759760.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196475.1</td>
+                    <td>62</td>
+                    <td>40</td>
+                    <td>20</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>KV880766.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273348.1</td>
+                    <td>48</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090016.1</td>
+                    <td>16</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273347.1</td>
+                    <td>23</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143374.1</td>
+                    <td>100</td>
+                    <td>60</td>
+                    <td>16</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>KV880764.1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538361.1</td>
+                    <td>19</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196474.1</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143360.1</td>
+                    <td>60</td>
+                    <td>36</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559109.1</td>
+                    <td>56</td>
+                    <td>26</td>
+                    <td>12</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143359.1</td>
+                    <td>47</td>
+                    <td>14</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090022.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273379.1</td>
+                    <td>48</td>
+                    <td>16</td>
+                    <td>10</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KV766194.1</td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196478.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559104.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273345.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273364.1</td>
+                    <td>31</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273359.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196480.1</td>
+                    <td>46</td>
+                    <td>32</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143370.1</td>
+                    <td>86</td>
+                    <td>42</td>
+                    <td>21</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090028.1</td>
+                    <td>16</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196481.1</td>
+                    <td>96</td>
+                    <td>43</td>
+                    <td>16</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273390.1</td>
+                    <td>56</td>
+                    <td>25</td>
+                    <td>14</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273388.1</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273344.1</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538363.1</td>
+                    <td>53</td>
+                    <td>19</td>
+                    <td>8</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538362.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ031385.1</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KV766192.1</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ031388.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143361.1</td>
+                    <td>38</td>
+                    <td>9</td>
+                    <td>20</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538370.1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538373.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273381.1</td>
+                    <td>16</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559113.1</td>
+                    <td>13</td>
+                    <td>1</td>
+                    <td>11</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273346.1</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273391.1</td>
+                    <td>17</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KV880765.1</td>
+                    <td>45</td>
+                    <td>24</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273362.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273342.1</td>
+                    <td>135</td>
+                    <td>36</td>
+                    <td>33</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273374.1</td>
+                    <td>115</td>
+                    <td>25</td>
+                    <td>41</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KV766196.1</td>
+                    <td>34</td>
+                    <td>14</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538371.1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ031384.1</td>
+                    <td>43</td>
+                    <td>20</td>
+                    <td>41</td>
+                    <td>20</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538372.1</td>
+                    <td>12</td>
+                    <td>2</td>
+                    <td>9</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273355.1</td>
+                    <td>124</td>
+                    <td>70</td>
+                    <td>57</td>
+                    <td>32</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090021.1</td>
+                    <td>22</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143371.1</td>
+                    <td>113</td>
+                    <td>68</td>
+                    <td>61</td>
+                    <td>34</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273380.1</td>
+                    <td>44</td>
+                    <td>11</td>
+                    <td>20</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273361.1</td>
+                    <td>25</td>
+                    <td>16</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559115.1</td>
+                    <td>12</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208914.1</td>
+                    <td>116</td>
+                    <td>59</td>
+                    <td>17</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208922.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273384.1</td>
+                    <td>21</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143373.1</td>
+                    <td>34</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273353.1</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273341.1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143369.1</td>
+                    <td>26</td>
+                    <td>5</td>
+                    <td>15</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143366.1</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143367.1</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143372.1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143380.1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143377.1</td>
+                    <td>21</td>
+                    <td>4</td>
+                    <td>19</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273335.1</td>
+                    <td>42</td>
+                    <td>16</td>
+                    <td>12</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273392.1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143345.1</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273373.1</td>
+                    <td>153</td>
+                    <td>82</td>
+                    <td>52</td>
+                    <td>25</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273393.1</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273394.1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273372.1</td>
+                    <td>64</td>
+                    <td>23</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273370.1</td>
+                    <td>35</td>
+                    <td>19</td>
+                    <td>30</td>
+                    <td>15</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273385.1</td>
+                    <td>25</td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273334.1</td>
+                    <td>30</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273367.1</td>
+                    <td>31</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273336.1</td>
+                    <td>15</td>
+                    <td>8</td>
+                    <td>11</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273371.1</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273383.1</td>
+                    <td>31</td>
+                    <td>22</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458386.1</td>
+                    <td>155</td>
+                    <td>80</td>
+                    <td>25</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273351.1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143358.1</td>
+                    <td>88</td>
+                    <td>45</td>
+                    <td>16</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575244.1</td>
+                    <td>173</td>
+                    <td>84</td>
+                    <td>29</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273376.1</td>
+                    <td>73</td>
+                    <td>39</td>
+                    <td>20</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273377.1</td>
+                    <td>83</td>
+                    <td>51</td>
+                    <td>17</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273389.1</td>
+                    <td>39</td>
+                    <td>26</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143381.1</td>
+                    <td>18</td>
+                    <td>10</td>
+                    <td>17</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143354.1</td>
+                    <td>17</td>
+                    <td>0</td>
+                    <td>14</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143344.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143349.1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208912.1</td>
+                    <td>57</td>
+                    <td>22</td>
+                    <td>26</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143341.1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208915.1</td>
+                    <td>634</td>
+                    <td>236</td>
+                    <td>250</td>
+                    <td>82</td>
+                </tr>
+            
+                <tr>
+                    <td>KV880768.1</td>
+                    <td>43</td>
+                    <td>37</td>
+                    <td>19</td>
+                    <td>17</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196472.1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383545.1</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383546.1</td>
+                    <td>22</td>
+                    <td>7</td>
+                    <td>10</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270824.1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270825.1</td>
+                    <td>19</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KN538368.1</td>
+                    <td>15</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559111.1</td>
+                    <td>18</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270829.1</td>
+                    <td>13</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270830.1</td>
+                    <td>19</td>
+                    <td>9</td>
+                    <td>12</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270831.1</td>
+                    <td>72</td>
+                    <td>34</td>
+                    <td>15</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270832.1</td>
+                    <td>110</td>
+                    <td>61</td>
+                    <td>16</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270902.1</td>
+                    <td>27</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270903.1</td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>13</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273368.1</td>
+                    <td>25</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559110.1</td>
+                    <td>28</td>
+                    <td>16</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270927.1</td>
+                    <td>32</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>GL877875.1</td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383550.2</td>
+                    <td>12</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL877876.1</td>
+                    <td>51</td>
+                    <td>20</td>
+                    <td>27</td>
+                    <td>16</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383552.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270904.1</td>
+                    <td>60</td>
+                    <td>34</td>
+                    <td>32</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383553.2</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270835.1</td>
+                    <td>18</td>
+                    <td>8</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383551.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270837.1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270833.1</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270834.1</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559112.1</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270838.1</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270840.1</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>9</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270842.1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270844.1</td>
+                    <td>22</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270845.1</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270846.1</td>
+                    <td>197</td>
+                    <td>61</td>
+                    <td>187</td>
+                    <td>59</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270847.1</td>
+                    <td>162</td>
+                    <td>107</td>
+                    <td>37</td>
+                    <td>23</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208919.1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270852.1</td>
+                    <td>28</td>
+                    <td>7</td>
+                    <td>22</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270848.1</td>
+                    <td>32</td>
+                    <td>12</td>
+                    <td>11</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383554.1</td>
+                    <td>39</td>
+                    <td>6</td>
+                    <td>24</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270906.1</td>
+                    <td>16</td>
+                    <td>4</td>
+                    <td>12</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383555.2</td>
+                    <td>15</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270851.1</td>
+                    <td>16</td>
+                    <td>2</td>
+                    <td>12</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270849.1</td>
+                    <td>36</td>
+                    <td>13</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270905.1</td>
+                    <td>123</td>
+                    <td>46</td>
+                    <td>63</td>
+                    <td>19</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270850.1</td>
+                    <td>63</td>
+                    <td>22</td>
+                    <td>24</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ031389.1</td>
+                    <td>67</td>
+                    <td>20</td>
+                    <td>40</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273375.1</td>
+                    <td>33</td>
+                    <td>16</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270853.1</td>
+                    <td>226</td>
+                    <td>115</td>
+                    <td>55</td>
+                    <td>23</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383556.1</td>
+                    <td>19</td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383557.1</td>
+                    <td>18</td>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270855.1</td>
+                    <td>122</td>
+                    <td>81</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270856.1</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090027.1</td>
+                    <td>13</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090026.1</td>
+                    <td>29</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208921.1</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270854.1</td>
+                    <td>36</td>
+                    <td>17</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270909.1</td>
+                    <td>44</td>
+                    <td>22</td>
+                    <td>17</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559114.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273378.1</td>
+                    <td>33</td>
+                    <td>24</td>
+                    <td>32</td>
+                    <td>24</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383563.3</td>
+                    <td>40</td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270861.1</td>
+                    <td>84</td>
+                    <td>36</td>
+                    <td>10</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383564.2</td>
+                    <td>13</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000258.2</td>
+                    <td>132</td>
+                    <td>72</td>
+                    <td>36</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270860.1</td>
+                    <td>38</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270907.1</td>
+                    <td>26</td>
+                    <td>13</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270862.1</td>
+                    <td>56</td>
+                    <td>26</td>
+                    <td>8</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383565.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270908.1</td>
+                    <td>171</td>
+                    <td>76</td>
+                    <td>42</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>KV766198.1</td>
+                    <td>118</td>
+                    <td>44</td>
+                    <td>30</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270910.1</td>
+                    <td>36</td>
+                    <td>15</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383566.1</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>JH159146.1</td>
+                    <td>43</td>
+                    <td>33</td>
+                    <td>26</td>
+                    <td>22</td>
+                </tr>
+            
+                <tr>
+                    <td>JH159147.1</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>JH159148.1</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270857.1</td>
+                    <td>385</td>
+                    <td>205</td>
+                    <td>102</td>
+                    <td>52</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270858.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270859.1</td>
+                    <td>12</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559116.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383567.1</td>
+                    <td>13</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383569.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383570.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383571.1</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383572.1</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270863.1</td>
+                    <td>11</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458385.1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270912.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270911.1</td>
+                    <td>20</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575254.1</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575246.1</td>
+                    <td>23</td>
+                    <td>16</td>
+                    <td>10</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575256.1</td>
+                    <td>59</td>
+                    <td>50</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575253.1</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575252.1</td>
+                    <td>30</td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575255.1</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575259.1</td>
+                    <td>32</td>
+                    <td>23</td>
+                    <td>13</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270917.1</td>
+                    <td>35</td>
+                    <td>28</td>
+                    <td>13</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270918.1</td>
+                    <td>14</td>
+                    <td>8</td>
+                    <td>10</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270919.1</td>
+                    <td>18</td>
+                    <td>10</td>
+                    <td>13</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575247.1</td>
+                    <td>26</td>
+                    <td>18</td>
+                    <td>12</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575248.1</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575250.1</td>
+                    <td>49</td>
+                    <td>39</td>
+                    <td>14</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575249.1</td>
+                    <td>69</td>
+                    <td>60</td>
+                    <td>16</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575257.1</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270920.1</td>
+                    <td>33</td>
+                    <td>26</td>
+                    <td>13</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270921.1</td>
+                    <td>40</td>
+                    <td>31</td>
+                    <td>18</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270922.1</td>
+                    <td>32</td>
+                    <td>23</td>
+                    <td>13</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270923.1</td>
+                    <td>33</td>
+                    <td>25</td>
+                    <td>13</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270929.1</td>
+                    <td>33</td>
+                    <td>25</td>
+                    <td>12</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270930.1</td>
+                    <td>21</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270931.1</td>
+                    <td>17</td>
+                    <td>10</td>
+                    <td>13</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270932.1</td>
+                    <td>19</td>
+                    <td>12</td>
+                    <td>17</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270933.1</td>
+                    <td>23</td>
+                    <td>14</td>
+                    <td>14</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270882.1</td>
+                    <td>27</td>
+                    <td>19</td>
+                    <td>19</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270883.1</td>
+                    <td>20</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270884.1</td>
+                    <td>23</td>
+                    <td>16</td>
+                    <td>13</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270885.1</td>
+                    <td>22</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270886.1</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270887.1</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270888.1</td>
+                    <td>12</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575258.1</td>
+                    <td>43</td>
+                    <td>36</td>
+                    <td>9</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575251.1</td>
+                    <td>29</td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575260.1</td>
+                    <td>20</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270889.1</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270890.1</td>
+                    <td>18</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000209.2</td>
+                    <td>16</td>
+                    <td>13</td>
+                    <td>12</td>
+                    <td>10</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270891.1</td>
+                    <td>16</td>
+                    <td>9</td>
+                    <td>13</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270914.1</td>
+                    <td>18</td>
+                    <td>13</td>
+                    <td>13</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270915.1</td>
+                    <td>16</td>
+                    <td>9</td>
+                    <td>13</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270916.1</td>
+                    <td>18</td>
+                    <td>12</td>
+                    <td>14</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949746.1</td>
+                    <td>215</td>
+                    <td>114</td>
+                    <td>46</td>
+                    <td>36</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949747.2</td>
+                    <td>112</td>
+                    <td>82</td>
+                    <td>31</td>
+                    <td>29</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949748.2</td>
+                    <td>50</td>
+                    <td>48</td>
+                    <td>23</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949749.2</td>
+                    <td>47</td>
+                    <td>46</td>
+                    <td>21</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949750.2</td>
+                    <td>45</td>
+                    <td>44</td>
+                    <td>20</td>
+                    <td>19</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949751.2</td>
+                    <td>51</td>
+                    <td>47</td>
+                    <td>23</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949752.1</td>
+                    <td>256</td>
+                    <td>138</td>
+                    <td>50</td>
+                    <td>40</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949753.2</td>
+                    <td>150</td>
+                    <td>92</td>
+                    <td>36</td>
+                    <td>29</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383573.1</td>
+                    <td>27</td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383574.1</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383575.2</td>
+                    <td>18</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270866.1</td>
+                    <td>18</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383576.1</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>11</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270867.1</td>
+                    <td>33</td>
+                    <td>9</td>
+                    <td>16</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270865.1</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270938.1</td>
+                    <td>353</td>
+                    <td>226</td>
+                    <td>74</td>
+                    <td>43</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270868.1</td>
+                    <td>20</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273387.1</td>
+                    <td>24</td>
+                    <td>13</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273330.1</td>
+                    <td>16</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270760.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270762.1</td>
+                    <td>75</td>
+                    <td>29</td>
+                    <td>14</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383518.1</td>
+                    <td>36</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270759.1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270766.1</td>
+                    <td>19</td>
+                    <td>10</td>
+                    <td>17</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383519.1</td>
+                    <td>53</td>
+                    <td>19</td>
+                    <td>10</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270761.1</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458382.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383520.2</td>
+                    <td>21</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270763.1</td>
+                    <td>23</td>
+                    <td>11</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458383.1</td>
+                    <td>62</td>
+                    <td>29</td>
+                    <td>14</td>
+                    <td>6</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270765.1</td>
+                    <td>12</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ983255.1</td>
+                    <td>24</td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td>11</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273331.1</td>
+                    <td>34</td>
+                    <td>21</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458384.1</td>
+                    <td>21</td>
+                    <td>6</td>
+                    <td>12</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KV880763.1</td>
+                    <td>25</td>
+                    <td>9</td>
+                    <td>14</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273332.1</td>
+                    <td>29</td>
+                    <td>21</td>
+                    <td>21</td>
+                    <td>15</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208904.1</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208905.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270892.1</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383577.2</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270869.1</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270870.1</td>
+                    <td>24</td>
+                    <td>18</td>
+                    <td>6</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270871.1</td>
+                    <td>21</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383579.2</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383580.2</td>
+                    <td>17</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383581.2</td>
+                    <td>30</td>
+                    <td>19</td>
+                    <td>6</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270872.1</td>
+                    <td>23</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270873.1</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270874.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383582.2</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383583.2</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270875.1</td>
+                    <td>38</td>
+                    <td>22</td>
+                    <td>24</td>
+                    <td>12</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270876.1</td>
+                    <td>17</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270877.1</td>
+                    <td>14</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270878.1</td>
+                    <td>18</td>
+                    <td>0</td>
+                    <td>10</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270879.1</td>
+                    <td>120</td>
+                    <td>57</td>
+                    <td>34</td>
+                    <td>17</td>
+                </tr>
+            
+                <tr>
+                    <td>KB663609.1</td>
+                    <td>25</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270928.1</td>
+                    <td>41</td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196485.1</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196486.1</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458387.1</td>
+                    <td>15</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ458388.1</td>
+                    <td>18</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ759761.1</td>
+                    <td>19</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273337.1</td>
+                    <td>49</td>
+                    <td>9</td>
+                    <td>30</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273338.1</td>
+                    <td>59</td>
+                    <td>32</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273339.1</td>
+                    <td>92</td>
+                    <td>32</td>
+                    <td>41</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270769.1</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270767.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383521.1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270772.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383522.1</td>
+                    <td>24</td>
+                    <td>15</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270770.1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270893.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270894.1</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>GL582966.2</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270773.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270776.1</td>
+                    <td>36</td>
+                    <td>19</td>
+                    <td>9</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270768.1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270774.1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273340.1</td>
+                    <td>22</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ983256.1</td>
+                    <td>62</td>
+                    <td>35</td>
+                    <td>25</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208907.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208908.1</td>
+                    <td>13</td>
+                    <td>2</td>
+                    <td>10</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>JH636055.2</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383526.1</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270779.1</td>
+                    <td>174</td>
+                    <td>23</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270777.1</td>
+                    <td>17</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270782.1</td>
+                    <td>19</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270783.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270895.1</td>
+                    <td>171</td>
+                    <td>21</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208909.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270780.1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270924.1</td>
+                    <td>172</td>
+                    <td>23</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>ML143343.1</td>
+                    <td>70</td>
+                    <td>0</td>
+                    <td>11</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270781.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270934.1</td>
+                    <td>177</td>
+                    <td>22</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559105.1</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270935.1</td>
+                    <td>154</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270936.1</td>
+                    <td>172</td>
+                    <td>22</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559102.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270937.1</td>
+                    <td>169</td>
+                    <td>21</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559103.1</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270784.1</td>
+                    <td>18</td>
+                    <td>0</td>
+                    <td>12</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ983258.1</td>
+                    <td>35</td>
+                    <td>10</td>
+                    <td>25</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KV766193.1</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383527.1</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270790.1</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383528.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000257.2</td>
+                    <td>31</td>
+                    <td>13</td>
+                    <td>22</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270785.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273349.1</td>
+                    <td>37</td>
+                    <td>23</td>
+                    <td>10</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270786.1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270788.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270789.1</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270896.1</td>
+                    <td>23</td>
+                    <td>7</td>
+                    <td>12</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270925.1</td>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090014.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090015.1</td>
+                    <td>26</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273356.1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383532.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270897.1</td>
+                    <td>93</td>
+                    <td>54</td>
+                    <td>23</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383531.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL949742.1</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL339449.2</td>
+                    <td>176</td>
+                    <td>97</td>
+                    <td>53</td>
+                    <td>15</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270795.1</td>
+                    <td>24</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270791.1</td>
+                    <td>30</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270898.1</td>
+                    <td>24</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270792.1</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270796.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270793.1</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270794.1</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KN196477.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KV575243.1</td>
+                    <td>14</td>
+                    <td>0</td>
+                    <td>14</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273357.1</td>
+                    <td>18</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383533.1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KB021644.2</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270797.1</td>
+                    <td>24</td>
+                    <td>13</td>
+                    <td>8</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270798.1</td>
+                    <td>14</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270799.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270800.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270801.1</td>
+                    <td>33</td>
+                    <td>13</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270802.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270758.1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000250.2</td>
+                    <td>617</td>
+                    <td>287</td>
+                    <td>181</td>
+                    <td>80</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000251.2</td>
+                    <td>1,288</td>
+                    <td>580</td>
+                    <td>327</td>
+                    <td>163</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000252.2</td>
+                    <td>1,237</td>
+                    <td>542</td>
+                    <td>306</td>
+                    <td>151</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000253.2</td>
+                    <td>1,057</td>
+                    <td>496</td>
+                    <td>286</td>
+                    <td>131</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000254.2</td>
+                    <td>1,192</td>
+                    <td>528</td>
+                    <td>282</td>
+                    <td>151</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000255.2</td>
+                    <td>1,255</td>
+                    <td>568</td>
+                    <td>308</td>
+                    <td>153</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000256.2</td>
+                    <td>1,129</td>
+                    <td>494</td>
+                    <td>288</td>
+                    <td>135</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270804.1</td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270806.1</td>
+                    <td>28</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383534.2</td>
+                    <td>34</td>
+                    <td>14</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270805.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270899.1</td>
+                    <td>19</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270809.1</td>
+                    <td>30</td>
+                    <td>17</td>
+                    <td>9</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270803.1</td>
+                    <td>156</td>
+                    <td>87</td>
+                    <td>113</td>
+                    <td>68</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270807.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559106.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ208913.1</td>
+                    <td>46</td>
+                    <td>43</td>
+                    <td>22</td>
+                    <td>21</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270808.1</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273358.1</td>
+                    <td>14</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270811.1</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270814.1</td>
+                    <td>13</td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270810.1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270812.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270815.1</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270813.1</td>
+                    <td>29</td>
+                    <td>17</td>
+                    <td>21</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270816.1</td>
+                    <td>176</td>
+                    <td>100</td>
+                    <td>22</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270818.1</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270817.1</td>
+                    <td>35</td>
+                    <td>18</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270900.1</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270819.1</td>
+                    <td>21</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270901.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270926.1</td>
+                    <td>20</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KZ559107.1</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270821.1</td>
+                    <td>52</td>
+                    <td>9</td>
+                    <td>15</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270822.1</td>
+                    <td>45</td>
+                    <td>19</td>
+                    <td>10</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383539.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383540.1</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383541.1</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL383542.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270823.1</td>
+                    <td>13</td>
+                    <td>5</td>
+                    <td>9</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KQ090018.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273395.1</td>
+                    <td>54</td>
+                    <td>41</td>
+                    <td>16</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270880.1</td>
+                    <td>16</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270881.1</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273396.1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270913.1</td>
+                    <td>14</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>MU273397.1</td>
+                    <td>246</td>
+                    <td>161</td>
+                    <td>22</td>
+                    <td>14</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000008.2</td>
+                    <td>94</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000009.2</td>
+                    <td>75</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000194.1</td>
+                    <td>27</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000195.1</td>
+                    <td>218</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000205.2</td>
+                    <td>199</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000213.1</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000214.1</td>
+                    <td>112</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000216.2</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000218.1</td>
+                    <td>176</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000219.1</td>
+                    <td>35</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000220.1</td>
+                    <td>16</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000221.1</td>
+                    <td>166</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000224.1</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>GL000225.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270442.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270706.1</td>
+                    <td>59</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270710.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270711.1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270712.1</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270713.1</td>
+                    <td>28</td>
+                    <td>2</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270714.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270717.1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270718.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270719.1</td>
+                    <td>13</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270720.1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270721.1</td>
+                    <td>62</td>
+                    <td>1</td>
+                    <td>9</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270722.1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270726.1</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270727.1</td>
+                    <td>59</td>
+                    <td>4</td>
+                    <td>13</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270728.1</td>
+                    <td>142</td>
+                    <td>4</td>
+                    <td>28</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270731.1</td>
+                    <td>46</td>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270733.1</td>
+                    <td>16</td>
+                    <td>0</td>
+                    <td>9</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270734.1</td>
+                    <td>16</td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270741.1</td>
+                    <td>18</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270742.1</td>
+                    <td>460</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270743.1</td>
+                    <td>29</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270744.1</td>
+                    <td>31</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270745.1</td>
+                    <td>8</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270746.1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270748.1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270749.1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270750.1</td>
+                    <td>15</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270751.1</td>
+                    <td>82</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270753.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>KI270755.1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+        </table>
+    </div>
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='build.sh'>build.sh</a>
+                    </td>
+                
+                <td class="nowrap">139.0 B</td>
+                <td class="nowrap">ed0979e2124ee0a3403cb875aaf6a76c</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='gencode.v49.chr_patch_hapl_scaff.annotation.gtf.gz'>gencode.v49.chr_patch_hapl_scaff.annotation.gtf.gz</a>
+                    </td>
+                
+                <td class="nowrap">93.05 MB</td>
+                <td class="nowrap">340c15f0cc68fc6dc63fc2326ecb5bbf</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='gencode.v49.chr_patch_hapl_scaff.annotation.txt.gz'>gencode.v49.chr_patch_hapl_scaff.annotation.txt.gz</a>
+                    </td>
+                
+                <td class="nowrap">26.69 MB</td>
+                <td class="nowrap">4627769cacea843fc287b1a267b74e55</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">1.45 KB</td>
+                <td class="nowrap">08067cac0213dec9e1fc06ca298141bc</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>
