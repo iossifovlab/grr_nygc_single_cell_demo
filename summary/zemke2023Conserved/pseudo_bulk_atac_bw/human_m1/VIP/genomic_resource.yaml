@@ -38,7 +38,12 @@ meta:
   labels:
     species: human
     cell_type: VIP
-    assay: atac
+    assay: 10x_Multiome
     brain_region: m1
     dataset: zemke2023Conserved
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: pseudo_bulk_cell_type
+    modalities: ATAC
+    processing_level: RPKM_normalized
 

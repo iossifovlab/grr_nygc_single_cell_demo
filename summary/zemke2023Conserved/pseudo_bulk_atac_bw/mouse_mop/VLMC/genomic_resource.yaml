@@ -38,7 +38,12 @@ meta:
   labels:
     species: mouse
     cell_type: VLMC
-    assay: atac
+    assay: 10x_Multiome
     brain_region: mop
     dataset: zemke2023Conserved
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: pseudo_bulk_cell_type
+    modalities: ATAC
+    processing_level: RPKM_normalized
 
