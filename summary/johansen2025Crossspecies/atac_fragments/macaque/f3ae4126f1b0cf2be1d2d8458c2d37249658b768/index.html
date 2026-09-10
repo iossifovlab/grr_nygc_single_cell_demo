@@ -1,0 +1,743 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        color: #252e34;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair minus the gap, and shrinks together with it. */
+      .figure-pair > .figure-thumbnail {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      table {
+    table-layout: fixed;
+}
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward,arrow_upward,unfold_more&display=block">
+<style>
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    <nav id="page-header">
+      <a href="../../../../../index.html">← Back to main page</a>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/johansen2025Crossspecies/atac_fragments/macaque/f3ae4126f1b0cf2be1d2d8458c2d37249658b768</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>fragment_score</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">ATAC fragments for macaque from library f3ae4126f1b0cf2be1d2d8458c2d37249658b768
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                             <style>
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+
+                              a {
+                                text-decoration: none;
+                                color: #24699E;
+                              }
+
+                              a:hover {
+                                color: #4C93C9;
+                              }
+                            </style>
+                            <p><a href="https://www.biorxiv.org/content/10.64898/2025.12.15.694496v1">Johansen et al., Cross-species consensus atlas of the primate basal ganglia, bioRxiv, 2025</a></p>
+
+<p>Downloaded from: <a href="s3://hmba-bican-sharing-802451596237-us-west-2/BasalGanglia_pre-print_ATAC">s3://hmba-bican-sharing-802451596237-us-west-2/BasalGanglia<em>pre-print</em>ATAC</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                    <ul>
+                    
+                        <li>assay: ATAC</li>
+                    
+                        <li>technology: 10x genomics</li>
+                    
+                        <li>library: f3ae4126f1b0cf2be1d2d8458c2d37249658b768</li>
+                    
+                        <li>species: macaque</li>
+                    
+                        <li>dataset: johansen2025Crossspecies</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+<h2>Scores (2)</h2>
+<div class="scrollable-table-container">  
+<table>
+    <colgroup>
+        <col style="width: 15%">
+        <col style="width: 6%">
+        <col style="width: 15%">
+        <col>
+        <col style="width: 220px">
+        <col style="width: 15%">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Default annotation</th>
+            <th>Description</th>
+            <th>Histogram</th>
+            <th>Range</th>
+        </tr>
+    </thead><tr class="score-definition">
+            <td>cell</td>
+            <td>str</td>
+            
+            
+                <td>
+                    <p>cell</p>
+                </td>
+            
+
+            <td>
+                <div></div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_cell.png"
+                    alt="HISTOGRAM FOR cell"
+                    title="cell"
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-cell"></td>
+            <td>
+                CCACAATAGGACCGCT-1, GGCTTCAAGGTCGATT-1, GGTTGCGGTGTGCACG-1, GCGTAACGTTTGGCGG-1, CGCTGTGCACTTCACT-1 (top 5 of 4753 values)</td>
+        </tr><tr class="score-definition">
+            <td>count</td>
+            <td>int</td>
+            
+            
+                <td>
+                    <p>count</p>
+                </td>
+            
+
+            <td>
+                <div></div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_count.png"
+                    alt="HISTOGRAM FOR count"
+                    title="count"
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-count"></td>
+            <td>
+                [1, 1]</td>
+        </tr>
+        <div id="modal-cell" class="modal">
+            <div class="modal-content">
+                <span title="cell" class="close">&times;</span>
+                <img src="statistics/histogram_cell.png"
+                    alt="HISTOGRAM FOR cell"
+                    title="cell"
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div>
+        <div id="modal-count" class="modal">
+            <div class="modal-content">
+                <span title="count" class="close">&times;</span>
+                <img src="statistics/histogram_count.png"
+                    alt="HISTOGRAM FOR count"
+                    title="count"
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+<h2>Fragments</h2>
+
+
+<p>not computed</p>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='f3ae4126f1b0cf2be1d2d8458c2d37249658b768.gz'>f3ae4126f1b0cf2be1d2d8458c2d37249658b768.gz</a>
+                    </td>
+                
+                <td class="nowrap">1.66 GB</td>
+                <td class="nowrap">0a38b55213555c7a5df0f9aff243ea53</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='f3ae4126f1b0cf2be1d2d8458c2d37249658b768.gz.tbi'>f3ae4126f1b0cf2be1d2d8458c2d37249658b768.gz.tbi</a>
+                    </td>
+                
+                <td class="nowrap">971.0 KB</td>
+                <td class="nowrap">4ce1149b980fed63980fe2d222bd10f7</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='fragment_count_dist_plot.py'>fragment_count_dist_plot.py</a>
+                    </td>
+                
+                <td class="nowrap">853.0 B</td>
+                <td class="nowrap">9d735ee8c687286d50484e7f1e398e60</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">1.16 KB</td>
+                <td class="nowrap">c5f7e91bb5fb599b128549a1e234209b</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+  </body>
+</html>
