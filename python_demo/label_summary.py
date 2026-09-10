@@ -16,7 +16,7 @@ labels_per_paper = defaultdict(set)
 n_objects = defaultdict(int)
 resource_types = defaultdict(lambda: defaultdict(int))
 
-for r in grr.search_resources(resource_query="summary/zemke2023Conserved/*"):
+for r in grr.search_resources(resource_query="summary/zemke2024Epigenetic/*"):
     parts = r.resource_id.split("/")
     assert parts[0] == "summary"
     dataset = parts[1]
