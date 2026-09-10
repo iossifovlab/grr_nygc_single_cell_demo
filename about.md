@@ -3,13 +3,13 @@
 
 # These are the studies:
 
-* [johansen2025Crossspecies](./summary/johansen2025Crossspecies/summary/index.html)
+* [johansen2025Crossspecies](./summary/johansen2025Crossspecies/dataset_summary/index.html)
 
-* [liu2026Multiomics](./summary/liu2026Multiomics/summary/index.html)
+* [liu2026Multiomics](./summary/liu2026Multiomics/dataset_summary/index.html)
 
-* [zemke2023Conserved](./summary/zemke2023Conserved/summary/index.html)
+* [zemke2023Conserved](./summary/zemke2023Conserved/dataset_summary/index.html)
 
-* [zemke2024Epigenetic](./summary/zemke2024Epigenetic/summary/index.html)
+* [zemke2024Epigenetic](./summary/zemke2024Epigenetic/dataset_summary/index.html)
 
 
 
