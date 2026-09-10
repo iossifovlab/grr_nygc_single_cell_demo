@@ -42,7 +42,6 @@ meta:
     '
   labels:
     assay: 10x_Multiome
-    individual_id: 4B_rep2_deep
     dataset: zemke2023Conserved
     reference_genome: reference/Mouse/genome/GRCm39
     species: mouse
@@ -52,3 +51,9 @@ meta:
     modalities: ATAC
     processing_level: aligned
     brain_region: mop
+    data_types: fragments
+    donor_id: Mop_4B
+    sample_id: Mop_4B_rep2
+    age: P56
+    sex: M
+    neun_enriched: 'no'

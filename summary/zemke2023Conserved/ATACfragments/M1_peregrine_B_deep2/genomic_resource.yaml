@@ -42,7 +42,6 @@ meta:
     '
   labels:
     assay: 10x_Multiome
-    individual_id: M1_peregrine_B_deep2
     dataset: zemke2023Conserved
     reference_genome: reference/Marmoset/genome/calJac240_pri
     species: marmoset
@@ -52,3 +51,9 @@ meta:
     modalities: ATAC
     processing_level: aligned
     brain_region: m1
+    data_types: fragments
+    donor_id: Peregrine
+    sample_id: M1_Peregrine_rep2
+    age: 5y7m
+    sex: M
+    neun_enriched: 'no'

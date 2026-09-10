@@ -25,7 +25,8 @@ for r in grr.search_resources(resource_query="summary/zemke2023Conserved/*"):
     n_objects[dataset, subdir] += 1
     resource_types[dataset, subdir][r.get_type()] += 1
     for label, value in r.get_labels().items():
-        hists[dataset][subdir][label][value] += 1
+        value_s = str(value)
+        hists[dataset][subdir][label][value_s] += 1
         labels_per_paper[dataset].add(label)
 
 for dsi, ds_d in hists.items():
@@ -43,7 +44,7 @@ for dsi, ds_d in hists.items():
         if sbdir not in ds_d:
             continue
         sb_d = ds_d[sbdir]
-        for lbl in labels_per_paper[dsi]:
+        for lbl in sorted(labels_per_paper[dsi]):
             if lbl not in sb_d:
                 continue
             print(f"        {lbl}: ", end="")

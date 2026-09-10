@@ -42,7 +42,6 @@ meta:
     '
   labels:
     assay: 10x_Multiome
-    individual_id: M1_mac3_deep
     dataset: zemke2023Conserved
     reference_genome: reference/Macaque/genome/Mmul_10
     species: macaque
@@ -52,3 +51,9 @@ meta:
     modalities: ATAC
     processing_level: aligned
     brain_region: m1
+    data_types: fragments
+    donor_id: '70313'
+    sample_id: M1_Mac3
+    age: 14 y
+    sex: M
+    neun_enriched: 'no'

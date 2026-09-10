@@ -597,7 +597,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=3f7ff0bada716506d58636831d4dc6c6`, document.baseURI))
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=ad0d8e2405a9dc17f76bca2d0aa22caf`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -32062,7 +32062,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">860.42 MB</td>
+              <td class="nowrap size-cell">860.43 MB</td>
               <td
                 class="nowrap"
                 title="Pseudo-bulk hic track in Macaque M1 region for Astro cell type"
@@ -35554,7 +35554,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">98.57 MB</td>
+              <td class="nowrap size-cell">98.58 MB</td>
               <td
                 class="nowrap"
                 title="Pseudo-bulk wc track in Mouse M1 region for L6-IT cell type"
@@ -37804,7 +37804,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">699.07 MB</td>
+              <td class="nowrap size-cell">699.08 MB</td>
               <td
                 class="nowrap"
                 title="Cell Expression Matrix by_sample for Mop_4B_rep1 with genes_and_atac_peaks features"

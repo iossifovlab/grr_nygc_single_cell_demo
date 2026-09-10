@@ -16,7 +16,15 @@ meta:
 
     '
   labels:
-    assay: cell_expression
+    assay: 10x_Multiome
     species: mouse
     dataset: zemke2023Conserved
     technology: 10x genomics
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: single_nucleus
+    modalities: RNA
+    data_types: gene_expression
+    processing_level: RPKM_normalized
+    reference_genome: reference/Mouse/genome/GRCm39
+    gene_models: reference/Mouse/gene_models/GRCm39_basic

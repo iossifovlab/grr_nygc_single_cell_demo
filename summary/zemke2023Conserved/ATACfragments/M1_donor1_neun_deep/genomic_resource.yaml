@@ -42,7 +42,6 @@ meta:
     '
   labels:
     assay: 10x_Multiome
-    individual_id: M1_donor1_neun_deep
     dataset: zemke2023Conserved
     reference_genome: reference/Human/genome/ucsc-hg38
     species: human
@@ -52,3 +51,9 @@ meta:
     modalities: ATAC
     processing_level: aligned
     brain_region: m1
+    data_types: fragments
+    donor_id: H19.30.001
+    sample_id: M1_donor1_neun
+    age: 42 y
+    sex: M
+    neun_enriched: 'yes'

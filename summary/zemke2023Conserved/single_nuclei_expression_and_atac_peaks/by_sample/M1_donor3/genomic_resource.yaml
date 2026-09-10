@@ -17,7 +17,24 @@ meta:
 
     '
   labels:
-    assay: cell_expression
-    sample: M1_donor3
+    assay: 10x_Multiome
     dataset: zemke2023Conserved
     technology: 10x genomics
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    resolution: single_nucleus
+    modalities:
+    - RNA
+    - ATAC
+    data_types:
+    - gene_expression
+    - peak_counts
+    processing_level: RPKM_normalized
+    donor_id: H19.30.004
+    sample_id: M1_donor3
+    age: 58 y
+    sex: M
+    species: human
+    neun_enriched: 'no'
+    reference_genome: reference/Human/genome/ucsc-hg38
+    gene_models: reference/Human/gene_models/GENCODE/49/basic/ALL
