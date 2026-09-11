@@ -45,6 +45,13 @@ meta:
 
     | `Cluster_ChromBPNet` | cluster id used in ChromBPNet models                            |'
   summary: Cluster annotations and QC metrics, related to Fig. 1
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S2
 type: data_frame

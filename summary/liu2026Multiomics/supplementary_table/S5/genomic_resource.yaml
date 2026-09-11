@@ -59,6 +59,13 @@ meta:
     | `max_tn5_response`                      | max of tn5_motif_1, tn5_motif_2, tn5_motif_3,
     tn5_motif_4, tn5_motif_5                                                                                                                             |'
   summary: ChromBPNet model QC, related to Fig. 3
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S5
 type: data_frame

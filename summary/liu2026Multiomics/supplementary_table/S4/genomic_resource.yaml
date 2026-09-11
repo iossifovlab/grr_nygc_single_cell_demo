@@ -17,6 +17,13 @@ meta:
     L3 cell clusters      |'
   summary: L3 cell cluster highly linked genes (HLGs) and global HLGs, related to
     Fig. 2
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S4
 type: data_frame

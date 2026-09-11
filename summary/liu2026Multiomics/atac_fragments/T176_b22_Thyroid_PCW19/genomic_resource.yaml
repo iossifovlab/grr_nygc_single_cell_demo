@@ -42,10 +42,17 @@ meta:
 
     '
   labels:
-    assay: atac_fragmets
-    technology: SHARE-seq
+    assay: SHARE-seq
     tissue_storage_code: T176
     exp_batch: 22
     organ: Thyroid
     pcw_age: 19
     dataset: liu2026Multiomics
+    vendor: unknown
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
+    resolution: single_cell
+    modalities: ATAC
+    processing_level: aligned
+    data_types: fragments

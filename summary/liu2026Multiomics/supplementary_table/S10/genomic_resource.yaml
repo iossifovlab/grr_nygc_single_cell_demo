@@ -11,6 +11,13 @@ meta:
 
     | `full_trait_name` | Name of trait                           |'
   summary: Causal variants linked to relevant traits, related to Fig. 6
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S10
 type: data_frame

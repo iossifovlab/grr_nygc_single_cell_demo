@@ -59,6 +59,13 @@ meta:
     overlap the causal SNP. "fetalOnly": < 2, "both": >=2, "notChecked": No matching
     adult peak sets were availabe for overlapping   |'
   summary: List of motifs with disease causal variants, related to Fig. 6
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S11
 type: data_frame

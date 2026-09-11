@@ -16,6 +16,13 @@ meta:
     | `url`       | Zenodo depo permanent doi url            |'
   summary: List of uploaded files, file types and Zenodo depositions they can be found
     in
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S14
 type: data_frame

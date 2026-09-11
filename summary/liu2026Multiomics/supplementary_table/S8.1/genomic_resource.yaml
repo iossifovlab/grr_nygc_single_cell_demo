@@ -25,6 +25,13 @@ meta:
     | `gene_name`           | Gene symbol of affected gene                                                                                                                                                                                    |'
   summary: eQTL tables (S8.1) and fisher exact test statistic (S8.2), related to Fig.
     5
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S8.1
 type: data_frame

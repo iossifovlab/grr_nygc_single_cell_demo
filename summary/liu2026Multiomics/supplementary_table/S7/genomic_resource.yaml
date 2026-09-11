@@ -74,6 +74,13 @@ meta:
     | `seqB_palindrome`              | whether sequence B is a true palindrome (P),
     quasi-palindrome (Q), or neither (-)                                                                                                                                                       |'
   summary: Results of in silico tests for synergy, related to Fig. 4
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S7
 type: data_frame

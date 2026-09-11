@@ -12,10 +12,17 @@ meta:
 
     '
   labels:
-    assay: cell_expression
-    technology: SHARE-seq
+    assay: SHARE-seq
     tissue_storage_code: T233
     exp_batch: 17
     organ: Thymus
     pcw_age: 21
     dataset: liu2026Multiomics
+    vendor: unknown
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
+    resolution: single_cell
+    modalities: RNA
+    processing_level: RPKM_normalized
+    data_types: gene_expression

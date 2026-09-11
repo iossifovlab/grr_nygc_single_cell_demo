@@ -35,6 +35,13 @@ meta:
 
     | `motifs`              | Motifs overlapped by causal variant                                            |'
   summary: Fetal-only hits for variant scoring, related to Fig. 6
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S13
 type: data_frame

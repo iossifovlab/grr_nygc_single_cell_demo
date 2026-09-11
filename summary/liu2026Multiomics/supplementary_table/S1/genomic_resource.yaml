@@ -67,6 +67,13 @@ meta:
     | `median_atac_frip`          | median ATAC fraction of reads in peaks per cell
     for final whitelisted cells                                                                                   |'
   summary: Sample meta data + QC thresholds per sample, related to Fig. 1
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S1
 type: data_frame

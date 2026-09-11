@@ -166,6 +166,13 @@ meta:
     \                                                                            \
     \                                                             |"
   summary: Motif lexicon summary, related to Fig. 4-5
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S6
 type: data_frame

@@ -21,6 +21,13 @@ meta:
 
     | `gene`       | marker gene name                                                                                                                          |'
   summary: Cluster marker genes, related to Fig. 1
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
 parameters:
   sheet_name: S3
 type: data_frame

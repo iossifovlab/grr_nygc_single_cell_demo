@@ -32,8 +32,15 @@ meta:
 
     '
   labels:
-    assay: pseudo_bulk_atac
-    technology: SHARE-seq
+    assay: SHARE-seq
     organ: Brain
     cluster: Brain_c11
     dataset: liu2026Multiomics
+    vendor: unknown
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
+    resolution: pseudo_bulk_cell_type
+    modalities: ATAC
+    processing_level: contribution_scores
+    data_types: atac_contribution

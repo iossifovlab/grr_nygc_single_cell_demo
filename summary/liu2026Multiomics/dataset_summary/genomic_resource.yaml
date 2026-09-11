@@ -45,3 +45,10 @@ meta:
     **pseudobulk\_accessibility** contains 558 cell-cluster-level bigWig resources organized first by organ and then by cluster. The collection contains 186 organ-specific clusters in total (4 Adrenal, 18 Brain, 19 Eye, 16 Heart, 14 Liver, 17 Lung, 22 Muscle, 19 Skin, 11 Spleen, 22 Stomach, 17 Thymus, and 7 Thyroid clusters). Each cluster contains three tracks. obs\_pval\_signal, representing observed ATAC accessibility; mean\_pred\_corrected, representing ChromBPNet-predicted accessibility; and mean\_counts\_contribs, representing nucleotide-level contribution scores from the ChromBPNet model. This gives 186 clusters x 3 tracks = 558 resources. The paper defines 203 L1 clusters overall, while these pseudobulk accessibility-related tracks are available for 186 clusters.
 
     The **supplementary\_table** collection contains 15 resources. These correspond to supplementary tables S1-S14, with supplementary table S8 represented as two separate resources, S8.1 and S8.2.
+  labels:
+    assay: SHARE-seq
+    vendor: unknown
+    sequencing_platform: Illumina
+    dataset: liu2026Multiomics
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
