@@ -13,9 +13,10 @@ meta:
 
     [Liu et al, Human Development Multiomic Atlas, Nature 2026.](https://www.nature.com/articles/s41586-026-10326-9)
 
+    [atac_fragments/](../atac_fragments)
 
         liu2026Multiomics/
-        ├── atac_fragments/                 82 resources
+        ├── [atac_fragments/](../atac_fragments)                  82 resources
         ├── rna_expression_matrix/          82 resources
         ├── pseudobulk_accessibility/      558 resources
         │   ├── Adrenal/                     4 clusters
@@ -38,7 +39,6 @@ meta:
         │   ├── Thymus/                     17 clusters
         │   └── Thyroid/                     7 clusters
         └── supplementary_table/            15 resources
-
     
     The data are organized into four main resource groups. **atac\_fragments** and **rna\_expression\_matrix** each contain 82 matched sample-level resources generated from SHARE-seq. atac\_fragments contains the single-cell chromatin-accessibility fragment data, while rna\_expression\_matrix contains the corresponding RNA expression matrices from the same samples. The final atlas reported in the paper contains 76 tissue samples. Six additional processed sample entries are present in the deposited data but are not included in the final sample table.
 

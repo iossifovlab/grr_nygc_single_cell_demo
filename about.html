@@ -12,15 +12,16 @@
         margin: 0;
       }
 
-            *, *::before, *::after {
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
         box-sizing: border-box;
         font-family: "Roboto", system-ui, -apple-system, sans-serif;
       }
 
-      body {
-        color: #252e34;
-      }
-      
       h1, h2, h3, h4, h5, h6 {
         color: #5b778c;
       }
@@ -254,6 +255,11 @@
         padding-left: 4px;
       }
 
+      
+      #section-about table {
+        font-size: 0.875em;
+      }
+
       #section-about a {
         text-decoration: underline;
       }
@@ -282,19 +288,84 @@
 
 <h1>Definition of the Used Labels</h1>
 
-<p>| Label                     | Short definition                                                                                          | Allowed values / examples                                                                    | Example                          |
-| ------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------- |
-| <strong><code>vendor</code></strong>              | Organization that developed/provides the experimental technology or assay system.                         | <code>10x_Genomics</code>, <code>Bio-Rad</code>, <code>Parse_Biosciences</code>, <code>unknown</code>                                    | <code>10x_Genomics</code>                   |
-| <strong><code>assay</code></strong>               | Specific experimental protocol or assay used to generate the biological data.                             | <code>10x_Multiome</code>, <code>10x_3prime_GEX</code>, <code>10x_ATAC</code>, <code>snm3C-seq</code>, <code>scRNA-seq</code>, <code>scATAC-seq</code>         | <code>10x_Multiome</code>                   |
-| <strong><code>sequencing_platform</code></strong> | Instrument/platform used to sequence the resulting libraries. This is distinct from the assay technology. | <code>Illumina</code>, <code>PacBio</code>, <code>Oxford_Nanopore</code>, <code>unknown</code>                                           | <code>Illumina</code>                       |
-| <strong><code>resolution</code></strong>          | Biological unit at which the measurements are represented.                                                | <code>bulk</code>, <code>single_cell</code>, <code>single_nucleus</code>, <code>cell_type</code>, <code>pseudo_bulk_cell_type</code>                | <code>single_nucleus</code>                 |
-| <strong><code>modalities</code></strong>          | Molecular measurement(s) represented in the dataset. <strong>Can contain multiple values.</strong>                     | <code>RNA</code>, <code>ATAC</code>, <code>DNA_methylation</code>, <code>3D_genome</code>, <code>protein</code>, etc.                               | <code>[RNA, ATAC]</code>                    |
-| <strong><code>data_types</code></strong>          | Specific type of data within each modality. <strong>Can contain multiple values.</strong>                              | <code>gene_expression</code>, <code>peak_counts</code>, <code>fragments</code>, <code>CpG_methylation</code>, <code>chromatin_contacts</code>, etc. | <code>[gene_expression, peak_counts]</code> |
-| <strong><code>file_format</code></strong>         | Format in which the data are stored.                                                                      | <code>h5ad</code>, <code>h5</code>, <code>mtx</code>, <code>tsv</code>, <code>bed</code>, <code>bedGraph</code>, <code>pairs</code>, <code>bigWig</code>, etc.                       | <code>h5ad</code>                           |
-| <strong><code>processing_level</code></strong>    | Degree to which the raw sequencing data have been processed.                                              | <code>raw</code>, <code>processed</code>, <code>normalized</code>, <code>annotated</code>, <code>aligned</code>, <code>RPKM_normalized</code>                  | <code>processed</code>                      |
-| <strong><code>dataset</code></strong>             | The dataset the resource belongs to.                                                                      | <code>zemke2023Conserved</code>, <code>liu2026Multiomics</code>                                                    | <code>liu2026Multiomics</code>              |
-| <strong><code>species</code></strong>             | The species the resource belongs to.                                                                      | <code>human</code>, <code>macaque</code>, <code>marmoset</code>, <code>mouse</code>                                                      | <code>human</code>                          |
-| <strong><code>brain_region</code></strong>        | The brain region.                                                                                         | <code>m1</code>, <code>mop</code>                                                                                  | <code>m1</code>                             |</p>
+<table>
+<thead>
+<tr>
+  <th>Label</th>
+  <th>Short definition</th>
+  <th>Allowed values / examples</th>
+  <th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong><code>vendor</code></strong></td>
+  <td>Organization that developed/provides the experimental technology or assay system.</td>
+  <td><code>10x_Genomics</code>, <code>Bio-Rad</code>, <code>Parse_Biosciences</code>, <code>unknown</code></td>
+  <td><code>10x_Genomics</code></td>
+</tr>
+<tr>
+  <td><strong><code>assay</code></strong></td>
+  <td>Specific experimental protocol or assay used to generate the biological data.</td>
+  <td><code>10x_Multiome</code>, <code>10x_3prime_GEX</code>, <code>10x_ATAC</code>, <code>snm3C-seq</code>, <code>scRNA-seq</code>, <code>scATAC-seq</code></td>
+  <td><code>10x_Multiome</code></td>
+</tr>
+<tr>
+  <td><strong><code>sequencing_platform</code></strong></td>
+  <td>Instrument/platform used to sequence the resulting libraries. This is distinct from the assay technology.</td>
+  <td><code>Illumina</code>, <code>PacBio</code>, <code>Oxford_Nanopore</code>, <code>unknown</code></td>
+  <td><code>Illumina</code></td>
+</tr>
+<tr>
+  <td><strong><code>resolution</code></strong></td>
+  <td>Biological unit at which the measurements are represented.</td>
+  <td><code>bulk</code>, <code>single_cell</code>, <code>single_nucleus</code>, <code>cell_type</code>, <code>pseudo_bulk_cell_type</code></td>
+  <td><code>single_nucleus</code></td>
+</tr>
+<tr>
+  <td><strong><code>modalities</code></strong></td>
+  <td>Molecular measurement(s) represented in the dataset. <strong>Can contain multiple values.</strong></td>
+  <td><code>RNA</code>, <code>ATAC</code>, <code>DNA_methylation</code>, <code>3D_genome</code>, <code>protein</code>, etc.</td>
+  <td><code>[RNA, ATAC]</code></td>
+</tr>
+<tr>
+  <td><strong><code>data_types</code></strong></td>
+  <td>Specific type of data within each modality. <strong>Can contain multiple values.</strong></td>
+  <td><code>gene_expression</code>, <code>peak_counts</code>, <code>fragments</code>, <code>CpG_methylation</code>, <code>chromatin_contacts</code>, etc.</td>
+  <td><code>[gene_expression, peak_counts]</code></td>
+</tr>
+<tr>
+  <td><strong><code>file_format</code></strong></td>
+  <td>Format in which the data are stored.</td>
+  <td><code>h5ad</code>, <code>h5</code>, <code>mtx</code>, <code>tsv</code>, <code>bed</code>, <code>bedGraph</code>, <code>pairs</code>, <code>bigWig</code>, etc.</td>
+  <td><code>h5ad</code></td>
+</tr>
+<tr>
+  <td><strong><code>processing_level</code></strong></td>
+  <td>Degree to which the raw sequencing data have been processed.</td>
+  <td><code>raw</code>, <code>processed</code>, <code>normalized</code>, <code>annotated</code>, <code>aligned</code>, <code>RPKM_normalized</code></td>
+  <td><code>processed</code></td>
+</tr>
+<tr>
+  <td><strong><code>dataset</code></strong></td>
+  <td>The dataset the resource belongs to.</td>
+  <td><code>zemke2023Conserved</code>, <code>liu2026Multiomics</code></td>
+  <td><code>liu2026Multiomics</code></td>
+</tr>
+<tr>
+  <td><strong><code>species</code></strong></td>
+  <td>The species the resource belongs to.</td>
+  <td><code>human</code>, <code>macaque</code>, <code>marmoset</code>, <code>mouse</code></td>
+  <td><code>human</code></td>
+</tr>
+<tr>
+  <td><strong><code>brain_region</code></strong></td>
+  <td>The brain region.</td>
+  <td><code>m1</code>, <code>mop</code></td>
+  <td><code>m1</code></td>
+</tr>
+</tbody>
+</table>
 
         </div>
     </body>

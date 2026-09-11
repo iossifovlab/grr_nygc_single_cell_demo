@@ -15,15 +15,16 @@
         padding: 40px 40px 100px;
       }
 
-            *, *::before, *::after {
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
         box-sizing: border-box;
         font-family: "Roboto", system-ui, -apple-system, sans-serif;
       }
 
-      body {
-        color: #252e34;
-      }
-      
       h1, h2, h3, h4, h5, h6 {
         color: #5b778c;
       }
@@ -522,22 +523,70 @@
                 <td>
                     <div>
                         <template shadowrootmode="open">
+                            
                              <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
                               img {
                                 max-width: min(100%, 800px);
                                 max-height: 50vh;
                                 width: auto;
                                 height: auto;
                                 display: block;
-                              }
-
-                              a {
-                                text-decoration: none;
-                                color: #24699E;
-                              }
-
-                              a:hover {
-                                color: #4C93C9;
                               }
                             </style>
                             <p><a href="https://www.nature.com/articles/s41586-023-06819-6">Zemke, et al, Conserved and divergent gene regulatory programs of the
@@ -554,6 +603,7 @@ mammalian neocortex, Nature 2023.</a></p>
             <tr>
                 <th>Labels</th>
                 <td>
+                
                 
                     <ul>
                     
@@ -577,7 +627,7 @@ mammalian neocortex, Nature 2023.</a></p>
                     
                         <li>processing_level: RPKM_normalized</li>
                     
-                        <li>data_types: coverage</li>
+                        <li>data_types: atac_signal</li>
                     
                     </ul>
                 
@@ -688,7 +738,7 @@ mammalian neocortex, Nature 2023.</a></p>
                     </td>
                 
                 <td class="nowrap">1.14 KB</td>
-                <td class="nowrap">04cf9566c9517bd7e698adc1a0beb7b0</td>
+                <td class="nowrap">3b9658b9640e4cb40776b76762668046</td>
             </tr>
             <tr>
                 

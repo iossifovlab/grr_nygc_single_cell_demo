@@ -15,15 +15,16 @@
         padding: 40px 40px 100px;
       }
 
-            *, *::before, *::after {
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
         box-sizing: border-box;
         font-family: "Roboto", system-ui, -apple-system, sans-serif;
       }
 
-      body {
-        color: #252e34;
-      }
-      
       h1, h2, h3, h4, h5, h6 {
         color: #5b778c;
       }
@@ -521,22 +522,70 @@
                 <td>
                     <div>
                         <template shadowrootmode="open">
+                            
                              <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
                               img {
                                 max-width: min(100%, 800px);
                                 max-height: 50vh;
                                 width: auto;
                                 height: auto;
                                 display: block;
-                              }
-
-                              a {
-                                text-decoration: none;
-                                color: #24699E;
-                              }
-
-                              a:hover {
-                                color: #4C93C9;
                               }
                             </style>
                             <p>The study presents a single-cell multiomic atlas of human fetal development across 12 organs—adrenal gland, brain, eye, heart, liver, lung, muscle, skin, spleen, stomach/oesophagus, thymus, and thyroid—spanning post-conception weeks 10 to 23. It characterizes how gene expression and chromatin accessibility vary across developing tissues and cell populations, providing a broad view of the molecular and regulatory programs that shape human development.</p>
@@ -545,8 +594,10 @@
 
 <p><a href="https://www.nature.com/articles/s41586-026-10326-9">Liu et al, Human Development Multiomic Atlas, Nature 2026.</a></p>
 
+<p><a href="../atac_fragments">atac_fragments/</a></p>
+
 <pre><code>liu2026Multiomics/
-├── atac_fragments/                 82 resources
+├── [atac_fragments/](../atac_fragments)                  82 resources
 ├── rna_expression_matrix/          82 resources
 ├── pseudobulk_accessibility/      558 resources
 │   ├── Adrenal/                     4 clusters
@@ -584,6 +635,7 @@
             <tr>
                 <th>Labels</th>
                 <td>
+                
                 
                     <ul>
                     
@@ -625,8 +677,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">4.07 KB</td>
-                <td class="nowrap">5f73dbf9925e256dcd85082ef3367815</td>
+                <td class="nowrap">4.13 KB</td>
+                <td class="nowrap">5b11b887a203db4625e7682de573f0ee</td>
             </tr>
             <tr>
                 

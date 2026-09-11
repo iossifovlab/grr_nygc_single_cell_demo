@@ -15,15 +15,16 @@
         padding: 40px 40px 100px;
       }
 
-            *, *::before, *::after {
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
         box-sizing: border-box;
         font-family: "Roboto", system-ui, -apple-system, sans-serif;
       }
 
-      body {
-        color: #252e34;
-      }
-      
       h1, h2, h3, h4, h5, h6 {
         color: #5b778c;
       }
@@ -523,22 +524,70 @@
                 <td>
                     <div>
                         <template shadowrootmode="open">
+                            
                              <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
                               img {
                                 max-width: min(100%, 800px);
                                 max-height: 50vh;
                                 width: auto;
                                 height: auto;
                                 display: block;
-                              }
-
-                              a {
-                                text-decoration: none;
-                                color: #24699E;
-                              }
-
-                              a:hover {
-                                color: #4C93C9;
                               }
                             </style>
                             <p>Nucleotide sequence of the GRCh38/hg38 human genome assembly from UCSC. GRCh38/hg38 is the current major human reference genome assembly used by many genomic resources and annotations. The FASTA uses UCSC-style chromosome names, including chr1 through chr22, chrX, chrY, and chrM.</p>
@@ -558,6 +607,7 @@
             <tr>
                 <th>Labels</th>
                 <td>
+                
                 
                 </td>
             </tr>
