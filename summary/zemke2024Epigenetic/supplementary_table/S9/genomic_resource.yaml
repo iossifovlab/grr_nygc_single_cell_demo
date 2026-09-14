@@ -3,6 +3,14 @@ format: tsv
 meta:
   description: ''
   summary: Table_S9
+  labels:
+    assay: 10x_Multiome
+    dataset: zemke2024Epigenetic
+    reference_genome: reference/Human/genome/ucsc-hg38
+    species: human
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: hippocampus
 parameters:
   sep: "\t"
 type: data_frame
