@@ -39,8 +39,16 @@ meta:
 
     '
   labels:
-    assay: ATAC
+    assay: 10x_Multiome
     technology: 10x genomics
     library: f008f9c799f3d5584b644a584b8c9941f40fc570
     species: macaque
     dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
+    resolution: single_nucleus
+    modalities: ATAC
+    processing_level: aligned
+    data_types: fragments
+    reference_genome: reference/Macaque/genome/Mmul_10

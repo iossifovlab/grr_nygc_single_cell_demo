@@ -39,8 +39,16 @@ meta:
 
     '
   labels:
-    assay: ATAC
+    assay: 10x_Multiome
     technology: 10x genomics
     library: 9cd08865b2655622f88cc505022438efb76d620e
     species: human
     dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
+    resolution: single_nucleus
+    modalities: ATAC
+    processing_level: aligned
+    data_types: fragments
+    reference_genome: reference/Human/genome/ucsc-hg38

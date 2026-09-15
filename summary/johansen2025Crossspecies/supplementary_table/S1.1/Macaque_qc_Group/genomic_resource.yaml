@@ -3,6 +3,12 @@ format: excel
 meta:
   description: nan
   summary: snRNA-seq cell cluster and Group quality metrics for each species. - Macaque_qc_Group
+  labels:
+    assay: 10x_Multiome
+    dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
 parameters:
   sheet_name: Macaque_qc_Group
 type: data_frame

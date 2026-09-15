@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 '''Print summary of the labels in the NYGC single cell GRR.'''
 
+import sys
 from collections import defaultdict
 from gain.genomic_resources.repository_factory import \
     build_genomic_resource_repository
+
+study = None
+if len(sys.argv) > 1:
+    study = sys.argv[1]
 
 try:
     grr
@@ -16,7 +21,9 @@ labels_per_paper = defaultdict(set)
 n_objects = defaultdict(int)
 resource_types = defaultdict(lambda: defaultdict(int))
 
-for r in grr.search_resources(resource_query="summary/zemke2024Epigenetic/*"):
+res_q = "summary/*" if study is None else f"summary/{study}/*"
+
+for r in grr.search_resources(resource_query=res_q):
     parts = r.resource_id.split("/")
     assert parts[0] == "summary"
     dataset = parts[1]

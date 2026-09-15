@@ -12,10 +12,13 @@ meta:
 
     '
   labels:
-    assay: scRNASeq
+    assay: 10x_Multiome
     directory: HMBA-Xenium-CJ23.56.004-BG
     release_date: '20250630'
     technology: spatial-Xenium
     species: Marmoset
     measure: log2
     dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia

@@ -28,8 +28,16 @@ meta:
 
     '
   labels:
-    assay: ATAC
+    assay: 10x_Multiome
     technology: 10x genomics
     cell_type: STR_LYPD6-RSPO2_GABA
     species: marmoset
     dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
+    resolution: pseudo_bulk_cell_type
+    modalities: ATAC
+    processing_level: RPKM_normalized
+    data_types: atac_signal
+    reference_genome: reference/Marmoset/genome/calJac240_pri

@@ -3,6 +3,12 @@ format: excel
 meta:
   description: nan
   summary: Divergent gene lists.
+  labels:
+    assay: 10x_Multiome
+    dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
 parameters:
   sheet_name: MSN_axes_genes
 type: data_frame

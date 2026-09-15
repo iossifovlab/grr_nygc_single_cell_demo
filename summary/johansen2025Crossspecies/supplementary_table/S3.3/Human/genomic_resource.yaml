@@ -3,6 +3,12 @@ format: excel
 meta:
   description: nan
   summary: STRd D2 StrioMat Hybrid MSN DEG lists. - Human
+  labels:
+    assay: 10x_Multiome
+    dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
 parameters:
   sheet_name: Human
 type: data_frame

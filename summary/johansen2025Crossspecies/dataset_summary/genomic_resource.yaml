@@ -62,3 +62,9 @@ meta:
     **pseudobulk\_atac** contains 169 cell-type-specific bigWig resources derived from the 10x Multiome ATAC data: 60 human, 58 macaque, and 51 marmoset tracks. These represent chromatin-accessibility signal aggregated across nuclei belonging to the same annotated cell type.
 
     The **supplementary\_table** collection contains 53 resources derived from the supplementary tables and associated subdivisions provided with the study.
+  labels:
+    assay: 10x_Multiome
+    dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia

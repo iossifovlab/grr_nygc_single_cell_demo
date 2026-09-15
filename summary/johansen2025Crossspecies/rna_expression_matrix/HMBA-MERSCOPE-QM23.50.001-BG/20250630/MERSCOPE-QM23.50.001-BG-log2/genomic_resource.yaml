@@ -12,10 +12,13 @@ meta:
 
     '
   labels:
-    assay: scRNASeq
+    assay: 10x_Multiome
     directory: HMBA-MERSCOPE-QM23.50.001-BG
     release_date: '20250630'
     technology: spatial-MERSCOPE
     species: Macaque
     measure: log2
     dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia

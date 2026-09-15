@@ -3,6 +3,12 @@ format: excel
 meta:
   description: nan
   summary: NS-Forest cell Group markers per species. - Macaque Group
+  labels:
+    assay: 10x_Multiome
+    dataset: johansen2025Crossspecies
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    brain_region: basal ganglia
 parameters:
   sheet_name: Macaque Group
 type: data_frame
