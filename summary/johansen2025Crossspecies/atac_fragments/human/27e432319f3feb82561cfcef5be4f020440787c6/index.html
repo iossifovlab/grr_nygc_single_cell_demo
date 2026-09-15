@@ -1,10 +1,19 @@
 
+
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap">
     <style>
+      
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../../../../../.static/fonts/roboto-v51-latin.1404ca34.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
       body {
         margin: 0;
       }
@@ -23,6 +32,16 @@
       *, *::before, *::after {
         box-sizing: border-box;
         font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -220,9 +239,57 @@
       #chromosomes-table thead tr:nth-of-type(2) th {
         border-top: none;
       }
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* In a page header the trail takes the size and weight the
+         header's one link used to have, so the current crumb -- a span,
+         which `#page-header a` does not reach -- reads at the same size
+         as the links beside it.  The index page's trail has no header
+         around it and keeps its own size. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      .copy-icon {
+        font-size: 20px;
+        color: #B9D3E7;
+      }
+
+      .copy-icon:hover {
+        cursor: pointer;
+        color: #85A2B9;
+      }
 
       #resource-table {
         margin-bottom: 70px;
+      }
+
+      #resource-table .copy-icon {
+        vertical-align: middle;
+        margin-left: 8px;
       }
 
       #resource-table th {
@@ -306,10 +373,32 @@
     </script>
     
     
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward,arrow_upward,unfold_more&display=block">
 <style>
+  
+      @font-face {
+        font-family: "Material Symbols Outlined";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: block;
+        src: url("../../../../../.static/fonts/material-symbols-outlined-v371.68a25c87.woff2") format("woff2");
+      }
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+
   /* The class is added by the script, so the pointer and the indicator
      only appear on a header the script actually wired up. */
   th.sortable {
@@ -490,8 +579,10 @@
 </script>
   </head>
   <body>
+    
     <nav id="page-header">
-      <a href="../../../../../index.html">← Back to main page</a>
+      <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/atac_fragments">atac_fragments</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/atac_fragments/human">human</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">27e432319f3feb82561cfcef5be4f020440787c6</span>
+      </div>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -499,7 +590,7 @@
         <table id="resource-table">
             <tr>
                 <th>Id</th>
-                <td>summary/johansen2025Crossspecies/atac_fragments/human/27e432319f3feb82561cfcef5be4f020440787c6</td>
+                <td>summary/johansen2025Crossspecies/atac_fragments/human/27e432319f3feb82561cfcef5be4f020440787c6<span class="material-symbols-outlined copy-icon" data-copy-id="summary/johansen2025Crossspecies/atac_fragments/human/27e432319f3feb82561cfcef5be4f020440787c6">content_copy</span></td>
             </tr>
             <tr>
                 <th>Type</th>
@@ -529,6 +620,16 @@
       *, *::before, *::after {
         box-sizing: border-box;
         font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -606,29 +707,29 @@
                     
                         <li>assay: 10x_Multiome</li>
                     
-                        <li>technology: 10x genomics</li>
+                        <li>brain_region: basal ganglia</li>
                     
-                        <li>library: 27e432319f3feb82561cfcef5be4f020440787c6</li>
-                    
-                        <li>species: human</li>
+                        <li>data_types: fragments</li>
                     
                         <li>dataset: johansen2025Crossspecies</li>
                     
-                        <li>vendor: 10x_Genomics</li>
-                    
-                        <li>sequencing_platform: Illumina</li>
-                    
-                        <li>brain_region: basal ganglia</li>
-                    
-                        <li>resolution: single_nucleus</li>
+                        <li>library: 27e432319f3feb82561cfcef5be4f020440787c6</li>
                     
                         <li>modalities: ATAC</li>
                     
                         <li>processing_level: aligned</li>
                     
-                        <li>data_types: fragments</li>
-                    
                         <li>reference_genome: reference/Human/genome/ucsc-hg38</li>
+                    
+                        <li>resolution: single_nucleus</li>
+                    
+                        <li>sequencing_platform: Illumina</li>
+                    
+                        <li>species: human</li>
+                    
+                        <li>technology: 10x genomics</li>
+                    
+                        <li>vendor: 10x_Genomics</li>
                     
                     </ul>
                 
@@ -805,5 +906,38 @@
     </tbody>
     </table>
     </div>
+    <script>
+        // ---- Copy a resource id (copy_button.jinja) ----
+        //
+        // Included, as statements, into a script that runs once the
+        // icons are in the document: the index page's, and the resource
+        // page's (gain#1477).  An icon names what it copies in
+        // `data-copy-id`; its text is the glyph it shows.
+        //
+        // The Clipboard API exists only on a secure origin -- https, or
+        // localhost -- so on a plain-http host there is nothing to write
+        // to, and an icon there is hidden rather than left as a dead
+        // click.  Hidden with an inline style, not removed: the index
+        // page rewrites its rows in place and looks each row's icon up
+        // again, so the element has to stay.
+        const copyIcons = document.querySelectorAll(".copy-icon");
+        if (!navigator.clipboard) {
+            copyIcons.forEach((icon) => { icon.style.display = "none"; });
+        }
+        const copyResourceId = (e) => {
+          navigator.clipboard.writeText(e.target.dataset.copyId).then(
+            () => {
+              // One tick at a time: every other icon goes back to its
+              // glyph, the clicked one reports for a moment.
+              copyIcons.forEach((icon) => { icon.textContent = 'content_copy'; });
+              e.target.textContent = 'check';
+              setTimeout(function(){
+                e.target.textContent = 'content_copy'
+              }, 3000);
+            }
+          )
+        };
+        copyIcons.forEach((icon) => icon.addEventListener("click", copyResourceId));
+    </script>
   </body>
 </html>
