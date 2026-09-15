@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 
-from gain.genomic_resources.repository_factory import build_genomic_resource_repository
-from gain.genomic_resources.genomic_scores import build_position_score_from_resource
-import pyBigWig
-from urllib.parse import urlparse
-from urllib.request import url2pathname
+import time
+from gain.genomic_resources.repository_factory import \
+    build_genomic_resource_repository
+from gain.genomic_resources.genomic_scores import \
+    build_position_score_from_resource
 import numpy as np
 from collections import defaultdict
-from typing import cast
 
 from gain.utils.verbosity_configuration import VerbosityConfiguration
 from gain import logging
@@ -17,50 +16,45 @@ from gain.genomic_resources.genomic_scores import build_score_from_resource
 from gain.genomic_resources.genomic_scores import PositionScore
 
 
-try:
-    grr
-except NameError:
-    grr = build_genomic_resource_repository()
+grr = build_genomic_resource_repository()
 
 
-resources = [
-#     grr.get_resource("summary/zemke2023Conserved/pseudo_bulk_mc_bedgraph/Human/CLA/CGN")
-]
-for res in grr.search_resources("liu2026Multiomics Thyroid c5", 
-                                resource_type="position_score"):
-    resources.append(res)
+resources = list(grr.search_resources("liu2026Multiomics Thyroid c5",
+                                      resource_type="position_score"))
 
 for res in resources:
-    print(f"working with {res.resource_id}")
-    print("The file url is:", res.get_file_url(res.config["table"]["filename"]))
-
-    # #
-    # # do that with bigwig's native interface 
-    # #
+    print(res.resource_id)
+    # # #
+    # # # do that with bigwig's native interface 
+    # # #
+    print("Native bw interface...")
+    t_start = time.time()
     bw = res.open_bigwig_file(res.config["table"]["filename"])
     interval_length_hist = defaultdict(int)
     mn = np.inf
     mx = -np.inf
-  
+
     chrom_sizes = bw.chroms()
     for chr_i, (chrom, length) in enumerate(chrom_sizes.items()):
         intervals = bw.intervals(chrom, 0, length)
-        print(chrom, len(intervals))
+        print("\t", chrom, len(intervals))
         if intervals:
             for iii, (start, end, value) in enumerate(intervals):
-                if (iii % 100_000) == 0:
-                    print(iii, (start, end, value))
-                # Process your data here (e.g., write to a file or analyze)
-                # print(f"{chrom}:{start}-{end} = {value}")
+                if (iii % 1_000_000) == 0:
+                    print("\t\t", iii, (start, end, value))
                 mn = min(mn, value)
                 mx = max(mx, value)
-                interval_length_hist[end-start] += 1
+                # interval_length_hist[end-start] += 1
         break
-    print("Result", res, mn, mx, interval_length_hist)
+    t_end = time.time()
+    print(f"\tResult in {t_end-t_start:.1f} seconds", mn, mx) # , interval_length_hist)
+
 
     #
-    # do that with bigwig's directly
+    # do that gains generator interface
     #
+    print("GAIn generator interface")
+    t_start = time.time()
     score = build_position_score_from_resource(res).open()
     interval_length_hist = defaultdict(int)
     mn = np.inf
@@ -68,18 +62,49 @@ for res in resources:
     assert len(score.get_all_scores()) == 1
 
     for chr_i, chrom in enumerate(score.get_all_chromosomes()):
-        for iii, (start, end, values) in enumerate(score.fetch_region_values(chrom, 1, 300_000_000)):
-            if (iii % 100_000) == 0:
-                print(iii, (start, end, values))
-            # print(start, end, values)
-            if values is not None:
-                assert len(values) == 1
-                value = values[0]
-                mn = min(mn, value)
-                mx = max(mx, value)
-                interval_length_hist[end-start] += 1
-        # if chr_i > 3:
+        print("\t", chrom)
+
+        for iii, (start, end, values) in \
+                enumerate(score.fetch_region_segments_scores(chrom)):
+            if (iii % 1_000_000) == 0:
+                print("\t\t", iii, (start, end, values))
+            assert values is not None and len(values) == 1
+            value = values[0]
+            mn = min(mn, value)
+            mx = max(mx, value)
+            # interval_length_hist[end-start] += 1
         break
-    print("Result", res, mn, mx, interval_length_hist)
+    score.close()
+    t_end = time.time()
+    print("\t", f"Result in {t_end-t_start:.1f} seconds", mn, mx) # , interval_length_hist)
+
+    #
+    # do that gains array interface
+    #
+    print("GAIn array interface")
+    t_start = time.time()
+    score = build_position_score_from_resource(res).open()
+    interval_length_hist = defaultdict(int)
+    mn = np.inf
+    mx = -np.inf
+    assert len(score.get_all_scores()) == 1
+
+    scr_name = score.get_all_scores()[0]
+    for chr_i, chrom in enumerate(score.get_all_chromosomes()):
+        print("\t", chrom)
+        for iii, (starts, ends, values_dict) in \
+                enumerate(score.fetch_region_value_arrays(
+                    chrom, None, None, [scr_name], batch_size=10_000)):
+            if (iii % 100) == 0:
+                print("\t\t", iii, f"batch_size: {len(starts)}...")
+            values = values_dict[scr_name]
+            mn = min(mn, values.min())
+            mx = max(mx, values.max())
+            # for ln in ends-starts:
+            #     interval_length_hist[ln] += 1
+        break
+    score.close()
+    t_end = time.time()
+    print(f"\tResult in {t_end-t_start:.1f} seconds", mn, mx) # , interval_length_hist)
 
 
