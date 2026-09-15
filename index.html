@@ -701,7 +701,7 @@
 
 
         const start = async (sqlite3) => {
-          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=3fd77befe413992fe18128740fcd6cd6`, document.baseURI))
+          const response = await fetch(new URL(`.CONTENTS.sqlite3.gz?v=32c675a6725e31876082f6ee1fe94a51`, document.baseURI))
           const ds = new DecompressionStream('gzip');
           const decompressedResponse = new Response(response.body.pipeThrough(ds));
           const arrayBuffer = await decompressedResponse.arrayBuffer()
@@ -12142,7 +12142,7 @@ Marmoset (Callithrix jacchus) reference genome
                 </div>
               </td>
               <td class="nowrap version-cell">0</td>
-              <td class="nowrap size-cell">5.22 KB</td>
+              <td class="nowrap size-cell">5.4 KB</td>
               <td
                 class="nowrap"
                 title="Johannssen et al, Cross-species single-nucleus multiomic atlas of the basal ganglia, bioRxiv 2025
