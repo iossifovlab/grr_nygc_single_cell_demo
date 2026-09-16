@@ -1,0 +1,314 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../../../../../../../../.static/fonts/roboto-v51-latin.1404ca34.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* The same frame as the resource page: a header across the
+         whole width, the content centred under it (gain#1477). */
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair minus the gap, and shrinks together with it. */
+      .figure-pair > .figure-thumbnail {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* In a page header the trail takes the size and weight the
+         header's one link used to have, so the current crumb -- a span,
+         which `#page-header a` does not reach -- reads at the same size
+         as the links beside it.  The index page's trail has no header
+         around it and keeps its own size. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    
+    <nav id="page-header">
+      <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../index.html#/reference">reference</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../index.html#/reference/Mouse">Mouse</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../index.html#/reference/Mouse/gene_models">gene_models</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../index.html#/reference/Mouse/gene_models/GENCODE">GENCODE</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../index.html#/reference/Mouse/gene_models/GENCODE/M22">M22</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../index.html#/reference/Mouse/gene_models/GENCODE/M22/comprehensive">comprehensive</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../../reference/Mouse/gene_models/GENCODE/M22/comprehensive/PRI/index.html">PRI</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
+      </div>
+    </nav>
+    <div class="page-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap">
+                <a href='stats.yaml'>stats.yaml</a>
+            </td>
+            <td class="nowrap">6.17 KB</td>
+            <td class="nowrap">39fa5251d845ea01c5a964119fb80e05</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='stats_hash'>stats_hash</a>
+            </td>
+            <td class="nowrap">157.0 B</td>
+            <td class="nowrap">cc863c8e0a6a80870acac294b54fd53b</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

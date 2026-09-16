@@ -1,0 +1,22 @@
+type: gene_models
+
+filename: Macaca_mulatta.Mmul_10.104.txt.gz
+format: default
+
+meta:
+  summary: |
+    Rhesus macaque (Macaca mulatta) Ensembl release 104 gene models
+
+  description: |
+
+    Ensembl release 104 gene models for the rhesus macaque (Macaca mulatta) on the Mmul\_10 genome assembly.
+
+    Downloaded from: https://ftp.ensembl.org/pub/release-104/gtf/macaca\_mulatta/Macaca\_mulatta.Mmul\_10.104.gtf.gz
+
+    Download date: 9/14/2026
+
+    Downloaded GTF is transformed to GAIn format by:
+    to\_gpf\_gene\_models\_format Macaca\_mulatta.Mmul\_10.104.gtf.gz Macaca\_mulatta.Mmul\_10.104.txt.gz
+
+  labels:
+    reference_genome: reference/Macaque/genome/Mmul_10

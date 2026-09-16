@@ -12,9 +12,6 @@ from gain.utils.verbosity_configuration import VerbosityConfiguration
 from gain import logging
 VerbosityConfiguration.adjust_verbosity(logging.DEBUG)
 
-from gain.genomic_resources.genomic_scores import build_score_from_resource
-from gain.genomic_resources.genomic_scores import PositionScore
-
 
 grr = build_genomic_resource_repository()
 
@@ -94,7 +91,7 @@ for res in resources:
         print("\t", chrom)
         for iii, (starts, ends, values_dict) in \
                 enumerate(score.fetch_region_value_arrays(
-                    chrom, None, None, [scr_name], batch_size=10_000)):
+                    chrom, None, None, [scr_name])):
             if (iii % 100) == 0:
                 print("\t\t", iii, f"batch_size: {len(starts)}...")
             values = values_dict[scr_name]

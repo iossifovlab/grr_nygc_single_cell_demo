@@ -1,0 +1,30 @@
+---
+
+type: genome
+
+filename: GRCh38.p13.genome.fa.gz
+
+chrom_prefix: "chr"
+
+PARS:
+  "X":
+    - "chrX:10000-2781479"
+    - "chrX:155701382-156030895"
+  "Y":
+    - "chrY:10000-2781479"
+    - "chrY:56887902-57217415"
+
+meta:
+  summary: |
+    Nucleotide sequence of the GRCh38.p13 genome assembly
+
+  description: |
+    Nucleotide sequence of the GRCh38.p13 genome assembly version on all regions, including reference chromosomes, scaffolds, assembly patches and haplotypes.
+
+    Downloaded on 5/30/2024
+
+    [https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode\_human/release\_34/GRCh38.p13.genome.fa.gz](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_34/GRCh38.p13.genome.fa.gz)
+
+    Downloaded gzip was recompressed with bgzip and indexed with samtools faidx.
+  
+  labels: ~
