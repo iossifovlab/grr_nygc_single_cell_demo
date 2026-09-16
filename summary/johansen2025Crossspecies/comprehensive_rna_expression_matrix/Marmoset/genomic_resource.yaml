@@ -14,9 +14,17 @@ meta:
     '
   labels:
     assay: 10x_Multiome
-    technology: 10x-Genomics
     species: Marmoset
     dataset: johansen2025Crossspecies
     vendor: 10x_Genomics
     sequencing_platform: Illumina
     brain_region: basal ganglia
+
+    resolution: single_cell
+    modalities: RNA
+    data_types: gene_expression
+    processing_level: processed_log2
+
+    reference_genome: reference/Marmoset/genome/calJac240_pri
+    gene_models: reference/Marmoset/gene_models/calJac240_pri_NCBI_RefSeq
+
