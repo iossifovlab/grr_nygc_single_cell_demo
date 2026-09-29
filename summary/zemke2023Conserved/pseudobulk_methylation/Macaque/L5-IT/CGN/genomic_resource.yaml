@@ -5,6 +5,9 @@ table:
   filename: L5-IT.CGN-both.bedgraph.gz
   format: tabix
 
+  chrom_mapping:
+    filename: "chrom_map.txt"
+
   header_mode: none
   zero_based: True
 
@@ -38,7 +41,7 @@ meta:
     assay: snm3C-seq
     brain_region: m1
     dataset: zemke2023Conserved
-    reference_genome: reference/Macaque/genome/Mmul_10
+    reference_genome: reference/Macaque/genome/rheMac10
     measure: CGN
     vendor: UCSD Single-cell Epigenomics Platform
     resolution: pseudo_bulk_cell_type

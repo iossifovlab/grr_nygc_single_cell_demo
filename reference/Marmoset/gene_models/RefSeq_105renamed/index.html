@@ -1,0 +1,2521 @@
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../../../../.static/fonts/roboto-v51-latin.1404ca34.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
+      .figure-pair > .figure-thumbnail {
+        flex: 0 1 calc(50% - 8px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* In a page header the trail takes the size and weight the
+         header's one link used to have, so the current crumb -- a span,
+         which `#page-header a` does not reach -- reads at the same size
+         as the links beside it.  The index page's trail has no header
+         around it and keeps its own size. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      .copy-icon {
+        font-size: 20px;
+        color: #B9D3E7;
+      }
+
+      .copy-icon:hover {
+        cursor: pointer;
+        color: #85A2B9;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table .copy-icon {
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<style>
+  
+      @font-face {
+        font-family: "Material Symbols Outlined";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: block;
+        src: url("../../../../.static/fonts/material-symbols-outlined-v371.68a25c87.woff2") format("woff2");
+      }
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    
+    <nav id="page-header">
+      <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/reference">reference</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/reference/Marmoset">Marmoset</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/reference/Marmoset/gene_models">gene_models</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">RefSeq_105renamed</span>
+      </div>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>reference/Marmoset/gene_models/RefSeq_105renamed<span class="material-symbols-outlined copy-icon" data-copy-id="reference/Marmoset/gene_models/RefSeq_105renamed">content_copy</span></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>gene_models</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                
+                <td>Marmoset (Callithrix jacchus) RefSeq Annotation Release 105 gene models
+
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                            
+                             <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+                            </style>
+                            <p>NCBI RefSeq gene models for the common marmoset (Callithrix jacchus), Annotation Release 105, on the Callithrix_jacchus_cj1700_1.1 genome assembly (GCF_009663435.1; calJac4).</p>
+
+<p>Zemke et al. (2023) used the cj1700_1.1 (calJac4) marmoset genome assembly and reported the annotation as GCA_009663435.2. The exact GTF file used in the study was not specified. This resource provides NCBI RefSeq Annotation Release 105 for the corresponding cj1700_1.1 RefSeq assembly, GCF_009663435.1.</p>
+
+<p>Downloaded from: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/663/435/GCF_009663435.1_Callithrix_jacchus_cj1700_1.1/GCF_009663435.1_Callithrix_jacchus_cj1700_1.1_genomic.gtf.gz</p>
+
+<p>Download date: 9/14/2026</p>
+
+<p>Sequence names in the downloaded GTF were renamed to the UCSC calJac4 chromosome naming convention using the official UCSC chromosome alias file:</p>
+
+<p>https://hgdownload.soe.ucsc.edu/goldenPath/calJac4/bigZips/calJac4.chromAlias.txt</p>
+
+<p>Only the sequence names in the first column of the GTF were changed. Gene models, transcript and gene identifiers, genomic coordinates, strand information, and annotation attributes were otherwise preserved.</p>
+
+<p>The renamed GTF was transformed to GAIn format by:
+to_gpf_gene_models_format renamed.gtf.gz renamed.txt.gz</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                
+                    <ul>
+                    
+                        <li>reference_genome: reference/Marmoset/genome/calJac4</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+<h2>Configuration</h2>
+    <p><b>Gene models file:</b> <a href="renamed.txt.gz">
+    renamed.txt.gz
+    </a></p>
+
+    <p><b>Format:</b> default</p>
+<h2>Statistics</h2>
+    <h3>Chromosome statistics</h3>
+    <div class="scrollable-table-container">
+        <table id="chromosomes-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Transcript number</th>
+                    <th>Protein coding transcript number</th>
+                    <th>Gene number</th>
+                    <th>Protein coding gene number</th>
+                </tr>
+                <tr>
+                    <th>Global</th>
+                    <td>107,814</td>
+                    <td>85,291</td>
+                    <td>35,145</td>
+                    <td>22,410</td>
+                </tr>
+            </thead>
+            
+                <tr>
+                    <td>chr1</td>
+                    <td>8,561</td>
+                    <td>6,711</td>
+                    <td>2,705</td>
+                    <td>1,686</td>
+                </tr>
+            
+                <tr>
+                    <td>chr1_NW_023264043v1_random</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr2</td>
+                    <td>5,752</td>
+                    <td>4,429</td>
+                    <td>2,011</td>
+                    <td>1,245</td>
+                </tr>
+            
+                <tr>
+                    <td>chr3</td>
+                    <td>4,488</td>
+                    <td>3,384</td>
+                    <td>1,500</td>
+                    <td>850</td>
+                </tr>
+            
+                <tr>
+                    <td>chr4</td>
+                    <td>5,680</td>
+                    <td>4,265</td>
+                    <td>2,050</td>
+                    <td>1,213</td>
+                </tr>
+            
+                <tr>
+                    <td>chr5</td>
+                    <td>9,191</td>
+                    <td>7,437</td>
+                    <td>3,002</td>
+                    <td>2,026</td>
+                </tr>
+            
+                <tr>
+                    <td>chr6</td>
+                    <td>5,272</td>
+                    <td>4,088</td>
+                    <td>1,683</td>
+                    <td>924</td>
+                </tr>
+            
+                <tr>
+                    <td>chr7</td>
+                    <td>7,282</td>
+                    <td>5,770</td>
+                    <td>2,170</td>
+                    <td>1,345</td>
+                </tr>
+            
+                <tr>
+                    <td>chr8</td>
+                    <td>3,693</td>
+                    <td>2,850</td>
+                    <td>1,263</td>
+                    <td>763</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9</td>
+                    <td>5,547</td>
+                    <td>4,488</td>
+                    <td>1,763</td>
+                    <td>1,152</td>
+                </tr>
+            
+                <tr>
+                    <td>chr9_NW_023264045v1_random</td>
+                    <td>61</td>
+                    <td>48</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10</td>
+                    <td>5,905</td>
+                    <td>4,699</td>
+                    <td>1,920</td>
+                    <td>1,229</td>
+                </tr>
+            
+                <tr>
+                    <td>chr10_NW_023264046v1_random</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11</td>
+                    <td>6,275</td>
+                    <td>5,237</td>
+                    <td>2,045</td>
+                    <td>1,467</td>
+                </tr>
+            
+                <tr>
+                    <td>chr11_NW_023264047v1_random</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12</td>
+                    <td>5,556</td>
+                    <td>4,553</td>
+                    <td>1,672</td>
+                    <td>1,119</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_NW_023264048v1_random</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr12_NW_023264049v1_random</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chr13</td>
+                    <td>3,305</td>
+                    <td>2,420</td>
+                    <td>1,073</td>
+                    <td>601</td>
+                </tr>
+            
+                <tr>
+                    <td>chr14</td>
+                    <td>3,702</td>
+                    <td>2,845</td>
+                    <td>1,283</td>
+                    <td>758</td>
+                </tr>
+            
+                <tr>
+                    <td>chr15</td>
+                    <td>4,373</td>
+                    <td>3,585</td>
+                    <td>1,194</td>
+                    <td>801</td>
+                </tr>
+            
+                <tr>
+                    <td>chr16</td>
+                    <td>2,498</td>
+                    <td>1,905</td>
+                    <td>815</td>
+                    <td>486</td>
+                </tr>
+            
+                <tr>
+                    <td>chr17</td>
+                    <td>2,432</td>
+                    <td>1,783</td>
+                    <td>747</td>
+                    <td>403</td>
+                </tr>
+            
+                <tr>
+                    <td>chr18</td>
+                    <td>2,612</td>
+                    <td>2,043</td>
+                    <td>940</td>
+                    <td>616</td>
+                </tr>
+            
+                <tr>
+                    <td>chr19</td>
+                    <td>2,061</td>
+                    <td>1,568</td>
+                    <td>688</td>
+                    <td>424</td>
+                </tr>
+            
+                <tr>
+                    <td>chr20</td>
+                    <td>1,985</td>
+                    <td>1,591</td>
+                    <td>601</td>
+                    <td>394</td>
+                </tr>
+            
+                <tr>
+                    <td>chr21</td>
+                    <td>1,120</td>
+                    <td>841</td>
+                    <td>433</td>
+                    <td>246</td>
+                </tr>
+            
+                <tr>
+                    <td>chr22</td>
+                    <td>5,788</td>
+                    <td>5,095</td>
+                    <td>1,745</td>
+                    <td>1,411</td>
+                </tr>
+            
+                <tr>
+                    <td>chrX</td>
+                    <td>3,511</td>
+                    <td>2,995</td>
+                    <td>1,275</td>
+                    <td>926</td>
+                </tr>
+            
+                <tr>
+                    <td>chrY</td>
+                    <td>208</td>
+                    <td>146</td>
+                    <td>83</td>
+                    <td>61</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264054v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264059v1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264061v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264065v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264066v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264072v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264075v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264078v1</td>
+                    <td>60</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264081v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264082v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264083v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264087v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264091v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264106v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264113v1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264121v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264122v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264124v1</td>
+                    <td>7</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264129v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264141v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264144v1</td>
+                    <td>15</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264157v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264161v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264193v1</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264201v1</td>
+                    <td>17</td>
+                    <td>17</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264208v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264212v1</td>
+                    <td>18</td>
+                    <td>16</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264225v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264243v1</td>
+                    <td>37</td>
+                    <td>25</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264244v1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264246v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264251v1</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264254v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264255v1</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264257v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264258v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264260v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264265v1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264269v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264270v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264272v1</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264273v1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264279v1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264287v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264290v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264291v1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264295v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264301v1</td>
+                    <td>14</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264306v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264311v1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264316v1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264323v1</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264325v1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264326v1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264328v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264339v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264342v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264346v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264348v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264350v1</td>
+                    <td>17</td>
+                    <td>11</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264353v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264358v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264359v1</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264360v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264362v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264363v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264365v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264376v1</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264382v1</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264386v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264387v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264403v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264411v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264412v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264417v1</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264419v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264421v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264426v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264445v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264446v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264448v1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264449v1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264451v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264454v1</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264455v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264461v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264465v1</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264477v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264481v1</td>
+                    <td>17</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264482v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264487v1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264488v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264492v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264496v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264498v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264500v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264505v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264507v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264513v1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264518v1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264519v1</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264521v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264526v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264529v1</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264536v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264538v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264539v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264541v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264542v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264548v1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264550v1</td>
+                    <td>16</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264551v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264552v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264560v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264561v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264571v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264588v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264600v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264605v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264614v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264620v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264621v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264627v1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264635v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264639v1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264648v1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264657v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264664v1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264665v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264670v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264671v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264673v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264679v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264681v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264689v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264706v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264717v1</td>
+                    <td>6</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264719v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264730v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264739v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264747v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264751v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264769v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264773v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264816v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264819v1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264820v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264852v1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264906v1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264943v1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264944v1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264945v1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264947v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264952v1</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264953v1</td>
+                    <td>46</td>
+                    <td>42</td>
+                    <td>46</td>
+                    <td>42</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264956v1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264957v1</td>
+                    <td>9</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264962v1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264963v1</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264964v1</td>
+                    <td>36</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264965v1</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264966v1</td>
+                    <td>30</td>
+                    <td>30</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264967v1</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264968v1</td>
+                    <td>19</td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264969v1</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264970v1</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264971v1</td>
+                    <td>26</td>
+                    <td>14</td>
+                    <td>19</td>
+                    <td>7</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264972v1</td>
+                    <td>45</td>
+                    <td>34</td>
+                    <td>19</td>
+                    <td>9</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264973v1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264974v1</td>
+                    <td>29</td>
+                    <td>7</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264976v1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264978v1</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>0</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264979v1</td>
+                    <td>23</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>5</td>
+                </tr>
+            
+                <tr>
+                    <td>chrUn_NW_023264980v1</td>
+                    <td>21</td>
+                    <td>15</td>
+                    <td>14</td>
+                    <td>8</td>
+                </tr>
+            
+                <tr>
+                    <td>chrM</td>
+                    <td>37</td>
+                    <td>13</td>
+                    <td>37</td>
+                    <td>13</td>
+                </tr>
+            
+        </table>
+    </div>
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='GCF_009663435.1_Callithrix_jacchus_cj1700_1.1_genomic.gtf.gz'>GCF_009663435.1_Callithrix_jacchus_cj1700_1.1_genomic.gtf.gz</a>
+                    </td>
+                
+                <td class="nowrap">27.6 MB</td>
+                <td class="nowrap">c45b2741a78be784207e707923a537eb</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='calJac4.chromAlias.txt'>calJac4.chromAlias.txt</a>
+                    </td>
+                
+                <td class="nowrap">67.99 KB</td>
+                <td class="nowrap">6b03f853513fc75a83e6983710dcbfb0</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">1.5 KB</td>
+                <td class="nowrap">8888bfc0dbe5cd92c8d64f9bafb7bd87</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='renamed.gtf.gz'>renamed.gtf.gz</a>
+                    </td>
+                
+                <td class="nowrap">27.43 MB</td>
+                <td class="nowrap">513374bb02f29129983dcd24255dc067</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='renamed.txt.gz'>renamed.txt.gz</a>
+                    </td>
+                
+                <td class="nowrap">7.32 MB</td>
+                <td class="nowrap">cc738dd9772e46378a30ee52ee065fb1</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    <script>
+        // ---- Copy a resource id (copy_button.jinja) ----
+        //
+        // Included, as statements, into a script that runs once the
+        // icons are in the document: the index page's, and the resource
+        // page's (gain#1477).  An icon names what it copies in
+        // `data-copy-id`; its text is the glyph it shows.
+        //
+        // The Clipboard API exists only on a secure origin -- https, or
+        // localhost -- so on a plain-http host there is nothing to write
+        // to, and an icon there is hidden rather than left as a dead
+        // click.  Hidden with an inline style, not removed: the index
+        // page rewrites its rows in place and looks each row's icon up
+        // again, so the element has to stay.
+        const copyIcons = document.querySelectorAll(".copy-icon");
+        if (!navigator.clipboard) {
+            copyIcons.forEach((icon) => { icon.style.display = "none"; });
+        }
+        const copyResourceId = (e) => {
+          navigator.clipboard.writeText(e.target.dataset.copyId).then(
+            () => {
+              // One tick at a time: every other icon goes back to its
+              // glyph, the clicked one reports for a moment.
+              copyIcons.forEach((icon) => { icon.textContent = 'content_copy'; });
+              e.target.textContent = 'check';
+              setTimeout(function(){
+                e.target.textContent = 'content_copy'
+              }, 3000);
+            }
+          )
+        };
+        copyIcons.forEach((icon) => icon.addEventListener("click", copyResourceId));
+    </script>
+  </body>
+</html>

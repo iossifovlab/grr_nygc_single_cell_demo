@@ -100,6 +100,26 @@
         text-overflow: ellipsis;
       }
 
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
       #page-header {
         display: flex;
         align-items: center;
@@ -162,9 +182,11 @@
       }
 
       /* Sized by the row rather than by the image: each takes half the
-         pair minus the gap, and shrinks together with it. */
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
       .figure-pair > .figure-thumbnail {
-        flex: 1 1 calc(50% - 16px);
+        flex: 0 1 calc(50% - 8px);
         min-width: 0;
         height: auto;
       }
@@ -297,38 +319,45 @@
         <tbody>
           <tr>
             <td class="nowrap">
+                <a href='chrom_lengths.json'>chrom_lengths.json</a>
+            </td>
+            <td class="nowrap">1.51 KB</td>
+            <td class="nowrap">7fa8864834df6710a3849caa3adc68f0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='coverage.json'>coverage.json</a>
+            </td>
+            <td class="nowrap">11.66 KB</td>
+            <td class="nowrap">84d7a93de95ca91b42b4d1eeb16acfb0</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
+                <a href='coverage_segment_lengths.png'>coverage_segment_lengths.png</a>
+            </td>
+            <td class="nowrap">33.61 KB</td>
+            <td class="nowrap">7941a983198156bcae23d8531b02fe0f</td>
+          </tr>
+          <tr>
+            <td class="nowrap">
                 <a href='histogram_zemke2023Conserved_Macaque_L6-IT_cgn_mc.json'>histogram_zemke2023Conserved_Macaque_L6-IT_cgn_mc.json</a>
             </td>
-            <td class="nowrap">2.71 KB</td>
-            <td class="nowrap">aa097dbf9c840e5147bbeeb050e8f3d5</td>
+            <td class="nowrap">2.8 KB</td>
+            <td class="nowrap">1826b3824517be154d8b7d3ecb795b91</td>
           </tr>
           <tr>
             <td class="nowrap">
                 <a href='histogram_zemke2023Conserved_Macaque_L6-IT_cgn_mc.png'>histogram_zemke2023Conserved_Macaque_L6-IT_cgn_mc.png</a>
             </td>
             <td class="nowrap">27.47 KB</td>
-            <td class="nowrap">3f61dde6e81b217e5aa80295a17b04e7</td>
-          </tr>
-          <tr>
-            <td class="nowrap">
-                <a href='histogram_zemke2023Conserved_Macaque_L6-IT_mc.json'>histogram_zemke2023Conserved_Macaque_L6-IT_mc.json</a>
-            </td>
-            <td class="nowrap">2.71 KB</td>
-            <td class="nowrap">aa097dbf9c840e5147bbeeb050e8f3d5</td>
-          </tr>
-          <tr>
-            <td class="nowrap">
-                <a href='histogram_zemke2023Conserved_Macaque_L6-IT_mc.png'>histogram_zemke2023Conserved_Macaque_L6-IT_mc.png</a>
-            </td>
-            <td class="nowrap">21.89 KB</td>
-            <td class="nowrap">def67f4d574e1b2fc0f47365561d3bfa</td>
+            <td class="nowrap">4736b512026d2a2ba283e0b87db4a301</td>
           </tr>
           <tr>
             <td class="nowrap">
                 <a href='stats_hash'>stats_hash</a>
             </td>
-            <td class="nowrap">762.0 B</td>
-            <td class="nowrap">5b8d71325e226494568fbc2593079c9c</td>
+            <td class="nowrap">838.0 B</td>
+            <td class="nowrap">1a86c23d7e1e1303a74b082e40f2203f</td>
           </tr>
         </tbody>
       </table>

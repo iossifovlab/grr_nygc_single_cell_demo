@@ -99,6 +99,26 @@
         text-overflow: ellipsis;
       }
 
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
       #page-header {
         display: flex;
         align-items: center;
@@ -161,9 +181,11 @@
       }
 
       /* Sized by the row rather than by the image: each takes half the
-         pair minus the gap, and shrinks together with it. */
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
       .figure-pair > .figure-thumbnail {
-        flex: 1 1 calc(50% - 16px);
+        flex: 0 1 calc(50% - 8px);
         min-width: 0;
         height: auto;
       }
@@ -602,11 +624,8 @@
             </tr>
             <tr>
                 <th>Summary</th>
-                <td>
-                    <div>
-                        <template shadowrootmode="open">ATAC fragments for human from library ef5704ee3eed96ac8f08bc7c53150ff060c9d583
-                        </template>
-                    </div>
+                
+                <td>ATAC fragments for human from library ef5704ee3eed96ac8f08bc7c53150ff060c9d583
                 </td>
             </tr>
             <tr>
@@ -719,7 +738,7 @@
                     
                         <li>processing_level: aligned</li>
                     
-                        <li>reference_genome: reference/Human/genome/ucsc-hg38</li>
+                        <li>reference_genome: reference/Human/genome/GRCh38.p14</li>
                     
                         <li>resolution: single_nucleus</li>
                     
@@ -747,7 +766,8 @@
         <col style="width: 15%">
         <col>
         <col style="width: 220px">
-        <col style="width: 15%">
+        <col style="width: 12%">
+        <col style="width: 200px">
     </colgroup>
     <thead>
         <tr>
@@ -757,6 +777,7 @@
             <th>Description</th>
             <th>Histogram</th>
             <th>Range</th>
+            <th>Summary</th>
         </tr>
     </thead><tr class="score-definition">
             <td>cell</td>
@@ -783,6 +804,8 @@
                     data-modal-trigger="modal-cell"></td>
             <td>
                 AATCTTGAGGCCTAAT-1169_A01, GTAGGATCAACTCGCG-1169_A01, GAAACTGAGCCGCAAC-1169_A01, TGAGCTTAGTCCTTCA-1169_A01, AATTGTGTCTTGCAAA-1169_A01 (top 5 of 1982 values)</td>
+            
+<td></td>
         </tr><tr class="score-definition">
             <td>count</td>
             <td>int</td>
@@ -808,6 +831,8 @@
                     data-modal-trigger="modal-count"></td>
             <td>
                 [1, 1]</td>
+            
+<td></td>
         </tr>
         <div id="modal-cell" class="modal">
             <div class="modal-content">
@@ -829,6 +854,7 @@
         </div>
 </table>
 </div>
+<p class="text-muted">n counts fragments; sd is the population standard deviation.</p>
 
 
 
@@ -890,7 +916,7 @@
                     </td>
                 
                 <td class="nowrap">1.39 KB</td>
-                <td class="nowrap">d762e4bfdffa1bbce68844a0ab28eff9</td>
+                <td class="nowrap">fbff276d2f36e94843e324acdae344e1</td>
             </tr>
             <tr>
                 

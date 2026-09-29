@@ -99,6 +99,26 @@
         text-overflow: ellipsis;
       }
 
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
       #page-header {
         display: flex;
         align-items: center;
@@ -161,9 +181,11 @@
       }
 
       /* Sized by the row rather than by the image: each takes half the
-         pair minus the gap, and shrinks together with it. */
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
       .figure-pair > .figure-thumbnail {
-        flex: 1 1 calc(50% - 16px);
+        flex: 0 1 calc(50% - 8px);
         min-width: 0;
         height: auto;
       }
@@ -600,11 +622,8 @@
             </tr>
             <tr>
                 <th>Summary</th>
-                <td>
-                    <div>
-                        <template shadowrootmode="open">Pseudo-bulk hic track in Marmoset M1 region for L6-IT cell type
-                        </template>
-                    </div>
+                
+                <td>Pseudo-bulk hic track in Marmoset M1 region for L6-IT cell type
                 </td>
             </tr>
             <tr>
@@ -720,7 +739,7 @@ mammalian neocortex, Nature 2023.</a></p>
                     
                         <li>processing_level: processed</li>
                     
-                        <li>reference_genome: reference/Marmoset/genome/cj1700_1.1</li>
+                        <li>reference_genome: reference/Marmoset/genome/calJac4</li>
                     
                         <li>resolution: pseudo_bulk_cell_type</li>
                     
@@ -763,8 +782,8 @@ mammalian neocortex, Nature 2023.</a></p>
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">792.0 B</td>
-                <td class="nowrap">9d6b8a7c5cbdfbb0850b4193d8d200ab</td>
+                <td class="nowrap">789.0 B</td>
+                <td class="nowrap">49a68b09c6cb9bba6dcd22dfb9721e6a</td>
             </tr>
             <tr>
                 

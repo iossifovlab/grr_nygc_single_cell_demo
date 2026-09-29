@@ -10,21 +10,27 @@
 - md5: 095eaa0e2f0d71630548c109c6c39347
   name: L4.CHN-both.bedgraph.gz.tbi.dvc
   size: 109
-- md5: 11941bb3c358ff933bac38f60b57a948
+- md5: 66651c9a7fefbd64b075193fe367bbd3
+  name: chrom_map.txt
+  size: 219
+- md5: a3f261ca59f902bcab6c0fa3be1a585e
   name: genomic_resource.yaml
-  size: 1095
-- md5: ed3d78d6a8ea73f9c36aba47c87f6312
+  size: 1144
+- md5: 4a5fab1703ca7e73af10d03ef77cbf48
+  name: statistics/chrom_lengths.json
+  size: 1536
+- md5: eaf7b12a66a30d66913607ca37186a1d
+  name: statistics/coverage.json
+  size: 13310
+- md5: 7f5af719d46c2bc27a341602b0abad84
+  name: statistics/coverage_segment_lengths.png
+  size: 38555
+- md5: 6ecd40028490329f3e254f9d3abf8d4d
   name: statistics/histogram_zemke2023Conserved_Macaque_L4_chn_mc.json
-  size: 2571
-- md5: 718bd3c6d5297353459c022c9c112cf9
+  size: 2663
+- md5: fd4c6a090ddb0e8660e28137c3922d53
   name: statistics/histogram_zemke2023Conserved_Macaque_L4_chn_mc.png
   size: 24609
-- md5: ed3d78d6a8ea73f9c36aba47c87f6312
-  name: statistics/histogram_zemke2023Conserved_Macaque_L4_mc.json
-  size: 2571
-- md5: 9efebb90c8eae42ec973958cead82761
-  name: statistics/histogram_zemke2023Conserved_Macaque_L4_mc.png
-  size: 18846
-- md5: 242e0d424d78cc3eab45fa0764e2ba84
+- md5: 0a75dbff75c5ea46fa5615bb178eac58
   name: statistics/stats_hash
-  size: 750
+  size: 826

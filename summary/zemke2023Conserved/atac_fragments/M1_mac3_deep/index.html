@@ -99,6 +99,26 @@
         text-overflow: ellipsis;
       }
 
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
       #page-header {
         display: flex;
         align-items: center;
@@ -161,9 +181,11 @@
       }
 
       /* Sized by the row rather than by the image: each takes half the
-         pair minus the gap, and shrinks together with it. */
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
       .figure-pair > .figure-thumbnail {
-        flex: 1 1 calc(50% - 16px);
+        flex: 0 1 calc(50% - 8px);
         min-width: 0;
         height: auto;
       }
@@ -602,11 +624,8 @@
             </tr>
             <tr>
                 <th>Summary</th>
-                <td>
-                    <div>
-                        <template shadowrootmode="open">ATAC fragments for M1_mac3_deep from zemke2023Conserved.
-                        </template>
-                    </div>
+                
+                <td>ATAC fragments for M1_mac3_deep from zemke2023Conserved.
                 </td>
             </tr>
             <tr>
@@ -724,7 +743,7 @@ mammalian neocortex, Nature 2023.</a></p>
                     
                         <li>processing_level: aligned</li>
                     
-                        <li>reference_genome: reference/Macaque/genome/Mmul_10</li>
+                        <li>reference_genome: reference/Macaque/genome/rheMac10</li>
                     
                         <li>resolution: single_nucleus</li>
                     
@@ -756,7 +775,8 @@ mammalian neocortex, Nature 2023.</a></p>
         <col style="width: 15%">
         <col>
         <col style="width: 220px">
-        <col style="width: 15%">
+        <col style="width: 12%">
+        <col style="width: 200px">
     </colgroup>
     <thead>
         <tr>
@@ -766,6 +786,7 @@ mammalian neocortex, Nature 2023.</a></p>
             <th>Description</th>
             <th>Histogram</th>
             <th>Range</th>
+            <th>Summary</th>
         </tr>
     </thead><tr class="score-definition">
             <td>cell</td>
@@ -792,6 +813,8 @@ mammalian neocortex, Nature 2023.</a></p>
                     data-modal-trigger="modal-cell"></td>
             <td>
                 CCTAAGGTCTTTGACT-1, ATTAGTCCACATTGCA-1, TGACCTTGTGTTGCAA-1, TGCTAACAGCAAGGTA-1, GGCTTCAAGGCTGTCA-1 (top 5 of 662708 values)</td>
+            
+<td></td>
         </tr><tr class="score-definition">
             <td>count</td>
             <td>int</td>
@@ -817,6 +840,8 @@ mammalian neocortex, Nature 2023.</a></p>
                     data-modal-trigger="modal-count"></td>
             <td>
                 [1, 19]</td>
+            
+<td></td>
         </tr>
         <div id="modal-cell" class="modal">
             <div class="modal-content">
@@ -838,6 +863,7 @@ mammalian neocortex, Nature 2023.</a></p>
         </div>
 </table>
 </div>
+<p class="text-muted">n counts fragments; sd is the population standard deviation.</p>
 
 
 
@@ -932,10 +958,7 @@ mammalian neocortex, Nature 2023.</a></p>
 </table>
 </div>
 <h3>Fragment lengths</h3>
-<img src="statistics/fragment_lengths.png"
-    alt="global fragment-length histogram"
-    class="statistics-figure"
-    title="Fragment lengths across all chromosomes, fixed log2 bins">
+<p>fragment lengths not computed</p>
 
 
 
@@ -985,7 +1008,7 @@ mammalian neocortex, Nature 2023.</a></p>
                     </td>
                 
                 <td class="nowrap">1.41 KB</td>
-                <td class="nowrap">4c0fc5f83172e5f5a8c97a97abf0a3aa</td>
+                <td class="nowrap">84c6f650a88cfc004890bddd6d939744</td>
             </tr>
             <tr>
                 

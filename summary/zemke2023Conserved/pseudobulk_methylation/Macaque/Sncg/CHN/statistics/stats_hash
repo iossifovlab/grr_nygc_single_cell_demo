@@ -5,6 +5,9 @@
       "config": {
         "filename": "Sncg.CHN-both.bedgraph.gz",
         "format": "tabix",
+        "chrom_mapping": {
+          "filename": "chrom_map.txt"
+        },
         "header_mode": "none",
         "zero_based": true,
         "chrom": {

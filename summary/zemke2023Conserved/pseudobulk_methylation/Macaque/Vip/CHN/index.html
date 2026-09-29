@@ -99,6 +99,26 @@
         text-overflow: ellipsis;
       }
 
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
       #page-header {
         display: flex;
         align-items: center;
@@ -161,9 +181,11 @@
       }
 
       /* Sized by the row rather than by the image: each takes half the
-         pair minus the gap, and shrinks together with it. */
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
       .figure-pair > .figure-thumbnail {
-        flex: 1 1 calc(50% - 16px);
+        flex: 0 1 calc(50% - 8px);
         min-width: 0;
         height: auto;
       }
@@ -602,11 +624,8 @@
             </tr>
             <tr>
                 <th>Summary</th>
-                <td>
-                    <div>
-                        <template shadowrootmode="open">Pseudo-bulk wc track in Macaque M1 region for Vip cell type
-                        </template>
-                    </div>
+                
+                <td>Pseudo-bulk wc track in Macaque M1 region for Vip cell type
                 </td>
             </tr>
             <tr>
@@ -724,7 +743,7 @@ mammalian neocortex, Nature 2023.</a></p>
                     
                         <li>processing_level: processed</li>
                     
-                        <li>reference_genome: reference/Macaque/genome/Mmul_10</li>
+                        <li>reference_genome: reference/Macaque/genome/rheMac10</li>
                     
                         <li>resolution: pseudo_bulk_cell_type</li>
                     
@@ -750,7 +769,8 @@ mammalian neocortex, Nature 2023.</a></p>
         <col style="width: 15%">
         <col>
         <col style="width: 220px">
-        <col style="width: 15%">
+        <col style="width: 12%">
+        <col style="width: 200px">
     </colgroup>
     <thead>
         <tr>
@@ -760,6 +780,7 @@ mammalian neocortex, Nature 2023.</a></p>
             <th>Description</th>
             <th>Histogram</th>
             <th>Range</th>
+            <th>Summary</th>
         </tr>
     </thead><tr class="score-definition">
             <td>zemke2023Conserved_Macaque_Vip_chn_mc</td>
@@ -786,6 +807,13 @@ mammalian neocortex, Nature 2023.</a></p>
                     data-modal-trigger="modal-zemke2023Conserved_Macaque_Vip_chn_mc"></td>
             <td>
                 [0, 1]</td>
+            
+<td>
+<dl class="moments">
+<dt>n</dt><dd>2,786,482,883</dd>
+<dt>mean</dt><dd>0.0407</dd>
+<dt>sd</dt><dd>0.0403</dd>
+</dl></td>
         </tr>
         <div id="modal-zemke2023Conserved_Macaque_Vip_chn_mc" class="modal">
             <div class="modal-content">
@@ -798,13 +826,195 @@ mammalian neocortex, Nature 2023.</a></p>
         </div>
 </table>
 </div>
+<p class="text-muted">n counts base pairs; sd is the population standard deviation.</p>
 
 
 
 <h2>Coverage</h2>
 
 
-<p>not computed</p>
+
+
+<div class="scrollable-table-container">
+<table>
+    <thead>
+        <tr>
+            <th data-sort="text">Chromosome</th>
+            <th data-sort="number">Covered positions</th>
+            <th data-sort="number">Covered %</th>
+            <th data-sort="number">Segments</th>
+        </tr><tr>
+            <td>all chromosomes</td>
+            <td>2786482883</td><td>93.78%</td>
+            <td>54566393</td>
+        </tr>
+    </thead>
+    <tbody><tr>
+            <td data-sort-value="chr011">chr1</td>
+            <td data-sort-value="220099992">220099992</td>
+            <td data-sort-value="0.9842724349570973">98.43%</td>
+            <td data-sort-value="4327847">4327847</td>
+        </tr><tr>
+            <td data-sort-value="chr012">chr2</td>
+            <td data-sort-value="192831600">192831600</td>
+            <td data-sort-value="0.9828420033961208">98.28%</td>
+            <td data-sort-value="3791944">3791944</td>
+        </tr><tr>
+            <td data-sort-value="chr013">chr3</td>
+            <td data-sort-value="182439447">182439447</td>
+            <td data-sort-value="0.9846213168883733">98.46%</td>
+            <td data-sort-value="3591617">3591617</td>
+        </tr><tr>
+            <td data-sort-value="chr014">chr4</td>
+            <td data-sort-value="166704100">166704100</td>
+            <td data-sort-value="0.9808255959648639">98.08%</td>
+            <td data-sort-value="3274486">3274486</td>
+        </tr><tr>
+            <td data-sort-value="chr015">chr5</td>
+            <td data-sort-value="184346692">184346692</td>
+            <td data-sort-value="0.9841418720391666">98.41%</td>
+            <td data-sort-value="3623841">3623841</td>
+        </tr><tr>
+            <td data-sort-value="chr016">chr6</td>
+            <td data-sort-value="175739500">175739500</td>
+            <td data-sort-value="0.981315825307775">98.13%</td>
+            <td data-sort-value="3452676">3452676</td>
+        </tr><tr>
+            <td data-sort-value="chr017">chr7</td>
+            <td data-sort-value="166613264">166613264</td>
+            <td data-sort-value="0.9808363600459942">98.08%</td>
+            <td data-sort-value="3273248">3273248</td>
+        </tr><tr>
+            <td data-sort-value="chr018">chr8</td>
+            <td data-sort-value="141786300">141786300</td>
+            <td data-sort-value="0.9732767835544537">97.33%</td>
+            <td data-sort-value="2788370">2788370</td>
+        </tr><tr>
+            <td data-sort-value="chr019">chr9</td>
+            <td data-sort-value="130325550">130325550</td>
+            <td data-sort-value="0.9716783625703962">97.17%</td>
+            <td data-sort-value="2560122">2560122</td>
+        </tr><tr>
+            <td data-sort-value="chr0210">chr10</td>
+            <td data-sort-value="95068350">95068350</td>
+            <td data-sort-value="0.9552903111020649">95.53%</td>
+            <td data-sort-value="1872695">1872695</td>
+        </tr><tr>
+            <td data-sort-value="chr0211">chr11</td>
+            <td data-sort-value="129801900">129801900</td>
+            <td data-sort-value="0.9754694370434853">97.55%</td>
+            <td data-sort-value="2549151">2549151</td>
+        </tr><tr>
+            <td data-sort-value="chr0212">chr12</td>
+            <td data-sort-value="127730500">127730500</td>
+            <td data-sort-value="0.9822109550488876">98.22%</td>
+            <td data-sort-value="2514678">2514678</td>
+        </tr><tr>
+            <td data-sort-value="chr0213">chr13</td>
+            <td data-sort-value="106674880">106674880</td>
+            <td data-sort-value="0.9810345371447637">98.10%</td>
+            <td data-sort-value="2098430">2098430</td>
+        </tr><tr>
+            <td data-sort-value="chr0214">chr14</td>
+            <td data-sort-value="125003906">125003906</td>
+            <td data-sort-value="0.976163610404317">97.62%</td>
+            <td data-sort-value="2453075">2453075</td>
+        </tr><tr>
+            <td data-sort-value="chr0215">chr15</td>
+            <td data-sort-value="109358000">109358000</td>
+            <td data-sort-value="0.9653471123676468">96.53%</td>
+            <td data-sort-value="2153033">2153033</td>
+        </tr><tr>
+            <td data-sort-value="chr0216">chr16</td>
+            <td data-sort-value="76699064">76699064</td>
+            <td data-sort-value="0.9632285826838975">96.32%</td>
+            <td data-sort-value="1505970">1505970</td>
+        </tr><tr>
+            <td data-sort-value="chr0217">chr17</td>
+            <td data-sort-value="92860200">92860200</td>
+            <td data-sort-value="0.9730360920900918">97.30%</td>
+            <td data-sort-value="1822085">1822085</td>
+        </tr><tr>
+            <td data-sort-value="chr0218">chr18</td>
+            <td data-sort-value="72616343">72616343</td>
+            <td data-sort-value="0.9750557385477246">97.51%</td>
+            <td data-sort-value="1430851">1430851</td>
+        </tr><tr>
+            <td data-sort-value="chr0219">chr19</td>
+            <td data-sort-value="55145450">55145450</td>
+            <td data-sort-value="0.9456439966552136">94.56%</td>
+            <td data-sort-value="1055363">1055363</td>
+        </tr><tr>
+            <td data-sort-value="chr0220">chr20</td>
+            <td data-sort-value="75254945">75254945</td>
+            <td data-sort-value="0.9755948776921003">97.56%</td>
+            <td data-sort-value="1479921">1479921</td>
+        </tr><tr>
+            <td data-sort-value="chrm">chrM</td>
+            <td data-sort-value="4150">4150</td>
+            <td data-sort-value="0.2505433470176286">25.05%</td>
+            <td data-sort-value="71">71</td>
+        </tr><tr>
+            <td data-sort-value="chrx">chrX</td>
+            <td data-sort-value="149015200">149015200</td>
+            <td data-sort-value="0.9714860507138051">97.15%</td>
+            <td data-sort-value="2772140">2772140</td>
+        </tr><tr>
+            <td data-sort-value="chry">chrY</td>
+            <td data-sort-value="10363550">10363550</td>
+            <td data-sort-value="0.8817279555461854">88.17%</td>
+            <td data-sort-value="174779">174779</td>
+        </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>2916 contigs with no values (117338625 bp)</td>
+        <td>0</td>
+        <td>0.00%</td>
+        <td>0</td>
+    </tr>
+    </tfoot>
+</table>
+</div>
+<h3>Segment lengths</h3>
+
+<div class="scrollable-table-container">
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>segments</th>
+            <th>min</th>
+            <th>max</th>
+            <th>mean</th>
+            <th>median</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>segments</td>
+            <td>54566393</td>
+            <td>6</td>
+            <td>1100</td>
+            <td>51.07</td>
+            <td>50</td>
+        </tr>
+    </tbody>
+</table>
+</div><div class="figure-pair">
+<img src="statistics/coverage_segment_lengths.png"
+     alt="global segment-length histogram" class="figure-thumbnail"
+     data-modal-trigger="modal-coverage-segment-lengths">
+</div>
+<div id="modal-coverage-segment-lengths" class="modal">
+    <div class="modal-content">
+        <span title="segment lengths" class="close">&times;</span>
+        <img src="statistics/coverage_segment_lengths.png"
+             alt="global segment-length histogram"
+             style="max-width: min(100%, 800px);">
+    </div>
+</div>
+
 
 
 
@@ -846,11 +1056,20 @@ mammalian neocortex, Nature 2023.</a></p>
             <tr>
                 
                     <td class="nowrap">
+                        <a href='chrom_map.txt'>chrom_map.txt</a>
+                    </td>
+                
+                <td class="nowrap">219.0 B</td>
+                <td class="nowrap">66651c9a7fefbd64b075193fe367bbd3</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1.08 KB</td>
-                <td class="nowrap">b92ca485922d5e1eae73e524a8c9c820</td>
+                <td class="nowrap">1.12 KB</td>
+                <td class="nowrap">763ef1244b01252e9fb2a2928ab2d292</td>
             </tr>
             <tr>
                 
