@@ -19,11 +19,13 @@ meta:
     names. These modality-specific names are retained because resource names
     are not always identical across modalities.
 
-    | species | canonical\_sample | rna\_expression\_matrix | rna\_expression\_atac\_matrix | atac\_fragments | cell | barcode | subclass |
-    | --- | --- | --- | --- | --- | --- | --- | --- |
-    | human | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1\_deep2 | M1\_donor1\_AAACAGCCAACAACAA-1 | AAACAGCCAACAACAA-1 | ODC |
-    | human | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1\_deep2 | M1\_donor1\_AAACAGCCAGGTATTT-1 | AAACAGCCAGGTATTT-1 | ODC |
-    | human | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1\_deep2 | M1\_donor1\_AAACATGCAGGTTACC-1 | AAACATGCAGGTTACC-1 | PVALB |
+    For harmonization across the barcode resources, sample\_id and class were added as common namespace columns: sample\_id is equivalent to canonical\_sample, and class is equivalent to subclass.
+
+    | species | sample_id | canonical\_sample | rna\_expression\_matrix | rna\_expression\_atac\_matrix | atac\_fragments | cell | barcode | class | subclass |
+    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+    | human | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1\_deep2 | M1\_donor1\_AAACAGCCAACAACAA-1 | AAACAGCCAACAACAA-1 | ODC | ODC |
+    | human | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1\_deep2 | M1\_donor1\_AAACAGCCAGGTATTT-1 | AAACAGCCAGGTATTT-1 | ODC | ODC |
+    | human | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1 | M1\_donor1\_deep2 | M1\_donor1\_AAACATGCAGGTTACC-1 | AAACATGCAGGTTACC-1 | PVALB | PVALB |
 
     Extended validation confirmed that all 157,424 annotated barcodes were
     present in their corresponding RNA+ATAC matrix resources. For samples with

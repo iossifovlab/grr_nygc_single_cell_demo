@@ -23,13 +23,13 @@ meta:
     representing 203 clusters, 203 L1 annotations, 134 L2 annotations, and
     37 L3 annotations.
 
-    Representative rows from the output table are shown below:
+    For harmonization across the barcode resources, sample\_id and class were added as common namespace columns; sample\_id is equivalent to the original sample field, and class is equivalent to L1\_annot. Representative rows from the output table are shown below.
 
-    | sample | cb\_Zenodo | barcode | Cluster | L1\_annot | L2\_annot | L3\_annot |
-    | --- | --- | --- | --- | --- | --- | --- |
-    | T166\_b15\_Liver\_PCW19 | T166\_b15\_Liver\_PCW19#CL105\_H01+A01+A01 | CL105\_H01+A01+A01 | LI\_2 | LI\_2\_erythroblast 1 | Liver erythroblast | erythroblasts |
-    | T166\_b15\_Liver\_PCW19 | T166\_b15\_Liver\_PCW19#CL105\_H01+A01+C01 | CL105\_H01+A01+C01 | LI\_0 | LI\_0\_cycling erythroblast | Liver cycling erythroblast | erythroblasts |
-    | T166\_b15\_Liver\_PCW19 | T166\_b15\_Liver\_PCW19#CL105\_H01+A01+E02 | CL105\_H01+A01+E02 | LI\_3 | LI\_3\_hepatocyte 2 | Liver hepatocyte | hepatocytes |
+    | sample\_id | cb\_Zenodo | barcode | class | Cluster | L1\_annot | L2\_annot | L3\_annot |
+    | --- | --- | --- | --- | --- | --- | --- | --- |
+    | T166\_b15\_Liver\_PCW19 | T166\_b15\_Liver\_PCW19#CL105\_H01+A01+A01 | CL105\_H01+A01+A01 | LI\_2\_erythroblast 1 | LI\_2 | LI\_2\_erythroblast 1 | Liver erythroblast | erythroblasts |
+    | T166\_b15\_Liver\_PCW19 | T166\_b15\_Liver\_PCW19#CL105\_H01+A01+C01 | CL105\_H01+A01+C01 | LI\_0\_cycling erythroblast | LI\_0 | LI\_0\_cycling erythroblast | Liver cycling erythroblast | erythroblasts |
+    | T166\_b15\_Liver\_PCW19 | T166\_b15\_Liver\_PCW19#CL105\_H01+A01+E02 | CL105\_H01+A01+E02 | LI\_3\_hepatocyte 2 | LI\_3 | LI\_3\_hepatocyte 2 | Liver hepatocyte | hepatocytes |
 
     Extended validation confirmed that all 817,740 annotated barcodes were
     present in their corresponding RNA-expression matrix resources and all

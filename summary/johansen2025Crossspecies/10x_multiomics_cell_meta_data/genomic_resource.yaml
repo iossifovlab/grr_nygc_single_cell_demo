@@ -16,13 +16,15 @@ meta:
     An ATAC-specific cell identifier, atac\_cell\_id, is also provided. For
     Human and Marmoset, this identifier corresponds to the full cell\_label.
     For Macaque, ATAC fragment files use the cell barcode with a trailing
-    “-1”. Representative examples are shown below.
+    “-1”. 
+    
+    For harmonization across the barcode resources, sample\_id, barcode, and class were added as common namespace columns; sample\_id is equivalent to the original sample field, barcode is equivalent to atac\_cell\_id, and class is equivalent to Subclass. Representative examples are shown below.
 
-    | species | sample | cell\_label | cell\_barcode | atac\_cell\_id | Neighborhood | Class | Subclass | Group | Cluster |
-    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-    | Human | 2362\_A05 | AAACAGCCAAATGCCC-2362\_A05 | AAACAGCCAAATGCCC | AAACAGCCAAATGCCC-2362\_A05 | Nonneuron | Vascular | VLMC | VLMC | Human-451 |
-    | Macaque | 1061\_B04 | AAACAGCCAGTTGCGT-1061\_B04 | AAACAGCCAGTTGCGT | AAACAGCCAGTTGCGT-1 | Subpallium GABA | CN LGE GABA | STR D1 MSN | STRv D1 MSN | Macaque-1 |
-    | Marmoset | P0005\_1 | GTTCCTGGTTAGCATG-P0005\_1 | GTTCCTGGTTAGCATG |  | Nonneuron | OPC-Oligo | Oligodendrocyte | Oligo OPALIN | Marmoset-1 |
+    | species | sample\_id | barcode | class | cell\_label | cell\_barcode | atac\_cell\_id | Neighborhood | Class | Subclass | Group | Cluster |
+    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+    | Human | 2362\_A05 | AAACAGCCAAATGCCC-2362\_A05 | VLMC | AAACAGCCAAATGCCC-2362\_A05 | AAACAGCCAAATGCCC | AAACAGCCAAATGCCC-2362\_A05 | Nonneuron | Vascular | VLMC | VLMC | Human-451 |
+    | Macaque | 1061\_B04 | AAACAGCCAGTTGCGT-1 | STR D1 MSN | AAACAGCCAGTTGCGT-1061\_B04 | AAACAGCCAGTTGCGT | AAACAGCCAGTTGCGT-1 | Subpallium GABA | CN LGE GABA | STR D1 MSN | STRv D1 MSN | Macaque-1 |
+    | Marmoset | P0005\_2 | CCTATAGCAGCTAATT-P0005\_2 | STR D1 MSN | CCTATAGCAGCTAATT-P0005\_2 | CCTATAGCAGCTAATT | CCTATAGCAGCTAATT-P0005\_2 | Subpallium GABA | CN LGE GABA | STR D1 MSN | STRv D1 MSN | Marmoset-135 |
 
     ATAC-resource availability was determined using the corresponding
     cell metadata. All Human and Macaque annotated cells were associated

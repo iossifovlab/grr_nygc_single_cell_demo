@@ -175,18 +175,22 @@ OUT = M.merge(
     validate="many_to_one",
 )
 
+# Add harmonized class column shared across barcode resources.
+# Keep the original Cluster and L1/L2/L3 annotation columns as well.
+OUT["class"] = OUT["L1_annot"]
+
 OUT = OUT[
     [
         "sample",
         "cb_Zenodo",
         "barcode",
+        "class",
         "Cluster",
         "L1_annot",
         "L2_annot",
         "L3_annot",
     ]
 ]
-
 
 # ------------------------------------------------------------
 # Fast validation
@@ -249,8 +253,10 @@ assert OUT["L3_annot"].nunique() == EXPECTED_L3, (
 # ------------------------------------------------------------
 # Save
 # ------------------------------------------------------------
+# Rename the harmonized sample column for the final resource.
+OUTPUT = OUT.rename(columns={"sample": "sample_id"})
 
-OUT.to_csv(
+OUTPUT.to_csv(
     OUTPUT_FILE,
     index=False,
 )
@@ -266,7 +272,7 @@ print("\nSaved:", OUTPUT_FILE)
 
 print("\nFirst rows:")
 print(
-    OUT.head()
+    OUTPUT.head()
     .to_string(index=False)
 )
 

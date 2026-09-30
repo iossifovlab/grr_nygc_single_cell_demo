@@ -310,6 +310,28 @@ OUT.insert(
     OUT["cell_label"].map(atac_id_by_label),
 )
 
+# Add harmonized namespace columns shared across barcode resources.
+# barcode matches the ATAC fragment cell identifier, and class uses
+# the Johansen Subclass annotation. Keep all original columns as well.
+OUT["barcode"] = OUT["atac_cell_id"]
+OUT["class"] = OUT["Subclass"]
+
+OUT = OUT[
+    [
+        "species",
+        "sample",
+        "barcode",
+        "class",
+        "cell_label",
+        "cell_barcode",
+        "atac_cell_id",
+        "Neighborhood",
+        "Class",
+        "Subclass",
+        "Group",
+        "Cluster",
+    ]
+]
 print(
     "\nATAC cell IDs:",
     OUT["atac_cell_id"].notna().sum(),
@@ -322,8 +344,10 @@ print(
 # ------------------------------------------------------------
 # Save
 # ------------------------------------------------------------
+# Rename the harmonized sample column for the final resource.
+OUTPUT = OUT.rename(columns={"sample": "sample_id"})
 
-OUT.to_csv(
+OUTPUT.to_csv(
     OUTPUT_FILE,
     index=False,
 )
@@ -353,7 +377,7 @@ print("\nSaved:", OUTPUT_FILE)
 
 print("\nFirst rows:")
 print(
-    OUT.head()
+    OUTPUT.head()
     .to_string(index=False)
 )
 

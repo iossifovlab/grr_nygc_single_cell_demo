@@ -724,14 +724,15 @@ processing.</p>
 representing 203 clusters, 203 L1 annotations, 134 L2 annotations, and
 37 L3 annotations.</p>
 
-<p>Representative rows from the output table are shown below:</p>
+<p>For harmonization across the barcode resources, sample_id and class were added as common namespace columns; sample_id is equivalent to the original sample field, and class is equivalent to L1_annot. Representative rows from the output table are shown below.</p>
 
 <table>
 <thead>
 <tr>
-  <th>sample</th>
+  <th>sample_id</th>
   <th>cb_Zenodo</th>
   <th>barcode</th>
+  <th>class</th>
   <th>Cluster</th>
   <th>L1_annot</th>
   <th>L2_annot</th>
@@ -743,6 +744,7 @@ representing 203 clusters, 203 L1 annotations, 134 L2 annotations, and
   <td>T166_b15_Liver_PCW19</td>
   <td>T166_b15_Liver_PCW19#CL105_H01+A01+A01</td>
   <td>CL105_H01+A01+A01</td>
+  <td>LI_2_erythroblast 1</td>
   <td>LI_2</td>
   <td>LI_2_erythroblast 1</td>
   <td>Liver erythroblast</td>
@@ -752,6 +754,7 @@ representing 203 clusters, 203 L1 annotations, 134 L2 annotations, and
   <td>T166_b15_Liver_PCW19</td>
   <td>T166_b15_Liver_PCW19#CL105_H01+A01+C01</td>
   <td>CL105_H01+A01+C01</td>
+  <td>LI_0_cycling erythroblast</td>
   <td>LI_0</td>
   <td>LI_0_cycling erythroblast</td>
   <td>Liver cycling erythroblast</td>
@@ -761,6 +764,7 @@ representing 203 clusters, 203 L1 annotations, 134 L2 annotations, and
   <td>T166_b15_Liver_PCW19</td>
   <td>T166_b15_Liver_PCW19#CL105_H01+A01+E02</td>
   <td>CL105_H01+A01+E02</td>
+  <td>LI_3_hepatocyte 2</td>
   <td>LI_3</td>
   <td>LI_3_hepatocyte 2</td>
   <td>Liver hepatocyte</td>
@@ -816,7 +820,7 @@ all 76 samples.</p>
   </thead>
   <tbody>
     <tr>
-      <th>sample</th>
+      <th>sample_id</th>
       <td>817740</td>
       <td>76</td>
       <td>T014_b11_Heart_PCW18</td>
@@ -835,6 +839,13 @@ all 76 samples.</p>
       <td>817740</td>
       <td>CL105_H01+A01+A01</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td>817740</td>
+      <td>203</td>
+      <td>HT_0_vCM 1</td>
+      <td>33620</td>
     </tr>
     <tr>
       <th>Cluster</th>
@@ -895,8 +906,8 @@ all 76 samples.</p>
                         <a href='barcodes_liu26.py'>barcodes_liu26.py</a>
                     </td>
                 
-                <td class="nowrap">10.91 KB</td>
-                <td class="nowrap">34c7bf3db8538bc32caee91ee2fa5bcc</td>
+                <td class="nowrap">11.2 KB</td>
+                <td class="nowrap">067ad4d74a877bc34eadf4e59c1f7cb7</td>
             </tr>
             <tr>
                 
@@ -904,8 +915,8 @@ all 76 samples.</p>
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">2.4 KB</td>
-                <td class="nowrap">ed612e9037d184ac1e9b3cf549ed4b41</td>
+                <td class="nowrap">2.69 KB</td>
+                <td class="nowrap">25907b125bdc3de83ef6ff202150b39b</td>
             </tr>
             <tr>
                 
@@ -913,8 +924,8 @@ all 76 samples.</p>
                         <a href='liu2026_annotated_barcode_namespace.csv.gz'>liu2026_annotated_barcode_namespace.csv.gz</a>
                     </td>
                 
-                <td class="nowrap">6.19 MB</td>
-                <td class="nowrap">035255f4b3908dd4bf750003daab9373</td>
+                <td class="nowrap">6.31 MB</td>
+                <td class="nowrap">bb1314319b1d5a3c598cfe5f99914d70</td>
             </tr>
             <tr>
                 

@@ -720,16 +720,20 @@ sample with the corresponding RNA+ATAC matrix and ATAC-fragment resource
 names. These modality-specific names are retained because resource names
 are not always identical across modalities.</p>
 
+<p>For harmonization across the barcode resources, sample_id and class were added as common namespace columns: sample_id is equivalent to canonical_sample, and class is equivalent to subclass.</p>
+
 <table>
 <thead>
 <tr>
   <th>species</th>
+  <th>sample_id</th>
   <th>canonical_sample</th>
   <th>rna_expression_matrix</th>
   <th>rna_expression_atac_matrix</th>
   <th>atac_fragments</th>
   <th>cell</th>
   <th>barcode</th>
+  <th>class</th>
   <th>subclass</th>
 </tr>
 </thead>
@@ -739,13 +743,16 @@ are not always identical across modalities.</p>
   <td>M1_donor1</td>
   <td>M1_donor1</td>
   <td>M1_donor1</td>
+  <td>M1_donor1</td>
   <td>M1_donor1_deep2</td>
   <td>M1_donor1_AAACAGCCAACAACAA-1</td>
   <td>AAACAGCCAACAACAA-1</td>
   <td>ODC</td>
+  <td>ODC</td>
 </tr>
 <tr>
   <td>human</td>
+  <td>M1_donor1</td>
   <td>M1_donor1</td>
   <td>M1_donor1</td>
   <td>M1_donor1</td>
@@ -753,15 +760,18 @@ are not always identical across modalities.</p>
   <td>M1_donor1_AAACAGCCAGGTATTT-1</td>
   <td>AAACAGCCAGGTATTT-1</td>
   <td>ODC</td>
+  <td>ODC</td>
 </tr>
 <tr>
   <td>human</td>
   <td>M1_donor1</td>
   <td>M1_donor1</td>
   <td>M1_donor1</td>
+  <td>M1_donor1</td>
   <td>M1_donor1_deep2</td>
   <td>M1_donor1_AAACATGCAGGTTACC-1</td>
   <td>AAACATGCAGGTTACC-1</td>
+  <td>PVALB</td>
   <td>PVALB</td>
 </tr>
 </tbody>
@@ -820,6 +830,13 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
       <td>47404</td>
     </tr>
     <tr>
+      <th>sample_id</th>
+      <td>157424</td>
+      <td>23</td>
+      <td>Mop_5D_rep1</td>
+      <td>11838</td>
+    </tr>
+    <tr>
       <th>canonical_sample</th>
       <td>157424</td>
       <td>23</td>
@@ -862,6 +879,13 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
       <td>4</td>
     </tr>
     <tr>
+      <th>class</th>
+      <td>157424</td>
+      <td>20</td>
+      <td>ODC</td>
+      <td>41448</td>
+    </tr>
+    <tr>
       <th>subclass</th>
       <td>157424</td>
       <td>20</td>
@@ -890,8 +914,8 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
                         <a href='barcodes_zemke23.py'>barcodes_zemke23.py</a>
                     </td>
                 
-                <td class="nowrap">13.3 KB</td>
-                <td class="nowrap">7de9a992c5b82edcac9ee04e1731614f</td>
+                <td class="nowrap">13.67 KB</td>
+                <td class="nowrap">44bb68e71fcfeeb109c5576106793ff2</td>
             </tr>
             <tr>
                 
@@ -899,8 +923,8 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">2.22 KB</td>
-                <td class="nowrap">1129c603d22e7d7f0efaa19ef273fe97</td>
+                <td class="nowrap">2.5 KB</td>
+                <td class="nowrap">96657b74ced6ea6ab6a4a846bb4abef8</td>
             </tr>
             <tr>
                 
@@ -917,8 +941,8 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
                         <a href='zemke2023_annotated_barcode_namespace.csv.gz'>zemke2023_annotated_barcode_namespace.csv.gz</a>
                     </td>
                 
-                <td class="nowrap">1.34 MB</td>
-                <td class="nowrap">990131ac2d566384abe15db04a5f6b9c</td>
+                <td class="nowrap">1.36 MB</td>
+                <td class="nowrap">e9b476b6add67edfbe1602a7b9071cab</td>
             </tr>
             <tr>
                 

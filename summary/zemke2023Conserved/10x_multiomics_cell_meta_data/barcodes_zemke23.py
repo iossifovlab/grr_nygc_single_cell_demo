@@ -245,15 +245,22 @@ OUT = RNA.merge(
     validate="many_to_one",
 )
 
+# Add harmonized namespace columns shared across datasets.
+# Keep the original canonical_sample and subclass columns as well.
+OUT["sample"] = OUT["canonical_sample"]
+OUT["class"] = OUT["subclass"]
+
 OUT = OUT[
     [
         "species",
+        "sample",
         "canonical_sample",
         "rna_expression_matrix",
         "rna_expression_atac_matrix",
         "atac_fragments",
         "cell",
         "barcode",
+        "class",
         "subclass",
     ]
 ]
@@ -265,11 +272,13 @@ OUT = OUT[
 
 required_output_columns = [
     "species",
+    "sample",
     "canonical_sample",
     "rna_expression_matrix",
     "rna_expression_atac_matrix",
     "cell",
     "barcode",
+    "class",
     "subclass",
 ]
 
@@ -349,7 +358,10 @@ assert missing_atac_samples == [
 # Save
 # ------------------------------------------------------------
 
-OUT.to_csv(
+# Rename the harmonized sample column for the final resource.
+OUTPUT = OUT.rename(columns={"sample": "sample_id"})
+
+OUTPUT.to_csv(
     OUTPUT_FILE,
     index=False,
 )
@@ -390,7 +402,7 @@ print("\nSaved:", OUTPUT_FILE)
 
 print("\nFirst rows:")
 print(
-    OUT.head()
+    OUTPUT.head()
     .to_string(index=False)
 )
 

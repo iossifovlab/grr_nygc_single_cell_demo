@@ -717,13 +717,17 @@ The AnnData index was retained as cell_label. The resulting table contains
 <p>An ATAC-specific cell identifier, atac_cell_id, is also provided. For
 Human and Marmoset, this identifier corresponds to the full cell_label.
 For Macaque, ATAC fragment files use the cell barcode with a trailing
-“-1”. Representative examples are shown below.</p>
+“-1”. </p>
+
+<p>For harmonization across the barcode resources, sample_id, barcode, and class were added as common namespace columns; sample_id is equivalent to the original sample field, barcode is equivalent to atac_cell_id, and class is equivalent to Subclass. Representative examples are shown below.</p>
 
 <table>
 <thead>
 <tr>
   <th>species</th>
-  <th>sample</th>
+  <th>sample_id</th>
+  <th>barcode</th>
+  <th>class</th>
   <th>cell_label</th>
   <th>cell_barcode</th>
   <th>atac_cell_id</th>
@@ -739,6 +743,8 @@ For Macaque, ATAC fragment files use the cell barcode with a trailing
   <td>Human</td>
   <td>2362_A05</td>
   <td>AAACAGCCAAATGCCC-2362_A05</td>
+  <td>VLMC</td>
+  <td>AAACAGCCAAATGCCC-2362_A05</td>
   <td>AAACAGCCAAATGCCC</td>
   <td>AAACAGCCAAATGCCC-2362_A05</td>
   <td>Nonneuron</td>
@@ -750,6 +756,8 @@ For Macaque, ATAC fragment files use the cell barcode with a trailing
 <tr>
   <td>Macaque</td>
   <td>1061_B04</td>
+  <td>AAACAGCCAGTTGCGT-1</td>
+  <td>STR D1 MSN</td>
   <td>AAACAGCCAGTTGCGT-1061_B04</td>
   <td>AAACAGCCAGTTGCGT</td>
   <td>AAACAGCCAGTTGCGT-1</td>
@@ -761,15 +769,17 @@ For Macaque, ATAC fragment files use the cell barcode with a trailing
 </tr>
 <tr>
   <td>Marmoset</td>
-  <td>P0005_1</td>
-  <td>GTTCCTGGTTAGCATG-P0005_1</td>
-  <td>GTTCCTGGTTAGCATG</td>
-  <td></td>
-  <td>Nonneuron</td>
-  <td>OPC-Oligo</td>
-  <td>Oligodendrocyte</td>
-  <td>Oligo OPALIN</td>
-  <td>Marmoset-1</td>
+  <td>P0005_2</td>
+  <td>CCTATAGCAGCTAATT-P0005_2</td>
+  <td>STR D1 MSN</td>
+  <td>CCTATAGCAGCTAATT-P0005_2</td>
+  <td>CCTATAGCAGCTAATT</td>
+  <td>CCTATAGCAGCTAATT-P0005_2</td>
+  <td>Subpallium GABA</td>
+  <td>CN LGE GABA</td>
+  <td>STR D1 MSN</td>
+  <td>STRv D1 MSN</td>
+  <td>Marmoset-135</td>
 </tr>
 </tbody>
 </table>
@@ -829,11 +839,25 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
       <td>1034819</td>
     </tr>
     <tr>
-      <th>sample</th>
+      <th>sample_id</th>
       <td>1896133</td>
       <td>417</td>
       <td>936_A03</td>
       <td>15121</td>
+    </tr>
+    <tr>
+      <th>barcode</th>
+      <td>1877580</td>
+      <td>1716797</td>
+      <td>TACTTGTTCCATAAGC-1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td>1896133</td>
+      <td>36</td>
+      <td>STR D2 MSN</td>
+      <td>386255</td>
     </tr>
     <tr>
       <th>cell_label</th>
@@ -913,8 +937,8 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
                         <a href='barcodes_johansen25.py'>barcodes_johansen25.py</a>
                     </td>
                 
-                <td class="nowrap">14.8 KB</td>
-                <td class="nowrap">450f93007e454d51a0ae8b1de91868f7</td>
+                <td class="nowrap">15.45 KB</td>
+                <td class="nowrap">c8587dc1465d59ccf3d783f4f4652dc1</td>
             </tr>
             <tr>
                 
@@ -922,8 +946,8 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">2.32 KB</td>
-                <td class="nowrap">f93024374fdff2c1c81570801bf136e8</td>
+                <td class="nowrap">2.74 KB</td>
+                <td class="nowrap">eacf61a30c4d7fce9e1a32a51f131028</td>
             </tr>
             <tr>
                 
@@ -931,8 +955,8 @@ can be rerun by setting RUN_EXTENDED_VALIDATION = True in the script.</p>
                         <a href='johansen2025_annotated_barcode_namespace.csv.gz'>johansen2025_annotated_barcode_namespace.csv.gz</a>
                     </td>
                 
-                <td class="nowrap">21.7 MB</td>
-                <td class="nowrap">4ff3c2e4bd80b8f7bb424557ce524da9</td>
+                <td class="nowrap">27.47 MB</td>
+                <td class="nowrap">b5391315e8921391a3d3f8deafe8a5ad</td>
             </tr>
             <tr>
                 

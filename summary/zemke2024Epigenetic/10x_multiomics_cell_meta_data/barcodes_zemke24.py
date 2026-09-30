@@ -93,6 +93,20 @@ OUT = M[
     ]
 ].copy()
 
+# Add harmonized class column shared across barcode resources.
+# Keep the original subclass column as well.
+OUT["class"] = OUT["subclass"]
+
+OUT = OUT[
+    [
+        "sample",
+        "bacrode_GEO",
+        "barcode",
+        "class",
+        "subclass",
+    ]
+]
+
 
 # ------------------------------------------------------------
 # Fast validation
@@ -140,7 +154,10 @@ assert OUT["subclass"].nunique() == EXPECTED_SUBCLASSES, (
 # Save
 # ------------------------------------------------------------
 
-OUT.to_csv(
+# Rename the harmonized sample column for the final resource.
+OUTPUT = OUT.rename(columns={"sample": "sample_id"})
+
+OUTPUT.to_csv(
     OUTPUT_FILE,
     index=False,
 )
@@ -152,7 +169,7 @@ print("Saved:", OUTPUT_FILE)
 
 print("\nFirst rows:")
 print(
-    OUT.head()
+    OUTPUT.head()
     .to_string(index=False)
 )
 
