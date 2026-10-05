@@ -1,0 +1,53 @@
+# A small binning_tool run over the NYGC single-cell demo GRR.
+#
+# Both studies below are on UCSC hg38, so one grid serves them. Every
+# entry relies on the GRR label convention: a fragment resource's
+# `cell_meta_resource_id` label names its cell-metadata table, and its
+# `sample_id` label selects that sample's rows (table column `sample_id`).
+# Barcodes come from the fragment score `cell`, matched to the table's
+# `barcode` column. Groups come from its `class` column.
+
+input_reference_genome: reference/Human/genome/ucsc-hg38
+
+bins:
+  bin_size: 100000
+  regions:
+  - chr1:1-10000000
+
+binners:
+
+# 1. Pure convention: the three small zemke2024 hippocampus samples
+#    hc6021, hc6052, hc69984 (under 1 MB each), pooled into one track
+#    per cell class, named "<resource_query>:<class>". By default each
+#    bin sums the `count` score of the fragments that start in it.
+- fragment_score_binner:
+    resource_query: "summary/zemke2024Epigenetic/atac_fragments/hc6*"
+
+# 2. The same three samples unpooled: one track per sample and class,
+#    named "<resource id>:<class>".
+- fragment_score_binner:
+    resource_query: "summary/zemke2024Epigenetic/atac_fragments/hc6*"
+    pool: false
+
+# 3. A liu2026 sample with every key spelled out, grouped by the finer
+#    L2_annot column instead of the default `class`.
+- fragment_score_binner:
+    resource_query: summary/liu2026Multiomics/atac_fragments/T390_b16_Adr_PCW13
+    group:
+      cell_score_id: cell
+      cell_meta_column: barcode
+      group_meta_column: L2_annot
+    meta:
+      resource_label: cell_meta_resource_id
+      filter:
+      - {column: sample_id, label: sample_id}
+    aggregate: {score: count, aggregator: sum}
+
+# 4. No grouping: every fragment of the sample in one constant track,
+#    including those whose barcode has no annotated cell. Same default
+#    aggregate as entry 3, so each bin here is >= the sum of entry 3's
+#    tracks. Use `aggregate: {value: 1, aggregator: sum}` to count
+#    fragment rows instead.
+- fragment_score_binner:
+    resource_query: summary/liu2026Multiomics/atac_fragments/T390_b16_Adr_PCW13
+    group: {group: all_cells}
