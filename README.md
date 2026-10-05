@@ -1,6 +1,6 @@
 # GRR NYGC Single-Cell Demo
 
-Genomic Resource Repositories (GRRs) provide a framework for organizing and accessing genomic data resources in a consistent format. GRRs can contain many types of genomic information, including position-, interval-, gene-, and matrix-based resources. The GAIn framework and supported resource types are described in our [preprint](https://doi.org/10.64898/2026.07.08.737273), while the [GRR documentation](https://iossifovlab.com/gaindocs/index.html) explains how to interact with existing GRRs and how to construct new repositories.
+Genomic Resource Repositories (GRRs) are part of the GAIn framework and provide a consistent way to organize and access genomic resources used for annotation and analysis. The GAIn framework, which supports the annotation of variants, genomic positions, and intervals using these resources, is described in our [preprint](https://doi.org/10.64898/2026.07.08.737273). More information about GRRs is available in a dedicated section of the [GAIn documentation](https://iossifovlab.com/gaindocs/grr.html).
 
 Single-cell technologies make it possible to characterize molecular features at the level of individual cells. For example, single-cell RNA sequencing (scRNA-seq) measures gene expression in individual cells, while single-cell ATAC-seq (scATAC-seq) measures chromatin accessibility at single-cell resolution. Increasingly, studies generate multiple types of molecular data from the same biological samples or cells, creating both opportunities and challenges for integrating these datasets.
 
