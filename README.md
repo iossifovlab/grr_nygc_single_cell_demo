@@ -8,8 +8,6 @@ This repository collects data from selected single-cell studies and organizes th
 
 ## Included studies
 
-## Included studies
-
 - **Johansen 2025** — **[Cross-species consensus atlas of the primate basal ganglia](https://doi.org/10.64898/2025.12.15.694496)**
 - **Liu 2026** — **[Multiomics and deep learning dissect regulatory syntax in human development](https://doi.org/10.1038/s41586-026-10326-9)**
 - **Zemke 2023** — **[Conserved and divergent gene regulatory programs of the mammalian neocortex](https://doi.org/10.1038/s41586-023-06819-6)**
