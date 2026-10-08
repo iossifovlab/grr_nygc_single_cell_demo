@@ -8,7 +8,9 @@ This repository collects data from selected single-cell studies and organizes th
 
 ## Included studies
 
-- **Johansen 2025** — Cross-species single-cell RNA and metadata.
-- **Liu 2026** — Single-cell RNA and ATAC multiomics.
-- **Zemke 2023** — Single-cell RNA and ATAC data.
-- **Zemke 2024** — Single-cell expression, ATAC, and metadata.
+## Included studies
+
+- **Johansen 2025** — **[Cross-species consensus atlas of the primate basal ganglia](https://doi.org/10.64898/2025.12.15.694496)**
+- **Liu 2026** — **[Multiomics and deep learning dissect regulatory syntax in human development](https://doi.org/10.1038/s41586-026-10326-9)**
+- **Zemke 2023** — **[Conserved and divergent gene regulatory programs of the mammalian neocortex](https://doi.org/10.1038/s41586-023-06819-6)**
+- **Zemke 2024** — **[Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](https://doi.org/10.1126/science.adt8307)**
