@@ -1,0 +1,20 @@
+bins:
+  genome_id: reference/Human/genome/GRCh38.p13
+
+  bin_size: 1000
+  regions: 
+  - chr1:100_000_000-100_010_000
+
+binners:
+- fragment_score_binner:
+    resource_query: "summary/johansen2025Crossspecies/atac_fragments/human/*"
+    pool: true
+- fragment_score_binner:
+    resource_query: "summary/liu2026Multiomics/atac_fragments/*"
+    pool: true
+- fragment_score_binner:
+    resource_query: "summary/zemke2023Conserved/atac_fragments/*[species='human']"
+    pool: true
+- fragment_score_binner:
+    resource_query: "summary/zemke2024Epigenetic/atac_fragments/*"
+    pool: true

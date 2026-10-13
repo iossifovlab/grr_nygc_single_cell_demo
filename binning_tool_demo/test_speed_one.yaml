@@ -1,0 +1,12 @@
+bins:
+  genome_id: reference/Human/genome/GRCh38.p13
+
+  bin_size: 1000
+  regions: 
+  - chr22:1-50_000_000
+
+binners:
+- fragment_score_binner:
+    resource_query: "summary/johansen2025Crossspecies/atac_fragments/human/0575f26cb1e1e646c422658518fe6927eac5c31a"
+    # group:
+    #   group_meta_column: Class

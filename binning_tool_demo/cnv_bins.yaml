@@ -1,0 +1,29 @@
+bins:
+  genome_id: reference/Human/genome/GRCh38.p13
+
+  bin_size: 100_000_000
+  regions: 
+  - chr16:1-300_000_000
+  - chr17:1-300_000_000
+  - chr22:1-300_000_000
+
+
+binners:
+- fragment_score_binner:
+    resource_query: "hg38/cnv_collections/SFARI_gene_CNV"
+    pool: false
+    group:
+      group_score_id: "deletion_duplication"
+    value:
+      value: 1
+    aggregate:
+      aggregator: mean
+- fragment_score_binner:
+    resource_query: "hg38/cnv_collections/SFARI_gene_CNV"
+    pool: true
+    value:
+      value: 1
+    aggregate:
+      aggregator: mean
+
+
