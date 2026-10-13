@@ -1,13 +1,9 @@
-name: grr
+name: gain
 channels:
   - conda-forge
   - bioconda
   - iossifovlab
 dependencies:
   - gain-core
-  - dvc
-  - dvc-gs
-  - dvc-ssh
-  - snakeobjects
-  - google-cloud-sdk
   - ipython
+  - jupyterlab 
