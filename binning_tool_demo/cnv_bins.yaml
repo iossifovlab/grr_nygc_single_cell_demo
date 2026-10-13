@@ -1,11 +1,11 @@
-bins:
-  genome_id: reference/Human/genome/GRCh38.p13
+input_reference_genome: reference/Human/genome/GRCh38.p13
 
+bins:
   bin_size: 100_000_000
   regions: 
-  - chr16:1-300_000_000
-  - chr17:1-300_000_000
-  - chr22:1-300_000_000
+  - chr16
+  - chr17
+  - chr22
 
 
 binners:

@@ -7,3 +7,6 @@ dependencies:
   - gain-core
   - ipython
   - jupyterlab 
+  # these two are needed to run the DASK dashboard
+  - bokeh # t
+  - jinja2
