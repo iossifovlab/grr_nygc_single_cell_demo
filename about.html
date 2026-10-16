@@ -312,24 +312,37 @@
         </nav>
         <div id="section-about">
         
-        <h1>This is a prototype Genomic Resource Repository for single-cell data aggregated by the NYGC for their machine-learning initiative</h1>
+        <h1>About the NYGC Single-Cell GRR</h1>
 
-<h1>Introduction</h1>
+<p>The NYGC Single-Cell Genomic Resource Repository (GRR) organizes genomic and single-cell multiomic data collected for the NYGC AI Initiative. Its purpose is to make datasets from different studies easier to discover, inspect, and use within a common framework.</p>
 
-<p>Git Rository <a href="https://github.com/iossifovlab/grr_nygc_single_cell_demo">https://github.com/iossifovlab/grr_nygc_single_cell_demo</a></p>
+<p>GRRs are part of GAIn, a framework for annotating genetic variants, genomic positions, and intervals, as described in our <a href="https://doi.org/10.64898/2026.07.08.737273">preprint</a>. A GRR organizes data into <em>resources</em>, each identified by a path-like ID and accompanied by a definition describing its contents, format, and metadata. Further technical details are available in the <a href="https://iossifovlab.com/gaindocs/grr.html">GRR documentation</a>.</p>
 
-<p>Documentation <a href="https://iossifovlab.com/gaindocs/">https://iossifovlab.com/gaindocs/</a></p>
+<h2>Repository contents</h2>
 
-<h1>These are the studies:</h1>
+<p>The resources are organized under two top-level directories:</p>
 
 <ul>
-<li><p><a href="./summary/johansen2025Crossspecies/dataset_summary/index.html">johansen2025Crossspecies</a></p></li>
-<li><p><a href="./summary/liu2026Multiomics/dataset_summary/index.html">liu2026Multiomics</a></p></li>
-<li><p><a href="./summary/zemke2023Conserved/dataset_summary/index.html">zemke2023Conserved</a></p></li>
-<li><p><a href="./summary/zemke2024Epigenetic/dataset_summary/index.html">zemke2024Epigenetic</a></p></li>
+<li><p><strong><code>summary</code></strong> contains study-specific datasets organized by publication, including RNA expression matrices, ATAC fragment files, pseudobulk chromatin-accessibility tracks, cell and sample metadata, and supplementary tables. Each study includes a <code>dataset_summary</code> resource that provides information about the publication and explains how its resources are organized. A <code>cell_metadata</code> resource contains cell barcodes and cell-type annotations, allowing cell-type information to be associated with different data resources within the study.</p></li>
+<li><p><strong><code>reference</code></strong> contains reference genome assemblies and gene models for human, macaque, marmoset, and mouse. These resources are selected to correspond to the reference genomes and gene annotations used in the included studies.</p></li>
 </ul>
 
-<h1>Definition of the Used Labels</h1>
+<h2>Included studies</h2>
+
+<ul>
+<li><strong>Johansen 2025:</strong> <a href="https://doi.org/10.64898/2025.12.15.694496">Cross-species consensus atlas of the primate basal ganglia</a></li>
+<li><strong>Liu 2026:</strong> <a href="https://doi.org/10.1038/s41586-026-10326-9">Multiomics and deep learning dissect regulatory syntax in human development</a></li>
+<li><strong>Zemke 2023:</strong> <a href="https://doi.org/10.1038/s41586-023-06819-6">Conserved and divergent gene regulatory programs of the mammalian neocortex</a></li>
+<li><strong>Zemke 2024:</strong> <a href="https://doi.org/10.1126/science.adt8307">Epigenetic and 3D genome reprogramming during the aging of the human hippocampus</a></li>
+</ul>
+
+<h2>Browsing resources</h2>
+
+<p>Use <strong>Table view</strong> to search and filter resources by type, or <strong>Hierarchical view</strong> to navigate the repository's directory structure. Select a resource to inspect its description, data type, metadata, and available statistics. The search field supports SQLite full-text search syntax, including <code>AND</code>, <code>OR</code>, and quoted phrases.</p>
+
+<h2>Metadata labels</h2>
+
+<p>Resources are annotated with a set of metadata labels that describe different aspects of their contents. These include the source study (<code>dataset</code>), biological context (<code>species</code>, <code>organ</code>, <code>brain_region</code>), experimental methods (<code>vendor</code>, <code>assay</code>, <code>sequencing_platform</code>), and data characteristics (<code>modalities</code>, <code>data_types</code>, <code>resolution</code>, <code>processing_level</code>, <code>file_format</code>). These labels help users identify and compare resources across studies. For example, someone interested in human ATAC-seq data could look for resources labeled <code>species: human</code> and <code>modalities: ATAC</code>, then use additional labels to distinguish among the available datasets. The table below defines each label and provides examples of its values.</p>
 
 <table>
 <thead>
@@ -416,20 +429,9 @@
 </tbody>
 </table>
 
-<h1>GRR setup at NYGC and CSHL</h1>
+<h2>Data access</h2>
 
-<pre><code>$ mamba create –n gain  –c bioconda –c iossifovlab gain-core
-
-$ conda activate gain
-
-At NYGC:
-$ export GRR_DEFINITION_FILE=/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/GRRs/grr_definition.yaml
-
-At CSHL:
-$ export GRR_DEFINITION_FILE=/grid/iossifov/data/GRRs/grr_definition.yaml (CSHL)
-
-$ grr_browse --version
-</code></pre>
+<p>Large data files are managed separately from the Git-tracked resource definitions. For instructions on setting up the repository, accessing the underlying datasets, and examples of working with the resources, see the <a href="https://github.com/iossifovlab/grr_nygc_single_cell_demo">NYGC Single-Cell GRR GitHub repository</a>.</p>
 
         </div>
     </body>
