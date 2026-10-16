@@ -101,9 +101,8 @@ grr_browse
 Once the GRR definition is configured, genomic resources can be accessed programmatically using GAIn:
 
 ```python
-from gain.genomic_resources.repository_factory import build_genomic_resource_repository
-
-grr = build_genomic_resource_repository()
+import gain.grr as grr
+repo = grr.build_genomic_resource_repository()
 ```
 
 The repository object can be used to locate and load individual resources by their resource IDs for downstream analyses.
