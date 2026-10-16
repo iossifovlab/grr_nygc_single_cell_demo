@@ -1,14 +1,140 @@
+
 # GRR NYGC Single-Cell Demo
 
-Genomic Resource Repositories (GRRs) are part of the GAIn framework and provide a consistent way to organize and access genomic resources used for annotation and analysis. The GAIn framework, which supports the annotation of variants, genomic positions, and intervals using these resources, is described in our [preprint](https://doi.org/10.64898/2026.07.08.737273). More information about GRRs is available in a dedicated section of the [GAIn documentation](https://iossifovlab.com/gaindocs/grr.html).
+This repository organizes data from selected single-cell studies as Genomic Resource Repository (GRR) resources. GRRs are part of the GAIn framework and provide a consistent way to organize and access genomic data, including gene expression matrices, chromatin accessibility data, and cell and sample metadata.
 
-Single-cell technologies make it possible to characterize molecular features at the level of individual cells. For example, single-cell RNA sequencing (scRNA-seq) measures gene expression in individual cells, while single-cell ATAC-seq (scATAC-seq) measures chromatin accessibility at single-cell resolution. Increasingly, studies generate multiple types of molecular data from the same biological samples or cells, creating both opportunities and challenges for integrating these datasets.
+For more information, see the [GAIn preprint](https://doi.org/10.64898/2026.07.08.737273) and the [GRR documentation](https://iossifovlab.com/gaindocs/grr.html).
 
-This repository collects data from selected single-cell studies and organizes them as GRR resources. The goal is to provide a consistent representation of expression matrices, chromatin accessibility data, cell and sample metadata, and other associated resources. Organizing these datasets within a common GRR framework facilitates access to the different data types and their integration across resources and studies.
+## Clone the repository
 
-## Included studies
+Clone the repository from GitHub:
 
-- **Johansen 2025** — **[Cross-species consensus atlas of the primate basal ganglia](https://doi.org/10.64898/2025.12.15.694496)**
-- **Liu 2026** — **[Multiomics and deep learning dissect regulatory syntax in human development](https://doi.org/10.1038/s41586-026-10326-9)**
-- **Zemke 2023** — **[Conserved and divergent gene regulatory programs of the mammalian neocortex](https://doi.org/10.1038/s41586-023-06819-6)**
-- **Zemke 2024** — **[Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](https://doi.org/10.1126/science.adt8307)**
+```bash
+git clone git@github.com:iossifovlab/grr_nygc_single_cell_demo.git
+cd grr_nygc_single_cell_demo
+```
+
+## Environment setup
+
+The repository provides two Conda environment files: one for accessing and analyzing genomic resources and another for managing the repository. Conda or Mamba is required.
+
+### General user environment
+
+The `environment.yaml` file provides the packages needed to browse and analyze genomic resources using GAIn. It includes `gain-core`, IPython, JupyterLab, and dependencies for the Dask dashboard.
+
+Create and activate the `gain` Conda environment:
+
+```bash
+mamba env create -f environment.yaml
+conda activate gain
+```
+
+### Management environment
+
+The `management_environment.yaml` file provides additional tools for managing genomic resources, including DVC and its Google Cloud Storage and SSH extensions.
+
+Create and activate the `grr` Conda environment:
+
+```bash
+mamba env create -f management_environment.yaml
+conda activate grr
+```
+
+Both environments include `gain-core`. Users can choose the environment appropriate for their work.
+
+## Getting started locally
+
+A local clone of the repository can be used to explore its directory structure, resource configurations, and metadata without downloading the large genomic data files.
+
+The resources are organized under the `summary/` directory. To inspect the directory structure, run:
+
+```bash
+ls summary/
+```
+
+To browse the resources using GAIn, first create a GRR definition file pointing to the local repository. From the repository root, run:
+
+```bash
+cat > /tmp/nygc_grr.yaml <<EOF
+id: nygc_single_cell
+type: directory
+directory: $(pwd)
+EOF
+```
+
+This creates a temporary configuration file identifying the local repository.
+
+To list the available single-cell resources, run:
+
+```bash
+grr_browse -g /tmp/nygc_grr.yaml -q 'summary/*'
+```
+
+GAIn can display resource types, identifiers, and metadata using the Git-tracked repository files. To analyze the underlying datasets, users need access to the data files, such as through the shared GRRs at NYGC or CSHL described below.
+
+## Accessing data at NYGC and CSHL
+
+At NYGC and CSHL, the single-cell datasets are available through existing GRRs on shared institutional storage. Users working on systems with access to these directories can analyze the data without downloading separate copies.
+
+After activating the `gain` environment, set the `GRR_DEFINITION_FILE` environment variable to the appropriate configuration.
+
+**At NYGC:**
+
+```bash
+export GRR_DEFINITION_FILE=/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/GRRs/grr_definition.yaml
+```
+
+**At CSHL:**
+
+```bash
+export GRR_DEFINITION_FILE=/grid/iossifov/data/GRRs/grr_definition.yaml
+```
+
+To browse the available genomic resources:
+
+```bash
+grr_browse
+```
+
+### Accessing resources in Python
+
+Once the GRR definition is configured, genomic resources can be accessed programmatically using GAIn:
+
+```python
+from gain.genomic_resources.repository_factory import build_genomic_resource_repository
+
+grr = build_genomic_resource_repository()
+```
+
+The repository object can be used to locate and load individual resources by their resource IDs for downstream analyses.
+
+Access to the underlying data requires appropriate filesystem permissions. The institutional paths above are not expected to be accessible from ordinary local computers.
+
+For more information on working with genomic resources in Python, see the [GAIn documentation](https://iossifovlab.com/gaindocs/).
+
+## Repository management
+
+The repository is managed using Git, DVC, and `grr_manage`:
+
+- **Git** tracks resource configurations, metadata, manifests, and DVC tracking files.
+- **DVC** manages large genomic data files and their remote storage.
+- **`grr_manage`** generates and updates resource manifests, statistics, and repository indexes.
+
+Repository maintainers should use the `grr` Conda environment described above.
+
+After adding or modifying genomic resources, the relevant management commands include:
+
+```bash
+# Track a new or modified large data file
+dvc add path/to/data_file
+
+# Update a resource's manifest and statistics
+grr_manage resource-repair -r path/to/resource
+
+# Rebuild manifests and statistics for the entire repository
+grr_manage repo-repair
+```
+
+Updated resource configurations, DVC tracking files, and generated GRR metadata should be committed using Git. Managing large data files also requires appropriate access to the configured DVC remote.
+
+For additional information about creating, modifying, and maintaining genomic resources, see the [GRR documentation](https://iossifovlab.com/gaindocs/grr.html).
