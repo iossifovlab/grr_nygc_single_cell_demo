@@ -1,9 +1,9 @@
-bins:
-  genome_id: reference/Human/genome/GRCh38.p13
+reference_genome: reference/Human/genome/GRCh38.p13
 
-  bin_size: 1000
+bins:
+  bin_size: 32 
   regions: 
-  - chr22:1-50_000_000
+  - chr22:36_000_000-36_200_000
 
 binners:
 - fragment_score_binner:

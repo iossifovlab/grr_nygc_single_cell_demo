@@ -1,3 +1,3 @@
-from gain.genomic_resources.ann_data_resource import load_ann_data_from_resource_id
+import gain.grr as grr
 
-A = load_ann_data_from_resource_id("summary/johansen2025Crossspecies/comprehensive_rna_expression_matrix/Human")
+A = grr.load_ann_data_from_resource_id("summary/johansen2025Crossspecies/comprehensive_rna_expression_matrix/Human")

@@ -30,4 +30,4 @@ for si, ((study, component), vs) in enumerate(mns.items(), 1):
     plt.plot(sorted(vs))
     plt.title(f"{study}/{component}")
 plt.tight_layout()
-plt.show(block=False)
+plt.show()
