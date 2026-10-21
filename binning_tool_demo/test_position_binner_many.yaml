@@ -1,0 +1,33 @@
+reference_genome: reference/Human/genome/GRCh38.p13
+bins:
+
+  bin_size: 32 
+  regions: 
+  - chr1:36_000_000-36_200_000
+  - chr2:36_000_000-36_200_000
+  - chr3:36_000_000-36_200_000
+  - chr4:36_000_000-36_200_000
+  - chr5:36_000_000-36_200_000
+  - chr6:36_000_000-36_200_000
+  - chr22:36_000_000-36_200_000
+
+binners:
+- position_score_binner:
+    resource_query: "summary/zemke2023Conserved/pseudobulk_atac/human*/*"
+    aggregator: mean
+    none_value_replacement: 0.0
+ 
+- position_score_binner:
+    resource_query: "summary/zemke2024Epigenetic/pseudobulk_atac/*/all/bigwig"
+    aggregator: mean
+    none_value_replacement: 0.0
+
+- position_score_binner:
+    resource_query: "summary/johansen2025Crossspecies/pseudobulk_atac/human/*/bigwig"
+    aggregator: mean
+    none_value_replacement: 0.0
+
+- position_score_binner:
+    resource_query: "summary/liu2026Multiomics/pseudobulk_accessibility/*/*/mean_pred_corrected"
+    aggregator: mean
+    none_value_replacement: 0.0

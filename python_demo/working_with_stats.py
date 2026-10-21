@@ -11,12 +11,7 @@ for r in GRR.search_resources("data_types : atac_signal",
                               resource_type="position_score"):
     sc = grr.build_position_score_from_resource(r)
 
-    # TODO: replace the following four lines with
-    # hist = sc.get_score_histogram()
-    scores = sc.get_all_scores()
-    assert len(scores) == 1
-    score = scores[0]
-    hist = sc.get_score_histogram(score)
+    hist = sc.get_score_histogram()
 
     assert isinstance(hist, NumberHistogram)
     mn = hist.mean
