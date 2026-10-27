@@ -12,12 +12,13 @@ The resources are organized under two top-level directories:
 
 - **`reference`** contains reference genome assemblies and gene models for human, macaque, marmoset, and mouse. These resources are selected to correspond to the reference genomes and gene annotations used in the included studies.
 
+
 ## Included studies
 
-- **Johansen 2025:** [Cross-species consensus atlas of the primate basal ganglia](https://doi.org/10.64898/2025.12.15.694496)
-- **Liu 2026:** [Multiomics and deep learning dissect regulatory syntax in human development](https://doi.org/10.1038/s41586-026-10326-9)
-- **Zemke 2023:** [Conserved and divergent gene regulatory programs of the mammalian neocortex](https://doi.org/10.1038/s41586-023-06819-6)
-- **Zemke 2024:** [Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](https://doi.org/10.1126/science.adt8307)
+- **Johansen 2025:** [Cross-species consensus atlas of the primate basal ganglia](index.html#/summary/johansen2025Crossspecies)
+- **Liu 2026:** [Multiomics and deep learning dissect regulatory syntax in human development](index.html#/summary/liu2026Multiomics)
+- **Zemke 2023:** [Conserved and divergent gene regulatory programs of the mammalian neocortex](index.html#/summary/zemke2023Conserved)
+- **Zemke 2024:** [Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](index.html#/summary/zemke2024Epigenetic)
 
 ## Browsing resources
 
