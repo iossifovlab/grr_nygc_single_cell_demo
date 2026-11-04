@@ -76,9 +76,9 @@ GAIn can display resource types, identifiers, and metadata using the Git-tracked
 
 At NYGC and CSHL, the single-cell datasets are available through existing GRRs on shared institutional storage. Users working on systems with access to these directories can analyze the data without downloading separate copies.
 
-After activating the `gain` environment, set the `GRR_DEFINITION_FILE` environment variable to the appropriate configuration.
-
 **At NYGC:**
+
+After activating the `gain` environment, set the `GRR_DEFINITION_FILE` environment variable to the appropriate configuration.
 
 ```bash
 export GRR_DEFINITION_FILE=/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/GRRs/grr_definition.yaml
@@ -86,11 +86,13 @@ export GRR_DEFINITION_FILE=/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/
 
 **At CSHL:**
 
+Source the shared GAIn environment setup script to load the required modules, activate the shared Conda environment, and configure the GRR definition and Dask settings.
+
 ```bash
-export GRR_DEFINITION_FILE=/grid/iossifov/data/GRRs/grr_definition.yaml
+source /grid/iossifov/data/GRRs/set_sc_v0.sh
 ```
 
-To browse the available genomic resources:
+At either institution, browse the available genomic resources using:
 
 ```bash
 grr_browse
