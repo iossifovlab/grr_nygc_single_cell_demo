@@ -1,0 +1,16 @@
+file: S1.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: galvao2024Multimodal
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'Table S1: Microglia subclusters markers identified with the FindAllMarkers
+    function, related to Fig. 4 on galvao2024Multimodal.'
+parameters:
+  sheet_name: Sheet1
+type: data_frame

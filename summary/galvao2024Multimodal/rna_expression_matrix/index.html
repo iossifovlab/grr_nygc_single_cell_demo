@@ -1,0 +1,2522 @@
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../../../.static/fonts/roboto-v51-latin.1404ca34.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
+      .figure-pair > .figure-thumbnail {
+        flex: 0 1 calc(50% - 8px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* In a page header the trail takes the size and weight the
+         header's one link used to have, so the current crumb -- a span,
+         which `#page-header a` does not reach -- reads at the same size
+         as the links beside it.  The index page's trail has no header
+         around it and keeps its own size. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      .copy-icon {
+        font-size: 20px;
+        color: #B9D3E7;
+      }
+
+      .copy-icon:hover {
+        cursor: pointer;
+        color: #85A2B9;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table .copy-icon {
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<style>
+  
+      @font-face {
+        font-family: "Material Symbols Outlined";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: block;
+        src: url("../../../.static/fonts/material-symbols-outlined-v371.68a25c87.woff2") format("woff2");
+      }
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    
+    <nav id="page-header">
+      <div id="breadcrumb"><a class="breadcrumb-item" href="../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../index.html#/summary/galvao2024Multimodal">galvao2024Multimodal</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">rna_expression_matrix</span>
+      </div>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/galvao2024Multimodal/rna_expression_matrix<span class="material-symbols-outlined copy-icon" data-copy-id="summary/galvao2024Multimodal/rna_expression_matrix">content_copy</span></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>ann_data</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                
+                <td>snRNA-seq data from eight focal cortical dysplasia donors, 4 tissues, isolated focal cortical dysplasia type II
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                            
+                             <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+                            </style>
+                            <p><a href="https://www.cell.com/iscience/fulltext/S2589-0042(24)02562-8">Galvão et al., Multimodal single-cell profiling reveals neuronal vulnerability and pathological cell states in focal cortical dysplasia, iScience, 2024</a></p>
+
+<p>Downloaded from: <a href="https://cellxgene.cziscience.com/collections/9e4e8f1d-d905-4d4f-b343-84889d0f9ffe">https://cellxgene.cziscience.com/collections/9e4e8f1d-d905-4d4f-b343-84889d0f9ffe</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                
+                    <ul>
+                    
+                        <li>assay: 10x_Multiome</li>
+                    
+                        <li>data_type: gene_expression</li>
+                    
+                        <li>dataset: galvao2024Multimodal</li>
+                    
+                        <li>modalities: RNA</li>
+                    
+                        <li>reference_genome: reference/Human/genome/GRCh38.p13</li>
+                    
+                        <li>sequencing_platform: Illumina</li>
+                    
+                        <li>species: human</li>
+                    
+                        <li>vendor: 10x_Genomics</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<h1> AnnData description </h1>
+
+
+<pre><code style="font-family: monospace;">
+AnnData object with n_obs × n_vars = 61525 × 35477
+    obs: &#39;mapped_reference_annotation&#39;, &#39;donor_id&#39;, &#39;self_reported_ethnicity_ontology_term_id&#39;, &#39;donor_living_at_sample_collection&#39;, &#39;sample_uuid&#39;, &#39;sample_preservation_method&#39;, &#39;tissue_ontology_term_id&#39;, &#39;development_stage_ontology_term_id&#39;, &#39;sample_derivation_process&#39;, &#39;tissue_type&#39;, &#39;suspension_derivation_process&#39;, &#39;suspension_uuid&#39;, &#39;suspension_type&#39;, &#39;library_uuid&#39;, &#39;assay_ontology_term_id&#39;, &#39;is_primary_data&#39;, &#39;cell_type_ontology_term_id&#39;, &#39;author_cell_type&#39;, &#39;disease_ontology_term_id&#39;, &#39;sex_ontology_term_id&#39;, &#39;nCount_RNA&#39;, &#39;nFeature_RNA&#39;, &#39;percent.mito&#39;, &#39;nucleosome_signal&#39;, &#39;TSS.enrichment&#39;, &#39;onset&#39;, &#39;duration&#39;, &#39;lateralization&#39;, &#39;histological_assessment&#39;, &#39;cell_type&#39;, &#39;assay&#39;, &#39;disease&#39;, &#39;sex&#39;, &#39;tissue&#39;, &#39;self_reported_ethnicity&#39;, &#39;development_stage&#39;, &#39;observation_joinid&#39;
+    var: &#39;feature_is_filtered&#39;, &#39;vf_vst_counts.G120_N.1_mean&#39;, &#39;vf_vst_counts.G120_N.1_variance&#39;, &#39;vf_vst_counts.G120_N.1_variance.expected&#39;, &#39;vf_vst_counts.G120_N.1_variance.standardized&#39;, &#39;vf_vst_counts.G120_N.1_variable&#39;, &#39;vf_vst_counts.G120_N.1_rank&#39;, &#39;vf_vst_counts.G120_D.2_mean&#39;, &#39;vf_vst_counts.G120_D.2_variance&#39;, &#39;vf_vst_counts.G120_D.2_variance.expected&#39;, &#39;vf_vst_counts.G120_D.2_variance.standardized&#39;, &#39;vf_vst_counts.G120_D.2_variable&#39;, &#39;vf_vst_counts.G120_D.2_rank&#39;, &#39;vf_vst_counts.G120_N.2_mean&#39;, &#39;vf_vst_counts.G120_N.2_variance&#39;, &#39;vf_vst_counts.G120_N.2_variance.expected&#39;, &#39;vf_vst_counts.G120_N.2_variance.standardized&#39;, &#39;vf_vst_counts.G120_N.2_variable&#39;, &#39;vf_vst_counts.G120_N.2_rank&#39;, &#39;vf_vst_counts.G133_D.2_mean&#39;, &#39;vf_vst_counts.G133_D.2_variance&#39;, &#39;vf_vst_counts.G133_D.2_variance.expected&#39;, &#39;vf_vst_counts.G133_D.2_variance.standardized&#39;, &#39;vf_vst_counts.G133_D.2_variable&#39;, &#39;vf_vst_counts.G133_D.2_rank&#39;, &#39;vf_vst_counts.G133_N.2_mean&#39;, &#39;vf_vst_counts.G133_N.2_variance&#39;, &#39;vf_vst_counts.G133_N.2_variance.expected&#39;, &#39;vf_vst_counts.G133_N.2_variance.standardized&#39;, &#39;vf_vst_counts.G133_N.2_variable&#39;, &#39;vf_vst_counts.G133_N.2_rank&#39;, &#39;vf_vst_counts.G129_D_mean&#39;, &#39;vf_vst_counts.G129_D_variance&#39;, &#39;vf_vst_counts.G129_D_variance.expected&#39;, &#39;vf_vst_counts.G129_D_variance.standardized&#39;, &#39;vf_vst_counts.G129_D_variable&#39;, &#39;vf_vst_counts.G129_D_rank&#39;, &#39;vf_vst_counts.G150_D_mean&#39;, &#39;vf_vst_counts.G150_D_variance&#39;, &#39;vf_vst_counts.G150_D_variance.expected&#39;, &#39;vf_vst_counts.G150_D_variance.standardized&#39;, &#39;vf_vst_counts.G150_D_variable&#39;, &#39;vf_vst_counts.G150_D_rank&#39;, &#39;vf_vst_counts.G159_D_mean&#39;, &#39;vf_vst_counts.G159_D_variance&#39;, &#39;vf_vst_counts.G159_D_variance.expected&#39;, &#39;vf_vst_counts.G159_D_variance.standardized&#39;, &#39;vf_vst_counts.G159_D_variable&#39;, &#39;vf_vst_counts.G159_D_rank&#39;, &#39;vf_vst_counts.G171_D_mean&#39;, &#39;vf_vst_counts.G171_D_variance&#39;, &#39;vf_vst_counts.G171_D_variance.expected&#39;, &#39;vf_vst_counts.G171_D_variance.standardized&#39;, &#39;vf_vst_counts.G171_D_variable&#39;, &#39;vf_vst_counts.G171_D_rank&#39;, &#39;vf_vst_counts.G187_D_mean&#39;, &#39;vf_vst_counts.G187_D_variance&#39;, &#39;vf_vst_counts.G187_D_variance.expected&#39;, &#39;vf_vst_counts.G187_D_variance.standardized&#39;, &#39;vf_vst_counts.G187_D_variable&#39;, &#39;vf_vst_counts.G187_D_rank&#39;, &#39;vf_vst_counts.G210_D_mean&#39;, &#39;vf_vst_counts.G210_D_variance&#39;, &#39;vf_vst_counts.G210_D_variance.expected&#39;, &#39;vf_vst_counts.G210_D_variance.standardized&#39;, &#39;vf_vst_counts.G210_D_variable&#39;, &#39;vf_vst_counts.G210_D_rank&#39;, &#39;vf_vst_counts_mean&#39;, &#39;vf_vst_counts_variance&#39;, &#39;vf_vst_counts_variance.expected&#39;, &#39;vf_vst_counts_variance.standardized&#39;, &#39;vf_vst_counts_variable&#39;, &#39;vf_vst_counts_rank&#39;, &#39;var.features.rank&#39;, &#39;feature_name&#39;, &#39;feature_reference&#39;, &#39;feature_biotype&#39;, &#39;feature_length&#39;, &#39;feature_type&#39;
+    uns: &#39;citation&#39;, &#39;default_embedding&#39;, &#39;is_pre_analysis&#39;, &#39;organism&#39;, &#39;organism_ontology_term_id&#39;, &#39;schema_reference&#39;, &#39;schema_version&#39;, &#39;title&#39;
+    obsm: &#39;X_integrated.rna.harmony&#39;, &#39;X_pca&#39;, &#39;X_umap.joint&#39;, &#39;X_umap.rna.harmony&#39;
+    layers: None (.X)
+
+</code></pre>
+
+
+
+
+<h1> obs description </h1>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mapped_reference_annotation</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>GENCODE 32</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>donor_id</th>
+      <td>61525</td>
+      <td>8</td>
+      <td>G133</td>
+      <td>22237</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>self_reported_ethnicity_ontology_term_id</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>HANCESTRO:0352</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>donor_living_at_sample_collection</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>True</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sample_uuid</th>
+      <td>61525</td>
+      <td>11</td>
+      <td>156f719c-1a9e-4492-923b-fad2af089a7d</td>
+      <td>13335</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sample_preservation_method</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>flash-freezing</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tissue_ontology_term_id</th>
+      <td>61525</td>
+      <td>4</td>
+      <td>UBERON:0016525</td>
+      <td>38521</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>development_stage_ontology_term_id</th>
+      <td>61525</td>
+      <td>8</td>
+      <td>HsapDv:0000109</td>
+      <td>22237</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sample_derivation_process</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>resection</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tissue_type</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>tissue</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>suspension_derivation_process</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>mechanical dissociation,density gradient centrifugation</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>suspension_uuid</th>
+      <td>61525</td>
+      <td>11</td>
+      <td>09a2a11d-fce6-4e52-ae43-0d440d44bf86</td>
+      <td>13335</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>suspension_type</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>nucleus</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>library_uuid</th>
+      <td>61525</td>
+      <td>11</td>
+      <td>0ffdf2ef-4847-4530-9ea6-40b4e86725dd</td>
+      <td>13335</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>assay_ontology_term_id</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>EFO:0030059</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>is_primary_data</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>True</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cell_type_ontology_term_id</th>
+      <td>61525</td>
+      <td>15</td>
+      <td>CL:0000128</td>
+      <td>17108</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>author_cell_type</th>
+      <td>61525</td>
+      <td>17</td>
+      <td>Oligo</td>
+      <td>17108</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>disease_ontology_term_id</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>MONDO:0011818</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sex_ontology_term_id</th>
+      <td>61525</td>
+      <td>2</td>
+      <td>PATO:0000383</td>
+      <td>49504</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>nCount_RNA</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4731.97271</td>
+      <td>5348.035902</td>
+      <td>501.0</td>
+      <td>1413.0</td>
+      <td>2776.0</td>
+      <td>5672.0</td>
+      <td>45132.0</td>
+    </tr>
+    <tr>
+      <th>nFeature_RNA</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2146.911678</td>
+      <td>1445.474895</td>
+      <td>401.0</td>
+      <td>1052.0</td>
+      <td>1746.0</td>
+      <td>2871.0</td>
+      <td>6999.0</td>
+    </tr>
+    <tr>
+      <th>percent.mito</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.119338</td>
+      <td>2.469462</td>
+      <td>0.031162</td>
+      <td>1.361603</td>
+      <td>2.387073</td>
+      <td>4.121688</td>
+      <td>14.991334</td>
+    </tr>
+    <tr>
+      <th>nucleosome_signal</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.699349</td>
+      <td>0.1693</td>
+      <td>0.117647</td>
+      <td>0.572414</td>
+      <td>0.679293</td>
+      <td>0.803666</td>
+      <td>1.994012</td>
+    </tr>
+    <tr>
+      <th>TSS.enrichment</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.690639</td>
+      <td>0.81836</td>
+      <td>2.000105</td>
+      <td>3.093165</td>
+      <td>3.590457</td>
+      <td>4.184188</td>
+      <td>6.995744</td>
+    </tr>
+    <tr>
+      <th>onset</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.899618</td>
+      <td>6.605069</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>11.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>duration</th>
+      <td>61525.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>13.684372</td>
+      <td>11.837281</td>
+      <td>1.0</td>
+      <td>11.0</td>
+      <td>11.0</td>
+      <td>11.0</td>
+      <td>40.0</td>
+    </tr>
+    <tr>
+      <th>lateralization</th>
+      <td>61525</td>
+      <td>2</td>
+      <td>R</td>
+      <td>38445</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>histological_assessment</th>
+      <td>61525</td>
+      <td>3</td>
+      <td>FCD_typeIIb</td>
+      <td>41770</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>cell_type</th>
+      <td>61525</td>
+      <td>15</td>
+      <td>oligodendrocyte</td>
+      <td>17108</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>assay</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>10x multiome</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>disease</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>isolated focal cortical dysplasia type II</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <td>61525</td>
+      <td>2</td>
+      <td>female</td>
+      <td>49504</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>tissue</th>
+      <td>61525</td>
+      <td>4</td>
+      <td>frontal lobe</td>
+      <td>38521</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>self_reported_ethnicity</th>
+      <td>61525</td>
+      <td>1</td>
+      <td>Brazilian</td>
+      <td>61525</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>development_stage</th>
+      <td>61525</td>
+      <td>8</td>
+      <td>15-year-old stage</td>
+      <td>22237</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>observation_joinid</th>
+      <td>61525</td>
+      <td>61525</td>
+      <td>%e}^)|B&gt;=_</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<h1> var description </h1>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>feature_is_filtered</th>
+      <td>35477</td>
+      <td>2</td>
+      <td>False</td>
+      <td>33696</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.1_mean</th>
+      <td>26780.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.172072</td>
+      <td>0.871166</td>
+      <td>0.0</td>
+      <td>0.004032</td>
+      <td>0.025202</td>
+      <td>0.122984</td>
+      <td>53.799395</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.1_variance</th>
+      <td>26780.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.73537</td>
+      <td>22.705805</td>
+      <td>0.0</td>
+      <td>0.00402</td>
+      <td>0.026504</td>
+      <td>0.134696</td>
+      <td>1699.431967</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.1_variance.expected</th>
+      <td>26780.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.594359</td>
+      <td>15.628761</td>
+      <td>0.0</td>
+      <td>0.0041</td>
+      <td>0.026112</td>
+      <td>0.134545</td>
+      <td>1910.537986</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.1_variance.standardized</th>
+      <td>26780.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.979171</td>
+      <td>0.175185</td>
+      <td>0.0</td>
+      <td>0.961048</td>
+      <td>0.984895</td>
+      <td>1.003441</td>
+      <td>3.847596</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.1_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.468483</td>
+      <td>0.812108</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.1_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2022952991.217414</td>
+      <td>501923566.092616</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_D.2_mean</th>
+      <td>31229.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.306866</td>
+      <td>1.762667</td>
+      <td>0.0</td>
+      <td>0.002584</td>
+      <td>0.028424</td>
+      <td>0.193798</td>
+      <td>217.555556</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_D.2_variance</th>
+      <td>31229.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.819101</td>
+      <td>312.70907</td>
+      <td>0.0</td>
+      <td>0.003007</td>
+      <td>0.036245</td>
+      <td>0.308986</td>
+      <td>52087.626598</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_D.2_variance.expected</th>
+      <td>31229.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.869649</td>
+      <td>2007.504239</td>
+      <td>0.0</td>
+      <td>0.002772</td>
+      <td>0.037049</td>
+      <td>0.312061</td>
+      <td>354129.375044</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_D.2_variance.standardized</th>
+      <td>31229.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.022325</td>
+      <td>0.655346</td>
+      <td>0.0</td>
+      <td>0.818617</td>
+      <td>0.935374</td>
+      <td>1.012475</td>
+      <td>16.577949</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_D.2_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.204238</td>
+      <td>0.555842</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_D.2_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023335378.237476</td>
+      <td>501199726.318241</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.2_mean</th>
+      <td>32127.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.198477</td>
+      <td>1.119602</td>
+      <td>0.0</td>
+      <td>0.00161</td>
+      <td>0.018012</td>
+      <td>0.135641</td>
+      <td>143.214832</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.2_variance</th>
+      <td>32127.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.737023</td>
+      <td>130.664482</td>
+      <td>0.0</td>
+      <td>0.00171</td>
+      <td>0.021356</td>
+      <td>0.183426</td>
+      <td>22087.364027</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.2_variance.expected</th>
+      <td>32127.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.446021</td>
+      <td>837.586928</td>
+      <td>0.0</td>
+      <td>0.00172</td>
+      <td>0.021663</td>
+      <td>0.186578</td>
+      <td>149978.519024</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.2_variance.standardized</th>
+      <td>32127.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.029814</td>
+      <td>0.543058</td>
+      <td>0.0</td>
+      <td>0.880099</td>
+      <td>0.953009</td>
+      <td>1.006479</td>
+      <td>24.338589</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.2_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.150849</td>
+      <td>0.470347</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G120_N.2_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023526571.731452</td>
+      <td>500837304.710326</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_D.2_mean</th>
+      <td>32010.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.237126</td>
+      <td>1.331677</td>
+      <td>0.0</td>
+      <td>0.001659</td>
+      <td>0.017415</td>
+      <td>0.136597</td>
+      <td>129.525552</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_D.2_variance</th>
+      <td>32010.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.602483</td>
+      <td>159.987582</td>
+      <td>0.0</td>
+      <td>0.001759</td>
+      <td>0.020523</td>
+      <td>0.187491</td>
+      <td>23014.06484</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_D.2_variance.expected</th>
+      <td>32010.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.131189</td>
+      <td>589.756961</td>
+      <td>0.0</td>
+      <td>0.001757</td>
+      <td>0.020678</td>
+      <td>0.189268</td>
+      <td>103346.02122</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_D.2_variance.standardized</th>
+      <td>32010.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.029689</td>
+      <td>0.543281</td>
+      <td>0.0</td>
+      <td>0.880554</td>
+      <td>0.953963</td>
+      <td>1.000016</td>
+      <td>21.574059</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_D.2_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.157704</td>
+      <td>0.482609</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_D.2_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023717765.108856</td>
+      <td>500474548.081404</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_N.2_mean</th>
+      <td>32285.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.177901</td>
+      <td>0.988066</td>
+      <td>0.0</td>
+      <td>0.001255</td>
+      <td>0.013389</td>
+      <td>0.103288</td>
+      <td>75.224806</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_N.2_variance</th>
+      <td>32285.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.512718</td>
+      <td>42.927608</td>
+      <td>0.0</td>
+      <td>0.001313</td>
+      <td>0.014735</td>
+      <td>0.122478</td>
+      <td>5237.667135</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_N.2_variance.expected</th>
+      <td>32285.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.713647</td>
+      <td>71.03612</td>
+      <td>0.0</td>
+      <td>0.001294</td>
+      <td>0.01477</td>
+      <td>0.124027</td>
+      <td>11359.821817</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_N.2_variance.standardized</th>
+      <td>32285.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.013007</td>
+      <td>0.336235</td>
+      <td>0.0</td>
+      <td>0.92758</td>
+      <td>0.973702</td>
+      <td>1.00012</td>
+      <td>13.409897</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_N.2_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.141619</td>
+      <td>0.45312</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G133_N.2_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023207916.103514</td>
+      <td>501441153.909876</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G129_D_mean</th>
+      <td>30863.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.098922</td>
+      <td>0.519534</td>
+      <td>0.0</td>
+      <td>0.000984</td>
+      <td>0.010238</td>
+      <td>0.078854</td>
+      <td>67.705848</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G129_D_variance</th>
+      <td>30863.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.434453</td>
+      <td>23.882739</td>
+      <td>0.0</td>
+      <td>0.000984</td>
+      <td>0.010914</td>
+      <td>0.089276</td>
+      <td>4103.034269</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G129_D_variance.expected</th>
+      <td>30863.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.770677</td>
+      <td>86.253393</td>
+      <td>0.0</td>
+      <td>0.001011</td>
+      <td>0.011012</td>
+      <td>0.089876</td>
+      <td>15133.04511</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G129_D_variance.standardized</th>
+      <td>30863.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.985123</td>
+      <td>0.235192</td>
+      <td>0.0</td>
+      <td>0.949079</td>
+      <td>0.978264</td>
+      <td>1.000197</td>
+      <td>7.684318</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G129_D_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.226021</td>
+      <td>0.585744</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G129_D_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023207916.02484</td>
+      <td>501441154.227318</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G150_D_mean</th>
+      <td>25117.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.053387</td>
+      <td>0.313252</td>
+      <td>0.0</td>
+      <td>0.001771</td>
+      <td>0.011216</td>
+      <td>0.049587</td>
+      <td>43.067296</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G150_D_variance</th>
+      <td>25117.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.259111</td>
+      <td>18.225409</td>
+      <td>0.0</td>
+      <td>0.001769</td>
+      <td>0.012303</td>
+      <td>0.059625</td>
+      <td>2874.12069</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G150_D_variance.expected</th>
+      <td>25117.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.38491</td>
+      <td>42.408355</td>
+      <td>0.0</td>
+      <td>0.001859</td>
+      <td>0.012754</td>
+      <td>0.059852</td>
+      <td>6717.850071</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G150_D_variance.standardized</th>
+      <td>25117.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.958537</td>
+      <td>0.369335</td>
+      <td>0.0</td>
+      <td>0.897248</td>
+      <td>0.951419</td>
+      <td>1.00006</td>
+      <td>7.274891</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G150_D_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.567278</td>
+      <td>0.868732</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G150_D_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2022761798.228069</td>
+      <td>502284983.543523</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G159_D_mean</th>
+      <td>29095.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.077815</td>
+      <td>0.385733</td>
+      <td>0.0</td>
+      <td>0.0013</td>
+      <td>0.011484</td>
+      <td>0.07454</td>
+      <td>49.106176</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G159_D_variance</th>
+      <td>29095.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.429329</td>
+      <td>20.170498</td>
+      <td>0.0</td>
+      <td>0.001299</td>
+      <td>0.012857</td>
+      <td>0.09183</td>
+      <td>3205.59774</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G159_D_variance.expected</th>
+      <td>29095.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.776284</td>
+      <td>86.081561</td>
+      <td>0.0</td>
+      <td>0.001351</td>
+      <td>0.012868</td>
+      <td>0.09245</td>
+      <td>14647.85284</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G159_D_variance.standardized</th>
+      <td>29095.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.987107</td>
+      <td>0.32784</td>
+      <td>0.0</td>
+      <td>0.917783</td>
+      <td>0.965479</td>
+      <td>0.999647</td>
+      <td>8.903908</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G159_D_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.331701</td>
+      <td>0.703405</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G159_D_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2021614637.648</td>
+      <td>504446539.291916</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G171_D_mean</th>
+      <td>24786.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.066722</td>
+      <td>0.32385</td>
+      <td>0.0</td>
+      <td>0.001679</td>
+      <td>0.014274</td>
+      <td>0.061293</td>
+      <td>38.188077</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G171_D_variance</th>
+      <td>24786.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.253417</td>
+      <td>10.044359</td>
+      <td>0.0</td>
+      <td>0.002515</td>
+      <td>0.015712</td>
+      <td>0.072024</td>
+      <td>1481.028463</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G171_D_variance.expected</th>
+      <td>24786.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.405556</td>
+      <td>37.602815</td>
+      <td>0.0</td>
+      <td>0.00173</td>
+      <td>0.015909</td>
+      <td>0.07267</td>
+      <td>5908.323477</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G171_D_variance.standardized</th>
+      <td>24786.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.956737</td>
+      <td>0.332577</td>
+      <td>0.0</td>
+      <td>0.909016</td>
+      <td>0.958162</td>
+      <td>0.999981</td>
+      <td>10.341196</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G171_D_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.587369</td>
+      <td>0.8782</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G171_D_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2021805830.935333</td>
+      <td>504087105.543832</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G187_D_mean</th>
+      <td>25596.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.034235</td>
+      <td>0.223764</td>
+      <td>0.0</td>
+      <td>0.000661</td>
+      <td>0.005614</td>
+      <td>0.028402</td>
+      <td>29.495707</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G187_D_variance</th>
+      <td>25596.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.082579</td>
+      <td>2.886669</td>
+      <td>0.0</td>
+      <td>0.00066</td>
+      <td>0.006245</td>
+      <td>0.032783</td>
+      <td>439.531201</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G187_D_variance.expected</th>
+      <td>25596.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.07835</td>
+      <td>3.885739</td>
+      <td>0.0</td>
+      <td>0.00068</td>
+      <td>0.006267</td>
+      <td>0.032937</td>
+      <td>615.699266</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G187_D_variance.standardized</th>
+      <td>25596.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.931677</td>
+      <td>0.421865</td>
+      <td>0.0</td>
+      <td>0.896006</td>
+      <td>0.95045</td>
+      <td>0.999948</td>
+      <td>10.861237</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G187_D_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.539144</td>
+      <td>0.853966</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G187_D_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2022124486.676994</td>
+      <td>503487316.684181</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G210_D_mean</th>
+      <td>30015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.063317</td>
+      <td>0.304601</td>
+      <td>0.0</td>
+      <td>0.000754</td>
+      <td>0.007253</td>
+      <td>0.052044</td>
+      <td>36.018463</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G210_D_variance</th>
+      <td>30015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.24718</td>
+      <td>10.39455</td>
+      <td>0.0</td>
+      <td>0.000753</td>
+      <td>0.007674</td>
+      <td>0.058917</td>
+      <td>1705.258255</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G210_D_variance.expected</th>
+      <td>30015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.341358</td>
+      <td>29.972164</td>
+      <td>0.0</td>
+      <td>0.000772</td>
+      <td>0.007766</td>
+      <td>0.059147</td>
+      <td>5171.246189</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G210_D_variance.standardized</th>
+      <td>30015.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.993822</td>
+      <td>0.262051</td>
+      <td>0.0</td>
+      <td>0.947619</td>
+      <td>0.977703</td>
+      <td>0.999864</td>
+      <td>11.340845</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G210_D_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.276531</td>
+      <td>0.64696</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts.G210_D_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2022825529.306149</td>
+      <td>502164547.721672</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts_mean</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.139209</td>
+      <td>0.768719</td>
+      <td>0.0</td>
+      <td>0.000859</td>
+      <td>0.010164</td>
+      <td>0.088864</td>
+      <td>85.884783</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts_variance</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.882793</td>
+      <td>76.192541</td>
+      <td>0.0</td>
+      <td>0.000891</td>
+      <td>0.011729</td>
+      <td>0.1175</td>
+      <td>12549.402382</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts_variance.expected</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.380554</td>
+      <td>345.483424</td>
+      <td>0.0</td>
+      <td>0.000903</td>
+      <td>0.011895</td>
+      <td>0.117355</td>
+      <td>63036.432751</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts_variance.standardized</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.030802</td>
+      <td>0.5045</td>
+      <td>0.0</td>
+      <td>0.893778</td>
+      <td>0.963223</td>
+      <td>1.003609</td>
+      <td>25.368601</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts_variable</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.057959</td>
+      <td>0.23367</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>vf_vst_counts_rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023016722.541281</td>
+      <td>501803018.254415</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>var.features.rank</th>
+      <td>33696.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-2023016722.541281</td>
+      <td>501803018.254415</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>-2147483648.0</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>feature_name</th>
+      <td>35477</td>
+      <td>35468</td>
+      <td>ELFN2</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>feature_reference</th>
+      <td>35477</td>
+      <td>1</td>
+      <td>NCBITaxon:9606</td>
+      <td>35477</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>feature_biotype</th>
+      <td>35477</td>
+      <td>1</td>
+      <td>gene</td>
+      <td>35477</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>feature_length</th>
+      <td>35477.0</td>
+      <td>5038.0</td>
+      <td>582.0</td>
+      <td>61.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>feature_type</th>
+      <td>35477</td>
+      <td>22</td>
+      <td>protein_coding</td>
+      <td>19267</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='799e0777-8fe4-4d14-9183-01a7314923ec.h5ad'>799e0777-8fe4-4d14-9183-01a7314923ec.h5ad</a>
+                    </td>
+                
+                <td class="nowrap">626.66 MB</td>
+                <td class="nowrap">ed0ac2bad2120dde473bd40de1fcb7e6</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">906.0 B</td>
+                <td class="nowrap">9c89b73e29966e59abe2edb25f871594</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    <script>
+        // ---- Copy a resource id (copy_button.jinja) ----
+        //
+        // Included, as statements, into a script that runs once the
+        // icons are in the document: the index page's, and the resource
+        // page's (gain#1477).  An icon names what it copies in
+        // `data-copy-id`; its text is the glyph it shows.
+        //
+        // The Clipboard API exists only on a secure origin -- https, or
+        // localhost -- so on a plain-http host there is nothing to write
+        // to, and an icon there is hidden rather than left as a dead
+        // click.  Hidden with an inline style, not removed: the index
+        // page rewrites its rows in place and looks each row's icon up
+        // again, so the element has to stay.
+        const copyIcons = document.querySelectorAll(".copy-icon");
+        if (!navigator.clipboard) {
+            copyIcons.forEach((icon) => { icon.style.display = "none"; });
+        }
+        const copyResourceId = (e) => {
+          navigator.clipboard.writeText(e.target.dataset.copyId).then(
+            () => {
+              // One tick at a time: every other icon goes back to its
+              // glyph, the clicked one reports for a moment.
+              copyIcons.forEach((icon) => { icon.textContent = 'content_copy'; });
+              e.target.textContent = 'check';
+              setTimeout(function(){
+                e.target.textContent = 'content_copy'
+              }, 3000);
+            }
+          )
+        };
+        copyIcons.forEach((icon) => icon.addEventListener("click", copyResourceId));
+    </script>
+  </body>
+</html>
