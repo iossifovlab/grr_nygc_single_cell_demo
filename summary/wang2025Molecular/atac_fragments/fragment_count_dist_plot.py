@@ -1,1 +1,1 @@
-/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/ylee-buff/grr_nygc_single_cell_demo/summary/wang2025Molecular/tools/fragment_count_dist_plot.py
+../tools/fragment_count_dist_plot.py
