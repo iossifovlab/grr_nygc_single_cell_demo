@@ -1,0 +1,6 @@
+AnnData object with n_obs × n_vars = 232328 × 35477
+    obs: 'Sample_ID', 'Estimated_postconceptional_age_in_days', 'Group', 'Region', 'nCount_RNA', 'nFeature_RNA', 'ATAC_fragments_in_peaks', 'Percentage_reads_in_peaks', 'TSS.enrichment', 'Nucleosome_signal', 'Scrublet_doublet_score', 'S.Score', 'G2M.Score', 'Class', 'Subclass', 'Type', 'Type_updated', 'Cluster', 'tissue_ontology_term_id', 'tissue_type', 'assay_ontology_term_id', 'disease_ontology_term_id', 'cell_type_ontology_term_id', 'self_reported_ethnicity_ontology_term_id', 'development_stage_ontology_term_id', 'sex_ontology_term_id', 'donor_id', 'suspension_type', 'is_primary_data', 'cell_type', 'assay', 'disease', 'sex', 'tissue', 'self_reported_ethnicity', 'development_stage', 'observation_joinid'
+    var: 'gene_name', 'feature_is_filtered', 'feature_name', 'feature_reference', 'feature_biotype', 'feature_length', 'feature_type'
+    uns: 'Type_colors', 'Type_updated_colors', 'citation', 'default_embedding', 'is_pre_analysis', 'organism', 'organism_ontology_term_id', 'schema_reference', 'schema_version', 'title'
+    obsm: 'X_pca', 'X_umap'
+    layers: None (.X)

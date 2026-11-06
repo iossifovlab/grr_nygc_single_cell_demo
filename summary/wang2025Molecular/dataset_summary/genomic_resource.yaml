@@ -1,0 +1,23 @@
+
+type: basic
+
+meta:
+    summary: wang2025Molecular
+    description: |
+        [Wang et al., Molecular and cellular dynamics of the developing human neocortex at single-cell resolution, Nature, 2025](https://www.nature.com/articles/s41586-024-08351-7)
+
+        <pre style="font-family: monospace;">
+            <a style="font-family: monospace;" href="../../../index.html#/summary/wang2025Molecular">wang2025Molecular/</a>                        
+            ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments/</a>            1 resources
+            ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
+            └── <a style="font-family: monospace;" href="../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table/</a>      59 resources
+        </pre>
+    labels:
+        assay: 10x_Multiome 
+        species: human 
+        sequencing_platform: Illumina
+        vendor: 10x_Genomics
+        reference_genome: reference/Human/genome/GRCh38.p13
+        #gene_models: reference/Human/gene_models/GENCODE/32/basic/CHR
+        dataset: wang2025Molecular
+    

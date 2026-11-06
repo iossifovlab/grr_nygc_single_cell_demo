@@ -1,0 +1,16 @@
+file: S15_15e.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: wang2025Molecular
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 15e | Average region-based AUC scores of eRegulons
+    (repressors) across cell types.
+parameters:
+  sheet_name: Sheet1
+type: data_frame
