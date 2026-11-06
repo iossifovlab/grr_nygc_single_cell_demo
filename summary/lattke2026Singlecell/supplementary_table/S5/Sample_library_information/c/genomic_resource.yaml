@@ -1,0 +1,18 @@
+file: S5_c.xlsx
+format: excel
+meta:
+  description: 'ASO treament experiment (related to Fig. 4 d; Extended data Fig. 9c-g)
+
+    Experimental design/overview biological/technical replicates'
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S5: In vitro analyses - RNA-seq experimental design and sample metadata'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

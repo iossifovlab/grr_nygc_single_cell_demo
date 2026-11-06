@@ -1,0 +1,22 @@
+
+type: basic
+
+meta:
+    summary: lattke2026Singlecell
+    description: |
+        [Lattke et al., Single-Cell Multiomic Atlas of Human Cortical Development in Down Syndrome, Nat Med, 2026](https://doi.org/10.1038/s41591-026-04211-1)
+
+        <pre style="font-family: monospace;">
+            <a style="font-family: monospace;" href="../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell/</a>                     
+            ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments/</a>            1 resources
+            ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
+            └── <a style="font-family: monospace;" href="../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table/</a>      60 resources
+        </pre>
+    labels:
+          assay: 10x_Multiome 
+          species: human 
+          sequencing_platform: Illumina
+          vendor: 10x_Genomics
+          reference_genome: reference/Human/genome/GRCh38.p14 
+          dataset: lattke2026Singlecell
+    

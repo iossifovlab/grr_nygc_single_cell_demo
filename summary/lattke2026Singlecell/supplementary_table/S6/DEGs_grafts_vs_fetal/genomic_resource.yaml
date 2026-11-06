@@ -1,0 +1,20 @@
+file: S6_DEGs_grafts_vs_fetal.xlsx
+format: excel
+meta:
+  description: 'Genes concordantly regulated in fetal tissue and grafts (concordant
+    up: upregulated in any cluster in fetal tissue; upregulated in any cluster in
+    grafts, not downregulated in any cluster in grafts)
+
+    the origninal table is strangly organized'
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S6: Graft analyses - Concordantly regulated genes in grafts vs tissue'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

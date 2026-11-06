@@ -1,0 +1,17 @@
+file: S4_d.xlsx
+format: excel
+meta:
+  description: PCW16-20
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S4: Gene-regulatory-network-analyses - Summary of GRN predictions by scMEGA
+    and their validation by ChIP-Atlas datasets'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

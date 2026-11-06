@@ -1,0 +1,17 @@
+file: S4_GRN_interactions_ChIP_val.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S4: Extended Data: Gene-regulatory-network-analyses -  TF-target-interactions
+    predicted by scMEGA validated by ChIP-Atlas datasets (PCW10-20)'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 1
+type: data_frame

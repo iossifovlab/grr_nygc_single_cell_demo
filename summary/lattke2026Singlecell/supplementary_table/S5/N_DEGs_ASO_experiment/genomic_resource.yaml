@@ -1,0 +1,21 @@
+file: S5_N_DEGs_ASO_experiment.xlsx
+format: excel
+meta:
+  description: '
+
+    *trend_reg: nominal p value <0.1
+
+    **reg: adjusted p value  <0.1 (Benjamini-Hochberg adjusted for all predicted targets
+    from tissue)'
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S5: In vitro analyses  -  Numbers of differential genes in ASO experiment'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

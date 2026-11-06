@@ -1,0 +1,17 @@
+file: S3_enriched_GO_terms_PCW11-13.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S3: Gene ontology analysis results of all differentially expressed genes
+    combined  (excitatory lineage PCW11-13)'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 1
+type: data_frame

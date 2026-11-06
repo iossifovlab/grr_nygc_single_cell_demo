@@ -1,0 +1,35 @@
+file: S1_Sample_library_information_QC.xlsx
+format: excel
+meta:
+  description: '| tissue_quality                                                                                          |
+    RNase_inh                                                                                               |
+
+    | -------------------------------------------------------------------------------------------------------
+    | -------------------------------------------------------------------------------------------------------
+    |
+
+    | `ok`                                                                                                    |
+    Protector: Protector RNase inhibitor (Sigma #3335402001)                                                |
+
+    | `ok_orig_sub: poor quality in initial sections, better quality of later sections`                       |
+    Protector_red: Protector RNase inhibitor (only 0.5U/ul in Homogenisation Buffer)                        |
+
+    | `sub: suboptimal quality and/or unclear tissue identity, with some areas possibly
+    representing cortex ` | RiboLock: RiboLock RNase inhibitor (Thermo Fisher, PN-EO0382)                                           |
+
+    | `poor: obviously poor tissue preservation/no confident staining for cortical
+    markers `                  | RNaseOUT: RNaseOUT RNase inhibitor (Thermo Fisher,
+    10777019) (resulted in ~50% less UMI counts/cell!)   |'
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S1: Library/sample metadata with selected library level QC data and inclusion/exclusion
+    criteria'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 2
+type: data_frame

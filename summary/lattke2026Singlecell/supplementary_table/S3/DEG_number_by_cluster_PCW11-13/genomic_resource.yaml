@@ -1,0 +1,17 @@
+file: S3_DEG_number_by_cluster_PCW11-13.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S3: Number of differentially expressed genes by cluster, including Chr21
+    genes and TFs (excitatory lineage PCW11-13)'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

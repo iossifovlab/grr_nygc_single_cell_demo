@@ -1,0 +1,24 @@
+type: ann_data
+file: f16c25da-15bd-46a4-9a3f-17093f27a2f1.h5ad
+meta:
+  summary: Human fetal cortex in Down syndrome, 10X-Multiome (snRNA/ATACseq), complete
+    dataset
+  description: '
+
+    [Lattke et al., Single-Cell Multiomic Atlas of Human Cortical Development in Down
+    Syndrome, Nat Med, 2026](https://doi.org/10.1038/s41591-026-04211-1)
+
+
+    Downloaded from: [https://cellxgene.cziscience.com/collections/0e9fd1d3-ef4c-47c6-a2e4-ef4bfadf7c79](https://cellxgene.cziscience.com/collections/0e9fd1d3-ef4c-47c6-a2e4-ef4bfadf7c79).
+
+
+    '
+  labels:
+    assay: 10x_Multiome
+    modalities: RNA
+    data_type: gene_expression
+    species: human
+    sequencing_platform: Illumina
+    vendor: 10x_Genomics
+    reference_genome: reference/Human/genome/GRCh38.p14
+    dataset: lattke2026Singlecell

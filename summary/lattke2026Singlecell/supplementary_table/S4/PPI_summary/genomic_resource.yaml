@@ -1,0 +1,18 @@
+file: S4_PPI_summary.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S4: Extended Data: Gene-regulatory-network-analyses -  Summary of BioGRID
+    PPIs linking Chr21 genes and core network TFs (including PPIs linking activity
+    of TFs with Chr21 gene expression) (PCW10-20)'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

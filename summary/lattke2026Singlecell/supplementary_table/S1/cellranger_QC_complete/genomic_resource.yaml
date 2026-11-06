@@ -1,0 +1,16 @@
+file: S1_cellranger_QC_complete.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S1: Complete sample level QC data from cellranger'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

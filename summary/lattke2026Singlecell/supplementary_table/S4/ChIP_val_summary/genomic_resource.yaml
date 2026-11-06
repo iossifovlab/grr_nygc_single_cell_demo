@@ -1,0 +1,18 @@
+file: S4_ChIP_val_summary.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S4: Extended Data: Gene-regulatory-network-analyses -  Validation TF binding
+    to regulatory elements of predicted target genes identified by scMEGA by ChIP-Atlas
+    ChIP-seq datasets, compared to predicted non-targets (PCW10-20)'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

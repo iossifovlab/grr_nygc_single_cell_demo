@@ -1,0 +1,19 @@
+file: S5_a.xlsx
+format: excel
+meta:
+  description: 'Basic model characterisation (related to Fig. 4 b-c; Fig. 5 d-e; Extended
+    data Fig. 9a-b; Extended data Fig. 10c)
+
+    Experimental design/overview biological/technical replicates'
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S5: In vitro analyses - RNA-seq experimental design and sample metadata'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame

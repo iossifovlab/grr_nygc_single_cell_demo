@@ -1,0 +1,16 @@
+file: S3_bulk_RNAseq_PCW11-14_samples.xlsx
+format: excel
+meta:
+  description: ''
+  labels:
+    assay: 10x_Multiome
+    dataset: lattke2026Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: 'S3: Samples for bulk-RNAseq PCW11-14'
+parameters:
+  sheet_name: Sheet1
+  skiprows: 0
+type: data_frame
