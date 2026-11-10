@@ -74,14 +74,24 @@ GAIn can display resource types, identifiers, and metadata using the Git-tracked
 
 ## Accessing data at NYGC and CSHL
 
-At NYGC and CSHL, the single-cell datasets are available through existing GRRs on shared institutional storage. Users working on systems with access to these directories can analyze the data without downloading separate copies.
+At NYGC and CSHL, the single-cell datasets are available through existing GRRs on shared institutional storage.
+Users working on systems with access to these directories can analyze the data without downloading separate copies.
+We currently maintain two versions of the datasets: v0 and v1.
+
+* v0 is frozen and considered stable. It will only be updated to address bugs or correct errors.
+
+* v1 is the actively evolving version. It includes all datasets available in v0, along with many additional datasets. Its structure and organization may change over time, including potentially substantial reorganizations.
 
 **At NYGC:**
 
-After activating the `gain` environment, set the `GRR_DEFINITION_FILE` environment variable to the appropriate configuration.
+Source the shared GAIn environment setup script to load the required modules, activate the shared Conda environment, and configure the GRR definition and Dask settings.
 
 ```bash
-export GRR_DEFINITION_FILE=/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/GRRs/grr_definition.yaml
+source /gpfs/commons/datasets/controlled/NYGC_AI_Initiative/GRRs/set_sc_v1.sh
+```
+or
+```bash
+source /gpfs/commons/datasets/controlled/NYGC_AI_Initiative/GRRs/set_sc_v0.sh
 ```
 
 **At CSHL:**
@@ -89,8 +99,13 @@ export GRR_DEFINITION_FILE=/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/
 Source the shared GAIn environment setup script to load the required modules, activate the shared Conda environment, and configure the GRR definition and Dask settings.
 
 ```bash
+source /grid/iossifov/data/GRRs/set_sc_v1.sh
+```
+or
+```bash
 source /grid/iossifov/data/GRRs/set_sc_v0.sh
 ```
+
 
 At either institution, browse the available genomic resources using:
 
