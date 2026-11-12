@@ -15,10 +15,14 @@ The resources are organized under two top-level directories:
 
 ## Included studies
 
-- **Johansen 2025:** [Cross-species consensus atlas of the primate basal ganglia](index.html#/summary/johansen2025Crossspecies)
-- **Liu 2026:** [Multiomics and deep learning dissect regulatory syntax in human development](index.html#/summary/liu2026Multiomics)
-- **Zemke 2023:** [Conserved and divergent gene regulatory programs of the mammalian neocortex](index.html#/summary/zemke2023Conserved)
-- **Zemke 2024:** [Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](index.html#/summary/zemke2024Epigenetic)
+- **[galvao2024Multimodal](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/galvao2024Multimodal/dataset_summary/index.html):** [Multimodal single-cell profiling reveals neuronal vulnerability and pathological cell states in focal cortical dysplasia](https://doi.org/10.1016/j.isci.2024.111337)
+- **[johansen2025Crossspecies](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/johansen2025Crossspecies/dataset_summary/index.html):** [Cross-species consensus atlas of the primate basal ganglia](https://doi.org/10.64898/2025.12.15.694496)
+- **[lattke2026Singlecell](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/lattke2026Singlecell/dataset_summary/index.html):** [Single-Cell Multiomic Atlas of Human Cortical Development in Down Syndrome](https://doi.org/10.1038/s41591-026-04211-1)
+- **[liu2026Multiomics](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/liu2026Multiomics/dataset_summary/index.html):** [Multiomics and deep learning dissect regulatory syntax in human development](https://doi.org/10.1038/s41586-026-10326-9)
+- **[wang2025Molecular](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/wang2025Molecular/dataset_summary/index.html):** [Molecular and cellular dynamics of the developing human neocortex at single-cell resolution](https://doi.org/10.1038/s41586-024-08351-7)
+- **[zemke2023Conserved](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/zemke2023Conserved/dataset_summary/index.html):** [Conserved and divergent gene regulatory programs of the mammalian neocortex](https://doi.org/10.1038/s41586-023-06819-6)
+- **[zemke2024Epigenetic](https://grr-nygc-ai-consortium.iossifovlab.com/latest/summary/zemke2024Epigenetic/dataset_summary/index.html):** [Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](https://doi.org/10.1126/science.adt8307)
+
 
 ## Browsing resources
 
