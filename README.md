@@ -78,9 +78,9 @@ At NYGC and CSHL, the single-cell datasets are available through existing GRRs o
 Users working on systems with access to these directories can analyze the data without downloading separate copies.
 We currently maintain two versions of the datasets: v0 and v1.
 
-* v0 is frozen and considered stable. It will only be updated to address bugs or correct errors.
+* v0 is frozen and considered stable. It will only be updated to address bugs or correct errors. It lives on the `v0` branch of this repository, and the consortium GRR site serves it at `https://grr-nygc-ai-consortium.iossifovlab.com/v0/`.
 
-* v1 is the actively evolving version. It includes all datasets available in v0, along with many additional datasets. Its structure and organization may change over time, including potentially substantial reorganizations.
+* v1 is the actively evolving version. It includes all datasets available in v0, along with many additional datasets. Its structure and organization may change over time, including potentially substantial reorganizations. It lives on the `master` branch, and the consortium GRR site serves it as `latest`, at `https://grr-nygc-ai-consortium.iossifovlab.com/latest/`.
 
 **At NYGC:**
 
