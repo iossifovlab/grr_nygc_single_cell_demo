@@ -623,7 +623,8 @@
             <tr>
                 <th>Summary</th>
                 
-                <td>galvao2024Multimodal
+                <td>Galvão et al, Multimodal single-cell profiling of focal cortical dysplasia, iScience 2024
+
                 </td>
             </tr>
             <tr>
@@ -707,14 +708,30 @@
                                 display: block;
                               }
                             </style>
-                            <p><a href="https://www.cell.com/iscience/fulltext/S2589-0042(24)02562-8">Galvão et al., Multimodal single-cell profiling reveals neuronal vulnerability and pathological cell states in focal cortical dysplasia, iScience, 2024</a></p>
+                            <p>The study presents a single-nucleus multiomic analysis of human cerebral cortex tissue from patients with focal cortical dysplasia type II (FCD II). It investigates molecular and cellular differences between dysplastic and histologically normal tissue, with particular attention to neuronal vulnerability and pathological cell states.</p>
+
+<p>Using 10x Multiome, the authors jointly measured RNA expression and chromatin accessibility in the same nuclei. The dataset contains 61,525 nuclei from 11 tissue samples collected from eight donors. The samples include six classified as FCD type IIb, three as FCD type IIa, and two as histologically normal. The RNA expression matrix contains 35,477 genes and includes 17 author-defined cell-type categories.</p>
+
+<p><a href="https://www.cell.com/iscience/fulltext/S2589-0042(24)02562-8">Galvão et al., Multimodal single-cell profiling reveals neuronal vulnerability and pathological cell states in focal cortical dysplasia, iScience, 2024.</a></p>
 
 <pre style="font-family: monospace;">
-    <a style="font-family: monospace;" href="../../../index.html#/summary/galvao2024Multimodal">galvao2024Multimodal/</a>                     
-    ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments/</a>            1 resources
-    ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
-    └── <a style="font-family: monospace;" href="../supplementary_table/index.html">supplementary_table/</a>       1 resources
+    <a style="font-family: monospace;" href="../../../index.html#/summary/galvao2024Multimodal">galvao2024Multimodal/</a>
+    ├── <a style="font-family: monospace;" href="../10x_multiomics_cell_meta_data/index.html">10x_multiomics_cell_meta_data</a>    1 resource
+    ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments</a>                   1 resource
+    ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix</a>            1 resource
+    ├── <a style="font-family: monospace;" href="../samples_meta_data/index.html">samples_meta_data</a>                1 resource
+    └── <a style="font-family: monospace;" href="../supplementary_table/index.html">supplementary_table</a>              1 resource
 </pre>
+
+<p>The data are organized into five main resource groups. <strong>rna_expression_matrix</strong> contains a single AnnData resource with RNA expression measurements for 61,525 nuclei across 35,477 genes. Its cell annotations include donor and sample identifiers, histological assessments, and cell-type classifications.</p>
+
+<p><strong>atac_fragments</strong> contains a single resource with chromatin-accessibility fragments from the 10x Multiome assay. Each fragment record specifies genomic coordinates, a cell barcode, and a count. The fragment barcodes can be linked to the cell-type and sample annotations in 10x_multiomics_cell_meta_data, which contains the same 61,525 barcodes as the RNA expression matrix.</p>
+
+<p><strong>10x_multiomics_cell_meta_data</strong> contains cell-level annotations for the 61,525 nuclei, including barcodes, sample identifiers, cell types, and tissue information. Its barcodes and sample assignments correspond exactly to those in the RNA expression matrix. This resource is also referenced by the ATAC fragment resource for cell annotations.</p>
+
+<p><strong>samples_meta_data</strong> contains metadata for the 11 tissue samples, including donor identifiers, histological assessment, tissue, sex, ethnicity, and developmental stage. Two donors contributed both dysplastic and histologically normal samples.</p>
+
+<p>The <strong>supplementary_table</strong> resource contains Table S1, listing microglia subcluster markers identified using the FindAllMarkers function, corresponding to Figure 4 of the study.</p>
 
                         </template>
                     </div>
@@ -765,8 +782,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1.14 KB</td>
-                <td class="nowrap">9c6dc16874468e9befb598d380738173</td>
+                <td class="nowrap">3.62 KB</td>
+                <td class="nowrap">38b1d75995c214fc1bd70ebff60592a5</td>
             </tr>
             <tr>
                 
