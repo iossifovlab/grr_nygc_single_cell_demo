@@ -1,0 +1,17 @@
+file: mmc5.xlsx
+format: excel
+meta:
+  description: Likely causal GWAS variant PPAs, overlapping cCREs, corresponding cell
+    types, motifs altered, and candidate target genes, related to Figure 6
+  labels:
+    assay: 10x_Multiome
+    dataset: Zhang2021Singlecell
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S5 of Zhang et al., A single-cell atlas of chromatin accessibility
+    in the human genome , Cell, 2021
+parameters:
+  sheet_name: snp
+type: data_frame

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "type": "categorical",
+    "value_order": [],
+    "y_log_scale": false,
+    "label_rotation": 0,
+    "displayed_values_count": 5,
+    "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count"
+  },
+  "values": {
+    "TAGACTTGACCGCTGAGCCAAT": 40505,
+    "CAGGTGAACCACGTCCGTAATT": 33376,
+    "ATGCAGGTAAGCTTAAGCCGTT": 29753,
+    "CAGGAAAGCATTTCTGGCGCAG": 28537,
+    "AACGACCAAACGATATCGATCC": 27967
+  },
+  "truncated": true,
+  "unique_values": 72188,
+  "total_count": 37346455
+}
