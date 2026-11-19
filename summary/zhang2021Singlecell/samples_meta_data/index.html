@@ -750,6 +750,13 @@
       <th>unique</th>
       <th>top</th>
       <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
     </tr>
   </thead>
   <tbody>
@@ -759,27 +766,55 @@
       <td>72</td>
       <td>GSM5589348</td>
       <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>donor_id</th>
       <td>72</td>
-      <td>72</td>
-      <td>SAMN21523869</td>
-      <td>1</td>
+      <td>5</td>
+      <td>Donor 4</td>
+      <td>27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>cell_type</th>
+      <th>tissue</th>
       <td>72</td>
       <td>26</td>
       <td>gastrocnemius muscle</td>
       <td>5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>age</th>
-      <td>72</td>
-      <td>5</td>
-      <td>53 years</td>
-      <td>27</td>
+      <th>age(years)</th>
+      <td>72.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>49.708333</td>
+      <td>6.955467</td>
+      <td>25.0</td>
+      <td>51.0</td>
+      <td>53.0</td>
+      <td>53.0</td>
+      <td>54.0</td>
     </tr>
     <tr>
       <th>sex</th>
@@ -787,6 +822,13 @@
       <td>2</td>
       <td>female</td>
       <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>race</th>
@@ -794,6 +836,13 @@
       <td>3</td>
       <td>asian</td>
       <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>case_of_death</th>
@@ -801,6 +850,83 @@
       <td>3</td>
       <td>cerebral vascular accident</td>
       <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Tissue Source</th>
+      <td>72</td>
+      <td>2</td>
+      <td>ENTEx</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Source</th>
+      <td>72</td>
+      <td>1</td>
+      <td>Current study</td>
+      <td>72</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ENCODE Accession</th>
+      <td>72</td>
+      <td>5</td>
+      <td>ENCDO793LXB</td>
+      <td>27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Manuscript Identifier</th>
+      <td>72</td>
+      <td>2</td>
+      <td>-</td>
+      <td>70</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sample_id2</th>
+      <td>72</td>
+      <td>71</td>
+      <td>UMB4540_snATAC_frontal_cortex</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -833,8 +959,8 @@
                         <a href='samples_namespace.csv.gz'>samples_namespace.csv.gz</a>
                     </td>
                 
-                <td class="nowrap">1022.0 B</td>
-                <td class="nowrap">c8213a7987ac8af820435b4726425bea</td>
+                <td class="nowrap">1.63 KB</td>
+                <td class="nowrap">b162f3911481bacf3366a9b49fd957c6</td>
             </tr>
             <tr>
                 

@@ -1,7 +1,20 @@
 file: barcode_namespace.csv.gz
 format: csv
 meta:
-  description: ''
+  description: '
+
+    missing on cell_meta: "GSM5589414_UMB4540_snATAC_frontal_cortex_rep1" "GSM5589415_UMB4540_snATAC_frontal_cortex_rep2"
+
+
+    cell_meta data is based on
+
+
+    GSE184462_metadata.tsv.gz from [https://ftp.ncbi.nlm.nih.gov/geo/series/GSE184nnn/GSE184462/suppl/](https://ftp.ncbi.nlm.nih.gov/geo/series/GSE184nnn/GSE184462/suppl/)
+
+
+    only data originated from zhang2021Singlecell are summarized
+
+    '
   labels:
     assay: sci-ATAC-seq
     dataset: zhang2021Singlecell
