@@ -1,0 +1,17 @@
+file: 41588_2025_2083_MOESM18_ESM.xlsx
+format: excel
+meta:
+  description: Results from GSEA for each pseudotime trendline.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S15  of Clarence et al., Multiomic single-cell profiling identifies
+    critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: table_S15
+  skiprows: 1
+type: data_frame

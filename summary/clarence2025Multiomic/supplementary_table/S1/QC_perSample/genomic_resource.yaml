@@ -1,0 +1,17 @@
+file: S1.QC_perSample.xlsx
+format: excel
+meta:
+  description: Gene and peak markers with cell type specificity.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S1 , QC_perSample of Clarence et al., Multiomic single-cell profiling
+    identifies critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: QC_perSample
+  skiprows: 1
+type: data_frame

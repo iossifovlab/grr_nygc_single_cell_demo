@@ -1,0 +1,17 @@
+file: 41588_2025_2083_MOESM13_ESM.xlsx
+format: excel
+meta:
+  description: GSEA for the top ten pathways in MS.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S10  of Clarence et al., Multiomic single-cell profiling identifies
+    critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: gsea_MS
+  skiprows: 2
+type: data_frame

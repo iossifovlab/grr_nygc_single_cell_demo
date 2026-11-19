@@ -1,0 +1,18 @@
+file: S9.All_ABC-MAX.xlsx
+format: excel
+meta:
+  description: "E\u2013P links connected to SCZ GWAS loci as predicted by the ABC\
+    \ approach."
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S9 , All_ABC-MAX of Clarence et al., Multiomic single-cell profiling
+    identifies critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: All_ABC-MAX
+  skiprows: 0
+type: data_frame

@@ -1,0 +1,17 @@
+file: S6.PBX1_BACH2_AHR.xlsx
+format: excel
+meta:
+  description: RSS score of selected shared eRegulons.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S6 , PBX1_BACH2_AHR of Clarence et al., Multiomic single-cell profiling
+    identifies critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: PBX1_BACH2_AHR
+  skiprows: 1
+type: data_frame

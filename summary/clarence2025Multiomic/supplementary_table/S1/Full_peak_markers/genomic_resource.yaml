@@ -1,0 +1,17 @@
+file: S1.Full_peak_markers.xlsx
+format: excel
+meta:
+  description: Gene and peak markers with cell type specificity.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S1 , Full_peak_markers of Clarence et al., Multiomic single-cell
+    profiling identifies critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: Full_peak_markers
+  skiprows: 0
+type: data_frame

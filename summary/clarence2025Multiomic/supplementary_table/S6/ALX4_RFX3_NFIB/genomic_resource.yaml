@@ -1,0 +1,17 @@
+file: S6.ALX4_RFX3_NFIB.xlsx
+format: excel
+meta:
+  description: RSS score of selected shared eRegulons.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S6 , ALX4_RFX3_NFIB of Clarence et al., Multiomic single-cell profiling
+    identifies critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: ALX4_RFX3_NFIB
+  skiprows: 1
+type: data_frame

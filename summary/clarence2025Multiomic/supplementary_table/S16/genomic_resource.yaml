@@ -1,0 +1,18 @@
+file: 41588_2025_2083_MOESM19_ESM.xlsx
+format: excel
+meta:
+  description: MAGMA enrichment results for both cell-type-specific regulators and
+    OLa-eRegulons.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S16  of Clarence et al., Multiomic single-cell profiling identifies
+    critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: MAGMA_eRegposneg_v1ord
+  skiprows: 1
+type: data_frame

@@ -1,0 +1,17 @@
+file: 41588_2025_2083_MOESM14_ESM.xlsx
+format: excel
+meta:
+  description: Targeted GSEA using the SynGO in SCZ.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    reference_genome: reference/Human/genome/GRCh38.p13
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Table S11  of Clarence et al., Multiomic single-cell profiling identifies
+    critical regulators of postnatal brain, Nat Genet, 2025
+parameters:
+  sheet_name: syngo
+  skiprows: 2
+type: data_frame
