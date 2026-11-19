@@ -1,0 +1,37 @@
+type: position_score
+table:
+  filename: Astrocyte_1.bw
+  chrom:
+    index: 0
+  pos_begin:
+    index: 1
+  pos_end:
+    index: 2
+scores:
+- id: zhang2021Singlecell_Astrocyte_1
+  type: float
+  desc: RPKM?
+  index: 3
+  histogram:
+    type: number
+    number_of_bins: 100
+    y_log_scale: true
+meta:
+  summary: ATAC big wig for Astrocyte_1 cell type
+  description: '
+
+    Genome binding/occupancy profiling by high throughput sequencing
+
+
+    [Zhang et al., A single-cell atlas of chromatin accessibility in the human genome
+    , Cell, 2021](https://www.sciencedirect.com/science/article/pii/S0092867421012794)
+
+
+    Downloaded from: [https://catlas.org/catlas/dataset_resource.php?ID=humantissues](https://catlas.org/catlas/dataset_resource.php?ID=humantissues).
+
+    '
+  labels:
+    assay: sci-ATAC-seq
+    cell_type: Astrocyte_1
+    species: human
+    dataset: zhang2021Singlecell

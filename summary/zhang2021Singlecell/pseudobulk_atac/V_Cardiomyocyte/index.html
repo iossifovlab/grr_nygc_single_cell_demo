@@ -1,0 +1,1772 @@
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../../../../.static/fonts/roboto-v51-latin.1404ca34.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
+      .figure-pair > .figure-thumbnail {
+        flex: 0 1 calc(50% - 8px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* In a page header the trail takes the size and weight the
+         header's one link used to have, so the current crumb -- a span,
+         which `#page-header a` does not reach -- reads at the same size
+         as the links beside it.  The index page's trail has no header
+         around it and keeps its own size. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      .copy-icon {
+        font-size: 20px;
+        color: #B9D3E7;
+      }
+
+      .copy-icon:hover {
+        cursor: pointer;
+        color: #85A2B9;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table .copy-icon {
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      table {
+    table-layout: fixed;
+}
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<style>
+  
+      @font-face {
+        font-family: "Material Symbols Outlined";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: block;
+        src: url("../../../../.static/fonts/material-symbols-outlined-v371.68a25c87.woff2") format("woff2");
+      }
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    
+    <nav id="page-header">
+      <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zhang2021Singlecell/pseudobulk_atac">pseudobulk_atac</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">V_Cardiomyocyte</span>
+      </div>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/zhang2021Singlecell/pseudobulk_atac/V_Cardiomyocyte<span class="material-symbols-outlined copy-icon" data-copy-id="summary/zhang2021Singlecell/pseudobulk_atac/V_Cardiomyocyte">content_copy</span></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>position_score</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                
+                <td>ATAC big wig for V_Cardiomyocyte cell type
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                            
+                             <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+                            </style>
+                            <p>Genome binding/occupancy profiling by high throughput sequencing</p>
+
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0092867421012794">Zhang et al., A single-cell atlas of chromatin accessibility in the human genome , Cell, 2021</a></p>
+
+<p>Downloaded from: <a href="https://catlas.org/catlas/dataset_resource.php?ID=humantissues">https://catlas.org/catlas/dataset_resource.php?ID=humantissues</a>.</p>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                
+                    <ul>
+                    
+                        <li>assay: sci-ATAC-seq</li>
+                    
+                        <li>cell_type: V_Cardiomyocyte</li>
+                    
+                        <li>dataset: zhang2021Singlecell</li>
+                    
+                        <li>species: human</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+<h2>Scores (1)</h2>
+<div class="scrollable-table-container">  
+<table>
+    <colgroup>
+        <col style="width: 15%">
+        <col style="width: 6%">
+        <col style="width: 15%">
+        <col>
+        <col style="width: 220px">
+        <col style="width: 12%">
+        <col style="width: 200px">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Default annotation</th>
+            <th>Description</th>
+            <th>Histogram</th>
+            <th>Range</th>
+            <th>Summary</th>
+        </tr>
+    </thead><tr class="score-definition">
+            <td>zhang2021Singlecell_V_Cardiomyocyte</td>
+            <td>float</td>
+            
+            
+                <td>
+                    <p>zhang2021Singlecell_V_Cardiomyocyte</p>
+                </td>
+            
+
+            <td>
+                <div>RPKM?</div>
+                
+                
+            </td>
+            <td style="text-align: center">
+                
+                
+                <img src="statistics/histogram_zhang2021Singlecell_V_Cardiomyocyte.png"
+                    alt="HISTOGRAM FOR zhang2021Singlecell_V_Cardiomyocyte"
+                    title="zhang2021Singlecell_V_Cardiomyocyte"
+                    class="histogram-thumbnail"
+                    data-modal-trigger="modal-zhang2021Singlecell_V_Cardiomyocyte"></td>
+            <td>
+                [0.0277, 155]</td>
+            
+<td>
+<dl class="moments">
+<dt>n</dt><dd>2,611,903,361</dd>
+<dt>mean</dt><dd>0.383</dd>
+<dt>sd</dt><dd>1.82</dd>
+</dl></td>
+        </tr>
+        <div id="modal-zhang2021Singlecell_V_Cardiomyocyte" class="modal">
+            <div class="modal-content">
+                <span title="zhang2021Singlecell_V_Cardiomyocyte" class="close">&times;</span>
+                <img src="statistics/histogram_zhang2021Singlecell_V_Cardiomyocyte.png"
+                    alt="HISTOGRAM FOR zhang2021Singlecell_V_Cardiomyocyte"
+                    title="zhang2021Singlecell_V_Cardiomyocyte"
+                    style="max-width: min(100%, 800px);">
+            </div>
+        </div>
+</table>
+</div>
+<p class="text-muted">n counts base pairs; sd is the population standard deviation.</p>
+
+
+
+<h2>Coverage</h2>
+
+
+
+
+<div class="scrollable-table-container">
+<table>
+    <thead>
+        <tr>
+            <th data-sort="text">Chromosome</th>
+            <th data-sort="number">Covered positions</th>
+            <th data-sort="number">Covered %</th>
+            <th data-sort="number">Segments</th>
+        </tr><tr>
+            <td>all chromosomes</td>
+            <td>2611903361</td><td>84.26%</td>
+            <td>320175839</td>
+        </tr>
+    </thead>
+    <tbody><tr>
+            <td data-sort-value="chr011">chr1</td>
+            <td data-sort-value="206530648">206530648</td>
+            <td data-sort-value="0.8295855408783148">82.96%</td>
+            <td data-sort-value="27628234">27628234</td>
+        </tr><tr>
+            <td data-sort-value="chr012">chr2</td>
+            <td data-sort-value="219152884">219152884</td>
+            <td data-sort-value="0.9048668017880858">90.49%</td>
+            <td data-sort-value="26381461">26381461</td>
+        </tr><tr>
+            <td data-sort-value="chr013">chr3</td>
+            <td data-sort-value="183366903">183366903</td>
+            <td data-sort-value="0.9247151268778541">92.47%</td>
+            <td data-sort-value="23196493">23196493</td>
+        </tr><tr>
+            <td data-sort-value="chr014">chr4</td>
+            <td data-sort-value="175921387">175921387</td>
+            <td data-sort-value="0.9248576535060632">92.49%</td>
+            <td data-sort-value="20290335">20290335</td>
+        </tr><tr>
+            <td data-sort-value="chr015">chr5</td>
+            <td data-sort-value="163310353">163310353</td>
+            <td data-sort-value="0.899591931197269">89.96%</td>
+            <td data-sort-value="19632557">19632557</td>
+        </tr><tr>
+            <td data-sort-value="chr016">chr6</td>
+            <td data-sort-value="157699927">157699927</td>
+            <td data-sort-value="0.9232693604946932">92.33%</td>
+            <td data-sort-value="19369876">19369876</td>
+        </tr><tr>
+            <td data-sort-value="chr017">chr7</td>
+            <td data-sort-value="141817073">141817073</td>
+            <td data-sort-value="0.8899947098129678">89.00%</td>
+            <td data-sort-value="17436855">17436855</td>
+        </tr><tr>
+            <td data-sort-value="chr018">chr8</td>
+            <td data-sort-value="132080324">132080324</td>
+            <td data-sort-value="0.91002869835431">91.00%</td>
+            <td data-sort-value="15708639">15708639</td>
+        </tr><tr>
+            <td data-sort-value="chr019">chr9</td>
+            <td data-sort-value="104852427">104852427</td>
+            <td data-sort-value="0.7576331616762509">75.76%</td>
+            <td data-sort-value="13064132">13064132</td>
+        </tr><tr>
+            <td data-sort-value="chr0210">chr10</td>
+            <td data-sort-value="120291996">120291996</td>
+            <td data-sort-value="0.8990606410936677">89.91%</td>
+            <td data-sort-value="15441810">15441810</td>
+        </tr><tr>
+            <td data-sort-value="chr0211">chr11</td>
+            <td data-sort-value="121625092">121625092</td>
+            <td data-sort-value="0.9003489035353923">90.03%</td>
+            <td data-sort-value="15267286">15267286</td>
+        </tr><tr>
+            <td data-sort-value="chr0212">chr12</td>
+            <td data-sort-value="122193665">122193665</td>
+            <td data-sort-value="0.9168514852214674">91.69%</td>
+            <td data-sort-value="15434491">15434491</td>
+        </tr><tr>
+            <td data-sort-value="chr0213">chr13</td>
+            <td data-sort-value="90260251">90260251</td>
+            <td data-sort-value="0.7892343056481738">78.92%</td>
+            <td data-sort-value="10358862">10358862</td>
+        </tr><tr>
+            <td data-sort-value="chr0214">chr14</td>
+            <td data-sort-value="81903625">81903625</td>
+            <td data-sort-value="0.7651418180373742">76.51%</td>
+            <td data-sort-value="9851793">9851793</td>
+        </tr><tr>
+            <td data-sort-value="chr0215">chr15</td>
+            <td data-sort-value="73269205">73269205</td>
+            <td data-sort-value="0.7183875952264857">71.84%</td>
+            <td data-sort-value="9944588">9944588</td>
+        </tr><tr>
+            <td data-sort-value="chr0216">chr16</td>
+            <td data-sort-value="69801510">69801510</td>
+            <td data-sort-value="0.7726675754354366">77.27%</td>
+            <td data-sort-value="9036924">9036924</td>
+        </tr><tr>
+            <td data-sort-value="chr0217">chr17</td>
+            <td data-sort-value="72249365">72249365</td>
+            <td data-sort-value="0.8677826766258646">86.78%</td>
+            <td data-sort-value="10352325">10352325</td>
+        </tr><tr>
+            <td data-sort-value="chr0218">chr18</td>
+            <td data-sort-value="70260685">70260685</td>
+            <td data-sort-value="0.8741795859158923">87.42%</td>
+            <td data-sort-value="8557443">8557443</td>
+        </tr><tr>
+            <td data-sort-value="chr0219">chr19</td>
+            <td data-sort-value="50363885">50363885</td>
+            <td data-sort-value="0.8591936765220886">85.92%</td>
+            <td data-sort-value="7317634">7317634</td>
+        </tr><tr>
+            <td data-sort-value="chr0220">chr20</td>
+            <td data-sort-value="57045689">57045689</td>
+            <td data-sort-value="0.8851955367814748">88.52%</td>
+            <td data-sort-value="7272993">7272993</td>
+        </tr><tr>
+            <td data-sort-value="chr0221">chr21</td>
+            <td data-sort-value="32028910">32028910</td>
+            <td data-sort-value="0.68569731656721">68.57%</td>
+            <td data-sort-value="3719904">3719904</td>
+        </tr><tr>
+            <td data-sort-value="chr0222">chr22</td>
+            <td data-sort-value="31704780">31704780</td>
+            <td data-sort-value="0.6238830340182628">62.39%</td>
+            <td data-sort-value="4801323">4801323</td>
+        </tr><tr>
+            <td data-sort-value="chrx">chrX</td>
+            <td data-sort-value="122255726">122255726</td>
+            <td data-sort-value="0.7834851626555974">78.35%</td>
+            <td data-sort-value="9422954">9422954</td>
+        </tr><tr>
+            <td data-sort-value="chry">chrY</td>
+            <td data-sort-value="7951436">7951436</td>
+            <td data-sort-value="0.1389445251021735">13.89%</td>
+            <td data-sort-value="319566">319566</td>
+        </tr><tr>
+            <td data-sort-value="gl018.012">GL000008.2</td>
+            <td data-sort-value="79101">79101</td>
+            <td data-sort-value="0.3771941118406935">37.72%</td>
+            <td data-sort-value="4576">4576</td>
+        </tr><tr>
+            <td data-sort-value="gl019.012">GL000009.2</td>
+            <td data-sort-value="91144">91144</td>
+            <td data-sort-value="0.4518588659901145">45.19%</td>
+            <td data-sort-value="3850">3850</td>
+        </tr><tr>
+            <td data-sort-value="gl03194.011">GL000194.1</td>
+            <td data-sort-value="100417">100417</td>
+            <td data-sort-value="0.5244556560069776">52.45%</td>
+            <td data-sort-value="8996">8996</td>
+        </tr><tr>
+            <td data-sort-value="gl03195.011">GL000195.1</td>
+            <td data-sort-value="80726">80726</td>
+            <td data-sort-value="0.4413765199895022">44.14%</td>
+            <td data-sort-value="11442">11442</td>
+        </tr><tr>
+            <td data-sort-value="gl03205.012">GL000205.2</td>
+            <td data-sort-value="128493">128493</td>
+            <td data-sort-value="0.6923449951775679">69.23%</td>
+            <td data-sort-value="24770">24770</td>
+        </tr><tr>
+            <td data-sort-value="gl03208.011">GL000208.1</td>
+            <td data-sort-value="46438">46438</td>
+            <td data-sort-value="0.501008749689823">50.10%</td>
+            <td data-sort-value="2689">2689</td>
+        </tr><tr>
+            <td data-sort-value="gl03213.011">GL000213.1</td>
+            <td data-sort-value="9664">9664</td>
+            <td data-sort-value="0.05884107915903044">5.88%</td>
+            <td data-sort-value="243">243</td>
+        </tr><tr>
+            <td data-sort-value="gl03214.011">GL000214.1</td>
+            <td data-sort-value="16994">16994</td>
+            <td data-sort-value="0.12339708680056347">12.34%</td>
+            <td data-sort-value="1113">1113</td>
+        </tr><tr>
+            <td data-sort-value="gl03216.012">GL000216.2</td>
+            <td data-sort-value="146983">146983</td>
+            <td data-sort-value="0.8322556169595942">83.23%</td>
+            <td data-sort-value="14832">14832</td>
+        </tr><tr>
+            <td data-sort-value="gl03218.011">GL000218.1</td>
+            <td data-sort-value="102575">102575</td>
+            <td data-sort-value="0.6365306211099183">63.65%</td>
+            <td data-sort-value="6840">6840</td>
+        </tr><tr>
+            <td data-sort-value="gl03219.011">GL000219.1</td>
+            <td data-sort-value="132316">132316</td>
+            <td data-sort-value="0.7383787765488454">73.84%</td>
+            <td data-sort-value="21354">21354</td>
+        </tr><tr>
+            <td data-sort-value="gl03220.011">GL000220.1</td>
+            <td data-sort-value="22502">22502</td>
+            <td data-sort-value="0.1390712104918357">13.91%</td>
+            <td data-sort-value="1950">1950</td>
+        </tr><tr>
+            <td data-sort-value="gl03221.011">GL000221.1</td>
+            <td data-sort-value="19575">19575</td>
+            <td data-sort-value="0.12596768277379872">12.60%</td>
+            <td data-sort-value="608">608</td>
+        </tr><tr>
+            <td data-sort-value="gl03224.011">GL000224.1</td>
+            <td data-sort-value="63309">63309</td>
+            <td data-sort-value="0.3523175638450023">35.23%</td>
+            <td data-sort-value="6816">6816</td>
+        </tr><tr>
+            <td data-sort-value="gl03225.011">GL000225.1</td>
+            <td data-sort-value="187815">187815</td>
+            <td data-sort-value="0.8893892685144408">88.94%</td>
+            <td data-sort-value="39000">39000</td>
+        </tr><tr>
+            <td data-sort-value="gl03226.011">GL000226.1</td>
+            <td data-sort-value="347">347</td>
+            <td data-sort-value="0.023121002132196162">2.31%</td>
+            <td data-sort-value="5">5</td>
+        </tr><tr>
+            <td data-sort-value="ki06270302.011">KI270302.1</td>
+            <td data-sort-value="441">441</td>
+            <td data-sort-value="0.19393139841688653">19.39%</td>
+            <td data-sort-value="10">10</td>
+        </tr><tr>
+            <td data-sort-value="ki06270303.011">KI270303.1</td>
+            <td data-sort-value="322">322</td>
+            <td data-sort-value="0.16580844490216273">16.58%</td>
+            <td data-sort-value="5">5</td>
+        </tr><tr>
+            <td data-sort-value="ki06270304.011">KI270304.1</td>
+            <td data-sort-value="195">195</td>
+            <td data-sort-value="0.09006928406466513">9.01%</td>
+            <td data-sort-value="3">3</td>
+        </tr><tr>
+            <td data-sort-value="ki06270305.011">KI270305.1</td>
+            <td data-sort-value="420">420</td>
+            <td data-sort-value="0.28532608695652173">28.53%</td>
+            <td data-sort-value="14">14</td>
+        </tr><tr>
+            <td data-sort-value="ki06270310.011">KI270310.1</td>
+            <td data-sort-value="724">724</td>
+            <td data-sort-value="0.6028309741881765">60.28%</td>
+            <td data-sort-value="37">37</td>
+        </tr><tr>
+            <td data-sort-value="ki06270311.011">KI270311.1</td>
+            <td data-sort-value="1211">1211</td>
+            <td data-sort-value="0.09766916686829583">9.77%</td>
+            <td data-sort-value="43">43</td>
+        </tr><tr>
+            <td data-sort-value="ki06270315.011">KI270315.1</td>
+            <td data-sort-value="625">625</td>
+            <td data-sort-value="0.27460456942003514">27.46%</td>
+            <td data-sort-value="11">11</td>
+        </tr><tr>
+            <td data-sort-value="ki06270317.011">KI270317.1</td>
+            <td data-sort-value="927">927</td>
+            <td data-sort-value="0.024595383390819847">2.46%</td>
+            <td data-sort-value="18">18</td>
+        </tr><tr>
+            <td data-sort-value="ki06270320.011">KI270320.1</td>
+            <td data-sort-value="2065">2065</td>
+            <td data-sort-value="0.4676177536231884">46.76%</td>
+            <td data-sort-value="89">89</td>
+        </tr><tr>
+            <td data-sort-value="ki06270322.011">KI270322.1</td>
+            <td data-sort-value="1784">1784</td>
+            <td data-sort-value="0.08306947289998137">8.31%</td>
+            <td data-sort-value="46">46</td>
+        </tr><tr>
+            <td data-sort-value="ki06270330.011">KI270330.1</td>
+            <td data-sort-value="1185">1185</td>
+            <td data-sort-value="0.7173123486682809">71.73%</td>
+            <td data-sort-value="145">145</td>
+        </tr><tr>
+            <td data-sort-value="ki06270333.011">KI270333.1</td>
+            <td data-sort-value="2699">2699</td>
+            <td data-sort-value="1.0">100.00%</td>
+            <td data-sort-value="1407">1407</td>
+        </tr><tr>
+            <td data-sort-value="ki06270336.011">KI270336.1</td>
+            <td data-sort-value="1021">1021</td>
+            <td data-sort-value="0.9951267056530214">99.51%</td>
+            <td data-sort-value="446">446</td>
+        </tr><tr>
+            <td data-sort-value="ki06270337.011">KI270337.1</td>
+            <td data-sort-value="1116">1116</td>
+            <td data-sort-value="0.9955396966993756">99.55%</td>
+            <td data-sort-value="661">661</td>
+        </tr><tr>
+            <td data-sort-value="ki06270362.011">KI270362.1</td>
+            <td data-sort-value="1504">1504</td>
+            <td data-sort-value="0.42606232294617563">42.61%</td>
+            <td data-sort-value="31">31</td>
+        </tr><tr>
+            <td data-sort-value="ki06270363.011">KI270363.1</td>
+            <td data-sort-value="512">512</td>
+            <td data-sort-value="0.2839711591791459">28.40%</td>
+            <td data-sort-value="7">7</td>
+        </tr><tr>
+            <td data-sort-value="ki06270366.011">KI270366.1</td>
+            <td data-sort-value="985">985</td>
+            <td data-sort-value="0.11838942307692307">11.84%</td>
+            <td data-sort-value="23">23</td>
+        </tr><tr>
+            <td data-sort-value="ki06270378.011">KI270378.1</td>
+            <td data-sort-value="200">200</td>
+            <td data-sort-value="0.19083969465648856">19.08%</td>
+            <td data-sort-value="2">2</td>
+        </tr><tr>
+            <td data-sort-value="ki06270382.011">KI270382.1</td>
+            <td data-sort-value="764">764</td>
+            <td data-sort-value="0.18125741399762751">18.13%</td>
+            <td data-sort-value="14">14</td>
+        </tr><tr>
+            <td data-sort-value="ki06270383.011">KI270383.1</td>
+            <td data-sort-value="308">308</td>
+            <td data-sort-value="0.176">17.60%</td>
+            <td data-sort-value="5">5</td>
+        </tr><tr>
+            <td data-sort-value="ki06270386.011">KI270386.1</td>
+            <td data-sort-value="161">161</td>
+            <td data-sort-value="0.09004474272930649">9.00%</td>
+            <td data-sort-value="3">3</td>
+        </tr><tr>
+            <td data-sort-value="ki06270392.011">KI270392.1</td>
+            <td data-sort-value="200">200</td>
+            <td data-sort-value="0.2059732234809475">20.60%</td>
+            <td data-sort-value="2">2</td>
+        </tr><tr>
+            <td data-sort-value="ki06270395.011">KI270395.1</td>
+            <td data-sort-value="359">359</td>
+            <td data-sort-value="0.31408573928258965">31.41%</td>
+            <td data-sort-value="18">18</td>
+        </tr><tr>
+            <td data-sort-value="ki06270396.011">KI270396.1</td>
+            <td data-sort-value="200">200</td>
+            <td data-sort-value="0.10638297872340426">10.64%</td>
+            <td data-sort-value="2">2</td>
+        </tr><tr>
+            <td data-sort-value="ki06270411.011">KI270411.1</td>
+            <td data-sort-value="443">443</td>
+            <td data-sort-value="0.1674225245653817">16.74%</td>
+            <td data-sort-value="8">8</td>
+        </tr><tr>
+            <td data-sort-value="ki06270412.011">KI270412.1</td>
+            <td data-sort-value="200">200</td>
+            <td data-sort-value="0.16963528413910092">16.96%</td>
+            <td data-sort-value="2">2</td>
+        </tr><tr>
+            <td data-sort-value="ki06270414.011">KI270414.1</td>
+            <td data-sort-value="152">152</td>
+            <td data-sort-value="0.061068702290076333">6.11%</td>
+            <td data-sort-value="3">3</td>
+        </tr><tr>
+            <td data-sort-value="ki06270417.011">KI270417.1</td>
+            <td data-sort-value="1749">1749</td>
+            <td data-sort-value="0.856093979441997">85.61%</td>
+            <td data-sort-value="103">103</td>
+        </tr><tr>
+            <td data-sort-value="ki06270418.011">KI270418.1</td>
+            <td data-sort-value="892">892</td>
+            <td data-sort-value="0.41585081585081585">41.59%</td>
+            <td data-sort-value="31">31</td>
+        </tr><tr>
+            <td data-sort-value="ki06270419.011">KI270419.1</td>
+            <td data-sort-value="298">298</td>
+            <td data-sort-value="0.28960155490767736">28.96%</td>
+            <td data-sort-value="6">6</td>
+        </tr><tr>
+            <td data-sort-value="ki06270420.011">KI270420.1</td>
+            <td data-sort-value="1210">1210</td>
+            <td data-sort-value="0.5213270142180095">52.13%</td>
+            <td data-sort-value="40">40</td>
+        </tr><tr>
+            <td data-sort-value="ki06270423.011">KI270423.1</td>
+            <td data-sort-value="310">310</td>
+            <td data-sort-value="0.3160040774719674">31.60%</td>
+            <td data-sort-value="6">6</td>
+        </tr><tr>
+            <td data-sort-value="ki06270429.011">KI270429.1</td>
+            <td data-sort-value="1251">1251</td>
+            <td data-sort-value="0.9191770756796473">91.92%</td>
+            <td data-sort-value="117">117</td>
+        </tr><tr>
+            <td data-sort-value="ki06270435.011">KI270435.1</td>
+            <td data-sort-value="75328">75328</td>
+            <td data-sort-value="0.810126582278481">81.01%</td>
+            <td data-sort-value="5034">5034</td>
+        </tr><tr>
+            <td data-sort-value="ki06270438.011">KI270438.1</td>
+            <td data-sort-value="80039">80039</td>
+            <td data-sort-value="0.711426158837385">71.14%</td>
+            <td data-sort-value="14108">14108</td>
+        </tr><tr>
+            <td data-sort-value="ki06270442.011">KI270442.1</td>
+            <td data-sort-value="342355">342355</td>
+            <td data-sort-value="0.8732187083132472">87.32%</td>
+            <td data-sort-value="36346">36346</td>
+        </tr><tr>
+            <td data-sort-value="ki06270448.011">KI270448.1</td>
+            <td data-sort-value="6942">6942</td>
+            <td data-sort-value="0.8686186186186187">86.86%</td>
+            <td data-sort-value="588">588</td>
+        </tr><tr>
+            <td data-sort-value="ki06270465.011">KI270465.1</td>
+            <td data-sort-value="1003">1003</td>
+            <td data-sort-value="0.5653889515219842">56.54%</td>
+            <td data-sort-value="87">87</td>
+        </tr><tr>
+            <td data-sort-value="ki06270466.011">KI270466.1</td>
+            <td data-sort-value="1227">1227</td>
+            <td data-sort-value="0.9951338199513382">99.51%</td>
+            <td data-sort-value="912">912</td>
+        </tr><tr>
+            <td data-sort-value="ki06270467.011">KI270467.1</td>
+            <td data-sort-value="3807">3807</td>
+            <td data-sort-value="0.9711734693877551">97.12%</td>
+            <td data-sort-value="2456">2456</td>
+        </tr><tr>
+            <td data-sort-value="ki06270468.011">KI270468.1</td>
+            <td data-sort-value="3762">3762</td>
+            <td data-sort-value="0.9277435265104809">92.77%</td>
+            <td data-sort-value="232">232</td>
+        </tr><tr>
+            <td data-sort-value="ki06270507.011">KI270507.1</td>
+            <td data-sort-value="5192">5192</td>
+            <td data-sort-value="0.9699234074350831">96.99%</td>
+            <td data-sort-value="688">688</td>
+        </tr><tr>
+            <td data-sort-value="ki06270508.011">KI270508.1</td>
+            <td data-sort-value="1942">1942</td>
+            <td data-sort-value="0.9953869810353665">99.54%</td>
+            <td data-sort-value="314">314</td>
+        </tr><tr>
+            <td data-sort-value="ki06270509.011">KI270509.1</td>
+            <td data-sort-value="2272">2272</td>
+            <td data-sort-value="0.9801553062985332">98.02%</td>
+            <td data-sort-value="318">318</td>
+        </tr><tr>
+            <td data-sort-value="ki06270510.011">KI270510.1</td>
+            <td data-sort-value="2274">2274</td>
+            <td data-sort-value="0.9416149068322981">94.16%</td>
+            <td data-sort-value="177">177</td>
+        </tr><tr>
+            <td data-sort-value="ki06270511.011">KI270511.1</td>
+            <td data-sort-value="6455">6455</td>
+            <td data-sort-value="0.7942660268241664">79.43%</td>
+            <td data-sort-value="650">650</td>
+        </tr><tr>
+            <td data-sort-value="ki06270512.011">KI270512.1</td>
+            <td data-sort-value="14460">14460</td>
+            <td data-sort-value="0.6373132354885628">63.73%</td>
+            <td data-sort-value="881">881</td>
+        </tr><tr>
+            <td data-sort-value="ki06270515.011">KI270515.1</td>
+            <td data-sort-value="6057">6057</td>
+            <td data-sort-value="0.952208772205628">95.22%</td>
+            <td data-sort-value="919">919</td>
+        </tr><tr>
+            <td data-sort-value="ki06270516.011">KI270516.1</td>
+            <td data-sort-value="1251">1251</td>
+            <td data-sort-value="0.9623076923076923">96.23%</td>
+            <td data-sort-value="212">212</td>
+        </tr><tr>
+            <td data-sort-value="ki06270517.011">KI270517.1</td>
+            <td data-sort-value="2655">2655</td>
+            <td data-sort-value="0.8161696895173686">81.62%</td>
+            <td data-sort-value="522">522</td>
+        </tr><tr>
+            <td data-sort-value="ki06270518.011">KI270518.1</td>
+            <td data-sort-value="1999">1999</td>
+            <td data-sort-value="0.914455626715462">91.45%</td>
+            <td data-sort-value="228">228</td>
+        </tr><tr>
+            <td data-sort-value="ki06270519.011">KI270519.1</td>
+            <td data-sort-value="113720">113720</td>
+            <td data-sort-value="0.823306256606287">82.33%</td>
+            <td data-sort-value="9063">9063</td>
+        </tr><tr>
+            <td data-sort-value="ki06270521.011">KI270521.1</td>
+            <td data-sort-value="5090">5090</td>
+            <td data-sort-value="0.6660560062810783">66.61%</td>
+            <td data-sort-value="202">202</td>
+        </tr><tr>
+            <td data-sort-value="ki06270522.011">KI270522.1</td>
+            <td data-sort-value="3871">3871</td>
+            <td data-sort-value="0.6822347550229115">68.22%</td>
+            <td data-sort-value="160">160</td>
+        </tr><tr>
+            <td data-sort-value="ki06270528.011">KI270528.1</td>
+            <td data-sort-value="159">159</td>
+            <td data-sort-value="0.053302044921220246">5.33%</td>
+            <td data-sort-value="7">7</td>
+        </tr><tr>
+            <td data-sort-value="ki06270529.011">KI270529.1</td>
+            <td data-sort-value="776">776</td>
+            <td data-sort-value="0.4086361242759347">40.86%</td>
+            <td data-sort-value="12">12</td>
+        </tr><tr>
+            <td data-sort-value="ki06270530.011">KI270530.1</td>
+            <td data-sort-value="343">343</td>
+            <td data-sort-value="0.15821033210332103">15.82%</td>
+            <td data-sort-value="6">6</td>
+        </tr><tr>
+            <td data-sort-value="ki06270538.011">KI270538.1</td>
+            <td data-sort-value="49774">49774</td>
+            <td data-sort-value="0.5451160345639532">54.51%</td>
+            <td data-sort-value="3841">3841</td>
+        </tr><tr>
+            <td data-sort-value="ki06270539.011">KI270539.1</td>
+            <td data-sort-value="613">613</td>
+            <td data-sort-value="0.6173212487411883">61.73%</td>
+            <td data-sort-value="29">29</td>
+        </tr><tr>
+            <td data-sort-value="ki06270544.011">KI270544.1</td>
+            <td data-sort-value="400">400</td>
+            <td data-sort-value="0.33277870216306155">33.28%</td>
+            <td data-sort-value="4">4</td>
+        </tr><tr>
+            <td data-sort-value="ki06270579.011">KI270579.1</td>
+            <td data-sort-value="753">753</td>
+            <td data-sort-value="0.024264492636870427">2.43%</td>
+            <td data-sort-value="10">10</td>
+        </tr><tr>
+            <td data-sort-value="ki06270580.011">KI270580.1</td>
+            <td data-sort-value="1533">1533</td>
+            <td data-sort-value="0.9871216999356085">98.71%</td>
+            <td data-sort-value="159">159</td>
+        </tr><tr>
+            <td data-sort-value="ki06270582.011">KI270582.1</td>
+            <td data-sort-value="754">754</td>
+            <td data-sort-value="0.11592865928659286">11.59%</td>
+            <td data-sort-value="29">29</td>
+        </tr><tr>
+            <td data-sort-value="ki06270583.011">KI270583.1</td>
+            <td data-sort-value="1393">1393</td>
+            <td data-sort-value="0.995">99.50%</td>
+            <td data-sort-value="174">174</td>
+        </tr><tr>
+            <td data-sort-value="ki06270584.011">KI270584.1</td>
+            <td data-sort-value="4469">4469</td>
+            <td data-sort-value="0.9902503877686682">99.03%</td>
+            <td data-sort-value="585">585</td>
+        </tr><tr>
+            <td data-sort-value="ki06270587.011">KI270587.1</td>
+            <td data-sort-value="2002">2002</td>
+            <td data-sort-value="0.6743011114853485">67.43%</td>
+            <td data-sort-value="148">148</td>
+        </tr><tr>
+            <td data-sort-value="ki06270588.011">KI270588.1</td>
+            <td data-sort-value="5668">5668</td>
+            <td data-sort-value="0.9204287106203313">92.04%</td>
+            <td data-sort-value="650">650</td>
+        </tr><tr>
+            <td data-sort-value="ki06270589.011">KI270589.1</td>
+            <td data-sort-value="8918">8918</td>
+            <td data-sort-value="0.20052165310068804">20.05%</td>
+            <td data-sort-value="1117">1117</td>
+        </tr><tr>
+            <td data-sort-value="ki06270590.011">KI270590.1</td>
+            <td data-sort-value="4641">4641</td>
+            <td data-sort-value="0.9906083244397011">99.06%</td>
+            <td data-sort-value="805">805</td>
+        </tr><tr>
+            <td data-sort-value="ki06270591.011">KI270591.1</td>
+            <td data-sort-value="5486">5486</td>
+            <td data-sort-value="0.9465148378191857">94.65%</td>
+            <td data-sort-value="992">992</td>
+        </tr><tr>
+            <td data-sort-value="ki06270593.011">KI270593.1</td>
+            <td data-sort-value="2831">2831</td>
+            <td data-sort-value="0.9309437684972048">93.09%</td>
+            <td data-sort-value="272">272</td>
+        </tr><tr>
+            <td data-sort-value="ki06270706.011">KI270706.1</td>
+            <td data-sort-value="95204">95204</td>
+            <td data-sort-value="0.5438519322498643">54.39%</td>
+            <td data-sort-value="4437">4437</td>
+        </tr><tr>
+            <td data-sort-value="ki06270707.011">KI270707.1</td>
+            <td data-sort-value="16436">16436</td>
+            <td data-sort-value="0.5131118881118881">51.31%</td>
+            <td data-sort-value="566">566</td>
+        </tr><tr>
+            <td data-sort-value="ki06270708.011">KI270708.1</td>
+            <td data-sort-value="44049">44049</td>
+            <td data-sort-value="0.3449898967747999">34.50%</td>
+            <td data-sort-value="1164">1164</td>
+        </tr><tr>
+            <td data-sort-value="ki06270709.011">KI270709.1</td>
+            <td data-sort-value="52568">52568</td>
+            <td data-sort-value="0.7862399042775949">78.62%</td>
+            <td data-sort-value="3882">3882</td>
+        </tr><tr>
+            <td data-sort-value="ki06270710.011">KI270710.1</td>
+            <td data-sort-value="13061">13061</td>
+            <td data-sort-value="0.325094583831143">32.51%</td>
+            <td data-sort-value="358">358</td>
+        </tr><tr>
+            <td data-sort-value="ki06270711.011">KI270711.1</td>
+            <td data-sort-value="11401">11401</td>
+            <td data-sort-value="0.2701018715944089">27.01%</td>
+            <td data-sort-value="618">618</td>
+        </tr><tr>
+            <td data-sort-value="ki06270712.011">KI270712.1</td>
+            <td data-sort-value="31070">31070</td>
+            <td data-sort-value="0.17649097095595961">17.65%</td>
+            <td data-sort-value="1861">1861</td>
+        </tr><tr>
+            <td data-sort-value="ki06270713.011">KI270713.1</td>
+            <td data-sort-value="26355">26355</td>
+            <td data-sort-value="0.6468278316357835">64.68%</td>
+            <td data-sort-value="3238">3238</td>
+        </tr><tr>
+            <td data-sort-value="ki06270714.011">KI270714.1</td>
+            <td data-sort-value="23253">23253</td>
+            <td data-sort-value="0.5573986624158017">55.74%</td>
+            <td data-sort-value="1739">1739</td>
+        </tr><tr>
+            <td data-sort-value="ki06270715.011">KI270715.1</td>
+            <td data-sort-value="3914">3914</td>
+            <td data-sort-value="0.02423964674771321">2.42%</td>
+            <td data-sort-value="60">60</td>
+        </tr><tr>
+            <td data-sort-value="ki06270716.011">KI270716.1</td>
+            <td data-sort-value="9108">9108</td>
+            <td data-sort-value="0.05922015097627423">5.92%</td>
+            <td data-sort-value="237">237</td>
+        </tr><tr>
+            <td data-sort-value="ki06270717.011">KI270717.1</td>
+            <td data-sort-value="6418">6418</td>
+            <td data-sort-value="0.16020168738455395">16.02%</td>
+            <td data-sort-value="379">379</td>
+        </tr><tr>
+            <td data-sort-value="ki06270718.011">KI270718.1</td>
+            <td data-sort-value="2712">2712</td>
+            <td data-sort-value="0.0712671466862879">7.13%</td>
+            <td data-sort-value="211">211</td>
+        </tr><tr>
+            <td data-sort-value="ki06270719.011">KI270719.1</td>
+            <td data-sort-value="52453">52453</td>
+            <td data-sort-value="0.2966043710594023">29.66%</td>
+            <td data-sort-value="3804">3804</td>
+        </tr><tr>
+            <td data-sort-value="ki06270720.011">KI270720.1</td>
+            <td data-sort-value="32608">32608</td>
+            <td data-sort-value="0.8350320102432779">83.50%</td>
+            <td data-sort-value="2245">2245</td>
+        </tr><tr>
+            <td data-sort-value="ki06270721.011">KI270721.1</td>
+            <td data-sort-value="8273">8273</td>
+            <td data-sort-value="0.08246939670640775">8.25%</td>
+            <td data-sort-value="508">508</td>
+        </tr><tr>
+            <td data-sort-value="ki06270722.011">KI270722.1</td>
+            <td data-sort-value="90036">90036</td>
+            <td data-sort-value="0.4639835094047926">46.40%</td>
+            <td data-sort-value="4653">4653</td>
+        </tr><tr>
+            <td data-sort-value="ki06270723.011">KI270723.1</td>
+            <td data-sort-value="28790">28790</td>
+            <td data-sort-value="0.7553456644365736">75.53%</td>
+            <td data-sort-value="2284">2284</td>
+        </tr><tr>
+            <td data-sort-value="ki06270724.011">KI270724.1</td>
+            <td data-sort-value="26411">26411</td>
+            <td data-sort-value="0.6677031980786247">66.77%</td>
+            <td data-sort-value="1579">1579</td>
+        </tr><tr>
+            <td data-sort-value="ki06270725.011">KI270725.1</td>
+            <td data-sort-value="61039">61039</td>
+            <td data-sort-value="0.35321451304901336">35.32%</td>
+            <td data-sort-value="2917">2917</td>
+        </tr><tr>
+            <td data-sort-value="ki06270726.011">KI270726.1</td>
+            <td data-sort-value="12036">12036</td>
+            <td data-sort-value="0.27517775897940056">27.52%</td>
+            <td data-sort-value="504">504</td>
+        </tr><tr>
+            <td data-sort-value="ki06270727.011">KI270727.1</td>
+            <td data-sort-value="22814">22814</td>
+            <td data-sort-value="0.05089593260873445">5.09%</td>
+            <td data-sort-value="1146">1146</td>
+        </tr><tr>
+            <td data-sort-value="ki06270728.011">KI270728.1</td>
+            <td data-sort-value="160469">160469</td>
+            <td data-sort-value="0.08568587842856448">8.57%</td>
+            <td data-sort-value="7019">7019</td>
+        </tr><tr>
+            <td data-sort-value="ki06270729.011">KI270729.1</td>
+            <td data-sort-value="146036">146036</td>
+            <td data-sort-value="0.5199990029874768">52.00%</td>
+            <td data-sort-value="10750">10750</td>
+        </tr><tr>
+            <td data-sort-value="ki06270730.011">KI270730.1</td>
+            <td data-sort-value="31634">31634</td>
+            <td data-sort-value="0.28106369556911975">28.11%</td>
+            <td data-sort-value="3371">3371</td>
+        </tr><tr>
+            <td data-sort-value="ki06270731.011">KI270731.1</td>
+            <td data-sort-value="5247">5247</td>
+            <td data-sort-value="0.03480504663226183">3.48%</td>
+            <td data-sort-value="184">184</td>
+        </tr><tr>
+            <td data-sort-value="ki06270732.011">KI270732.1</td>
+            <td data-sort-value="35911">35911</td>
+            <td data-sort-value="0.8644296271333317">86.44%</td>
+            <td data-sort-value="2733">2733</td>
+        </tr><tr>
+            <td data-sort-value="ki06270733.011">KI270733.1</td>
+            <td data-sort-value="52954">52954</td>
+            <td data-sort-value="0.2945620007565138">29.46%</td>
+            <td data-sort-value="10359">10359</td>
+        </tr><tr>
+            <td data-sort-value="ki06270734.011">KI270734.1</td>
+            <td data-sort-value="20696">20696</td>
+            <td data-sort-value="0.1253923053620115">12.54%</td>
+            <td data-sort-value="1013">1013</td>
+        </tr><tr>
+            <td data-sort-value="ki06270735.011">KI270735.1</td>
+            <td data-sort-value="40536">40536</td>
+            <td data-sort-value="0.9468594520099974">94.69%</td>
+            <td data-sort-value="4107">4107</td>
+        </tr><tr>
+            <td data-sort-value="ki06270736.011">KI270736.1</td>
+            <td data-sort-value="157908">157908</td>
+            <td data-sort-value="0.8680079155672823">86.80%</td>
+            <td data-sort-value="12711">12711</td>
+        </tr><tr>
+            <td data-sort-value="ki06270737.011">KI270737.1</td>
+            <td data-sort-value="16688">16688</td>
+            <td data-sort-value="0.1607118781178374">16.07%</td>
+            <td data-sort-value="524">524</td>
+        </tr><tr>
+            <td data-sort-value="ki06270738.011">KI270738.1</td>
+            <td data-sort-value="56554">56554</td>
+            <td data-sort-value="0.5690968553459119">56.91%</td>
+            <td data-sort-value="2035">2035</td>
+        </tr><tr>
+            <td data-sort-value="ki06270739.011">KI270739.1</td>
+            <td data-sort-value="2819">2819</td>
+            <td data-sort-value="0.03810231803744002">3.81%</td>
+            <td data-sort-value="67">67</td>
+        </tr><tr>
+            <td data-sort-value="ki06270740.011">KI270740.1</td>
+            <td data-sort-value="3257">3257</td>
+            <td data-sort-value="0.08745972073039743">8.75%</td>
+            <td data-sort-value="58">58</td>
+        </tr><tr>
+            <td data-sort-value="ki06270741.011">KI270741.1</td>
+            <td data-sort-value="5021">5021</td>
+            <td data-sort-value="0.03189313481376086">3.19%</td>
+            <td data-sort-value="175">175</td>
+        </tr><tr>
+            <td data-sort-value="ki06270742.011">KI270742.1</td>
+            <td data-sort-value="44783">44783</td>
+            <td data-sort-value="0.23981599987147836">23.98%</td>
+            <td data-sort-value="2818">2818</td>
+        </tr><tr>
+            <td data-sort-value="ki06270743.011">KI270743.1</td>
+            <td data-sort-value="82852">82852</td>
+            <td data-sort-value="0.39330099023061077">39.33%</td>
+            <td data-sort-value="3206">3206</td>
+        </tr><tr>
+            <td data-sort-value="ki06270744.011">KI270744.1</td>
+            <td data-sort-value="66473">66473</td>
+            <td data-sort-value="0.3945640818652358">39.46%</td>
+            <td data-sort-value="4815">4815</td>
+        </tr><tr>
+            <td data-sort-value="ki06270745.011">KI270745.1</td>
+            <td data-sort-value="4245">4245</td>
+            <td data-sort-value="0.10133441550691079">10.13%</td>
+            <td data-sort-value="158">158</td>
+        </tr><tr>
+            <td data-sort-value="ki06270746.011">KI270746.1</td>
+            <td data-sort-value="53835">53835</td>
+            <td data-sort-value="0.8097193394098006">80.97%</td>
+            <td data-sort-value="4589">4589</td>
+        </tr><tr>
+            <td data-sort-value="ki06270747.011">KI270747.1</td>
+            <td data-sort-value="14468">14468</td>
+            <td data-sort-value="0.07280046292801973">7.28%</td>
+            <td data-sort-value="528">528</td>
+        </tr><tr>
+            <td data-sort-value="ki06270748.011">KI270748.1</td>
+            <td data-sort-value="6510">6510</td>
+            <td data-sort-value="0.06975921818240267">6.98%</td>
+            <td data-sort-value="166">166</td>
+        </tr><tr>
+            <td data-sort-value="ki06270749.011">KI270749.1</td>
+            <td data-sort-value="66648">66648</td>
+            <td data-sort-value="0.4198061212277729">41.98%</td>
+            <td data-sort-value="3090">3090</td>
+        </tr><tr>
+            <td data-sort-value="ki06270750.011">KI270750.1</td>
+            <td data-sort-value="63110">63110</td>
+            <td data-sort-value="0.4239838763856231">42.40%</td>
+            <td data-sort-value="6493">6493</td>
+        </tr><tr>
+            <td data-sort-value="ki06270751.011">KI270751.1</td>
+            <td data-sort-value="44090">44090</td>
+            <td data-sort-value="0.2924865001127755">29.25%</td>
+            <td data-sort-value="5632">5632</td>
+        </tr><tr>
+            <td data-sort-value="ki06270753.011">KI270753.1</td>
+            <td data-sort-value="11891">11891</td>
+            <td data-sort-value="0.18891395526182003">18.89%</td>
+            <td data-sort-value="435">435</td>
+        </tr><tr>
+            <td data-sort-value="ki06270754.011">KI270754.1</td>
+            <td data-sort-value="14477">14477</td>
+            <td data-sort-value="0.3602050210246075">36.02%</td>
+            <td data-sort-value="1030">1030</td>
+        </tr><tr>
+            <td data-sort-value="ki06270755.011">KI270755.1</td>
+            <td data-sort-value="9176">9176</td>
+            <td data-sort-value="0.24987065326906843">24.99%</td>
+            <td data-sort-value="541">541</td>
+        </tr><tr>
+            <td data-sort-value="ki06270756.011">KI270756.1</td>
+            <td data-sort-value="18050">18050</td>
+            <td data-sort-value="0.22678728483477825">22.68%</td>
+            <td data-sort-value="980">980</td>
+        </tr><tr>
+            <td data-sort-value="ki06270757.011">KI270757.1</td>
+            <td data-sort-value="32222">32222</td>
+            <td data-sort-value="0.4522322493719386">45.22%</td>
+            <td data-sort-value="4005">4005</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<h3>Segment lengths</h3>
+
+<div class="scrollable-table-container">
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>segments</th>
+            <th>min</th>
+            <th>max</th>
+            <th>mean</th>
+            <th>median</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>segments</td>
+            <td>320175839</td>
+            <td>1</td>
+            <td>400</td>
+            <td>8.16</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+</table>
+</div><div class="figure-pair">
+<img src="statistics/coverage_segment_lengths.png"
+     alt="global segment-length histogram" class="figure-thumbnail"
+     data-modal-trigger="modal-coverage-segment-lengths">
+</div>
+<div id="modal-coverage-segment-lengths" class="modal">
+    <div class="modal-content">
+        <span title="segment lengths" class="close">&times;</span>
+        <img src="statistics/coverage_segment_lengths.png"
+             alt="global segment-length histogram"
+             style="max-width: min(100%, 800px);">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='V_Cardiomyocyte.bw'>V_Cardiomyocyte.bw</a>
+                    </td>
+                
+                <td class="nowrap">1.58 GB</td>
+                <td class="nowrap">79990a784a561714c9d46d58de5446fa</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">895.0 B</td>
+                <td class="nowrap">24dc6f5dc4933f196e162f97519842b2</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    <script>
+        // ---- Copy a resource id (copy_button.jinja) ----
+        //
+        // Included, as statements, into a script that runs once the
+        // icons are in the document: the index page's, and the resource
+        // page's (gain#1477).  An icon names what it copies in
+        // `data-copy-id`; its text is the glyph it shows.
+        //
+        // The Clipboard API exists only on a secure origin -- https, or
+        // localhost -- so on a plain-http host there is nothing to write
+        // to, and an icon there is hidden rather than left as a dead
+        // click.  Hidden with an inline style, not removed: the index
+        // page rewrites its rows in place and looks each row's icon up
+        // again, so the element has to stay.
+        const copyIcons = document.querySelectorAll(".copy-icon");
+        if (!navigator.clipboard) {
+            copyIcons.forEach((icon) => { icon.style.display = "none"; });
+        }
+        const copyResourceId = (e) => {
+          navigator.clipboard.writeText(e.target.dataset.copyId).then(
+            () => {
+              // One tick at a time: every other icon goes back to its
+              // glyph, the clicked one reports for a moment.
+              copyIcons.forEach((icon) => { icon.textContent = 'content_copy'; });
+              e.target.textContent = 'check';
+              setTimeout(function(){
+                e.target.textContent = 'content_copy'
+              }, 3000);
+            }
+          )
+        };
+        copyIcons.forEach((icon) => icon.addEventListener("click", copyResourceId));
+    </script>
+  </body>
+</html>
