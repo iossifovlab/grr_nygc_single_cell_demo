@@ -623,7 +623,8 @@
             <tr>
                 <th>Summary</th>
                 
-                <td>zhang2021Singlecell
+                <td>Zhang et al., A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021
+
                 </td>
             </tr>
             <tr>
@@ -707,13 +708,30 @@
                                 display: block;
                               }
                             </style>
-                            <p><a href="https://www.sciencedirect.com/science/article/pii/S0092867421012794">Zhang et al., A single-cell atlas of chromatin accessibility in the human genome , Cell, 2021</a></p>
+                            <p>Zhang et al. mapped chromatin accessibility across adult human tissues to identify where candidate cis-regulatory elements (cCREs) are accessible in specific cell types. The study identified 890,130 cCREs across 111 adult cell types. Integrating these profiles with a published fetal atlas expanded the catalog to 1,154,611 cCREs across 222 adult and fetal cell types and helped identify cell types in which noncoding trait-associated variants may act.</p>
+
+<p>The authors used single-cell combinatorial indexing ATAC-seq (sci-ATAC-seq) on nuclei isolated from postmortem adult tissues. The paper reports 615,998 quality-filtered nuclei from 92 biosamples across 30 anatomical sites. The GRR includes 72 GEO fragment records from five donors across 26 tissue categories. Two records are replicates from the same frontal-cortex specimen. The cell metadata covers 484,608 adult nuclei and 108 cell-type labels across the other 70 records. The GRR also includes pseudobulk accessibility tracks from the integrated adult and fetal atlas.</p>
+
+<p><a href="https://doi.org/10.1016/j.cell.2021.10.024">Zhang et al., A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021.</a></p>
 
 <pre style="font-family: monospace;">
-    <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>                    
-    ├── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>         72 resources
-    └── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>     6 resources
+    <a href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>
+    ├── <a href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>           72 resources
+    ├── <a href="../cell_meta_data/index.html">cell_meta_data</a>            1 resource
+    ├── <a href="../samples_meta_data/index.html">samples_meta_data</a>         1 resource
+    ├── <a href="../../../index.html#/summary/zhang2021Singlecell/pseudobulk_atac">pseudobulk_atac/</a>          222 resources
+    └── <a href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>      6 resources
 </pre>
+
+<p><strong>atac_fragments</strong> contains tabix-indexed fragment files from the adult GEO deposit. Each record gives genomic coordinates, a barcode and a read-support count. Use the GEO accession and barcode together to join fragments to cell annotations. The two frontal-cortex replicates (GSM5589414 and GSM5589415) have sample metadata but lack cell-level annotations in the GRR. <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE184462">GEO GSE184462</a></p>
+
+<p><strong>cell_meta_data</strong> contains nucleus identifiers, barcodes, cell-type labels, and quality metrics including transcription start site enrichment. Use <code>sample_id</code> to join to sample metadata and <code>sample_id</code> plus <code>barcode</code> to link annotations to fragments.</p>
+
+<p><strong>samples_meta_data</strong> maps the 72 GEO accessions to donors, tissue categories, and specimen identifiers. Use it to group fragment records by donor or tissue and to identify the two records from the same frontal-cortex specimen.</p>
+
+<p><strong>pseudobulk_atac</strong> provides 222 bigWig coverage tracks aggregated by adult or fetal cell type. Use them to compare accessibility at a locus across cell types and developmental stages.</p>
+
+<p><strong>supplementary_table</strong> contains Tables S1–S6, covering donor and tissue information, assay quality metrics, cell-type annotations and marker genes, complex-trait enrichment, candidate regulatory variants, and assay reagents.</p>
 
                         </template>
                     </div>
@@ -762,8 +780,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1001.0 B</td>
-                <td class="nowrap">7d2372f27265b6830bd5603b977d0151</td>
+                <td class="nowrap">3.54 KB</td>
+                <td class="nowrap">21e007d82e617fca85dd949129b20f16</td>
             </tr>
             <tr>
                 

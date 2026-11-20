@@ -623,7 +623,8 @@
             <tr>
                 <th>Summary</th>
                 
-                <td>clarence2025Multiomic
+                <td>Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nature Genetics, 2025
+
                 </td>
             </tr>
             <tr>
@@ -707,14 +708,30 @@
                                 display: block;
                               }
                             </style>
-                            <p><a href="https://www.nature.com/articles/s41588-025-02083-8">Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nat Genet, 2025</a></p>
+                            <p>Clarence et al. studied how gene regulation varies across cell types, brain regions, and stages of postnatal human development. Combining gene expression and chromatin accessibility with chromatin contact data, the authors inferred enhancer-based regulatory networks, traced changes during oligodendrocyte maturation, and nominated target genes at loci associated with ten brain disorders.</p>
+
+<p>The study used 10x Genomics Multiome to measure RNA expression and chromatin accessibility in the same nuclei. The GRR contains 101,924 nuclei from 39 tissue samples and ten postmortem donors spanning infancy through late adulthood. The samples represent the anterior cingulate cortex, dorsolateral prefrontal cortex, hippocampal formation, and caudate nucleus. All samples are labeled normal in the deposited metadata. The RNA matrix contains 35,451 genes, and the deposited cell metadata includes 11 cell-type labels.</p>
+
+<p><a href="https://doi.org/10.1038/s41588-025-02083-8">Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nature Genetics, 2025.</a></p>
 
 <pre style="font-family: monospace;">
-    <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic/</a>                    
-    ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments/</a>            1 resources
-    ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
-    └── <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table/</a>      24 resources
+    <a href="../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic/</a>
+    ├── <a href="../10x_multiomics_cell_meta_data/index.html">10x_multiomics_cell_meta_data</a>    1 resource
+    ├── <a href="../atac_fragments/index.html">atac_fragments</a>                   1 resource
+    ├── <a href="../rna_expression_matrix/index.html">rna_expression_matrix</a>            1 resource
+    ├── <a href="../samples_meta_data/index.html">samples_meta_data</a>                1 resource
+    └── <a href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table/</a>             24 resources
 </pre>
+
+<p><strong>10x_multiomics_cell_meta_data</strong> contains one row per nucleus with its full barcode, sample ID, tissue, and cell-type label. Use the full barcode, including its sample prefix and barcode suffix, to join RNA observations and ATAC fragments.</p>
+
+<p><strong>atac_fragments</strong> contains a tabix-indexed fragment file with genomic coordinates, nucleus barcodes, and read-support counts. Use it to quantify accessibility in genomic intervals. Its barcode set matches the RNA observations and cell metadata exactly.</p>
+
+<p><strong>rna_expression_matrix</strong> contains the CELLxGENE AnnData expression matrix, nucleus annotations, and RNA and joint RNA–ATAC embeddings. Use the observation IDs to link expression profiles to ATAC barcodes. <a href="https://cellxgene.cziscience.com/collections/f406a653-c079-4bf9-aab6-85846c27571d">CELLxGENE collection</a></p>
+
+<p><strong>samples_meta_data</strong> maps each sample to a donor and provides brain region, developmental stage, sex, and disease status. Join on <code>sample_id</code> to compare nuclei across tissues, donors, and ages.</p>
+
+<p><strong>supplementary_table</strong> contains 24 resources from Tables S1–S16. They include quality metrics, cell-type gene and peak markers, enhancer–gene links at trait-associated loci, and results from oligodendrocyte pseudotime and pathway analyses.</p>
 
                         </template>
                     </div>
@@ -765,8 +782,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1.13 KB</td>
-                <td class="nowrap">0f3b9c0a9cdd5ca308870750801a0264</td>
+                <td class="nowrap">3.42 KB</td>
+                <td class="nowrap">4f514bb67cef86903389b5fa386aedfc</td>
             </tr>
             <tr>
                 

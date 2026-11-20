@@ -1,20 +1,36 @@
-
 type: basic
 
 meta:
-    summary: zhang2021Singlecell
-    description: |
-        [Zhang et al., A single-cell atlas of chromatin accessibility in the human genome , Cell, 2021](https://www.sciencedirect.com/science/article/pii/S0092867421012794)
+  summary: |
+    Zhang et al., A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021
+  description: |
+    Zhang et al. mapped chromatin accessibility across adult human tissues to identify where candidate cis-regulatory elements (cCREs) are accessible in specific cell types. The study identified 890,130 cCREs across 111 adult cell types. Integrating these profiles with a published fetal atlas expanded the catalog to 1,154,611 cCREs across 222 adult and fetal cell types and helped identify cell types in which noncoding trait-associated variants may act.
 
-        <pre style="font-family: monospace;">
-            <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>                    
-            ├── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>         72 resources
-            └── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>     6 resources
-        </pre>
-    labels:
-        assay: sci-ATAC-seq
-        species: human
-        sequencing_platform: Illumina
-        reference_genome: reference/Human/genome/GRCh38.p13
-        dataset: zhang2021Singlecell
-    
+    The authors used single-cell combinatorial indexing ATAC-seq (sci-ATAC-seq) on nuclei isolated from postmortem adult tissues. The paper reports 615,998 quality-filtered nuclei from 92 biosamples across 30 anatomical sites. The GRR includes 72 GEO fragment records from five donors across 26 tissue categories. Two records are replicates from the same frontal-cortex specimen. The cell metadata covers 484,608 adult nuclei and 108 cell-type labels across the other 70 records. The GRR also includes pseudobulk accessibility tracks from the integrated adult and fetal atlas.
+
+    [Zhang et al., A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021.](https://doi.org/10.1016/j.cell.2021.10.024)
+
+    <pre style="font-family: monospace;">
+        <a href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>
+        ├── <a href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>           72 resources
+        ├── <a href="../cell_meta_data/index.html">cell_meta_data</a>            1 resource
+        ├── <a href="../samples_meta_data/index.html">samples_meta_data</a>         1 resource
+        ├── <a href="../../../index.html#/summary/zhang2021Singlecell/pseudobulk_atac">pseudobulk_atac/</a>          222 resources
+        └── <a href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>      6 resources
+    </pre>
+
+    **atac\_fragments** contains tabix-indexed fragment files from the adult GEO deposit. Each record gives genomic coordinates, a barcode and a read-support count. Use the GEO accession and barcode together to join fragments to cell annotations. The two frontal-cortex replicates (GSM5589414 and GSM5589415) have sample metadata but lack cell-level annotations in the GRR. [GEO GSE184462](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE184462)
+
+    **cell\_meta\_data** contains nucleus identifiers, barcodes, cell-type labels, and quality metrics including transcription start site enrichment. Use `sample_id` to join to sample metadata and `sample_id` plus `barcode` to link annotations to fragments.
+
+    **samples\_meta\_data** maps the 72 GEO accessions to donors, tissue categories, and specimen identifiers. Use it to group fragment records by donor or tissue and to identify the two records from the same frontal-cortex specimen.
+
+    **pseudobulk\_atac** provides 222 bigWig coverage tracks aggregated by adult or fetal cell type. Use them to compare accessibility at a locus across cell types and developmental stages.
+
+    **supplementary\_table** contains Tables S1–S6, covering donor and tissue information, assay quality metrics, cell-type annotations and marker genes, complex-trait enrichment, candidate regulatory variants, and assay reagents.
+  labels:
+    assay: sci-ATAC-seq
+    species: human
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/GRCh38.p13
+    dataset: zhang2021Singlecell
