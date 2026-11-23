@@ -623,7 +623,7 @@
             <tr>
                 <th>Summary</th>
                 
-                <td>clarence2025Multiomic
+                <td>Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nature Genetics, 2025.
                 </td>
             </tr>
             <tr>
@@ -707,14 +707,38 @@
                                 display: block;
                               }
                             </style>
-                            <p><a href="https://www.nature.com/articles/s41588-025-02083-8">Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nat Genet, 2025</a></p>
+                            <p>Clarence and colleagues studied how gene expression and chromatin accessibility change during postnatal human brain development. After accounting for differences between donors, age explained more variation in both molecular profiles than brain region, while brain region explained the most variation in cell-type composition. Pseudotime analysis identified distinct regulatory programs along the oligodendrocyte lineage.</p>
+
+<p>The authors used 10x Chromium Single Cell Multiome to measure RNA and chromatin accessibility in the same nuclei and sequenced the libraries on an Illumina NovaSeq 6000. The GRR contains paired RNA and ATAC data for 101,924 QC-filtered nuclei from 39 postmortem tissue samples and 10 control donors across anterior cingulate cortex, dorsolateral prefrontal cortex, hippocampal formation and caudate nucleus. Two donors represent each of five postnatal stages (infancy, middle childhood, adolescence, early adulthood and late adulthood). The authors predicted enhancer–promoter links with the activity-by-contact (ABC) model, integrating chromatin accessibility and Hi-C data. They used RNAscope to validate oligodendrocyte-lineage subtypes. The GRR includes the predicted links and subtype marker tables. The Hi-C contact maps and RNAscope images are external to this GRR.</p>
+
+<p><a href="https://doi.org/10.1038/s41588-025-02083-8">Clarence <em>et al.</em>, Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nature Genetics 57, 591–603 (2025).</a></p>
 
 <pre style="font-family: monospace;">
-    <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic/</a>                    
-    ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments/</a>            1 resources
-    ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
-    └── <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table/</a>      24 resources
+  <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic/</a>
+  ├── <a style="font-family: monospace;" href="../10x_multiomics_cell_meta_data/index.html">10x_multiomics_cell_meta_data</a>  1 resource
+  ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments</a>                 1 resource
+  ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix</a>          1 resource
+  ├── <a style="font-family: monospace;" href="../samples_meta_data/index.html">samples_meta_data</a>              1 resource
+  └── <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table/</a>           24 resources
+      ├── <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table/S1">S1/</a>                        4 resources
+      │   ├── <a style="font-family: monospace;" href="../supplementary_table/S1/Full_gene_markers/index.html">Full_gene_markers</a>      1 resource
+      │   ├── <a style="font-family: monospace;" href="../supplementary_table/S1/Full_peak_markers/index.html">Full_peak_markers</a>      1 resource
+      │   ├── <a style="font-family: monospace;" href="../supplementary_table/S1/QC_perDonor/index.html">QC_perDonor</a>            1 resource
+      │   └── <a style="font-family: monospace;" href="../supplementary_table/S1/QC_perSample/index.html">QC_perSample</a>           1 resource
+      ├── <a style="font-family: monospace;" href="../supplementary_table/S2/index.html">S2</a>                         1 resource
+      │   ...
+      └── <a style="font-family: monospace;" href="../supplementary_table/S16/index.html">S16</a>                        1 resource
 </pre>
+
+<p><strong>10x_multiomics_cell_meta_data</strong> contains one row per retained nucleus. Join its unique <code>barcode</code> to the AnnData observation index and to the fourth column of the ATAC fragments. All three contain the same 101,924 full IDs. Keep the sample prefix and <code>-1</code> suffix in IDs of the form <code>&lt;sample_id&gt;_&lt;16-base barcode&gt;-1</code>, since short barcodes can recur in different samples. For all 101,924 matched barcodes, the CSV fields <code>class</code> and <code>cell_type</code> carry the same label as AnnData <code>obs['cell_type']</code>. The deposit uses 11 cell-type labels with no unassigned nuclei. It includes 4,552 nuclei labeled <code>perivascular cell</code> alongside a distinct <code>pericyte</code> label, while the paper describes 10 main types.</p>
+
+<p><strong>atac_fragments</strong> contains one pooled, bgzip-compressed and tabix-indexed TSV with zero-based, end-exclusive intervals, a full nucleus barcode and a read-support count. The GRR statistics record 2,189,583,806 fragment rows across 39 contigs and a summed read support of 3,593,002,180. The GRR uses <code>reference/Human/genome/GRCh38.p13</code> as its reference resource for these GRCh38 coordinates. The alignment patch version is unspecified in the deposit.</p>
+
+<p><strong>rna_expression_matrix</strong> contains one CELLxGENE AnnData file with RNA measurements for 101,924 nuclei across 35,451 human gene features indexed by Ensembl IDs. It stores sparse <code>.X</code> and <code>.raw.X</code> matrices for the same filtered cohort. The processing applied to the deposited <code>.X</code> values is unspecified in the file metadata. Observation annotations include cell-type and tissue ontology terms, donor, sex, disease and developmental stage. Embeddings include Harmony PCA, RNA UMAPs and joint RNA–ATAC weighted-nearest-neighbor UMAPs. Use <code>.obs_names</code> as the barcode key. <a href="https://cellxgene.cziscience.com/collections/f406a653-c079-4bf9-aab6-85846c27571d">CZ CELLxGENE Discover collection</a></p>
+
+<p><strong>samples_meta_data</strong> contains one row per regional tissue sample. Join on <code>sample_id</code> from the nucleus metadata to obtain <code>donor_id</code>, tissue, sex, disease and developmental stage. All 39 sample IDs match. Each sample is labeled <code>normal</code> and self-reported ethnicity is <code>unknown</code>. The eight deposited developmental-stage labels correspond to infancy and ages 4, 6, 14, 20, 39, 61 and 62 years. There are 10 samples each from anterior cingulate cortex, dorsolateral prefrontal cortex and hippocampal formation, and nine from caudate nucleus. The caudate sample for <code>postnatB_3</code> is absent from the deposit.</p>
+
+<p><strong>supplementary_table</strong> contains 24 configured resources from Supplementary Data 1–16. S1 has four resources for gene and peak markers and donor- and sample-level QC. The QC sheets use <code>donorN</code> and <code>sampleN</code> identifiers that require a crosswalk to the metadata above. S2 covers gene-set enrichment for covariate-associated expression variation. S3–S7 cover SCENIC+ enhancer-driven regulons, regulon specificity and GWAS enrichment. S8–S12 contain predicted enhancer–promoter links at GWAS loci, pathway enrichment and per-gene summaries. The S9 workbook spans ten traits. Consult the original S9 Summary sheet for its section and column headers. S13–S16 cover oligodendrocyte-lineage markers, Hotspot module scores, pseudotime enrichment and MAGMA results. S14 <code>cell_id</code> uses short barcodes that repeat. Some S14 IDs are absent even after removing sample prefixes from GRR barcodes, so a reliable nucleus-level join requires a source crosswalk.</p>
 
                         </template>
                     </div>
@@ -729,10 +753,18 @@
                     
                         <li>assay: 10x_Multiome</li>
                     
+                        <li>brain_region: anterior cingulate cortex, caudate nucleus, dorsolateral prefrontal cortex, hippocampal formation</li>
+
                         <li>dataset: clarence2025Multiomic</li>
                     
+                        <li>modalities: RNA, ATAC</li>
+
+                        <li>organ: brain</li>
+
                         <li>reference_genome: reference/Human/genome/GRCh38.p13</li>
                     
+                        <li>resolution: single_nucleus</li>
+
                         <li>sequencing_platform: Illumina</li>
                     
                         <li>species: human</li>
@@ -765,8 +797,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1.13 KB</td>
-                <td class="nowrap">0f3b9c0a9cdd5ca308870750801a0264</td>
+                <td class="nowrap">7.38 KB</td>
+                <td class="nowrap">cc6b75544a952d6aba9815c5150a9191</td>
             </tr>
             <tr>
                 
