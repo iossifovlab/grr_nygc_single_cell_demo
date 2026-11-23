@@ -1,0 +1,20 @@
+{
+  "config": {
+    "type": "categorical",
+    "value_order": [],
+    "y_log_scale": false,
+    "label_rotation": 0,
+    "displayed_values_count": 5,
+    "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count"
+  },
+  "values": {
+    "RP025_G5|TACTTCGTCAGCTAAC-1": 82612,
+    "RP025_G2|TGAGGGAGTAGGATCC-1": 65293,
+    "RP025_G5|AATTGGGAGCCTGTTC-1": 63921,
+    "RP025_G2|CGAAGCCTCCTAAGGT-1": 62606,
+    "RP025_G8|CGCTAATAGCAGGTGG-1": 61823
+  },
+  "truncated": true,
+  "unique_values": 5660,
+  "total_count": 63403850
+}

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "type": "categorical",
+    "value_order": [],
+    "y_log_scale": false,
+    "label_rotation": 0,
+    "displayed_values_count": 5,
+    "plot_function": "fragment_count_dist_plot.py:plot_fragment_per_cell_count"
+  },
+  "values": {
+    "X016_G3|TATCGAGGTTAGGTTG-1": 48805,
+    "X016_G7|GATAATCGTCATCCTG-1": 40658,
+    "X016_G7|CGGAATCGTGATTACG-1": 39253,
+    "RP012_G4|TAATCACCAATTGAGA-1": 39043,
+    "RP012_G4|TGATCGAGTCATCATC-1": 37866
+  },
+  "truncated": true,
+  "unique_values": 10039,
+  "total_count": 48948227
+}

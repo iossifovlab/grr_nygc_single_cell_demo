@@ -1,0 +1,41 @@
+file: Supplementary_Table_SupTable9.xlsx
+format: excel
+meta:
+  description: 'Each row represents a variant
+
+
+    | Column Name       | Description                                                                    |
+
+    | ----------------- | ------------------------------------------------------------------------------
+    |
+
+    | `chr`             | chromosome                                                                     |
+
+    | `start`           | peak start coordinate                                                          |
+
+    | `end`             | peak end coordinate                                                            |
+
+    | `target_gene`     | the gene that the peak maps to                                                 |
+
+    | `log_counts_diff` | log-transformed difference in predicted total chromatin
+    accessibility counts   |
+
+    | `probs_jsd_diff`  | JSD between predictions with reference and alternate allele                    |
+
+    | `CELL`            | celltype tested                                                                |
+
+    | `FAM`             | family with variant                                                            |
+
+    | `snpID`           | snp ID in the form of chr_position_ref_alt                                     |'
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 9 This page of the table shows the familial PD variant
+    prioritization results - Familial PD Variants
+parameters:
+  sheet_name: Sheet1
+type: data_frame

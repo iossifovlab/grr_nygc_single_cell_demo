@@ -1,0 +1,37 @@
+file: Supplementary_Table_SupTable2.xlsx
+format: excel
+meta:
+  description: 'Each row represents a gene that was found to be differential expressed
+
+
+    | Column Name           | Description                                    |
+
+    | --------------------- | ---------------------------------------------- |
+
+    | `avg_logFC`           | average calcuated log fold change (PD vs nd)   |
+
+    | `logCPM`              | log2-transformed counts per million (CPM)      |
+
+    | `LR`                  | likelihood ratio statistic                     |
+
+    | `p_val`               | significance level derived from LR             |
+
+    | `p_val_adj`           | adjusted pvalue                                |
+
+    | `gene`                | gene tested                                    |
+
+    | `cell_type`           | cell type tested                               |
+
+    | `covariates_included` | covariatees included for test                  |'
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 2 This page of the table shows the differentially expressed
+    genes for all cell types tested - DE_GEX
+parameters:
+  sheet_name: Sheet1
+type: data_frame

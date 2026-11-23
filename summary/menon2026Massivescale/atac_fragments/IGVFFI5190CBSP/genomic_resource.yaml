@@ -1,0 +1,52 @@
+type: fragment_score
+table:
+  filename: IGVFFI5190CBSP.tsv.gz
+  format: tabix
+  header_mode: none
+  zero_based: true
+  chrom:
+    column_index: 0
+  pos_begin:
+    column_index: 1
+  pos_end:
+    column_index: 2
+scores:
+- id: cell
+  column_index: 3
+  type: str
+  histogram:
+    type: categorical
+    plot_function: fragment_count_dist_plot.py:plot_fragment_per_cell_count
+    displayed_values_count: 5
+- id: count
+  column_index: 4
+  type: int
+  histogram:
+    type: number
+    view_range:
+      min: 1
+      max: 20
+    number_of_bins: 20
+meta:
+  summary: 'Single-Cell Atlas of Parkinson''s Disease and Control: Complete RNA data,
+    5 tissues'
+  description: "\n\n[Menon et al., Massive-scale single-nucleus multi-omics identifies\
+    \ novel rare noncoding drivers of Parkinson\u2019s disease, bioRxiv, 2026](https://www.biorxiv.org/content/10.64898/2026.03.05.709922v1)\n\
+    \nDownloaded from: refer supp. table 11 and [https://api.data.igvf.org](https://api.data.igvf.org)\n\
+    \n"
+  labels:
+    assay: 10x_Multiome
+    data_type: fragments
+    modalities: ATAC
+    species: human
+    sequencing_platform: Illumina
+    vendor: 10x_Genomics
+    IGVF_donor_id: IGVFDO2028IGVN
+    donor_id: BANN1256
+    brain_region: PUT
+    reference_genome: reference/Human/genome/GRCh38.p14
+    individual_info: Homo sapiens (female, 70 years, European) cerebellar cortex tissue/organ
+      associated with 27 MMSE, 48 UPDRS, APOE carrier status of E3/E3, Lewy body attribute
+      of III, Parkinson's disease, neuritic plaque measurement of sparse, neurofibrillary
+      tangles measurement of I
+    dataset: menon2026Massivescale

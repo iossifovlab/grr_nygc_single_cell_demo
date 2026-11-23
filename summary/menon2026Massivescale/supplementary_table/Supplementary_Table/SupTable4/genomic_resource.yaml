@@ -1,0 +1,35 @@
+file: Supplementary_Table_SupTable4.xlsx
+format: excel
+meta:
+  description: "Each row represents a peak that was found to be differentially accessible\n\
+    \n| Column Name      | Description                                           \
+    \                                                      |\n| ---------------- |\
+    \ -----------------------------------------------------------------------------------------------------------\
+    \ |\n| `baseMean`       | the average normalized accessibility of the peak across\
+    \ all samples                                         |\n| `log2FoldChange` |\
+    \ the log\u2082 change in accessibility between cases and controls           \
+    \                                      |\n| `lfcSE`          | The standard error\
+    \ of the log\u2082 fold change estimate.                                     \
+    \                   |\n| `stat`           | The Wald test statistic from the negative\
+    \ binomial model.                                                   |\n| `pvalue`\
+    \         | The raw (unadjusted) p-value testing whether the peak\u2019s accessibility\
+    \ differs between cases and controls.   |\n| `peak_coord`     | the genomic coordinates\
+    \ of the peak                                                                \
+    \         |\n| `target_gene`    | the gene that the peak maps to             \
+    \                                                                 |\n| `padj_gene`\
+    \      | Gene-level adjusted p-value, correcting for multiple testing across all\
+    \ peaks assigned to the same gene.    |\n| `cell`           | the cell type tested\
+    \                                                                            \
+    \            |"
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 4 This page of the table showsdifferentially accessible
+    peaks linked to DEGs for each cell type - DEG-linked Peak DA
+parameters:
+  sheet_name: Sheet1
+type: data_frame

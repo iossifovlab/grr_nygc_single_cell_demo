@@ -1,0 +1,50 @@
+file: Supplementary_Table_SupTable6.xlsx
+format: excel
+meta:
+  description: 'Each row represents a pathway
+
+
+    | Column Name        | Description                                                                                                                  |
+
+    | ------------------ | ----------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `cell_type`        | cell type tested                                                                                                             |
+
+    | `pattern`          | trajectory pattern                                                                                                           |
+
+    | `directory`        | direction of pattern change across disease progression                                                                       |
+
+    | `Term`             | pathway tested                                                                                                               |
+
+    | `Rank`             | Enrichment rank of pathway by celltype                                                                                       |
+
+    | `P.value`          | significance level of enrichment                                                                                             |
+
+    | `Adjusted.P.value` | adjusted pvalue                                                                                                              |
+
+    | `Odds.Ratio`       | odds ratio of genes overlap with set                                                                                         |
+
+    | `Combined.Score`   | A metric used by Enrichr combining the p-value and z-score
+    for deviation from expected rank; higher = stronger enrichment.   |
+
+    | `Genes`            | Comma-separated list of genes that overlap with the given
+    pathway                                                            |
+
+    | `db`               | Pathway database tested                                                                                                      |
+
+    | `n_genes`          | number of genes in foreground                                                                                                |
+
+    | `n_background`     | number of genes in background                                                                                                |'
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 6 This page of the table shows the pathway enrichment
+    results of trajectory patterns - Trajectory_Pathways
+parameters:
+  sheet_name: Sheet1
+type: data_frame

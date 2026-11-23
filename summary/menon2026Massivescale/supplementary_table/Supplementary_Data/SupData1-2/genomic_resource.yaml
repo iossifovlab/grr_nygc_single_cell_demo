@@ -1,0 +1,34 @@
+file: Supplementary_Data_SupData1-2.xlsx
+format: excel
+meta:
+  description: 'Each row represents an cell type - principal component combination
+
+
+    | Column Name          | Description                                                    |
+
+    | -------------------- | --------------------------------------------------------------
+    |
+
+    | `celltype`           | the cell type tested                                           |
+
+    | `PCs`                | the number of genotype PCs used                                |
+
+    | `SignificantResults` | the number of significant variant-phenotype pairs calculated   |
+
+    | `Ncells`             | the number of cells included                                   |
+
+    | `Nsamples`           | the number of samples used                                     |
+
+    | `Nvariants`          | the number of unique significant variants calculated           |'
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Data 1 - Sheet 2 This page of the table shows the number
+    of eQTLs calculated per PCs - eQTL_PCs
+parameters:
+  sheet_name: Sheet1
+type: data_frame

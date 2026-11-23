@@ -1,0 +1,182 @@
+file: Supplementary_Table_SupTable11.xlsx
+format: excel
+meta:
+  description: 'Each row represents a different tissue sample
+
+
+    | Column Name                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+    | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |
+
+    | `TissueSampleID`                                   | A unique identifier for
+    the given tissue sample, created by appending the BannerDonorID to the BrainRegion
+    abbreviation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
+    | `BannerDonorID`                                    | Unique donor identifier
+    assigned at enrollment.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+    | `BrainRegion`                                      | An abbreviation encoding
+    the brain region represented by the tissue sample. Cerebellum (CBL), Cingulate
+    Gyrus (CING), Middle Temporal Gyrus (MTG), Putamen (PUT), and Substantia Nigra
+    (SN)                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+    | `GP2_DonorID`                                      | The donor identifier from
+    the Global Parkinson''s Genetics Program (GP2) that enables cross referencing
+    of whole genome sequencing data for each individual, available from GP2 through
+    the AMP-PD data portal at https://amp-pd.org.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+    | `IGVF_DonorAccession`                              | The IGVF accession ID corresponding
+    to this donor.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+
+    | `IGVF_TissueAccessions`                            | A comma-delimited list
+    of the IGVF accession IDs corresponding to this tissue sample. In some cases,
+    multiple pieces of tissue from the same frozen tissue chunk were used in data
+    generation and this is encoded by "parent" and "child" tissue samples in the IGVF
+    data portal.                                                                                                                                                                                                                                                                                                                                                                                     |
+
+    | `IGVF_PrincipalAnalysisSetAccession`               | The IGVF accession ID for
+    the "Principal Analysis Set" which represents the fully analyzed dataset after
+    genotype-based demultiplexing, cell annotation etc.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+
+    | `IGVF_CellMetadataAccession`                       | The IGVF accession ID for
+    the tab-delimited cellular metadata file. In addition to cellular annotations
+    etc., this file contains mappings between individual cells and the original measurement
+    set that it came from. These files can be downloaded at "https://api.data.igvf.org/sequence-files/<IGVF
+    Accession>/@@download/<IGVF Accession>.txt.gz" by replacing <IGVF Accession> with
+    the corresponding accession ID.                                                                                                                                                                                                                                             |
+
+    | `IGVF_RNA_ProcessedMatrixFileAccession`            | The IGVF accession ID for
+    the processed gene expression matrix file. These files can be downloaded at "https://api.data.igvf.org/matrix-files/<IGVF
+    Accession>/@@download/<IGVF Accession>.tar.gz" by replacing <IGVF Accession> with
+    the corresponding accession ID.                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+    | `IGVF_ATAC_ProcessedMatrixFileAccession`           | The IGVF accession ID for
+    the processed ATAC-seq peak matrix file. These files can be downloaded at "https://api.data.igvf.org/matrix-files/<IGVF
+    Accession>/@@download/<IGVF Accession>.rds" by replacing <IGVF Accession> with
+    the corresponding accession ID.                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+    | `IGVF_ATAC_ProcessedFragmentFileAccession`         | The IGVF accession ID for
+    the processed ATAC-seq fragment file. These files can be downloaded at "https://api.data.igvf.org/tabular-files/<IGVF
+    Accession>/@@download/<IGVF Accession>.tsv.gz" by replacing <IGVF Accession> with
+    the corresponding accession ID.                                                                                                                                                                                                                                                                                                                                                                                                     |
+
+    | `IGVF_RNA_MeasurementSetAccessions`                | A comma-delimited list
+    of the IGVF accession ID for the RNA Measurement Sets corresponding to this tissue
+    sample. Multiple tissue samples were pooled together into individual 10x Genomics
+    GEM reactions and in most cases tissue samples were run across multiple GEM reactions.
+    Here, a measurement set refers to a GEM reaction and there is one Measurement
+    Set for the snRNA-seq portion and one for the snATAC-seq portion of the multi-omic
+    reaction.                                                                                                                                                                                                         |
+
+    | `IGVF_ATAC_MeasurementSetAccessions`               | A comma-delimited list
+    of the IGVF accession ID for the ATAC Measurement Sets corresponding to this tissue
+    sample. Multiple tissue samples were pooled together into individual 10x Genomics
+    GEM reactions and in most cases tissue samples were run across multiple GEM reactions.
+    Here, a measurement set refers to a GEM reaction and there is one Measurement
+    Set for the snRNA-seq portion and one for the snATAC-seq portion of the multi-omic
+    reaction.                                                                                                                                                                                                        |
+
+    | `IGVF_IntermediateAnalysisSetAccessions`           | A comma-delimited list
+    of the IGVF accession IDs for the "Intermediate Analysis Sets" linked to the given
+    tissue. Intermediate Analysis sets represent the unprocessed dataset, immediately
+    after alignment with Cell Ranger ARC but before genotype-based demultiplexing
+    etc.                                                                                                                                                                                                                                                                                                                                                                                        |
+
+    | `IGVF_RNA_UnprocessedAlignmentFileAccessions`      | A comma-delimited list
+    of the IGVF accession IDs for all unprocessed alignment (BAM) files corresponding
+    to the snRNA-seq data for this tissue sample. As tissue samples were pooled prior
+    to GEM generation, there is not a one-to-one correspondence between alignment
+    files and tissue samples. Usage of these BAM files would require genetic demultiplexing
+    or cross-referencing the cellular metadata files provided. These files can be
+    downloaded at "https://api.data.igvf.org/alignment-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.bam" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                          |
+
+    | `IGVF_ATAC_UnprocessedAlignmentFileAccessions`     | A comma-delimited list
+    of the IGVF accession IDs for all unprocessed alignment (BAM) files corresponding
+    to the snATAC-seq data for this tissue sample. As tissue samples were pooled prior
+    to GEM generation, there is not a one-to-one correspondence between alignment
+    files and tissue samples. Usage of these BAM files would require genetic demultiplexing
+    or cross-referencing the cellular metadata files provided. These files can be
+    downloaded at "https://api.data.igvf.org/alignment-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.bam" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                         |
+
+    | `IGVF_RNA_UnprocessedRawMatrixFileAccessions`      | A comma-delimited list
+    of the IGVF accession IDs for all unprocessed "raw feature barcord matrix" / gene
+    expression matrix files corresponding to the snRNA-seq data for this tissue sample.
+    As tissue samples were pooled prior to GEM generation, there is not a one-to-one
+    correspondence between matrix files and tissue samples. Usage of these matrix
+    files would require genetic demultiplexing or cross-referencing the cellular metadata
+    files provided. These files can be downloaded at "https://api.data.igvf.org/matrix-files/<IGVF
+    Accession>/@@download/<IGVF Accession>.h5" by replacing <IGVF Accession> with
+    the corresponding accession ID.        |
+
+    | `IGVF_RNA_UnprocessedFilteredMatrixFileAccessions` | A comma-delimited list
+    of the IGVF accession IDs for all unprocessed "filtered feature barcord matrix"
+    / gene expression matrix files corresponding to the snRNA-seq data for this tissue
+    sample. As tissue samples were pooled prior to GEM generation, there is not a
+    one-to-one correspondence between matrix files and tissue samples. Usage of these
+    matrix files would require genetic demultiplexing or cross-referencing the cellular
+    metadata files provided. These files can be downloaded at "https://api.data.igvf.org/matrix-files/<IGVF
+    Accession>/@@download/<IGVF Accession>.h5" by replacing <IGVF Accession> with
+    the corresponding accession ID.   |
+
+    | `IGVF_ATAC_UnprocessedFragmentFileAccessions`      | A comma-delimited list
+    of the IGVF accession IDs for all unprocessed fragment files corresponding to
+    the snATAC-seq data for this tissue sample. As tissue samples were pooled prior
+    to GEM generation, there is not a one-to-one correspondence between matrix files
+    and tissue samples. Usage of these matrix files would require genetic demultiplexing
+    or cross-referencing the cellular metadata files provided. These files can be
+    downloaded at "https://api.data.igvf.org/tabular-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.tsv.gz" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                               |
+
+    | `IGVF_RNA_SequenceFileAccessions`                  | A comma-delimited list
+    of the IGVF accession IDs for all fastq format sequence files corresponding to
+    the snRNA-seq data for this tissue sample. As tissue samples were pooled prior
+    to GEM generation, there is not a one-to-one correspondence between sequence files
+    and tissue samples. Usage of these fastq files would require genetic demultiplexing
+    or cross-referencing the cellular metadata files provided. These files can be
+    downloaded at "https://api.data.igvf.org/sequence-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.fastq.gz" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                           |
+
+    | `IGVF_ATAC_SequenceFileAccessions`                 | A comma-delimited list
+    of the IGVF accession IDs for all fastq format sequence files corresponding to
+    the snATAC-seq data for this tissue sample. As tissue samples were pooled prior
+    to GEM generation, there is not a one-to-one correspondence between sequence files
+    and tissue samples. Usage of these fastq files would require genetic demultiplexing
+    or cross-referencing the cellular metadata files provided. These files can be
+    downloaded at "https://api.data.igvf.org/sequence-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.fastq.gz" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                          |
+
+    | `IGVF_RNA_SeqSpecAccessions`                       | A comma-delimited list
+    of the IGVF accession IDs for the "seqspec" configuration files for the snRNA-seq
+    data for this tissue. Seqspec files contain information about the sequencing library
+    structure and are used by the IGVF Uniform Processing Pipelines. These files can
+    be downloaded at "https://api.data.igvf.org/configuration-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.yaml.gz" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                                                                                                                                                                               |
+
+    | `IGVF_ATAC_SeqSpecAccessions`                      | A comma-delimited list
+    of the IGVF accession IDs for the "seqspec" configuration files for the snATAC-seq
+    data for this tissue. Seqspec files contain information about the sequencing library
+    structure and are used by the IGVF Uniform Processing Pipelines. These files can
+    be downloaded at "https://api.data.igvf.org/configuration-files/<IGVF Accession>/@@download/<IGVF
+    Accession>.yaml.gz" by replacing <IGVF Accession> with the corresponding accession
+    ID.                                                                                                                                                                                              |'
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 11 This page of the table shows the IGVF accession
+    information for all files, mapped to individual tissue samples. - Data Availability
+parameters:
+  sheet_name: Sheet1
+type: data_frame

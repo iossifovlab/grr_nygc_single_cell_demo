@@ -1,0 +1,94 @@
+file: Supplementary_Data_SupData1-1.xlsx
+format: excel
+meta:
+  description: "Each row represents an eQTL\n\n| Column Name              | Description\
+    \                                                                            \
+    \                                                                            \
+    \                         |\n| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+    \ |\n| `variant_id`             | Unique identifier of the genetic variant (e.g.,\
+    \ \u201Cchr_pos_ref_alt\u201D or rsID).                                      \
+    \                                                                           |\n\
+    | `phenotype_id`           | Identifier of the phenotype that is tested.     \
+    \                                                                            \
+    \                                                                |\n| `num_var`\
+    \                | Number of variants tested in the cis\u2010window for that phenotype\
+    \ (i.e., the number of variant\u2013phenotype pairs considered).             \
+    \                                                       |\n| `beta_shape1`   \
+    \         | Shape1 parameter of the fitted Beta distribution used for permutation-based\
+    \ null modelling of p-values                                                 \
+    \                                     |\n| `beta_shape2`            | Shape2 parameter\
+    \ of the fitted Beta distribution used for permutation-based null modelling of\
+    \ p-values.                                                                  \
+    \                   |\n| `true_df`                | Degrees of freedom used to\
+    \ compute the p-values under the \u201Ctrue\u201D null degrees of freedom (before\
+    \ Beta\u2010approximation)                                                   \
+    \                     |\n| `pval_true_df`           | P-value computed using the\
+    \ \u201Ctrue_df\u201D degrees of freedom (i.e., nominal p from the model before\
+    \ permutation adjustment)                                                    \
+    \                  |\n| `start_distance`         | Distance in bases from the\
+    \ variant to the start coordinate of the phenotype\u2019s window (or transcription\
+    \ start site).                                                               \
+    \          |\n| `end_distance`           | Distance in bases from the variant\
+    \ to the end coordinate of the phenotype\u2019s window (or transcription end site).\
+    \                                                                            \
+    \ |\n| `ma_samples`             | Number of minor\u2010allele carrying samples\
+    \ (i.e., count of samples carrying the minor allele or variant allele) included\
+    \ in the test.                                                          |\n| `ma_count`\
+    \               | Minor\u2010allele count (across all samples) for the variant\
+    \ in this test.                                                              \
+    \                                                         |\n| `af`          \
+    \           | Allele frequency of the effect (minor) allele in the sample (often\
+    \ minor\u2010allele frequency, MAF).                                         \
+    \                                                   |\n| `pval_nominal`      \
+    \     | Nominal P-value from the linear model (variant effect on phenotype) without\
+    \ permutation/correction.                                                    \
+    \                                     |\n| `slope`                  | Estimated\
+    \ effect size (regression coefficient) for the variant on the phenotype (direction\
+    \ + magnitude).                                                              \
+    \                      |\n| `slope_se`               | Standard error of the estimated\
+    \ slope (effect size) from the regression.                                   \
+    \                                                                            \
+    \     |\n| `pval_perm`              | Empirical P-value obtained via permutations\
+    \ for the variant\u2013phenotype pair (or leading variant) under the permutation\
+    \ scheme.                                                               |\n| `pval_beta`\
+    \              | P-value obtained by the Beta\u2010approximation (qbeta) using\
+    \ the fitted Beta distribution with parameters beta_shape1 & beta_shape2.    \
+    \                                                        |\n| `qval`         \
+    \          | False discovery rate (FDR)\u2013corrected q-value for the phenotype\
+    \ (or variant\u2013phenotype pair) across tests (e.g., BH\u2010adjusted).    \
+    \                                                            |\n| `pval_nominal_threshold`\
+    \ | Gene\u2010level or phenotype\u2010level nominal p\u2010value threshold derived\
+    \ from the permutation/Beta\u2010approximation procedure: variants with pval_nominal\
+    \ < this threshold are considered significant   |\n| `chr`                   \
+    \ | Chromosome of the variant (e.g., \u201Cchr1\u201D, \u201CchrX\u201D).    \
+    \                                                                            \
+    \                                                           |\n| `position`  \
+    \             | Genomic base\u2010pair position of the variant on the given chromosome.\
+    \                                                                            \
+    \                                              |\n| `ref`                    |\
+    \ Reference allele of the variant (as in the genotype encoding).             \
+    \                                                                            \
+    \                                     |\n| `alt`                    | Alternative\
+    \ (effect) allele of the variant.                                            \
+    \                                                                            \
+    \                         |\n| `CellType`               | cell type context in\
+    \ which the QTL test was performed.                                          \
+    \                                                                            \
+    \                |\n| `PC`                     | how many genotype principal components\
+    \ used.                                                                      \
+    \                                                                          |\n\
+    | `variant_id_38`          | Variant identifier lifted to build 38 (hg38) coordinates\
+    \ (if original variant_id was in another build or alternate encoding).       \
+    \                                                        |"
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Data 1 - Sheet 1 This page of the table shows the eQTLs calculated
+    - eQTL_PC30
+parameters:
+  sheet_name: Sheet1
+type: data_frame

@@ -1,0 +1,47 @@
+file: Supplementary_Table_SupTable5.xlsx
+format: excel
+meta:
+  description: 'Each row represents a gene
+
+
+    | Column Name | Description                                    |
+
+    | ----------- | ---------------------------------------------- |
+
+    | `gene`      | gene tested                                    |
+
+    | `avg_logFC` | average calcuated log fold change (PD vs nd)   |
+
+    | `logCPM`    | log2-transformed counts per million (CPM)      |
+
+    | `LR`        | likelihood ratio statistic                     |
+
+    | `p_val`     | significance level derived from LR             |
+
+    | `p_val_adj` | adjusted pvalue                                |
+
+    | `cell_type` | cell type tested                               |
+
+    | `stage_0`   | Control                                        |
+
+    | `stage_1`   | LB Stage I                                     |
+
+    | `stage_2`   | LB Stage Iia                                   |
+
+    | `stage_3`   | Stage III                                      |
+
+    | `direction` | direction of effect                            |
+
+    | `pattern`   | pattern type                                   |'
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 5 This page of the table shows the trajectory results
+    of genes with differential expression across PD progression - TrajectoryDEGs
+parameters:
+  sheet_name: Sheet1
+type: data_frame

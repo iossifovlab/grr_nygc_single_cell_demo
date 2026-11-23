@@ -1,0 +1,171 @@
+file: Supplementary_Table_SupTable1.xlsx
+format: excel
+meta:
+  description: "Each row represents a different donor in our cohort\n\n| Column Name\
+    \                               | Description                                \
+    \                                                              |\n| -----------------------------------------\
+    \ | --------------------------------------------------------------------------------------------------------\
+    \ |\n| `BannerID`                                | Unique donor identifier assigned\
+    \ at enrollment.                                                          |\n\
+    | `race`                                    | Race of donor (1 = White, 2 = Black,\
+    \ 3 = Native American, 4 = Asian, 5 = Other, 99 = Unknown).           |\n| `sex`\
+    \                                     | Biological sex (1 = Male, 2 = Female).\
+    \                                                                   |\n| `age_at_death`\
+    \                            | Age in years at death (values \u2265 90 coded as\
+    \ 900).                                                        |\n| `PMI`    \
+    \                                 | Post-mortem interval in hours between death\
+    \ and start of autopsy.                                        |\n| `last_mmse_test_score`\
+    \                    | Most recent Mini-Mental State Exam (MMSE) score before\
+    \ death (0\u201330).                                     |\n| `last_mmse_interval_before_death`\
+    \         | Months between last MMSE test and death.                         \
+    \                                        |\n| `motor_updrs_score_on`         \
+    \           | Last Unified Parkinson\u2019s Disease Rating Scale (UPDRS Part III)\
+    \ motor score ON dopaminergic medication.   |\n| `motor_updrs_score_off`     \
+    \              | Last UPDRS Part III motor score OFF medication.             \
+    \                                             |\n| `motor_updrs_score_months_prior_to_death`\
+    \ | Months between last UPDRS motor assessment and death.                    \
+    \                                |\n| `Control`                              \
+    \   | Clinico-pathologic control (no dementia or parkinsonism).              \
+    \                                  |\n| `AD`                                 \
+    \     | Alzheimer\u2019s disease (intermediate or high probability per NIA-Reagan\
+    \ criteria).                          |\n| `PD`                              \
+    \        | Parkinson\u2019s disease with substantia nigra Lewy bodies.       \
+    \                                            |\n| `DLB`                      \
+    \               | Dementia with Lewy bodies (DLB Consortium criteria).       \
+    \                                              |\n| `VAD`                    \
+    \                 | Vascular dementia (multi-infarct or Binswanger\u2019s type).\
+    \                                                  |\n| `PSP`                \
+    \                     | Progressive supranuclear palsy (tau pathology in cortex\
+    \ and brainstem).                                  |\n| `HS`                 \
+    \                     | Hippocampal sclerosis (loss of CA1 neurons without AD\
+    \ changes).                                          |\n| `DLDH`             \
+    \                       | Dementia lacking distinctive histology.            \
+    \                                                      |\n| `MND`            \
+    \                         | Motor neuron disease (ALS, PLS, or FTLD-MND).    \
+    \                                                        |\n| `CBD`          \
+    \                           | Corticobasal degeneration.                     \
+    \                                                          |\n| `PICKS`      \
+    \                             | Pick\u2019s disease (tau-positive Pick bodies).\
+    \                                                               |\n| `HD`    \
+    \                                  | Huntington\u2019s disease (CAG expansion\
+    \ in HTT).                                                             |\n| `MSA`\
+    \                                     | Multiple system atrophy (\u03B1-synuclein\
+    \ glial inclusions).                                                  |\n| `ARG`\
+    \                                     | Argyrophilic grains (tau \u201Crice-grain\u201D\
+    \ lesions in limbic regions).                                        |\n| `FTLD-TDP`\
+    \                                | Frontotemporal lobar degeneration with ubiquitinated/TDP-43\
+    \ inclusions.                                  |\n| `TDP-43`                 \
+    \                 | Indicates presence of TDP-43 pathology (subtype of FTLD).\
+    \                                                |\n| `CWMR`                 \
+    \                   | Circle of Willis atherosclerosis severity (1 none \u2013\
+    \ 4 severe).                                           |\n| `dementia_nos`   \
+    \                         | Dementia not otherwise specified.                \
+    \                                                        |\n| `MS`           \
+    \                           | Multiple sclerosis (if present in records).Multiple\
+    \ sclerosis (if present in re                          |\n| `CAA`            \
+    \                         | Cerebral amyloid angiopathy total score (sum across\
+    \ regions)                                             |\n| `MCI`            \
+    \                         | Mild cognitive impairment at death.              \
+    \                                                        |\n| `LBS`          \
+    \                           | Unified Lewy Body Stage (1 olfactory \u2192 4 neocortical).\
+    \                                                   |\n| `BRAIN_ABNORMAL`    \
+    \                      | Gross brain abnormality present.                    \
+    \                                                     |\n| `ACUTE_INFARCTS`  \
+    \                        | Presence of acute cerebral infarcts.              \
+    \                                                       |\n| `ApoE`          \
+    \                          | Apolipoprotein E genotype (if available)        \
+    \                                                         |\n| `PlaqueF`     \
+    \                            | Amyloid plaque density in frontal cortex (0 none\
+    \ \u2013 3 frequent).                                          |\n| `PlaqueT`\
+    \                                 | Amyloid plaque density in temporal cortex\
+    \                                                                |\n| `PlaqueP`\
+    \                                 | Amyloid plaque density in parietal cortex.\
+    \                                                               |\n| `PlaqueH`\
+    \                                 | Amyloid plaque density in hippocampus CA1.\
+    \                                                               |\n| `PlaqueE`\
+    \                                 | Amyloid plaque density in entorhinal cortex.\
+    \                                                             |\n| `PlaqueTotal`\
+    \                             | Sum of plaque scores across five regions (0\u2013\
+    15).                                                         |\n| `Plaque density`\
+    \                          | CERAD neuritic plaque density (0 none \u2013 3 frequent).\
+    \                                                     |\n| `TangleF`         \
+    \                        | Neurofibrillary tangle density in frontal cortex. \
+    \                                                       |\n| `TangleT`       \
+    \                          | Tangle density in temporal cortex.              \
+    \                                                         |\n| `TangleP`     \
+    \                            | Tangle density in parietal cortex.            \
+    \                                                           |\n| `TangleE`   \
+    \                              | Tangle density in entorhinal cortex.        \
+    \                                                             |\n| `TangleH` \
+    \                                | Tangle density in hippocampal CA1.        \
+    \                                                               |\n| `TangleTotal`\
+    \                             | Sum of tangle scores across five regions (0\u2013\
+    15).                                                         |\n| `Cerad NP` \
+    \                               | CERAD neuritic plaque score (none \u2013 frequent).\
+    \                                                           |\n| `Braak score`\
+    \                             | Braak stage of neurofibrillary tangle progression\
+    \ (I\u2013VI).                                                |\n| `NIA-R`   \
+    \                                | NIA-Reagan criteria for probability of AD (0\
+    \ not AD \u2013 3 high).                                           |\n| `Unified\
+    \ LB Stage`                        | Unified Staging System for Lewy Body Disorders\
+    \ (1\u20134).                                                    |\n| `infarct_total_volume`\
+    \                    | Total volume of all brain infarcts (cm\xB3).          \
+    \                                                      |\n| `infarct_cerebral_total_volume`\
+    \           | Volume of cerebral cortex infarcts (cm\xB3).                   \
+    \                                             |\n| `obt`                     \
+    \                | Other brain tissue finding (if present).                  \
+    \                                               |\n| `brain_stem_ix_x`       \
+    \                  | Lewy pathology in dorsal motor nucleus of vagus (IX\u2013\
+    X).                                                  |\n| `brain_stem_lc`    \
+    \                       | Lewy pathology in locus ceruleus.                  \
+    \                                                      |\n| `bf_amygdala`    \
+    \                         | Lewy pathology in amygdala.                      \
+    \                                                        |\n| `bf_nbm`       \
+    \                           | Lewy pathology in nucleus basalis of Meynert.  \
+    \                                                          |\n| `brain_stem_sn`\
+    \                           | Lewy pathology in substantia nigra.            \
+    \                                                          |\n| `bf_trans`   \
+    \                             | Lewy pathology in transentorhinal region.    \
+    \                                                            |\n| `bf_cing`  \
+    \                               | Lewy pathology in cingulate cortex.        \
+    \                                                              |\n| `nctx_temporal`\
+    \                           | Lewy pathology in temporal neocortex.          \
+    \                                                          |\n| `nctx_frontal`\
+    \                            | Lewy pathology in frontal neocortex.          \
+    \                                                           |\n| `sum_lb_density`\
+    \                          | Sum of Lewy body/synuclein pathology scores across\
+    \ regions.                                              |\n| `nctx_parietal` \
+    \                          | Lewy pathology in parietal neocortex.           \
+    \                                                         |\n| `PathDXSummary`\
+    \                           | Text summary of neuropathologic diagnosis.     \
+    \                                                          |\n| `neurological_dx`\
+    \                         | Clinical neurological diagnosis (PD, AD, etc.).  \
+    \                                                        |\n| `neurological_dx_years`\
+    \                   | Years since clinical neurological diagnosis.           \
+    \                                                  |\n| `neurological_dx_age`\
+    \                     | Age at onset of neurological diagnosis.              \
+    \                                                    |\n| `dementia_yn`      \
+    \                       | Whether dementia was present at death (Yes/No).    \
+    \                                                      |\n| `dementia_years` \
+    \                         | Duration of dementia in years.                   \
+    \                                                        |\n| `demential_age`\
+    \                           | Age at onset of dementia.                      \
+    \                                                          |\n| `BannerID`   \
+    \                             | Duplicate of unique donor identifier.        \
+    \                                                            |\n| `ThalPhase`\
+    \                               | Thal amyloid phase (amyloid-\u03B2 distribution\
+    \ stage 1\u20135)                                                    |\n| `NIA-AA`\
+    \                                  | NIA-Alzheimer\u2019s Association neuropathologic\
+    \ criteria for AD severity.                                    |"
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 1  This page of the table shows the metadata information
+    for each donor analyzed in this work. - Cohort_Metadata
+parameters:
+  sheet_name: Sheet1
+type: data_frame

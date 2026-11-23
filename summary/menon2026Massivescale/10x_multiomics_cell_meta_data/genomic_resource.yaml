@@ -1,0 +1,14 @@
+file: barcode_namespace.csv.gz
+format: csv
+meta:
+  description: Note that since its RNA h5ad file do not contain "sample_id", "sample_id"
+    is created from "donor_id" and region. This is based on a IGVF metadata table
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Cell barcodes and cell-type annotations
+type: data_frame

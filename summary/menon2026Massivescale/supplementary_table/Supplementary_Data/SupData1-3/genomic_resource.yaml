@@ -1,0 +1,86 @@
+file: Supplementary_Data_SupData1-3.xlsx
+format: excel
+meta:
+  description: "Each row represents an feature (caQTL) calculated\n\n| Column Name\
+    \           | Description                                                    \
+    \                                                                            \
+    \       |\n| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------\
+    \ |\n| `Feature_ID`          | Identifier of the tested feature              \
+    \                                                                            \
+    \                        |\n| `rsID`                | Reference SNP identifier\
+    \ (dbSNP) for the tested variant.                                            \
+    \                                              |\n| `Chromosome`          | Chromosome\
+    \ on which the SNP lies (e.g., \u201C1\u201D, \u201C2\u201D, \u201CX\u201D). \
+    \                                                                            \
+    \              |\n| `SNP_position`        | Base-pair coordinate of the SNP on\
+    \ the given chromosome.                                                      \
+    \                                    |\n| `Ref_allele`          | Reference allele\
+    \ at this SNP                                                                \
+    \                                                      |\n| `Alt_allele`     \
+    \     | Alternative (effect) allele at this SNP.                             \
+    \                                                                            \
+    \ |\n| `Freq`                | Allele frequency of the allele tested (often the\
+    \ effect allele frequency, not necessarily the minor allele)                 \
+    \                      |\n| `HWE_Chisquare`       | Chi-square statistic for deviation\
+    \ from Hardy-Weinberg equilibrium for that SNP.                              \
+    \                                    |\n| `Imp_quality`         | Imputation quality\
+    \ score for the SNP/genotype (if imputed genotypes were used).               \
+    \                                                    |\n| `Log10_BH_Q`       \
+    \   | Base-10 log of the Benjamini\u2013Hochberg Q-value (FDR) for this feature/variant\
+    \ test.                                                                |\n| `Chisquare`\
+    \           | Chi-square statistic                                           \
+    \                                                                            \
+    \       |\n| `Effect_size`         | Estimated effect size of the SNP on the feature\
+    \ (parameter labelled \u03C0 in RASQUAL documentation)                       \
+    \                            |\n| `Delta`               | Estimated sequencing/mapping\
+    \ error rate parameter (\u0394) from RASQUAL\u2019s model                    \
+    \                                                    |\n| `Phi`              \
+    \   | Estimated reference\u2010allele mapping bias parameter (\u03A6) from RASQUAL\u2019\
+    s model.                                                                     \
+    \  |\n| `Overdispersion`      | Estimated over-dispersion parameter from the model,\
+    \ accounting for extra variability beyond the Poisson/binomial expectation.  \
+    \                   |\n| `SNP_id_region`       | Internal identifier for the SNP\
+    \ within the tested region (region specific SNP index).                      \
+    \                                       |\n| `Num_feature_SNPs`    | Number of\
+    \ SNPs within the feature (e.g., within the cis-window of the gene/region) that\
+    \ were used for allele-specific or total count modelling.   |\n| `Num_tested_SNPs`\
+    \     | Number of SNPs that were tested for this feature (e.g., in the cis\u2010\
+    window).                                                                     \
+    \  |\n| `Num_iterations_null` | Number of iterations performed under the null\
+    \ model in RASQUAL\u2019s likelihood\u2010ratio framework.                   \
+    \                                   |\n| `Num_iterations_alt`  | Number of iterations\
+    \ performed under the alternative model in RASQUAL\u2019s likelihood\u2010ratio\
+    \ framework.                                               |\n| `Random_ties`\
+    \         | Indicator for random tie\u2010handling in lead SNP selection (if using\
+    \ the -t option).                                                            \
+    \     |\n| `Log_likelihood_null` | Log likelihood of the null model (no SNP effect)\
+    \ from RASQUAL.                                                              \
+    \                      |\n| `Convergence_status`  | Model convergence status code\
+    \ (0 = success).                                                             \
+    \                                         |\n| `Sq_corr_fSNPs`       | Squared\
+    \ correlation between prior and posterior genotypes across the feature SNPs (fSNPs)\
+    \ \u2013 indicates genotype correction / uncertainty           |\n| `Sq_corr_rSNP`\
+    \        | Squared correlation between prior and posterior genotypes for the tested\
+    \ SNP (rSNP) \u2013 indicates genotype correction / uncertainty              \
+    \   |\n| `P`                   | P-value for the association test of the SNP with\
+    \ the feature (often derived from the chi-square statistic).                 \
+    \                      |\n| `q`                   | False discovery rate (FDR)\u2013\
+    adjusted Q-value corresponding to P (often BH\u2010adjusted across tests).   \
+    \                                               |\n| `keep`                | Boolean\
+    \ or flag (e.g., TRUE/FALSE or 1/0) indicating whether the SNP passed filtering\
+    \ / is retained in downstream analysis.                       |\n| `CellType`\
+    \            | The cell type  in which the QTL test was performed.           \
+    \                                                                            \
+    \        |"
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Data 1 - Sheet 3 This page of the table shows the caQTLs
+    calculated - caQTLs
+parameters:
+  sheet_name: Sheet1
+type: data_frame

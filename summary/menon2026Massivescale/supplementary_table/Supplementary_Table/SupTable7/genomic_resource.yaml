@@ -1,0 +1,36 @@
+file: Supplementary_Table_SupTable7.xlsx
+format: excel
+meta:
+  description: "Each row represents an gene\n\n| Column Name     | Description   \
+    \                                                                            \
+    \          |\n| --------------- | ---------------------------------------------------------------------------------------------------\
+    \ |\n| `SetID`         | Identifier for the variant set being tested (e.g., gene\
+    \ name or region ID).                         |\n| `celltype`      | The cell\
+    \ type or sample group in which the SKAT-O test was performed.               \
+    \                |\n| `P.value`       | SKAT-O p-value for association between\
+    \ the variant set and the phenotype.                           |\n| `N.Marker.All`\
+    \  | Total number of variants in the set before filtering.                   \
+    \                            |\n| `N.Marker.Test` | Number of variants that were\
+    \ actually used in the SKAT-O test (after QC, MAF, etc.).                |\n|\
+    \ `MAC`           | Minor allele count across all samples for the variants included\
+    \ in the test.                        |\n| `m`             | Number of variants\
+    \ included in the kernel test (equivalent to N.Marker.Test).                 \
+    \      |\n| `Method.bin`    | Method used for burden vs SKAT weighting decision\
+    \ (binning procedure used within SKAT).             |\n| `MAP`           | Minimum\
+    \ p-value across single-variant tests within the set (used in SKAT\u2010O for\
+    \ hybrid statistic).   |\n| `global_sig`    | Indicates whether this set is statistically\
+    \ significant at the global test level.                   |\n| `celltype_sig`\
+    \  | Indicates whether the association is significant **within this specific cell\
+    \ type**                 |"
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    reference_genome: reference/Human/genome/GRCh38.p14
+    sequencing_platform: Illumina
+    species: human
+    vendor: 10x_Genomics
+  summary: Supplementary Table 7 This page of the table shows the gene set based RVAT
+    results - Gene Set RVAT
+parameters:
+  sheet_name: Sheet1
+type: data_frame

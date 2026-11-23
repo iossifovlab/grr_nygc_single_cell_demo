@@ -1,0 +1,1388 @@
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      
+      @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../../../../../.static/fonts/roboto-v51-latin.1404ca34.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .page-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 40px 100px;
+      }
+
+            body {
+        color: #252e34;
+      }
+      
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* A score's Summary cell: labels left, numbers right, one line
+         each, so a long n never wraps mid-number. */
+      dl.moments {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.75em;
+        margin: 0;
+      }
+
+      dl.moments dt {
+        color: #5b778c;
+      }
+
+      dl.moments dd {
+        margin: 0;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #page-header {
+        display: flex;
+        align-items: center;
+        padding: 14px clamp(20px, 10%, 64px);
+        border-bottom: 1px solid #e4edf2;
+      }
+
+      #page-header a {
+        color: #24699E;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        font-size: 18px;
+      }
+
+      #page-header a:hover {
+        color: #4C93C9;
+      }
+
+      .histogram {
+        margin-bottom: 16px;
+      }
+
+      .histogram-thumbnail {
+        max-width: 200px;
+      }
+
+      /* What makes an image clickable is the trigger attribute, not the
+         class that sizes it, so the cursor follows the attribute.  Each
+         thumbnail class then says only how big its image is, and the
+         next kind of trigger gets the pointer for free. */
+      [data-modal-trigger] {
+        cursor: pointer;
+      }
+
+      /* No page-flow image overflows the content box.  `:where` holds
+         this at zero specificity, so it is a floor every other rule
+         overrides -- notably the thumbnail cap above, which a plain
+         `.page-content img` would outrank. */
+      :where(.page-content) img {
+        max-width: 100%;
+      }
+
+      .statistics-figure {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Two related figures side by side, each about half width, so the
+         pair reads as one comparison and occupies one row.  It wraps to
+         a column when there is not room for two, which is what keeps
+         this from needing a media query. */
+      .figure-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 16px;
+      }
+
+      /* Sized by the row rather than by the image: each takes half the
+         pair less its share of the gap, and shrinks together with it.
+         It never grows, so a pair of one -- the segment-lengths chart
+         has no twin -- is the size one of two would be. */
+      .figure-pair > .figure-thumbnail {
+        flex: 0 1 calc(50% - 8px);
+        min-width: 0;
+        height: auto;
+      }
+
+      /* One number worth reading on its own, with the quantities it
+         was computed from underneath it.  Sized to sit under a table
+         without competing with the <h3> above it: inline-block so the
+         tint stops at the number rather than running the page width. */
+      .key-figure {
+        display: inline-block;
+        border: 1px solid #cfd8df;
+        border-radius: 4px;
+        background-color: #f7f9fa;
+        padding: 10px 16px;
+        margin-bottom: 16px;
+      }
+
+      /* The label and the detail line take their grey from
+         `.text-muted` in the markup rather than restating it here --
+         the same muted grey the matrix cells' shares already use, in
+         one place, so a palette change is one line. */
+      .key-figure-label {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .key-figure-value {
+        font-size: 1.8em;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .key-figure-detail {
+        font-size: 0.9em;
+      }
+
+      .text-muted {
+        color: #919191;
+      }
+
+      .scrollable-table-container {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+      }
+
+      .scrollable-table-container thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+
+      .scrollable-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .scrollable-table-container th {
+        border: 0;
+        border-top: 1px solid #cfd8df;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container td {
+        border: 0;
+        border-bottom: 1px solid #cfd8df;
+        border-right: 1px solid #cfd8df;
+      }
+      .scrollable-table-container th:first-child,
+      .scrollable-table-container td:first-child {
+        border-left: 1px solid #cfd8df;
+      }
+      #chromosomes-table thead tr:nth-of-type(2) th {
+        border-top: none;
+      }
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* In a page header the trail takes the size and weight the
+         header's one link used to have, so the current crumb -- a span,
+         which `#page-header a` does not reach -- reads at the same size
+         as the links beside it.  The index page's trail has no header
+         around it and keeps its own size. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      .copy-icon {
+        font-size: 20px;
+        color: #B9D3E7;
+      }
+
+      .copy-icon:hover {
+        cursor: pointer;
+        color: #85A2B9;
+      }
+
+      #resource-table {
+        margin-bottom: 70px;
+      }
+
+      #resource-table .copy-icon {
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+
+      #resource-table th {
+        text-align: end;
+        width: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 800px;
+        padding: 10px 20px;
+        background-color: #fff;
+      }
+
+      .close {
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("[data-modal-trigger]").forEach(function (trigger) {
+                trigger.addEventListener("click", function () {
+                    var modalId = this.getAttribute("data-modal-trigger");
+                    var modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = "flex";
+                        document.currentOpenModal = modal;
+                    }
+                });
+            });
+
+            document.querySelectorAll(".close").forEach(function (closeButton) {
+                closeButton.addEventListener("click", function () {
+                    this.closest(".modal").style.display = "none";
+                    document.currentOpenModal = null;
+                });
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target.classList.contains("modal")) {
+                    event.target.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && document.currentOpenModal) {
+                    document.currentOpenModal.style.display = "none";
+                    document.currentOpenModal = null;
+                }
+            });
+        });
+    </script>
+    
+    
+<style>
+  
+      @font-face {
+        font-family: "Material Symbols Outlined";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: block;
+        src: url("../../../../../.static/fonts/material-symbols-outlined-v371.68a25c87.woff2") format("woff2");
+      }
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+
+  /* The class is added by the script, so the pointer and the indicator
+     only appear on a header the script actually wired up. */
+  th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  th.sortable .sort-indicator {
+    font-size: 1.1em;
+    vertical-align: middle;
+    opacity: 0.35;
+  }
+
+  /* Shown on every sortable header at all times, dimmed until it is the
+     one doing the sorting.  A page this static gives no other hint that
+     a header is clickable, and a permanently visible marker also means
+     the sorted column is identifiable at a glance rather than by
+     reading which way an arrow points.
+
+     Selected off aria-sort rather than a second class: equal
+     specificity to the rule above, so source order decides, and the
+     sorted column has exactly one piece of state. */
+  th[aria-sort] .sort-indicator {
+    opacity: 1;
+  }
+</style>
+<script>
+(function () {
+    "use strict";
+
+    var IDLE = "unfold_more";
+    var ASCENDING = "arrow_upward";
+    var DESCENDING = "arrow_downward";
+
+    function keyOf(row, index, kind) {
+        var cell = row.cells[index];
+        var raw = cell ? cell.getAttribute("data-sort-value") : null;
+        // Absent and empty both mean "no value".  A number column would
+        // get the empty case for free from parseFloat, but on a text
+        // column "" is a perfectly good key that sorts first ascending
+        // -- and "no value" meaning two different things depending on
+        // the column is not a distinction anyone wants to debug.
+        if (raw === null || raw === "") {
+            return null;
+        }
+        if (kind !== "number") {
+            return raw;
+        }
+        var parsed = parseFloat(raw);
+        return isNaN(parsed) ? null : parsed;
+    }
+
+    function compare(a, b, direction) {
+        // "No value" is not a value: a row without one sits at the
+        // bottom whichever way the column points, rather than sorting
+        // as 0 or as the empty string and landing among real data.
+        if (a === null || b === null) {
+            if (a === b) {
+                return 0;
+            }
+            return a === null ? 1 : -1;
+        }
+        if (a < b) {
+            return -direction;
+        }
+        if (a > b) {
+            return direction;
+        }
+        return 0;
+    }
+
+    function mark(header, glyph) {
+        var indicator = header.querySelector(".sort-indicator");
+        if (indicator) {
+            indicator.textContent = glyph;
+        }
+    }
+
+    function sortBy(table, header) {
+        // aria-sort is the ONLY record of which column is sorted and
+        // which way.  It is the screen-reader state, the CSS hook that
+        // brings the indicator to full strength, and what this reads to
+        // decide the next direction -- one attribute, so those three
+        // cannot drift apart.  Two states, never three: the order the
+        // page arrived in is the statistics file's insertion order, so
+        // an "unsorted" state would only be a way back to noise.
+        var direction = (
+            header.getAttribute("aria-sort") === "ascending" ? -1 : 1);
+        var index = header.cellIndex;
+        var kind = header.dataset.sort;
+        var body = table.tBodies[0];
+        // Keys read once per row, rather than twice per comparison: a
+        // few hundred contigs is a few thousand comparisons.
+        var entries = Array.prototype.map.call(body.rows, function (row) {
+            return {row: row, key: keyOf(row, index, kind)};
+        });
+
+        // Array.prototype.sort is stable as of ES2019, so tied rows keep
+        // the order they are in NOW -- the rendered natural chromosome
+        // order on the first sort, and whatever the previous sort left
+        // behind on any sort after that.
+        entries.sort(function (left, right) {
+            return compare(left.key, right.key, direction);
+        });
+        entries.forEach(function (entry) {
+            body.appendChild(entry.row);
+        });
+
+        var previous = table.tHead.querySelector("th[aria-sort]");
+        if (previous) {
+            previous.removeAttribute("aria-sort");
+            mark(previous, IDLE);
+        }
+        header.setAttribute(
+            "aria-sort", direction === 1 ? "ascending" : "descending");
+        mark(header, direction === 1 ? ASCENDING : DESCENDING);
+    }
+
+    function enable(table) {
+        // Only the rows in <tbody> ever move, so the "all chromosomes"
+        // total cannot be displaced by any comparator.  It is pinned as
+        // a SECOND <thead> row (gain#1118, moved there from <tfoot> so
+        // it stays visible while the table scrolls), and this reads
+        // headers from rows[0] alone -- so the total is outside both
+        // the row set that moves and the cells that become sortable,
+        // which is the same guarantee <tfoot> gave for the same reason.
+        // The caller already matched "thead th[data-sort]", so a <thead>
+        // with a row in it is the one thing we do not have to check.
+        if (!table.tBodies[0]) {
+            return;
+        }
+        Array.prototype.forEach.call(
+            table.tHead.rows[0].cells,
+            function (header) {
+                if (!header.dataset.sort) {
+                    return;
+                }
+                var indicator = document.createElement("span");
+                indicator.className = (
+                    "material-symbols-outlined sort-indicator");
+                indicator.textContent = IDLE;
+                // Hidden from assistive tech: it is a picture of the
+                // state aria-sort states properly, and unhidden the
+                // header reads as "Chromosomeunfold_more".
+                indicator.setAttribute("aria-hidden", "true");
+                header.appendChild(indicator);
+                header.classList.add("sortable");
+                // No role="button": that would REPLACE the <th>'s
+                // implicit columnheader role and stop the whole table
+                // being announced as having column headers.  tabindex
+                // plus the keydown handler below is what makes it
+                // operable; aria-sort is what reports the state.
+                header.setAttribute("tabindex", "0");
+                header.addEventListener("click", function () {
+                    sortBy(table, header);
+                });
+                header.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        sortBy(table, header);
+                    }
+                });
+            });
+    }
+
+    // The indicator is injected rather than rendered by the templates:
+    // it advertises a click that only works if this script ran, and it
+    // keeps the opt-in contract to the two data attributes.
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("table").forEach(function (table) {
+            if (table.querySelector("thead th[data-sort]")) {
+                enable(table);
+            }
+        });
+    });
+}());
+</script>
+  </head>
+  <body>
+    
+    <nav id="page-header">
+      <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Data">Supplementary_Data</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">SupData1-3</span>
+      </div>
+    </nav>
+    <div class="page-content">
+    <h2>Resource</h2>
+    <div>
+        <table id="resource-table">
+            <tr>
+                <th>Id</th>
+                <td>summary/menon2026Massivescale/supplementary_table/Supplementary_Data/SupData1-3<span class="material-symbols-outlined copy-icon" data-copy-id="summary/menon2026Massivescale/supplementary_table/Supplementary_Data/SupData1-3">content_copy</span></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>data_frame</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Summary</th>
+                
+                <td>Supplementary Data 1 - Sheet 3 This page of the table shows the caQTLs calculated - caQTLs
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <div>
+                        <template shadowrootmode="open">
+                            
+                             <style>
+                              
+      *, *::before, *::after {
+        box-sizing: border-box;
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+      }
+
+      
+      pre, pre *, code, code *, kbd, samp {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: #5b778c;
+      }
+
+      h2 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+
+      h3,h4 {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%
+      }
+
+      th {
+        background: #ecf1f6;
+      }
+
+      td,
+      th {
+        border: 1px solid #cfd8df;
+        padding: 5px 10px;
+        overflow-wrap: break-word;
+      }
+
+      tr {
+        height: 38px;
+      }
+
+      ul {
+        list-style-type: '-  ';
+        padding-left: 15px;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #24699E;
+      }
+
+      a:hover {
+        color: #4C93C9;
+      }
+
+                              
+                              img {
+                                max-width: min(100%, 800px);
+                                max-height: 50vh;
+                                width: auto;
+                                height: auto;
+                                display: block;
+                              }
+                            </style>
+                            <p>Each row represents an feature (caQTL) calculated</p>
+
+<table>
+<thead>
+<tr>
+  <th>Column Name</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>Feature_ID</code></td>
+  <td>Identifier of the tested feature</td>
+</tr>
+<tr>
+  <td><code>rsID</code></td>
+  <td>Reference SNP identifier (dbSNP) for the tested variant.</td>
+</tr>
+<tr>
+  <td><code>Chromosome</code></td>
+  <td>Chromosome on which the SNP lies (e.g., “1”, “2”, “X”).</td>
+</tr>
+<tr>
+  <td><code>SNP_position</code></td>
+  <td>Base-pair coordinate of the SNP on the given chromosome.</td>
+</tr>
+<tr>
+  <td><code>Ref_allele</code></td>
+  <td>Reference allele at this SNP</td>
+</tr>
+<tr>
+  <td><code>Alt_allele</code></td>
+  <td>Alternative (effect) allele at this SNP.</td>
+</tr>
+<tr>
+  <td><code>Freq</code></td>
+  <td>Allele frequency of the allele tested (often the effect allele frequency, not necessarily the minor allele)</td>
+</tr>
+<tr>
+  <td><code>HWE_Chisquare</code></td>
+  <td>Chi-square statistic for deviation from Hardy-Weinberg equilibrium for that SNP.</td>
+</tr>
+<tr>
+  <td><code>Imp_quality</code></td>
+  <td>Imputation quality score for the SNP/genotype (if imputed genotypes were used).</td>
+</tr>
+<tr>
+  <td><code>Log10_BH_Q</code></td>
+  <td>Base-10 log of the Benjamini–Hochberg Q-value (FDR) for this feature/variant test.</td>
+</tr>
+<tr>
+  <td><code>Chisquare</code></td>
+  <td>Chi-square statistic</td>
+</tr>
+<tr>
+  <td><code>Effect_size</code></td>
+  <td>Estimated effect size of the SNP on the feature (parameter labelled π in RASQUAL documentation)</td>
+</tr>
+<tr>
+  <td><code>Delta</code></td>
+  <td>Estimated sequencing/mapping error rate parameter (Δ) from RASQUAL’s model</td>
+</tr>
+<tr>
+  <td><code>Phi</code></td>
+  <td>Estimated reference‐allele mapping bias parameter (Φ) from RASQUAL’s model.</td>
+</tr>
+<tr>
+  <td><code>Overdispersion</code></td>
+  <td>Estimated over-dispersion parameter from the model, accounting for extra variability beyond the Poisson/binomial expectation.</td>
+</tr>
+<tr>
+  <td><code>SNP_id_region</code></td>
+  <td>Internal identifier for the SNP within the tested region (region specific SNP index).</td>
+</tr>
+<tr>
+  <td><code>Num_feature_SNPs</code></td>
+  <td>Number of SNPs within the feature (e.g., within the cis-window of the gene/region) that were used for allele-specific or total count modelling.</td>
+</tr>
+<tr>
+  <td><code>Num_tested_SNPs</code></td>
+  <td>Number of SNPs that were tested for this feature (e.g., in the cis‐window).</td>
+</tr>
+<tr>
+  <td><code>Num_iterations_null</code></td>
+  <td>Number of iterations performed under the null model in RASQUAL’s likelihood‐ratio framework.</td>
+</tr>
+<tr>
+  <td><code>Num_iterations_alt</code></td>
+  <td>Number of iterations performed under the alternative model in RASQUAL’s likelihood‐ratio framework.</td>
+</tr>
+<tr>
+  <td><code>Random_ties</code></td>
+  <td>Indicator for random tie‐handling in lead SNP selection (if using the -t option).</td>
+</tr>
+<tr>
+  <td><code>Log_likelihood_null</code></td>
+  <td>Log likelihood of the null model (no SNP effect) from RASQUAL.</td>
+</tr>
+<tr>
+  <td><code>Convergence_status</code></td>
+  <td>Model convergence status code (0 = success).</td>
+</tr>
+<tr>
+  <td><code>Sq_corr_fSNPs</code></td>
+  <td>Squared correlation between prior and posterior genotypes across the feature SNPs (fSNPs) – indicates genotype correction / uncertainty</td>
+</tr>
+<tr>
+  <td><code>Sq_corr_rSNP</code></td>
+  <td>Squared correlation between prior and posterior genotypes for the tested SNP (rSNP) – indicates genotype correction / uncertainty</td>
+</tr>
+<tr>
+  <td><code>P</code></td>
+  <td>P-value for the association test of the SNP with the feature (often derived from the chi-square statistic).</td>
+</tr>
+<tr>
+  <td><code>q</code></td>
+  <td>False discovery rate (FDR)–adjusted Q-value corresponding to P (often BH‐adjusted across tests).</td>
+</tr>
+<tr>
+  <td><code>keep</code></td>
+  <td>Boolean or flag (e.g., TRUE/FALSE or 1/0) indicating whether the SNP passed filtering / is retained in downstream analysis.</td>
+</tr>
+<tr>
+  <td><code>CellType</code></td>
+  <td>The cell type  in which the QTL test was performed.</td>
+</tr>
+</tbody>
+</table>
+
+                        </template>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Labels</th>
+                <td>
+                
+                
+                    <ul>
+                    
+                        <li>assay: 10x_Multiome</li>
+                    
+                        <li>dataset: menon2026Massivescale</li>
+                    
+                        <li>reference_genome: reference/Human/genome/GRCh38.p14</li>
+                    
+                        <li>sequencing_platform: Illumina</li>
+                    
+                        <li>species: human</li>
+                    
+                        <li>vendor: 10x_Genomics</li>
+                    
+                    </ul>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Columns</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Feature_ID</th>
+      <td>10059</td>
+      <td>10025</td>
+      <td>chr12:120292979-120293479</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>rsID</th>
+      <td>10059</td>
+      <td>8797</td>
+      <td>.</td>
+      <td>401</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Chromosome</th>
+      <td>10059</td>
+      <td>22</td>
+      <td>chr1</td>
+      <td>931</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>SNP_position</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>72435518.21692</td>
+      <td>59574986.864625</td>
+      <td>63910.0</td>
+      <td>23999530.5</td>
+      <td>57631112.0</td>
+      <td>111904179.0</td>
+      <td>248361891.0</td>
+    </tr>
+    <tr>
+      <th>Ref_allele</th>
+      <td>10059</td>
+      <td>447</td>
+      <td>C</td>
+      <td>2634</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Alt_allele</th>
+      <td>10059</td>
+      <td>415</td>
+      <td>T</td>
+      <td>2239</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Freq</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.454259</td>
+      <td>0.249928</td>
+      <td>0.054455</td>
+      <td>0.232673</td>
+      <td>0.455446</td>
+      <td>0.63</td>
+      <td>0.946809</td>
+    </tr>
+    <tr>
+      <th>HWE_Chisquare</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.250373</td>
+      <td>2.504879</td>
+      <td>0.0</td>
+      <td>0.130151</td>
+      <td>0.514073</td>
+      <td>1.359574</td>
+      <td>32.73902</td>
+    </tr>
+    <tr>
+      <th>Imp_quality</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Log10_BH_Q</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-7.396842</td>
+      <td>8.08618</td>
+      <td>-150.002442</td>
+      <td>-7.960132</td>
+      <td>-4.78876</td>
+      <td>-3.506366</td>
+      <td>-1.691681</td>
+    </tr>
+    <tr>
+      <th>Chisquare</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>36.814468</td>
+      <td>36.950211</td>
+      <td>6.681326</td>
+      <td>19.20488</td>
+      <td>25.29618</td>
+      <td>39.427637</td>
+      <td>694.108791</td>
+    </tr>
+    <tr>
+      <th>Effect_size</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.554427</td>
+      <td>0.15263</td>
+      <td>0.026219</td>
+      <td>0.455538</td>
+      <td>0.536086</td>
+      <td>0.696685</td>
+      <td>0.926452</td>
+    </tr>
+    <tr>
+      <th>Delta</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.078681</td>
+      <td>0.126623</td>
+      <td>0.000002</td>
+      <td>0.002387</td>
+      <td>0.01</td>
+      <td>0.130765</td>
+      <td>0.998187</td>
+    </tr>
+    <tr>
+      <th>Phi</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.435159</td>
+      <td>0.130484</td>
+      <td>0.000106</td>
+      <td>0.344569</td>
+      <td>0.463354</td>
+      <td>0.502514</td>
+      <td>0.999503</td>
+    </tr>
+    <tr>
+      <th>Overdispersion</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>45.691847</td>
+      <td>50.837135</td>
+      <td>0.13186</td>
+      <td>0.906389</td>
+      <td>23.982068</td>
+      <td>83.717859</td>
+      <td>192.307348</td>
+    </tr>
+    <tr>
+      <th>SNP_id_region</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.84507</td>
+      <td>1.090692</td>
+      <td>4.370858</td>
+      <td>6.572403</td>
+      <td>6.985149</td>
+      <td>7.382669</td>
+      <td>8.780461</td>
+    </tr>
+    <tr>
+      <th>Num_feature_SNPs</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.566358</td>
+      <td>2.156311</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>37.0</td>
+    </tr>
+    <tr>
+      <th>Num_tested_SNPs</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>85.602744</td>
+      <td>67.029009</td>
+      <td>5.0</td>
+      <td>56.0</td>
+      <td>76.0</td>
+      <td>102.0</td>
+      <td>1662.0</td>
+    </tr>
+    <tr>
+      <th>Num_iterations_null</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>7.082712</td>
+      <td>4.716091</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>141.0</td>
+    </tr>
+    <tr>
+      <th>Num_iterations_alt</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.374391</td>
+      <td>4.571715</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>119.0</td>
+    </tr>
+    <tr>
+      <th>Random_ties</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>72435514.202306</td>
+      <td>59574986.067765</td>
+      <td>63910.0</td>
+      <td>23999530.5</td>
+      <td>57631111.0</td>
+      <td>111904179.0</td>
+      <td>248363026.0</td>
+    </tr>
+    <tr>
+      <th>Log_likelihood_null</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16.58234</td>
+      <td>18.340654</td>
+      <td>0.661569</td>
+      <td>7.896604</td>
+      <td>11.05751</td>
+      <td>18.089814</td>
+      <td>344.346019</td>
+    </tr>
+    <tr>
+      <th>Convergence_status</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Sq_corr_fSNPs</th>
+      <td>9590.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.978578</td>
+      <td>0.073057</td>
+      <td>0.000153</td>
+      <td>0.986294</td>
+      <td>0.990775</td>
+      <td>0.993928</td>
+      <td>0.997889</td>
+    </tr>
+    <tr>
+      <th>Sq_corr_rSNP</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.988019</td>
+      <td>0.005562</td>
+      <td>0.970001</td>
+      <td>0.985901</td>
+      <td>0.990356</td>
+      <td>0.991573</td>
+      <td>0.996712</td>
+    </tr>
+    <tr>
+      <th>P</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000085</td>
+      <td>0.000445</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000012</td>
+      <td>0.009743</td>
+    </tr>
+    <tr>
+      <th>q</th>
+      <td>10059.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000933</td>
+      <td>0.002937</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000016</td>
+      <td>0.000312</td>
+      <td>0.020338</td>
+    </tr>
+    <tr>
+      <th>keep</th>
+      <td>10059</td>
+      <td>1</td>
+      <td>True</td>
+      <td>10059</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>CellType</th>
+      <td>10059</td>
+      <td>7</td>
+      <td>Excitatory</td>
+      <td>2856</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+    <h2 style="margin-top: 70px;">Files</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>md5</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Data.xlsx'>Supplementary_Data.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">5.99 MB</td>
+                <td class="nowrap">8049a9533b416c28676636753829638b</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='Supplementary_Data_SupData1-3.xlsx'>Supplementary_Data_SupData1-3.xlsx</a>
+                    </td>
+                
+                <td class="nowrap">2.03 MB</td>
+                <td class="nowrap">82d668ee17998ed69fce8dc5aad680f8</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
+                    </td>
+                
+                <td class="nowrap">6.36 KB</td>
+                <td class="nowrap">22e24ee4ad86cbd91935bda6c59d1160</td>
+            </tr>
+            <tr>
+                
+                    <td class="nowrap">
+                        <a href='statistics/index.html'>statistics/</a>
+                    </td>
+                
+                <td class="nowrap"></td>
+                <td class="nowrap"></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+    <script>
+        // ---- Copy a resource id (copy_button.jinja) ----
+        //
+        // Included, as statements, into a script that runs once the
+        // icons are in the document: the index page's, and the resource
+        // page's (gain#1477).  An icon names what it copies in
+        // `data-copy-id`; its text is the glyph it shows.
+        //
+        // The Clipboard API exists only on a secure origin -- https, or
+        // localhost -- so on a plain-http host there is nothing to write
+        // to, and an icon there is hidden rather than left as a dead
+        // click.  Hidden with an inline style, not removed: the index
+        // page rewrites its rows in place and looks each row's icon up
+        // again, so the element has to stay.
+        const copyIcons = document.querySelectorAll(".copy-icon");
+        if (!navigator.clipboard) {
+            copyIcons.forEach((icon) => { icon.style.display = "none"; });
+        }
+        const copyResourceId = (e) => {
+          navigator.clipboard.writeText(e.target.dataset.copyId).then(
+            () => {
+              // One tick at a time: every other icon goes back to its
+              // glyph, the clicked one reports for a moment.
+              copyIcons.forEach((icon) => { icon.textContent = 'content_copy'; });
+              e.target.textContent = 'check';
+              setTimeout(function(){
+                e.target.textContent = 'content_copy'
+              }, 3000);
+            }
+          )
+        };
+        copyIcons.forEach((icon) => icon.addEventListener("click", copyResourceId));
+    </script>
+  </body>
+</html>
