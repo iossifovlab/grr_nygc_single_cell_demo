@@ -1,22 +1,60 @@
-
 type: basic
 
 meta:
-    summary: clarence2025Multiomic
-    description: |
-        [Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nat Genet, 2025](https://www.nature.com/articles/s41588-025-02083-8)
+  summary: >-
+    Clarence et al., Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nature Genetics, 2025
+  description: |
+    Clarence and colleagues investigated how gene expression and chromatin accessibility change from infancy to late adulthood in the human brain. Their analysis identified distinct regulatory programs along the oligodendrocyte lineage. The authors combined chromatin accessibility with Hi-C contact maps to predict enhancer–promoter links at loci associated with ten brain disorders and used RNAscope to validate oligodendrocyte-lineage subtypes.
 
-        <pre style="font-family: monospace;">
-            <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic/</a>                    
-            ├── <a style="font-family: monospace;" href="../atac_fragments/index.html">atac_fragments/</a>            1 resources
-            ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
-            └── <a style="font-family: monospace;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table/</a>      24 resources
-        </pre>
-    labels:
-        assay: 10x_Multiome 
-        species: human
-        sequencing_platform: Illumina
-        vendor: 10x_Genomics
-        reference_genome: reference/Human/genome/GRCh38.p13
-        dataset: clarence2025Multiomic
-    
+    The study used 10x Chromium Single Cell Multiome to measure RNA and ATAC in the same nuclei. The GRR contains paired measurements for 101,924 nuclei that passed quality control in both assays, from 39 postmortem tissue samples and 10 control donors. The samples span five postnatal stages across the anterior cingulate cortex, dorsolateral prefrontal cortex, hippocampal formation, and caudate nucleus. The GRR includes the predicted enhancer–promoter links and subtype marker tables alongside the single-nucleus data.
+
+    [Clarence *et al.*, Multiomic single-cell profiling identifies critical regulators of postnatal brain, Nature Genetics 57, 591–603 (2025).](https://doi.org/10.1038/s41588-025-02083-8)
+
+    <pre style="font-family: monospace;">
+    <a style="font-family: inherit;" href="../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic/</a>
+    ├── <a style="font-family: inherit;" href="../10x_multiomics_cell_meta_data/index.html">10x_multiomics_cell_meta_data</a>    1 resource
+    ├── <a style="font-family: inherit;" href="../atac_fragments/index.html">atac_fragments</a>                   1 resource
+    ├── <a style="font-family: inherit;" href="../rna_expression_matrix/index.html">rna_expression_matrix</a>            1 resource
+    ├── <a style="font-family: inherit;" href="../samples_meta_data/index.html">samples_meta_data</a>                1 resource
+    └── <a style="font-family: inherit;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table/</a>             24 resources
+        ├── <a style="font-family: inherit;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table/S1">S1/</a>                          4 resources
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/S1/Full_gene_markers/index.html">Full_gene_markers</a>        1 resource
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/S1/Full_peak_markers/index.html">Full_peak_markers</a>        1 resource
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/S1/QC_perDonor/index.html">QC_perDonor</a>              1 resource
+        │   └── <a style="font-family: inherit;" href="../supplementary_table/S1/QC_perSample/index.html">QC_perSample</a>             1 resource
+        ├── <a style="font-family: inherit;" href="../supplementary_table/S2/index.html">S2</a>                           1 resource
+        │   ...
+        ├── <a style="font-family: inherit;" href="../../../index.html#/summary/clarence2025Multiomic/supplementary_table/S9">S9/</a>                          3 resources
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/S9/All_ABC-MAX/index.html">All_ABC-MAX</a>              1 resource
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/S9/Description/index.html">Description</a>              1 resource
+        │   └── <a style="font-family: inherit;" href="../supplementary_table/S9/Summary/index.html">Summary</a>                  1 resource
+        │   ...
+        └── <a style="font-family: inherit;" href="../supplementary_table/S16/index.html">S16</a>                          1 resource
+    </pre>
+
+    **10x\_multiomics\_cell\_meta\_data** contains one row per nucleus. The `barcode` field matches the AnnData observation index and the fourth column in the ATAC fragments for all 101,924 nuclei. Keep the sample prefix and `-1` suffix in the full ID `<sample_id>_<16-base barcode>-1`, since short barcodes recur across samples. The `class` and `cell_type` fields agree with AnnData's `cell_type`. The paper describes 10 main cell types. The deposit uses 11 labels, including `perivascular cell` for 4,552 nuclei and a separate `pericyte` label.
+
+    **atac\_fragments** contains one pooled, tabix-indexed TSV with zero-based, end-exclusive fragment coordinates, a full nucleus barcode, and a read-support count. GRR statistics record 2,189,583,806 fragment rows across 39 contigs and a summed read support of 3,593,002,180. The intervals use GRCh38 coordinates. The GRR associates this resource with its GRCh38.p13 reference.
+
+    **rna\_expression\_matrix** is a single AnnData file with 101,924 nuclei and 35,451 Ensembl gene features. The file has sparse `.X` and `.raw.X` matrices for the same filtered cohort, with annotations for donor, sex, disease, developmental stage, tissue, and cell type. Embeddings include Harmony PCA, RNA UMAPs, and joint RNA–ATAC weighted-nearest-neighbor UMAPs. Use `obs_names` to join the RNA observations to the cell and fragment barcodes. The file comes from the [CZ CELLxGENE Discover collection](https://cellxgene.cziscience.com/collections/f406a653-c079-4bf9-aab6-85846c27571d).
+
+    **samples\_meta\_data** contains one row per regional tissue sample. Join `sample_id` to the cell metadata for donor, sex, disease, tissue, and developmental stage. All 39 sample IDs are represented in the cell table. Disease status is `normal` and self-reported ethnicity is `unknown` for all 39 samples. The eight developmental-stage labels in the deposit cover infancy and ages 4, 6, 14, 20, 39, 61, and 62 years. Three regions contribute 10 samples each, and the caudate nucleus contributes nine. The caudate record for donor `postnatB_3` is absent from this release.
+
+    **supplementary\_table** contains 24 configured resources from Supplementary Data 1–16. S1 contains gene and peak markers and donor- and sample-level QC. Its `donorN` and `sampleN` identifiers need a crosswalk to the deposited metadata. S2 covers gene-set enrichment for expression variation associated with covariates. S3–S7 cover enhancer-driven regulons, regulon specificity, and GWAS enrichment. S8–S12 cover predicted enhancer–promoter links at GWAS loci, pathway enrichment, and candidate gene summaries. In S9, use the original workbook's `Summary` sheet for the section and column headers. S13–S16 cover oligodendrocyte-lineage markers, Hotspot module scores, pseudotime enrichment, and MAGMA results. S14 uses short `cell_id` barcodes that repeat and only partially overlap the shortened GRR barcodes, so a nucleus-level join needs a source crosswalk.
+  labels:
+    assay: 10x_Multiome
+    dataset: clarence2025Multiomic
+    species: human
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/GRCh38.p13
+    organ: brain
+    brain_region:
+      - anterior cingulate cortex
+      - caudate nucleus
+      - dorsolateral prefrontal cortex
+      - hippocampal formation
+    resolution: single_nucleus
+    modalities:
+      - RNA
+      - ATAC

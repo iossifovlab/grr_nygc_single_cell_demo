@@ -623,7 +623,7 @@
             <tr>
                 <th>Summary</th>
                 
-                <td>zhang2021Singlecell
+                <td>Zhang et al., A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021
                 </td>
             </tr>
             <tr>
@@ -707,13 +707,46 @@
                                 display: block;
                               }
                             </style>
-                            <p><a href="https://www.sciencedirect.com/science/article/pii/S0092867421012794">Zhang et al., A single-cell atlas of chromatin accessibility in the human genome , Cell, 2021</a></p>
+                            <p>Zhang and colleagues profiled chromatin accessibility in postmortem human tissue to identify which candidate cis-regulatory elements (cCREs) are accessible in different cell types. The authors combined their adult data with published profiles from 15 fetal tissue types to map 1,154,611 candidate elements across 222 adult and fetal cell types. They used the atlas to identify cell types in which noncoding variants associated with complex traits and diseases were enriched.</p>
+
+<p>The study used combinatorial indexing single-nucleus ATAC-seq (sci-ATAC-seq) on 92 biosamples from 30 adult tissue types and reported 615,998 nuclei that passed quality control. The GRR provides 72 adult ATAC fragment resources and annotations for 499,514 nuclei across 111 cell types. The local sample table covers 26 tissue labels and five donors aged 25–54. The 222 aggregate accessibility tracks cover both adult and fetal cell types.</p>
+
+<p><a href="https://doi.org/10.1016/j.cell.2021.10.024">Zhang <em>et al.</em>, A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021.</a></p>
 
 <pre style="font-family: monospace;">
-    <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>                    
-    ├── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>         72 resources
-    └── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>     6 resources
+<a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>
+├── <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>              72 resources
+│   ├── <a style="font-family: inherit;" href="../atac_fragments/GSM5589344/index.html">GSM5589344</a>               1 resource
+│   ├── <a style="font-family: inherit;" href="../atac_fragments/GSM5589345/index.html">GSM5589345</a>               1 resource
+│   │   ...
+│   └── <a style="font-family: inherit;" href="../atac_fragments/GSM5589415/index.html">GSM5589415</a>               1 resource
+├── <a style="font-family: inherit;" href="../cell_meta_data/index.html">cell_meta_data</a>               1 resource
+├── <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell/pseudobulk_atac">pseudobulk_atac/</a>             222 resources
+│   ├── <a style="font-family: inherit;" href="../pseudobulk_atac/A_Cardiomyocyte/index.html">A_Cardiomyocyte</a>          1 resource
+│   ├── <a style="font-family: inherit;" href="../pseudobulk_atac/Acinar/index.html">Acinar</a>                   1 resource
+│   │   ...
+│   ├── <a style="font-family: inherit;" href="../pseudobulk_atac/Fetal_A_Cardiomyocyte/index.html">Fetal_A_Cardiomyocyte</a>    1 resource
+│   │   ...
+│   └── <a style="font-family: inherit;" href="../pseudobulk_atac/Vasc_Sm_Muscle_2/index.html">Vasc_Sm_Muscle_2</a>         1 resource
+├── <a style="font-family: inherit;" href="../samples_meta_data/index.html">samples_meta_data</a>            1 resource
+└── <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>         6 resources
+    ├── <a style="font-family: inherit;" href="../supplementary_table/S1/index.html">S1</a>                       1 resource
+    ├── <a style="font-family: inherit;" href="../supplementary_table/S2/index.html">S2</a>                       1 resource
+    ├── <a style="font-family: inherit;" href="../supplementary_table/S3/index.html">S3</a>                       1 resource
+    ├── <a style="font-family: inherit;" href="../supplementary_table/S4/index.html">S4</a>                       1 resource
+    ├── <a style="font-family: inherit;" href="../supplementary_table/S5/index.html">S5</a>                       1 resource
+    └── <a style="font-family: inherit;" href="../supplementary_table/S6/index.html">S6</a>                       1 resource
 </pre>
+
+<p><strong>atac_fragments</strong> contains one tabix-indexed BED file per GEO sample accession. The GRR reads the chromosome, zero-based fragment start and end, barcode, and supporting read-pair count, which includes duplicates. Coordinates use GRCh38/hg38. The complete per-barcode histograms contain 5,049,496 distinct sample–barcode pairs. Of these, 499,514 have cell annotations and 4,549,982 appear only in the fragment files. For cell type–resolved analyses, match the fourth BED column to <code>barcode</code> within the same GEO <code>sample_id</code>.</p>
+
+<p><strong>cell_meta_data</strong> contains one row per annotated adult nucleus. The <code>class</code> and <code>cell_type</code> columns agree on all rows and contain 111 labels. The table includes the deposited quality metrics <code>logUMI</code> and <code>tsse</code> (transcription start site enrichment). Barcode strings recur across GEO accessions, so use <code>sample_id</code> and <code>barcode</code> together as the join key. The unique <code>cellID</code> combines <code>sample</code> and <code>barcode</code> with a plus sign. The cell table's <code>tissue</code> field stores the sample name from <code>sample_id2</code>. Join to the sample table for anatomical tissue labels.</p>
+
+<p><strong>pseudobulk_atac</strong> contains 111 adult and 111 fetal bigWig tracks for viewing cell-type accessibility at genomic loci in hg38. Fetal track names begin with <code>Fetal_</code>. Supplementary Table S3 provides cluster annotations and abbreviations, and the track names are the identifiers used to select browser signals. CATlas describes its signals as fragment pileups normalized per million reads. <a href="https://catlas.org/catlas/dataset_resource.php?ID=humantissues">CATlas Human Multi-tissues</a></p>
+
+<p><strong>samples_meta_data</strong> includes one row per GEO accession with tissue, donor age and sex, tissue source, and study identifiers. Join its <code>sample_id</code> to the ATAC resource name and the cell table. Use its <code>donor_id</code> to group records by participant. In the fragment resource labels, <code>donor_id</code> holds a GEO-linked BioSample accession. For example, the two frontal cortex accessions have separate BioSample accessions and both map to Donor 5 in the sample table.</p>
+
+<p><strong>supplementary_table</strong> contains six publication workbooks. S1 describes the donors and tissue contributions. S2 reports sample QC and SRA accessions. Its <code>Sample ID</code> matches <code>sample_id2</code> for all 72 local records. On those records, S2 reports 487,735 nuclei passing QC and the GRR has 499,514 annotated nuclei. S3 gives adult and fetal cluster labels and abbreviations. Ten adult labels differ in spelling, formatting, or wording from the cell table, so check the names before joining. S4 gives negative log10 p-values from stratified LD score regression for 240 traits. S5 links fine-mapped GWAS variants to overlapping cCREs, predicted motif changes, and candidate genes. It uses hg19 for variant coordinates and hg38 for cCRE coordinates. S6 documents the assay oligos and primers.</p>
 
                         </template>
                     </div>
@@ -730,7 +763,9 @@
                     
                         <li>dataset: zhang2021Singlecell</li>
                     
-                        <li>reference_genome: reference/Human/genome/GRCh38.p13</li>
+                        <li>modalities: ATAC</li>
+                    
+                        <li>reference_genome: reference/Human/genome/ucsc-hg38</li>
                     
                         <li>sequencing_platform: Illumina</li>
                     
@@ -762,8 +797,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1001.0 B</td>
-                <td class="nowrap">7d2372f27265b6830bd5603b977d0151</td>
+                <td class="nowrap">6.89 KB</td>
+                <td class="nowrap">dfb460b550a0ca2f8f0f594f24e3cd2e</td>
             </tr>
             <tr>
                 

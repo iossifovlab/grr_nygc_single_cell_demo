@@ -623,7 +623,7 @@
             <tr>
                 <th>Summary</th>
                 
-                <td>menon2026Massivescale
+                <td>Menon et al., Massive-scale single-nucleus multi-omics identifies novel rare noncoding drivers of Parkinson’s disease, bioRxiv, 2026
                 </td>
             </tr>
             <tr>
@@ -707,14 +707,43 @@
                                 display: block;
                               }
                             </style>
-                            <p><a href="https://www.biorxiv.org/content/10.64898/2026.03.05.709922v1">Menon et al., Massive-scale single-nucleus multi-omics identifies novel rare noncoding drivers of Parkinson’s disease, bioRxiv, 2026</a></p>
+                            <p>Menon and colleagues profiled postmortem human brain tissue to investigate how Parkinson’s disease and rare noncoding variants affect gene regulation in specific cell types. They mapped genetic associations with gene expression and chromatin accessibility, and nominated candidate regulatory targets including <em>FAHD1</em>. The study also used whole-genome sequencing and cell-type-specific Micro-C to investigate variant effects and link regulatory elements to genes.</p>
+
+<p>The study used 10x Multiome on 505 samples from 101 donors, including 80 people with Parkinson’s disease and 21 neurologically normal controls. Each donor contributed tissue from the cerebellum, cingulate gyrus, middle temporal gyrus, putamen, and substantia nigra. The preprint reports about 3.3 million nuclei that passed quality control for both RNA and ATAC. The GRR contains the broader RNA atlas with 4,502,568 nuclei and matched metadata, 505 sample-level ATAC fragment resources, and processed supplementary results.</p>
+
+<p><a href="https://www.biorxiv.org/content/10.64898/2026.03.05.709922v1">Menon et al., Massive-scale single-nucleus multi-omics identifies novel rare noncoding drivers of Parkinson’s disease, bioRxiv, 2026 (preprint v1)</a></p>
 
 <pre style="font-family: monospace;">
-    <a style="font-family: monospace;" href="../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale/</a>                    
-    ├── <a style="font-family: monospace;" href="../../../index.html#/summary/menon2026Massivescale/atac_fragments">atac_fragments/</a>          505 resources
-    ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
-    └── <a style="font-family: monospace;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table/</a>      14 resources
+<a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale/</a>
+├── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/atac_fragments">atac_fragments/</a>                   505 resources
+│   ├── <a style="font-family: inherit;" href="../atac_fragments/IGVFFI0009VHDZ/index.html">IGVFFI0009VHDZ</a>                1 resource
+│   ├── <a style="font-family: inherit;" href="../atac_fragments/IGVFFI0019ZNHK/index.html">IGVFFI0019ZNHK</a>                1 resource
+│   │   ...
+│   └── <a style="font-family: inherit;" href="../atac_fragments/IGVFFI9965YDOI/index.html">IGVFFI9965YDOI</a>                1 resource
+├── <a style="font-family: inherit;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>            1 resource
+├── <a style="font-family: inherit;" href="../10x_multiomics_cell_meta_data/index.html">10x_multiomics_cell_meta_data/</a>    1 resource
+├── <a style="font-family: inherit;" href="../samples_meta_data/index.html">samples_meta_data/</a>                1 resource
+└── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table/</a>              14 resources
+    ├── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Data">Supplementary_Data/</a>           3 resources
+    │   ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Data/SupData1-1/index.html">SupData1-1</a>                1 resource
+    │   ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Data/SupData1-2/index.html">SupData1-2</a>                1 resource
+    │   └── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Data/SupData1-3/index.html">SupData1-3</a>                1 resource
+    └── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Table">Supplementary_Table/</a>          11 resources
+        ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Table/SupTable1/index.html">SupTable1</a>                 1 resource
+        ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Table/SupTable2/index.html">SupTable2</a>                 1 resource
+        │   ...
+        └── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Table/SupTable11/index.html">SupTable11</a>                1 resource
 </pre>
+
+<p><strong>atac_fragments</strong> contains one tabix-indexed fragment table per donor and brain region. Records give the chromosome, zero-based fragment coordinates, the library-prefixed barcode, and the read-support count. Use the IGVF file accession in each resource name to look up <code>IGVF_ATAC_ProcessedFragmentFileAccession</code> in Supplementary Table 11. The resource labels <code>donor_id</code> and <code>brain_region</code> match <code>donor_id</code> and <code>region</code> in the sample table. For nucleus-level comparisons, a fragment barcode in the form <code>library|barcode-1</code> corresponds to <code>library#barcode-1</code> in the RNA and cell metadata namespace. Keep the library prefix and barcode suffix, then check overlap within each sample. ATAC coverage varies across samples and some barcodes occur in only one modality.</p>
+
+<p><strong>rna_expression_matrix</strong> contains the complete <a href="https://cellxgene.cziscience.com/collections/16876983-d454-43db-a8ec-77fafca9bf38">CELLxGENE RNA release</a> as a single AnnData file with 4,502,568 nuclei and 25,183 gene features. The file includes a UMAP embedding and a separate <code>.raw</code> expression matrix. Observation annotations include donor, brain region, disease status, and cell type. Join AnnData <code>obs_names</code> to the <code>barcode</code> column in the cell metadata using the full identifier.</p>
+
+<p><strong>10x_multiomics_cell_meta_data</strong> has one row for each RNA nucleus. It includes the full barcode, sample and donor identifiers, region, tissue, 30 author cell-type labels in <code>author_cell_type</code>, and 27 standardized labels in <code>cell_type</code>. The <code>class</code> column repeats <code>cell_type</code>. Join <code>sample_id</code> to the sample metadata to add donor-level attributes.</p>
+
+<p><strong>samples_meta_data</strong> has one row per donor-region combination and uses <code>donor_id</code> and <code>region</code> joined by an underscore as <code>sample_id</code>. It provides disease status, age stage, sex, tissue, and both study and IGVF donor identifiers. Use <code>donor_id</code> to group the five tissue samples contributed by each person.</p>
+
+<p><strong>supplementary_table</strong> contains 14 spreadsheet resources. The three <code>Supplementary_Data</code> sheets provide expression and chromatin-accessibility QTL results and a summary of expression QTL tests across genotype principal-component settings. The 11 <code>Supplementary_Table</code> sheets cover donor characteristics, differential expression and accessibility, pathway enrichment, disease-stage trajectories, rare-variant associations, and variant prioritization. Supplementary Table 11 maps tissue samples to IGVF accessions for the deposited data.</p>
 
                         </template>
                     </div>
@@ -765,8 +794,8 @@
                         <a href='genomic_resource.yaml'>genomic_resource.yaml</a>
                     </td>
                 
-                <td class="nowrap">1.19 KB</td>
-                <td class="nowrap">f2bf66821118809d360818c314863721</td>
+                <td class="nowrap">6.76 KB</td>
+                <td class="nowrap">5d0927ebfbd7dc13ab26dfa50e60b588</td>
             </tr>
             <tr>
                 

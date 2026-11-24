@@ -1,21 +1,50 @@
-
 type: basic
 
 meta:
-    summary: menon2026Massivescale
-    description: |
-        [Menon et al., Massive-scale single-nucleus multi-omics identifies novel rare noncoding drivers of Parkinson’s disease, bioRxiv, 2026](https://www.biorxiv.org/content/10.64898/2026.03.05.709922v1)
+  summary: >-
+    Menon et al., Massive-scale single-nucleus multi-omics identifies novel rare noncoding drivers of Parkinson’s disease, bioRxiv, 2026
+  description: |
+    Menon and colleagues profiled postmortem human brain tissue to investigate how Parkinson’s disease and rare noncoding variants affect gene regulation in specific cell types. They mapped genetic associations with gene expression and chromatin accessibility, and nominated candidate regulatory targets including *FAHD1*. The study also used whole-genome sequencing and cell-type-specific Micro-C to investigate variant effects and link regulatory elements to genes.
 
-        <pre style="font-family: monospace;">
-            <a style="font-family: monospace;" href="../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale/</a>                    
-            ├── <a style="font-family: monospace;" href="../../../index.html#/summary/menon2026Massivescale/atac_fragments">atac_fragments/</a>          505 resources
-            ├── <a style="font-family: monospace;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>     1 resources
-            └── <a style="font-family: monospace;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table/</a>      14 resources
-        </pre>
-    labels:
-        assay: 10x_Multiome
-        sequencing_platform: Illumina
-        vendor: 10x_Genomics
-        reference_genome: reference/Human/genome/GRCh38.p14
-        species: human
-        dataset: menon2026Massivescale
+    The study used 10x Multiome on 505 samples from 101 donors, including 80 people with Parkinson’s disease and 21 neurologically normal controls. Each donor contributed tissue from the cerebellum, cingulate gyrus, middle temporal gyrus, putamen, and substantia nigra. The preprint reports about 3.3 million nuclei that passed quality control for both RNA and ATAC. The GRR contains the broader RNA atlas with 4,502,568 nuclei and matched metadata, 505 sample-level ATAC fragment resources, and processed supplementary results.
+
+    [Menon et al., Massive-scale single-nucleus multi-omics identifies novel rare noncoding drivers of Parkinson’s disease, bioRxiv, 2026 (preprint v1)](https://www.biorxiv.org/content/10.64898/2026.03.05.709922v1)
+
+    <pre style="font-family: monospace;">
+    <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale/</a>
+    ├── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/atac_fragments">atac_fragments/</a>                   505 resources
+    │   ├── <a style="font-family: inherit;" href="../atac_fragments/IGVFFI0009VHDZ/index.html">IGVFFI0009VHDZ</a>                1 resource
+    │   ├── <a style="font-family: inherit;" href="../atac_fragments/IGVFFI0019ZNHK/index.html">IGVFFI0019ZNHK</a>                1 resource
+    │   │   ...
+    │   └── <a style="font-family: inherit;" href="../atac_fragments/IGVFFI9965YDOI/index.html">IGVFFI9965YDOI</a>                1 resource
+    ├── <a style="font-family: inherit;" href="../rna_expression_matrix/index.html">rna_expression_matrix/</a>            1 resource
+    ├── <a style="font-family: inherit;" href="../10x_multiomics_cell_meta_data/index.html">10x_multiomics_cell_meta_data/</a>    1 resource
+    ├── <a style="font-family: inherit;" href="../samples_meta_data/index.html">samples_meta_data/</a>                1 resource
+    └── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table/</a>              14 resources
+        ├── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Data">Supplementary_Data/</a>           3 resources
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Data/SupData1-1/index.html">SupData1-1</a>                1 resource
+        │   ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Data/SupData1-2/index.html">SupData1-2</a>                1 resource
+        │   └── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Data/SupData1-3/index.html">SupData1-3</a>                1 resource
+        └── <a style="font-family: inherit;" href="../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Table">Supplementary_Table/</a>          11 resources
+            ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Table/SupTable1/index.html">SupTable1</a>                 1 resource
+            ├── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Table/SupTable2/index.html">SupTable2</a>                 1 resource
+            │   ...
+            └── <a style="font-family: inherit;" href="../supplementary_table/Supplementary_Table/SupTable11/index.html">SupTable11</a>                1 resource
+    </pre>
+
+    **atac\_fragments** contains one tabix-indexed fragment table per donor and brain region. Records give the chromosome, zero-based fragment coordinates, the library-prefixed barcode, and the read-support count. Use the IGVF file accession in each resource name to look up `IGVF_ATAC_ProcessedFragmentFileAccession` in Supplementary Table 11. The resource labels `donor_id` and `brain_region` match `donor_id` and `region` in the sample table. For nucleus-level comparisons, a fragment barcode in the form `library|barcode-1` corresponds to `library#barcode-1` in the RNA and cell metadata namespace. Keep the library prefix and barcode suffix, then check overlap within each sample. ATAC coverage varies across samples and some barcodes occur in only one modality.
+
+    **rna\_expression\_matrix** contains the complete [CELLxGENE RNA release](https://cellxgene.cziscience.com/collections/16876983-d454-43db-a8ec-77fafca9bf38) as a single AnnData file with 4,502,568 nuclei and 25,183 gene features. The file includes a UMAP embedding and a separate `.raw` expression matrix. Observation annotations include donor, brain region, disease status, and cell type. Join AnnData `obs_names` to the `barcode` column in the cell metadata using the full identifier.
+
+    **10x\_multiomics\_cell\_meta\_data** has one row for each RNA nucleus. It includes the full barcode, sample and donor identifiers, region, tissue, 30 author cell-type labels in `author_cell_type`, and 27 standardized labels in `cell_type`. The `class` column repeats `cell_type`. Join `sample_id` to the sample metadata to add donor-level attributes.
+
+    **samples\_meta\_data** has one row per donor-region combination and uses `donor_id` and `region` joined by an underscore as `sample_id`. It provides disease status, age stage, sex, tissue, and both study and IGVF donor identifiers. Use `donor_id` to group the five tissue samples contributed by each person.
+
+    **supplementary\_table** contains 14 spreadsheet resources. The three `Supplementary_Data` sheets provide expression and chromatin-accessibility QTL results and a summary of expression QTL tests across genotype principal-component settings. The 11 `Supplementary_Table` sheets cover donor characteristics, differential expression and accessibility, pathway enrichment, disease-stage trajectories, rare-variant associations, and variant prioritization. Supplementary Table 11 maps tissue samples to IGVF accessions for the deposited data.
+  labels:
+    assay: 10x_Multiome
+    dataset: menon2026Massivescale
+    species: human
+    vendor: 10x_Genomics
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/GRCh38.p14
