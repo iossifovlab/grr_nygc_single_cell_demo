@@ -1,0 +1,20 @@
+type: data_frame
+file: samples_namespace.csv.gz
+format: csv
+meta:
+  summary: Sample metadata for Liu 2026
+  description: |
+    This table describes the 82 human tissue samples with SHARE-seq
+    RNA matrices and ATAC fragment files in the GRR. It records the
+    tissue, postconception week, experiment batch, and tissue storage code.
+    Use `sample_id` to find each sample's RNA and ATAC resources.
+
+    Supplementary Table S1 provides the donor ID and sex for 76 samples.
+    These are the samples with cell annotations, marked in
+    `has_cell_metadata`. One additional thyroid sample shares a tissue
+    storage code with an S1 sample and uses the same donor ID and sex.
+    Those two fields are blank for the other five samples.
+  labels:
+    assay: SHARE-seq
+    dataset: liu2026Multiomics
+    species: human

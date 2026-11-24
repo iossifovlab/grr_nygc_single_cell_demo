@@ -1,0 +1,16 @@
+type: data_frame
+file: samples_namespace.csv.gz
+format: csv
+meta:
+  summary: Sample and library metadata for Zemke 2023
+  description: |
+    This table describes 23 samples and libraries profiled with 10x
+    Multiome. It records species, age, sex, donor ID where available, and
+    whether the library was enriched for NeuN-positive nuclei. Each row
+    identifies the corresponding RNA+ATAC matrix and, where available, the
+    standalone ATAC fragment file. Use `sample_id` to find the cells from
+    that sample in the cell metadata table.
+  labels:
+    assay: 10x_Multiome
+    dataset: zemke2023Conserved
+    species: [human, macaque, marmoset, mouse]

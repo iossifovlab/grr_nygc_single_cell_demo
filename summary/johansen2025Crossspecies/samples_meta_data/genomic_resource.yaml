@@ -1,0 +1,19 @@
+type: data_frame
+file: samples_namespace.csv.gz
+format: csv
+meta:
+  summary: Sample and library metadata for Johansen 2025
+  description: |
+    This table describes 417 samples profiled with 10x Multiome from 22
+    human, macaque, and marmoset donors. It records the library and donor
+    IDs, the donor's species, age in years and sex, and the brain region
+    sampled. The scientific names distinguish the two macaque species.
+    Use `sample_id` to find the nuclei from each sample in the cell
+    metadata table. Each row identifies the species-level RNA matrix and,
+    when available, the path within `atac_fragments/` for that sample.
+    The ATAC fragment field is blank for 11 marmoset samples.
+  labels:
+    assay: 10x_Multiome
+    dataset: johansen2025Crossspecies
+    species: [human, macaque, marmoset]
+    brain_region: basal ganglia

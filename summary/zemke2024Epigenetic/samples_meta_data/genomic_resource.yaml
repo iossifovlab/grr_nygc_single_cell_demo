@@ -1,0 +1,16 @@
+type: data_frame
+file: samples_namespace.csv.gz
+format: csv
+meta:
+  summary: Sample metadata for Zemke 2024
+  description: |
+    This table describes the 40 human hippocampus samples profiled with
+    10x Multiome. It records donor ID, sex, and age group in years from
+    Supplementary Table S2. Each row identifies the corresponding RNA+ATAC
+    matrix and ATAC fragment file. Use `sample_id` to find the nuclei
+    from that sample in the cell metadata table.
+  labels:
+    assay: 10x_Multiome
+    dataset: zemke2024Epigenetic
+    species: human
+    brain_region: hippocampus
