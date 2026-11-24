@@ -1,0 +1,20 @@
+# The facets of the extended search on the root page (gain ADR 0045).
+# The dialog lists them in this order. A facet whose label no resource
+# carries is skipped with a warning when grr_manage builds the root page.
+facets:
+  - label: species
+    title: Species
+  - label: modalities
+    title: Modality
+  - label: assay
+    title: Assay
+  - label: dataset
+    title: Dataset
+  - label: brain_region
+    title: Brain region
+  - label: organ
+    title: Organ
+  - label: resolution
+    title: Resolution
+  - label: data_types
+    title: Data type
