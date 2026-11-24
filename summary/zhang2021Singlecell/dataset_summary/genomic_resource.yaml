@@ -1,20 +1,52 @@
-
 type: basic
 
 meta:
-    summary: zhang2021Singlecell
-    description: |
-        [Zhang et al., A single-cell atlas of chromatin accessibility in the human genome , Cell, 2021](https://www.sciencedirect.com/science/article/pii/S0092867421012794)
+  summary: Zhang et al., A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021
+  description: |
+    Zhang and colleagues profiled open chromatin in postmortem human tissues to identify candidate cis-regulatory elements (cCREs) and map their accessibility by cell type. The paper reports 615,998 quality-filtered adult nuclei from 92 biosamples spanning 30 tissue types. Integrating adult profiles with previously published data from 15 fetal tissue types yielded an atlas of more than 1.3 million nuclei and 1,154,611 cCREs across 222 cell types. The authors used these maps to identify cell-type-specific enrichment of noncoding variants associated with complex traits and diseases.
 
-        <pre style="font-family: monospace;">
-            <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>                    
-            ├── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>         72 resources
-            └── <a style="font-family: monospace;" href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>     6 resources
-        </pre>
-    labels:
-        assay: sci-ATAC-seq
-        species: human
-        sequencing_platform: Illumina
-        reference_genome: reference/Human/genome/GRCh38.p13
-        dataset: zhang2021Singlecell
-    
+    The study used combinatorial indexing single-nucleus ATAC-seq (sci-ATAC-seq), with Illumina NextSeq 500 and HiSeq 4000 sequencing. The GRR contains 72 adult fragment resources from [GEO series GSE184462](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE184462) and annotations for 499,514 adult nuclei across 111 cell types. The sample table records 26 tissue labels and five donors aged 25–54. Four donors came from ENTEx, and the fifth contributed both frontal cortex records through the NIH NeuroBioBank. The 222 cell-type accessibility tracks span both life stages. Single-nucleus profiles from the previously published fetal and adult cohorts, as well as the RNA-seq data used for comparison, are available separately.
+
+    [Zhang *et al.*, A single-cell atlas of chromatin accessibility in the human genome, Cell, 2021.](https://doi.org/10.1016/j.cell.2021.10.024)
+
+    <pre style="font-family: monospace;">
+    <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell/</a>
+    ├── <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell/atac_fragments">atac_fragments/</a>              72 resources
+    │   ├── <a style="font-family: inherit;" href="../atac_fragments/GSM5589344/index.html">GSM5589344</a>               1 resource
+    │   ├── <a style="font-family: inherit;" href="../atac_fragments/GSM5589345/index.html">GSM5589345</a>               1 resource
+    │   ├── ...
+    │   └── <a style="font-family: inherit;" href="../atac_fragments/GSM5589415/index.html">GSM5589415</a>               1 resource
+    ├── <a style="font-family: inherit;" href="../cell_meta_data/index.html">cell_meta_data</a>               1 resource
+    ├── <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell/pseudobulk_atac">pseudobulk_atac/</a>             222 resources
+    │   ├── <a style="font-family: inherit;" href="../pseudobulk_atac/A_Cardiomyocyte/index.html">A_Cardiomyocyte</a>          1 resource
+    │   ├── <a style="font-family: inherit;" href="../pseudobulk_atac/Acinar/index.html">Acinar</a>                   1 resource
+    │   ├── ...
+    │   ├── <a style="font-family: inherit;" href="../pseudobulk_atac/Fetal_A_Cardiomyocyte/index.html">Fetal_A_Cardiomyocyte</a>    1 resource
+    │   ├── ...
+    │   └── <a style="font-family: inherit;" href="../pseudobulk_atac/Vasc_Sm_Muscle_2/index.html">Vasc_Sm_Muscle_2</a>         1 resource
+    ├── <a style="font-family: inherit;" href="../samples_meta_data/index.html">samples_meta_data</a>            1 resource
+    └── <a style="font-family: inherit;" href="../../../index.html#/summary/zhang2021Singlecell/supplementary_table">supplementary_table/</a>         6 resources
+        ├── <a style="font-family: inherit;" href="../supplementary_table/S1/index.html">S1</a>                       1 resource
+        ├── <a style="font-family: inherit;" href="../supplementary_table/S2/index.html">S2</a>                       1 resource
+        ├── <a style="font-family: inherit;" href="../supplementary_table/S3/index.html">S3</a>                       1 resource
+        ├── <a style="font-family: inherit;" href="../supplementary_table/S4/index.html">S4</a>                       1 resource
+        ├── <a style="font-family: inherit;" href="../supplementary_table/S5/index.html">S5</a>                       1 resource
+        └── <a style="font-family: inherit;" href="../supplementary_table/S6/index.html">S6</a>                       1 resource
+    </pre>
+
+    **atac\_fragments** provides one processed, tabix-indexed BED file per GEO sample accession. Each record gives a chromosome, zero-based start and end, cell barcode, and supporting read-pair count including duplicates. Coordinates use GRCh38/hg38. Across the 72 resources, complete barcode histograms contain 5,049,496 distinct sample–barcode pairs, of which 499,514 have cell annotations and 4,549,982 are fragment-only. For cell type–resolved analysis, match column 4 to `barcode` within the same GEO `sample_id`.
+
+    **cell\_meta\_data** contains one row per annotated adult nucleus in `barcode_namespace.csv.gz`, derived from the GEO metadata. The `class` and `cell_type` columns agree in all rows and contain 111 labels with no unassigned cells. The table includes the deposited QC fields `logUMI` and `tsse` (transcription start site enrichment). Use `sample_id` plus `barcode` as a unique key, because barcode sequences recur across accessions. The unique `cellID` combines the original `sample` name and barcode with `+`. The `sample` field is the corresponding `sample_id2` from the sample table with an appended `_1`.
+
+    **pseudobulk\_atac** contains 111 adult and 111 fetal GRCh38/hg38 bigWig tracks for browsing aggregate accessibility at genomic loci. Fetal track names start with `Fetal_`. Table S3 provides cell-type abbreviations and cluster annotations. Some spellings, punctuation, and suffixes differ from the track names. Use the CATlas track names to select the browser signal. CATlas describes the tracks as normalized fragment pileups. The exact normalization of the local bigWigs was not independently established. [CATlas Human Multi-tissues](https://catlas.org/catlas/dataset_resource.php?ID=humantissues)
+
+    **samples\_meta\_data** contains one row per GEO accession in `samples_namespace.csv.gz`. Join `sample_id` to the fragment resource name and the cell table. The sample table's `donor_id` groups records by participant and provides a key for donor age, sex, and tissue source. In fragment resource labels, `donor_id` holds a GEO-linked BioSample accession, which is specific to each record in this collection. For example, `GSM5589414` and `GSM5589415` have separate BioSample accessions and both map to Donor 5 (UMB4540).
+
+    **supplementary\_table** contains six publication workbooks. S1 describes donor characteristics, tissue contributions, and assay feasibility. S2 reports sample-level QC and SRA experiment accessions. Join its `Sample ID` to `sample_id2` in the sample table. All 72 local record identifiers match S2. Its `Nuclei passing QC` count differs from the local annotation count for every matched record (487,735 passing QC in S2 and 499,514 annotated nuclei locally in total). S3 covers adult and fetal clusters, subclusters, and abbreviations. Ten adult label strings differ between its `Subcluster Annotation` column and the cell annotations, including `CNS / Enteric Neuron` in S3 and `CNS,Enteric Neuron` in the cell table. S4 contains stratified LD score regression coefficient p-values for 240 traits. S5 lists fine-mapped GWAS variants with posterior probabilities of association, overlapping cCREs, predicted motif changes, and candidate target genes. Its SNP coordinates are hg19 and its cCRE coordinates are hg38. S6 documents the sci-ATAC-seq oligos and primers.
+  labels:
+    assay: sci-ATAC-seq
+    dataset: zhang2021Singlecell
+    species: human
+    sequencing_platform: Illumina
+    reference_genome: reference/Human/genome/ucsc-hg38
+    modalities: ATAC
