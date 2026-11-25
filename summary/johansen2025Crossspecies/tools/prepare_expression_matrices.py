@@ -11,25 +11,31 @@ ivanMetadataDir = "/gpfs/commons/datasets/controlled/NYGC_AI_Initiative/ivan-buf
 
 
 labels_raw="""base_name	technology	assay	species	measure
-HMBA-10xMultiome-BG-Aligned-log2	10x-Genomics	scRNA	Aligned	log2
-HMBA-10xMultiome-BG-Aligned-raw	10x-Genomics	scRNA	Aligned	raw
-HMBA-10xMultiome-BG-Human-log2	10x-Genomics	scRNA	Human	log2
-HMBA-10xMultiome-BG-Human-raw	10x-Genomics	scRNA	Human	raw
-HMBA-10xMultiome-BG-Macaque-log2	10x-Genomics	scRNA	Macaque	log2
-HMBA-10xMultiome-BG-Macaque-raw	10x-Genomics	scRNA	Macaque	raw
-HMBA-10xMultiome-BG-Marmoset-log2	10x-Genomics	scRNA	Marmoset	log2
-HMBA-10xMultiome-BG-Marmoset-raw	10x-Genomics	scRNA	Marmoset	raw
-MERSCOPE-H22.30.001-BG-log2	spatial-MERSCOPE	scRNA	Human	log2
-MERSCOPE-H22.30.001-BG-raw	spatial-MERSCOPE	scRNA	Human	raw
-MERSCOPE-QM23.50.001-BG-log2	spatial-MERSCOPE	scRNA	Macaque	log2
-MERSCOPE-QM23.50.001-BG-raw	spatial-MERSCOPE	scRNA	Macaque	raw
-HMBA-Macaque-PatchSeq-BG-log2	PatchSeq	scRNA	Macaque	log2
-Xenium-CJ23.56.004-BG-log2	spatial-Xenium	scRNA	Marmoset	log2
-Xenium-CJ23.56.004-BG-raw	spatial-Xenium	scRNA	Marmoset	raw
+HMBA-10xMultiome-BG-Aligned-log2	10x-Genomics	scRNA	human,macaque,marmoset	log2
+HMBA-10xMultiome-BG-Aligned-raw	10x-Genomics	scRNA	human,macaque,marmoset	raw
+HMBA-10xMultiome-BG-Human-log2	10x-Genomics	scRNA	human	log2
+HMBA-10xMultiome-BG-Human-raw	10x-Genomics	scRNA	human	raw
+HMBA-10xMultiome-BG-Macaque-log2	10x-Genomics	scRNA	macaque	log2
+HMBA-10xMultiome-BG-Macaque-raw	10x-Genomics	scRNA	macaque	raw
+HMBA-10xMultiome-BG-Marmoset-log2	10x-Genomics	scRNA	marmoset	log2
+HMBA-10xMultiome-BG-Marmoset-raw	10x-Genomics	scRNA	marmoset	raw
+MERSCOPE-H22.30.001-BG-log2	spatial-MERSCOPE	scRNA	human	log2
+MERSCOPE-H22.30.001-BG-raw	spatial-MERSCOPE	scRNA	human	raw
+MERSCOPE-QM23.50.001-BG-log2	spatial-MERSCOPE	scRNA	macaque	log2
+MERSCOPE-QM23.50.001-BG-raw	spatial-MERSCOPE	scRNA	macaque	raw
+HMBA-Macaque-PatchSeq-BG-log2	PatchSeq	scRNA	macaque	log2
+Xenium-CJ23.56.004-BG-log2	spatial-Xenium	scRNA	marmoset	log2
+Xenium-CJ23.56.004-BG-raw	spatial-Xenium	scRNA	marmoset	raw
 """
 
 labels_df = pd.read_csv(io.StringIO(labels_raw), sep="\t")
 labels_df.set_index("base_name", inplace=True)
+
+
+def species_label(value):
+    if "," in value:
+        return value.split(",")
+    return value
 
 
 target_dir = Path(ivanMetadataDir)
@@ -71,7 +77,7 @@ for ff in sorted(all_files):
                 "directory": directory,
                 "release_date": release,
                 "technology": labels_df.at[base_fn, 'technology'],
-                "species": labels_df.at[base_fn, 'species'],
+                "species": species_label(labels_df.at[base_fn, 'species']),
                 "measure": labels_df.at[base_fn, 'measure'],
                 "dataset": "johansen2025Crossspecies"
             }

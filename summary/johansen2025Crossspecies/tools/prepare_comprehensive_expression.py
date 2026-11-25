@@ -33,7 +33,7 @@ for ff in glob.glob(f"{davidRNADir}/*_HMBA_basalganglia_AIT_pre-print.h5ad"):
             "labels": {
                 "assay": "scRNASeq",
                 "technology": "10x-Genomics",
-                "species": species,
+                "species": species.lower(),
                 "dataset": "johansen2025Crossspecies"
             }
         }
