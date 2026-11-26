@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="b3683479ca2dbeb23f8d77864f9cf4b4100787d918b8421a550d5a2012c56f41">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S2</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -806,17 +814,17 @@
     </tr>
     <tr>
       <th>Estimated_postconceptional_age_in_days</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1473.728634</td>
-      <td>2132.250295</td>
-      <td>54.0</td>
-      <td>112.0</td>
-      <td>246.0</td>
-      <td>5020.0</td>
-      <td>5353.0</td>
+      <td>1473.73</td>
+      <td>2132.25</td>
+      <td>54</td>
+      <td>112</td>
+      <td>246</td>
+      <td>5020</td>
+      <td>5353</td>
     </tr>
     <tr>
       <th>Group</th>
@@ -890,128 +898,128 @@
     </tr>
     <tr>
       <th>nCount_RNA</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6702.190403</td>
-      <td>5283.148022</td>
-      <td>1001.0</td>
-      <td>2805.0</td>
-      <td>4840.0</td>
-      <td>8993.0</td>
-      <td>24999.0</td>
+      <td>6702.19</td>
+      <td>5283.15</td>
+      <td>1001</td>
+      <td>2805</td>
+      <td>4840</td>
+      <td>8993</td>
+      <td>24999</td>
     </tr>
     <tr>
       <th>nFeature_RNA</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2700.9515</td>
-      <td>1445.501162</td>
-      <td>449.0</td>
-      <td>1550.0</td>
-      <td>2289.0</td>
-      <td>3638.0</td>
-      <td>7613.0</td>
+      <td>2700.95</td>
+      <td>1445.5</td>
+      <td>449</td>
+      <td>1550</td>
+      <td>2289</td>
+      <td>3638</td>
+      <td>7613</td>
     </tr>
     <tr>
       <th>ATAC_fragments_in_peaks</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5342.154514</td>
-      <td>5199.307669</td>
-      <td>101.0</td>
-      <td>1884.0</td>
-      <td>4121.0</td>
-      <td>7045.0</td>
-      <td>99025.0</td>
+      <td>5342.15</td>
+      <td>5199.31</td>
+      <td>101</td>
+      <td>1884</td>
+      <td>4121</td>
+      <td>7045</td>
+      <td>99025</td>
     </tr>
     <tr>
       <th>Percentage_reads_in_peaks</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>35.910945</td>
-      <td>12.629068</td>
-      <td>15.000187</td>
-      <td>25.186414</td>
-      <td>35.429929</td>
-      <td>45.239066</td>
-      <td>77.842867</td>
+      <td>35.9109</td>
+      <td>12.6291</td>
+      <td>15.0002</td>
+      <td>25.1864</td>
+      <td>35.4299</td>
+      <td>45.2391</td>
+      <td>77.8429</td>
     </tr>
     <tr>
       <th>TSS.enrichment</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.256522</td>
-      <td>1.328182</td>
-      <td>1.009517</td>
-      <td>3.372847</td>
-      <td>4.176038</td>
-      <td>4.939639</td>
-      <td>61.338661</td>
+      <td>4.25652</td>
+      <td>1.32818</td>
+      <td>1.00952</td>
+      <td>3.37285</td>
+      <td>4.17604</td>
+      <td>4.93964</td>
+      <td>61.3387</td>
     </tr>
     <tr>
       <th>Nucleosome_signal</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.049186</td>
+      <td>1.04919</td>
       <td>0.292526</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.825262</td>
-      <td>1.003717</td>
-      <td>1.242991</td>
-      <td>1.999395</td>
+      <td>1.00372</td>
+      <td>1.24299</td>
+      <td>1.9994</td>
     </tr>
     <tr>
       <th>Scrublet_doublet_score</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.067394</td>
-      <td>0.059331</td>
+      <td>0.0673943</td>
+      <td>0.0593308</td>
       <td>0.001545</td>
-      <td>0.022056</td>
-      <td>0.050156</td>
-      <td>0.093631</td>
+      <td>0.0220558</td>
+      <td>0.0501562</td>
+      <td>0.0936311</td>
       <td>0.299814</td>
     </tr>
     <tr>
       <th>S.Score</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.003619</td>
-      <td>0.080453</td>
+      <td>-0.00361859</td>
+      <td>0.0804535</td>
       <td>-0.337961</td>
-      <td>-0.043189</td>
-      <td>-0.01117</td>
-      <td>0.022786</td>
+      <td>-0.0431889</td>
+      <td>-0.0111695</td>
+      <td>0.0227865</td>
       <td>0.819504</td>
     </tr>
     <tr>
       <th>G2M.Score</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.009286</td>
+      <td>-0.00928612</td>
       <td>0.123942</td>
       <td>-0.414854</td>
-      <td>-0.046749</td>
-      <td>-0.016624</td>
-      <td>0.012975</td>
+      <td>-0.0467486</td>
+      <td>-0.0166238</td>
+      <td>0.0129747</td>
       <td>1.78351</td>
     </tr>
     <tr>
@@ -1058,17 +1066,17 @@
     </tr>
     <tr>
       <th>Cluster</th>
-      <td>232328.0</td>
+      <td>232328</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>42.227571</td>
-      <td>34.975577</td>
-      <td>0.0</td>
-      <td>13.0</td>
-      <td>34.0</td>
-      <td>65.0</td>
-      <td>175.0</td>
+      <td>42.2276</td>
+      <td>34.9756</td>
+      <td>0</td>
+      <td>13</td>
+      <td>34</td>
+      <td>65</td>
+      <td>175</td>
     </tr>
   </tbody>
 </table>

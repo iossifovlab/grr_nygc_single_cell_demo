@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="4eb941eea37835175410248ce9bc4765bb652b6800b5a67884edf0d64dfa62b5">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S14">S14</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">14b</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,31 +786,31 @@
     </tr>
     <tr>
       <th>Bin1 start position</th>
-      <td>8551.0</td>
+      <td>8551</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>71093860.336569</td>
-      <td>56010185.461493</td>
-      <td>63361.0</td>
-      <td>27340667.0</td>
-      <td>52305758.0</td>
-      <td>110223871.0</td>
-      <td>244169299.0</td>
+      <td>7.10939e+07</td>
+      <td>5.60102e+07</td>
+      <td>63361</td>
+      <td>27340667</td>
+      <td>52305758</td>
+      <td>110223871</td>
+      <td>244169299</td>
     </tr>
     <tr>
       <th>Bin1 end position</th>
-      <td>8551.0</td>
+      <td>8551</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>71098861.336569</td>
-      <td>56010185.461493</td>
-      <td>68362.0</td>
-      <td>27345668.0</td>
-      <td>52310759.0</td>
-      <td>110228872.0</td>
-      <td>244174300.0</td>
+      <td>7.10989e+07</td>
+      <td>5.60102e+07</td>
+      <td>68362</td>
+      <td>27345668</td>
+      <td>52310759</td>
+      <td>110228872</td>
+      <td>244174300</td>
     </tr>
     <tr>
       <th>Bin2 chromasome</th>
@@ -820,31 +828,31 @@
     </tr>
     <tr>
       <th>Bin2 start position</th>
-      <td>8551.0</td>
+      <td>8551</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>71090791.378552</td>
-      <td>56013176.337618</td>
-      <td>177959.0</td>
-      <td>27385477.5</td>
-      <td>52152190.0</td>
-      <td>110191373.0</td>
-      <td>244046439.0</td>
+      <td>7.10908e+07</td>
+      <td>5.60132e+07</td>
+      <td>177959</td>
+      <td>2.73855e+07</td>
+      <td>52152190</td>
+      <td>110191373</td>
+      <td>244046439</td>
     </tr>
     <tr>
       <th>Bin2 end position</th>
-      <td>8551.0</td>
+      <td>8551</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>71095791.395977</td>
-      <td>56013176.33118</td>
-      <td>182960.0</td>
-      <td>27390477.5</td>
-      <td>52157189.0</td>
-      <td>110196374.0</td>
-      <td>244051440.0</td>
+      <td>7.10958e+07</td>
+      <td>5.60132e+07</td>
+      <td>182960</td>
+      <td>2.73905e+07</td>
+      <td>52157189</td>
+      <td>110196374</td>
+      <td>244051440</td>
     </tr>
   </tbody>
 </table>

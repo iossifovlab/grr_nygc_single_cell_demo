@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="7692737b09e06c02a9a4c5b5b286a9b2c8734ac42d4b5ba45feccb5dab61d043">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table/S6.2">S6.2</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Alzheimer_SNPs</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -805,71 +813,71 @@
     </tr>
     <tr>
       <th>ImOligo</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.896524</td>
-      <td>23.95219</td>
-      <td>-30.182678</td>
+      <td>3.89652</td>
+      <td>23.9522</td>
+      <td>-30.1827</td>
       <td>-0.498646</td>
-      <td>0.052008</td>
-      <td>1.308594</td>
-      <td>154.52844</td>
+      <td>0.0520077</td>
+      <td>1.30859</td>
+      <td>154.528</td>
     </tr>
     <tr>
       <th>ImAstro</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.111411</td>
-      <td>23.491581</td>
-      <td>-27.178131</td>
+      <td>3.11141</td>
+      <td>23.4916</td>
+      <td>-27.1781</td>
       <td>-0.530081</td>
-      <td>0.00848</td>
+      <td>0.00848007</td>
       <td>0.979462</td>
-      <td>154.11356</td>
+      <td>154.114</td>
     </tr>
     <tr>
       <th>Microglia</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.704124</td>
-      <td>51.040311</td>
-      <td>-56.487427</td>
-      <td>-1.122881</td>
-      <td>0.066631</td>
+      <td>6.70412</td>
+      <td>51.0403</td>
+      <td>-56.4874</td>
+      <td>-1.12288</td>
+      <td>0.0666313</td>
       <td>0.999489</td>
-      <td>335.34042</td>
+      <td>335.34</td>
     </tr>
     <tr>
       <th>BAM</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.054296</td>
-      <td>41.403758</td>
-      <td>-60.723206</td>
+      <td>5.0543</td>
+      <td>41.4038</td>
+      <td>-60.7232</td>
       <td>-0.686676</td>
       <td>0.241402</td>
       <td>2.33316</td>
-      <td>264.91998</td>
+      <td>264.92</td>
     </tr>
     <tr>
       <th>T_cells</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.355965</td>
-      <td>8.766562</td>
-      <td>-7.708252</td>
+      <td>1.35597</td>
+      <td>8.76656</td>
+      <td>-7.70825</td>
       <td>-0.358917</td>
-      <td>0.017922</td>
+      <td>0.0179224</td>
       <td>0.748535</td>
       <td>56.7418</td>
     </tr>

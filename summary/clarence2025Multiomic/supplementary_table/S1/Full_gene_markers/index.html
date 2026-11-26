@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="31c539b708e7923f0735026e0c049efbbc42aadb73f2f9f00df5ccc2ac3747c1">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic/supplementary_table/S1">S1</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Full_gene_markers</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -765,21 +773,21 @@
   <tbody>
     <tr>
       <th>p_val</th>
-      <td>10228.0</td>
+      <td>10228</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000007</td>
-      <td>0.000183</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.008744</td>
+      <td>7.08358e-06</td>
+      <td>0.000182824</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9.50823e-135</td>
+      <td>0.00874363</td>
     </tr>
     <tr>
       <th>avg_log2FC</th>
-      <td>10228.0</td>
+      <td>10228</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -789,11 +797,11 @@
       <td>0.288106</td>
       <td>0.428918</td>
       <td>0.733589</td>
-      <td>4.531611</td>
+      <td>4.53161</td>
     </tr>
     <tr>
       <th>pct.1</th>
-      <td>10228.0</td>
+      <td>10228</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -803,17 +811,17 @@
       <td>0.29</td>
       <td>0.416</td>
       <td>0.627</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>pct.2</th>
-      <td>10228.0</td>
+      <td>10228</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.226102</td>
       <td>0.202702</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.074</td>
       <td>0.163</td>
       <td>0.315</td>
@@ -821,17 +829,17 @@
     </tr>
     <tr>
       <th>p_val_adj</th>
-      <td>10228.0</td>
+      <td>10228</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.005702</td>
+      <td>0.00570216</td>
       <td>0.071126</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.58417e-130</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>cluster</th>

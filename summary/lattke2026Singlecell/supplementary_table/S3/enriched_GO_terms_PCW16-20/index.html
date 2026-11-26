@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="57ec54bb5a9934d9dfd6c04e1626807bcb734f62d0b3f96f4d1b78e3bd82f066">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S3">S3</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">enriched_GO_terms_PCW16-20</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -820,45 +828,45 @@
     </tr>
     <tr>
       <th>pvalue</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000355</td>
-      <td>0.000323</td>
-      <td>0.0</td>
-      <td>0.000093</td>
-      <td>0.000243</td>
-      <td>0.000619</td>
-      <td>0.001043</td>
+      <td>0.000354731</td>
+      <td>0.000322697</td>
+      <td>4.88257e-08</td>
+      <td>9.25599e-05</td>
+      <td>0.000242904</td>
+      <td>0.000618883</td>
+      <td>0.00104266</td>
     </tr>
     <tr>
       <th>p.adjust</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.025197</td>
-      <td>0.013435</td>
-      <td>0.000122</td>
-      <td>0.016202</td>
-      <td>0.022428</td>
-      <td>0.038076</td>
-      <td>0.049065</td>
+      <td>0.0251971</td>
+      <td>0.0134354</td>
+      <td>0.000122269</td>
+      <td>0.0162023</td>
+      <td>0.0224277</td>
+      <td>0.0380758</td>
+      <td>0.0490645</td>
     </tr>
     <tr>
       <th>qvalue</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.021362</td>
-      <td>0.01139</td>
-      <td>0.000104</td>
-      <td>0.013736</td>
+      <td>0.0213619</td>
+      <td>0.0113904</td>
+      <td>0.000103659</td>
+      <td>0.0137362</td>
       <td>0.019014</td>
-      <td>0.03228</td>
-      <td>0.041597</td>
+      <td>0.0322804</td>
+      <td>0.0415966</td>
     </tr>
     <tr>
       <th>geneID</th>
@@ -876,493 +884,493 @@
     </tr>
     <tr>
       <th>Count</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.271429</td>
-      <td>4.714828</td>
-      <td>3.0</td>
-      <td>6.0</td>
+      <td>10.2714</td>
+      <td>4.71483</td>
+      <td>3</td>
+      <td>6</td>
       <td>9.5</td>
       <td>14.75</td>
-      <td>22.0</td>
+      <td>22</td>
     </tr>
     <tr>
       <th>AST_s13_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>AST_s13_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>RG_s9_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.742857</td>
       <td>0.862852</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>RG_s9_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.071429</td>
+      <td>0.0714286</td>
       <td>0.259399</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>RG_s14_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.085714</td>
+      <td>0.0857143</td>
       <td>0.370775</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>RG_s14_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>RG_s6_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.571429</td>
       <td>0.808854</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>RG_s6_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.314286</td>
       <td>0.467583</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>RG_prol_s11_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.442857</td>
       <td>0.62868</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>RG_prol_s11_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>IPC_prol_s10_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.028571</td>
+      <td>0.0285714</td>
       <td>0.167802</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>IPC_prol_s10_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>IPC_s4_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.614286</td>
       <td>0.905584</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>IPC_s4_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.042857</td>
+      <td>0.0428571</td>
       <td>0.203997</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>NEU_CUX2_s3_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.571429</td>
       <td>0.843929</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>NEU_CUX2_s3_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_CUX2_s0_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.585714</td>
       <td>0.807445</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>NEU_CUX2_s0_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_CUX2_s2_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.085714</td>
-      <td>1.576483</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>6.0</td>
+      <td>2.08571</td>
+      <td>1.57648</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>NEU_CUX2_s2_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.628571</td>
       <td>0.887456</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>NEU_RORB_s1_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.428571</td>
-      <td>3.062496</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
+      <td>6.42857</td>
+      <td>3.0625</td>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
       <td>9.75</td>
-      <td>12.0</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>NEU_RORB_s1_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.542857</td>
-      <td>1.500586</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>6.0</td>
+      <td>1.54286</td>
+      <td>1.50059</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>NEU_RORB_s7_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.985714</td>
       <td>0.955425</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>NEU_RORB_s7_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_TLE4_s8_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.185714</td>
       <td>0.391684</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>NEU_TLE4_s8_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.271429</td>
       <td>0.447907</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>NEU_TLE4_s5_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.8</td>
       <td>0.734255</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>NEU_TLE4_s5_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_TLE4_s16_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.014286</td>
+      <td>0.0142857</td>
       <td>0.119523</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>NEU_TLE4_s16_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_low_s15_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.271429</td>
       <td>0.447907</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>NEU_low_s15_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_SST_s12_DS_up</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>NEU_SST_s12_DS_down</th>
-      <td>70.0</td>
+      <td>70</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>

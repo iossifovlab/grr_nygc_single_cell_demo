@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="7374e07e761d707808eb7aa2eca64bea36122ddc63b4f0d817a374bff30e1651">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">cell_meta_data</span>
       </div>
+      <a id="nav-about" href="../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -837,45 +845,45 @@
     </tr>
     <tr>
       <th>replicate</th>
-      <td>499514.0</td>
+      <td>499514</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logUMI</th>
-      <td>499514.0</td>
+      <td>499514</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.517261</td>
+      <td>3.51726</td>
       <td>0.276999</td>
-      <td>3.0</td>
-      <td>3.305781</td>
-      <td>3.506911</td>
-      <td>3.709948</td>
-      <td>5.681747</td>
+      <td>3</td>
+      <td>3.30578</td>
+      <td>3.50691</td>
+      <td>3.70995</td>
+      <td>5.68175</td>
     </tr>
     <tr>
       <th>tsse</th>
-      <td>499514.0</td>
+      <td>499514</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>14.958234</td>
-      <td>5.546917</td>
-      <td>7.0</td>
-      <td>10.427807</td>
-      <td>14.175655</td>
-      <td>18.534863</td>
-      <td>51.988636</td>
+      <td>14.9582</td>
+      <td>5.54692</td>
+      <td>7</td>
+      <td>10.4278</td>
+      <td>14.1757</td>
+      <td>18.5349</td>
+      <td>51.9886</td>
     </tr>
     <tr>
       <th>tissue</th>

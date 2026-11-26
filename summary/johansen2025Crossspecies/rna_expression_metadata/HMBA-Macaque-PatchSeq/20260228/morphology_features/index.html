@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="c0ca1a9b8229586e61bbff2d914fea7f0ba2c7fec0b12acf6c016b450721048e">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Macaque-PatchSeq">HMBA-Macaque-PatchSeq</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Macaque-PatchSeq/20260228">20260228</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">morphology_features</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,139 +791,139 @@
     </tr>
     <tr>
       <th>23_Sholl_PC0</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>2073.589319</td>
-      <td>-2257.455859</td>
-      <td>-1567.609371</td>
-      <td>-683.550364</td>
-      <td>1064.406684</td>
-      <td>5206.836193</td>
+      <td>1.90561e-12</td>
+      <td>2073.59</td>
+      <td>-2257.46</td>
+      <td>-1567.61</td>
+      <td>-683.55</td>
+      <td>1064.41</td>
+      <td>5206.84</td>
     </tr>
     <tr>
       <th>23_Sholl_PC1</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.0</td>
-      <td>906.947612</td>
-      <td>-1375.148191</td>
-      <td>-667.221286</td>
-      <td>-196.303551</td>
-      <td>423.351836</td>
-      <td>1624.135505</td>
+      <td>-8.66185e-14</td>
+      <td>906.948</td>
+      <td>-1375.15</td>
+      <td>-667.221</td>
+      <td>-196.304</td>
+      <td>423.352</td>
+      <td>1624.14</td>
     </tr>
     <tr>
       <th>2_Sholl_PC0</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>1702.632552</td>
-      <td>-1926.074576</td>
-      <td>-1199.885566</td>
-      <td>-592.343399</td>
-      <td>799.721041</td>
-      <td>4390.161345</td>
+      <td>6.0633e-13</td>
+      <td>1702.63</td>
+      <td>-1926.07</td>
+      <td>-1199.89</td>
+      <td>-592.343</td>
+      <td>799.721</td>
+      <td>4390.16</td>
     </tr>
     <tr>
       <th>2_Sholl_PC1</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.0</td>
-      <td>922.011239</td>
-      <td>-1299.948998</td>
-      <td>-659.247592</td>
-      <td>-185.42263</td>
-      <td>570.368466</td>
-      <td>1819.642701</td>
+      <td>-6.49639e-13</td>
+      <td>922.011</td>
+      <td>-1299.95</td>
+      <td>-659.248</td>
+      <td>-185.423</td>
+      <td>570.368</td>
+      <td>1819.64</td>
     </tr>
     <tr>
       <th>3_Sholl_PC0</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.0</td>
-      <td>240.404185</td>
-      <td>-515.155899</td>
-      <td>-135.090847</td>
-      <td>-15.615586</td>
-      <td>122.285985</td>
-      <td>891.88377</td>
+      <td>-1.20463e-14</td>
+      <td>240.404</td>
+      <td>-515.156</td>
+      <td>-135.091</td>
+      <td>-15.6156</td>
+      <td>122.286</td>
+      <td>891.884</td>
     </tr>
     <tr>
       <th>3_Sholl_PC1</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>130.982962</td>
-      <td>-294.683189</td>
-      <td>-74.383222</td>
-      <td>-9.127534</td>
-      <td>64.238262</td>
-      <td>670.585346</td>
+      <td>1.01641e-13</td>
+      <td>130.983</td>
+      <td>-294.683</td>
+      <td>-74.3832</td>
+      <td>-9.12753</td>
+      <td>64.2383</td>
+      <td>670.585</td>
     </tr>
     <tr>
       <th>axon_bias_dorsal</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-17.373735</td>
-      <td>97.301413</td>
-      <td>-256.409643</td>
-      <td>-52.92491</td>
-      <td>-14.078147</td>
-      <td>22.401883</td>
-      <td>186.829788</td>
+      <td>-17.3737</td>
+      <td>97.3014</td>
+      <td>-256.41</td>
+      <td>-52.9249</td>
+      <td>-14.0781</td>
+      <td>22.4019</td>
+      <td>186.83</td>
     </tr>
     <tr>
       <th>axon_bias_medial</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>81.498799</td>
-      <td>71.705063</td>
-      <td>2.173056</td>
-      <td>23.402518</td>
-      <td>64.329042</td>
-      <td>145.31174</td>
-      <td>240.978427</td>
+      <td>81.4988</td>
+      <td>71.7051</td>
+      <td>2.17306</td>
+      <td>23.4025</td>
+      <td>64.329</td>
+      <td>145.312</td>
+      <td>240.978</td>
     </tr>
     <tr>
       <th>axon_exit_distance</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.308566</td>
-      <td>11.638952</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>11.074677</td>
-      <td>36.291685</td>
+      <td>6.30857</td>
+      <td>11.639</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11.0747</td>
+      <td>36.2917</td>
     </tr>
     <tr>
       <th>axon_exit_theta_coronal</th>
-      <td>149.0</td>
+      <td>149</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.53325</td>
       <td>0.180092</td>
-      <td>0.091717</td>
+      <td>0.0917171</td>
       <td>0.428479</td>
       <td>0.538145</td>
       <td>0.66715</td>
@@ -923,82 +931,82 @@
     </tr>
     <tr>
       <th>axon_extent_dorsal</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>560.228534</td>
-      <td>298.578979</td>
-      <td>248.843059</td>
-      <td>379.830163</td>
-      <td>474.164118</td>
-      <td>671.6452</td>
-      <td>1461.963893</td>
+      <td>560.229</td>
+      <td>298.579</td>
+      <td>248.843</td>
+      <td>379.83</td>
+      <td>474.164</td>
+      <td>671.645</td>
+      <td>1461.96</td>
     </tr>
     <tr>
       <th>axon_extent_medial</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>558.985112</td>
-      <td>237.440879</td>
-      <td>208.251716</td>
-      <td>395.722763</td>
-      <td>504.382962</td>
-      <td>761.091154</td>
-      <td>1032.913949</td>
+      <td>558.985</td>
+      <td>237.441</td>
+      <td>208.252</td>
+      <td>395.723</td>
+      <td>504.383</td>
+      <td>761.091</td>
+      <td>1032.91</td>
     </tr>
     <tr>
       <th>axon_max_branch_order</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>30.0</td>
-      <td>18.644034</td>
-      <td>10.0</td>
-      <td>18.0</td>
-      <td>24.0</td>
-      <td>35.0</td>
-      <td>94.0</td>
+      <td>30</td>
+      <td>18.644</td>
+      <td>10</td>
+      <td>18</td>
+      <td>24</td>
+      <td>35</td>
+      <td>94</td>
     </tr>
     <tr>
       <th>axon_max_euclidean_distance</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>376.827163</td>
-      <td>174.384589</td>
-      <td>166.199996</td>
-      <td>275.238124</td>
-      <td>293.469184</td>
-      <td>501.595244</td>
-      <td>786.581963</td>
+      <td>376.827</td>
+      <td>174.385</td>
+      <td>166.2</td>
+      <td>275.238</td>
+      <td>293.469</td>
+      <td>501.595</td>
+      <td>786.582</td>
     </tr>
     <tr>
       <th>axon_max_path_distance</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1245.900196</td>
-      <td>1014.578779</td>
-      <td>524.684351</td>
-      <td>624.307614</td>
-      <td>1019.020956</td>
-      <td>1145.384854</td>
-      <td>5051.520241</td>
+      <td>1245.9</td>
+      <td>1014.58</td>
+      <td>524.684</td>
+      <td>624.308</td>
+      <td>1019.02</td>
+      <td>1145.38</td>
+      <td>5051.52</td>
     </tr>
     <tr>
       <th>axon_mean_contraction</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.782633</td>
-      <td>0.053917</td>
+      <td>0.0539165</td>
       <td>0.717549</td>
       <td>0.737446</td>
       <td>0.771479</td>
@@ -1007,21 +1015,21 @@
     </tr>
     <tr>
       <th>axon_num_branches</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>439.285714</td>
-      <td>317.758579</td>
-      <td>63.0</td>
-      <td>159.0</td>
-      <td>337.0</td>
-      <td>749.0</td>
-      <td>1179.0</td>
+      <td>439.286</td>
+      <td>317.759</td>
+      <td>63</td>
+      <td>159</td>
+      <td>337</td>
+      <td>749</td>
+      <td>1179</td>
     </tr>
     <tr>
       <th>axon_soma_percentile_dorsal</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1035,12 +1043,12 @@
     </tr>
     <tr>
       <th>axon_soma_percentile_medial</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.352339</td>
-      <td>0.089918</td>
+      <td>0.0899184</td>
       <td>0.186779</td>
       <td>0.309504</td>
       <td>0.359643</td>
@@ -1049,133 +1057,133 @@
     </tr>
     <tr>
       <th>axon_total_length</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>20710.038109</td>
-      <td>14773.877131</td>
-      <td>3565.647976</td>
-      <td>8594.573708</td>
-      <td>16537.953182</td>
-      <td>27256.257097</td>
-      <td>60420.44625</td>
+      <td>20710</td>
+      <td>14773.9</td>
+      <td>3565.65</td>
+      <td>8594.57</td>
+      <td>16538</td>
+      <td>27256.3</td>
+      <td>60420.4</td>
     </tr>
     <tr>
       <th>basal_dendrite_bias_dorsal</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.055397</td>
-      <td>60.595695</td>
-      <td>-230.429076</td>
-      <td>-29.815958</td>
-      <td>5.643119</td>
-      <td>38.934237</td>
-      <td>197.631769</td>
+      <td>5.0554</td>
+      <td>60.5957</td>
+      <td>-230.429</td>
+      <td>-29.816</td>
+      <td>5.64312</td>
+      <td>38.9342</td>
+      <td>197.632</td>
     </tr>
     <tr>
       <th>basal_dendrite_bias_medial</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>41.586917</td>
-      <td>39.292419</td>
+      <td>41.5869</td>
+      <td>39.2924</td>
       <td>0.248366</td>
-      <td>12.326967</td>
+      <td>12.327</td>
       <td>29.4798</td>
-      <td>59.489676</td>
-      <td>182.374261</td>
+      <td>59.4897</td>
+      <td>182.374</td>
     </tr>
     <tr>
       <th>basal_dendrite_calculate_number_of_stems</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.463576</td>
-      <td>1.982506</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
+      <td>5.46358</td>
+      <td>1.98251</td>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
       <td>6.5</td>
-      <td>13.0</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>basal_dendrite_extent_dorsal</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>332.062536</td>
-      <td>109.911421</td>
-      <td>70.318817</td>
-      <td>270.748244</td>
-      <td>324.02927</td>
-      <td>382.951183</td>
-      <td>814.061958</td>
+      <td>332.063</td>
+      <td>109.911</td>
+      <td>70.3188</td>
+      <td>270.748</td>
+      <td>324.029</td>
+      <td>382.951</td>
+      <td>814.062</td>
     </tr>
     <tr>
       <th>basal_dendrite_extent_medial</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>337.750433</td>
-      <td>112.477076</td>
-      <td>73.184561</td>
-      <td>273.241391</td>
-      <td>340.935483</td>
-      <td>388.467584</td>
-      <td>799.907028</td>
+      <td>337.75</td>
+      <td>112.477</td>
+      <td>73.1846</td>
+      <td>273.241</td>
+      <td>340.935</td>
+      <td>388.468</td>
+      <td>799.907</td>
     </tr>
     <tr>
       <th>basal_dendrite_max_branch_order</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.688742</td>
-      <td>1.883916</td>
-      <td>4.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>18.0</td>
+      <td>6.68874</td>
+      <td>1.88392</td>
+      <td>4</td>
+      <td>6</td>
+      <td>6</td>
+      <td>7</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>basal_dendrite_max_euclidean_distance</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>229.714297</td>
-      <td>72.944885</td>
-      <td>72.818722</td>
-      <td>194.584326</td>
-      <td>223.846495</td>
-      <td>248.054992</td>
-      <td>541.627791</td>
+      <td>229.714</td>
+      <td>72.9449</td>
+      <td>72.8187</td>
+      <td>194.584</td>
+      <td>223.846</td>
+      <td>248.055</td>
+      <td>541.628</td>
     </tr>
     <tr>
       <th>basal_dendrite_max_path_distance</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>294.283413</td>
-      <td>123.827108</td>
-      <td>95.980206</td>
-      <td>240.346505</td>
-      <td>271.689165</td>
-      <td>304.036468</td>
-      <td>884.802118</td>
+      <td>294.283</td>
+      <td>123.827</td>
+      <td>95.9802</td>
+      <td>240.347</td>
+      <td>271.689</td>
+      <td>304.036</td>
+      <td>884.802</td>
     </tr>
     <tr>
       <th>basal_dendrite_mean_contraction</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1189,12 +1197,12 @@
     </tr>
     <tr>
       <th>basal_dendrite_mean_diameter</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.583895</td>
-      <td>0.074186</td>
+      <td>0.0741861</td>
       <td>0.445387</td>
       <td>0.523856</td>
       <td>0.569233</td>
@@ -1203,40 +1211,40 @@
     </tr>
     <tr>
       <th>basal_dendrite_num_branches</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>55.529801</td>
-      <td>25.359234</td>
-      <td>9.0</td>
-      <td>43.0</td>
-      <td>53.0</td>
-      <td>63.0</td>
-      <td>199.0</td>
+      <td>55.5298</td>
+      <td>25.3592</td>
+      <td>9</td>
+      <td>43</td>
+      <td>53</td>
+      <td>63</td>
+      <td>199</td>
     </tr>
     <tr>
       <th>basal_dendrite_soma_percentile_dorsal</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.479163</td>
       <td>0.143723</td>
-      <td>0.081188</td>
+      <td>0.0811881</td>
       <td>0.391287</td>
       <td>0.471055</td>
       <td>0.55932</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>basal_dendrite_soma_percentile_medial</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.386875</td>
-      <td>0.090649</td>
+      <td>0.0906493</td>
       <td>0.10665</td>
       <td>0.344258</td>
       <td>0.39866</td>
@@ -1245,87 +1253,87 @@
     </tr>
     <tr>
       <th>basal_dendrite_stem_exit_MedialLateral</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.655391</td>
       <td>0.22775</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.5</td>
       <td>0.666667</td>
       <td>0.8</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>basal_dendrite_stem_exit_dorsal</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.180427</td>
       <td>0.156932</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.166667</td>
       <td>0.25</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>basal_dendrite_stem_exit_ventral</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.164181</td>
       <td>0.151746</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.166667</td>
       <td>0.25</td>
       <td>0.666667</td>
     </tr>
     <tr>
       <th>basal_dendrite_total_length</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4059.99079</td>
-      <td>1914.997102</td>
-      <td>317.221037</td>
-      <td>3054.893608</td>
-      <td>3855.355726</td>
-      <td>4802.69977</td>
-      <td>12052.006734</td>
+      <td>4059.99</td>
+      <td>1915</td>
+      <td>317.221</td>
+      <td>3054.89</td>
+      <td>3855.36</td>
+      <td>4802.7</td>
+      <td>12052</td>
     </tr>
     <tr>
       <th>basal_dendrite_total_surface_area</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7569.756772</td>
-      <td>4353.314137</td>
-      <td>549.04999</td>
-      <td>5037.977608</td>
-      <td>6913.585444</td>
-      <td>9095.172487</td>
-      <td>29712.798036</td>
+      <td>7569.76</td>
+      <td>4353.31</td>
+      <td>549.05</td>
+      <td>5037.98</td>
+      <td>6913.59</td>
+      <td>9095.17</td>
+      <td>29712.8</td>
     </tr>
     <tr>
       <th>soma_surface_area</th>
-      <td>151.0</td>
+      <td>151</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>579.471263</td>
-      <td>316.072164</td>
-      <td>190.116472</td>
-      <td>369.116435</td>
-      <td>497.493364</td>
-      <td>663.187435</td>
-      <td>2137.330167</td>
+      <td>579.471</td>
+      <td>316.072</td>
+      <td>190.116</td>
+      <td>369.116</td>
+      <td>497.493</td>
+      <td>663.187</td>
+      <td>2137.33</td>
     </tr>
   </tbody>
 </table>

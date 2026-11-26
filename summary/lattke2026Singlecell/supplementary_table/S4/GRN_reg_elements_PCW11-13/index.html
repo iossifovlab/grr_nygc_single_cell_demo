@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="09a37d3193ba2f80c023882141812fee867b8d5fa64776f447354086bc910083">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S4">S4</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">GRN_reg_elements_PCW11-13</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -764,45 +772,45 @@
   <tbody>
     <tr>
       <th>gene_idx</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1465.028725</td>
-      <td>831.683057</td>
-      <td>1.0</td>
-      <td>741.0</td>
-      <td>1504.0</td>
-      <td>2189.0</td>
-      <td>2897.0</td>
+      <td>1465.03</td>
+      <td>831.683</td>
+      <td>1</td>
+      <td>741</td>
+      <td>1504</td>
+      <td>2189</td>
+      <td>2897</td>
     </tr>
     <tr>
       <th>peak_idx</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>72188.680539</td>
-      <td>47301.495717</td>
-      <td>1.0</td>
-      <td>30880.0</td>
-      <td>66660.0</td>
-      <td>114663.0</td>
-      <td>158174.0</td>
+      <td>72188.7</td>
+      <td>47301.5</td>
+      <td>1</td>
+      <td>30880</td>
+      <td>66660</td>
+      <td>114663</td>
+      <td>158174</td>
     </tr>
     <tr>
       <th>distance</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>119489.520404</td>
-      <td>71879.339754</td>
-      <td>2004.0</td>
+      <td>119490</td>
+      <td>71879.3</td>
+      <td>2004</td>
       <td>56316.5</td>
-      <td>116365.0</td>
-      <td>180811.0</td>
-      <td>249843.0</td>
+      <td>116365</td>
+      <td>180811</td>
+      <td>249843</td>
     </tr>
     <tr>
       <th>gene</th>
@@ -834,7 +842,7 @@
     </tr>
     <tr>
       <th>Correlation</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -848,45 +856,45 @@
     </tr>
     <tr>
       <th>TStat</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>12.56797</td>
-      <td>9.196667</td>
-      <td>4.187257</td>
-      <td>6.624057</td>
-      <td>9.784568</td>
-      <td>15.237914</td>
-      <td>143.586321</td>
+      <td>12.568</td>
+      <td>9.19667</td>
+      <td>4.18726</td>
+      <td>6.62406</td>
+      <td>9.78457</td>
+      <td>15.2379</td>
+      <td>143.586</td>
     </tr>
     <tr>
       <th>Pval</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000002</td>
-      <td>0.000007</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000062</td>
+      <td>1.83989e-06</td>
+      <td>7.48027e-06</td>
+      <td>9.51287e-116</td>
+      <td>1.34974e-27</td>
+      <td>3.5524e-16</td>
+      <td>1.89258e-09</td>
+      <td>6.17294e-05</td>
     </tr>
     <tr>
       <th>FDR</th>
-      <td>38399.0</td>
+      <td>38399</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000003</td>
-      <td>0.000012</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0001</td>
+      <td>3.07663e-06</td>
+      <td>1.22994e-05</td>
+      <td>9.50421e-111</td>
+      <td>1.04346e-26</td>
+      <td>1.27686e-15</td>
+      <td>4.27868e-09</td>
+      <td>9.99226e-05</td>
     </tr>
   </tbody>
 </table>

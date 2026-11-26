@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="728c6ce049008d55d711562fd5bf1272e57a819f6a694047510355ba8e570691">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S11</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -792,10 +800,10 @@
     </tr>
     <tr>
       <th>Unnamed: 5</th>
-      <td>13341.0</td>
-      <td>6459.0</td>
+      <td>13341</td>
+      <td>6459</td>
       <td>0.743614</td>
-      <td>39.0</td>
+      <td>39</td>
     </tr>
     <tr>
       <th>Unnamed: 6</th>
@@ -834,10 +842,10 @@
     </tr>
     <tr>
       <th>Unnamed: 11</th>
-      <td>12499.0</td>
-      <td>987.0</td>
+      <td>12499</td>
+      <td>987</td>
       <td>0.978384</td>
-      <td>702.0</td>
+      <td>702</td>
     </tr>
     <tr>
       <th>Unnamed: 12</th>
@@ -876,10 +884,10 @@
     </tr>
     <tr>
       <th>Unnamed: 17</th>
-      <td>11733.0</td>
-      <td>164.0</td>
+      <td>11733</td>
+      <td>164</td>
       <td>0.999126</td>
-      <td>9566.0</td>
+      <td>9566</td>
     </tr>
     <tr>
       <th>Unnamed: 18</th>
@@ -918,10 +926,10 @@
     </tr>
     <tr>
       <th>Unnamed: 23</th>
-      <td>8198.0</td>
-      <td>335.0</td>
+      <td>8198</td>
+      <td>335</td>
       <td>0.981976</td>
-      <td>1415.0</td>
+      <td>1415</td>
     </tr>
     <tr>
       <th>Unnamed: 24</th>
@@ -960,10 +968,10 @@
     </tr>
     <tr>
       <th>Unnamed: 29</th>
-      <td>8137.0</td>
-      <td>145.0</td>
+      <td>8137</td>
+      <td>145</td>
       <td>0.993217</td>
-      <td>4801.0</td>
+      <td>4801</td>
     </tr>
     <tr>
       <th>Unnamed: 30</th>
@@ -1002,10 +1010,10 @@
     </tr>
     <tr>
       <th>Unnamed: 35</th>
-      <td>10399.0</td>
-      <td>26.0</td>
+      <td>10399</td>
+      <td>26</td>
       <td>0.997979</td>
-      <td>10131.0</td>
+      <td>10131</td>
     </tr>
     <tr>
       <th>Unnamed: 36</th>
@@ -1044,10 +1052,10 @@
     </tr>
     <tr>
       <th>Unnamed: 41</th>
-      <td>10399.0</td>
-      <td>684.0</td>
+      <td>10399</td>
+      <td>684</td>
       <td>0.981865</td>
-      <td>1159.0</td>
+      <td>1159</td>
     </tr>
     <tr>
       <th>Unnamed: 42</th>
@@ -1086,10 +1094,10 @@
     </tr>
     <tr>
       <th>Unnamed: 47</th>
-      <td>12499.0</td>
-      <td>58.0</td>
+      <td>12499</td>
+      <td>58</td>
       <td>0.998643</td>
-      <td>10128.0</td>
+      <td>10128</td>
     </tr>
     <tr>
       <th>Unnamed: 48</th>
@@ -1128,10 +1136,10 @@
     </tr>
     <tr>
       <th>Unnamed: 53</th>
-      <td>11733.0</td>
-      <td>488.0</td>
+      <td>11733</td>
+      <td>488</td>
       <td>0.992339</td>
-      <td>3239.0</td>
+      <td>3239</td>
     </tr>
     <tr>
       <th>Unnamed: 54</th>
@@ -1170,10 +1178,10 @@
     </tr>
     <tr>
       <th>Unnamed: 59</th>
-      <td>8137.0</td>
-      <td>274.0</td>
+      <td>8137</td>
+      <td>274</td>
       <td>0.966903</td>
-      <td>896.0</td>
+      <td>896</td>
     </tr>
     <tr>
       <th>Unnamed: 60</th>
@@ -1212,10 +1220,10 @@
     </tr>
     <tr>
       <th>Unnamed: 65</th>
-      <td>8198.0</td>
-      <td>383.0</td>
+      <td>8198</td>
+      <td>383</td>
       <td>0.999239</td>
-      <td>1314.0</td>
+      <td>1314</td>
     </tr>
     <tr>
       <th>Unnamed: 66</th>
@@ -1254,10 +1262,10 @@
     </tr>
     <tr>
       <th>Unnamed: 71</th>
-      <td>10399.0</td>
-      <td>684.0</td>
+      <td>10399</td>
+      <td>684</td>
       <td>0.981865</td>
-      <td>1159.0</td>
+      <td>1159</td>
     </tr>
     <tr>
       <th>Unnamed: 72</th>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="0a5b89efe6eebdb7ddb2ff43531a73db8a22de61296617eb2c731388acee5b92">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S12</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -849,10 +857,10 @@
     </tr>
     <tr>
       <th>Literature evidence (Pubmed IDs)\nOnly for genes with 2+ diseases</th>
-      <td>40.0</td>
-      <td>40.0</td>
-      <td>38830862.0</td>
-      <td>1.0</td>
+      <td>40</td>
+      <td>40</td>
+      <td>38830862</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -863,45 +871,45 @@
     </tr>
     <tr>
       <th>Number of overlapped GWAS traits</th>
-      <td>1150.0</td>
+      <td>1150</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.049565</td>
+      <td>1.04957</td>
       <td>0.228848</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>Number of overlapped peaks</th>
-      <td>1150.0</td>
+      <td>1150</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.437391</td>
+      <td>1.43739</td>
       <td>0.840134</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>6.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>Number of overlapped rsIDs</th>
-      <td>1150.0</td>
+      <td>1150</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.016522</td>
+      <td>2.01652</td>
       <td>1.59052</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>11.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>11</td>
     </tr>
     <tr>
       <th>Overlapped peaks</th>

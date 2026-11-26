@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="9fe4c4fe3a7a0417d8e56d1a640a45debe702add31c7b86206585a5868d28ef7">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic">zemke2024Epigenetic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S12</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -780,31 +788,31 @@
     </tr>
     <tr>
       <th>start</th>
-      <td>282854.0</td>
+      <td>282854</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>67464261.263245</td>
-      <td>58411368.644769</td>
-      <td>9812.0</td>
-      <td>20528976.0</td>
-      <td>52051039.0</td>
-      <td>103091201.75</td>
-      <td>248874093.0</td>
+      <td>6.74643e+07</td>
+      <td>5.84114e+07</td>
+      <td>9812</td>
+      <td>20528976</td>
+      <td>52051039</td>
+      <td>1.03091e+08</td>
+      <td>248874093</td>
     </tr>
     <tr>
       <th>end</th>
-      <td>282854.0</td>
+      <td>282854</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>67464760.263245</td>
-      <td>58411368.644769</td>
-      <td>10311.0</td>
-      <td>20529475.0</td>
-      <td>52051538.0</td>
-      <td>103091700.75</td>
-      <td>248874592.0</td>
+      <td>6.74648e+07</td>
+      <td>5.84114e+07</td>
+      <td>10311</td>
+      <td>20529475</td>
+      <td>52051538</td>
+      <td>1.03092e+08</td>
+      <td>248874592</td>
     </tr>
     <tr>
       <th>TargetGene</th>
@@ -836,7 +844,7 @@
     </tr>
     <tr>
       <th>ABC.Score</th>
-      <td>282854.0</td>
+      <td>282854</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -846,7 +854,7 @@
       <td>0.027</td>
       <td>0.051</td>
       <td>0.166</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>

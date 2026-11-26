@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="61cce21ea01454f617aaaf16c411d3af6ab76748305ed9321795a87939a89ff8">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic">zemke2024Epigenetic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S9</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -794,59 +802,59 @@
     </tr>
     <tr>
       <th>P-value</th>
-      <td>3520.0</td>
+      <td>3520</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.818606</td>
       <td>0.37271</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1e-45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Log P-value</th>
-      <td>3520.0</td>
+      <td>3520</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-2.272084</td>
-      <td>7.276134</td>
+      <td>-2.27208</td>
+      <td>7.27613</td>
       <td>-105.9</td>
       <td>-1.7935</td>
       <td>-0.5789</td>
       <td>-0.137075</td>
-      <td>0.0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>q-value (Benjamini)</th>
-      <td>3520.0</td>
+      <td>3520</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.80233</td>
       <td>0.324038</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.71455</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th># of Target Sequences with Motif(of 1154)</th>
-      <td>3520.0</td>
+      <td>3520</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>127.321875</td>
-      <td>217.164815</td>
-      <td>0.0</td>
-      <td>15.0</td>
-      <td>47.0</td>
-      <td>139.0</td>
-      <td>2635.0</td>
+      <td>127.322</td>
+      <td>217.165</td>
+      <td>0</td>
+      <td>15</td>
+      <td>47</td>
+      <td>139</td>
+      <td>2635</td>
     </tr>
     <tr>
       <th>% of Target Sequences with Motif</th>
@@ -864,16 +872,16 @@
     </tr>
     <tr>
       <th># of Background Sequences with Motif(of 108843)</th>
-      <td>3520.0</td>
+      <td>3520</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7768.474545</td>
-      <td>8290.323025</td>
+      <td>7768.47</td>
+      <td>8290.32</td>
       <td>7.6</td>
       <td>1816.7</td>
       <td>5054.95</td>
-      <td>10635.675</td>
+      <td>10635.7</td>
       <td>62339.1</td>
     </tr>
     <tr>

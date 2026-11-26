@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="8be9d98a74aebe93d6f243c056b82a633360103df8e5d01fece51d371cfbba1b">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S1">S1</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Sample_library_information_QC</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -874,17 +882,17 @@
     </tr>
     <tr>
       <th>dev_PCW</th>
-      <td>48.0</td>
+      <td>48</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>14.229167</td>
-      <td>2.897097</td>
-      <td>10.0</td>
-      <td>12.0</td>
-      <td>13.0</td>
-      <td>17.0</td>
-      <td>20.0</td>
+      <td>14.2292</td>
+      <td>2.8971</td>
+      <td>10</td>
+      <td>12</td>
+      <td>13</td>
+      <td>17</td>
+      <td>20</td>
     </tr>
     <tr>
       <th>sex</th>
@@ -1000,68 +1008,68 @@
     </tr>
     <tr>
       <th>Estimated number of cells</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6818.913043</td>
-      <td>4575.033517</td>
-      <td>225.0</td>
-      <td>3586.0</td>
+      <td>6818.91</td>
+      <td>4575.03</td>
+      <td>225</td>
+      <td>3586</td>
       <td>6265.5</td>
       <td>9647.5</td>
-      <td>20000.0</td>
+      <td>20000</td>
     </tr>
     <tr>
       <th>GEX Median UMI counts per cell</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1851.532609</td>
-      <td>878.102483</td>
-      <td>543.0</td>
+      <td>1851.53</td>
+      <td>878.102</td>
+      <td>543</td>
       <td>1078.5</td>
       <td>1752.25</td>
       <td>2556.25</td>
-      <td>3657.0</td>
+      <td>3657</td>
     </tr>
     <tr>
       <th>GEX Median genes per cell</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1165.206522</td>
-      <td>430.376509</td>
-      <td>449.0</td>
-      <td>785.0</td>
-      <td>1117.0</td>
+      <td>1165.21</td>
+      <td>430.377</td>
+      <td>449</td>
+      <td>785</td>
+      <td>1117</td>
       <td>1527.25</td>
-      <td>1996.0</td>
+      <td>1996</td>
     </tr>
     <tr>
       <th>ATAC Median high-quality fragments per cell</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7849.152174</td>
-      <td>6754.826026</td>
-      <td>853.0</td>
-      <td>3833.0</td>
-      <td>5295.0</td>
-      <td>9092.125</td>
-      <td>29482.0</td>
+      <td>7849.15</td>
+      <td>6754.83</td>
+      <td>853</td>
+      <td>3833</td>
+      <td>5295</td>
+      <td>9092.12</td>
+      <td>29482</td>
     </tr>
     <tr>
       <th>ATAC TSS enrichment score</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.357946</td>
-      <td>2.055612</td>
+      <td>4.35795</td>
+      <td>2.05561</td>
       <td>1.7281</td>
       <td>2.74955</td>
       <td>3.9386</td>
@@ -1070,55 +1078,55 @@
     </tr>
     <tr>
       <th>N_cells</th>
-      <td>37.0</td>
+      <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6729.675676</td>
-      <td>4210.914865</td>
-      <td>550.0</td>
-      <td>3306.0</td>
-      <td>6033.0</td>
-      <td>8765.0</td>
-      <td>18826.0</td>
+      <td>6729.68</td>
+      <td>4210.91</td>
+      <td>550</td>
+      <td>3306</td>
+      <td>6033</td>
+      <td>8765</td>
+      <td>18826</td>
     </tr>
     <tr>
       <th>median_RNA_counts</th>
-      <td>37.0</td>
+      <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2011.378378</td>
-      <td>781.823442</td>
-      <td>733.0</td>
-      <td>1315.0</td>
-      <td>2005.0</td>
-      <td>2591.0</td>
-      <td>3673.0</td>
+      <td>2011.38</td>
+      <td>781.823</td>
+      <td>733</td>
+      <td>1315</td>
+      <td>2005</td>
+      <td>2591</td>
+      <td>3673</td>
     </tr>
     <tr>
       <th>median_genes_counts</th>
-      <td>37.0</td>
+      <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1248.256757</td>
-      <td>371.26549</td>
-      <td>590.0</td>
-      <td>926.0</td>
-      <td>1302.0</td>
-      <td>1536.0</td>
-      <td>1989.0</td>
+      <td>1248.26</td>
+      <td>371.265</td>
+      <td>590</td>
+      <td>926</td>
+      <td>1302</td>
+      <td>1536</td>
+      <td>1989</td>
     </tr>
     <tr>
       <th>median_percent.mt</th>
-      <td>37.0</td>
+      <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.15123</td>
       <td>0.063615</td>
-      <td>0.055218</td>
+      <td>0.0552181</td>
       <td>0.103627</td>
       <td>0.144718</td>
       <td>0.186393</td>
@@ -1126,31 +1134,31 @@
     </tr>
     <tr>
       <th>median_ATAC_counts</th>
-      <td>37.0</td>
+      <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2819.932432</td>
-      <td>2960.020695</td>
-      <td>356.0</td>
-      <td>1099.0</td>
-      <td>1770.0</td>
-      <td>3307.0</td>
-      <td>11907.0</td>
+      <td>2819.93</td>
+      <td>2960.02</td>
+      <td>356</td>
+      <td>1099</td>
+      <td>1770</td>
+      <td>3307</td>
+      <td>11907</td>
     </tr>
     <tr>
       <th>median_TSS.enrichment</th>
-      <td>37.0</td>
+      <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.854938</td>
+      <td>3.85494</td>
       <td>0.706746</td>
-      <td>2.681319</td>
-      <td>3.358675</td>
-      <td>3.925226</td>
-      <td>4.193071</td>
-      <td>5.441361</td>
+      <td>2.68132</td>
+      <td>3.35867</td>
+      <td>3.92523</td>
+      <td>4.19307</td>
+      <td>5.44136</td>
     </tr>
   </tbody>
 </table>

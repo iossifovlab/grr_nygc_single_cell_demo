@@ -301,15 +301,50 @@
         text-decoration: underline;
       }
 
+      
+      #breadcrumb .breadcrumb-item {
+        color: #252e34;
+      }
+
+      #breadcrumb a.breadcrumb-item {
+        text-decoration: none;
+      }
+
+      #breadcrumb a.breadcrumb-item:hover {
+        color: #4C93C9;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      #breadcrumb .breadcrumb-item.current {
+        color: #24699E;
+      }
+
+      #breadcrumb .breadcrumb-sep {
+        color: #85a2b9;
+        margin: 0 2px;
+      }
+
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
+      #page-header #breadcrumb {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
       #nav-about {
         margin-left: auto;
       }
     </style>
  </head>
     <body>
-        <nav id="page-header">
-          <a href="./">← Back to main page</a>
-        </nav>
+        
+    <nav id="page-header">
+      <div id="breadcrumb"><a class="breadcrumb-item" href="index.html#/">All resources</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">About</span>
+      </div>
+    </nav>
         <div id="section-about">
         
         <h1>About the NYGC Single-Cell GRR</h1>

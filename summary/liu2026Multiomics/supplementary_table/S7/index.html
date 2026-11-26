@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="16d8d4570dc970fe44678366ae971ec772805bcf84f5458c9c528453f11cb731">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics">liu2026Multiomics</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S7</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -872,17 +880,17 @@
     </tr>
     <tr>
       <th>idx_uniq</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>207.0</td>
-      <td>136.409295</td>
-      <td>1.0</td>
-      <td>78.0</td>
+      <td>207</td>
+      <td>136.409</td>
+      <td>1</td>
+      <td>78</td>
       <td>208.5</td>
       <td>313.5</td>
-      <td>467.0</td>
+      <td>467</td>
     </tr>
     <tr>
       <th>category</th>
@@ -1012,31 +1020,31 @@
     </tr>
     <tr>
       <th>best_distance_between_motifs</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.666667</td>
+      <td>6.66667</td>
       <td>9.43116</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>6.0</td>
-      <td>46.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>6</td>
+      <td>46</td>
     </tr>
     <tr>
       <th>best_dist_centers</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>13.941667</td>
-      <td>9.600679</td>
-      <td>4.0</td>
-      <td>9.0</td>
-      <td>11.0</td>
-      <td>14.0</td>
-      <td>53.0</td>
+      <td>13.9417</td>
+      <td>9.60068</td>
+      <td>4</td>
+      <td>9</td>
+      <td>11</td>
+      <td>14</td>
+      <td>53</td>
     </tr>
     <tr>
       <th>best_seq</th>
@@ -1054,73 +1062,73 @@
     </tr>
     <tr>
       <th>joint_effect_log_counts</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.534695</td>
       <td>0.348299</td>
-      <td>0.085524</td>
+      <td>0.0855242</td>
       <td>0.303725</td>
       <td>0.456811</td>
       <td>0.666983</td>
-      <td>1.832275</td>
+      <td>1.83228</td>
     </tr>
     <tr>
       <th>joint_vs_sum_p_value</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.00235</td>
-      <td>0.011814</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000002</td>
+      <td>0.00234972</td>
+      <td>0.0118142</td>
+      <td>1.94828e-18</td>
+      <td>4.76452e-16</td>
+      <td>2.58444e-11</td>
+      <td>2.3353e-06</td>
       <td>0.111118</td>
     </tr>
     <tr>
       <th>joint_vs_sum_p_value_adj</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.002416</td>
-      <td>0.011948</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000003</td>
+      <td>0.00241569</td>
+      <td>0.0119479</td>
+      <td>7.35941e-17</td>
+      <td>2.0063e-15</td>
+      <td>5.60593e-11</td>
+      <td>3.18035e-06</td>
       <td>0.111929</td>
     </tr>
     <tr>
       <th>Z_scored_joint_effect</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.468874</td>
-      <td>4.453045</td>
-      <td>2.056279</td>
-      <td>3.124728</td>
-      <td>4.552346</td>
-      <td>8.757325</td>
-      <td>19.883507</td>
+      <td>6.46887</td>
+      <td>4.45305</td>
+      <td>2.05628</td>
+      <td>3.12473</td>
+      <td>4.55235</td>
+      <td>8.75732</td>
+      <td>19.8835</td>
     </tr>
     <tr>
       <th>independent_effect</th>
-      <td>120.0</td>
+      <td>120</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.272766</td>
       <td>0.222053</td>
-      <td>0.039968</td>
+      <td>0.0399682</td>
       <td>0.123425</td>
       <td>0.206533</td>
       <td>0.341651</td>
-      <td>1.381913</td>
+      <td>1.38191</td>
     </tr>
     <tr>
       <th>seqA_palindrome</th>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="ad6aa40671f19f8a0f91637b8158da6e841fa66831fe4917dd011be0a2643b3f">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Macaque-PatchSeq">HMBA-Macaque-PatchSeq</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Macaque-PatchSeq/20260228">20260228</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">sweep_features</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,105 +791,105 @@
     </tr>
     <tr>
       <th>adapt_hero</th>
-      <td>531.0</td>
+      <td>531</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.040791</td>
-      <td>0.068592</td>
+      <td>0.0407908</td>
+      <td>0.0685925</td>
       <td>-0.273997</td>
-      <td>0.008838</td>
-      <td>0.023194</td>
-      <td>0.047204</td>
+      <td>0.00883788</td>
+      <td>0.0231936</td>
+      <td>0.0472037</td>
       <td>0.807201</td>
     </tr>
     <tr>
       <th>adapt_mean</th>
-      <td>569.0</td>
+      <td>569</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.04919</td>
-      <td>0.087866</td>
+      <td>0.0491902</td>
+      <td>0.0878664</td>
       <td>-0.567242</td>
-      <td>0.012479</td>
-      <td>0.028405</td>
+      <td>0.0124788</td>
+      <td>0.0284045</td>
       <td>0.053291</td>
       <td>0.914121</td>
     </tr>
     <tr>
       <th>avg_rate_hero</th>
-      <td>592.0</td>
+      <td>592</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>11.876689</td>
-      <td>12.596699</td>
-      <td>1.0</td>
-      <td>6.0</td>
-      <td>9.0</td>
+      <td>11.8767</td>
+      <td>12.5967</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9</td>
       <td>12.25</td>
-      <td>123.0</td>
+      <td>123</td>
     </tr>
     <tr>
       <th>avg_rate_max</th>
-      <td>592.0</td>
+      <td>592</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>27.834459</td>
-      <td>29.842785</td>
-      <td>1.0</td>
-      <td>13.0</td>
-      <td>20.0</td>
-      <td>29.0</td>
-      <td>244.0</td>
+      <td>27.8345</td>
+      <td>29.8428</td>
+      <td>1</td>
+      <td>13</td>
+      <td>20</td>
+      <td>29</td>
+      <td>244</td>
     </tr>
     <tr>
       <th>avg_rate_rheo</th>
-      <td>592.0</td>
+      <td>592</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.425676</td>
-      <td>6.424721</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>101.0</td>
+      <td>2.42568</td>
+      <td>6.42472</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>101</td>
     </tr>
     <tr>
       <th>first_isi_inv_hero</th>
-      <td>563.0</td>
+      <td>563</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>21.997383</td>
-      <td>24.066915</td>
-      <td>1.077447</td>
+      <td>21.9974</td>
+      <td>24.0669</td>
+      <td>1.07745</td>
       <td>9.64882</td>
-      <td>13.667737</td>
-      <td>22.21239</td>
-      <td>284.900285</td>
+      <td>13.6677</td>
+      <td>22.2124</td>
+      <td>284.9</td>
     </tr>
     <tr>
       <th>first_isi_inv_rheo</th>
-      <td>276.0</td>
+      <td>276</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.429163</td>
-      <td>24.441428</td>
-      <td>1.274697</td>
-      <td>2.696993</td>
-      <td>3.527226</td>
-      <td>6.029008</td>
-      <td>249.376559</td>
+      <td>10.4292</td>
+      <td>24.4414</td>
+      <td>1.2747</td>
+      <td>2.69699</td>
+      <td>3.52723</td>
+      <td>6.02901</td>
+      <td>249.377</td>
     </tr>
     <tr>
       <th>first_isi_rheo</th>
-      <td>7.0</td>
+      <td>7</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -895,27 +903,27 @@
     </tr>
     <tr>
       <th>ir_late_hero</th>
-      <td>421.0</td>
+      <td>421</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.124295</td>
       <td>0.122303</td>
-      <td>0.002524</td>
-      <td>0.053927</td>
-      <td>0.093116</td>
+      <td>0.00252366</td>
+      <td>0.0539268</td>
+      <td>0.0931164</td>
       <td>0.148344</td>
       <td>0.96892</td>
     </tr>
     <tr>
       <th>ir_late_mean</th>
-      <td>525.0</td>
+      <td>525</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.134015</td>
       <td>0.105655</td>
-      <td>0.015382</td>
+      <td>0.0153816</td>
       <td>0.074256</td>
       <td>0.107498</td>
       <td>0.153174</td>
@@ -923,35 +931,35 @@
     </tr>
     <tr>
       <th>isi_cv_hero</th>
-      <td>563.0</td>
+      <td>563</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.164301</td>
       <td>0.164261</td>
-      <td>0.0</td>
-      <td>0.076126</td>
+      <td>0</td>
+      <td>0.0761261</td>
       <td>0.128226</td>
       <td>0.208188</td>
-      <td>1.404249</td>
+      <td>1.40425</td>
     </tr>
     <tr>
       <th>isi_cv_mean</th>
-      <td>584.0</td>
+      <td>584</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.181555</td>
       <td>0.159336</td>
-      <td>0.0</td>
-      <td>0.094437</td>
+      <td>0</td>
+      <td>0.0944366</td>
       <td>0.141812</td>
       <td>0.210221</td>
-      <td>1.473053</td>
+      <td>1.47305</td>
     </tr>
     <tr>
       <th>last_spike_t_hero</th>
-      <td>592.0</td>
+      <td>592</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -965,21 +973,21 @@
     </tr>
     <tr>
       <th>latency_hero</th>
-      <td>592.0</td>
+      <td>592</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.085307</td>
-      <td>0.065816</td>
+      <td>0.0853069</td>
+      <td>0.0658163</td>
       <td>0.0001</td>
       <td>0.043755</td>
-      <td>0.073813</td>
+      <td>0.0738125</td>
       <td>0.108479</td>
       <td>0.74646</td>
     </tr>
     <tr>
       <th>latency_rheo</th>
-      <td>592.0</td>
+      <td>592</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -993,17 +1001,17 @@
     </tr>
     <tr>
       <th>threshold_i_ramp</th>
-      <td>236.0</td>
+      <td>236</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>170.514707</td>
-      <td>102.932036</td>
+      <td>170.515</td>
+      <td>102.932</td>
       <td>5.3125</td>
-      <td>95.520833</td>
+      <td>95.5208</td>
       <td>162.5</td>
-      <td>222.052083</td>
-      <td>676.791667</td>
+      <td>222.052</td>
+      <td>676.792</td>
     </tr>
   </tbody>
 </table>

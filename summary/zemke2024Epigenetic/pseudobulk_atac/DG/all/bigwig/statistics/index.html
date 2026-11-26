@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="90dab3d2b7065edb1641fd427e9b6e469cfa76707e1bf1e02dd41ff943cddbb6">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2024Epigenetic">zemke2024Epigenetic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2024Epigenetic/pseudobulk_atac">pseudobulk_atac</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2024Epigenetic/pseudobulk_atac/DG">DG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2024Epigenetic/pseudobulk_atac/DG/all">all</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../summary/zemke2024Epigenetic/pseudobulk_atac/DG/all/bigwig/index.html">bigwig</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -328,8 +333,8 @@
             <td class="nowrap">
                 <a href='coverage.json'>coverage.json</a>
             </td>
-            <td class="nowrap">187.46 KB</td>
-            <td class="nowrap">44081db0083e04a4c61cf635c6ca2da1</td>
+            <td class="nowrap">47.28 KB</td>
+            <td class="nowrap">2b003935d685612d1493b23c2dc978d8</td>
           </tr>
           <tr>
             <td class="nowrap">

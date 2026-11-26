@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="109d5abc3ff8ddaa216b1f0ea748cff730c8d2a94ad1767cff03e894ccf9e659">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-QM23.50.001-BG">HMBA-MERSCOPE-QM23.50.001-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630">20250630</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">cell_supplemental_metadata</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,73 +791,73 @@
     </tr>
     <tr>
       <th>total_counts</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>480.158656</td>
-      <td>423.699397</td>
-      <td>1.0</td>
-      <td>195.0</td>
-      <td>366.0</td>
-      <td>617.0</td>
-      <td>10448.0</td>
+      <td>480.159</td>
+      <td>423.699</td>
+      <td>1</td>
+      <td>195</td>
+      <td>366</td>
+      <td>617</td>
+      <td>10448</td>
     </tr>
     <tr>
       <th>total_counts_genes</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>478.55671</td>
-      <td>422.047721</td>
-      <td>0.0</td>
-      <td>195.0</td>
-      <td>365.0</td>
-      <td>615.0</td>
-      <td>10419.0</td>
+      <td>478.557</td>
+      <td>422.048</td>
+      <td>0</td>
+      <td>195</td>
+      <td>365</td>
+      <td>615</td>
+      <td>10419</td>
     </tr>
     <tr>
       <th>n_genes_by_counts</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>90.550971</td>
-      <td>44.393028</td>
-      <td>0.0</td>
-      <td>59.0</td>
-      <td>84.0</td>
-      <td>118.0</td>
-      <td>288.0</td>
+      <td>90.551</td>
+      <td>44.393</td>
+      <td>0</td>
+      <td>59</td>
+      <td>84</td>
+      <td>118</td>
+      <td>288</td>
     </tr>
     <tr>
       <th>total_counts_Blank</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.601946</td>
-      <td>2.417904</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>140.0</td>
+      <td>1.60195</td>
+      <td>2.4179</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>140</td>
     </tr>
     <tr>
       <th>pct_counts_Blank</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.351822</td>
-      <td>1.088242</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.08824</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.210084</td>
       <td>0.45045</td>
-      <td>50.0</td>
+      <td>50</td>
     </tr>
     <tr>
       <th>genes_filter</th>
@@ -895,31 +903,31 @@
     </tr>
     <tr>
       <th>incongruous_pairs_pct</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.083997</td>
+      <td>0.0839971</td>
       <td>0.324983</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.017366</td>
-      <td>0.08179</td>
-      <td>100.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0173661</td>
+      <td>0.0817896</td>
+      <td>100</td>
     </tr>
     <tr>
       <th>incongruous_genes_pct</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.940084</td>
-      <td>1.455989</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.45599</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.430571</td>
-      <td>1.158301</td>
-      <td>100.0</td>
+      <td>1.1583</td>
+      <td>100</td>
     </tr>
     <tr>
       <th>doublets_filter</th>
@@ -951,59 +959,59 @@
     </tr>
     <tr>
       <th>doublet_singlet_score_diff</th>
-      <td>3164713.0</td>
+      <td>3164713</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-1.55375</td>
-      <td>2.067249</td>
-      <td>-12.030942</td>
-      <td>-2.941354</td>
-      <td>-1.602445</td>
+      <td>2.06725</td>
+      <td>-12.0309</td>
+      <td>-2.94135</td>
+      <td>-1.60245</td>
       <td>-0.205994</td>
-      <td>7.564206</td>
+      <td>7.56421</td>
     </tr>
     <tr>
       <th>doublet_diff_threshold</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.569831</td>
-      <td>0.092979</td>
-      <td>2.322453</td>
-      <td>2.508574</td>
-      <td>2.571332</td>
-      <td>2.636329</td>
-      <td>2.850248</td>
+      <td>2.56983</td>
+      <td>0.0929787</td>
+      <td>2.32245</td>
+      <td>2.50857</td>
+      <td>2.57133</td>
+      <td>2.63633</td>
+      <td>2.85025</td>
     </tr>
     <tr>
       <th>STAligner_leidenalg_res_0.8_knn_15</th>
-      <td>3226812.0</td>
+      <td>3226812</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>5.43206</td>
-      <td>4.657026</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>9.0</td>
-      <td>37.0</td>
+      <td>4.65703</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>9</td>
+      <td>37</td>
     </tr>
     <tr>
       <th>registration_subset_label</th>
-      <td>179070.0</td>
+      <td>179070</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.065969</td>
+      <td>0.0659686</td>
       <td>0.248228</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>segmentation_job_id</th>

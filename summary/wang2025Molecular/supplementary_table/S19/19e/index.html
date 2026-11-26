@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="ea5f949997b38f2f2ed0e52a3b68c8cb048c5219182263749e19b63c1b111162">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S19">S19</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">19e</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,128 +786,128 @@
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L6-CT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>906.156803</td>
-      <td>959.858879</td>
+      <td>906.157</td>
+      <td>959.859</td>
       <td>0.122016</td>
-      <td>199.713198</td>
-      <td>625.182842</td>
-      <td>1260.105468</td>
-      <td>5463.984774</td>
+      <td>199.713</td>
+      <td>625.183</td>
+      <td>1260.11</td>
+      <td>5463.98</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L6-CT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.0</td>
-      <td>0.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L6-CT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.028285</td>
       <td>0.144581</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.998213</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>565.561409</td>
-      <td>758.001003</td>
-      <td>0.022855</td>
-      <td>125.689234</td>
-      <td>338.528227</td>
-      <td>716.639413</td>
-      <td>7692.219223</td>
+      <td>565.561</td>
+      <td>758.001</td>
+      <td>0.0228553</td>
+      <td>125.689</td>
+      <td>338.528</td>
+      <td>716.639</td>
+      <td>7692.22</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.0</td>
-      <td>0.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.027285</td>
+      <td>0.0272852</td>
       <td>0.142817</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.999935</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-CT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>383.006309</td>
-      <td>407.491691</td>
-      <td>0.099546</td>
-      <td>92.198646</td>
-      <td>250.756269</td>
-      <td>564.135423</td>
-      <td>3542.371568</td>
+      <td>383.006</td>
+      <td>407.492</td>
+      <td>0.0995463</td>
+      <td>92.1986</td>
+      <td>250.756</td>
+      <td>564.135</td>
+      <td>3542.37</td>
     </tr>
     <tr>
       <th>df_EN-L6-CT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.0</td>
-      <td>0.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-CT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.037446</td>
+      <td>0.0374456</td>
       <td>0.160713</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.998802</td>
     </tr>
   </tbody>

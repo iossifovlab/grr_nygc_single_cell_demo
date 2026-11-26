@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="0cd66c9dd465fb596fe6c14736bbd399214fe79c3044a49a5cd775cef2a5cd00">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2023Conserved">zemke2023Conserved</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2023Conserved/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S8</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -1552,17 +1560,17 @@
     </tr>
     <tr>
       <th>nearest_tss_dist</th>
-      <td>384412.0</td>
+      <td>384412</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>16451.049871</td>
-      <td>144418.411241</td>
-      <td>-3260070.0</td>
-      <td>-19889.25</td>
-      <td>5628.0</td>
-      <td>47337.0</td>
-      <td>3663465.0</td>
+      <td>16451</td>
+      <td>144418</td>
+      <td>-3260070</td>
+      <td>-19889.2</td>
+      <td>5628</td>
+      <td>47337</td>
+      <td>3663465</td>
     </tr>
     <tr>
       <th>nearest_gene_name</th>
@@ -1594,59 +1602,59 @@
     </tr>
     <tr>
       <th>conservation_idx</th>
-      <td>309243.0</td>
+      <td>309243</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.944888</td>
-      <td>2.511518</td>
-      <td>-3.025354</td>
-      <td>1.586711</td>
-      <td>2.393042</td>
-      <td>3.466413</td>
-      <td>31.19476</td>
+      <td>2.94489</td>
+      <td>2.51152</td>
+      <td>-3.02535</td>
+      <td>1.58671</td>
+      <td>2.39304</td>
+      <td>3.46641</td>
+      <td>31.1948</td>
     </tr>
     <tr>
       <th>divergence_idx</th>
-      <td>309243.0</td>
+      <td>309243</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.997934</td>
       <td>0.508943</td>
-      <td>0.00323</td>
+      <td>0.00322967</td>
       <td>0.631154</td>
       <td>0.898064</td>
-      <td>1.255717</td>
-      <td>6.545219</td>
+      <td>1.25572</td>
+      <td>6.54522</td>
     </tr>
     <tr>
       <th>conservation_idx_primate</th>
-      <td>303372.0</td>
+      <td>303372</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.404669</td>
-      <td>2.862829</td>
-      <td>-2.193744</td>
-      <td>1.802911</td>
-      <td>2.783092</td>
-      <td>4.068359</td>
-      <td>38.94042</td>
+      <td>3.40467</td>
+      <td>2.86283</td>
+      <td>-2.19374</td>
+      <td>1.80291</td>
+      <td>2.78309</td>
+      <td>4.06836</td>
+      <td>38.9404</td>
     </tr>
     <tr>
       <th>divergence_idx_primate</th>
-      <td>303372.0</td>
+      <td>303372</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.895115</td>
       <td>0.484387</td>
-      <td>0.003506</td>
+      <td>0.00350579</td>
       <td>0.555055</td>
       <td>0.782422</td>
-      <td>1.115101</td>
-      <td>6.545219</td>
+      <td>1.1151</td>
+      <td>6.54522</td>
     </tr>
   </tbody>
 </table>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="2107af8b9a1161b07ee9d8d814aa93ed14fdee195be94ee6d1d5fa697baa8b8c">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S23">S23</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">23a</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,7 +786,7 @@
     </tr>
     <tr>
       <th>Fluid Intelligence</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -787,12 +795,12 @@
       <td>-0.617379</td>
       <td>-0.419725</td>
       <td>-0.362956</td>
-      <td>-0.061863</td>
-      <td>1.465541</td>
+      <td>-0.0618635</td>
+      <td>1.46554</td>
     </tr>
     <tr>
       <th>Processing Speed</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -800,13 +808,13 @@
       <td>0.339678</td>
       <td>-0.574486</td>
       <td>-0.344799</td>
-      <td>-0.054934</td>
+      <td>-0.0549335</td>
       <td>0.168964</td>
       <td>0.526679</td>
     </tr>
     <tr>
       <th>Executive Function</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -814,41 +822,41 @@
       <td>0.306471</td>
       <td>-0.608774</td>
       <td>-0.201158</td>
-      <td>-0.035187</td>
+      <td>-0.0351873</td>
       <td>0.240178</td>
       <td>0.718889</td>
     </tr>
     <tr>
       <th>Working memory</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.044076</td>
+      <td>-0.0440757</td>
       <td>0.282412</td>
       <td>-0.348168</td>
       <td>-0.220087</td>
-      <td>-0.087975</td>
-      <td>0.054577</td>
-      <td>1.215008</td>
+      <td>-0.0879754</td>
+      <td>0.0545769</td>
+      <td>1.21501</td>
     </tr>
     <tr>
       <th>ASD</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.07724</td>
+      <td>-0.0772404</td>
       <td>0.47299</td>
       <td>-0.666117</td>
       <td>-0.36703</td>
       <td>-0.225587</td>
-      <td>-0.003797</td>
-      <td>1.425362</td>
+      <td>-0.00379693</td>
+      <td>1.42536</td>
     </tr>
     <tr>
       <th>MDD</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -862,11 +870,11 @@
     </tr>
     <tr>
       <th>BPD</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.03167</td>
+      <td>-0.0316701</td>
       <td>0.421357</td>
       <td>-0.929228</td>
       <td>-0.365497</td>
@@ -876,21 +884,21 @@
     </tr>
     <tr>
       <th>ADHD</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.007518</td>
+      <td>0.00751773</td>
       <td>0.330966</td>
       <td>-0.776497</td>
       <td>-0.225324</td>
-      <td>-0.030882</td>
+      <td>-0.0308821</td>
       <td>0.258425</td>
       <td>0.648037</td>
     </tr>
     <tr>
       <th>SCZ</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -904,7 +912,7 @@
     </tr>
     <tr>
       <th>ALZ</th>
-      <td>33.0</td>
+      <td>33</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="049bdf8ed988f736414da128f23137b7cc3e5cc877b11b6d99ef6fde87f468de">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic">zemke2024Epigenetic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S3</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -766,17 +774,17 @@
   <tbody>
     <tr>
       <th>donor</th>
-      <td>600.0</td>
+      <td>600</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>12714.65</td>
-      <td>36053.230463</td>
-      <td>8.0</td>
+      <td>12714.6</td>
+      <td>36053.2</td>
+      <td>8</td>
       <td>75.25</td>
       <td>1240.5</td>
-      <td>5611.0</td>
-      <td>212191.0</td>
+      <td>5611</td>
+      <td>212191</td>
     </tr>
     <tr>
       <th>age</th>
@@ -836,17 +844,17 @@
     </tr>
     <tr>
       <th>number</th>
-      <td>600.0</td>
+      <td>600</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>37.066667</td>
-      <td>86.602438</td>
-      <td>0.0</td>
-      <td>2.0</td>
+      <td>37.0667</td>
+      <td>86.6024</td>
+      <td>0</td>
+      <td>2</td>
       <td>6.5</td>
-      <td>29.0</td>
-      <td>557.0</td>
+      <td>29</td>
+      <td>557</td>
     </tr>
   </tbody>
 </table>

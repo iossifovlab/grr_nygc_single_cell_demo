@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="d25aeb25f7594e79e19813a26838c6fec235f91f936b6b8f6de8e4f062b90577">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table/S3.3">S3.3</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Mouse</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -777,63 +785,63 @@
     </tr>
     <tr>
       <th>scores</th>
-      <td>329.0</td>
+      <td>329</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>18.056085</td>
-      <td>11.014377</td>
-      <td>5.084207</td>
+      <td>18.0561</td>
+      <td>11.0144</td>
+      <td>5.08421</td>
       <td>9.53949</td>
-      <td>14.858012</td>
-      <td>23.164944</td>
-      <td>58.87094</td>
+      <td>14.858</td>
+      <td>23.1649</td>
+      <td>58.8709</td>
     </tr>
     <tr>
       <th>logfoldchanges</th>
-      <td>329.0</td>
+      <td>329</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.167415</td>
+      <td>2.16742</td>
       <td>1.37706</td>
-      <td>1.003099</td>
-      <td>1.222091</td>
-      <td>1.636585</td>
-      <td>2.545147</td>
-      <td>8.701413</td>
+      <td>1.0031</td>
+      <td>1.22209</td>
+      <td>1.63658</td>
+      <td>2.54515</td>
+      <td>8.70141</td>
     </tr>
     <tr>
       <th>pvals</th>
-      <td>329.0</td>
+      <td>329</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.44424e-09</td>
+      <td>2.04946e-08</td>
+      <td>0</td>
+      <td>1.02784e-118</td>
+      <td>6.17295e-50</td>
+      <td>1.43536e-21</td>
+      <td>3.69165e-07</td>
     </tr>
     <tr>
       <th>pvals_adj</th>
-      <td>329.0</td>
+      <td>329</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000002</td>
+      <td>9.72372e-09</td>
+      <td>1.34743e-07</td>
+      <td>0</td>
+      <td>6.18543e-117</td>
+      <td>1.66907e-48</td>
+      <td>1.96628e-20</td>
+      <td>2.42339e-06</td>
     </tr>
     <tr>
       <th>pct_nz_group</th>
-      <td>329.0</td>
+      <td>329</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -843,7 +851,7 @@
       <td>0.304167</td>
       <td>0.488194</td>
       <td>0.738889</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>group</th>

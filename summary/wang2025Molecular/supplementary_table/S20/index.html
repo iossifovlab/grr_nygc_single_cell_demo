@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="d7f405b05931cbd88409526e328c9b771caf16d51b1a316eb4d75220090b9be6">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S20</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -806,26 +814,26 @@
     </tr>
     <tr>
       <th>Estimated Number of Cells</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10227.555556</td>
-      <td>4066.420051</td>
-      <td>4774.0</td>
-      <td>7687.0</td>
-      <td>9807.0</td>
-      <td>12037.0</td>
-      <td>18471.0</td>
+      <td>10227.6</td>
+      <td>4066.42</td>
+      <td>4774</td>
+      <td>7687</td>
+      <td>9807</td>
+      <td>12037</td>
+      <td>18471</td>
     </tr>
     <tr>
       <th>Fraction Reads in Cells</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.891</td>
-      <td>0.035007</td>
+      <td>0.0350071</td>
       <td>0.832</td>
       <td>0.882</td>
       <td>0.896</td>
@@ -834,40 +842,40 @@
     </tr>
     <tr>
       <th>Median UMI Counts per Cell</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6974.222222</td>
-      <td>2201.746396</td>
-      <td>4656.0</td>
-      <td>5550.0</td>
-      <td>6006.0</td>
-      <td>8410.0</td>
-      <td>11512.0</td>
+      <td>6974.22</td>
+      <td>2201.75</td>
+      <td>4656</td>
+      <td>5550</td>
+      <td>6006</td>
+      <td>8410</td>
+      <td>11512</td>
     </tr>
     <tr>
       <th>Median Genes per Cell</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3008.222222</td>
-      <td>539.643813</td>
-      <td>2432.0</td>
-      <td>2620.0</td>
-      <td>2772.0</td>
-      <td>3273.0</td>
-      <td>4041.0</td>
+      <td>3008.22</td>
+      <td>539.644</td>
+      <td>2432</td>
+      <td>2620</td>
+      <td>2772</td>
+      <td>3273</td>
+      <td>4041</td>
     </tr>
     <tr>
       <th>Valid Barcodes</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.974667</td>
-      <td>0.002398</td>
+      <td>0.00239792</td>
       <td>0.972</td>
       <td>0.973</td>
       <td>0.974</td>
@@ -876,7 +884,7 @@
     </tr>
     <tr>
       <th>Sequencing Saturation</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -890,12 +898,12 @@
     </tr>
     <tr>
       <th>Q30 Bases in Barcode</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.973111</td>
-      <td>0.000782</td>
+      <td>0.000781736</td>
       <td>0.972</td>
       <td>0.973</td>
       <td>0.973</td>
@@ -904,12 +912,12 @@
     </tr>
     <tr>
       <th>Q30 Bases in RNA Read</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.951778</td>
-      <td>0.001986</td>
+      <td>0.00198606</td>
       <td>0.948</td>
       <td>0.95</td>
       <td>0.953</td>
@@ -918,12 +926,12 @@
     </tr>
     <tr>
       <th>Q30 Bases in UMI</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.970222</td>
-      <td>0.000833</td>
+      <td>0.000833333</td>
       <td>0.969</td>
       <td>0.97</td>
       <td>0.97</td>
@@ -932,12 +940,12 @@
     </tr>
     <tr>
       <th>Reads Mapped to Genome</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.972111</td>
-      <td>0.003296</td>
+      <td>0.00329562</td>
       <td>0.967</td>
       <td>0.97</td>
       <td>0.972</td>
@@ -946,12 +954,12 @@
     </tr>
     <tr>
       <th>Reads Mapped Confidently to Genome</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.921556</td>
-      <td>0.012601</td>
+      <td>0.0126007</td>
       <td>0.899</td>
       <td>0.917</td>
       <td>0.92</td>
@@ -960,11 +968,11 @@
     </tr>
     <tr>
       <th>Reads Mapped Confidently to Intergenic Regions</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.062222</td>
+      <td>0.0622222</td>
       <td>0.00712</td>
       <td>0.049</td>
       <td>0.059</td>
@@ -974,12 +982,12 @@
     </tr>
     <tr>
       <th>Reads Mapped Confidently to Intronic Regions</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.411</td>
-      <td>0.016771</td>
+      <td>0.0167705</td>
       <td>0.39</td>
       <td>0.395</td>
       <td>0.412</td>
@@ -988,12 +996,12 @@
     </tr>
     <tr>
       <th>Reads Mapped Confidently to Exonic Regions</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.448333</td>
-      <td>0.027065</td>
+      <td>0.0270647</td>
       <td>0.4</td>
       <td>0.433</td>
       <td>0.456</td>
@@ -1002,7 +1010,7 @@
     </tr>
     <tr>
       <th>Reads Mapped Confidently to Transcriptome</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1016,12 +1024,12 @@
     </tr>
     <tr>
       <th>Reads Mapped Antisense to Gene</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.220556</td>
-      <td>0.049933</td>
+      <td>0.0499327</td>
       <td>0.153</td>
       <td>0.161</td>
       <td>0.234</td>
@@ -1030,17 +1038,17 @@
     </tr>
     <tr>
       <th>Total Genes Detected</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>30521.111111</td>
-      <td>887.641741</td>
-      <td>28551.0</td>
-      <td>30049.0</td>
-      <td>30861.0</td>
-      <td>30953.0</td>
-      <td>31502.0</td>
+      <td>30521.1</td>
+      <td>887.642</td>
+      <td>28551</td>
+      <td>30049</td>
+      <td>30861</td>
+      <td>30953</td>
+      <td>31502</td>
     </tr>
   </tbody>
 </table>

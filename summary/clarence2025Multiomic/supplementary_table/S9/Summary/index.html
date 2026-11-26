@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="98784eaeed3905f87d0790a88ccef1cd0876f26f8947ad0406a17a1e082aac2b">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic/supplementary_table/S9">S9</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Summary</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -779,10 +787,10 @@
     </tr>
     <tr>
       <th>16</th>
-      <td>22.0</td>
-      <td>19.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
+      <td>22</td>
+      <td>19</td>
+      <td>2</td>
+      <td>3</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -793,10 +801,10 @@
     </tr>
     <tr>
       <th>20</th>
-      <td>22.0</td>
-      <td>21.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
+      <td>22</td>
+      <td>21</td>
+      <td>1</td>
+      <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -807,10 +815,10 @@
     </tr>
     <tr>
       <th>17</th>
-      <td>21.0</td>
-      <td>17.0</td>
-      <td>4.0</td>
-      <td>3.0</td>
+      <td>21</td>
+      <td>17</td>
+      <td>4</td>
+      <td>3</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -821,10 +829,10 @@
     </tr>
     <tr>
       <th>16.1</th>
-      <td>21.0</td>
-      <td>21.0</td>
-      <td>6.0</td>
-      <td>1.0</td>
+      <td>21</td>
+      <td>21</td>
+      <td>6</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -835,10 +843,10 @@
     </tr>
     <tr>
       <th>14</th>
-      <td>21.0</td>
-      <td>19.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
+      <td>21</td>
+      <td>19</td>
+      <td>3</td>
+      <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -849,10 +857,10 @@
     </tr>
     <tr>
       <th>10</th>
-      <td>21.0</td>
-      <td>19.0</td>
-      <td>4.0</td>
-      <td>2.0</td>
+      <td>21</td>
+      <td>19</td>
+      <td>4</td>
+      <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -863,10 +871,10 @@
     </tr>
     <tr>
       <th>24</th>
-      <td>22.0</td>
-      <td>16.0</td>
-      <td>1.0</td>
-      <td>6.0</td>
+      <td>22</td>
+      <td>16</td>
+      <td>1</td>
+      <td>6</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -877,10 +885,10 @@
     </tr>
     <tr>
       <th>34</th>
-      <td>20.0</td>
-      <td>19.0</td>
-      <td>4.0</td>
-      <td>2.0</td>
+      <td>20</td>
+      <td>19</td>
+      <td>4</td>
+      <td>2</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -891,12 +899,12 @@
     </tr>
     <tr>
       <th>0.404761904761905</th>
-      <td>9.0</td>
+      <td>9</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.402184</td>
-      <td>0.084331</td>
+      <td>0.0843307</td>
       <td>0.25</td>
       <td>0.333333</td>
       <td>0.407895</td>

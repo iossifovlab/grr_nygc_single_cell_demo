@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="1c5629bb58ade05fe3fdf229fc63a95bd5f699b1f547c4cc6d1ddc9fcde599f1">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S3">S3</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">DEGs_by_cluster_PCW16-20</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -764,7 +772,7 @@
   <tbody>
     <tr>
       <th>AST_s13_DS_up</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -778,7 +786,7 @@
     </tr>
     <tr>
       <th>AST_s13_DS_down</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -834,7 +842,7 @@
     </tr>
     <tr>
       <th>RG_s14_DS_down</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1170,7 +1178,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s16_DS_down</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1198,7 +1206,7 @@
     </tr>
     <tr>
       <th>NEU_low_s15_DS_down</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1226,7 +1234,7 @@
     </tr>
     <tr>
       <th>NEU_SST_s12_DS_down</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1240,7 +1248,7 @@
     </tr>
     <tr>
       <th>AST_s13_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1254,7 +1262,7 @@
     </tr>
     <tr>
       <th>AST_s13_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1268,7 +1276,7 @@
     </tr>
     <tr>
       <th>RG_s9_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1282,7 +1290,7 @@
     </tr>
     <tr>
       <th>RG_s9_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1296,7 +1304,7 @@
     </tr>
     <tr>
       <th>RG_s14_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1310,7 +1318,7 @@
     </tr>
     <tr>
       <th>RG_s14_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1338,7 +1346,7 @@
     </tr>
     <tr>
       <th>RG_s6_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1352,7 +1360,7 @@
     </tr>
     <tr>
       <th>RG_prol_s11_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1366,7 +1374,7 @@
     </tr>
     <tr>
       <th>RG_prol_s11_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1380,7 +1388,7 @@
     </tr>
     <tr>
       <th>IPC_prol_s10_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1394,7 +1402,7 @@
     </tr>
     <tr>
       <th>IPC_prol_s10_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1436,7 +1444,7 @@
     </tr>
     <tr>
       <th>NEU_CUX2_s3_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1450,7 +1458,7 @@
     </tr>
     <tr>
       <th>NEU_CUX2_s3_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1478,7 +1486,7 @@
     </tr>
     <tr>
       <th>NEU_CUX2_s0_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1562,7 +1570,7 @@
     </tr>
     <tr>
       <th>NEU_RORB_s7_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1576,7 +1584,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s8_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1590,7 +1598,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s8_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1618,7 +1626,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s5_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1632,7 +1640,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s16_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1646,7 +1654,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s16_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1660,7 +1668,7 @@
     </tr>
     <tr>
       <th>NEU_low_s15_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1674,7 +1682,7 @@
     </tr>
     <tr>
       <th>NEU_low_s15_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1688,7 +1696,7 @@
     </tr>
     <tr>
       <th>NEU_SST_s12_DS_up_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1702,7 +1710,7 @@
     </tr>
     <tr>
       <th>NEU_SST_s12_DS_down_TF</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1716,7 +1724,7 @@
     </tr>
     <tr>
       <th>AST_s13_DS_up_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1730,7 +1738,7 @@
     </tr>
     <tr>
       <th>AST_s13_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1758,7 +1766,7 @@
     </tr>
     <tr>
       <th>RG_s9_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1786,7 +1794,7 @@
     </tr>
     <tr>
       <th>RG_s14_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1814,7 +1822,7 @@
     </tr>
     <tr>
       <th>RG_s6_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1842,7 +1850,7 @@
     </tr>
     <tr>
       <th>RG_prol_s11_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1870,7 +1878,7 @@
     </tr>
     <tr>
       <th>IPC_prol_s10_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1898,7 +1906,7 @@
     </tr>
     <tr>
       <th>IPC_s4_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1926,7 +1934,7 @@
     </tr>
     <tr>
       <th>NEU_CUX2_s3_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1954,7 +1962,7 @@
     </tr>
     <tr>
       <th>NEU_CUX2_s0_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1982,7 +1990,7 @@
     </tr>
     <tr>
       <th>NEU_CUX2_s2_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2010,7 +2018,7 @@
     </tr>
     <tr>
       <th>NEU_RORB_s1_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2038,7 +2046,7 @@
     </tr>
     <tr>
       <th>NEU_RORB_s7_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2066,7 +2074,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s8_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2094,7 +2102,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s5_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2122,7 +2130,7 @@
     </tr>
     <tr>
       <th>NEU_TLE4_s16_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2150,7 +2158,7 @@
     </tr>
     <tr>
       <th>NEU_low_s15_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2178,7 +2186,7 @@
     </tr>
     <tr>
       <th>NEU_SST_s12_DS_down_Chr21</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>

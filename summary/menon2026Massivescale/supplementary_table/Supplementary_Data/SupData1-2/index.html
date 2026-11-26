@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="d31fa75f51fa3a95cef3521d0db6aaa38522ef29beac7d051e7db59f1fb7f825">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Data">Supplementary_Data</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">SupData1-2</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -828,59 +836,59 @@
     </tr>
     <tr>
       <th>SignificantResults</th>
-      <td>196.0</td>
+      <td>196</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>441.168367</td>
-      <td>667.460704</td>
-      <td>0.0</td>
-      <td>3.0</td>
-      <td>110.0</td>
-      <td>688.0</td>
-      <td>2971.0</td>
+      <td>441.168</td>
+      <td>667.461</td>
+      <td>0</td>
+      <td>3</td>
+      <td>110</td>
+      <td>688</td>
+      <td>2971</td>
     </tr>
     <tr>
       <th>Ncells</th>
-      <td>196.0</td>
+      <td>196</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>207962.632653</td>
-      <td>363803.981221</td>
-      <td>0.0</td>
-      <td>18128.0</td>
-      <td>51313.0</td>
-      <td>179593.0</td>
-      <td>1656143.0</td>
+      <td>207963</td>
+      <td>363804</td>
+      <td>0</td>
+      <td>18128</td>
+      <td>51313</td>
+      <td>179593</td>
+      <td>1656143</td>
     </tr>
     <tr>
       <th>Nsamples</th>
-      <td>196.0</td>
+      <td>196</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>88.035714</td>
-      <td>18.933724</td>
-      <td>17.0</td>
-      <td>84.0</td>
-      <td>96.0</td>
-      <td>101.0</td>
-      <td>101.0</td>
+      <td>88.0357</td>
+      <td>18.9337</td>
+      <td>17</td>
+      <td>84</td>
+      <td>96</td>
+      <td>101</td>
+      <td>101</td>
     </tr>
     <tr>
       <th>Nvariants</th>
-      <td>196.0</td>
+      <td>196</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>426.454082</td>
-      <td>640.098777</td>
-      <td>0.0</td>
-      <td>3.0</td>
-      <td>106.0</td>
+      <td>426.454</td>
+      <td>640.099</td>
+      <td>0</td>
+      <td>3</td>
+      <td>106</td>
       <td>668.75</td>
-      <td>2819.0</td>
+      <td>2819</td>
     </tr>
   </tbody>
 </table>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="49d2665cc4747c90aea7fdd2cc257399939e4bfe535c6da1d07bdce01ab33e9d">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S5</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -807,10 +815,10 @@
     </tr>
     <tr>
       <th>Trait (PMID)</th>
-      <td>10220.0</td>
-      <td>10.0</td>
-      <td>34002096.0</td>
-      <td>1022.0</td>
+      <td>10220</td>
+      <td>10</td>
+      <td>34002096</td>
+      <td>1022</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -821,58 +829,58 @@
     </tr>
     <tr>
       <th>Regression P-value</th>
-      <td>10220.0</td>
+      <td>10220</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.31104</td>
       <td>0.293087</td>
-      <td>0.0</td>
-      <td>0.059097</td>
+      <td>2.25298e-18</td>
+      <td>0.0590973</td>
       <td>0.215402</td>
       <td>0.509124</td>
       <td>0.999998</td>
     </tr>
     <tr>
       <th>Regression coefficient</th>
-      <td>10220.0</td>
+      <td>10220</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.000001</td>
-      <td>-0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000001</td>
+      <td>2.56813e-08</td>
+      <td>6.49462e-08</td>
+      <td>-5.22221e-07</td>
+      <td>-4.31194e-10</td>
+      <td>1.50857e-08</td>
+      <td>4.71298e-08</td>
+      <td>7.78314e-07</td>
     </tr>
     <tr>
       <th>Coefficient (std.error)</th>
-      <td>10220.0</td>
+      <td>10220</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000001</td>
+      <td>4.03768e-08</td>
+      <td>4.16851e-08</td>
+      <td>3.14959e-09</td>
+      <td>1.28004e-08</td>
+      <td>3.16588e-08</td>
+      <td>5.36214e-08</td>
+      <td>1.03742e-06</td>
     </tr>
     <tr>
       <th>Prop._h2_std_error</th>
-      <td>10220.0</td>
+      <td>10220</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.023043</td>
-      <td>0.023622</td>
-      <td>0.000351</td>
-      <td>0.009145</td>
-      <td>0.014959</td>
-      <td>0.026178</td>
+      <td>0.0230434</td>
+      <td>0.0236224</td>
+      <td>0.000350757</td>
+      <td>0.00914487</td>
+      <td>0.0149594</td>
+      <td>0.0261778</td>
       <td>0.171537</td>
     </tr>
   </tbody>

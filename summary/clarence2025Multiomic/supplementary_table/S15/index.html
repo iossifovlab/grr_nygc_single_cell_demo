@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="dee64d397165aca5d6608903214ff66d40a4225ba446aff0aa012b3b7b90a1b1">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S15</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -765,17 +773,17 @@
   <tbody>
     <tr>
       <th>Index</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>11518.0</td>
-      <td>6649.776061</td>
-      <td>1.0</td>
+      <td>11518</td>
+      <td>6649.78</td>
+      <td>1</td>
       <td>5759.5</td>
-      <td>11518.0</td>
+      <td>11518</td>
       <td>17276.5</td>
-      <td>23035.0</td>
+      <td>23035</td>
     </tr>
     <tr>
       <th>Term</th>
@@ -807,27 +815,27 @@
     </tr>
     <tr>
       <th>P.value</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.325295</td>
       <td>0.265474</td>
-      <td>0.0</td>
-      <td>0.097814</td>
+      <td>1.54845e-54</td>
+      <td>0.0978141</td>
       <td>0.268364</td>
       <td>0.505833</td>
       <td>0.999996</td>
     </tr>
     <tr>
       <th>Adjusted.P.value</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.52847</td>
       <td>0.25362</td>
-      <td>0.0</td>
+      <td>3.09536e-51</td>
       <td>0.383371</td>
       <td>0.548534</td>
       <td>0.703653</td>
@@ -835,59 +843,59 @@
     </tr>
     <tr>
       <th>Old.P.value</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>Old.Adjusted.P.value</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>Odds.Ratio</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.594031</td>
-      <td>511.599826</td>
-      <td>0.041365</td>
-      <td>1.270675</td>
-      <td>2.138011</td>
-      <td>3.862254</td>
-      <td>77648.0</td>
+      <td>6.59403</td>
+      <td>511.6</td>
+      <td>0.0413653</td>
+      <td>1.27067</td>
+      <td>2.13801</td>
+      <td>3.86225</td>
+      <td>77648</td>
     </tr>
     <tr>
       <th>Combined.Score</th>
-      <td>23035.0</td>
+      <td>23035</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>63.917985</td>
-      <td>7224.277074</td>
-      <td>0.0</td>
+      <td>63.918</td>
+      <td>7224.28</td>
+      <td>1.79336e-07</td>
       <td>0.902561</td>
-      <td>3.109717</td>
-      <td>9.193099</td>
-      <td>1096161.615985</td>
+      <td>3.10972</td>
+      <td>9.1931</td>
+      <td>1.09616e+06</td>
     </tr>
     <tr>
       <th>Genes</th>

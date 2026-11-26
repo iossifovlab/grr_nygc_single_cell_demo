@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="83ec50e5678d7bd5652957466f5be66bc6e74f9109b82c85d752c6b3d3727fad">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics">liu2026Multiomics</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S6</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -862,17 +870,17 @@
   <tbody>
     <tr>
       <th>idx_uniq</th>
-      <td>508.0</td>
+      <td>508</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>253.582677</td>
-      <td>146.922926</td>
-      <td>0.0</td>
+      <td>253.583</td>
+      <td>146.923</td>
+      <td>0</td>
       <td>126.75</td>
       <td>253.5</td>
       <td>380.25</td>
-      <td>508.0</td>
+      <td>508</td>
     </tr>
     <tr>
       <th>motif_name</th>
@@ -918,17 +926,17 @@
     </tr>
     <tr>
       <th>total_instances_across_celltypes</th>
-      <td>508.0</td>
+      <td>508</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>312350.116142</td>
-      <td>1926122.15097</td>
-      <td>1.0</td>
-      <td>1278.0</td>
-      <td>7905.0</td>
-      <td>54238.75</td>
-      <td>34011538.0</td>
+      <td>312350</td>
+      <td>1.92612e+06</td>
+      <td>1</td>
+      <td>1278</td>
+      <td>7905</td>
+      <td>54238.8</td>
+      <td>34011538</td>
     </tr>
     <tr>
       <th>cwm_logo_fwd</th>
@@ -1044,17 +1052,17 @@
     </tr>
     <tr>
       <th>best_match_TOMTOM_qval</th>
-      <td>507.0</td>
+      <td>507</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.185865</td>
       <td>0.296925</td>
-      <td>0.0</td>
+      <td>3.75e-19</td>
       <td>0.000821</td>
-      <td>0.02732</td>
+      <td>0.0273204</td>
       <td>0.24232</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>best_match_TFs_in_family</th>
@@ -1086,17 +1094,17 @@
     </tr>
     <tr>
       <th>total_seqlets_across_celltypes</th>
-      <td>508.0</td>
+      <td>508</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>25459.718504</td>
-      <td>167926.793594</td>
-      <td>20.0</td>
+      <td>25459.7</td>
+      <td>167927</td>
+      <td>20</td>
       <td>38.75</td>
       <td>105.5</td>
-      <td>730.0</td>
-      <td>2803327.0</td>
+      <td>730</td>
+      <td>2803327</td>
     </tr>
     <tr>
       <th>merged_pattern</th>
@@ -1114,31 +1122,31 @@
     </tr>
     <tr>
       <th>n_constituent_motifs</th>
-      <td>508.0</td>
+      <td>508</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.677165</td>
-      <td>36.783686</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>327.0</td>
+      <td>10.6772</td>
+      <td>36.7837</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>327</td>
     </tr>
     <tr>
       <th>n_constituent_celltypes</th>
-      <td>508.0</td>
+      <td>508</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>9.153543</td>
-      <td>29.476164</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>189.0</td>
+      <td>9.15354</td>
+      <td>29.4762</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>189</td>
     </tr>
     <tr>
       <th>constituent_organs</th>

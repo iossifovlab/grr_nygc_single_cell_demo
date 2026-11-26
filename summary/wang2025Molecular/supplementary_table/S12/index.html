@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="3eab554ffc670a6f570a362423ef5a77666c5e8ab7e59c9d83ba13ed4bd87076">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S12</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -806,25 +814,25 @@
     </tr>
     <tr>
       <th>setSize</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>63.017681</td>
-      <td>82.77022</td>
-      <td>10.0</td>
-      <td>16.0</td>
-      <td>30.0</td>
-      <td>71.0</td>
-      <td>500.0</td>
+      <td>63.0177</td>
+      <td>82.7702</td>
+      <td>10</td>
+      <td>16</td>
+      <td>30</td>
+      <td>71</td>
+      <td>500</td>
     </tr>
     <tr>
       <th>enrichmentScore</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.000132</td>
+      <td>-0.000132347</td>
       <td>0.323432</td>
       <td>-0.896925</td>
       <td>-0.285047</td>
@@ -834,55 +842,55 @@
     </tr>
     <tr>
       <th>NES</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.005871</td>
-      <td>1.094252</td>
-      <td>-2.653992</td>
+      <td>-0.00587101</td>
+      <td>1.09425</td>
+      <td>-2.65399</td>
       <td>-1.0248</td>
       <td>-0.42792</td>
-      <td>1.013934</td>
-      <td>2.917952</td>
+      <td>1.01393</td>
+      <td>2.91795</td>
     </tr>
     <tr>
       <th>pvalue</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.444293</td>
       <td>0.3066</td>
-      <td>0.0</td>
+      <td>1e-10</td>
       <td>0.16219</td>
       <td>0.421471</td>
       <td>0.711466</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>p.adjust</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.776256</td>
       <td>0.23994</td>
-      <td>0.0</td>
+      <td>2.06654e-08</td>
       <td>0.673089</td>
       <td>0.862796</td>
       <td>0.958417</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>qvalue</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.733792</td>
       <td>0.235144</td>
-      <td>0.0</td>
+      <td>1.71134e-08</td>
       <td>0.62758</td>
       <td>0.81417</td>
       <td>0.915959</td>
@@ -890,17 +898,17 @@
     </tr>
     <tr>
       <th>rank</th>
-      <td>56387.0</td>
+      <td>56387</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2014.070371</td>
-      <td>1019.283083</td>
-      <td>1.0</td>
-      <td>1333.0</td>
-      <td>1928.0</td>
-      <td>2602.0</td>
-      <td>11074.0</td>
+      <td>2014.07</td>
+      <td>1019.28</td>
+      <td>1</td>
+      <td>1333</td>
+      <td>1928</td>
+      <td>2602</td>
+      <td>11074</td>
     </tr>
     <tr>
       <th>leading_edge</th>

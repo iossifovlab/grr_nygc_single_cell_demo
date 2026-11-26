@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="64bc5c08ab8acaba58b94c101fe8bd4a73c073de46bea9abbbbb58978b8d868b">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S16</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -792,17 +800,17 @@
     </tr>
     <tr>
       <th>Estimated_postconceptional_age_in_days</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>822.637362</td>
-      <td>1647.551154</td>
-      <td>54.0</td>
-      <td>91.0</td>
-      <td>147.0</td>
-      <td>455.0</td>
-      <td>5353.0</td>
+      <td>822.637</td>
+      <td>1647.55</td>
+      <td>54</td>
+      <td>91</td>
+      <td>147</td>
+      <td>455</td>
+      <td>5353</td>
     </tr>
     <tr>
       <th>Group</th>
@@ -890,283 +898,283 @@
     </tr>
     <tr>
       <th>Mclust_cluster</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>11.289511</td>
-      <td>6.284977</td>
-      <td>1.0</td>
-      <td>6.0</td>
-      <td>11.0</td>
-      <td>17.0</td>
-      <td>23.0</td>
+      <td>11.2895</td>
+      <td>6.28498</td>
+      <td>1</td>
+      <td>6</td>
+      <td>11</td>
+      <td>17</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>EN.L2_3.IT_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.378179</td>
       <td>0.464809</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L4.IT_V1_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.40166</td>
       <td>0.470988</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L4.IT_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.381971</td>
       <td>0.463226</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L5.IT_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.393829</td>
       <td>0.464859</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L6.IT_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.391759</td>
       <td>0.48004</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L5_6.NP_EN.L5.ET_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.283138</td>
       <td>0.442541</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L6.CT_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.297501</td>
       <td>0.447097</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L6b_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.31145</td>
       <td>0.448298</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>RG_lineageWeight</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.126182</td>
       <td>0.329755</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>EN.L2_3.IT_pseudotime</th>
-      <td>57767.0</td>
+      <td>57767</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>13.181975</td>
-      <td>6.688284</td>
+      <td>13.182</td>
+      <td>6.68828</td>
       <td>0.271934</td>
-      <td>8.219717</td>
-      <td>13.785215</td>
-      <td>19.544765</td>
-      <td>23.50938</td>
+      <td>8.21972</td>
+      <td>13.7852</td>
+      <td>19.5448</td>
+      <td>23.5094</td>
     </tr>
     <tr>
       <th>EN.L4.IT_V1_pseudotime</th>
-      <td>59626.0</td>
+      <td>59626</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>13.667737</td>
-      <td>7.084841</td>
+      <td>13.6677</td>
+      <td>7.08484</td>
       <td>0.271934</td>
-      <td>8.687329</td>
-      <td>13.969792</td>
-      <td>19.763276</td>
-      <td>26.442005</td>
+      <td>8.68733</td>
+      <td>13.9698</td>
+      <td>19.7633</td>
+      <td>26.442</td>
     </tr>
     <tr>
       <th>EN.L4.IT_pseudotime</th>
-      <td>58683.0</td>
+      <td>58683</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>13.425634</td>
-      <td>6.952742</td>
+      <td>13.4256</td>
+      <td>6.95274</td>
       <td>0.271933</td>
       <td>8.42498</td>
-      <td>13.828171</td>
-      <td>19.19408</td>
-      <td>26.156264</td>
+      <td>13.8282</td>
+      <td>19.1941</td>
+      <td>26.1563</td>
     </tr>
     <tr>
       <th>EN.L5.IT_pseudotime</th>
-      <td>60261.0</td>
+      <td>60261</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>13.656285</td>
-      <td>7.016913</td>
+      <td>13.6563</td>
+      <td>7.01691</td>
       <td>0.271933</td>
       <td>8.81182</td>
-      <td>14.037392</td>
-      <td>19.386453</td>
-      <td>26.484948</td>
+      <td>14.0374</td>
+      <td>19.3865</td>
+      <td>26.4849</td>
     </tr>
     <tr>
       <th>EN.L6.IT_pseudotime</th>
-      <td>54748.0</td>
+      <td>54748</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>12.88738</td>
-      <td>6.754145</td>
+      <td>12.8874</td>
+      <td>6.75415</td>
       <td>0.271937</td>
-      <td>7.618197</td>
-      <td>12.995535</td>
-      <td>18.843068</td>
-      <td>23.732125</td>
+      <td>7.6182</td>
+      <td>12.9955</td>
+      <td>18.8431</td>
+      <td>23.7321</td>
     </tr>
     <tr>
       <th>EN.L5_6.NP_EN.L5.ET_pseudotime</th>
-      <td>40416.0</td>
+      <td>40416</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.450156</td>
-      <td>6.155591</td>
+      <td>10.4502</td>
+      <td>6.15559</td>
       <td>0.271934</td>
       <td>4.90651</td>
-      <td>10.888546</td>
-      <td>14.291623</td>
-      <td>24.988167</td>
+      <td>10.8885</td>
+      <td>14.2916</td>
+      <td>24.9882</td>
     </tr>
     <tr>
       <th>EN.L6.CT_pseudotime</th>
-      <td>42585.0</td>
+      <td>42585</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>11.420509</td>
-      <td>6.988963</td>
+      <td>11.4205</td>
+      <td>6.98896</td>
       <td>0.27193</td>
-      <td>5.251295</td>
-      <td>11.271644</td>
-      <td>14.638231</td>
-      <td>24.007487</td>
+      <td>5.25129</td>
+      <td>11.2716</td>
+      <td>14.6382</td>
+      <td>24.0075</td>
     </tr>
     <tr>
       <th>EN.L6b_pseudotime</th>
-      <td>46638.0</td>
+      <td>46638</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>12.746154</td>
-      <td>7.819169</td>
+      <td>12.7462</td>
+      <td>7.81917</td>
       <td>0.271934</td>
-      <td>6.178145</td>
-      <td>11.998063</td>
-      <td>21.168934</td>
-      <td>25.413512</td>
+      <td>6.17815</td>
+      <td>11.9981</td>
+      <td>21.1689</td>
+      <td>25.4135</td>
     </tr>
     <tr>
       <th>RG_pseudotime</th>
-      <td>17589.0</td>
+      <td>17589</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.405244</td>
-      <td>2.031688</td>
-      <td>0.0</td>
-      <td>1.542564</td>
-      <td>2.938344</td>
-      <td>5.474385</td>
-      <td>7.384903</td>
+      <td>3.40524</td>
+      <td>2.03169</td>
+      <td>0</td>
+      <td>1.54256</td>
+      <td>2.93834</td>
+      <td>5.47438</td>
+      <td>7.3849</td>
     </tr>
     <tr>
       <th>Average_pseudotime</th>
-      <td>134109.0</td>
+      <td>134109</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>17.180965</td>
-      <td>7.154669</td>
-      <td>0.0</td>
-      <td>12.223069</td>
-      <td>20.357593</td>
-      <td>22.368085</td>
-      <td>26.484948</td>
+      <td>17.181</td>
+      <td>7.15467</td>
+      <td>0</td>
+      <td>12.2231</td>
+      <td>20.3576</td>
+      <td>22.3681</td>
+      <td>26.4849</td>
     </tr>
   </tbody>
 </table>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="d31fe8312da3229dc1ace9c8c041557f88205ec463c5afb20d81ecfead02c25d">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic">zemke2024Epigenetic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2024Epigenetic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S4</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -780,35 +788,35 @@
     </tr>
     <tr>
       <th>p_val</th>
-      <td>791.0</td>
+      <td>791</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>2.23838e-30</td>
+      <td>3.66211e-29</td>
+      <td>0</td>
+      <td>1.01841e-306</td>
+      <td>1.06987e-169</td>
+      <td>2.5683e-93</td>
+      <td>7.15512e-28</td>
     </tr>
     <tr>
       <th>avg_log2FC</th>
-      <td>791.0</td>
+      <td>791</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.625241</td>
-      <td>1.695217</td>
-      <td>-6.230885</td>
-      <td>-1.032604</td>
-      <td>1.194536</td>
-      <td>1.610538</td>
-      <td>4.360232</td>
+      <td>1.69522</td>
+      <td>-6.23088</td>
+      <td>-1.0326</td>
+      <td>1.19454</td>
+      <td>1.61054</td>
+      <td>4.36023</td>
     </tr>
     <tr>
       <th>pct.Astro1</th>
-      <td>791.0</td>
+      <td>791</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -822,7 +830,7 @@
     </tr>
     <tr>
       <th>pct.Astro2</th>
-      <td>791.0</td>
+      <td>791</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -836,17 +844,17 @@
     </tr>
     <tr>
       <th>p_val_adj</th>
-      <td>791.0</td>
+      <td>791</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>4.89891e-26</td>
+      <td>8.0149e-25</td>
+      <td>0</td>
+      <td>2.22889e-302</td>
+      <td>2.34151e-165</td>
+      <td>5.62099e-89</td>
+      <td>1.56597e-23</td>
     </tr>
     <tr>
       <th>marker_gene</th>

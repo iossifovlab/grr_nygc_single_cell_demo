@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="1c95dac756bb1a8529daf6d2014fe2414d85b642f2c41ee5863cc1d69039ea1c">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S9</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -806,45 +814,45 @@
     </tr>
     <tr>
       <th>Technical_replicate_number</th>
-      <td>20.0</td>
+      <td>20</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1.1</td>
       <td>0.307794</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>Cells per probe barcode</th>
-      <td>20.0</td>
+      <td>20</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>8439.0</td>
-      <td>1282.417659</td>
-      <td>6882.0</td>
-      <td>7432.0</td>
+      <td>8439</td>
+      <td>1282.42</td>
+      <td>6882</td>
+      <td>7432</td>
       <td>8194.5</td>
       <td>9438.75</td>
-      <td>11083.0</td>
+      <td>11083</td>
     </tr>
     <tr>
       <th>UMIs per probe barcode</th>
-      <td>20.0</td>
+      <td>20</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>68801602.95</td>
-      <td>17983830.117529</td>
-      <td>36249317.0</td>
-      <td>58231134.0</td>
-      <td>66624657.5</td>
-      <td>81849615.5</td>
-      <td>103095813.0</td>
+      <td>6.88016e+07</td>
+      <td>1.79838e+07</td>
+      <td>36249317</td>
+      <td>58231134</td>
+      <td>6.66247e+07</td>
+      <td>8.18496e+07</td>
+      <td>103095813</td>
     </tr>
   </tbody>
 </table>

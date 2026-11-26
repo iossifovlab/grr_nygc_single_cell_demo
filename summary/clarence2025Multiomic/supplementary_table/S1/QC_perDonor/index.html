@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="f4f535397374b2cbd216767d9b46792224db14fbaec630663561816721243138">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/clarence2025Multiomic/supplementary_table/S1">S1</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">QC_perDonor</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -779,91 +787,91 @@
     </tr>
     <tr>
       <th>mean_nCount_RNA</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6079.350905</td>
-      <td>681.790147</td>
-      <td>4882.230004</td>
-      <td>5677.155692</td>
-      <td>6185.312984</td>
-      <td>6634.008187</td>
-      <td>6888.618945</td>
+      <td>6079.35</td>
+      <td>681.79</td>
+      <td>4882.23</td>
+      <td>5677.16</td>
+      <td>6185.31</td>
+      <td>6634.01</td>
+      <td>6888.62</td>
     </tr>
     <tr>
       <th>median_nCount_RNA</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>4164.95</td>
-      <td>720.346076</td>
-      <td>3082.0</td>
+      <td>720.346</td>
+      <td>3082</td>
       <td>3634.75</td>
       <td>4105.5</td>
       <td>4644.75</td>
-      <td>5527.0</td>
+      <td>5527</td>
     </tr>
     <tr>
       <th>mean_nFeature_RNA</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2038.142808</td>
-      <td>150.842695</td>
-      <td>1803.074952</td>
-      <td>1938.257061</td>
-      <td>2072.314299</td>
-      <td>2114.955249</td>
-      <td>2259.262573</td>
+      <td>2038.14</td>
+      <td>150.843</td>
+      <td>1803.07</td>
+      <td>1938.26</td>
+      <td>2072.31</td>
+      <td>2114.96</td>
+      <td>2259.26</td>
     </tr>
     <tr>
       <th>median_nFeature_RNA</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1855.85</td>
-      <td>151.393536</td>
-      <td>1642.0</td>
+      <td>151.394</td>
+      <td>1642</td>
       <td>1725.5</td>
       <td>1885.25</td>
       <td>1940.5</td>
-      <td>2137.0</td>
+      <td>2137</td>
     </tr>
     <tr>
       <th>mean_mitoRatio</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.003537</td>
-      <td>0.001868</td>
-      <td>0.001101</td>
-      <td>0.00214</td>
-      <td>0.003062</td>
-      <td>0.004932</td>
-      <td>0.00645</td>
+      <td>0.00353715</td>
+      <td>0.00186844</td>
+      <td>0.00110113</td>
+      <td>0.00214013</td>
+      <td>0.00306223</td>
+      <td>0.00493214</td>
+      <td>0.00645027</td>
     </tr>
     <tr>
       <th>median_mitoRatio</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.001417</td>
-      <td>0.000855</td>
-      <td>0.000347</td>
-      <td>0.000762</td>
-      <td>0.001139</td>
-      <td>0.002188</td>
-      <td>0.002797</td>
+      <td>0.00141716</td>
+      <td>0.000855057</td>
+      <td>0.000347222</td>
+      <td>0.000761639</td>
+      <td>0.0011394</td>
+      <td>0.00218779</td>
+      <td>0.00279677</td>
     </tr>
     <tr>
       <th>mean_percent_ribo</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -873,11 +881,11 @@
       <td>0.422769</td>
       <td>0.535566</td>
       <td>0.682689</td>
-      <td>1.679376</td>
+      <td>1.67938</td>
     </tr>
     <tr>
       <th>median_percent_ribo</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -891,91 +899,91 @@
     </tr>
     <tr>
       <th>mean_nCount_ATAC</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10414.15766</td>
-      <td>3433.280101</td>
-      <td>4064.729988</td>
-      <td>8196.514608</td>
-      <td>11083.928994</td>
-      <td>13253.286728</td>
-      <td>14166.013206</td>
+      <td>10414.2</td>
+      <td>3433.28</td>
+      <td>4064.73</td>
+      <td>8196.51</td>
+      <td>11083.9</td>
+      <td>13253.3</td>
+      <td>14166</td>
     </tr>
     <tr>
       <th>median_nCount_ATAC</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>8037.35</td>
-      <td>2802.853854</td>
+      <td>2802.85</td>
       <td>3382.5</td>
-      <td>5896.375</td>
+      <td>5896.38</td>
       <td>8849.75</td>
-      <td>10128.0</td>
-      <td>11950.0</td>
+      <td>10128</td>
+      <td>11950</td>
     </tr>
     <tr>
       <th>mean_nFeature_ATAC</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4083.631479</td>
-      <td>1105.309467</td>
-      <td>1885.0569</td>
-      <td>3419.90627</td>
-      <td>4536.533407</td>
-      <td>4929.116299</td>
-      <td>5166.765288</td>
+      <td>4083.63</td>
+      <td>1105.31</td>
+      <td>1885.06</td>
+      <td>3419.91</td>
+      <td>4536.53</td>
+      <td>4929.12</td>
+      <td>5166.77</td>
     </tr>
     <tr>
       <th>median_nFeature_ATAC</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>3484.55</td>
-      <td>1031.363215</td>
+      <td>1031.36</td>
       <td>1630.5</td>
-      <td>2741.625</td>
+      <td>2741.62</td>
       <td>3806.75</td>
-      <td>4314.0</td>
-      <td>4702.0</td>
+      <td>4314</td>
+      <td>4702</td>
     </tr>
     <tr>
       <th>mean_TSS_enrichment</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.492523</td>
+      <td>3.49252</td>
       <td>0.378586</td>
-      <td>3.018762</td>
-      <td>3.113195</td>
-      <td>3.620147</td>
-      <td>3.746574</td>
-      <td>4.021559</td>
+      <td>3.01876</td>
+      <td>3.1132</td>
+      <td>3.62015</td>
+      <td>3.74657</td>
+      <td>4.02156</td>
     </tr>
     <tr>
       <th>median_TSS_enrichment</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.444584</td>
+      <td>3.44458</td>
       <td>0.41</td>
-      <td>2.897103</td>
-      <td>3.074153</td>
-      <td>3.579564</td>
-      <td>3.709634</td>
-      <td>4.008072</td>
+      <td>2.8971</td>
+      <td>3.07415</td>
+      <td>3.57956</td>
+      <td>3.70963</td>
+      <td>4.00807</td>
     </tr>
     <tr>
       <th>mean_nucleosome_signal</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -983,13 +991,13 @@
       <td>0.100564</td>
       <td>0.854</td>
       <td>0.884136</td>
-      <td>1.008419</td>
-      <td>1.024396</td>
-      <td>1.176538</td>
+      <td>1.00842</td>
+      <td>1.0244</td>
+      <td>1.17654</td>
     </tr>
     <tr>
       <th>median_nucleosome_signal</th>
-      <td>10.0</td>
+      <td>10</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -998,8 +1006,8 @@
       <td>0.803753</td>
       <td>0.873519</td>
       <td>0.969989</td>
-      <td>1.000653</td>
-      <td>1.148991</td>
+      <td>1.00065</td>
+      <td>1.14899</td>
     </tr>
   </tbody>
 </table>
