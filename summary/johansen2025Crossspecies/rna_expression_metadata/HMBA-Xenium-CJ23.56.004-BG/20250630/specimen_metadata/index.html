@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="83f2400182f9169734862df358925bf3d28cb5afc88d8e4093e85bd8386a8aad">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Xenium-CJ23.56.004-BG">HMBA-Xenium-CJ23.56.004-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Xenium-CJ23.56.004-BG/20250630">20250630</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">specimen_metadata</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,31 +791,31 @@
     </tr>
     <tr>
       <th>brain_section_barcode</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1385154905.956522</td>
-      <td>2711428.264106</td>
-      <td>1382033286.0</td>
-      <td>1382041469.5</td>
-      <td>1386592320.5</td>
-      <td>1388126560.0</td>
-      <td>1388175626.0</td>
+      <td>1.38515e+09</td>
+      <td>2.71143e+06</td>
+      <td>1382033286</td>
+      <td>1.38204e+09</td>
+      <td>1.38659e+09</td>
+      <td>1388126560</td>
+      <td>1388175626</td>
     </tr>
     <tr>
       <th>brain_section_thickness</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.0</td>
-      <td>0.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>brain_section_plane_of_section</th>
@@ -825,31 +833,31 @@
     </tr>
     <tr>
       <th>brain_section_ordinal</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>193.478261</td>
-      <td>119.551707</td>
-      <td>7.0</td>
+      <td>193.478</td>
+      <td>119.552</td>
+      <td>7</td>
       <td>92.75</td>
-      <td>187.0</td>
+      <td>187</td>
       <td>282.25</td>
-      <td>427.0</td>
+      <td>427</td>
     </tr>
     <tr>
       <th>brain_section_depth</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1934.782609</td>
-      <td>1195.517069</td>
-      <td>70.0</td>
+      <td>1934.78</td>
+      <td>1195.52</td>
+      <td>70</td>
       <td>927.5</td>
-      <td>1870.0</td>
+      <td>1870</td>
       <td>2822.5</td>
-      <td>4270.0</td>
+      <td>4270</td>
     </tr>
     <tr>
       <th>section_set_label</th>
@@ -867,31 +875,31 @@
     </tr>
     <tr>
       <th>section_set_ordinal</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.304348</td>
-      <td>5.977252</td>
-      <td>1.0</td>
+      <td>10.3043</td>
+      <td>5.97725</td>
+      <td>1</td>
       <td>5.25</td>
-      <td>10.0</td>
+      <td>10</td>
       <td>14.75</td>
-      <td>22.0</td>
+      <td>22</td>
     </tr>
     <tr>
       <th>section_set_base_ordinal</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>187.086957</td>
-      <td>119.545031</td>
-      <td>1.0</td>
-      <td>86.0</td>
-      <td>181.0</td>
-      <td>276.0</td>
-      <td>421.0</td>
+      <td>187.087</td>
+      <td>119.545</td>
+      <td>1</td>
+      <td>86</td>
+      <td>181</td>
+      <td>276</td>
+      <td>421</td>
     </tr>
     <tr>
       <th>brain_block_label</th>
@@ -909,17 +917,17 @@
     </tr>
     <tr>
       <th>brain_block_number</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>42.869565</td>
+      <td>42.8696</td>
       <td>0.832898</td>
-      <td>42.0</td>
-      <td>42.0</td>
-      <td>43.0</td>
-      <td>44.0</td>
-      <td>44.0</td>
+      <td>42</td>
+      <td>42</td>
+      <td>43</td>
+      <td>44</td>
+      <td>44</td>
     </tr>
     <tr>
       <th>brain_slab_label</th>
@@ -937,31 +945,31 @@
     </tr>
     <tr>
       <th>brain_slab_ordinal</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>42.869565</td>
+      <td>42.8696</td>
       <td>0.832898</td>
-      <td>42.0</td>
-      <td>42.0</td>
-      <td>43.0</td>
-      <td>44.0</td>
-      <td>44.0</td>
+      <td>42</td>
+      <td>42</td>
+      <td>43</td>
+      <td>44</td>
+      <td>44</td>
     </tr>
     <tr>
       <th>brain_slab_thickness</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>hemisphere</th>
@@ -993,17 +1001,17 @@
     </tr>
     <tr>
       <th>brain_division_ordinal</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>donor_label</th>
@@ -1021,17 +1029,17 @@
     </tr>
     <tr>
       <th>slab_plane_ordinal</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.304348</td>
-      <td>5.977252</td>
-      <td>1.0</td>
+      <td>10.3043</td>
+      <td>5.97725</td>
+      <td>1</td>
       <td>5.25</td>
-      <td>10.0</td>
+      <td>10</td>
       <td>14.75</td>
-      <td>22.0</td>
+      <td>22</td>
     </tr>
     <tr>
       <th>slab_plane_label</th>
@@ -1049,17 +1057,17 @@
     </tr>
     <tr>
       <th>slab_plane_order</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>14297.26087</td>
-      <td>82.320089</td>
-      <td>14201.0</td>
-      <td>14214.25</td>
-      <td>14307.0</td>
+      <td>14297.3</td>
+      <td>82.3201</td>
+      <td>14201</td>
+      <td>14214.2</td>
+      <td>14307</td>
       <td>14402.5</td>
-      <td>14414.0</td>
+      <td>14414</td>
     </tr>
   </tbody>
 </table>

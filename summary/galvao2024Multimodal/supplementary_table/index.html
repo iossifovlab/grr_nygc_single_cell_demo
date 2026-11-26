@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="07727ab6f195662c73f3e7db8ffa1ad5b4ffd02dd0c9a1fad64ea0fb17c57e0a">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../index.html#/summary/galvao2024Multimodal">galvao2024Multimodal</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">supplementary_table</span>
       </div>
+      <a id="nav-about" href="../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -764,35 +772,35 @@
   <tbody>
     <tr>
       <th>p_val</th>
-      <td>5006.0</td>
+      <td>5006</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>8438600.992118</td>
-      <td>24463801.212552</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>83.491054</td>
-      <td>923294.658238</td>
-      <td>154600230.880428</td>
+      <td>8.4386e+06</td>
+      <td>2.44638e+07</td>
+      <td>0</td>
+      <td>8.93277e-10</td>
+      <td>83.4911</td>
+      <td>923295</td>
+      <td>1.546e+08</td>
     </tr>
     <tr>
       <th>avg_log2FC</th>
-      <td>5006.0</td>
+      <td>5006</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1689.276165</td>
-      <td>1799.978877</td>
+      <td>1689.28</td>
+      <td>1799.98</td>
       <td>0.253</td>
       <td>0.886</td>
-      <td>1358.0</td>
+      <td>1358</td>
       <td>2602.5</td>
-      <td>9209.0</td>
+      <td>9209</td>
     </tr>
     <tr>
       <th>pct.1</th>
-      <td>5006.0</td>
+      <td>5006</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -802,35 +810,35 @@
       <td>0.114</td>
       <td>0.262</td>
       <td>0.466</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>pct.2</th>
-      <td>5006.0</td>
+      <td>5006</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.164647</td>
       <td>0.188171</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.023</td>
       <td>0.097</td>
       <td>0.243</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>p_val_adj</th>
-      <td>5006.0</td>
+      <td>5006</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>320123698.456686</td>
-      <td>1287938417.131845</td>
-      <td>0.0</td>
-      <td>0.00003</td>
-      <td>0.013236</td>
-      <td>290455.025689</td>
-      <td>9963072292.17219</td>
+      <td>3.20124e+08</td>
+      <td>1.28794e+09</td>
+      <td>0</td>
+      <td>3.00683e-05</td>
+      <td>0.0132356</td>
+      <td>290455</td>
+      <td>9.96307e+09</td>
     </tr>
     <tr>
       <th>cluster</th>

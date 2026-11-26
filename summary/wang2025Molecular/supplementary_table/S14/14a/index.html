@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="aa00ab1bf38f1a8b5b23361b95f84c86158cf6c48b4e9c1166ae6caba1f9d98e">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S14">S14</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">14a</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,45 +786,45 @@
     </tr>
     <tr>
       <th>npeaks</th>
-      <td>24.0</td>
+      <td>24</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>18952.583333</td>
-      <td>7546.936257</td>
-      <td>11836.0</td>
-      <td>13589.0</td>
+      <td>18952.6</td>
+      <td>7546.94</td>
+      <td>11836</td>
+      <td>13589</td>
       <td>17344.5</td>
-      <td>20398.25</td>
-      <td>41177.0</td>
+      <td>20398.2</td>
+      <td>41177</td>
     </tr>
     <tr>
       <th>OR</th>
-      <td>24.0</td>
+      <td>24</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.635613</td>
-      <td>2.279794</td>
-      <td>0.0</td>
-      <td>1.066697</td>
-      <td>1.920583</td>
-      <td>3.505983</td>
-      <td>10.043112</td>
+      <td>2.63561</td>
+      <td>2.27979</td>
+      <td>0</td>
+      <td>1.0667</td>
+      <td>1.92058</td>
+      <td>3.50598</td>
+      <td>10.0431</td>
     </tr>
     <tr>
       <th>FDR</th>
-      <td>24.0</td>
+      <td>24</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.226423</td>
       <td>0.345967</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.01733</td>
+      <td>1.74e-63</td>
+      <td>2.07e-07</td>
+      <td>0.0173304</td>
       <td>0.32683</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>

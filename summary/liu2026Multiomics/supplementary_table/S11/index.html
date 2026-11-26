@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="39d52a9bd195d996119f6328d7ae624abc3cafaffc90fe6007eaaf71676e91c3">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics">liu2026Multiomics</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S11</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -958,56 +966,56 @@
     </tr>
     <tr>
       <th>susie</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.96226</td>
-      <td>0.05693</td>
+      <td>0.0569305</td>
       <td>0.80364</td>
       <td>0.956911</td>
       <td>0.990624</td>
       <td>0.999278</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>z</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.731037</td>
+      <td>3.73104</td>
       <td>0.842621</td>
-      <td>2.693304</td>
-      <td>3.189951</td>
+      <td>2.6933</td>
+      <td>3.18995</td>
       <td>3.40872</td>
-      <td>4.184051</td>
-      <td>6.433906</td>
+      <td>4.18405</td>
+      <td>6.43391</td>
     </tr>
     <tr>
       <th>p</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000595</td>
-      <td>0.000816</td>
-      <td>0.0</td>
-      <td>0.000014</td>
-      <td>0.000326</td>
-      <td>0.000712</td>
+      <td>0.000595455</td>
+      <td>0.000816166</td>
+      <td>6.218e-11</td>
+      <td>1.43425e-05</td>
+      <td>0.00032635</td>
+      <td>0.000711775</td>
       <td>0.003537</td>
     </tr>
     <tr>
       <th>FDR</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.014892</td>
-      <td>0.014587</td>
-      <td>0.0</td>
-      <td>0.001268</td>
+      <td>0.0148921</td>
+      <td>0.0145867</td>
+      <td>1.546e-08</td>
+      <td>0.00126775</td>
       <td>0.012175</td>
       <td>0.02516</td>
       <td>0.04988</td>
@@ -1028,31 +1036,31 @@
     </tr>
     <tr>
       <th>motifStart.hg38</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79813435.928571</td>
-      <td>59391049.119374</td>
-      <td>6051175.0</td>
-      <td>30028142.0</td>
-      <td>67121281.0</td>
-      <td>113194849.5</td>
-      <td>236465833.0</td>
+      <td>7.98134e+07</td>
+      <td>5.9391e+07</td>
+      <td>6051175</td>
+      <td>30028142</td>
+      <td>67121281</td>
+      <td>1.13195e+08</td>
+      <td>236465833</td>
     </tr>
     <tr>
       <th>motifEnd.hg38</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79813443.379121</td>
-      <td>59391049.794081</td>
-      <td>6051182.0</td>
-      <td>30028146.0</td>
-      <td>67121288.0</td>
-      <td>113194855.25</td>
-      <td>236465839.0</td>
+      <td>7.98134e+07</td>
+      <td>5.9391e+07</td>
+      <td>6051182</td>
+      <td>30028146</td>
+      <td>67121288</td>
+      <td>1.13195e+08</td>
+      <td>236465839</td>
     </tr>
     <tr>
       <th>motifChr.hg19</th>
@@ -1070,31 +1078,31 @@
     </tr>
     <tr>
       <th>motifStart.hg19</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79787364.879121</td>
-      <td>59370553.769914</td>
-      <td>6093138.0</td>
-      <td>30317071.0</td>
-      <td>67413619.0</td>
-      <td>113597677.75</td>
-      <td>236629133.0</td>
+      <td>7.97874e+07</td>
+      <td>5.93706e+07</td>
+      <td>6093138</td>
+      <td>30317071</td>
+      <td>67413619</td>
+      <td>1.13598e+08</td>
+      <td>236629133</td>
     </tr>
     <tr>
       <th>motifEnd.hg19</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79787372.32967</td>
-      <td>59370554.437376</td>
-      <td>6093145.0</td>
-      <td>30317075.0</td>
-      <td>67413626.0</td>
-      <td>113597685.0</td>
-      <td>236629139.0</td>
+      <td>7.97874e+07</td>
+      <td>5.93706e+07</td>
+      <td>6093145</td>
+      <td>30317075</td>
+      <td>67413626</td>
+      <td>113597685</td>
+      <td>236629139</td>
     </tr>
     <tr>
       <th>snpChr.hg38</th>
@@ -1112,17 +1120,17 @@
     </tr>
     <tr>
       <th>snpPos.hg38</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79813439.467033</td>
-      <td>59391049.550032</td>
-      <td>6051176.0</td>
-      <td>30028144.0</td>
-      <td>67121286.0</td>
-      <td>113194852.5</td>
-      <td>236465834.0</td>
+      <td>7.98134e+07</td>
+      <td>5.9391e+07</td>
+      <td>6051176</td>
+      <td>30028144</td>
+      <td>67121286</td>
+      <td>1.13195e+08</td>
+      <td>236465834</td>
     </tr>
     <tr>
       <th>snpChr.hg19</th>
@@ -1140,17 +1148,17 @@
     </tr>
     <tr>
       <th>snpPos.hg19</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79787368.417582</td>
-      <td>59370554.197398</td>
-      <td>6093139.0</td>
-      <td>30317073.0</td>
-      <td>67413624.0</td>
-      <td>113597681.25</td>
-      <td>236629134.0</td>
+      <td>7.97874e+07</td>
+      <td>5.93706e+07</td>
+      <td>6093139</td>
+      <td>30317073</td>
+      <td>67413624</td>
+      <td>1.13598e+08</td>
+      <td>236629134</td>
     </tr>
     <tr>
       <th>rsid</th>
@@ -1182,31 +1190,31 @@
     </tr>
     <tr>
       <th>found_in_X_adult_peaksets</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.928571</td>
-      <td>7.690875</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>3.92857</td>
+      <td>7.69088</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.5</td>
       <td>4.75</td>
-      <td>48.0</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>total_adult_peaksets</th>
-      <td>182.0</td>
+      <td>182</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.906593</td>
-      <td>12.770696</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>4.0</td>
-      <td>8.0</td>
-      <td>69.0</td>
+      <td>6.90659</td>
+      <td>12.7707</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>8</td>
+      <td>69</td>
     </tr>
     <tr>
       <th>found_in_min_2_peakset</th>

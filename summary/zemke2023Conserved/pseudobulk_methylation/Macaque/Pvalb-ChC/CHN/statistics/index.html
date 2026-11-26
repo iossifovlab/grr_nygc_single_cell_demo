@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="6dc472e7be4c79c4afcb26c61cdac3e43fab5f9c7fc7deb678f5092fded6bc75">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2023Conserved">zemke2023Conserved</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2023Conserved/pseudobulk_methylation">pseudobulk_methylation</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2023Conserved/pseudobulk_methylation/Macaque">Macaque</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/zemke2023Conserved/pseudobulk_methylation/Macaque/Pvalb-ChC">Pvalb-ChC</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../summary/zemke2023Conserved/pseudobulk_methylation/Macaque/Pvalb-ChC/CHN/index.html">CHN</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -328,8 +333,8 @@
             <td class="nowrap">
                 <a href='coverage.json'>coverage.json</a>
             </td>
-            <td class="nowrap">21.64 KB</td>
-            <td class="nowrap">35595ce3eb032cff335721130293b17d</td>
+            <td class="nowrap">3.27 KB</td>
+            <td class="nowrap">485c13738aadc3d4bfeb324f0bce5085</td>
           </tr>
           <tr>
             <td class="nowrap">

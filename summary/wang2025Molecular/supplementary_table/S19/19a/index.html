@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="0c7af85ec6a782fd0786db29a128bf319790c740b169a890b2435a3f90ee5c2e">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S19">S19</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">19a</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,632 +786,632 @@
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L2_3-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>8067.176788</td>
-      <td>10090.433539</td>
-      <td>1.074057</td>
-      <td>1169.897286</td>
-      <td>4517.497865</td>
-      <td>10306.171248</td>
-      <td>81506.221309</td>
+      <td>8067.18</td>
+      <td>10090.4</td>
+      <td>1.07406</td>
+      <td>1169.9</td>
+      <td>4517.5</td>
+      <td>10306.2</td>
+      <td>81506.2</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L2_3-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.0</td>
-      <td>0.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L2_3-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.004386</td>
-      <td>0.051197</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00438591</td>
+      <td>0.0511974</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.982648</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L4-IT-V1</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>8775.33664</td>
-      <td>10799.439592</td>
-      <td>2.613764</td>
-      <td>1394.161998</td>
-      <td>4995.31872</td>
-      <td>11376.87481</td>
-      <td>67160.138372</td>
+      <td>8775.34</td>
+      <td>10799.4</td>
+      <td>2.61376</td>
+      <td>1394.16</td>
+      <td>4995.32</td>
+      <td>11376.9</td>
+      <td>67160.1</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L4-IT-V1</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.0</td>
-      <td>0.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L4-IT-V1</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.002405</td>
-      <td>0.038635</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00240499</td>
+      <td>0.0386346</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.855525</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L5-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5154.613312</td>
-      <td>6261.21342</td>
-      <td>2.538945</td>
-      <td>884.832119</td>
-      <td>2871.850829</td>
-      <td>7021.731055</td>
-      <td>44810.192286</td>
+      <td>5154.61</td>
+      <td>6261.21</td>
+      <td>2.53895</td>
+      <td>884.832</td>
+      <td>2871.85</td>
+      <td>7021.73</td>
+      <td>44810.2</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L5-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.0</td>
-      <td>0.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L5-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.009159</td>
-      <td>0.073493</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00915872</td>
+      <td>0.0734926</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.864084</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L4-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4816.006077</td>
-      <td>5999.17416</td>
+      <td>4816.01</td>
+      <td>5999.17</td>
       <td>0.636098</td>
-      <td>787.342854</td>
-      <td>2395.430374</td>
-      <td>6737.431564</td>
-      <td>43040.974801</td>
+      <td>787.343</td>
+      <td>2395.43</td>
+      <td>6737.43</td>
+      <td>43041</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L4-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.0</td>
-      <td>0.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L4-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.008386</td>
-      <td>0.070808</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00838551</td>
+      <td>0.0708083</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.995768</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6b_vs_EN-L6-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2198.99892</td>
-      <td>2438.568741</td>
-      <td>1.098257</td>
-      <td>522.595571</td>
-      <td>1405.332134</td>
-      <td>3040.222101</td>
-      <td>17856.901945</td>
+      <td>2199</td>
+      <td>2438.57</td>
+      <td>1.09826</td>
+      <td>522.596</td>
+      <td>1405.33</td>
+      <td>3040.22</td>
+      <td>17856.9</td>
     </tr>
     <tr>
       <th>df_EN-L6b_vs_EN-L6-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.0</td>
-      <td>0.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6b_vs_EN-L6-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.014271</td>
-      <td>0.097323</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.0142712</td>
+      <td>0.0973235</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.981612</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-CT_vs_EN-L2_3-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6222.273608</td>
-      <td>8053.267428</td>
+      <td>6222.27</td>
+      <td>8053.27</td>
       <td>0.681406</td>
-      <td>796.075388</td>
-      <td>3335.99653</td>
-      <td>8162.443871</td>
-      <td>65446.89302</td>
+      <td>796.075</td>
+      <td>3336</td>
+      <td>8162.44</td>
+      <td>65446.9</td>
     </tr>
     <tr>
       <th>df_EN-L6-CT_vs_EN-L2_3-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-CT_vs_EN-L2_3-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.009139</td>
-      <td>0.07859</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00913904</td>
+      <td>0.0785899</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.983974</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-CT_vs_EN-L4-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6938.856925</td>
-      <td>9206.06778</td>
-      <td>1.154382</td>
-      <td>851.076071</td>
-      <td>3257.926883</td>
-      <td>9208.517027</td>
-      <td>57261.623079</td>
+      <td>6938.86</td>
+      <td>9206.07</td>
+      <td>1.15438</td>
+      <td>851.076</td>
+      <td>3257.93</td>
+      <td>9208.52</td>
+      <td>57261.6</td>
     </tr>
     <tr>
       <th>df_EN-L6-CT_vs_EN-L4-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-CT_vs_EN-L4-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.002115</td>
+      <td>0.00211473</td>
       <td>0.039806</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.949178</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-CT_vs_EN-L5-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3019.529371</td>
-      <td>4044.726642</td>
+      <td>3019.53</td>
+      <td>4044.73</td>
       <td>1.25676</td>
-      <td>319.36505</td>
-      <td>1436.779084</td>
-      <td>4243.173155</td>
-      <td>31081.59359</td>
+      <td>319.365</td>
+      <td>1436.78</td>
+      <td>4243.17</td>
+      <td>31081.6</td>
     </tr>
     <tr>
       <th>df_EN-L6-CT_vs_EN-L5-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-CT_vs_EN-L5-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.01928</td>
+      <td>0.0192797</td>
       <td>0.109698</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.939317</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-CT_vs_EN-L4-IT.1</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3100.219646</td>
-      <td>4184.1042</td>
-      <td>1.763657</td>
-      <td>264.856733</td>
-      <td>1322.482651</td>
-      <td>4334.052968</td>
-      <td>30409.154524</td>
+      <td>3100.22</td>
+      <td>4184.1</td>
+      <td>1.76366</td>
+      <td>264.857</td>
+      <td>1322.48</td>
+      <td>4334.05</td>
+      <td>30409.2</td>
     </tr>
     <tr>
       <th>df_EN-L6-CT_vs_EN-L4-IT.1</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-CT_vs_EN-L4-IT.1</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.011061</td>
-      <td>0.071762</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.0110612</td>
+      <td>0.0717615</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.880785</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-CT_vs_EN-L6-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1162.753758</td>
-      <td>1634.31272</td>
+      <td>1162.75</td>
+      <td>1634.31</td>
       <td>0.846728</td>
-      <td>148.899079</td>
-      <td>600.164527</td>
-      <td>1502.087118</td>
-      <td>13149.73127</td>
+      <td>148.899</td>
+      <td>600.165</td>
+      <td>1502.09</td>
+      <td>13149.7</td>
     </tr>
     <tr>
       <th>df_EN-L6-CT_vs_EN-L6-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-CT_vs_EN-L6-IT</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.020345</td>
+      <td>0.0203445</td>
       <td>0.119363</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.973958</td>
     </tr>
     <tr>
       <th>waldStat_EN-L2_3-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5975.088194</td>
-      <td>7881.26119</td>
+      <td>5975.09</td>
+      <td>7881.26</td>
       <td>0.347235</td>
-      <td>631.132671</td>
-      <td>2890.120913</td>
-      <td>7818.489273</td>
-      <td>59583.178586</td>
+      <td>631.133</td>
+      <td>2890.12</td>
+      <td>7818.49</td>
+      <td>59583.2</td>
     </tr>
     <tr>
       <th>df_EN-L2_3-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L2_3-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.008377</td>
-      <td>0.076633</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00837715</td>
+      <td>0.0766334</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.996659</td>
     </tr>
     <tr>
       <th>waldStat_EN-L4-IT-V1_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6078.436828</td>
-      <td>8130.83426</td>
-      <td>1.932877</td>
-      <td>720.727449</td>
-      <td>2670.227113</td>
-      <td>7734.730559</td>
-      <td>46685.508302</td>
+      <td>6078.44</td>
+      <td>8130.83</td>
+      <td>1.93288</td>
+      <td>720.727</td>
+      <td>2670.23</td>
+      <td>7734.73</td>
+      <td>46685.5</td>
     </tr>
     <tr>
       <th>df_EN-L4-IT-V1_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L4-IT-V1_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.005726</td>
-      <td>0.053472</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.00572584</td>
+      <td>0.0534717</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.858353</td>
     </tr>
     <tr>
       <th>waldStat_EN-L5-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2547.067027</td>
-      <td>3429.402674</td>
+      <td>2547.07</td>
+      <td>3429.4</td>
       <td>0.259621</td>
-      <td>314.37362</td>
-      <td>1184.902341</td>
-      <td>3417.721836</td>
-      <td>23935.093325</td>
+      <td>314.374</td>
+      <td>1184.9</td>
+      <td>3417.72</td>
+      <td>23935.1</td>
     </tr>
     <tr>
       <th>df_EN-L5-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L5-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.022262</td>
+      <td>0.0222623</td>
       <td>0.127935</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.998334</td>
     </tr>
     <tr>
       <th>waldStat_EN-L4-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2690.691272</td>
-      <td>3748.677634</td>
+      <td>2690.69</td>
+      <td>3748.68</td>
       <td>0.911443</td>
-      <td>266.386594</td>
-      <td>1064.142567</td>
-      <td>3740.725084</td>
-      <td>24194.985938</td>
+      <td>266.387</td>
+      <td>1064.14</td>
+      <td>3740.73</td>
+      <td>24195</td>
     </tr>
     <tr>
       <th>df_EN-L4-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L4-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.018862</td>
+      <td>0.0188622</td>
       <td>0.110827</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.969388</td>
     </tr>
     <tr>
       <th>waldStat_EN-L6-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1101.556273</td>
-      <td>1281.497891</td>
+      <td>1101.56</td>
+      <td>1281.5</td>
       <td>0.809224</td>
-      <td>248.19459</td>
-      <td>734.695485</td>
-      <td>1543.713847</td>
-      <td>9936.942384</td>
+      <td>248.195</td>
+      <td>734.695</td>
+      <td>1543.71</td>
+      <td>9936.94</td>
     </tr>
     <tr>
       <th>df_EN-L6-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>pvalue_EN-L6-IT_vs_EN-L5_6-NP&amp;EN-L5-ET</th>
-      <td>582.0</td>
+      <td>582</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.022013</td>
+      <td>0.0220126</td>
       <td>0.115657</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.976441</td>
     </tr>
   </tbody>

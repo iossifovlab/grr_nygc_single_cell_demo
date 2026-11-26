@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="2bfb389d81955ad67b3ad9f2ff26f25c1db281db6b8fcadbf54193e51e1961bf">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table/S6.1">S6.1</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">alcohol_use_european</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -791,26 +799,26 @@
     </tr>
     <tr>
       <th>NGENES</th>
-      <td>453.0</td>
+      <td>453</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>16481.0</td>
-      <td>0.0</td>
-      <td>16481.0</td>
-      <td>16481.0</td>
-      <td>16481.0</td>
-      <td>16481.0</td>
-      <td>16481.0</td>
+      <td>16481</td>
+      <td>0</td>
+      <td>16481</td>
+      <td>16481</td>
+      <td>16481</td>
+      <td>16481</td>
+      <td>16481</td>
     </tr>
     <tr>
       <th>BETA</th>
-      <td>453.0</td>
+      <td>453</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.340107</td>
-      <td>6.079985</td>
+      <td>4.34011</td>
+      <td>6.07998</td>
       <td>-7.744</td>
       <td>-0.38128</td>
       <td>3.5246</td>
@@ -819,26 +827,26 @@
     </tr>
     <tr>
       <th>BETA_STD</th>
-      <td>453.0</td>
+      <td>453</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.006923</td>
-      <td>0.012592</td>
+      <td>0.00692302</td>
+      <td>0.0125922</td>
       <td>-0.031385</td>
-      <td>-0.000937</td>
+      <td>-0.00093702</td>
       <td>0.00878</td>
       <td>0.016014</td>
       <td>0.038476</td>
     </tr>
     <tr>
       <th>SE</th>
-      <td>453.0</td>
+      <td>453</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.618677</td>
-      <td>1.230023</td>
+      <td>3.61868</td>
+      <td>1.23002</td>
       <td>0.94335</td>
       <td>2.6309</td>
       <td>3.6715</td>
@@ -847,13 +855,13 @@
     </tr>
     <tr>
       <th>P</th>
-      <td>453.0</td>
+      <td>453</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.310422</td>
       <td>0.330344</td>
-      <td>0.000003</td>
+      <td>3.3599e-06</td>
       <td>0.027036</td>
       <td>0.14621</td>
       <td>0.54591</td>

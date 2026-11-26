@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="1009aa5de459928cfb7482de3270af2678bad2290430f1c8220e74cc2d8b749b">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S4">S4</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">GRN_interactions_PCW10-20</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -792,21 +800,21 @@
     </tr>
     <tr>
       <th>n_peaks</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.185109</td>
-      <td>3.678017</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>34.0</td>
+      <td>3.18511</td>
+      <td>3.67802</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>4</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>correlation</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -820,45 +828,45 @@
     </tr>
     <tr>
       <th>t_stat</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.854281</td>
-      <td>15.190368</td>
-      <td>-82.409789</td>
-      <td>-6.866741</td>
-      <td>5.765895</td>
-      <td>12.805073</td>
-      <td>105.035032</td>
+      <td>3.85428</td>
+      <td>15.1904</td>
+      <td>-82.4098</td>
+      <td>-6.86674</td>
+      <td>5.7659</td>
+      <td>12.8051</td>
+      <td>105.035</td>
     </tr>
     <tr>
       <th>p_value</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000068</td>
-      <td>0.000288</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00241</td>
+      <td>6.84496e-05</td>
+      <td>0.000288271</td>
+      <td>1.57845e-102</td>
+      <td>4.24765e-29</td>
+      <td>1.23709e-16</td>
+      <td>1.20221e-08</td>
+      <td>0.00241044</td>
     </tr>
     <tr>
       <th>fdr</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000094</td>
-      <td>0.00039</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.003217</td>
+      <td>9.40111e-05</td>
+      <td>0.000390168</td>
+      <td>7.31432e-98</td>
+      <td>2.62292e-28</td>
+      <td>3.56828e-16</td>
+      <td>2.24616e-08</td>
+      <td>0.00321657</td>
     </tr>
     <tr>
       <th>from</th>
@@ -890,7 +898,7 @@
     </tr>
     <tr>
       <th>z_DELTA_tf</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -900,21 +908,21 @@
       <td>0.175616</td>
       <td>0.251471</td>
       <td>0.325213</td>
-      <td>1.132617</td>
+      <td>1.13262</td>
     </tr>
     <tr>
       <th>z_DELTA_target</th>
-      <td>6299.0</td>
+      <td>6299</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.151737</td>
       <td>0.207772</td>
       <td>-0.646048</td>
-      <td>0.06738</td>
+      <td>0.0673802</td>
       <td>0.159485</td>
       <td>0.232623</td>
-      <td>1.334419</td>
+      <td>1.33442</td>
     </tr>
     <tr>
       <th>DS_reg</th>

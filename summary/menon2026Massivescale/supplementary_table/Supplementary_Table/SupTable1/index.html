@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="8c71400a5d518dd2a00b45f959df1d79dbc4e9b6f8f1192347af6db0b81897db">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Table">Supplementary_Table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">SupTable1</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -1094,129 +1102,129 @@
     </tr>
     <tr>
       <th>race</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.970297</td>
-      <td>9.751364</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>99.0</td>
+      <td>1.9703</td>
+      <td>9.75136</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>sex</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.267327</td>
+      <td>1.26733</td>
       <td>0.444772</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>age_at_death</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>78.613861</td>
-      <td>7.696714</td>
-      <td>52.0</td>
-      <td>74.0</td>
-      <td>80.0</td>
-      <td>83.0</td>
-      <td>93.0</td>
+      <td>78.6139</td>
+      <td>7.69671</td>
+      <td>52</td>
+      <td>74</td>
+      <td>80</td>
+      <td>83</td>
+      <td>93</td>
     </tr>
     <tr>
       <th>PMI</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.888614</td>
-      <td>2.142447</td>
+      <td>3.88861</td>
+      <td>2.14245</td>
       <td>1.75</td>
-      <td>3.0</td>
+      <td>3</td>
       <td>3.47</td>
       <td>4.17</td>
       <td>18.5</td>
     </tr>
     <tr>
       <th>last_mmse_test_score</th>
-      <td>73.0</td>
+      <td>73</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>23.780822</td>
+      <td>23.7808</td>
       <td>5.83392</td>
-      <td>0.0</td>
-      <td>20.0</td>
-      <td>26.0</td>
-      <td>28.0</td>
-      <td>30.0</td>
+      <td>0</td>
+      <td>20</td>
+      <td>26</td>
+      <td>28</td>
+      <td>30</td>
     </tr>
     <tr>
       <th>last_mmse_interval_before_death</th>
-      <td>73.0</td>
+      <td>73</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>20.547945</td>
-      <td>20.383164</td>
-      <td>1.0</td>
-      <td>7.0</td>
-      <td>14.0</td>
-      <td>26.0</td>
-      <td>98.0</td>
+      <td>20.5479</td>
+      <td>20.3832</td>
+      <td>1</td>
+      <td>7</td>
+      <td>14</td>
+      <td>26</td>
+      <td>98</td>
     </tr>
     <tr>
       <th>motor_updrs_score_on</th>
-      <td>21.0</td>
+      <td>21</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>36.428571</td>
-      <td>17.035467</td>
-      <td>12.0</td>
-      <td>28.0</td>
+      <td>36.4286</td>
+      <td>17.0355</td>
+      <td>12</td>
+      <td>28</td>
       <td>31.5</td>
-      <td>43.0</td>
-      <td>80.0</td>
+      <td>43</td>
+      <td>80</td>
     </tr>
     <tr>
       <th>motor_updrs_score_off</th>
-      <td>57.0</td>
+      <td>57</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>35.070175</td>
-      <td>20.796299</td>
-      <td>0.0</td>
+      <td>35.0702</td>
+      <td>20.7963</td>
+      <td>0</td>
       <td>17.5</td>
       <td>39.5</td>
-      <td>49.0</td>
-      <td>72.0</td>
+      <td>49</td>
+      <td>72</td>
     </tr>
     <tr>
       <th>motor_updrs_score_months_prior_to_death</th>
-      <td>79.0</td>
+      <td>79</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>14.962025</td>
-      <td>14.844876</td>
-      <td>0.0</td>
-      <td>5.0</td>
-      <td>10.0</td>
+      <td>14.962</td>
+      <td>14.8449</td>
+      <td>0</td>
+      <td>5</td>
+      <td>10</td>
       <td>19.5</td>
-      <td>69.0</td>
+      <td>69</td>
     </tr>
     <tr>
       <th>Control</th>
@@ -1570,84 +1578,84 @@
     </tr>
     <tr>
       <th>PlaqueF</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.712871</td>
-      <td>1.034641</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.03464</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.5</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>PlaqueT</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.777228</td>
-      <td>1.054692</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.05469</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.75</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>PlaqueP</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.732673</td>
-      <td>1.038182</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.03818</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.5</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>PlaqueH</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.232673</td>
       <td>0.497817</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>PlaqueE</th>
-      <td>100.0</td>
+      <td>100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.6515</td>
       <td>0.955195</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.425</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>PlaqueTotal</th>
-      <td>100.0</td>
+      <td>100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>3.1315</td>
-      <td>4.294398</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>4.2944</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.25</td>
       <td>5.6</td>
       <td>13.5</td>
@@ -1668,85 +1676,85 @@
     </tr>
     <tr>
       <th>TangleF</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.066832</td>
+      <td>0.0668317</td>
       <td>0.183341</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>TangleT</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.386139</td>
       <td>0.41159</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.5</td>
       <td>0.5</td>
-      <td>2.0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>TangleP</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.037129</td>
+      <td>0.0371287</td>
       <td>0.14742</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>TangleE</th>
-      <td>100.0</td>
+      <td>100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2.0233</td>
       <td>0.875766</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>1.5</td>
       <td>2.5</td>
       <td>2.625</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>TangleH</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.512376</td>
+      <td>1.51238</td>
       <td>0.952219</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.5</td>
       <td>1.5</td>
       <td>2.5</td>
-      <td>3.0</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>TangleTotal</th>
-      <td>100.0</td>
+      <td>100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>4.0158</td>
-      <td>2.110008</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
+      <td>2.11001</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4</td>
       <td>5.5</td>
       <td>8.5</td>
     </tr>
@@ -1808,91 +1816,91 @@
     </tr>
     <tr>
       <th>infarct_total_volume</th>
-      <td>85.0</td>
+      <td>85</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.170588</td>
       <td>0.32617</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.1</td>
       <td>1.1</td>
     </tr>
     <tr>
       <th>infarct_cerebral_total_volume</th>
-      <td>85.0</td>
+      <td>85</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.114118</td>
       <td>0.281642</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.1</td>
       <td>1.1</td>
     </tr>
     <tr>
       <th>obt</th>
-      <td>98.0</td>
+      <td>98</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.530612</td>
-      <td>1.663459</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>2.53061</td>
+      <td>1.66346</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>brain_stem_ix_x</th>
-      <td>97.0</td>
+      <td>97</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.876289</td>
-      <td>1.569619</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>2.87629</td>
+      <td>1.56962</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>brain_stem_lc</th>
-      <td>100.0</td>
+      <td>100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>2.78</td>
-      <td>1.624186</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>1.62419</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>bf_amygdala</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.831683</td>
-      <td>1.612881</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>2.83168</td>
+      <td>1.61288</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>bf_nbm</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1906,101 +1914,101 @@
     </tr>
     <tr>
       <th>brain_stem_sn</th>
-      <td>99.0</td>
+      <td>99</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.464646</td>
-      <td>1.507215</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>2.46465</td>
+      <td>1.50721</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>bf_trans</th>
-      <td>99.0</td>
+      <td>99</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.353535</td>
-      <td>1.507215</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>2.35354</td>
+      <td>1.50721</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>bf_cing</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.069307</td>
-      <td>1.408953</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
+      <td>2.06931</td>
+      <td>1.40895</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>nctx_temporal</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.207921</td>
-      <td>1.042275</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>4.0</td>
+      <td>1.20792</td>
+      <td>1.04227</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>nctx_frontal</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.940594</td>
       <td>0.810207</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>sum_lb_density</th>
-      <td>91.0</td>
+      <td>91</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>21.098901</td>
-      <td>12.303617</td>
-      <td>0.0</td>
-      <td>15.0</td>
-      <td>26.0</td>
-      <td>30.0</td>
-      <td>36.0</td>
+      <td>21.0989</td>
+      <td>12.3036</td>
+      <td>0</td>
+      <td>15</td>
+      <td>26</td>
+      <td>30</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>nctx_parietal</th>
-      <td>100.0</td>
+      <td>100</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.78</td>
       <td>0.704674</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>PathDXSummary</th>
@@ -2032,73 +2040,73 @@
     </tr>
     <tr>
       <th>neurological_dx_years</th>
-      <td>80.0</td>
+      <td>80</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>15.3</td>
-      <td>7.297303</td>
-      <td>1.0</td>
-      <td>11.0</td>
-      <td>14.0</td>
-      <td>20.0</td>
-      <td>44.0</td>
+      <td>7.2973</td>
+      <td>1</td>
+      <td>11</td>
+      <td>14</td>
+      <td>20</td>
+      <td>44</td>
     </tr>
     <tr>
       <th>neurological_dx_age</th>
-      <td>79.0</td>
+      <td>79</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>63.772152</td>
-      <td>10.372485</td>
-      <td>37.0</td>
-      <td>59.0</td>
-      <td>65.0</td>
-      <td>70.0</td>
-      <td>91.0</td>
+      <td>63.7722</td>
+      <td>10.3725</td>
+      <td>37</td>
+      <td>59</td>
+      <td>65</td>
+      <td>70</td>
+      <td>91</td>
     </tr>
     <tr>
       <th>dementia_yn</th>
-      <td>101.0</td>
+      <td>101</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.455446</td>
       <td>0.500495</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>dementia_years</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>4.26087</td>
-      <td>2.760312</td>
-      <td>1.0</td>
-      <td>2.0</td>
+      <td>2.76031</td>
+      <td>1</td>
+      <td>2</td>
       <td>3.5</td>
-      <td>6.0</td>
-      <td>11.0</td>
+      <td>6</td>
+      <td>11</td>
     </tr>
     <tr>
       <th>demential_age</th>
-      <td>46.0</td>
+      <td>46</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>73.130435</td>
-      <td>6.608441</td>
-      <td>57.0</td>
+      <td>73.1304</td>
+      <td>6.60844</td>
+      <td>57</td>
       <td>69.25</td>
-      <td>74.0</td>
+      <td>74</td>
       <td>77.75</td>
-      <td>85.0</td>
+      <td>85</td>
     </tr>
     <tr>
       <th>ThalPhase</th>

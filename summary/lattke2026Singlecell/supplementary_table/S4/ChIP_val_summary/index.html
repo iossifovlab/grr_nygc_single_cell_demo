@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="281ea34688136977688dd8dc981b1be5b995c0c9d0f28751513fd55aa85257de">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S4">S4</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">ChIP_val_summary</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,125 +786,125 @@
     </tr>
     <tr>
       <th>tf_targets_peaks_in_published</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>117.928571</td>
-      <td>88.864828</td>
-      <td>0.0</td>
-      <td>55.0</td>
+      <td>117.929</td>
+      <td>88.8648</td>
+      <td>0</td>
+      <td>55</td>
       <td>94.5</td>
       <td>171.25</td>
-      <td>364.0</td>
+      <td>364</td>
     </tr>
     <tr>
       <th>tf_targets_no_peaks_in_published</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>151.214286</td>
-      <td>63.606054</td>
-      <td>40.0</td>
+      <td>151.214</td>
+      <td>63.6061</td>
+      <td>40</td>
       <td>109.75</td>
-      <td>151.0</td>
+      <td>151</td>
       <td>196.75</td>
-      <td>293.0</td>
+      <td>293</td>
     </tr>
     <tr>
       <th>non_targets_peaks_in_published</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>707.0</td>
-      <td>550.824298</td>
-      <td>0.0</td>
+      <td>707</td>
+      <td>550.824</td>
+      <td>0</td>
       <td>259.25</td>
-      <td>528.0</td>
+      <td>528</td>
       <td>999.25</td>
-      <td>2250.0</td>
+      <td>2250</td>
     </tr>
     <tr>
       <th>non_targets_no_peaks_in_published</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2711.857143</td>
-      <td>81.344131</td>
-      <td>2573.0</td>
+      <td>2711.86</td>
+      <td>81.3441</td>
+      <td>2573</td>
       <td>2669.75</td>
       <td>2694.5</td>
       <td>2755.25</td>
-      <td>2871.0</td>
+      <td>2871</td>
     </tr>
     <tr>
       <th>p</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.03823</td>
       <td>0.188769</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000002</td>
-      <td>1.0</td>
+      <td>1.02131e-68</td>
+      <td>3.78046e-26</td>
+      <td>1.61869e-16</td>
+      <td>1.80971e-06</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>odds_ratio</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.845433</td>
-      <td>2.408504</td>
-      <td>0.0</td>
+      <td>3.84543</td>
+      <td>2.4085</td>
+      <td>0</td>
       <td>2.14543</td>
-      <td>3.378198</td>
-      <td>4.513011</td>
-      <td>10.046062</td>
+      <td>3.3782</td>
+      <td>4.51301</td>
+      <td>10.0461</td>
     </tr>
     <tr>
       <th>conf95_lower</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.721195</td>
+      <td>2.7212</td>
       <td>1.68119</td>
-      <td>0.0</td>
-      <td>1.537149</td>
-      <td>2.475117</td>
-      <td>3.296602</td>
-      <td>6.863754</td>
+      <td>0</td>
+      <td>1.53715</td>
+      <td>2.47512</td>
+      <td>3.2966</td>
+      <td>6.86375</td>
     </tr>
     <tr>
       <th>conf95_upper</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>inf</td>
       <td>NaN</td>
-      <td>2.302152</td>
-      <td>3.260732</td>
-      <td>4.368602</td>
-      <td>7.280962</td>
+      <td>2.30215</td>
+      <td>3.26073</td>
+      <td>4.3686</td>
+      <td>7.28096</td>
       <td>inf</td>
     </tr>
     <tr>
       <th>fract_tf_targets_peaks_in_published</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.413036</td>
       <td>0.229995</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.25997</td>
       <td>0.454015</td>
       <td>0.580564</td>
@@ -904,31 +912,31 @@
     </tr>
     <tr>
       <th>fract_non_targets_peaks_in_published</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.189994</td>
       <td>0.122783</td>
-      <td>0.0</td>
-      <td>0.085577</td>
+      <td>0</td>
+      <td>0.0855775</td>
       <td>0.162338</td>
       <td>0.271921</td>
       <td>0.466515</td>
     </tr>
     <tr>
       <th>padj</th>
-      <td>28.0</td>
+      <td>28</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.038351</td>
+      <td>0.0383512</td>
       <td>0.188768</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000002</td>
-      <td>1.0</td>
+      <td>2.85967e-67</td>
+      <td>1.32502e-25</td>
+      <td>3.02271e-16</td>
+      <td>2.32627e-06</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>

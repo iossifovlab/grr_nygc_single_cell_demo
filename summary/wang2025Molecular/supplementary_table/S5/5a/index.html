@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="31067754d1a25f15568c307e985eb48c2b0cb626807bd4d493f020487ad986d1">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S5">S5</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">5a</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -806,17 +814,17 @@
     </tr>
     <tr>
       <th>Estimated_postconceptional_age_in_days</th>
-      <td>6.0</td>
+      <td>6</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>256.833333</td>
-      <td>130.68346</td>
-      <td>154.0</td>
+      <td>256.833</td>
+      <td>130.683</td>
+      <td>154</td>
       <td>171.5</td>
       <td>229.5</td>
-      <td>259.0</td>
-      <td>507.0</td>
+      <td>259</td>
+      <td>507</td>
     </tr>
     <tr>
       <th>Group</th>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="de1070901ac54ce96c645ba961e08345c2f6e4fac529a3dc9899e1b4a4d961e4">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale">menon2026Massivescale</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/menon2026Massivescale/supplementary_table/Supplementary_Data">Supplementary_Data</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">SupData1-3</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -934,17 +942,17 @@
     </tr>
     <tr>
       <th>SNP_position</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>72435518.21692</td>
-      <td>59574986.864625</td>
-      <td>63910.0</td>
-      <td>23999530.5</td>
-      <td>57631112.0</td>
-      <td>111904179.0</td>
-      <td>248361891.0</td>
+      <td>7.24355e+07</td>
+      <td>5.9575e+07</td>
+      <td>63910</td>
+      <td>2.39995e+07</td>
+      <td>57631112</td>
+      <td>111904179</td>
+      <td>248361891</td>
     </tr>
     <tr>
       <th>Ref_allele</th>
@@ -976,7 +984,7 @@
     </tr>
     <tr>
       <th>Freq</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -990,63 +998,63 @@
     </tr>
     <tr>
       <th>HWE_Chisquare</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.250373</td>
-      <td>2.504879</td>
-      <td>0.0</td>
+      <td>1.25037</td>
+      <td>2.50488</td>
+      <td>0</td>
       <td>0.130151</td>
       <td>0.514073</td>
-      <td>1.359574</td>
-      <td>32.73902</td>
+      <td>1.35957</td>
+      <td>32.739</td>
     </tr>
     <tr>
       <th>Imp_quality</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Log10_BH_Q</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-7.396842</td>
+      <td>-7.39684</td>
       <td>8.08618</td>
-      <td>-150.002442</td>
-      <td>-7.960132</td>
+      <td>-150.002</td>
+      <td>-7.96013</td>
       <td>-4.78876</td>
-      <td>-3.506366</td>
-      <td>-1.691681</td>
+      <td>-3.50637</td>
+      <td>-1.69168</td>
     </tr>
     <tr>
       <th>Chisquare</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>36.814468</td>
-      <td>36.950211</td>
-      <td>6.681326</td>
-      <td>19.20488</td>
-      <td>25.29618</td>
-      <td>39.427637</td>
-      <td>694.108791</td>
+      <td>36.8145</td>
+      <td>36.9502</td>
+      <td>6.68133</td>
+      <td>19.2049</td>
+      <td>25.2962</td>
+      <td>39.4276</td>
+      <td>694.109</td>
     </tr>
     <tr>
       <th>Effect_size</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1060,13 +1068,13 @@
     </tr>
     <tr>
       <th>Delta</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.078681</td>
+      <td>0.0786814</td>
       <td>0.126623</td>
-      <td>0.000002</td>
+      <td>2e-06</td>
       <td>0.002387</td>
       <td>0.01</td>
       <td>0.130765</td>
@@ -1074,7 +1082,7 @@
     </tr>
     <tr>
       <th>Phi</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1088,138 +1096,138 @@
     </tr>
     <tr>
       <th>Overdispersion</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>45.691847</td>
-      <td>50.837135</td>
+      <td>45.6918</td>
+      <td>50.8371</td>
       <td>0.13186</td>
       <td>0.906389</td>
-      <td>23.982068</td>
-      <td>83.717859</td>
-      <td>192.307348</td>
+      <td>23.9821</td>
+      <td>83.7179</td>
+      <td>192.307</td>
     </tr>
     <tr>
       <th>SNP_id_region</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>6.84507</td>
-      <td>1.090692</td>
-      <td>4.370858</td>
-      <td>6.572403</td>
-      <td>6.985149</td>
-      <td>7.382669</td>
-      <td>8.780461</td>
+      <td>1.09069</td>
+      <td>4.37086</td>
+      <td>6.5724</td>
+      <td>6.98515</td>
+      <td>7.38267</td>
+      <td>8.78046</td>
     </tr>
     <tr>
       <th>Num_feature_SNPs</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.566358</td>
-      <td>2.156311</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
-      <td>37.0</td>
+      <td>3.56636</td>
+      <td>2.15631</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>37</td>
     </tr>
     <tr>
       <th>Num_tested_SNPs</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>85.602744</td>
-      <td>67.029009</td>
-      <td>5.0</td>
-      <td>56.0</td>
-      <td>76.0</td>
-      <td>102.0</td>
-      <td>1662.0</td>
+      <td>85.6027</td>
+      <td>67.029</td>
+      <td>5</td>
+      <td>56</td>
+      <td>76</td>
+      <td>102</td>
+      <td>1662</td>
     </tr>
     <tr>
       <th>Num_iterations_null</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7.082712</td>
-      <td>4.716091</td>
-      <td>3.0</td>
-      <td>5.0</td>
-      <td>6.0</td>
-      <td>8.0</td>
-      <td>141.0</td>
+      <td>7.08271</td>
+      <td>4.71609</td>
+      <td>3</td>
+      <td>5</td>
+      <td>6</td>
+      <td>8</td>
+      <td>141</td>
     </tr>
     <tr>
       <th>Num_iterations_alt</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.374391</td>
-      <td>4.571715</td>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>7.0</td>
-      <td>119.0</td>
+      <td>6.37439</td>
+      <td>4.57172</td>
+      <td>2</td>
+      <td>4</td>
+      <td>5</td>
+      <td>7</td>
+      <td>119</td>
     </tr>
     <tr>
       <th>Random_ties</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>72435514.202306</td>
-      <td>59574986.067765</td>
-      <td>63910.0</td>
-      <td>23999530.5</td>
-      <td>57631111.0</td>
-      <td>111904179.0</td>
-      <td>248363026.0</td>
+      <td>7.24355e+07</td>
+      <td>5.9575e+07</td>
+      <td>63910</td>
+      <td>2.39995e+07</td>
+      <td>57631111</td>
+      <td>111904179</td>
+      <td>248363026</td>
     </tr>
     <tr>
       <th>Log_likelihood_null</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>16.58234</td>
-      <td>18.340654</td>
+      <td>16.5823</td>
+      <td>18.3407</td>
       <td>0.661569</td>
-      <td>7.896604</td>
-      <td>11.05751</td>
-      <td>18.089813</td>
-      <td>344.346019</td>
+      <td>7.8966</td>
+      <td>11.0575</td>
+      <td>18.0898</td>
+      <td>344.346</td>
     </tr>
     <tr>
       <th>Convergence_status</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>Sq_corr_fSNPs</th>
-      <td>9590.0</td>
+      <td>9590</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.978578</td>
-      <td>0.073057</td>
+      <td>0.0730572</td>
       <td>0.000153</td>
       <td>0.986294</td>
       <td>0.990775</td>
@@ -1228,12 +1236,12 @@
     </tr>
     <tr>
       <th>Sq_corr_rSNP</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.988019</td>
-      <td>0.005562</td>
+      <td>0.00556229</td>
       <td>0.970001</td>
       <td>0.985901</td>
       <td>0.990356</td>
@@ -1242,31 +1250,31 @@
     </tr>
     <tr>
       <th>P</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000085</td>
-      <td>0.000445</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000012</td>
-      <td>0.009743</td>
+      <td>8.49191e-05</td>
+      <td>0.000444899</td>
+      <td>5.71208e-153</td>
+      <td>3.40447e-10</td>
+      <td>4.91682e-07</td>
+      <td>1.17413e-05</td>
+      <td>0.00974281</td>
     </tr>
     <tr>
       <th>q</th>
-      <td>10059.0</td>
+      <td>10059</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.000933</td>
-      <td>0.002937</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000016</td>
-      <td>0.000312</td>
-      <td>0.020338</td>
+      <td>0.00093307</td>
+      <td>0.00293664</td>
+      <td>9.94393e-151</td>
+      <td>1.09615e-08</td>
+      <td>1.62645e-05</td>
+      <td>0.000311626</td>
+      <td>0.0203385</td>
     </tr>
     <tr>
       <th>keep</th>

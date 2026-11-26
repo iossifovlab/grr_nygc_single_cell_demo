@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="bee2f400c9fa11124195c29fee11455f7353004fd55c86451f419af78dfef596">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Xenium-CJ23.56.004-BG">HMBA-Xenium-CJ23.56.004-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-Xenium-CJ23.56.004-BG/20250630">20250630</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">slab_plane_coordinates</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -797,31 +805,31 @@
     </tr>
     <tr>
       <th>x_rotated_um</th>
-      <td>1355089.0</td>
+      <td>1355089</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4243.14979</td>
-      <td>1916.700595</td>
-      <td>-42.196486</td>
-      <td>2708.725139</td>
-      <td>4035.576752</td>
-      <td>5649.322051</td>
-      <td>9981.955333</td>
+      <td>4243.15</td>
+      <td>1916.7</td>
+      <td>-42.1965</td>
+      <td>2708.73</td>
+      <td>4035.58</td>
+      <td>5649.32</td>
+      <td>9981.96</td>
     </tr>
     <tr>
       <th>y_rotated_um</th>
-      <td>1355089.0</td>
+      <td>1355089</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-8134.470335</td>
-      <td>4981.907504</td>
-      <td>-17063.611328</td>
-      <td>-10950.50328</td>
-      <td>-9079.672565</td>
-      <td>-7367.854754</td>
-      <td>10742.242593</td>
+      <td>-8134.47</td>
+      <td>4981.91</td>
+      <td>-17063.6</td>
+      <td>-10950.5</td>
+      <td>-9079.67</td>
+      <td>-7367.85</td>
+      <td>10742.2</td>
     </tr>
     <tr>
       <th>slab_plane_label</th>
@@ -839,31 +847,31 @@
     </tr>
     <tr>
       <th>x_slab_mm</th>
-      <td>1355089.0</td>
+      <td>1355089</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>23.346909</td>
-      <td>1.924327</td>
-      <td>19.068048</td>
-      <td>21.811227</td>
-      <td>23.139425</td>
-      <td>24.797205</td>
-      <td>28.252381</td>
+      <td>23.3469</td>
+      <td>1.92433</td>
+      <td>19.068</td>
+      <td>21.8112</td>
+      <td>23.1394</td>
+      <td>24.7972</td>
+      <td>28.2524</td>
     </tr>
     <tr>
       <th>y_slab_mm</th>
-      <td>1355089.0</td>
+      <td>1355089</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>14.471815</td>
-      <td>2.164096</td>
-      <td>10.058864</td>
-      <td>12.722517</td>
-      <td>14.290902</td>
-      <td>16.106858</td>
-      <td>21.125541</td>
+      <td>14.4718</td>
+      <td>2.1641</td>
+      <td>10.0589</td>
+      <td>12.7225</td>
+      <td>14.2909</td>
+      <td>16.1069</td>
+      <td>21.1255</td>
     </tr>
   </tbody>
 </table>

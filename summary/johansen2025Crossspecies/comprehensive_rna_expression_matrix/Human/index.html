@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="40a552d128762c2c543f61da4c1c42026258e686614f900cbf182655d86c13be">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/johansen2025Crossspecies/comprehensive_rna_expression_matrix">comprehensive_rna_expression_matrix</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Human</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -1164,12 +1172,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_confidently_mapped_read_pairs</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.89841</td>
-      <td>0.012082</td>
+      <td>0.0120816</td>
       <td>0.8681</td>
       <td>0.8888</td>
       <td>0.8983</td>
@@ -1178,12 +1186,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_fraction_of_genome_in_peaks</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.035705</td>
-      <td>0.005644</td>
+      <td>0.0357049</td>
+      <td>0.00564375</td>
       <td>0.019</td>
       <td>0.0315</td>
       <td>0.0358</td>
@@ -1192,12 +1200,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_fraction_of_high_quality_fragments_in_cells</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.766833</td>
-      <td>0.09193</td>
+      <td>0.0919302</td>
       <td>0.4509</td>
       <td>0.7039</td>
       <td>0.7751</td>
@@ -1206,12 +1214,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_fraction_of_high_quality_fragments_overlapping_tss</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.233681</td>
-      <td>0.031747</td>
+      <td>0.0317471</td>
       <td>0.1539</td>
       <td>0.2116</td>
       <td>0.2339</td>
@@ -1220,12 +1228,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_fraction_of_high_quality_fragments_overlapping_peaks</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.302951</td>
-      <td>0.05716</td>
+      <td>0.0571599</td>
       <td>0.1584</td>
       <td>0.2613</td>
       <td>0.3002</td>
@@ -1234,12 +1242,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_fraction_of_transposition_events_in_peaks_in_cells</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.274006</td>
-      <td>0.05389</td>
+      <td>0.0538902</td>
       <td>0.136</td>
       <td>0.2347</td>
       <td>0.2698</td>
@@ -1248,40 +1256,40 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_mean_raw_read_pairs_per_cell</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>149337.521358</td>
-      <td>66371.93523</td>
-      <td>29479.2214</td>
-      <td>105176.3321</td>
-      <td>144319.0698</td>
-      <td>178204.1231</td>
-      <td>1005437.2554</td>
+      <td>149338</td>
+      <td>66371.9</td>
+      <td>29479.2</td>
+      <td>105176</td>
+      <td>144319</td>
+      <td>178204</td>
+      <td>1.00544e+06</td>
     </tr>
     <tr>
       <th>atac_median_high_quality_fragments_per_cell</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>35867.399834</td>
-      <td>12169.589445</td>
-      <td>2794.0</td>
+      <td>35867.4</td>
+      <td>12169.6</td>
+      <td>2794</td>
       <td>26815.5</td>
-      <td>35400.0</td>
-      <td>43259.0</td>
+      <td>35400</td>
+      <td>43259</td>
       <td>80846.5</td>
     </tr>
     <tr>
       <th>atac_non_nuclear_read_pairs</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.004697</td>
-      <td>0.003089</td>
+      <td>0.00469719</td>
+      <td>0.0030886</td>
       <td>0.001</td>
       <td>0.0023</td>
       <td>0.0037</td>
@@ -1290,21 +1298,21 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_number_of_peaks</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>130538.978582</td>
-      <td>20378.052674</td>
-      <td>70051.0</td>
-      <td>116330.0</td>
-      <td>130864.0</td>
-      <td>141765.0</td>
-      <td>200098.0</td>
+      <td>130539</td>
+      <td>20378.1</td>
+      <td>70051</td>
+      <td>116330</td>
+      <td>130864</td>
+      <td>141765</td>
+      <td>200098</td>
     </tr>
     <tr>
       <th>atac_percent_duplicates</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1318,12 +1326,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_q30_bases_in_barcode</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.916263</td>
-      <td>0.020456</td>
+      <td>0.0204556</td>
       <td>0.8503</td>
       <td>0.9029</td>
       <td>0.9143</td>
@@ -1332,12 +1340,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_q30_bases_in_read_1</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.948745</td>
-      <td>0.012129</td>
+      <td>0.0121293</td>
       <td>0.896</td>
       <td>0.9418</td>
       <td>0.9506</td>
@@ -1346,12 +1354,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_q30_bases_in_read_2</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.943855</td>
-      <td>0.010659</td>
+      <td>0.0106586</td>
       <td>0.9126</td>
       <td>0.9375</td>
       <td>0.9444</td>
@@ -1360,12 +1368,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_q30_bases_in_sample_index_i1</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.918017</td>
-      <td>0.027935</td>
+      <td>0.0279351</td>
       <td>0.8098</td>
       <td>0.8999</td>
       <td>0.9226</td>
@@ -1374,21 +1382,21 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_sequenced_read_pairs</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1121421302.63936</td>
-      <td>412411012.481788</td>
-      <td>-2057184517.0</td>
-      <td>1014833725.0</td>
-      <td>1150092784.0</td>
-      <td>1325512665.0</td>
-      <td>1743220201.0</td>
+      <td>1.12142e+09</td>
+      <td>4.12411e+08</td>
+      <td>-2057184517</td>
+      <td>1014833725</td>
+      <td>1150092784</td>
+      <td>1325512665</td>
+      <td>1743220201</td>
     </tr>
     <tr>
       <th>atac_tss_enrichment_score</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1402,12 +1410,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_unmapped_read_pairs</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.012673</td>
-      <td>0.004839</td>
+      <td>0.0126733</td>
+      <td>0.00483924</td>
       <td>0.0069</td>
       <td>0.0095</td>
       <td>0.0113</td>
@@ -1416,12 +1424,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>atac_valid_barcodes</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.977373</td>
-      <td>0.00748</td>
+      <td>0.00748023</td>
       <td>0.9397</td>
       <td>0.9728</td>
       <td>0.9794</td>
@@ -1430,12 +1438,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_fraction_of_transcriptomic_reads_in_cells</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.842069</td>
-      <td>0.09706</td>
+      <td>0.0970601</td>
       <td>0.3239</td>
       <td>0.8014</td>
       <td>0.8663</td>
@@ -1444,49 +1452,49 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_mean_raw_reads_per_cell</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>157409.046394</td>
-      <td>66713.966333</td>
-      <td>35804.0576</td>
-      <td>115432.7746</td>
-      <td>150800.3004</td>
-      <td>185873.5543</td>
-      <td>982676.2762</td>
+      <td>157409</td>
+      <td>66714</td>
+      <td>35804.1</td>
+      <td>115433</td>
+      <td>150800</td>
+      <td>185874</td>
+      <td>982676</td>
     </tr>
     <tr>
       <th>gex_median_umi_counts_per_cell</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>12558.315188</td>
-      <td>8496.234736</td>
-      <td>1356.0</td>
-      <td>6951.0</td>
+      <td>12558.3</td>
+      <td>8496.23</td>
+      <td>1356</td>
+      <td>6951</td>
       <td>9881.5</td>
-      <td>15876.0</td>
+      <td>15876</td>
       <td>64075.5</td>
     </tr>
     <tr>
       <th>gex_median_genes_per_cell</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3856.182052</td>
-      <td>1411.1679</td>
-      <td>1095.0</td>
-      <td>2861.0</td>
-      <td>3576.0</td>
-      <td>4731.0</td>
-      <td>8261.0</td>
+      <td>3856.18</td>
+      <td>1411.17</td>
+      <td>1095</td>
+      <td>2861</td>
+      <td>3576</td>
+      <td>4731</td>
+      <td>8261</td>
     </tr>
     <tr>
       <th>gex_percent_duplicates</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1500,12 +1508,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_q30_bases_in_umi</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.962251</td>
-      <td>0.01068</td>
+      <td>0.0106799</td>
       <td>0.9316</td>
       <td>0.9527</td>
       <td>0.9625</td>
@@ -1514,12 +1522,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_q30_bases_in_barcode</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.952226</td>
-      <td>0.011937</td>
+      <td>0.0119373</td>
       <td>0.9223</td>
       <td>0.9438</td>
       <td>0.9542</td>
@@ -1528,12 +1536,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_q30_bases_in_read_2</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.952331</td>
-      <td>0.013086</td>
+      <td>0.0130863</td>
       <td>0.9112</td>
       <td>0.9442</td>
       <td>0.9528</td>
@@ -1542,12 +1550,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_q30_bases_in_sample_index_i1</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.950195</td>
-      <td>0.030668</td>
+      <td>0.0306679</td>
       <td>0.7898</td>
       <td>0.9371</td>
       <td>0.9572</td>
@@ -1556,12 +1564,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_q30_bases_in_sample_index_i2</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.949499</td>
-      <td>0.027539</td>
+      <td>0.0275386</td>
       <td>0.8544</td>
       <td>0.936</td>
       <td>0.9548</td>
@@ -1570,7 +1578,7 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_antisense_to_gene</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1584,12 +1592,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_confidently_to_exonic_regions</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.150442</td>
-      <td>0.020381</td>
+      <td>0.0203814</td>
       <td>0.1125</td>
       <td>0.136</td>
       <td>0.1475</td>
@@ -1598,12 +1606,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_confidently_to_genome</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.916954</td>
-      <td>0.018653</td>
+      <td>0.0186527</td>
       <td>0.8155</td>
       <td>0.9101</td>
       <td>0.9233</td>
@@ -1612,12 +1620,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_confidently_to_intergenic_regions</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.070879</td>
-      <td>0.004368</td>
+      <td>0.0708793</td>
+      <td>0.00436759</td>
       <td>0.0569</td>
       <td>0.0679</td>
       <td>0.0705</td>
@@ -1626,12 +1634,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_confidently_to_intronic_regions</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.695635</td>
-      <td>0.02531</td>
+      <td>0.0253097</td>
       <td>0.5791</td>
       <td>0.6828</td>
       <td>0.6999</td>
@@ -1640,12 +1648,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_confidently_to_transcriptome</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.692939</td>
-      <td>0.041356</td>
+      <td>0.0413565</td>
       <td>0.4558</td>
       <td>0.6662</td>
       <td>0.6972</td>
@@ -1654,12 +1662,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_mapped_to_genome</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.961403</td>
-      <td>0.009786</td>
+      <td>0.00978555</td>
       <td>0.8914</td>
       <td>0.958</td>
       <td>0.9646</td>
@@ -1668,7 +1676,7 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_reads_with_tso</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1682,40 +1690,40 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_sequenced_read_pairs</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1238503938.088825</td>
-      <td>243381293.536943</td>
-      <td>398105316.0</td>
-      <td>1072948284.0</td>
-      <td>1248574187.0</td>
-      <td>1404982969.0</td>
-      <td>2073005465.0</td>
+      <td>1.2385e+09</td>
+      <td>2.43381e+08</td>
+      <td>398105316</td>
+      <td>1072948284</td>
+      <td>1248574187</td>
+      <td>1404982969</td>
+      <td>2073005465</td>
     </tr>
     <tr>
       <th>gex_total_genes_detected</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>33395.804143</td>
-      <td>360.257912</td>
-      <td>31357.0</td>
-      <td>33191.0</td>
-      <td>33446.0</td>
-      <td>33626.0</td>
-      <td>34369.0</td>
+      <td>33395.8</td>
+      <td>360.258</td>
+      <td>31357</td>
+      <td>33191</td>
+      <td>33446</td>
+      <td>33626</td>
+      <td>34369</td>
     </tr>
     <tr>
       <th>gex_valid_umis</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.997246</td>
-      <td>0.001696</td>
+      <td>0.00169622</td>
       <td>0.993</td>
       <td>0.9959</td>
       <td>0.9974</td>
@@ -1724,12 +1732,12 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>gex_valid_barcodes</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.936798</td>
-      <td>0.016181</td>
+      <td>0.0161813</td>
       <td>0.8003</td>
       <td>0.9303</td>
       <td>0.9384</td>
@@ -1738,44 +1746,44 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>total_counts</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>19730.383455</td>
-      <td>18737.839188</td>
-      <td>2000.0</td>
-      <td>5872.0</td>
-      <td>12494.0</td>
-      <td>27983.0</td>
-      <td>99999.0</td>
+      <td>19730.4</td>
+      <td>18737.8</td>
+      <td>2000</td>
+      <td>5872</td>
+      <td>12494</td>
+      <td>27983</td>
+      <td>99999</td>
     </tr>
     <tr>
       <th>total_genes</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4474.052069</td>
-      <td>2196.774214</td>
-      <td>1001.0</td>
-      <td>2544.0</td>
-      <td>4062.0</td>
-      <td>6295.0</td>
-      <td>12217.0</td>
+      <td>4474.05</td>
+      <td>2196.77</td>
+      <td>1001</td>
+      <td>2544</td>
+      <td>4062</td>
+      <td>6295</td>
+      <td>12217</td>
     </tr>
     <tr>
       <th>doublet_score</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.056512</td>
-      <td>0.06884</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>0.0688401</td>
+      <td>0</td>
+      <td>0</td>
       <td>0.030303</td>
-      <td>0.081081</td>
+      <td>0.0810811</td>
       <td>0.35</td>
     </tr>
     <tr>
@@ -1850,17 +1858,17 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>display_order_group</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>28.641718</td>
-      <td>22.60023</td>
-      <td>1.0</td>
-      <td>9.0</td>
-      <td>27.0</td>
-      <td>52.0</td>
-      <td>62.0</td>
+      <td>28.6417</td>
+      <td>22.6002</td>
+      <td>1</td>
+      <td>9</td>
+      <td>27</td>
+      <td>52</td>
+      <td>62</td>
     </tr>
     <tr>
       <th>literature_support</th>
@@ -1934,7 +1942,7 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>color_group</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1990,17 +1998,17 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>display_order_subclass</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>17.801078</td>
-      <td>13.173496</td>
-      <td>1.0</td>
-      <td>7.0</td>
-      <td>18.0</td>
-      <td>31.0</td>
-      <td>36.0</td>
+      <td>17.8011</td>
+      <td>13.1735</td>
+      <td>1</td>
+      <td>7</td>
+      <td>18</td>
+      <td>31</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>color_hex_subclass</th>
@@ -2018,7 +2026,7 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>color_subclass</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2074,17 +2082,17 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>display_order_class</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.056166</td>
+      <td>6.05617</td>
       <td>3.80892</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>7.0</td>
-      <td>10.0</td>
-      <td>12.0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>7</td>
+      <td>10</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>color_hex_class</th>
@@ -2102,7 +2110,7 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>color_class</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2158,17 +2166,17 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>display_order_neighborhood</th>
-      <td>1034819.0</td>
+      <td>1034819</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.025204</td>
+      <td>2.0252</td>
       <td>0.995819</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>color_hex_neighborhood</th>
@@ -2186,7 +2194,7 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>color_neighborhood</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2323,115 +2331,115 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>start</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>74016536.6749</td>
-      <td>56141458.259471</td>
-      <td>-1.0</td>
-      <td>30200982.0</td>
-      <td>59456937.0</td>
-      <td>109912882.0</td>
-      <td>248906195.0</td>
+      <td>7.40165e+07</td>
+      <td>5.61415e+07</td>
+      <td>-1</td>
+      <td>30200982</td>
+      <td>59456937</td>
+      <td>109912882</td>
+      <td>248906195</td>
     </tr>
     <tr>
       <th>stop</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>74028711.933062</td>
-      <td>56142288.76961</td>
-      <td>-1.0</td>
-      <td>30200983.0</td>
-      <td>59469853.0</td>
-      <td>109923553.0</td>
-      <td>248906235.0</td>
+      <td>7.40287e+07</td>
+      <td>5.61423e+07</td>
+      <td>-1</td>
+      <td>30200983</td>
+      <td>59469853</td>
+      <td>109923553</td>
+      <td>248906235</td>
     </tr>
     <tr>
       <th>n_cells_by_counts</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>178832.793913</td>
-      <td>280042.378559</td>
-      <td>0.0</td>
-      <td>3119.0</td>
-      <td>32127.0</td>
-      <td>242331.0</td>
-      <td>1656647.0</td>
+      <td>178833</td>
+      <td>280042</td>
+      <td>0</td>
+      <td>3119</td>
+      <td>32127</td>
+      <td>242331</td>
+      <td>1656647</td>
     </tr>
     <tr>
       <th>mean_counts</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.508881</td>
-      <td>3.281759</td>
-      <td>0.0</td>
-      <td>0.00196</td>
-      <td>0.023084</td>
+      <td>3.28176</td>
+      <td>0</td>
+      <td>0.00196007</td>
+      <td>0.0230841</td>
       <td>0.226681</td>
-      <td>407.683402</td>
+      <td>407.683</td>
     </tr>
     <tr>
       <th>log1p_mean_counts</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.214702</td>
       <td>0.441945</td>
-      <td>0.0</td>
-      <td>0.001958</td>
-      <td>0.022822</td>
+      <td>0</td>
+      <td>0.00195815</td>
+      <td>0.0228217</td>
       <td>0.204312</td>
-      <td>6.012941</td>
+      <td>6.01294</td>
     </tr>
     <tr>
       <th>pct_dropout_by_counts</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>89.374828</td>
-      <td>16.638438</td>
-      <td>1.571976</td>
-      <td>85.602146</td>
-      <td>98.091206</td>
-      <td>99.814688</td>
-      <td>100.0</td>
+      <td>89.3748</td>
+      <td>16.6384</td>
+      <td>1.57198</td>
+      <td>85.6021</td>
+      <td>98.0912</td>
+      <td>99.8147</td>
+      <td>100</td>
     </tr>
     <tr>
       <th>total_counts</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>856499.863911</td>
-      <td>5523545.2538</td>
-      <td>0.0</td>
-      <td>3299.0</td>
-      <td>38853.0</td>
-      <td>381528.0</td>
-      <td>686173972.0</td>
+      <td>856500</td>
+      <td>5.52355e+06</td>
+      <td>0</td>
+      <td>3299</td>
+      <td>38853</td>
+      <td>381528</td>
+      <td>686173972</td>
     </tr>
     <tr>
       <th>log1p_total_counts</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>10.240526</td>
-      <td>3.419025</td>
-      <td>0.0</td>
-      <td>8.101678</td>
-      <td>10.567566</td>
-      <td>12.851942</td>
-      <td>20.346642</td>
+      <td>10.2405</td>
+      <td>3.41902</td>
+      <td>0</td>
+      <td>8.10168</td>
+      <td>10.5676</td>
+      <td>12.8519</td>
+      <td>20.3466</td>
     </tr>
     <tr>
       <th>mt</th>
@@ -2463,73 +2471,73 @@ AnnData object with n_obs × n_vars = 1034819 × 36601
     </tr>
     <tr>
       <th>highly_variable_rank</th>
-      <td>7448.0</td>
+      <td>7448</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2423.795654</td>
-      <td>1059.82959</td>
-      <td>0.0</td>
-      <td>1643.0</td>
-      <td>2628.0</td>
-      <td>3295.0</td>
-      <td>3999.0</td>
+      <td>2423.8</td>
+      <td>1059.83</td>
+      <td>0</td>
+      <td>1643</td>
+      <td>2628</td>
+      <td>3295</td>
+      <td>3999</td>
     </tr>
     <tr>
       <th>means</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.544245</td>
-      <td>3.625133</td>
-      <td>0.0</td>
-      <td>0.002005</td>
-      <td>0.024084</td>
+      <td>3.62513</td>
+      <td>0</td>
+      <td>0.00200489</td>
+      <td>0.0240844</td>
       <td>0.239853</td>
-      <td>462.577791</td>
+      <td>462.578</td>
     </tr>
     <tr>
       <th>variances</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>25.492108</td>
-      <td>1469.490508</td>
-      <td>0.0</td>
-      <td>0.002205</td>
-      <td>0.032</td>
+      <td>25.4921</td>
+      <td>1469.49</td>
+      <td>0</td>
+      <td>0.00220458</td>
+      <td>0.0319998</td>
       <td>0.431958</td>
-      <td>265436.852588</td>
+      <td>265437</td>
     </tr>
     <tr>
       <th>variances_norm</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.072994</td>
+      <td>1.07299</td>
       <td>0.960478</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.806648</td>
       <td>0.916269</td>
       <td>1.01747</td>
-      <td>60.179838</td>
+      <td>60.1798</td>
     </tr>
     <tr>
       <th>highly_variable_nbatches</th>
-      <td>36601.0</td>
+      <td>36601</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.092866</td>
-      <td>2.725198</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>10.0</td>
+      <td>1.09287</td>
+      <td>2.7252</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>ensembl_id</th>

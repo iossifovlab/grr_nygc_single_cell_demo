@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="8d8c82ae231382bcf2a95fcde18df8914d92042805d1ee7b35d18bf4cddb0644">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/wang2025Molecular/supplementary_table/S15">S15</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">15f</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -806,13 +814,13 @@
     </tr>
     <tr>
       <th>Astrocyte-Fibrous</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.225762</td>
       <td>0.088999</td>
-      <td>0.031582</td>
+      <td>0.0315816</td>
       <td>0.157784</td>
       <td>0.212732</td>
       <td>0.28187</td>
@@ -820,13 +828,13 @@
     </tr>
     <tr>
       <th>Astrocyte-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.221865</td>
-      <td>0.090439</td>
-      <td>0.036129</td>
+      <td>0.0904386</td>
+      <td>0.0361292</td>
       <td>0.154516</td>
       <td>0.210381</td>
       <td>0.277832</td>
@@ -834,13 +842,13 @@
     </tr>
     <tr>
       <th>Astrocyte-Protoplasmic</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.241922</td>
       <td>0.106907</td>
-      <td>0.05037</td>
+      <td>0.0503703</td>
       <td>0.166455</td>
       <td>0.219389</td>
       <td>0.295816</td>
@@ -848,13 +856,13 @@
     </tr>
     <tr>
       <th>Cajal-Retzius cell</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.262217</td>
       <td>0.106684</td>
-      <td>0.06408</td>
+      <td>0.0640803</td>
       <td>0.185431</td>
       <td>0.252402</td>
       <td>0.332971</td>
@@ -862,7 +870,7 @@
     </tr>
     <tr>
       <th>EN-IT-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -876,13 +884,13 @@
     </tr>
     <tr>
       <th>EN-L2_3-IT</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.340792</td>
       <td>0.154365</td>
-      <td>0.07392</td>
+      <td>0.0739195</td>
       <td>0.221517</td>
       <td>0.332374</td>
       <td>0.451682</td>
@@ -890,13 +898,13 @@
     </tr>
     <tr>
       <th>EN-L4-IT</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.326824</td>
       <td>0.136426</td>
-      <td>0.056877</td>
+      <td>0.0568768</td>
       <td>0.224358</td>
       <td>0.318754</td>
       <td>0.417937</td>
@@ -904,13 +912,13 @@
     </tr>
     <tr>
       <th>EN-L5-ET</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.321027</td>
       <td>0.131982</td>
-      <td>0.068701</td>
+      <td>0.0687013</td>
       <td>0.213448</td>
       <td>0.325542</td>
       <td>0.408777</td>
@@ -918,13 +926,13 @@
     </tr>
     <tr>
       <th>EN-L5-IT</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.338614</td>
       <td>0.141099</td>
-      <td>0.073453</td>
+      <td>0.0734535</td>
       <td>0.229225</td>
       <td>0.341388</td>
       <td>0.430205</td>
@@ -932,13 +940,13 @@
     </tr>
     <tr>
       <th>EN-L5_6-NP</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.335234</td>
       <td>0.137036</td>
-      <td>0.085376</td>
+      <td>0.0853759</td>
       <td>0.226454</td>
       <td>0.325108</td>
       <td>0.419939</td>
@@ -946,7 +954,7 @@
     </tr>
     <tr>
       <th>EN-L6-CT</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -960,13 +968,13 @@
     </tr>
     <tr>
       <th>EN-L6-IT</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.328423</td>
       <td>0.124672</td>
-      <td>0.076546</td>
+      <td>0.0765458</td>
       <td>0.239081</td>
       <td>0.332617</td>
       <td>0.396684</td>
@@ -974,13 +982,13 @@
     </tr>
     <tr>
       <th>EN-L6b</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.316816</td>
       <td>0.131248</td>
-      <td>0.074825</td>
+      <td>0.0748251</td>
       <td>0.21209</td>
       <td>0.324989</td>
       <td>0.3995</td>
@@ -988,13 +996,13 @@
     </tr>
     <tr>
       <th>EN-Newborn</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.255934</td>
       <td>0.115779</td>
-      <td>0.045941</td>
+      <td>0.0459408</td>
       <td>0.159252</td>
       <td>0.249413</td>
       <td>0.337673</td>
@@ -1002,7 +1010,7 @@
     </tr>
     <tr>
       <th>EN-Non-IT-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1016,13 +1024,13 @@
     </tr>
     <tr>
       <th>IN-CGE-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.287085</td>
       <td>0.112462</td>
-      <td>0.072971</td>
+      <td>0.0729712</td>
       <td>0.201714</td>
       <td>0.279799</td>
       <td>0.354006</td>
@@ -1030,13 +1038,13 @@
     </tr>
     <tr>
       <th>IN-Mix-LAMP5</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.326438</td>
       <td>0.132952</td>
-      <td>0.077888</td>
+      <td>0.0778883</td>
       <td>0.214644</td>
       <td>0.321256</td>
       <td>0.408222</td>
@@ -1044,13 +1052,13 @@
     </tr>
     <tr>
       <th>IN-CGE-SNCG</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.305552</td>
       <td>0.118204</td>
-      <td>0.068698</td>
+      <td>0.0686983</td>
       <td>0.221013</td>
       <td>0.299462</td>
       <td>0.37561</td>
@@ -1058,13 +1066,13 @@
     </tr>
     <tr>
       <th>IN-CGE-VIP</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.303058</td>
       <td>0.113049</td>
-      <td>0.094487</td>
+      <td>0.0944872</td>
       <td>0.217107</td>
       <td>0.286212</td>
       <td>0.376272</td>
@@ -1072,7 +1080,7 @@
     </tr>
     <tr>
       <th>IN-MGE-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1086,13 +1094,13 @@
     </tr>
     <tr>
       <th>IN-MGE-PV</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.311508</td>
       <td>0.123482</td>
-      <td>0.074751</td>
+      <td>0.0747514</td>
       <td>0.212127</td>
       <td>0.306613</td>
       <td>0.390803</td>
@@ -1100,13 +1108,13 @@
     </tr>
     <tr>
       <th>IN-MGE-SST</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.312605</td>
       <td>0.124089</td>
-      <td>0.072963</td>
+      <td>0.0729635</td>
       <td>0.214127</td>
       <td>0.302826</td>
       <td>0.394412</td>
@@ -1114,7 +1122,7 @@
     </tr>
     <tr>
       <th>IN-dLGE-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1128,13 +1136,13 @@
     </tr>
     <tr>
       <th>IPC-EN</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.205365</td>
       <td>0.111862</td>
-      <td>0.041706</td>
+      <td>0.0417062</td>
       <td>0.118814</td>
       <td>0.188613</td>
       <td>0.26475</td>
@@ -1142,13 +1150,13 @@
     </tr>
     <tr>
       <th>IPC-Glia</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.227896</td>
-      <td>0.093219</td>
-      <td>0.02069</td>
+      <td>0.0932188</td>
+      <td>0.0206902</td>
       <td>0.165224</td>
       <td>0.217431</td>
       <td>0.293135</td>
@@ -1156,13 +1164,13 @@
     </tr>
     <tr>
       <th>OPC</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.297294</td>
       <td>0.133454</td>
-      <td>0.041173</td>
+      <td>0.0411726</td>
       <td>0.196353</td>
       <td>0.278685</td>
       <td>0.383726</td>
@@ -1170,27 +1178,27 @@
     </tr>
     <tr>
       <th>Oligodendrocyte</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.242366</td>
       <td>0.161167</td>
-      <td>0.010565</td>
-      <td>0.098856</td>
+      <td>0.0105654</td>
+      <td>0.0988559</td>
       <td>0.235571</td>
       <td>0.340749</td>
       <td>0.747518</td>
     </tr>
     <tr>
       <th>Oligodendrocyte-Immature</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.258782</td>
       <td>0.125297</td>
-      <td>0.023595</td>
+      <td>0.0235949</td>
       <td>0.165419</td>
       <td>0.240997</td>
       <td>0.330449</td>
@@ -1198,13 +1206,13 @@
     </tr>
     <tr>
       <th>RG-oRG</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.206934</td>
       <td>0.100781</td>
-      <td>0.028868</td>
+      <td>0.0288676</td>
       <td>0.130746</td>
       <td>0.188148</td>
       <td>0.270487</td>
@@ -1212,7 +1220,7 @@
     </tr>
     <tr>
       <th>RG-tRG</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1226,13 +1234,13 @@
     </tr>
     <tr>
       <th>RG-vRG</th>
-      <td>197.0</td>
+      <td>197</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.216982</td>
-      <td>0.099946</td>
-      <td>0.032369</td>
+      <td>0.0999458</td>
+      <td>0.0323689</td>
       <td>0.136007</td>
       <td>0.203076</td>
       <td>0.282802</td>

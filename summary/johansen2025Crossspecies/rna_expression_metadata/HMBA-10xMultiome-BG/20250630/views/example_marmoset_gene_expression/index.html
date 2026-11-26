@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="8e89b064b77aae174b3812a5aa0909398639afe1f61a2ac5e89986379bd381b9">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-10xMultiome-BG">HMBA-10xMultiome-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-10xMultiome-BG/20250630">20250630</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-10xMultiome-BG/20250630/views">views</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">example_marmoset_gene_expression</span>
       </div>
+      <a id="nav-about" href="../../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,101 +791,101 @@
     </tr>
     <tr>
       <th>DRD1</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1.4474</td>
-      <td>3.009495</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>11.595263</td>
+      <td>3.00949</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11.5953</td>
     </tr>
     <tr>
       <th>SLC32A1</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.311134</td>
-      <td>2.618383</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>10.343965</td>
+      <td>1.31113</td>
+      <td>2.61838</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10.344</td>
     </tr>
     <tr>
       <th>DRD2</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.325477</td>
-      <td>3.028157</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>11.631507</td>
+      <td>1.32548</td>
+      <td>3.02816</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11.6315</td>
     </tr>
     <tr>
       <th>SLC17A6</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.71462</td>
-      <td>2.170681</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>11.164564</td>
+      <td>2.17068</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11.1646</td>
     </tr>
     <tr>
       <th>AQP4</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.692476</td>
-      <td>2.307469</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>12.380743</td>
+      <td>2.30747</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12.3807</td>
     </tr>
     <tr>
       <th>PTPRC</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.522741</td>
-      <td>2.011098</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>13.212704</td>
+      <td>2.0111</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13.2127</td>
     </tr>
     <tr>
       <th>PLP1</th>
-      <td>414575.0</td>
+      <td>414575</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.805246</td>
-      <td>4.688641</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>5.783964</td>
-      <td>14.764202</td>
+      <td>2.80525</td>
+      <td>4.68864</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5.78396</td>
+      <td>14.7642</td>
     </tr>
   </tbody>
 </table>

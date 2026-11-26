@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="5e5636a6160b7e74ee77005f8252be83cfc23f3b4c913d618c48d7d111a6c854">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S18</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,91 +786,91 @@
     </tr>
     <tr>
       <th>Dispersion</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.216762</td>
       <td>0.209933</td>
-      <td>0.027748</td>
-      <td>0.094762</td>
+      <td>0.0277479</td>
+      <td>0.0947625</td>
       <td>0.150577</td>
       <td>0.253913</td>
-      <td>2.483392</td>
+      <td>2.48339</td>
     </tr>
     <tr>
       <th>AIC</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>387.588306</td>
-      <td>79.632839</td>
-      <td>225.05973</td>
-      <td>326.114789</td>
-      <td>380.541267</td>
-      <td>439.697762</td>
-      <td>757.485166</td>
+      <td>387.588</td>
+      <td>79.6328</td>
+      <td>225.06</td>
+      <td>326.115</td>
+      <td>380.541</td>
+      <td>439.698</td>
+      <td>757.485</td>
     </tr>
     <tr>
       <th>logLik</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-188.794153</td>
-      <td>39.816419</td>
-      <td>-373.742583</td>
-      <td>-214.848881</td>
-      <td>-185.270634</td>
-      <td>-158.057395</td>
-      <td>-107.529865</td>
+      <td>-188.794</td>
+      <td>39.8164</td>
+      <td>-373.743</td>
+      <td>-214.849</td>
+      <td>-185.271</td>
+      <td>-158.057</td>
+      <td>-107.53</td>
     </tr>
     <tr>
       <th>meanExp</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7.037136</td>
+      <td>7.03714</td>
       <td>1.77084</td>
-      <td>3.576137</td>
-      <td>5.677843</td>
-      <td>6.898458</td>
-      <td>8.189201</td>
-      <td>16.175162</td>
+      <td>3.57614</td>
+      <td>5.67784</td>
+      <td>6.89846</td>
+      <td>8.1892</td>
+      <td>16.1752</td>
     </tr>
     <tr>
       <th>X.Intercept.</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.419546</td>
-      <td>1.776621</td>
-      <td>-5.333072</td>
-      <td>1.253999</td>
-      <td>2.288283</td>
-      <td>3.370153</td>
-      <td>13.868284</td>
+      <td>2.41955</td>
+      <td>1.77662</td>
+      <td>-5.33307</td>
+      <td>1.254</td>
+      <td>2.28828</td>
+      <td>3.37015</td>
+      <td>13.8683</td>
     </tr>
     <tr>
       <th>subtypeV1</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.242273</td>
       <td>0.340863</td>
-      <td>-3.514418</td>
+      <td>-3.51442</td>
       <td>0.107235</td>
       <td>0.27765</td>
       <td>0.42204</td>
-      <td>2.920423</td>
+      <td>2.92042</td>
     </tr>
     <tr>
       <th>log2_age</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -876,115 +884,115 @@
     </tr>
     <tr>
       <th>se_.Intercept.</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.61564</td>
       <td>0.399277</td>
-      <td>0.005716</td>
-      <td>0.041138</td>
+      <td>0.00571579</td>
+      <td>0.0411378</td>
       <td>0.762503</td>
       <td>0.878243</td>
-      <td>4.989995</td>
+      <td>4.99</td>
     </tr>
     <tr>
       <th>se_subtypeV1</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.175397</td>
       <td>0.116274</td>
-      <td>0.005197</td>
-      <td>0.038896</td>
+      <td>0.00519682</td>
+      <td>0.0388963</td>
       <td>0.188328</td>
       <td>0.244397</td>
       <td>0.844614</td>
     </tr>
     <tr>
       <th>se_log2_age</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.063434</td>
-      <td>0.035558</td>
-      <td>0.004856</td>
-      <td>0.015991</td>
-      <td>0.075516</td>
-      <td>0.086909</td>
+      <td>0.0634342</td>
+      <td>0.0355576</td>
+      <td>0.0048564</td>
+      <td>0.0159914</td>
+      <td>0.0755161</td>
+      <td>0.0869091</td>
       <td>0.498958</td>
     </tr>
     <tr>
       <th>Chisq_LRT</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.353068</td>
-      <td>3.932506</td>
-      <td>0.0</td>
+      <td>3.35307</td>
+      <td>3.93251</td>
+      <td>0</td>
       <td>0.449409</td>
-      <td>1.907769</td>
-      <td>4.864469</td>
-      <td>26.296063</td>
+      <td>1.90777</td>
+      <td>4.86447</td>
+      <td>26.2961</td>
     </tr>
     <tr>
       <th>Df_LRT</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>P_LRT</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.288202</td>
       <td>0.300424</td>
-      <td>0.0</td>
-      <td>0.027415</td>
+      <td>2.92885e-07</td>
+      <td>0.0274152</td>
       <td>0.167211</td>
       <td>0.502616</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Log2 fold change</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.342865</td>
       <td>0.492495</td>
-      <td>-5.092593</td>
+      <td>-5.09259</td>
       <td>0.146227</td>
       <td>0.394177</td>
       <td>0.604179</td>
-      <td>4.127897</td>
+      <td>4.1279</td>
     </tr>
     <tr>
       <th>P.adj</th>
-      <td>13354.0</td>
+      <td>13354</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.398662</td>
       <td>0.312371</td>
-      <td>0.001076</td>
+      <td>0.00107605</td>
       <td>0.109633</td>
       <td>0.334383</td>
       <td>0.670134</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Significant</th>

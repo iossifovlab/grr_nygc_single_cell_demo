@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="99a38139f962e8daf1dec2e3e113115b713c3805aee3665b171147b8f2d40abe">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S4">S4</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Peak_annotations_PCW11-13</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,45 +786,45 @@
     </tr>
     <tr>
       <th>start</th>
-      <td>158174.0</td>
+      <td>158174</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79017013.740608</td>
-      <td>56608878.214056</td>
-      <td>9952.0</td>
-      <td>33009781.25</td>
-      <td>69314072.5</td>
-      <td>116656593.75</td>
-      <td>248945240.0</td>
+      <td>7.9017e+07</td>
+      <td>5.66089e+07</td>
+      <td>9952</td>
+      <td>3.30098e+07</td>
+      <td>6.93141e+07</td>
+      <td>1.16657e+08</td>
+      <td>248945240</td>
     </tr>
     <tr>
       <th>end</th>
-      <td>158174.0</td>
+      <td>158174</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79017624.692554</td>
-      <td>56608869.219257</td>
-      <td>10399.0</td>
-      <td>33010069.0</td>
-      <td>69314547.0</td>
-      <td>116656977.0</td>
-      <td>248946245.0</td>
+      <td>7.90176e+07</td>
+      <td>5.66089e+07</td>
+      <td>10399</td>
+      <td>33010069</td>
+      <td>69314547</td>
+      <td>116656977</td>
+      <td>248946245</td>
     </tr>
     <tr>
       <th>width</th>
-      <td>158174.0</td>
+      <td>158174</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>611.951945</td>
-      <td>435.790947</td>
-      <td>200.0</td>
-      <td>302.0</td>
-      <td>466.0</td>
-      <td>763.0</td>
-      <td>4118.0</td>
+      <td>611.952</td>
+      <td>435.791</td>
+      <td>200</td>
+      <td>302</td>
+      <td>466</td>
+      <td>763</td>
+      <td>4118</td>
     </tr>
     <tr>
       <th>strand</th>
@@ -848,17 +856,17 @@
     </tr>
     <tr>
       <th>distanceToNearest</th>
-      <td>158174.0</td>
+      <td>158174</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>24177.964311</td>
-      <td>68992.302554</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>14264.75</td>
-      <td>1342324.0</td>
+      <td>24178</td>
+      <td>68992.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>14264.8</td>
+      <td>1342324</td>
     </tr>
     <tr>
       <th>gene_name</th>

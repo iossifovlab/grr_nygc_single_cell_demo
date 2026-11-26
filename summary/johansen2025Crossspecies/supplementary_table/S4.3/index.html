@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="bbca6ac05e868ba6db0c437eb1374471359c0835d7f39a8a20016c4983354de5">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S4.3</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -763,31 +771,31 @@
   <tbody>
     <tr>
       <th>Start_HAQER</th>
-      <td>7229.0</td>
+      <td>7229</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>51835746.860147</td>
-      <td>54111336.667664</td>
-      <td>72826.0</td>
-      <td>7227616.0</td>
-      <td>29513299.0</td>
-      <td>95761115.0</td>
-      <td>247175807.0</td>
+      <td>5.18357e+07</td>
+      <td>5.41113e+07</td>
+      <td>72826</td>
+      <td>7227616</td>
+      <td>29513299</td>
+      <td>95761115</td>
+      <td>247175807</td>
     </tr>
     <tr>
       <th>End_HAQER</th>
-      <td>7229.0</td>
+      <td>7229</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>51836686.151888</td>
-      <td>54111369.593139</td>
-      <td>73876.0</td>
-      <td>7228392.0</td>
-      <td>29514921.0</td>
-      <td>95762058.0</td>
-      <td>247176729.0</td>
+      <td>5.18367e+07</td>
+      <td>5.41114e+07</td>
+      <td>73876</td>
+      <td>7228392</td>
+      <td>29514921</td>
+      <td>95762058</td>
+      <td>247176729</td>
     </tr>
     <tr>
       <th>HAQER_ID</th>
@@ -805,45 +813,45 @@
     </tr>
     <tr>
       <th>Length</th>
-      <td>7229.0</td>
+      <td>7229</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>35.55554</td>
-      <td>9.920819</td>
-      <td>29.0</td>
-      <td>30.0</td>
-      <td>31.0</td>
-      <td>35.0</td>
-      <td>101.0</td>
+      <td>35.5555</td>
+      <td>9.92082</td>
+      <td>29</td>
+      <td>30</td>
+      <td>31</td>
+      <td>35</td>
+      <td>101</td>
     </tr>
     <tr>
       <th>Start_ABC</th>
-      <td>7229.0</td>
+      <td>7229</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>51836007.716005</td>
-      <td>54111310.450323</td>
-      <td>73226.0</td>
-      <td>7227939.0</td>
-      <td>29514825.0</td>
-      <td>95761021.0</td>
-      <td>247176606.0</td>
+      <td>5.1836e+07</td>
+      <td>5.41113e+07</td>
+      <td>73226</td>
+      <td>7227939</td>
+      <td>29514825</td>
+      <td>95761021</td>
+      <td>247176606</td>
     </tr>
     <tr>
       <th>End_ABC</th>
-      <td>7229.0</td>
+      <td>7229</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>51836508.716005</td>
-      <td>54111310.450323</td>
-      <td>73727.0</td>
-      <td>7228440.0</td>
-      <td>29515326.0</td>
-      <td>95761522.0</td>
-      <td>247177107.0</td>
+      <td>5.18365e+07</td>
+      <td>5.41113e+07</td>
+      <td>73727</td>
+      <td>7228440</td>
+      <td>29515326</td>
+      <td>95761522</td>
+      <td>247177107</td>
     </tr>
     <tr>
       <th>gene_id</th>
@@ -861,16 +869,16 @@
     </tr>
     <tr>
       <th>ABC</th>
-      <td>7229.0</td>
+      <td>7229</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.106418</td>
       <td>0.195</td>
-      <td>0.020001</td>
-      <td>0.02684</td>
-      <td>0.039505</td>
-      <td>0.072494</td>
+      <td>0.0200013</td>
+      <td>0.0268403</td>
+      <td>0.0395055</td>
+      <td>0.0724937</td>
       <td>0.983549</td>
     </tr>
     <tr>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="b294fa92b1ee29eae05589d72f8ada3279362da9f08993aecb1cee2f215c809f">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-BG-taxonomy-CCN20250428">HMBA-BG-taxonomy-CCN20250428</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-BG-taxonomy-CCN20250428/20250630">20250630</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">cluster_annotation_term</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -839,31 +847,31 @@
     </tr>
     <tr>
       <th>term_order</th>
-      <td>1548.0</td>
+      <td>1548</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>666.396641</td>
-      <td>437.881179</td>
-      <td>0.0</td>
+      <td>666.397</td>
+      <td>437.881</td>
+      <td>0</td>
       <td>273.75</td>
       <td>660.5</td>
       <td>1047.25</td>
-      <td>1434.0</td>
+      <td>1434</td>
     </tr>
     <tr>
       <th>term_set_order</th>
-      <td>1548.0</td>
+      <td>1548</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>3.880491</td>
+      <td>3.88049</td>
       <td>0.478963</td>
-      <td>0.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>parent_term_label</th>

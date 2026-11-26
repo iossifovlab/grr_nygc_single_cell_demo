@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="d84697c5a8defd3a08a5fd5fd9363bca85946369fd2f4721e31cfeac1df93aeb">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular">wang2025Molecular</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/wang2025Molecular/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S1</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -820,17 +828,17 @@
     </tr>
     <tr>
       <th>Estimated_postconceptional_age_in_days</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1275.842105</td>
-      <td>54.0</td>
-      <td>112.0</td>
+      <td>1275.84</td>
+      <td>54</td>
+      <td>112</td>
       <td>242.5</td>
       <td>557.25</td>
-      <td>5353.0</td>
-      <td>2028.154847</td>
+      <td>5353</td>
+      <td>2028.15</td>
     </tr>
     <tr>
       <th>Group</th>
@@ -890,35 +898,35 @@
     </tr>
     <tr>
       <th>PMI</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>9.394737</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>13.0</td>
-      <td>16.0</td>
-      <td>24.0</td>
-      <td>8.345704</td>
+      <td>9.39474</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>16</td>
+      <td>24</td>
+      <td>8.3457</td>
     </tr>
     <tr>
       <th>Estimated number of cells</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>8335.894737</td>
-      <td>5263.0</td>
+      <td>8335.89</td>
+      <td>5263</td>
       <td>6760.75</td>
       <td>7988.5</td>
       <td>9519.75</td>
-      <td>13378.0</td>
-      <td>2115.474463</td>
+      <td>13378</td>
+      <td>2115.47</td>
     </tr>
     <tr>
       <th>ATAC Confidently mapped read pairs</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -928,25 +936,25 @@
       <td>0.91</td>
       <td>0.91465</td>
       <td>0.9227</td>
-      <td>0.007055</td>
+      <td>0.00705473</td>
     </tr>
     <tr>
       <th>ATAC Fraction of genome in peaks</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.030674</td>
+      <td>0.0306737</td>
       <td>0.0117</td>
       <td>0.025575</td>
       <td>0.0322</td>
       <td>0.0347</td>
       <td>0.0514</td>
-      <td>0.008301</td>
+      <td>0.00830134</td>
     </tr>
     <tr>
       <th>ATAC Q30 bases in barcode</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -956,11 +964,11 @@
       <td>0.92195</td>
       <td>0.9288</td>
       <td>0.9353</td>
-      <td>0.010446</td>
+      <td>0.0104465</td>
     </tr>
     <tr>
       <th>ATAC Q30 bases in read 1</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -970,11 +978,11 @@
       <td>0.94825</td>
       <td>0.956625</td>
       <td>0.958</td>
-      <td>0.011032</td>
+      <td>0.0110318</td>
     </tr>
     <tr>
       <th>ATAC Q30 bases in read 2</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -984,11 +992,11 @@
       <td>0.93745</td>
       <td>0.943775</td>
       <td>0.9473</td>
-      <td>0.007858</td>
+      <td>0.00785759</td>
     </tr>
     <tr>
       <th>ATAC Q30 bases in sample index i1</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -998,39 +1006,39 @@
       <td>0.9034</td>
       <td>0.93265</td>
       <td>0.9497</td>
-      <td>0.025102</td>
+      <td>0.0251017</td>
     </tr>
     <tr>
       <th>ATAC TSS enrichment score</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.347561</td>
+      <td>6.34756</td>
       <td>3.3273</td>
-      <td>4.878375</td>
+      <td>4.87838</td>
       <td>6.36765</td>
       <td>7.69945</td>
       <td>10.6176</td>
-      <td>1.823708</td>
+      <td>1.82371</td>
     </tr>
     <tr>
       <th>ATAC Unmapped read pairs</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.011889</td>
+      <td>0.0118895</td>
       <td>0.0087</td>
       <td>0.010225</td>
       <td>0.01195</td>
       <td>0.013325</td>
       <td>0.0159</td>
-      <td>0.002098</td>
+      <td>0.00209785</td>
     </tr>
     <tr>
       <th>ATAC Valid barcodes</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1040,11 +1048,11 @@
       <td>0.9844</td>
       <td>0.98615</td>
       <td>0.9878</td>
-      <td>0.00366</td>
+      <td>0.00366037</td>
     </tr>
     <tr>
       <th>GEX Fraction of transcriptomic reads in cells</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1058,35 +1066,35 @@
     </tr>
     <tr>
       <th>GEX Median UMI counts per cell</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5489.289474</td>
-      <td>2929.0</td>
-      <td>4207.0</td>
+      <td>5489.29</td>
+      <td>2929</td>
+      <td>4207</td>
       <td>5014.75</td>
-      <td>6260.0</td>
-      <td>11648.0</td>
-      <td>2009.268691</td>
+      <td>6260</td>
+      <td>11648</td>
+      <td>2009.27</td>
     </tr>
     <tr>
       <th>GEX Median genes per cell</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2521.171053</td>
-      <td>1604.0</td>
+      <td>2521.17</td>
+      <td>1604</td>
       <td>2030.75</td>
-      <td>2365.0</td>
+      <td>2365</td>
       <td>2880.25</td>
-      <td>4142.0</td>
-      <td>699.643078</td>
+      <td>4142</td>
+      <td>699.643</td>
     </tr>
     <tr>
       <th>GEX Q30 bases in UMI</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1096,11 +1104,11 @@
       <td>0.94665</td>
       <td>0.948125</td>
       <td>0.9555</td>
-      <td>0.003253</td>
+      <td>0.00325276</td>
     </tr>
     <tr>
       <th>GEX Q30 bases in barcode</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1110,11 +1118,11 @@
       <td>0.95115</td>
       <td>0.952525</td>
       <td>0.9617</td>
-      <td>0.003422</td>
+      <td>0.00342199</td>
     </tr>
     <tr>
       <th>GEX Q30 bases in read 2</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1124,11 +1132,11 @@
       <td>0.93475</td>
       <td>0.93945</td>
       <td>0.9478</td>
-      <td>0.00811</td>
+      <td>0.00810953</td>
     </tr>
     <tr>
       <th>GEX Q30 bases in sample index i1</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1138,11 +1146,11 @@
       <td>0.9463</td>
       <td>0.953525</td>
       <td>0.9667</td>
-      <td>0.025652</td>
+      <td>0.0256523</td>
     </tr>
     <tr>
       <th>GEX Q30 bases in sample index i2</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1152,11 +1160,11 @@
       <td>0.9341</td>
       <td>0.9467</td>
       <td>0.9557</td>
-      <td>0.02341</td>
+      <td>0.0234101</td>
     </tr>
     <tr>
       <th>GEX Reads mapped antisense to gene</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1166,11 +1174,11 @@
       <td>0.24495</td>
       <td>0.327925</td>
       <td>0.3736</td>
-      <td>0.06887</td>
+      <td>0.0688703</td>
     </tr>
     <tr>
       <th>GEX Reads mapped confidently to exonic regions</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1180,11 +1188,11 @@
       <td>0.24025</td>
       <td>0.301875</td>
       <td>0.5056</td>
-      <td>0.07706</td>
+      <td>0.0770599</td>
     </tr>
     <tr>
       <th>GEX Reads mapped confidently to genome</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1194,11 +1202,11 @@
       <td>0.921</td>
       <td>0.927725</td>
       <td>0.9398</td>
-      <td>0.013513</td>
+      <td>0.0135132</td>
     </tr>
     <tr>
       <th>GEX Reads mapped confidently to transcriptome</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1208,21 +1216,21 @@
       <td>0.60885</td>
       <td>0.63665</td>
       <td>0.7047</td>
-      <td>0.059169</td>
+      <td>0.0591688</td>
     </tr>
     <tr>
       <th>GEX Total genes detected</th>
-      <td>38.0</td>
+      <td>38</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>31826.552632</td>
-      <td>30555.0</td>
-      <td>31123.75</td>
-      <td>31868.0</td>
-      <td>32491.75</td>
-      <td>33098.0</td>
-      <td>798.894665</td>
+      <td>31826.6</td>
+      <td>30555</td>
+      <td>31123.8</td>
+      <td>31868</td>
+      <td>32491.8</td>
+      <td>33098</td>
+      <td>798.895</td>
     </tr>
   </tbody>
 </table>

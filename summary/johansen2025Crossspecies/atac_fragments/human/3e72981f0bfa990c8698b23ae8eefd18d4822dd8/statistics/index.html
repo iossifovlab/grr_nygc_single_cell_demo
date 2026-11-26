@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="4eedc079d3a5a27d4ab5ab4fe6a3ce32ca7d3611069cf9be37c6b2bc5fd584ab">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/atac_fragments">atac_fragments</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/atac_fragments/human">human</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../summary/johansen2025Crossspecies/atac_fragments/human/3e72981f0bfa990c8698b23ae8eefd18d4822dd8/index.html">3e72981f0bfa990c8698b23ae8eefd18d4822dd8</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -335,8 +340,8 @@
             <td class="nowrap">
                 <a href='fragments.json'>fragments.json</a>
             </td>
-            <td class="nowrap">821.24 KB</td>
-            <td class="nowrap">4c2c2af3617a3cc059ada01ae4d3c4c3</td>
+            <td class="nowrap">63.5 KB</td>
+            <td class="nowrap">e203f0bf92f8277dca9b318688bc892e</td>
           </tr>
           <tr>
             <td class="nowrap">

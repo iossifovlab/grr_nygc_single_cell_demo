@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="95ed050e7b1994fd6c8189c4e86af593ab6d5cd4454dc193f17afad4a6cd28b5">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zemke2024Epigenetic">zemke2024Epigenetic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zemke2024Epigenetic/atac_fragments">atac_fragments</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../summary/zemke2024Epigenetic/atac_fragments/hc9/index.html">hc9</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -335,8 +340,8 @@
             <td class="nowrap">
                 <a href='fragments.json'>fragments.json</a>
             </td>
-            <td class="nowrap">1.67 MB</td>
-            <td class="nowrap">41c02720871f4ccc663fd4a567d30d8f</td>
+            <td class="nowrap">94.16 KB</td>
+            <td class="nowrap">bf24ea55cfe62f590754220ce131da8c</td>
           </tr>
           <tr>
             <td class="nowrap">

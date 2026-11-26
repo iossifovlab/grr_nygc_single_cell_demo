@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="ad0256171db6385c0c5e27f1fe1bd2a40c1b3c26f568d62f3664ad34e821bc9e">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zemke2023Conserved">zemke2023Conserved</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zemke2023Conserved/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zemke2023Conserved/supplementary_table/S2">S2</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">human_v_marmoset</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -768,591 +776,591 @@
     </tr>
     <tr>
       <th>logFC_ASC</th>
-      <td>11223.0</td>
+      <td>11223</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.070304</td>
-      <td>1.581628</td>
-      <td>-9.735992</td>
+      <td>0.0703042</td>
+      <td>1.58163</td>
+      <td>-9.73599</td>
       <td>-0.605489</td>
       <td>0.052147</td>
       <td>0.726408</td>
-      <td>10.156187</td>
+      <td>10.1562</td>
     </tr>
     <tr>
       <th>FDR_ASC</th>
-      <td>11223.0</td>
+      <td>11223</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.237963</td>
       <td>0.307439</td>
-      <td>0.0</td>
-      <td>0.000216</td>
-      <td>0.060495</td>
+      <td>1.04146e-96</td>
+      <td>0.000215547</td>
+      <td>0.0604949</td>
       <td>0.430479</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_ChC</th>
-      <td>6397.0</td>
+      <td>6397</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.104095</td>
       <td>1.4018</td>
-      <td>-11.456405</td>
+      <td>-11.4564</td>
       <td>-0.529218</td>
-      <td>0.067618</td>
+      <td>0.0676178</td>
       <td>0.756625</td>
-      <td>12.173288</td>
+      <td>12.1733</td>
     </tr>
     <tr>
       <th>FDR_ChC</th>
-      <td>6397.0</td>
+      <td>6397</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.268288</td>
       <td>0.31342</td>
-      <td>0.0</td>
-      <td>0.003686</td>
+      <td>1.30807e-95</td>
+      <td>0.00368645</td>
       <td>0.112269</td>
       <td>0.498635</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_Endo</th>
-      <td>6891.0</td>
+      <td>6891</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.020039</td>
+      <td>-0.0200393</td>
       <td>1.54637</td>
-      <td>-9.181855</td>
+      <td>-9.18186</td>
       <td>-0.612989</td>
-      <td>0.072037</td>
+      <td>0.0720374</td>
       <td>0.716526</td>
-      <td>10.340443</td>
+      <td>10.3404</td>
     </tr>
     <tr>
       <th>FDR_Endo</th>
-      <td>6891.0</td>
+      <td>6891</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.362251</td>
       <td>0.337631</td>
-      <td>0.0</td>
-      <td>0.025848</td>
+      <td>1.08406e-51</td>
+      <td>0.0258482</td>
       <td>0.269217</td>
       <td>0.665</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L2_3_IT</th>
-      <td>13672.0</td>
+      <td>13672</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.140371</td>
-      <td>1.919865</td>
-      <td>-11.807125</td>
+      <td>1.91986</td>
+      <td>-11.8071</td>
       <td>-0.733167</td>
-      <td>0.092305</td>
-      <td>1.063501</td>
-      <td>12.877733</td>
+      <td>0.0923052</td>
+      <td>1.0635</td>
+      <td>12.8777</td>
     </tr>
     <tr>
       <th>FDR_L2_3_IT</th>
-      <td>13672.0</td>
+      <td>13672</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.165264</td>
       <td>0.270678</td>
-      <td>0.0</td>
-      <td>0.000008</td>
-      <td>0.008654</td>
+      <td>1.12847e-109</td>
+      <td>8.09777e-06</td>
+      <td>0.00865373</td>
       <td>0.228788</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L4_5_IT</th>
-      <td>12930.0</td>
+      <td>12930</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.237746</td>
-      <td>1.807604</td>
-      <td>-11.294269</td>
+      <td>1.8076</td>
+      <td>-11.2943</td>
       <td>-0.672195</td>
       <td>0.129112</td>
-      <td>1.166029</td>
-      <td>11.279465</td>
+      <td>1.16603</td>
+      <td>11.2795</td>
     </tr>
     <tr>
       <th>FDR_L4_5_IT</th>
-      <td>12930.0</td>
+      <td>12930</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.16285</td>
       <td>0.270706</td>
-      <td>0.0</td>
-      <td>0.000005</td>
-      <td>0.007357</td>
+      <td>3.49944e-103</td>
+      <td>5.44729e-06</td>
+      <td>0.0073568</td>
       <td>0.213536</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L5_6_NP</th>
-      <td>10724.0</td>
+      <td>10724</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.097455</td>
-      <td>1.572969</td>
-      <td>-9.941314</td>
+      <td>0.0974552</td>
+      <td>1.57297</td>
+      <td>-9.94131</td>
       <td>-0.656364</td>
-      <td>0.031884</td>
+      <td>0.0318835</td>
       <td>0.881981</td>
-      <td>10.724925</td>
+      <td>10.7249</td>
     </tr>
     <tr>
       <th>FDR_L5_6_NP</th>
-      <td>10724.0</td>
+      <td>10724</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.209779</td>
       <td>0.292565</td>
-      <td>0.0</td>
-      <td>0.0002</td>
-      <td>0.037313</td>
+      <td>3.51736e-98</td>
+      <td>0.000199861</td>
+      <td>0.0373129</td>
       <td>0.355222</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L5_ET</th>
-      <td>11980.0</td>
+      <td>11980</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.095325</td>
-      <td>1.813705</td>
-      <td>-11.148198</td>
+      <td>0.0953252</td>
+      <td>1.81371</td>
+      <td>-11.1482</td>
       <td>-0.715165</td>
-      <td>0.014976</td>
+      <td>0.0149761</td>
       <td>0.94602</td>
-      <td>10.093706</td>
+      <td>10.0937</td>
     </tr>
     <tr>
       <th>FDR_L5_ET</th>
-      <td>11980.0</td>
+      <td>11980</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.190298</td>
       <td>0.28392</td>
-      <td>0.0</td>
-      <td>0.000035</td>
-      <td>0.021955</td>
+      <td>1.50205e-186</td>
+      <td>3.49172e-05</td>
+      <td>0.0219546</td>
       <td>0.298655</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L5_IT</th>
-      <td>12534.0</td>
+      <td>12534</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.174586</td>
-      <td>1.825418</td>
-      <td>-11.01111</td>
+      <td>1.82542</td>
+      <td>-11.0111</td>
       <td>-0.75519</td>
-      <td>0.071303</td>
+      <td>0.0713034</td>
       <td>1.12807</td>
-      <td>11.268055</td>
+      <td>11.2681</td>
     </tr>
     <tr>
       <th>FDR_L5_IT</th>
-      <td>12534.0</td>
+      <td>12534</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.160493</td>
       <td>0.266602</td>
-      <td>0.0</td>
-      <td>0.000005</td>
-      <td>0.006649</td>
+      <td>1.97606e-105</td>
+      <td>4.5293e-06</td>
+      <td>0.00664909</td>
       <td>0.211168</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L6b</th>
-      <td>11107.0</td>
+      <td>11107</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.169933</td>
-      <td>1.561166</td>
-      <td>-9.025951</td>
+      <td>1.56117</td>
+      <td>-9.02595</td>
       <td>-0.56816</td>
       <td>0.114451</td>
       <td>0.917904</td>
-      <td>10.072737</td>
+      <td>10.0727</td>
     </tr>
     <tr>
       <th>FDR_L6b</th>
-      <td>11107.0</td>
+      <td>11107</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.230265</td>
       <td>0.300783</td>
-      <td>0.0</td>
-      <td>0.000807</td>
-      <td>0.058982</td>
+      <td>3.45652e-71</td>
+      <td>0.000807209</td>
+      <td>0.0589821</td>
       <td>0.404633</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L6_CT</th>
-      <td>12022.0</td>
+      <td>12022</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.098486</td>
-      <td>1.709178</td>
-      <td>-11.945717</td>
+      <td>0.0984857</td>
+      <td>1.70918</td>
+      <td>-11.9457</td>
       <td>-0.571824</td>
-      <td>0.083818</td>
+      <td>0.0838185</td>
       <td>0.827885</td>
-      <td>10.669967</td>
+      <td>10.67</td>
     </tr>
     <tr>
       <th>FDR_L6_CT</th>
-      <td>12022.0</td>
+      <td>12022</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.212717</td>
       <td>0.295116</td>
-      <td>0.0</td>
-      <td>0.000157</td>
-      <td>0.03729</td>
+      <td>8.86553e-127</td>
+      <td>0.000156629</td>
+      <td>0.0372898</td>
       <td>0.360204</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L6_IT_CAR3</th>
-      <td>9091.0</td>
+      <td>9091</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.118943</td>
       <td>1.50112</td>
-      <td>-8.513078</td>
+      <td>-8.51308</td>
       <td>-0.613395</td>
-      <td>0.066865</td>
+      <td>0.0668654</td>
       <td>0.874912</td>
-      <td>10.224683</td>
+      <td>10.2247</td>
     </tr>
     <tr>
       <th>FDR_L6_IT_CAR3</th>
-      <td>9091.0</td>
+      <td>9091</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.271523</td>
       <td>0.311942</td>
-      <td>0.0</td>
-      <td>0.005226</td>
+      <td>4.61913e-59</td>
+      <td>0.00522647</td>
       <td>0.121581</td>
       <td>0.497868</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_L6_IT</th>
-      <td>12181.0</td>
+      <td>12181</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.085771</td>
-      <td>1.717743</td>
-      <td>-10.631757</td>
+      <td>0.0857714</td>
+      <td>1.71774</td>
+      <td>-10.6318</td>
       <td>-0.619213</td>
-      <td>0.068429</td>
+      <td>0.0684288</td>
       <td>0.840241</td>
-      <td>10.650365</td>
+      <td>10.6504</td>
     </tr>
     <tr>
       <th>FDR_L6_IT</th>
-      <td>12181.0</td>
+      <td>12181</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.198066</td>
       <td>0.290793</td>
-      <td>0.0</td>
-      <td>0.000061</td>
-      <td>0.025814</td>
+      <td>4.00836e-136</td>
+      <td>6.10645e-05</td>
+      <td>0.0258141</td>
       <td>0.314977</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_LAMP5</th>
-      <td>10925.0</td>
+      <td>10925</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.162402</td>
       <td>1.54021</td>
-      <td>-9.862405</td>
+      <td>-9.8624</td>
       <td>-0.550844</td>
       <td>0.115637</td>
       <td>0.898499</td>
-      <td>10.33009</td>
+      <td>10.3301</td>
     </tr>
     <tr>
       <th>FDR_LAMP5</th>
-      <td>10925.0</td>
+      <td>10925</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.212905</td>
       <td>0.29182</td>
-      <td>0.0</td>
-      <td>0.000363</td>
-      <td>0.043978</td>
+      <td>1.08293e-117</td>
+      <td>0.000362758</td>
+      <td>0.0439778</td>
       <td>0.360039</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_MGC</th>
-      <td>9910.0</td>
+      <td>9910</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-0.131677</td>
-      <td>1.810058</td>
-      <td>-11.889078</td>
+      <td>1.81006</td>
+      <td>-11.8891</td>
       <td>-0.860264</td>
-      <td>-0.008104</td>
+      <td>-0.00810396</td>
       <td>0.697767</td>
-      <td>11.861297</td>
+      <td>11.8613</td>
     </tr>
     <tr>
       <th>FDR_MGC</th>
-      <td>9910.0</td>
+      <td>9910</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.239931</td>
       <td>0.306615</td>
-      <td>0.0</td>
-      <td>0.000319</td>
-      <td>0.068336</td>
+      <td>6.50699e-97</td>
+      <td>0.000318777</td>
+      <td>0.0683359</td>
       <td>0.436483</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_ODC</th>
-      <td>11932.0</td>
+      <td>11932</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.12021</td>
-      <td>1.988515</td>
-      <td>-12.937582</td>
+      <td>1.98851</td>
+      <td>-12.9376</td>
       <td>-0.70639</td>
-      <td>0.046192</td>
+      <td>0.0461916</td>
       <td>0.877345</td>
-      <td>11.923623</td>
+      <td>11.9236</td>
     </tr>
     <tr>
       <th>FDR_ODC</th>
-      <td>11932.0</td>
+      <td>11932</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.195556</td>
       <td>0.289698</td>
-      <td>0.0</td>
-      <td>0.00001</td>
-      <td>0.020327</td>
+      <td>1.39528e-165</td>
+      <td>9.6602e-06</td>
+      <td>0.0203272</td>
       <td>0.311843</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_OPC</th>
-      <td>9474.0</td>
+      <td>9474</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.021391</td>
-      <td>1.440544</td>
-      <td>-10.416669</td>
+      <td>0.0213911</td>
+      <td>1.44054</td>
+      <td>-10.4167</td>
       <td>-0.545495</td>
-      <td>0.030671</td>
+      <td>0.0306714</td>
       <td>0.630077</td>
-      <td>9.862569</td>
+      <td>9.86257</td>
     </tr>
     <tr>
       <th>FDR_OPC</th>
-      <td>9474.0</td>
+      <td>9474</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.301122</td>
       <td>0.321655</td>
-      <td>0.0</td>
-      <td>0.007888</td>
+      <td>4.74957e-64</td>
+      <td>0.00788812</td>
       <td>0.172263</td>
       <td>0.553685</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_PVALB</th>
-      <td>12013.0</td>
+      <td>12013</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.138736</td>
-      <td>1.638605</td>
-      <td>-10.961631</td>
+      <td>1.6386</td>
+      <td>-10.9616</td>
       <td>-0.577572</td>
-      <td>0.098925</td>
+      <td>0.0989254</td>
       <td>0.876657</td>
-      <td>11.67823</td>
+      <td>11.6782</td>
     </tr>
     <tr>
       <th>FDR_PVALB</th>
-      <td>12013.0</td>
+      <td>12013</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.198454</td>
       <td>0.288829</td>
-      <td>0.0</td>
-      <td>0.000096</td>
-      <td>0.026784</td>
+      <td>5.50052e-120</td>
+      <td>9.60317e-05</td>
+      <td>0.0267839</td>
       <td>0.323353</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_SNCG</th>
-      <td>9655.0</td>
+      <td>9655</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.148091</td>
-      <td>1.330356</td>
-      <td>-9.471839</td>
+      <td>1.33036</td>
+      <td>-9.47184</td>
       <td>-0.484514</td>
-      <td>0.092165</td>
+      <td>0.0921646</td>
       <td>0.77065</td>
-      <td>9.055204</td>
+      <td>9.0552</td>
     </tr>
     <tr>
       <th>FDR_SNCG</th>
-      <td>9655.0</td>
+      <td>9655</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.231086</td>
       <td>0.300025</td>
-      <td>0.0</td>
-      <td>0.000857</td>
-      <td>0.062844</td>
+      <td>5.83049e-109</td>
+      <td>0.000857268</td>
+      <td>0.0628435</td>
       <td>0.410689</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_SST</th>
-      <td>11696.0</td>
+      <td>11696</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.087719</td>
-      <td>1.540816</td>
-      <td>-10.68352</td>
+      <td>0.0877186</td>
+      <td>1.54082</td>
+      <td>-10.6835</td>
       <td>-0.519786</td>
-      <td>0.090005</td>
+      <td>0.0900046</td>
       <td>0.724158</td>
-      <td>11.737432</td>
+      <td>11.7374</td>
     </tr>
     <tr>
       <th>FDR_SST</th>
-      <td>11696.0</td>
+      <td>11696</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.226556</td>
       <td>0.301941</td>
-      <td>0.0</td>
-      <td>0.000221</td>
+      <td>1.99562e-147</td>
+      <td>0.000221451</td>
       <td>0.051954</td>
       <td>0.404748</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_VIP</th>
-      <td>10817.0</td>
+      <td>10817</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.177827</td>
-      <td>1.512107</td>
-      <td>-9.897223</td>
+      <td>1.51211</td>
+      <td>-9.89722</td>
       <td>-0.519465</td>
       <td>0.121841</td>
       <td>0.876182</td>
-      <td>10.015976</td>
+      <td>10.016</td>
     </tr>
     <tr>
       <th>FDR_VIP</th>
-      <td>10817.0</td>
+      <td>10817</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.218341</td>
       <td>0.295546</td>
-      <td>0.0</td>
-      <td>0.000472</td>
-      <td>0.046563</td>
+      <td>1.14612e-121</td>
+      <td>0.000471731</td>
+      <td>0.0465635</td>
       <td>0.376329</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>logFC_VLMC</th>
-      <td>8550.0</td>
+      <td>8550</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-0.047668</td>
-      <td>1.533982</td>
-      <td>-10.451354</td>
+      <td>-0.0476681</td>
+      <td>1.53398</td>
+      <td>-10.4514</td>
       <td>-0.672348</td>
       <td>0.065292</td>
       <td>0.756492</td>
-      <td>9.367645</td>
+      <td>9.36764</td>
     </tr>
     <tr>
       <th>FDR_VLMC</th>
-      <td>8550.0</td>
+      <td>8550</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.294484</td>
       <td>0.324407</td>
-      <td>0.0</td>
-      <td>0.006703</td>
+      <td>8.37582e-51</td>
+      <td>0.00670311</td>
       <td>0.148472</td>
       <td>0.562093</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>

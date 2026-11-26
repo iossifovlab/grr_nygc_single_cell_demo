@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="86646d688a8e5179243b17a9b89ed61e37fe3100fb722caaa7ccba4be12715cd">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics">liu2026Multiomics</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/liu2026Multiomics/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S13</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -900,17 +908,17 @@
     </tr>
     <tr>
       <th>snpPos.hg38</th>
-      <td>26.0</td>
+      <td>26</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>88290888.692308</td>
-      <td>56440487.534344</td>
-      <td>6051176.0</td>
-      <td>34249285.25</td>
-      <td>104399270.5</td>
-      <td>141011359.5</td>
-      <td>170618199.0</td>
+      <td>8.82909e+07</td>
+      <td>5.64405e+07</td>
+      <td>6051176</td>
+      <td>3.42493e+07</td>
+      <td>1.04399e+08</td>
+      <td>1.41011e+08</td>
+      <td>170618199</td>
     </tr>
     <tr>
       <th>non_effect_allele</th>
@@ -942,12 +950,12 @@
     </tr>
     <tr>
       <th>gwas_beta</th>
-      <td>26.0</td>
+      <td>26</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.022319</td>
-      <td>0.097958</td>
+      <td>0.0223192</td>
+      <td>0.0979579</td>
       <td>-0.1773</td>
       <td>-0.0297</td>
       <td>0.01025</td>
@@ -956,17 +964,17 @@
     </tr>
     <tr>
       <th>gwas_p</th>
-      <td>26.0</td>
+      <td>26</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>3.08922e-09</td>
+      <td>1.16346e-08</td>
+      <td>4.65e-91</td>
+      <td>2.09847e-32</td>
+      <td>1.125e-20</td>
+      <td>3.7275e-12</td>
+      <td>5.9e-08</td>
     </tr>
     <tr>
       <th>organ</th>
@@ -998,17 +1006,17 @@
     </tr>
     <tr>
       <th>selected_L1_cluster</th>
-      <td>26.0</td>
+      <td>26</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.807692</td>
-      <td>3.600214</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>5.0</td>
+      <td>5.80769</td>
+      <td>3.60021</td>
+      <td>1</td>
+      <td>4</td>
+      <td>5</td>
       <td>7.75</td>
-      <td>15.0</td>
+      <td>15</td>
     </tr>
     <tr>
       <th>motifs</th>

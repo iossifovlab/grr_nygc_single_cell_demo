@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="77ecf41f16c5642afd575a4001dda5333447980f56318579d12b5649ccb7af27">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic">clarence2025Multiomic</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/clarence2025Multiomic/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">S8</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -807,17 +815,17 @@
     </tr>
     <tr>
       <th>r2 (LD buddy)</th>
-      <td>2077.0</td>
+      <td>2077</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.909155</td>
-      <td>0.0634</td>
+      <td>0.0634004</td>
       <td>0.800154</td>
       <td>0.8506</td>
       <td>0.914186</td>
       <td>0.967464</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>GWAS abbreviation</th>
@@ -849,17 +857,17 @@
     </tr>
     <tr>
       <th>ABC score</th>
-      <td>2318.0</td>
+      <td>2318</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.102134</td>
       <td>0.141118</td>
       <td>0.015004</td>
-      <td>0.027158</td>
-      <td>0.049487</td>
+      <td>0.0271575</td>
+      <td>0.0494865</td>
       <td>0.110563</td>
-      <td>1.0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>Ensembl Gene ID</th>
@@ -919,31 +927,31 @@
     </tr>
     <tr>
       <th>Peak_start</th>
-      <td>2318.0</td>
+      <td>2318</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>83692562.911993</td>
-      <td>54900596.135562</td>
-      <td>941251.0</td>
-      <td>43103086.25</td>
-      <td>71800131.5</td>
-      <td>121481174.0</td>
-      <td>243760888.0</td>
+      <td>8.36926e+07</td>
+      <td>5.49006e+07</td>
+      <td>941251</td>
+      <td>4.31031e+07</td>
+      <td>7.18001e+07</td>
+      <td>121481174</td>
+      <td>243760888</td>
     </tr>
     <tr>
       <th>Peak_end</th>
-      <td>2318.0</td>
+      <td>2318</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>83693698.770923</td>
-      <td>54900622.721144</td>
-      <td>941940.0</td>
-      <td>43103972.25</td>
-      <td>71801087.0</td>
-      <td>121483329.0</td>
-      <td>243761707.0</td>
+      <td>8.36937e+07</td>
+      <td>5.49006e+07</td>
+      <td>941940</td>
+      <td>4.3104e+07</td>
+      <td>71801087</td>
+      <td>121483329</td>
+      <td>243761707</td>
     </tr>
   </tbody>
 </table>

@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="f12abb7e75921e1f26ac8cde7d874f95891071b39d7244ffe243562f8e4beacb">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2023Conserved">zemke2023Conserved</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../index.html#/summary/zemke2023Conserved/rna_expression_atac_matrix">rna_expression_atac_matrix</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">M1_donor3_neun</span>
       </div>
+      <a id="nav-about" href="../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -853,31 +861,31 @@ AnnData object with n_obs × n_vars = 2359 × 106445
     </tr>
     <tr>
       <th>start</th>
-      <td>106445.0</td>
+      <td>106445</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>76078157.429771</td>
-      <td>56970361.482567</td>
-      <td>-1.0</td>
-      <td>30923384.0</td>
-      <td>63691638.0</td>
-      <td>113149250.0</td>
-      <td>248926758.0</td>
+      <td>7.60782e+07</td>
+      <td>5.69704e+07</td>
+      <td>-1</td>
+      <td>30923384</td>
+      <td>63691638</td>
+      <td>113149250</td>
+      <td>248926758</td>
     </tr>
     <tr>
       <th>end</th>
-      <td>106445.0</td>
+      <td>106445</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>76082899.547043</td>
-      <td>56970501.692682</td>
-      <td>-1.0</td>
-      <td>30926958.0</td>
-      <td>63696652.0</td>
-      <td>113151007.0</td>
-      <td>248927599.0</td>
+      <td>7.60829e+07</td>
+      <td>5.69705e+07</td>
+      <td>-1</td>
+      <td>30926958</td>
+      <td>63696652</td>
+      <td>113151007</td>
+      <td>248927599</td>
     </tr>
   </tbody>
 </table>

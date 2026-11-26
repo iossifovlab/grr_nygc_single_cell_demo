@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="f3c643be73e7802d4ca7d3f2a5af32c74f20eba5ec9680add05f3e25ef566661">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-QM23.50.001-BG">HMBA-MERSCOPE-QM23.50.001-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630">20250630</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-QM23.50.001-BG/20250630/views">views</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">example_gene_expression</span>
       </div>
+      <a id="nav-about" href="../../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,45 +791,45 @@
     </tr>
     <tr>
       <th>DRD1</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.062034</td>
-      <td>1.862665</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.622463</td>
-      <td>9.967226</td>
+      <td>1.06203</td>
+      <td>1.86267</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.62246</td>
+      <td>9.96723</td>
     </tr>
     <tr>
       <th>DRD2</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>1.10125</td>
-      <td>1.753528</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <td>1.75353</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.92049</td>
-      <td>9.967226</td>
+      <td>9.96723</td>
     </tr>
     <tr>
       <th>SLC17A6</th>
-      <td>3255402.0</td>
+      <td>3255402</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.223993</td>
       <td>0.722747</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>9.967226</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>9.96723</td>
     </tr>
   </tbody>
 </table>

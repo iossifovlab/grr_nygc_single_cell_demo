@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="bb3e65470f4b51fda1d1efd9e1847bd3e5b5849659bd0554745a76c7e918143b">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table/S1.2">S1.2</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">consensus_anno_pre-print</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -889,7 +897,7 @@
     </tr>
     <tr>
       <th>spatial_description_manual</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -903,7 +911,7 @@
     </tr>
     <tr>
       <th>morphology_description</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -917,7 +925,7 @@
     </tr>
     <tr>
       <th>ephysiology_description</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -931,7 +939,7 @@
     </tr>
     <tr>
       <th>tf_marker_genes</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -945,7 +953,7 @@
     </tr>
     <tr>
       <th>combo_markers</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -959,7 +967,7 @@
     </tr>
     <tr>
       <th>binary_markers</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1029,17 +1037,17 @@
     </tr>
     <tr>
       <th>display_order_group</th>
-      <td>61.0</td>
+      <td>61</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>31.0</td>
-      <td>17.752934</td>
-      <td>1.0</td>
-      <td>16.0</td>
-      <td>31.0</td>
-      <td>46.0</td>
-      <td>61.0</td>
+      <td>31</td>
+      <td>17.7529</td>
+      <td>1</td>
+      <td>16</td>
+      <td>31</td>
+      <td>46</td>
+      <td>61</td>
     </tr>
     <tr>
       <th>literature_support</th>
@@ -1085,7 +1093,7 @@
     </tr>
     <tr>
       <th>neurotransmitter</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1113,7 +1121,7 @@
     </tr>
     <tr>
       <th>color_group</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1183,17 +1191,17 @@
     </tr>
     <tr>
       <th>display_order_subclass</th>
-      <td>61.0</td>
+      <td>61</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>20.065574</td>
-      <td>10.321287</td>
-      <td>1.0</td>
-      <td>12.0</td>
-      <td>21.0</td>
-      <td>29.0</td>
-      <td>36.0</td>
+      <td>20.0656</td>
+      <td>10.3213</td>
+      <td>1</td>
+      <td>12</td>
+      <td>21</td>
+      <td>29</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>color_hex_subclass</th>
@@ -1211,7 +1219,7 @@
     </tr>
     <tr>
       <th>color_subclass</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1295,17 +1303,17 @@
     </tr>
     <tr>
       <th>display_order_class</th>
-      <td>61.0</td>
+      <td>61</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>6.770492</td>
-      <td>3.062643</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>7.0</td>
-      <td>9.0</td>
-      <td>12.0</td>
+      <td>6.77049</td>
+      <td>3.06264</td>
+      <td>1</td>
+      <td>4</td>
+      <td>7</td>
+      <td>9</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>color_hex_class</th>
@@ -1323,7 +1331,7 @@
     </tr>
     <tr>
       <th>color_class</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1393,17 +1401,17 @@
     </tr>
     <tr>
       <th>Unnamed: 45</th>
-      <td>61.0</td>
+      <td>61</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.360656</td>
+      <td>2.36066</td>
       <td>0.913469</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>color_hex_neighborhood</th>
@@ -1421,7 +1429,7 @@
     </tr>
     <tr>
       <th>color_neighborhood</th>
-      <td>0.0</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>

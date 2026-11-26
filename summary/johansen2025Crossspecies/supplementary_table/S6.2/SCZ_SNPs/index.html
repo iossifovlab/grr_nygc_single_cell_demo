@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="2292f8db2e425dc790a9e4681cbb31ff52c46197ba6d0417d625b514490c9010">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table/S6.2">S6.2</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">SCZ_SNPs</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -805,255 +813,255 @@
     </tr>
     <tr>
       <th>STRd_D1_Striosome_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-2.669474</td>
-      <td>16.792595</td>
-      <td>-111.49072</td>
+      <td>-2.66947</td>
+      <td>16.7926</td>
+      <td>-111.491</td>
       <td>-0.462006</td>
       <td>-0.156807</td>
       <td>0.296284</td>
-      <td>8.066406</td>
+      <td>8.06641</td>
     </tr>
     <tr>
       <th>STRd_D2_Matrix_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-2.0879</td>
-      <td>14.692445</td>
-      <td>-97.30267</td>
+      <td>14.6924</td>
+      <td>-97.3027</td>
       <td>-0.511055</td>
       <td>-0.128693</td>
       <td>0.209831</td>
-      <td>10.746704</td>
+      <td>10.7467</td>
     </tr>
     <tr>
       <th>STRd_D2_Striosome_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-2.469759</td>
-      <td>15.875968</td>
-      <td>-105.37341</td>
+      <td>-2.46976</td>
+      <td>15.876</td>
+      <td>-105.373</td>
       <td>-0.47998</td>
       <td>-0.115692</td>
       <td>0.261322</td>
-      <td>8.329864</td>
+      <td>8.32986</td>
     </tr>
     <tr>
       <th>STRv_D1_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-2.327788</td>
-      <td>12.690398</td>
-      <td>-83.121216</td>
+      <td>-2.32779</td>
+      <td>12.6904</td>
+      <td>-83.1212</td>
       <td>-0.550385</td>
       <td>-0.234325</td>
       <td>0.289963</td>
-      <td>10.449738</td>
+      <td>10.4497</td>
     </tr>
     <tr>
       <th>STRv_D2_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-2.035169</td>
-      <td>11.814446</td>
-      <td>-77.160706</td>
+      <td>-2.03517</td>
+      <td>11.8144</td>
+      <td>-77.1607</td>
       <td>-0.592438</td>
       <td>-0.152649</td>
       <td>0.424881</td>
-      <td>10.681061</td>
+      <td>10.6811</td>
     </tr>
     <tr>
       <th>STRd_D2_StrioMat_Hybrid_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-1.297425</td>
-      <td>7.601848</td>
-      <td>-47.52893</td>
+      <td>-1.29742</td>
+      <td>7.60185</td>
+      <td>-47.5289</td>
       <td>-0.650452</td>
-      <td>-0.079784</td>
+      <td>-0.0797844</td>
       <td>0.466324</td>
-      <td>6.386871</td>
+      <td>6.38687</td>
     </tr>
     <tr>
       <th>STRv_D1_NUDAP_MSN</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-0.974551</td>
-      <td>4.037518</td>
-      <td>-22.919067</td>
+      <td>4.03752</td>
+      <td>-22.9191</td>
       <td>-0.570236</td>
       <td>-0.121666</td>
       <td>0.311142</td>
-      <td>3.041946</td>
+      <td>3.04195</td>
     </tr>
     <tr>
       <th>OT_D1_ICj</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-1.165721</td>
-      <td>4.612025</td>
-      <td>-20.682892</td>
+      <td>-1.16572</td>
+      <td>4.61203</td>
+      <td>-20.6829</td>
       <td>-0.526531</td>
       <td>-0.194489</td>
       <td>0.176304</td>
-      <td>4.280762</td>
+      <td>4.28076</td>
     </tr>
     <tr>
       <th>GPe_MEIS2-SOX6_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-0.186125</td>
-      <td>7.831659</td>
-      <td>-19.008133</td>
-      <td>-1.043732</td>
+      <td>7.83166</td>
+      <td>-19.0081</td>
+      <td>-1.04373</td>
       <td>-0.426399</td>
       <td>0.311234</td>
-      <td>45.305756</td>
+      <td>45.3058</td>
     </tr>
     <tr>
       <th>AMY-SLEA-BNST_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-0.804233</td>
-      <td>2.597724</td>
-      <td>-10.17128</td>
+      <td>2.59772</td>
+      <td>-10.1713</td>
       <td>-0.961426</td>
       <td>-0.375519</td>
       <td>0.142914</td>
-      <td>5.765594</td>
+      <td>5.76559</td>
     </tr>
     <tr>
       <th>OB_FRMD7_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.606467</td>
-      <td>12.354778</td>
-      <td>-33.11022</td>
+      <td>12.3548</td>
+      <td>-33.1102</td>
       <td>-0.402666</td>
-      <td>-0.076994</td>
+      <td>-0.0769939</td>
       <td>0.254238</td>
-      <td>73.24057</td>
+      <td>73.2406</td>
     </tr>
     <tr>
       <th>VIP_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.53998</td>
-      <td>5.112486</td>
-      <td>-4.094772</td>
+      <td>5.11249</td>
+      <td>-4.09477</td>
       <td>-0.545441</td>
-      <td>-0.093529</td>
+      <td>-0.0935287</td>
       <td>0.212486</td>
-      <td>32.44008</td>
+      <td>32.4401</td>
     </tr>
     <tr>
       <th>LAMP5-CXCL14_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.579685</td>
-      <td>11.532528</td>
-      <td>-5.635498</td>
+      <td>1.57969</td>
+      <td>11.5325</td>
+      <td>-5.6355</td>
       <td>-0.703308</td>
-      <td>-0.087402</td>
+      <td>-0.0874023</td>
       <td>0.338684</td>
-      <td>75.63989</td>
+      <td>75.6399</td>
     </tr>
     <tr>
       <th>STR_SST-RSPO2_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-0.150767</td>
-      <td>5.323922</td>
-      <td>-12.01733</td>
+      <td>5.32392</td>
+      <td>-12.0173</td>
       <td>-0.775707</td>
       <td>-0.225121</td>
       <td>0.183304</td>
-      <td>30.460434</td>
+      <td>30.4604</td>
     </tr>
     <tr>
       <th>STR_LYPD6-RSPO2_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>-0.083414</td>
-      <td>3.292129</td>
-      <td>-10.181641</td>
+      <td>3.29213</td>
+      <td>-10.1816</td>
       <td>-0.711426</td>
       <td>-0.210503</td>
       <td>0.362976</td>
-      <td>16.899414</td>
+      <td>16.8994</td>
     </tr>
     <tr>
       <th>LAMP5-LHX6_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.621022</td>
-      <td>12.244317</td>
+      <td>1.62102</td>
+      <td>12.2443</td>
       <td>-7.88411</td>
       <td>-0.749146</td>
       <td>-0.147858</td>
       <td>0.481201</td>
-      <td>80.035034</td>
+      <td>80.035</td>
     </tr>
     <tr>
       <th>STR-BF_TAC3-PLPP4-LHX8_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.028744</td>
-      <td>1.666505</td>
+      <td>0.0287438</td>
+      <td>1.66651</td>
       <td>-3.12973</td>
       <td>-0.544701</td>
-      <td>-0.059883</td>
+      <td>-0.0598831</td>
       <td>0.206047</td>
-      <td>7.723053</td>
+      <td>7.72305</td>
     </tr>
     <tr>
       <th>STRd_Cholinergic_GABA</th>
-      <td>45.0</td>
+      <td>45</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.113123</td>
-      <td>3.290383</td>
-      <td>-11.615555</td>
+      <td>3.29038</td>
+      <td>-11.6156</td>
       <td>-0.766651</td>
       <td>-0.124527</td>
       <td>0.58551</td>
-      <td>16.33313</td>
+      <td>16.3331</td>
     </tr>
   </tbody>
 </table>

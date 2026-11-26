@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="2e62004e026785e14e1096e86820ced86ec28002efbe0fca9646e49dce1b3579">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/johansen2025Crossspecies/supplementary_table/S1.1">S1.1</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">Marmoset_qc_cluster</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -777,83 +785,83 @@
     </tr>
     <tr>
       <th>cell count</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>526.991582</td>
-      <td>1965.725833</td>
-      <td>12.0</td>
+      <td>526.992</td>
+      <td>1965.73</td>
+      <td>12</td>
       <td>68.25</td>
-      <td>137.0</td>
+      <td>137</td>
       <td>358.25</td>
-      <td>34662.0</td>
+      <td>34662</td>
     </tr>
     <tr>
       <th>UMI_counts_mean</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>17712.796811</td>
-      <td>10094.735254</td>
+      <td>17712.8</td>
+      <td>10094.7</td>
       <td>3163.28</td>
-      <td>10544.82875</td>
-      <td>16364.0955</td>
-      <td>22472.719</td>
-      <td>61614.775</td>
+      <td>10544.8</td>
+      <td>16364.1</td>
+      <td>22472.7</td>
+      <td>61614.8</td>
     </tr>
     <tr>
       <th>UMI_counts_median</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>16242.087542</td>
-      <td>9771.425182</td>
+      <td>16242.1</td>
+      <td>9771.43</td>
       <td>2850.5</td>
-      <td>9653.875</td>
-      <td>15033.25</td>
-      <td>20608.125</td>
+      <td>9653.88</td>
+      <td>15033.2</td>
+      <td>20608.1</td>
       <td>63343.5</td>
     </tr>
     <tr>
       <th>total_genes_mean</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4723.003646</td>
-      <td>1476.627742</td>
-      <td>1601.376</td>
-      <td>3765.82825</td>
+      <td>4723</td>
+      <td>1476.63</td>
+      <td>1601.38</td>
+      <td>3765.83</td>
       <td>4774.12</td>
-      <td>5663.521</td>
+      <td>5663.52</td>
       <td>8695.46</td>
     </tr>
     <tr>
       <th>total_genes_median</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4746.909933</td>
-      <td>1563.282652</td>
+      <td>4746.91</td>
+      <td>1563.28</td>
       <td>1526.5</td>
-      <td>3783.0</td>
+      <td>3783</td>
       <td>4819.5</td>
-      <td>5729.125</td>
+      <td>5729.12</td>
       <td>8962.5</td>
     </tr>
     <tr>
       <th>doublet_score_mean</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.039865</td>
-      <td>0.050028</td>
-      <td>0.0</td>
+      <td>0.0398653</td>
+      <td>0.0500278</td>
+      <td>0</td>
       <td>0.015</td>
       <td>0.026</td>
       <td>0.043</td>
@@ -861,13 +869,13 @@
     </tr>
     <tr>
       <th>doublet_score_median</th>
-      <td>594.0</td>
+      <td>594</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>0.011505</td>
-      <td>0.044268</td>
-      <td>0.0</td>
+      <td>0.0115051</td>
+      <td>0.0442675</td>
+      <td>0</td>
       <td>0.001</td>
       <td>0.002</td>
       <td>0.004</td>

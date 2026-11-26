@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="f419ae9276c41ee6e789d9e24cea6f7df38bd629efd76c1aaa26273bea0f4efd">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-H22.30.001-BG">HMBA-MERSCOPE-H22.30.001-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-H22.30.001-BG/20260228">20260228</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">ccf_coordinates</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -783,45 +791,45 @@
     </tr>
     <tr>
       <th>x_ccf_mm</th>
-      <td>4260113.0</td>
+      <td>4260113</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>-17.523403</td>
-      <td>7.235227</td>
-      <td>-35.402862</td>
-      <td>-23.14712</td>
-      <td>-17.044225</td>
-      <td>-11.625831</td>
-      <td>2.238578</td>
+      <td>-17.5234</td>
+      <td>7.23523</td>
+      <td>-35.4029</td>
+      <td>-23.1471</td>
+      <td>-17.0442</td>
+      <td>-11.6258</td>
+      <td>2.23858</td>
     </tr>
     <tr>
       <th>y_ccf_mm</th>
-      <td>4260113.0</td>
+      <td>4260113</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.419874</td>
-      <td>8.753883</td>
-      <td>-24.845541</td>
-      <td>1.849521</td>
-      <td>5.433673</td>
-      <td>11.257064</td>
-      <td>26.270516</td>
+      <td>5.41987</td>
+      <td>8.75388</td>
+      <td>-24.8455</td>
+      <td>1.84952</td>
+      <td>5.43367</td>
+      <td>11.2571</td>
+      <td>26.2705</td>
     </tr>
     <tr>
       <th>z_ccf_mm</th>
-      <td>4260113.0</td>
+      <td>4260113</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.613295</td>
-      <td>8.265304</td>
-      <td>-20.566535</td>
-      <td>-5.910634</td>
+      <td>8.2653</td>
+      <td>-20.5665</td>
+      <td>-5.91063</td>
       <td>0.362797</td>
-      <td>6.791181</td>
-      <td>23.912411</td>
+      <td>6.79118</td>
+      <td>23.9124</td>
     </tr>
   </tbody>
 </table>

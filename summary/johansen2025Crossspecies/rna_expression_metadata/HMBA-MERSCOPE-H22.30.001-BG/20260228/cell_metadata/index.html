@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="0bc0c41a77edf73ec644caffe49b97f4d5ce4774b86b76178908d2b179e4cd9c">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata">rna_expression_metadata</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-H22.30.001-BG">HMBA-MERSCOPE-H22.30.001-BG</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/johansen2025Crossspecies/rna_expression_metadata/HMBA-MERSCOPE-H22.30.001-BG/20260228">20260228</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">cell_metadata</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -797,17 +805,17 @@
     </tr>
     <tr>
       <th>brain_section_barcode</th>
-      <td>5431560.0</td>
+      <td>5431560</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1325569872.055579</td>
-      <td>24533599.576211</td>
-      <td>1304618482.0</td>
-      <td>1308461491.0</td>
-      <td>1322691967.0</td>
-      <td>1326499925.0</td>
-      <td>1426549599.0</td>
+      <td>1.32557e+09</td>
+      <td>2.45336e+07</td>
+      <td>1304618482</td>
+      <td>1308461491</td>
+      <td>1322691967</td>
+      <td>1326499925</td>
+      <td>1426549599</td>
     </tr>
     <tr>
       <th>segmentation_job_id</th>
@@ -825,31 +833,31 @@
     </tr>
     <tr>
       <th>x_experiment</th>
-      <td>5431560.0</td>
+      <td>5431560</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5503.449493</td>
-      <td>2592.405201</td>
-      <td>-222.52191</td>
-      <td>3483.22685</td>
-      <td>5416.2775</td>
-      <td>7365.5085</td>
-      <td>14276.9375</td>
+      <td>5503.45</td>
+      <td>2592.41</td>
+      <td>-222.522</td>
+      <td>3483.23</td>
+      <td>5416.28</td>
+      <td>7365.51</td>
+      <td>14276.9</td>
     </tr>
     <tr>
       <th>y_experiment</th>
-      <td>5431560.0</td>
+      <td>5431560</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5660.200056</td>
-      <td>2697.019717</td>
-      <td>-288.8937</td>
-      <td>3531.196525</td>
-      <td>5567.6697</td>
-      <td>7673.79725</td>
-      <td>13317.007</td>
+      <td>5660.2</td>
+      <td>2697.02</td>
+      <td>-288.894</td>
+      <td>3531.2</td>
+      <td>5567.67</td>
+      <td>7673.8</td>
+      <td>13317</td>
     </tr>
     <tr>
       <th>qc_pass</th>

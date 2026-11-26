@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="55ad792828209dcfdbfddf0fbe896617bcb89fcd062e00aa8ed65b6331456366">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies">johansen2025Crossspecies</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/pseudobulk_atac">pseudobulk_atac</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/pseudobulk_atac/macaque">macaque</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/johansen2025Crossspecies/pseudobulk_atac/macaque/STR_Cholinergic_GABA">STR_Cholinergic_GABA</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../summary/johansen2025Crossspecies/pseudobulk_atac/macaque/STR_Cholinergic_GABA/bigwig/index.html">bigwig</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -328,8 +333,8 @@
             <td class="nowrap">
                 <a href='coverage.json'>coverage.json</a>
             </td>
-            <td class="nowrap">115.25 KB</td>
-            <td class="nowrap">07bc5faca6c3b07efbb7e916a34677df</td>
+            <td class="nowrap">35.12 KB</td>
+            <td class="nowrap">2bde4a87c56029f6696058f8f02e1c4d</td>
           </tr>
           <tr>
             <td class="nowrap">

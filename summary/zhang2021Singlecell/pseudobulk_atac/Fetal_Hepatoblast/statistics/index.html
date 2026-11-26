@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="aca34937a5d9bfdb1aa7b260750ecdc92fa5bfc98307c2d735c30c0ec8a2f3eb">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zhang2021Singlecell">zhang2021Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/zhang2021Singlecell/pseudobulk_atac">pseudobulk_atac</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../summary/zhang2021Singlecell/pseudobulk_atac/Fetal_Hepatoblast/index.html">Fetal_Hepatoblast</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -328,8 +333,8 @@
             <td class="nowrap">
                 <a href='coverage.json'>coverage.json</a>
             </td>
-            <td class="nowrap">73.6 KB</td>
-            <td class="nowrap">bf93a217b4779324ee3857e2e644ac68</td>
+            <td class="nowrap">6.22 KB</td>
+            <td class="nowrap">29e8cd81ebfc8b67d700a70751f10cce</td>
           </tr>
           <tr>
             <td class="nowrap">

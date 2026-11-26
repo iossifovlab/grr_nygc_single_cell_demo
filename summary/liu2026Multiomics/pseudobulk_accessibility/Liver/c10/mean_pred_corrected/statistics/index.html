@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="5588bc623c5d4ad5bb9ee7cec813909dbb6c93ac8af4311ff4dbdace986df1e1">
     <style>
       
       @font-face {
@@ -286,14 +287,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
 
       table {
@@ -306,6 +310,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/liu2026Multiomics">liu2026Multiomics</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/liu2026Multiomics/pseudobulk_accessibility">pseudobulk_accessibility</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/liu2026Multiomics/pseudobulk_accessibility/Liver">Liver</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../index.html#/summary/liu2026Multiomics/pseudobulk_accessibility/Liver/c10">c10</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../../summary/liu2026Multiomics/pseudobulk_accessibility/Liver/c10/mean_pred_corrected/index.html">mean_pred_corrected</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">statistics</span>
       </div>
+      <a id="nav-about" href="../../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
       <table>
@@ -328,8 +333,8 @@
             <td class="nowrap">
                 <a href='coverage.json'>coverage.json</a>
             </td>
-            <td class="nowrap">6.88 KB</td>
-            <td class="nowrap">397e726c4cec5cf1864ac0d9afa0eb97</td>
+            <td class="nowrap">2.41 KB</td>
+            <td class="nowrap">58052fe1fe18605f6bcd671ea824c89e</td>
           </tr>
           <tr>
             <td class="nowrap">

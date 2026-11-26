@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="8eceeb67e1919680517651c3cd905ab915d8c7f43ad99c76fefc545dfa3cd3dc">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S6">S6</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">cells_filtered</span>
       </div>
+      <a id="nav-about" href="../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -778,49 +786,49 @@
     </tr>
     <tr>
       <th>N_cells_unfiltered</th>
-      <td>14.0</td>
+      <td>14</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>8995.642857</td>
-      <td>4615.133694</td>
-      <td>1930.0</td>
+      <td>8995.64</td>
+      <td>4615.13</td>
+      <td>1930</td>
       <td>6170.5</td>
-      <td>10000.0</td>
-      <td>10000.0</td>
-      <td>20000.0</td>
+      <td>10000</td>
+      <td>10000</td>
+      <td>20000</td>
     </tr>
     <tr>
       <th>N_high_quality</th>
-      <td>14.0</td>
+      <td>14</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7047.642857</td>
-      <td>4305.344918</td>
-      <td>1.0</td>
+      <td>7047.64</td>
+      <td>4305.34</td>
+      <td>1</td>
       <td>2713.75</td>
       <td>9805.5</td>
       <td>9904.25</td>
-      <td>11465.0</td>
+      <td>11465</td>
     </tr>
     <tr>
       <th>N_kept_for_analysis</th>
-      <td>14.0</td>
+      <td>14</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>7038.928571</td>
-      <td>4320.539967</td>
-      <td>0.0</td>
+      <td>7038.93</td>
+      <td>4320.54</td>
+      <td>0</td>
       <td>2713.75</td>
       <td>9805.5</td>
       <td>9904.25</td>
-      <td>11465.0</td>
+      <td>11465</td>
     </tr>
     <tr>
       <th>fract_low_quality</th>
-      <td>14.0</td>
+      <td>14</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -834,13 +842,13 @@
     </tr>
     <tr>
       <th>fract_kept_for_analysis</th>
-      <td>14.0</td>
+      <td>14</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>0.760945</td>
       <td>0.400648</td>
-      <td>0.0</td>
+      <td>0</td>
       <td>0.864855</td>
       <td>0.9721</td>
       <td>0.989725</td>

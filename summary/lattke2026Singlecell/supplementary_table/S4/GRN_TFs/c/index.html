@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="gain-page-fingerprint" content="d6de3b670c821af38d40c76b81ff0426f6a5b7c97ace176eb1c777109c196e8b">
     <style>
       
       @font-face {
@@ -285,14 +286,17 @@
         margin: 0 2px;
       }
 
-      /* In a page header the trail takes the size and weight the
-         header's one link used to have, so the current crumb -- a span,
-         which `#page-header a` does not reach -- reads at the same size
-         as the links beside it.  The index page's trail has no header
-         around it and keeps its own size. */
+      /* The trail takes the size and weight of the header's links, so
+         the current crumb -- a span, which `#page-header a` does not
+         reach -- reads at the same size as the links beside it. */
       #page-header #breadcrumb {
         font-size: 18px;
         font-weight: 500;
+      }
+
+      /* About sits at the right edge of the bar on every page. */
+      #nav-about {
+        margin-left: auto;
       }
       
       .copy-icon {
@@ -314,9 +318,12 @@
         margin-left: 8px;
       }
 
+      
       #resource-table th {
         text-align: end;
         width: 100px;
+        white-space: nowrap;
+        vertical-align: top;
       }
 
       .modal {
@@ -603,6 +610,7 @@
     <nav id="page-header">
       <div id="breadcrumb"><a class="breadcrumb-item" href="../../../../../../index.html#/">All resources</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary">summary</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/lattke2026Singlecell">lattke2026Singlecell</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table">supplementary_table</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S4">S4</a><span class="breadcrumb-sep">/</span><a class="breadcrumb-item" href="../../../../../../index.html#/summary/lattke2026Singlecell/supplementary_table/S4/GRN_TFs">GRN_TFs</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-item current">c</span>
       </div>
+      <a id="nav-about" href="../../../../../../about.html">About</a>
     </nav>
     <div class="page-content">
     <h2>Resource</h2>
@@ -821,17 +829,17 @@
     </tr>
     <tr>
       <th>N_targets</th>
-      <td>12.0</td>
+      <td>12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>55.333333</td>
-      <td>33.616374</td>
-      <td>12.0</td>
+      <td>55.3333</td>
+      <td>33.6164</td>
+      <td>12</td>
       <td>37.25</td>
       <td>50.5</td>
       <td>72.5</td>
-      <td>133.0</td>
+      <td>133</td>
     </tr>
     <tr>
       <th>labels</th>
@@ -863,7 +871,7 @@
     </tr>
     <tr>
       <th>mean_z_CON</th>
-      <td>12.0</td>
+      <td>12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -872,12 +880,12 @@
       <td>-0.491099</td>
       <td>-0.25766</td>
       <td>-0.158278</td>
-      <td>0.076726</td>
+      <td>0.0767258</td>
       <td>0.162535</td>
     </tr>
     <tr>
       <th>mean_z_DS</th>
-      <td>12.0</td>
+      <td>12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -891,7 +899,7 @@
     </tr>
     <tr>
       <th>mean_z_DELTA</th>
-      <td>12.0</td>
+      <td>12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -905,31 +913,31 @@
     </tr>
     <tr>
       <th>mean_vst_CON</th>
-      <td>12.0</td>
+      <td>12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>5.571408</td>
-      <td>2.188245</td>
-      <td>3.192084</td>
-      <td>4.119753</td>
-      <td>4.874834</td>
-      <td>6.273337</td>
-      <td>9.968481</td>
+      <td>5.57141</td>
+      <td>2.18824</td>
+      <td>3.19208</td>
+      <td>4.11975</td>
+      <td>4.87483</td>
+      <td>6.27334</td>
+      <td>9.96848</td>
     </tr>
     <tr>
       <th>N_targets_unfiltered</th>
-      <td>12.0</td>
+      <td>12</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>96.75</td>
-      <td>29.665177</td>
-      <td>54.0</td>
+      <td>29.6652</td>
+      <td>54</td>
       <td>77.75</td>
       <td>96.5</td>
       <td>118.75</td>
-      <td>149.0</td>
+      <td>149</td>
     </tr>
     <tr>
       <th>DS_reg</th>
